@@ -1,0 +1,76 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body and Core",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Maintain a straight line from head to feet by stiffening the knee joints, hip joints, pelvis, and spine.",
+      "Allow the shoulders and elbows to flex and extend to raise and lower the body.",
+      "Ensure the scapulae retract and protract to facilitate glenohumeral range of motion.",
+      "Understand that knee push-ups shorten the lever, reducing bodyweight loading and core/prime mover requirements.",
+      "Vary hand positions to alter muscle recruitment: narrow base (50% shoulder width) increases triceps brachii and sternal head of pectoralis major activation."
+    ],
+    "common_mistakes": [
+      "Failing to keep the body in a straight line (lack of stiffening of knees, hips, pelvis, and spine).",
+      "Flaring the elbows, particularly when performing narrow base push-ups, which orients movement into the transverse plane."
+    ],
+    "specific_findings": [
+      "Knee push-up reduces bodyweight loading to 54% in the top position and 62% in the bottom position.",
+      "Standard push-up relative load is 69% of bodyweight in the top position and 75% of bodyweight in the bottom position.",
+      "Compressive spinal loading on L4/L5 during a standard push-up is 1,838 N.",
+      "Standard push-up prime mover mean muscle activation (normalized to MVC): Pectoralis major 61%, Triceps brachii 66%, Anterior deltoid 42%.",
+      "Standard push-up core muscle activation (normalized to MVC): Psoas 24%, External oblique 29%, Internal oblique 10%, Transverse abdominis 9%, Rectus abdominis 29%, Rectus femoris 10%, Erector spinae 3%.",
+      "Standard push-up upper-body stabilizer activation (normalized to MVC): Latissimus dorsi 11%, Biceps brachii 4%, Posterior deltoid 17%, Upper trapezius 45%, Middle trapezius 18%, Lower trapezius 27%, Serratus anterior 56%.",
+      "Hand width classifications: wide base (150% shoulder width), normal base (shoulder width), and narrow base (50% shoulder width)."
+    ],
+    "applies_to_fault": [
+      "elbows flaring out"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\The_Biomechanics_of_the_Push_up.pdf [part 2/6]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Shifting the torso forward relative to the hands increases pectoralis major activity and decreases triceps brachii activity.",
+      "Shifting the torso rearward relative to the hands slightly increases both pectoralis major and triceps brachii activity.",
+      "Elevating the feet increases the ground reaction force and overall load of the push-up.",
+      "Placing hands on an unstable surface (e.g., stability ball) increases triceps brachii and core activation compared to a stable surface at the same angle.",
+      "To maximize the muscle activation benefits of unstable surfaces, the hands should be placed on the unstable surface rather than the feet.",
+      "Elevating the feet above the hands provides a greater stimulus to the scapulothoracic stabilizing musculature than placing hands on a stability ball."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Push-up loads as a percentage of total body mass: hands elevated on a 61.0-cm box (41%), knee push-up (49%), hands elevated on a 30.5-cm box (55%), regular push-up (64%), feet elevated on a 30.5-cm box (70%), and feet elevated on a 61.0-cm box (74%).",
+      "BOSU push-ups increase the activity of the upper, mid, and lower trapezius fibers, but diminish serratus anterior activity.",
+      "EMG analysis failed to show any significant differences in muscle activation between the Perfect Push-up handgrips and standard push-ups."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\The_Biomechanics_of_the_Push_up.pdf [part 3/6]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Lower Back",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Countermovement push-ups (fast eccentric, reversal, and concentric phases without leaving the ground) are a safe and effective choice for explosive training because they maximize upper-body power without impact forces.",
+      "Clapping push-ups are highly effective for maximizing pectoralis major and triceps brachii muscle activation.",
+      "Advanced plyometric push-up variations should be avoided or used with extreme caution by individuals with pre-existing back issues due to high spinal loading.",
+      "Regress the push-up using wall push-ups or knee push-ups for individuals with limited upper-body strength.",
+      "Progress the push-up using single-arm/single-leg variations, weighted vests, elastic bands, chains, or unstable implements to increase difficulty."
+    ],
+    "common_mistakes": [
+      "Performing advanced plyometric push-ups, such as alternating plyometric push-ups on a medicine ball, when having pre-existing back or lumbar spine issues."
+    ],
+    "specific_findings": [
+      "An alternating plyometric push-up using a medicine ball has been shown to induce 6,224 N of compressive forces on the lumbar spine (6).",
+      "Clapping push-ups have been shown to outperform standard, slow eccentric, 1 hand on medicine ball, staggered hands, hands on 2 balls, 2 hands on 1 ball, rapid countermovement, 1 arm, and alternating plyometric push-up variations in pectoralis major and triceps brachii activity (6)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\The_Biomechanics_of_the_Push_up.pdf [part 4/6]"
+  }
+]

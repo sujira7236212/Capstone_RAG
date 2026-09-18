@@ -1,0 +1,105 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Stand with feet hip-width apart, keep the back and shoulders straight, and keep the rectus abdominis muscle tight during the lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Take a big step forward and slowly bend both knees until the back knee is just above the floor.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a single-leg lunge, the means of patellar flexion angle at tibiofemoral joint (TFJ) flexion angles of 0°, 30°, 60°, 90°, and 120° were 5.5°, 9.8°, 19.2°, 38.3°, and 64.0°, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "ACL-deficient (ACLD) groups showed significantly increased patellar lateral tilt during almost the entire knee flexion procedure of a single-leg lunge, which was even more pronounced in ACLD knees with medial meniscus deficiency.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The means of patellar lateral tilt angle at TFJ flexion angles of 0°, 30°, 60°, 90°, and 120° were 6.0°, 6.1°, 6.8°, 6.8°, and 8.4°, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The means of patellar lateral translation at TFJ flexion angles of 0°, 30°, 60°, 90°, and 120° were 8.3, 5.2, 5.6, 6.2, and 6.5 mm, respectively.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 4/9]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "insufficient back knee flexion",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Single-leg Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Maintain proper knee alignment during a single-leg lunge to avoid excessive knee valgus, which can alter patellar tracking.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Monitor knee flexion depth during lunges, particularly in individuals with knee injuries, as terminal knee flexion ranges can alter joint translation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knee to collapse into valgus (inward caving) during the single-leg lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Isolated ACLD knees showed significantly reduced internal tibial rotations of about 2–3° compared to ACL-intact knees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "ACLD knees with concomitant medial meniscus deficiency showed significantly increased valgus of about 2–5° compared to other groups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "ACLD knees with concomitant lateral meniscus deficiency showed significantly increased medial tibia translations compared to other groups at 60° of knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "ACLD knees with combined medial and lateral meniscus deficiency showed significantly increased medial tibia translations at terminal knee flexion ranges of 90–120°.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study enrolled 60 young subjects to evaluate patellofemoral and tibiofemoral joint kinematics during a single-leg lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An increased knee valgus angle causes the patella to rotate externally, leading to compression between the patella and the femoral trochlear groove.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Altered tibiofemoral joint kinematics lead to abnormal contact locations between the patella and the femur, which can cause adverse patellofemoral joint outcomes and subsequent cartilage degeneration.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 8/9]",
+    "applies_to_fault": []
+  }
+]

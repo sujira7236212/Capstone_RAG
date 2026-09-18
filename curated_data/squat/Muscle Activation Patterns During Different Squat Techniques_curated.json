@@ -1,0 +1,264 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Bilateral squats are highly effective for quadriceps strengthening during the descending, holding, and ascending phases.",
+      "Varying stance width and foot position does not significantly alter quadriceps activation, though a wide stance can increase adductor longus and gluteus maximus activity.",
+      "Deep squats with maximal knee flexion may increase gluteus maximus activation during the ascending phase.",
+      "Maintaining proper knee alignment is critical, as frontal (medial) and sagittal (anterior) malalignment alters muscle activation patterns of the quadriceps, hamstrings, and calves."
+    ],
+    "common_mistakes": [
+      "Medio-lateral (ML) malalignment (purposefully displacing the knee medially, similar to knee valgus).",
+      "Antero-posterior (AP) malalignment (purposefully displacing the knee anteriorly beyond control alignment).",
+      "Poorly performed squats that alter lower extremity alignment and gluteal activation."
+    ],
+    "specific_findings": [
+      "The study evaluated twenty-eight healthy, uninjured subjects (19 women, 9 men, 21.5 +/- 3 years, 170 +/- 8.4 cm, 65.7 +/- 11.8 kg).",
+      "Vastus lateralis, medialis, and rectus femoris activity decreased in the medio-lateral (ML) malaligned squat compared with the control squat.",
+      "In the antero-posterior (AP) malaligned squat, vastus lateralis, medialis, and rectus femoris activity decreased during initial descent and final ascent, but vastus lateralis and rectus femoris activation increased during initial ascent compared with the control.",
+      "The biceps femoris and gastrocnemius displayed increased activation during both malaligned squats compared with the control squat.",
+      "Normalized EMG data (MVIC) represented the squat cycle with 50% representing peak knee flexion and 0 and 99% representing fully extended."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 1/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Lower extremity alignment during bilateral squats significantly impacts muscle activation patterns and joint stabilization.",
+      "Peak patellofemoral contact forces typically occur around 90 to 100 degrees of knee flexion.",
+      "Deviating from neutral knee alignment near peak flexion alters muscle activation to stabilize the joint and attenuate forces.",
+      "Increased knee flexor (hamstring) activation during squats can increase ligamentous strain to stabilize the knee, potentially elevating injury risk.",
+      "Performing squats with heels lifted (such as the ballet plié squat) shifts weight to the toes and increases anterior displacement."
+    ],
+    "common_mistakes": [
+      "Medial knee displacement (knees collapsing inward or medio-lateral malalignment).",
+      "Lifting heels off the floor during a squat (antero-posterior malalignment)."
+    ],
+    "specific_findings": [
+      "Peak force during the squat is predicted to be around 90–100 degrees of knee flexion.",
+      "Decreased vastus lateralis and increased gastrocnemius muscle activation have been reported during squats with medial knee displacement compared with a neutrally aligned squat.",
+      "The study sample consisted of 28 healthy, recreationally active participants (19 women, 9 men; age: 21.5 ± 3 years, height: 170 ± 8.4 cm, weight: 65.7 ± 11.8 kg).",
+      "Electromyography (EMG) data were sampled at 2,000 Hz, and kinematic data were sampled at 144 Hz.",
+      "The lateral and medial gastrocnemius electrodes were placed at 20% of the distance of the shank from the knee joint line to the lateral malleolus."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 2/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Maintain knee alignment during squats to prevent knees from collapsing inward (mediolateral malalignment).",
+      "Keep heels flat on the floor during the squat to avoid lifting them (anteroposterior deviation).",
+      "Perform squats to 90 degrees of flexion for standard depth."
+    ],
+    "common_mistakes": [
+      "Knees collapsing inward (mediolateral malalignment) during a squat to 90 degrees of flexion.",
+      "Lifting heels off the floor during a squat to 90 degrees of flexion."
+    ],
+    "specific_findings": [
+      "Study protocol required performing 5 squats to 90 degrees of flexion with knees collapsing inward (ML malaligned).",
+      "Study protocol required performing 5 squats to 90 degrees of flexion while lifting heels off the floor."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 3/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Keep heels on the floor during the squat.",
+      "Keep knees in line with feet.",
+      "Sit back at your heels like you are sitting in a chair.",
+      "Push your knees out in the bottom of the squat.",
+      "Keep your toes pointing forward."
+    ],
+    "common_mistakes": [
+      "Medio-lateral malalignment of the knees.",
+      "Antero-posterior malalignment.",
+      "Increased anterior and medial knee displacement.",
+      "Excessive knee abduction and hip adduction during the squat descent and ascent."
+    ],
+    "specific_findings": [
+      "Control squats were performed to 90 degrees of flexion.",
+      "The medio-lateral (ML) malaligned squat resulted in significantly increased dorsiflexion, ankle inversion, knee flexion, knee abduction, and hip adduction during approximately 10-85% of the squat cycle compared with the control squat.",
+      "The squat cycle was defined as 100 points where 50% represents peak knee flexion, 0% and 99% represent full knee extension, 0-24% represents initial descent, 25-49% represents final descent, 50-74% represents initial ascent, and 75-99% represents final ascent.",
+      "Maximal voluntary isometric contractions (MVICs) for the vastus lateralis, vastus medialis, rectus femoris, and biceps femoris were collected with knees flexed to 90 degrees.",
+      "MVICs for the lateral and medial gastrocnemius were collected with the subject lying prone and in 10 degrees of plantarflexion."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 4/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Maintain proper medio-lateral (ML) and antero-posterior (AP) alignment during the squat to ensure optimal muscle recruitment.",
+      "Avoid malalignment to prevent significant decreases in quadriceps (vastus lateralis, vastus medialis, and rectus femoris) activation during key phases of the squat.",
+      "Ensure proper hip flexion throughout the squat cycle (especially between 14-71% of the movement) to maintain correct biomechanics.",
+      "Prevent compensatory muscle activation patterns, such as over-activation of the biceps femoris and lateral gastrocnemius, which occur during malaligned squats."
+    ],
+    "common_mistakes": [
+      "Medio-lateral (ML) malalignment during the squat cycle.",
+      "Antero-posterior (AP) malalignment during the squat cycle.",
+      "Decreased hip flexion during 14–71% of the squat cycle.",
+      "Allowing knee valgus or varus (ML malalignment) which reduces vastus medialis and vastus lateralis activation during the final ascent."
+    ],
+    "specific_findings": [
+      "Participants demonstrated significantly decreased hip flexion during 14–71% of the squat cycle compared with the control squat.",
+      "Vastus lateralis had decreased activation during final ascent (96–99%) of the squat cycle in the ML malaligned squat with a very large effect size of 26.21.",
+      "Vastus medialis activation decreased during the final phase of ascent (92–98%) of the squat cycle in the ML malaligned squat with a very large effect size of 23.78.",
+      "Rectus femoris activation decreased during the initial (15–18%) and final phase of descent (28–48%) and final phase of ascent (85–99%) of the squat cycle in the ML malaligned squat (Effect sizes: 24.90, 21.72).",
+      "Biceps femoris activation increased during the initial phase of descent (11–21%) and beginning of the final phase of descent (25–28%) during the ML malaligned squat (Effect sizes: 4.71, 13.14).",
+      "Lateral gastrocnemius was more active during the ML malaligned squat in the initial (51–69%) and final phase of ascent (71–82%, 85–90%, 96–99%) (Effect sizes: 3.90, 11.53).",
+      "Medial gastrocnemius was less active during the initial (1–7%) phase of the squat cycle."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 5/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Ankle Biomechanics",
+    "content_type": "Biomechanics and Muscle Activation",
+    "core_principles": [
+      "Proper antero-posterior and mediolateral alignment during a squat is critical for balanced muscle recruitment.",
+      "Antero-posterior malalignment alters joint kinematics, specifically increasing anterior knee displacement and decreasing lateral knee displacement.",
+      "Maintaining proper ankle dorsiflexion and hip flexion is necessary to avoid compensatory muscle activation patterns in the quadriceps, hamstrings, and calves.",
+      "Malalignment can lead to over-reliance on the biceps femoris and gastrocnemius throughout the squat movement."
+    ],
+    "common_mistakes": [
+      "Antero-posterior (AP) malalignment during the squat.",
+      "Mediolateral (ML) malalignment during the squat.",
+      "Insufficient ankle dorsiflexion during the squat cycle.",
+      "Excessive ankle inversion during the squat.",
+      "Decreased hip flexion and increased knee flexion (excessive forward knee travel) during the squat."
+    ],
+    "specific_findings": [
+      "During the ascending phases of the ML malaligned squat, the medial gastrocnemius was more active at 65–69%, 75–78%, and 85–94% of the squat cycle compared with the control squat.",
+      "AP malaligned squats demonstrated significantly less dorsiflexion during 21–95% of the squat cycle.",
+      "The AP malaligned squat increased knee flexion from 22 to 80% of the squat cycle and decreased hip flexion from 5 to 77% of the squat cycle.",
+      "Ankle inversion increased from 10 to 92% of the AP malaligned squat compared with the control squat.",
+      "Participants demonstrated decreased knee adduction during 15–75% of the AP malaligned squat.",
+      "Vastus lateralis had decreased activation in the AP malaligned squat during initial descent (2–13%) and final ascent (87–99%), but increased activation during initial ascent (59–66%).",
+      "Vastus medialis activation decreased during initial (11–31%) and final descent (39–48%), as well as final ascent (81–98%) of the AP malaligned squat.",
+      "Rectus femoris activation decreased during initial descent (8–21%) and final ascent (82–99%), but increased during initial ascent (52–71%) in the AP malaligned squat.",
+      "The biceps femoris had increased activation in all 4 phases of the AP malaligned squat (effect size range = 1.66, 7.94).",
+      "The lateral gastrocnemius activation increased during the AP malaligned squat during all phases of descent and ascent (1–95%)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 6/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "The primary purpose of the body weight squat in training and rehabilitation is to increase strength in the thigh, hip, and back musculature.",
+      "Quadriceps are most active during the concentric (ascending) phase of the exercise.",
+      "Proper sagittal and frontal plane alignment is crucial; malalignment significantly alters quadriceps activation.",
+      "Frontal plane (mediolateral) malalignment, such as medial knee displacement, decreases quadriceps activation and increases hamstring and gastrocnemius activity.",
+      "Anteroposterior (AP) malalignment increases vastus lateralis and rectus femoris activation during initial ascent, but decreases vastus medialis activation.",
+      "Increased coactivation of the gastrocnemii and hamstrings during malaligned squats acts as a stabilizing mechanism to protect the knee joint and decrease strain on the anterior cruciate ligament (ACL)."
+    ],
+    "common_mistakes": [
+      "Mediolateral (ML) malalignment, characterized by medial knee displacement or knee abduction.",
+      "Anteroposterior (AP) malalignment during the descent and ascent phases.",
+      "Allowing frontal plane deviations (knee valgus/inward collapse) which alters muscle activation strategies and reduces quadriceps targeting."
+    ],
+    "specific_findings": [
+      "Effect size was very large (3.24) for the difference in activation during the AP malaligned squat.",
+      "The medial gastrocnemius was more active during the AP malaligned squat during all phases of descent and ascent (0–99%) compared with the control squat.",
+      "Effect size was very large (6.24) for the difference in medial gastrocnemius activation during the AP malaligned squat.",
+      "Patellofemoral contact forces are high around 90 8 (degrees) of knee flexion, whereas tibiofemoral contact forces are largest when the knee is close to full extension."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 7/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Restricting anterior knee displacement during squats can increase thoracic motion and forces at the hip and back.",
+      "Excessive anterior knee displacement can lead to increased patellofemoral contact forces.",
+      "Anteroposterior (AP) malalignment in squats can increase quadriceps activation and eccentric activation of the knee flexors."
+    ],
+    "common_mistakes": [
+      "Restricting anterior knee displacement excessively.",
+      "Allowing too much anterior knee displacement.",
+      "Anteroposterior (AP) malalignment during the squat."
+    ],
+    "specific_findings": [
+      "The knee joint displaced approximately 0.17 m anteriorly compared with neutral in the malaligned squat condition."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 8/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Maintain neutral knee alignment during bilateral squats to optimize quadriceps targeting.",
+      "Avoid excessive medial and anterior knee displacement to prevent unnecessary cocontraction of the hamstrings and gastrocnemius.",
+      "Use simple verbal cues and feedback to reduce unwanted activation of the biceps femoris and gastrocnemius.",
+      "Utilize the bilateral squat as an assessment tool for clients presenting with tightness or pain in the hamstrings or gastrocnemius.",
+      "Exercise caution with squat variations that involve high anterior knee excursion, such as the ballet plié squat, due to altered joint demands."
+    ],
+    "common_mistakes": [
+      "Medial knee displacement (medio-lateral malalignment).",
+      "Excessive anterior knee displacement (antero-posterior malalignment).",
+      "Unwanted cocontraction of the knee flexors (biceps femoris) and gastrocnemius to stabilize the lower extremity during a malaligned squat."
+    ],
+    "specific_findings": [
+      "Medio-lateral (ML) malaligned squats increased anterior knee displacement by approximately 0.07 m.",
+      "Antero-posterior (AP) malaligned squats increased anterior knee displacement by approximately 0.15 m.",
+      "Malaligned squats increased biceps femoris activation during initial descent and increased gastrocnemius activation during initial and final ascent of the squat cycle."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 9/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Performance on the single-leg squat task can be used as an indicator of hip abductor muscle function.",
+      "Chronic ankle instability is associated with altered ankle kinematics and shank-rear-foot coupling.",
+      "The downward phase of squatting is characterized by distinct kinematic, kinetic, and electromyographic (EMG) patterns.",
+      "Dynamic squatting requires careful consideration of knee biomechanics."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 10/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Hamstrings co-contraction reduces internal rotation, anterior translation, and anterior cruciate ligament (ACL) load in weight-bearing flexion.",
+      "The gastrocnemius muscle acts as an antagonist of the anterior cruciate ligament (ACL).",
+      "Limiting ankle dorsiflexion range of motion alters lower extremity kinematics and muscle-activation patterns during a squat.",
+      "Knee position during a barbell squat significantly influences hip and knee torques.",
+      "Stance width and bar load influence leg muscle activity during the parallel squat.",
+      "Elevated gastrocnemius forces compensate for decreased hamstrings forces during the weight-acceptance phase of a single-leg jump landing."
+    ],
+    "common_mistakes": [
+      "Restricting ankle dorsiflexion range of motion during a squat.",
+      "Excessive medial knee displacement (knee valgus) during single-leg squats or landings."
+    ],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 11/12]"
+  }
+]

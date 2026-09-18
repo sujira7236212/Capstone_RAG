@@ -1,0 +1,34 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep the heel of the front leg on the ground at all times when lunging.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the heel of the front leg to lift off the ground during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The lunge trials were performed to a marked distance equaling exactly 75% of the subject's dominant leg length.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the front heel to lift off the ground during a lunge causes excessive patellofemoral stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Evaluation of automatic identification of events during the lunge exercise using kinematic data.pdf [part 2/5]",
+    "applies_to_fault": []
+  }
+]

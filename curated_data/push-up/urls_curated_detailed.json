@@ -1,0 +1,116 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Brace the core to maintain a neutral spine.",
+      "Lower the body with control until the chest approaches the floor.",
+      "Place the hands approximately shoulder-width apart.",
+      "Press back to the starting position while maintaining alignment.",
+      "Maintain a straight line from the head to the heels.",
+      "Establish a strong plank position before beginning the movement."
+    ],
+    "common_mistakes": [
+      "Excessive hip sagging",
+      "Elevated hips",
+      "Forward-head posture",
+      "Loss of core engagement",
+      "Collapsing trunk",
+      "Excessive shoulder elevation",
+      "Difficulty maintaining a neutral spine"
+    ],
+    "specific_findings": [],
+    "applies_to_fault": [
+      "neck craning forward"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide) [part 1/2]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body & Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Use incline push-ups for beginner clients to develop strength and movement competency before progressing to standard variations.",
+      "Maintain proper alignment to target intended muscles, ensure efficient movement patterns, and reduce discomfort from poor mechanics.",
+      "Adjust push-up difficulty by modifying body position, leverage, stability demands, or training volume.",
+      "Utilize the push-up as a movement assessment to evaluate upper-body strength, core stability, and the ability to maintain alignment under load."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide) [part 2/2]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-Up",
+    "focus_area": "Upper Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Start in a plank position with hands slightly wider than shoulder-width apart and feet together or hip-width apart.",
+      "Engage the core by drawing the navel toward the spine, maintaining a straight line from head to heels.",
+      "Lower the body by bending the elbows until the chest nearly touches the floor, keeping elbows at approximately 45 degrees from the body.",
+      "Press upward by extending the elbows, avoiding locking them out at the top to maintain continuous tension.",
+      "Descend until the chest nearly touches the floor or elbows bend to approximately 90 degrees, avoiding excessive depth or bouncing."
+    ],
+    "common_mistakes": [
+      "Allowing the hips to sag",
+      "Jerky movements or excessive momentum",
+      "Elbows flaring too wide",
+      "Not achieving adequate range of motion",
+      "Excessive forward lean",
+      "Bouncing at the bottom of the movement"
+    ],
+    "specific_findings": [
+      "Keep your elbows at approximately 45 degrees from your body.",
+      "Descend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility."
+    ],
+    "applies_to_fault": [
+      "elbows flaring out"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.nasm.org/resource-center/exercise-library/push-up)"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Maintain alignment of the kinetic chain checkpoints (ears, shoulders, hips, knees, and ankles) in a straight line during both the descent and ascent of the push-up.",
+      "Engage deep core stabilizers to prevent the lower back from arching or sagging.",
+      "Regress the movement to an elevated surface (such as a counter or wall) if postural integrity cannot be maintained on the floor.",
+      "Limit the range of motion to a depth that can be performed pain-free and without compensation."
+    ],
+    "common_mistakes": [
+      "Arching or sagging of the lower back (loss of core engagement).",
+      "Migration of kinetic chain checkpoints (ears, shoulders, hips, knees, ankles) out of alignment due to fatigue."
+    ],
+    "specific_findings": [],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://web.archive.org/web/20210118193018/https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement) [part 1/2]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Whole Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Regress the push-up by placing hands on a bench or knees on the floor to maintain movement integrity and posture.",
+      "Progress the push-up by elevating the feet to increase the challenge.",
+      "Maintain optimal body alignment and kinetic chain checkpoints (such as keeping the ears, shoulders, and low back aligned).",
+      "Control the speed of movement to avoid using momentum, which increases time under tension and stabilizer recruitment."
+    ],
+    "common_mistakes": [
+      "Using momentum or body swaying to complete a movement.",
+      "Allowing the shoulders to protract, head to move forward, or low back to arch due to excessive progression height or intensity."
+    ],
+    "specific_findings": [
+      "Push-up progression: Elevate feet onto 6 inch box",
+      "Lunge progression: start at half stride length, progress to ¾ stride length, and then to full stride length if control is maintained"
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://web.archive.org/web/20210118193018/https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement) [part 2/2]"
+  }
+]

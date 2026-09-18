@@ -1,0 +1,83 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Changing the hand formation from a supinated to a neutral grip alters the biomechanics of the arm during elbow flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During both neutral and supinated bicep curls, the biceps brachii is positioned optimally to perform elbow flexion efficiently.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a bicep curl with a pronated grip increases the activation of the brachioradialis because the biceps brachii is placed at a biomechanical disadvantage.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 5 male participants (Age 23.6 ± 1.1 yrs), the mean torque during the initial 40 degrees of elbow flexion was 34.22 ± 6.14 N*m for a neutral grip and 33.84 ± 7.56 N*m for a supinated grip, showing no statistically significant difference (p > .05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean power during the initial 40 degrees of elbow flexion was measured at 49.35 ± 8.61 watts for a neutral grip and 53.04 ± 14.70 watts for a supinated grip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The brachioradialis acts primarily as a synergist muscle during neutral and supinated elbow flexion at heavy loads.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using a pronated hand position puts the biceps brachii at a biomechanical disadvantage during elbow flexion, which significantly increases the workload and muscle activity required from the brachioradialis.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\bicep-curl\\THE COMPARISON OF MUSCLE ACTIVATION AND PERFORMANCE IN A NEUTRAL AND SUPINATED GRIP BICEP CURL.pdf [part 1/2]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "There is no significant difference in overall muscle activity and performance between a neutral grip and a supinated grip bicep curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the first 40 degrees of elbow flexion, both neutral and supinated grips produce similar average torque and power.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The mean value for power during the initial 40 degrees of elbow flexion was 49.35 ± 8.61 watts during a neutral grip bicep curl and 53.04 ± 14.70 watts during a supinated bicep curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean value for MVC% for the brachioradialis during the first 40 degrees of elbow flexion was 67.70 ± 9.08% during a neutral grip bicep curl and 63.84 ± 8.19% during a supinated bicep curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean value for the average EMG activity for the brachioradialis was 565.17 ± 163.80 μvolts during a neutral grip bicep curl and 541.80 ± 165.46 μvolts during a supinated bicep curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean value for average torque during the first 40 degrees of elbow flexion was 34.22 ± 6.14 N*m during a neutral grip bicep curl and 33.84 ± 7.56 N*m during a supinated grip bicep curl.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\THE COMPARISON OF MUSCLE ACTIVATION AND PERFORMANCE IN A NEUTRAL AND SUPINATED GRIP BICEP CURL.pdf [part 2/2]",
+    "applies_to_fault": []
+  }
+]

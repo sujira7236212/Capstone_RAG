@@ -1,0 +1,209 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Forward Lunge",
+    "focus_area": "Lower-Limb Muscle Activation",
+    "content_type": "Exercise Variation / Muscle Activation",
+    "core_principles": [
+      "Foot progression angle and stance width can be adjusted to target specific lower-limb muscles during the holding phase of a forward lunge.",
+      "To increase rectus femoris and vastus lateralis activation, a larger foot progression angle (e.g., 60 degrees) can be utilized.",
+      "To maximize gluteus medius activation, use a narrower stance width and a lower foot progression angle (0 degrees), as gluteus medius activation decreases with wider stances and larger foot progression angles.",
+      "To increase vastus lateralis and vastus medialis activation, standard or wide stances are preferred over a narrow stance.",
+      "Rectus femoris activation increases as stance width increases."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Study population consisted of thirty-six healthy adults completing five randomized within-participant lunge conditions.",
+      "Rectus femoris and vastus lateralis activation were higher at 60◦ than at 0◦ and 30◦ foot progression angles.",
+      "Vastus medialis activation was higher at 60◦ than at 30◦ foot progression angle only.",
+      "Gluteus medius activation was lower in standard and wide stances than in narrow stance.",
+      "Vastus lateralis and vastus medialis activation were higher in standard and wide stances than in narrow stance.",
+      "Biceps femoris and semitendinosus activation did not differ across foot progression angle or stance width conditions."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 1/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanical Demands",
+    "core_principles": [
+      "Forward lunges require the front limb to support body weight while maintaining coordinated control of the knee, hip, pelvis, and trunk.",
+      "The knee extensors control the flexed-knee position, hamstrings assist with lower-limb stabilization, and the gluteus medius contributes to pelvic and frontal-plane control.",
+      "Modifiable posture variables including step length, foot orientation, stance width, and external load can be adjusted to alter lower-limb muscle activation.",
+      "The holding phase of a forward lunge involves maintaining the body position at approximately 90 degrees of front knee flexion."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The holding phase requires participants to maintain body position at approximately 90◦ of front knee flexion"
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 2/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Perform the forward lunge holding phase with the knee flexed to 90 degrees.",
+      "Use a mirror positioned in front of the performer to provide visual feedback and assist with postural correction.",
+      "Perform the lunge barefoot or in socks to standardize foot contact and eliminate shoe-related variables.",
+      "Align the foot progression angle based on the line from the heel to the second toe relative to the forward direction of the lunge."
+    ],
+    "common_mistakes": [
+      "Restricted joint range of motion preventing knee flexion to 90 degrees.",
+      "Inability to properly align or position the foot progression angle."
+    ],
+    "specific_findings": [
+      "Inability to flex the knee to 90° or position the foot at a 60° foot progression angle was used as an exclusion criterion representing restricted joint range of motion.",
+      "The study enrolled 36 healthy adult participants (aged 18–40 years, BMI 18.5–24.9 kg/m2) to evaluate lower-limb muscle activation during the forward-lunge holding phase.",
+      "The dominant leg was determined using at least two of the following three tasks: (1) imagining kicking a ball placed in front of the participant, (2) stepping onto a platform positioned in front of the participant, and (3) stepping on an imaginary object on the ground."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 3/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Maintain an upright trunk throughout the movement.",
+      "Flex the front knee to approximately 90 degrees during the holding phase.",
+      "Avoid excessive medial or lateral knee displacement, ensuring the knee does not collapse inward.",
+      "Do not allow the rear knee to contact the floor during the lunge.",
+      "Keep both hands placed on the hips to maintain posture.",
+      "Standardize step length based on the individual's distance from the greater trochanter to the floor.",
+      "Align the heel-to-second-toe line with the designated foot progression angle."
+    ],
+    "common_mistakes": [
+      "Knee collapsing inward (excessive medial knee displacement).",
+      "Excessive trunk movement or marked trunk lean.",
+      "Pelvic rotation during the movement.",
+      "Allowing the rear knee to touch the floor.",
+      "Foot placement deviation from the designated alignment line."
+    ],
+    "specific_findings": [
+      "Step length was standardized for each participant according to the distance from the greater trochanter to the floor.",
+      "Metronome-paced trials lasted 6 s, with 2 s allocated to descent, 2 s to holding, and 2 s to ascent (60 beats/min).",
+      "A trial was repeated if trunk movement was visually estimated to exceed approximately 10◦.",
+      "A trial was repeated if foot placement deviated by more than 2 cm from the reference line marked on the floor.",
+      "Standard stance width was defined as equal to pelvic width, while narrow and wide stances were defined as one foot width narrower or wider than pelvic width, respectively.",
+      "Foot progression angles were set at 0◦, 30◦, and 60◦ using heel-to-second-toe alignment."
+    ],
+    "applies_to_fault": [
+      "back not straight"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 4/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Adjusting the foot progression angle during a forward lunge alters the activation of key lower-limb muscles.",
+      "To maximize gluteus medius activation, perform the lunge with a straight foot progression angle (0 degrees), as activation decreases as the foot turns outward (30 and 60 degrees).",
+      "To increase activation of the quadriceps (rectus femoris, vastus lateralis, and vastus medialis), a wider foot progression angle of 60 degrees can be utilized."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Study analyzed 36 healthy adults (17 male, 19 female, age 28.39 ± 3.07 years).",
+      "Significant main effect of foot progression angle on gluteus medius activation: F(2,70) = 118.93, p < 0.001, η2p = 0.773, with activation decreasing as the angle increased from SS-0° to SS-30° to SS-60°.",
+      "Significant main effect on rectus femoris activation: F(2,70) = 6.18, p = 0.003, η2p = 0.150, with greater activation in SS-60° than in SS-0° and SS-30°.",
+      "Significant main effect on vastus lateralis activation: F(2,70) = 7.13, p = 0.002, η2p = 0.169, with higher activation in SS-60° than in SS-0° and SS-30°.",
+      "Significant main effect on vastus medialis activation: F(2,70) = 4.03, p = 0.022, η2p = 0.103, with higher activation in SS-60° than in SS-30°."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 6/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Adjusting foot progression angle and stance width during a forward lunge alters the activation of key lower-limb muscles including the quadriceps and gluteus medius.",
+      "To maximize gluteus medius activation, use a narrow stance and keep the foot progression angle straight (0 degrees).",
+      "To increase quadriceps activation (rectus femoris, vastus lateralis, and vastus medialis), utilize a standard or wide stance rather than a narrow stance.",
+      "A wider foot progression angle (60 degrees) increases rectus femoris and vastus lateralis activation but significantly reduces gluteus medius activation."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "In a study of 36 participants, gluteus medius activation decreased significantly as foot progression angle increased: 12.00% ± 3.01% MVC at 0 degrees, 10.01% ± 2.33% MVC at 30 degrees, and 7.66% ± 2.30% MVC at 60 degrees.",
+      "Rectus femoris activation increased stepwise with stance width: 17.36% ± 5.69% MVC in narrow stance (NS-0), 18.99% ± 6.80% MVC in standard stance (SS-0), and 23.05% ± 9.09% MVC in wide stance (WS-0).",
+      "Gluteus medius activation was significantly higher in a narrow stance (13.23% ± 3.54% MVC) compared to standard (12.00% ± 3.01% MVC) and wide (11.80% ± 3.60% MVC) stances.",
+      "Vastus lateralis and vastus medialis activations were significantly lower in a narrow stance (33.16% ± 9.71% and 32.59% ± 12.52% MVC) compared to standard (35.63% ± 12.55% and 36.09% ± 15.99% MVC) and wide stances (36.44% ± 13.25% and 37.20% ± 16.71% MVC)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 7/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee and Hip",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Foot progression angle and stance width modify acute lower-limb EMG responses during the holding phase of forward lunges.",
+      "To maximize gluteus medius activation for hip and pelvic control, use a smaller foot progression angle, as gluteus medius activation decreases progressively as the foot progression angle increases.",
+      "To increase rectus femoris activation, increase the mediolateral stance width from narrow to standard or wide.",
+      "To ensure higher activation of the vastus lateralis and vastus medialis, utilize a standard or wide stance rather than a narrow stance.",
+      "A larger foot progression angle (60 degrees) increases knee extensor demand, specifically increasing rectus femoris and vastus lateralis activation."
+    ],
+    "common_mistakes": [
+      "Using an excessively turned-out foot progression angle (e.g., 60 degrees) when hip and pelvic stability (gluteus medius activation) is the primary goal.",
+      "Adopting an excessively narrow stance width, which reduces activation of the vastus lateralis and vastus medialis."
+    ],
+    "specific_findings": [
+      "Rectus femoris and vastus lateralis activation were higher in the 60 degree foot progression angle condition than in the 0 degree and 30 degree conditions.",
+      "Gluteus medius activation decreased progressively as foot progression angle increased (tested at 0, 30, and 60 degrees).",
+      "Rectus femoris activation increased progressively from the narrow to standard and wide stance conditions.",
+      "Vastus lateralis and vastus medialis activation were higher in the standard and wide stance conditions than in the narrow stance condition, but did not differ significantly between standard and wide.",
+      "Biceps femoris and semitendinosus activation did not differ significantly according to foot progression angle or stance width."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 8/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Stance width is a modifiable posture variable that alters gluteus medius activation during the holding phase of a forward lunge.",
+      "Performing a lunge with a narrow stance increases gluteus medius activation compared to standard and wide stances, likely due to reduced mediolateral support and an increased demand for frontal-plane hip and pelvic stabilization.",
+      "Foot progression angle and stance width modifications do not significantly alter hamstring (biceps femoris and semitendinosus) activation during the holding phase of a bodyweight lunge."
+    ],
+    "common_mistakes": [
+      "Using a narrow stance without sufficient hip/pelvic control, which reduces mediolateral stability and increases the difficulty of maintaining balance."
+    ],
+    "specific_findings": [
+      "Gluteus medius activation was higher in the narrow stance condition than in the standard and wide stance conditions, whereas the standard and wide stance conditions did not differ significantly from each other.",
+      "No significant between-condition differences in biceps femoris or semitendinosus activation were observed across either foot progression angle or stance-width conditions during the holding phase.",
+      "The findings are based on healthy adults who did not regularly exercise and performed bodyweight lunges under a holding-phase protocol (J. Clin. Med. 2026, 15, 5567)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 9/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Foot progression angle and stance width influence lower-limb muscle activation during the holding phase of forward lunges.",
+      "A greater foot progression angle (toeing out) increases rectus femoris and vastus lateralis activation, and can increase vastus medialis activation, while decreasing gluteus medius activation.",
+      "Stance width affects muscle activation in the knee extensors and gluteus medius.",
+      "Biceps femoris and semitendinosus activation are not significantly affected by changes in foot progression angle or stance width during the holding phase."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "A greater foot progression angle was associated with higher rectus femoris and vastus lateralis activation, a condition-specific increase in vastus medialis activation, and lower gluteus medius activation.",
+      "Stance width produced muscle-specific responses in the knee extensors and gluteus medius, whereas biceps femoris and semitendinosus did not differ across conditions."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf [part 10/13]"
+  }
+]

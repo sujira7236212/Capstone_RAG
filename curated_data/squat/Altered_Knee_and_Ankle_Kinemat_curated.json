@@ -1,0 +1,172 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat / Jump Landing",
+    "focus_area": "Knee and Ankle",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Squatting and jump-landing movements should primarily utilize sagittal-plane motion across all lower extremity joints to properly absorb and dissipate landing forces.",
+      "Adequate ankle dorsiflexion range of motion (DF-ROM) is required to allow forward rotation of the shank at the ankle when the foot is in contact with the ground.",
+      "Limitations in ankle dorsiflexion can restrict sagittal-plane motion at the knee and trunk, leading to compensatory frontal- and transverse-plane motions (such as medial knee displacement) that increase ACL injury risk.",
+      "Anterior cruciate ligament (ACL) loading is maximized when the knee is in a minimally flexed or hyperextended position combined with a large quadriceps contraction."
+    ],
+    "common_mistakes": [
+      "Landing in a relatively extended knee position (sagittal plane) combined with frontal- and transverse-plane loading.",
+      "Medial knee displacement (dynamic valgus collapse) during overhead squats (OHS), single-leg squats (SLS), or jump landings (JL).",
+      "Restricting forward rotation of the shank due to limited ankle dorsiflexion."
+    ],
+    "specific_findings": [
+      "Participants displaying medial-knee displacement during an overhead squat (OHS) had approximately 20% less nonweight-bearing (NWB), passive ankle dorsiflexion (DF) than those without displacement.",
+      "Medial-knee displacement observed during the OHS was corrected when a 2-in (5.08-cm) lift was placed under the heel.",
+      "The study utilized passive-ankle DF-ROM cutoff points of >= 15 degrees for the normal group and <= 5 degrees for the limited group.",
+      "Cited data from Moseley et al. classified ankle flexibility as normal (11.2 to 25.0 degrees) or inflexible (4.3 to 11.2 degrees)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 2/15]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Overhead Squat, Single-Leg Squat, and Jump Landing",
+    "focus_area": "Knee and Ankle",
+    "content_type": "Biomechanical Assessment",
+    "core_principles": [
+      "Perform the Overhead Squat (OHS) with feet shoulder-width apart, arms raised vertically overhead, and heels flat on the ground.",
+      "Perform the Single-Leg Squat (SLS) with hands on the hips and the non-stance leg raised in front with the foot approximately 10 cm off the ground.",
+      "For both OHS and SLS, squat to a depth of at least 60 degrees of knee flexion.",
+      "Maintain a controlled cadence during squats using a metronome set to 60 beats per minute (2 beats to descend, 2 beats to return to the starting position).",
+      "For the Jump Landing (JL) task, jump horizontally from a 30-cm box placed at a distance of 50% of the participant's standing height, land, and immediately perform a maximum-effort vertical jump without hesitation.",
+      "Ensure equal push-off from both feet when leaving the box during the jump landing task."
+    ],
+    "common_mistakes": [
+      "Failing to reach at least 60 degrees of knee flexion during the OHS or SLS.",
+      "Lifting the heels off the ground during the squatting motion.",
+      "Failing to maintain hands overhead during the OHS or hands on hips during the SLS.",
+      "Losing balance or failing to maintain the prescribed metronome cadence during the SLS.",
+      "Hesitating before the vertical jump phase of the Jump Landing task.",
+      "Unequal push-off from the feet when departing the box in the Jump Landing task."
+    ],
+    "specific_findings": [
+      "Non-weight-bearing dorsiflexion range of motion (NWB DF-ROM) test demonstrated an intraclass correlation coefficient [3,k] of 0.988 and a standard error of measurement of 0.888.",
+      "Weight-bearing lunge (WBL) test demonstrated an intraclass correlation coefficient [3,k] of 0.953 and a standard error of measurement of 1.618.",
+      "The mean knee-flexion angle in the starting position was 8 degrees for the OHS and 12 degrees for the SLS.",
+      "The Jump Landing task utilized a 30-cm box placed at a distance of exactly 50% of the participant's standing height.",
+      "The squatting cadence was standardized using a metronome set at 60 beats/min, requiring 2 beats for descent and 2 beats for ascent."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 5/15]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle and Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Limited ankle dorsiflexion range of motion (DF-ROM) during weight-bearing lunge (WBL) assessments is associated with altered knee and ankle kinematics during squatting tasks.",
+      "Individuals with limited ankle DF-ROM exhibit reduced knee-flexion displacement and reduced ankle-dorsiflexion displacement during both overhead squats (OHS) and single-leg squats (SLS).",
+      "Weight-bearing lunge (WBL) measures are more indicative of dynamic movement limitations than non-weight-bearing (NWB) ankle DF-ROM measures.",
+      "Adequate ankle mobility is essential for achieving optimal squat depth (peak knee flexion) and proper lower extremity joint displacement."
+    ],
+    "common_mistakes": [
+      "Reduced squat depth (less peak knee flexion) caused by restricted ankle mobility.",
+      "Inability to achieve sufficient ankle dorsiflexion displacement during the descent phase of squats."
+    ],
+    "specific_findings": [
+      "During the Overhead Squat (OHS), the normal group (WBL >= 44.02 degrees) displayed greater knee-flexion displacement (mean difference, 14.94 degrees; P = .001) and greater ankle DF displacement (mean difference, 7.89 degrees; P < .001) compared with the limited group (WBL <= 44.01 degrees).",
+      "During the Single-Leg Squat (SLS), the normal group demonstrated greater knee-flexion displacement (mean difference, 12.39 degrees; P = .001), greater ankle DF displacement (mean difference = 6.44 degrees; P < .001), and greater knee-varus displacement (mean difference, 5.50 degrees; P = .048) than the limited group.",
+      "The normal group demonstrated greater peak knee flexion during the OHS (normal, 112.71 +/- 13.48 degrees; limited, 97.45 +/- 14.34 degrees; mean difference, 15.26 degrees; P = .001).",
+      "The normal group demonstrated greater peak knee flexion during the SLS (normal, 88.71 +/- 12.73 degrees; limited, 77.09 +/- 10.20 degrees; mean difference, 11.62 degrees; P = .003).",
+      "70% (28 of 40) of participants remained in the same group (normal or limited) for both ankle DF-ROM assessments (NWB and WBL).",
+      "No significant differences were observed between the NWB DF-ROM groups during the OHS, SLS, or JL tasks for any joint-displacement variable."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 7/15]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Limited ankle dorsiflexion range of motion (DF-ROM) during a weight-bearing lunge (WBL) alters knee- and ankle-joint kinematics during squatting.",
+      "Individuals with limited ankle DF-ROM display reduced knee-flexion displacement during squatting tasks.",
+      "Individuals with limited ankle DF-ROM display reduced ankle-dorsiflexion displacement during squatting tasks."
+    ],
+    "common_mistakes": [
+      "Reduced knee flexion during squatting due to limited ankle mobility.",
+      "Reduced ankle dorsiflexion displacement during squatting."
+    ],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 8/15]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Ankle dorsiflexion range of motion directly impacts knee flexion displacement during both overhead and single-legged squats.",
+      "Individuals with limited ankle dorsiflexion exhibit significantly reduced knee flexion (shallower squat depth) and reduced ankle dorsiflexion displacement during squatting tasks.",
+      "The weight-bearing lunge assessment is a strong indicator of kinematic limitations during functional squatting patterns."
+    ],
+    "common_mistakes": [
+      "Achieving insufficient squat depth (reduced knee flexion) due to restricted ankle mobility.",
+      "Inability to achieve adequate ankle dorsiflexion displacement during overhead or single-legged squats."
+    ],
+    "specific_findings": [
+      "In the weight-bearing lunge assessment for overhead squats, the normal group (n = 20) achieved knee flexion of 103.94 +/- 11.79 degrees compared to 89.00 +/- 14.62 degrees in the limited group (n = 20) (P < 0.001, Effect Size = 1.31).",
+      "In the weight-bearing lunge assessment for overhead squats, ankle dorsiflexion displacement was -32.03 +/- 6.36 degrees for the normal group versus -24.14 +/- 4.27 degrees for the limited group (P < 0.001, Effect Size = 1.49).",
+      "For single-legged squats, the weight-bearing lunge normal group (n = 20) achieved knee flexion of 76.36 +/- 11.02 degrees compared to 63.97 +/- 10.55 degrees in the limited group (n = 20) (P < 0.001, Effect Size = 1.51).",
+      "For single-legged squats, ankle dorsiflexion displacement in the weight-bearing lunge assessment was -30.67 +/- 5.67 degrees for the normal group versus -24.23 +/- 4.49 degrees for the limited group (P < 0.001, Effect Size = 1.86).",
+      "Knee varus displacement during single-legged squats differed significantly between normal (13.60 +/- 10.28 degrees) and limited (8.10 +/- 6.32 degrees) weight-bearing lunge groups (P < 0.05, Effect Size = 0.66)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 9/15]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat and Jump Landing",
+    "focus_area": "Knee and Ankle",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Restricted ankle dorsiflexion range of motion (DF-ROM) alters lower extremity movement patterns during functional tasks like squatting.",
+      "Weight-bearing lunge (WBL) assessments are more effective than nonweight-bearing (NWB) assessments for identifying ankle DF-ROM limitations that impact squatting kinematics.",
+      "Ankle DF-ROM restrictions do not appear to alter lower extremity kinematics during jump-landing tasks that involve an immediate maximal vertical jump recoil.",
+      "Visual observation of medial knee displacement (knee-valgus collapse) is associated with limited NWB ankle DF-ROM, but limited ankle DF-ROM does not guarantee altered knee movement patterns."
+    ],
+    "common_mistakes": [
+      "Medial knee displacement (knee-valgus collapse) during double-legged squats and single-leg squats.",
+      "Greater knee-varus displacement during single-leg squats (SLS) associated with restricted ankle mobility."
+    ],
+    "specific_findings": [
+      "Group differences in knee and ankle kinematics during squatting were only present when identifying participants as limited based on WBL ankle DF-ROM measurements.",
+      "Fong et al reported 14.386 5.58 of DF-ROM assessed with the knee extended in healthy, physically active individuals.",
+      "The study's NWB DF-ROM values with the knee extended were 1.63 86 2.588 for the limited group and 16.78 86 2.168 for the normal group.",
+      "The jump-landing task utilized a landing from a 30-cm box followed by an immediate countermovement jump for maximal height.",
+      "The study compared two groups of participants: Normal (n = 20) and Limited (n = 20)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 10/15]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Ankle",
+    "content_type": "Biomechanics and Injury Prevention",
+    "core_principles": [
+      "Limited weight-bearing lunge (WBL) ankle dorsiflexion range of motion (DF-ROM) restricts sagittal-plane displacement at both the knee and ankle, leading to smaller peak knee-flexion angles and shallower squat depth.",
+      "A heel lift can improve knee mechanics and eliminate medial knee displacement by increasing the tibial angle in the anterior direction.",
+      "Limited ankle dorsiflexion can cause compensatory movements in the foot and ankle, such as excessive rearfoot pronation, calcaneal eversion, and talar-head adduction/plantar flexion, forcing the foot to move in the frontal plane to achieve stability.",
+      "Greater ankle dorsiflexion during weight-bearing tasks is associated with increased knee-varus displacement during single-legged squats, which helps avoid risky knee-valgus alignment.",
+      "Decreased knee flexion during squatting or landing tasks increases ACL loading by creating a larger patellar tendon-tibial shaft angle, which produces greater anterior tibial shear force during quadriceps contraction.",
+      "An erect posture (decreased knee flexion) reduces the ability of the hamstrings to offset anterior tibial shear forces and protect the ACL."
+    ],
+    "common_mistakes": [
+      "Medial knee displacement (knee valgus) during double-legged squats.",
+      "Excessive rearfoot pronation, calcaneal eversion, and talar-head adduction/plantar flexion due to restricted sagittal-plane ankle mobility.",
+      "Squatting with restricted knee-flexion displacement (an excessively erect posture) caused by limited ankle dorsiflexion."
+    ],
+    "specific_findings": [
+      "A 2-in (5.08-cm) heel lift eliminated medial knee displacement during a double-legged squat.",
+      "The heel lift decreased muscle activation during the descent phase of the squat in the gastrocnemius by 32% and the tibialis anterior by 55%.",
+      "The effect sizes for differences in knee and ankle displacements between normal and limited weight-bearing lunge (WBL) groups ranged from 1.31 to 1.86.",
+      "Placing a 12 8 wedge (12-degree wedge) under the participant's forefoot to restrict dorsiflexion resulted in reduced knee-flexion displacement during a double-legged squat.",
+      "Weight-bearing lunge (WBL) ankle DF-ROM predicted anterior-reach distance during the Star Excursion Balance Test with an R^2 value of 0.28 (R 2 ¼ 0.28)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 11/15]"
+  }
+]

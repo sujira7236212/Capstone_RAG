@@ -1,0 +1,456 @@
+{
+  "_readme": [
+    "Golden set for retrieval: for every fault error_taxonomy.py can raise, which KB chunks",
+    "the gate SHOULD let through (must_hit) and which it MUST NOT (must_not_hit).",
+    "Patterns are case-insensitive substrings matched against the chunk text",
+    "(metadata['text']); a pattern counts as hit when any kept chunk contains it.",
+    "Picked by hand from the top-14 candidates per (fault, kind) in kb_local_curated_v4",
+    "on 2026-09-11 (all-MiniLM-L6-v2, taxonomy query). Chunks in the top-14 that are",
+    "neither listed are 'neutral': off-topic filler that costs context space but does not",
+    "teach the model something false about this fault.",
+    "must_not_hit is the important half: every entry is a chunk the v6 gate actually put",
+    "into the context under this fault's label (or sits next to the cut-off), and that",
+    "describes a DIFFERENT fault - the model then cites it as if it explained this one.",
+    "When the KB is re-curated (v5) wording changes; add the new phrasing to must_hit rather",
+    "than replacing, so the same file can score v4 and v5 side by side.",
+    "principle patterns added 2026-09-11 (step 1c) when principle retrieval per error was introduced; must_not_hit there = a principle that would REINFORCE this fault (e.g. 'Do not allow the rear knee to contact the floor' under insufficient back knee flexion) or contradict the fix.",
+    "Scored by eval/eval_retrieval.py."
+  ],
+  "faults": [
+    {
+      "exercise_id": "squat",
+      "code": "butt wink",
+      "must_hit": {
+        "mistake": [
+          "Lumbar flexion (butt wink)",
+          "Posterior pelvic tilt ('Butt Wink')",
+          "Tailbone tucking",
+          "neutral spine curvature to flex during a deep squat",
+          "Losing lumbar lordosis during the squat"
+        ],
+        "finding": [
+          "Flexing at the spine before",
+          "flexes at the spine before 120 degrees of hip flexion"
+        ],
+        "principle": [
+          "neutral pelvic tilt",
+          "neutral, slightly lordotic spine",
+          "maintain a slight lordotic posture",
+          "neutral, lordotic lumbar position"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "inadequate thoracic extension",
+          "Excessive trunk flexion (forward lean)",
+          "malalignment",
+          "Excessive external femoral rotation"
+        ],
+        "finding": [
+          "Control squats were performed to 90 degrees",
+          "knees are bent at around a 90-degree angle",
+          "Overly restricted tibial translation"
+        ],
+        "principle": [
+          "Perform squats to 90 degrees of flexion for standard depth",
+          "downward phase of squatting is characterized"
+        ]
+      },
+      "notes": "Finding 'Flexing at the spine before 1208' is the right content with an OCR error (120 degrees) - a curate-side fix, not a gate issue. 'Control squats were performed to 90 degrees' was kept by v6 and is pure protocol noise."
+    },
+    {
+      "exercise_id": "squat",
+      "code": "knee valgus",
+      "must_hit": {
+        "mistake": [
+          "Medial knee displacement (knee valgus)",
+          "Knees collapsing inward (valgus collapse)",
+          "Knee valgus (inward knee collapse)",
+          "knock-kneed",
+          "Knee valgus (knees caving inward)",
+          "knees to cave inward",
+          "knees to collapse inward, also known as medial knee displacement"
+        ],
+        "finding": [
+          "control knee valgus and foot pronation",
+          "heel lift eliminated medial knee displacement",
+          "squats with medial knee displacement compared with a neutrally aligned squat",
+          "medial aspect of either knee passes the medial malleolus"
+        ],
+        "principle": [
+          "Keep knees in line with feet",
+          "prevent knees from collapsing inward",
+          "knee alignment over the second and third toes",
+          "Avoiding medial knee displacement ensures"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "Squatting too shallow",
+          "Lumbar flexion (butt wink)",
+          "Excessive trunk flexion"
+        ],
+        "finding": [
+          "displaced approximately 0.17 m anteriorly",
+          "Antero-posterior (AP) malaligned squats increased anterior knee displacement",
+          "Compressive forces in the knee may be higher in a partial squat",
+          "Knee pain was usually induced when squatting with 75-90 degrees"
+        ],
+        "principle": [
+          "Restricting anterior knee displacement",
+          "Squatting to deeper depths"
+        ]
+      },
+      "notes": "Best-covered fault in the KB (8 correct mistake chunks within 0.23). The 0.17 m finding is about ANTERO-POSTERIOR malalignment (knee forward), not valgus - v6 kept it as the #1 finding."
+    },
+    {
+      "exercise_id": "squat",
+      "code": "partial squat",
+      "must_hit": {
+        "mistake": [
+          "Squatting too shallow",
+          "insufficient squat depth"
+        ],
+        "finding": [
+          "Compressive forces in the knee may be higher in a partial squat",
+          "A deep squat is defined by a knee joint angle",
+          "decrease the compressive load on your knee joint"
+        ],
+        "principle": [
+          "at least parallel to the ground",
+          "femurs are slightly past parallel to the ground",
+          "at least parallel with the ground"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "Medial knee displacement",
+          "Knees collapsing inward",
+          "valgus",
+          "Forcing squat depth beyond",
+          "Dropping too quickly",
+          "Losing contact between the back"
+        ],
+        "finding": [
+          "keeping the squat to less than 90 degrees is desirable",
+          "heel lift eliminated medial knee displacement",
+          "Control squats were performed to 90 degrees",
+          "displaced approximately 0.17 m anteriorly",
+          "exactly 60 degrees of knee flexion"
+        ],
+        "principle": [
+          "Squat depth should be limited"
+        ]
+      },
+      "notes": "Only ONE mistake chunk in v4 states the fault (0.258); the next candidates are 0.42+ and about knee valgus, which v6's best+0.20 margin let through. 'Utilizing shallow squat depths (0-30 degrees) when trying to target mid-range quadriceps' is left neutral: about shallow squats, but a programming point rather than this fault."
+    },
+    {
+      "exercise_id": "push-up",
+      "code": "hip sag",
+      "must_hit": {
+        "mistake": [
+          "hips to sag",
+          "hip sagging",
+          "sagging of the lower back",
+          "body in a straight line",
+          "low back to arch or sag during the push-up"
+        ],
+        "finding": [
+          "Abdominal muscles dominate contributions to vertebral joint stiffness"
+        ],
+        "principle": [
+          "Abdominal muscles are the primary contributors to maintaining vertebral joint stiffness",
+          "Maintain a rigid spine and lower-extremity segments throughout the push-up"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "Elevated hips",
+          "scapulothoracic stability",
+          "Flaring the elbows",
+          "plyometric"
+        ],
+        "finding": [
+          "plyometric push-up",
+          "upper trapezius/serratus anterior ratio",
+          "Donkers"
+        ],
+        "principle": [
+          "percentage of body mass supported",
+          "traditional push-up is more demanding"
+        ]
+      },
+      "notes": "'Elevated hips' (0.401) is the opposite fault and sits just outside v6's cut-off. Knee push-up loading (54%/62%) left neutral - usable as a regression tip. Principle 'push-up ... can improve joint stability and proprioception' (0.344) is generic filler, not a wrong fault - counted neutral."
+    },
+    {
+      "exercise_id": "push-up",
+      "code": "partial range of motion",
+      "must_hit": {
+        "mistake": [
+          "correct depth of 90 degrees elbow flexion",
+          "correct depth of 90 degrees of elbow flexion"
+        ],
+        "finding": [
+          "correct depth for a push-up repetition was defined as 90 degrees",
+          "correct depth of 90 degrees was not acquired",
+          "chest nearly touches the floor"
+        ],
+        "principle": [
+          "depth of 90 degrees of elbow flexion"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "90 degrees of internal rotation",
+          "Flaring the elbows",
+          "Elbows flaring too wide",
+          "Over-reliance on a single push-up variation",
+          "wall push-ups"
+        ],
+        "finding": [
+          "Donkers",
+          "90 degrees of internal rotation",
+          "Rock climbing",
+          "planche"
+        ],
+        "principle": [
+          "Forearm rotation",
+          "plyometric",
+          "Narrow-width push-ups"
+        ]
+      },
+      "notes": "One correct mistake + one correct finding, both from the same 10-week suspension paper. v6 also kept 'forearm in 90 degrees of internal rotation' (matched on '90 degrees') and the Donkers elbow-force finding, neither about depth."
+    },
+    {
+      "exercise_id": "lunge",
+      "code": "excessive forward trunk lean",
+      "must_hit": {
+        "mistake": [
+          "marked trunk lean",
+          "Leaning the torso forward",
+          "Forward torso lean during the downward phase",
+          "gaze downward, which increases trunk flexion",
+          "upper torso and lower leg to shift too far forward during the lunge"
+        ],
+        "finding": [
+          "upright trunk tends to create",
+          "downward direction of gaze increases trunk flexion"
+        ],
+        "principle": [
+          "Maintain an upright trunk",
+          "Keep the upper body upright",
+          "forward trunk lean increases biceps femoris"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "partially flexed hip position",
+          "center of gravity excessively toward the direction of lateral resistance",
+          "Lateral dropping or mediolateral rotation of the hips",
+          "rear knee to flex",
+          "eccentric hamstring"
+        ],
+        "finding": [
+          "back foot suspended",
+          "eccentric hamstring activity",
+          "Forces at the hip during a forward lunge are 1.25"
+        ],
+        "principle": [
+          "slight forward lean of the trunk distributes the load",
+          "jumping forward lunge"
+        ]
+      },
+      "notes": "'Spinal flexion (rounding the back)' (0.363, kept by v6) left neutral: adjacent fault - rounding changes torso angle too - but not the same one. 'Forward torso lean during the downward phase to compensate...' (0.396) is the most useful chunk and v6 did NOT keep it (cut by top-3)."
+    },
+    {
+      "exercise_id": "lunge",
+      "code": "shallow lunge",
+      "must_hit": {
+        "mistake": [
+          "step is too short",
+          "short step length",
+          "insufficient step length during the lunge"
+        ],
+        "finding": [
+          "length of the lunge is about 2x hip width",
+          "short step length results in joint forces almost two times higher"
+        ],
+        "principle": [
+          "Step length",
+          "knee flexed to 90 degrees",
+          "front knee should be flexed to approximately 90 degrees"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "rear knee to flex during the stride-stance",
+          "Medial or lateral movement of the knees",
+          "Knee collapsing inward",
+          "trailing knee to impact the ground",
+          "Spinal flexion",
+          "ACL rehabilitation",
+          "medial tibial translation",
+          "backward lunge due to unfamiliarity"
+        ],
+        "finding": [
+          "ACLD",
+          "forward lunge compared to the backward lunge",
+          "forward lunge than the backward lunge",
+          "larger in the forward lunge",
+          "greater in the forward lunge",
+          "Higher patellofemoral joint loading was shown during the forward lunge"
+        ],
+        "principle": [
+          "partial lunge by lowering the body to approximately 50 degrees",
+          "backward lunges",
+          "injured populations"
+        ]
+      },
+      "notes": "Both useful findings (2x hip width rule, short step = 2x joint force) sit at 0.412/0.421 - just OUTSIDE the finding cap of 0.40 - while the protocol line 'Partial lunge was performed to 50 degrees' (0.306, neutral) gets in. Mistake side: v6 kept 'rear knee to flex during the stride-stance' (0.367), a different fault."
+    },
+    {
+      "exercise_id": "lunge",
+      "code": "insufficient back knee flexion",
+      "must_hit": {
+        "mistake": [
+          "preventing knee flexion to 90 degrees",
+          "failing to lower the rear knee to ankle height"
+        ],
+        "finding": [
+          "back knee ending at approximately a 90-degree angle",
+          "target depth for the trailing knee was defined as 2 to 3 cm short of contacting the ground"
+        ],
+        "principle": [
+          "until the back knee is just above the floor",
+          "posterior legs should achieve a knee joint range of motion of 0 to 90 degrees"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "rear knee to flex during the stride-stance",
+          "Medial or lateral movement of the knees",
+          "Spinal flexion (rounding the back)",
+          "medial tibial translation",
+          "Knee collapsing inward",
+          "Forward knee movement during the downward phase",
+          "partially flexed hip position",
+          "Front knee collapsing inward",
+          "ACL rehabilitation",
+          "backward lunge due to unfamiliarity"
+        ],
+        "finding": [
+          "Rotating the back knee or foot outward",
+          "forward lunge compared to the backward lunge",
+          "forward lunge than the backward lunge",
+          "larger in the forward lunge",
+          "greater in the forward lunge",
+          "ACLD",
+          "Higher patellofemoral joint loading",
+          "forward knee experiences more torque"
+        ],
+        "principle": [
+          "Do not allow the rear knee to contact the floor",
+          "Backward lunges",
+          "partial lunge by lowering the body to approximately 50 degrees",
+          "Lateral lunges"
+        ]
+      },
+      "notes": "KNOWN DATA GAP: no chunk in v4 describes this fault. The single must_hit mistake (0.408) is a generic ROM line, the finding is the target angle for the back knee. v6's #1 mistake 'Allowing the rear knee to flex during the stride-stance lunge' is the OPPOSITE instruction for a different variant. Expect hit=0 until KB v5; the score here measures whether the gate stays quiet instead of substituting wrong chunks."
+    },
+    {
+      "exercise_id": "bicep-curl",
+      "code": "elbow flare",
+      "must_hit": {
+        "mistake": [
+          "elbows to flare outward",
+          "elbows to drift away from the body",
+          "elbows to drift forward or away from the waist",
+          "elbows to pull forward",
+          "elbows to move from their stationary position near the waist"
+        ],
+        "finding": [],
+        "principle": [
+          "Keep elbows tucked at the sides",
+          "Keep the elbows close to the body",
+          "Keep elbows fixed at the sides",
+          "elbows must be kept close to the body"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "Excessive swinging of the body",
+          "Failing to fully extend the elbows",
+          "preacher curls",
+          "Shoulder elevation",
+          "full elbow extension"
+        ],
+        "finding": [
+          "incline bench",
+          "concentration curl",
+          "preacher curls",
+          "preacher curl",
+          "Bayesian"
+        ],
+        "principle": [
+          "neutral wrist position",
+          "preacher curl machine",
+          "Brace the core"
+        ]
+      },
+      "notes": "Four correct mistake chunks within 0.29. No finding in v4 measures this fault (best 0.442) - the correct result for the finding column is kept=0. 'Failing to keep the upper arm stationary' left neutral (drifting elbow = moving upper arm)."
+    },
+    {
+      "exercise_id": "bicep-curl",
+      "code": "partial range of motion",
+      "must_hit": {
+        "mistake": [
+          "full elbow extension",
+          "full range of motion at the elbow joint",
+          "fully extend the elbows at the bottom",
+          "limited range of motion",
+          "complete arm extension at the bottom",
+          "elbow in full extension",
+          "full range of motion of the elbow joint",
+          "restrict the muscle to short muscle lengths"
+        ],
+        "finding": [],
+        "principle": [
+          "full range of motion from complete arm extension",
+          "full range of motion from full elbow extension",
+          "Start the bicep curl with the elbow in full extension",
+          "Start the movement with the elbow joint in full extension"
+        ]
+      },
+      "must_not_hit": {
+        "mistake": [
+          "upper arm stationary",
+          "elbows to flare outward",
+          "elbows to drift away",
+          "Excessive swinging of the body",
+          "Shoulder elevation",
+          "elbows to pull forward",
+          "preacher curls",
+          "Swinging the elbows"
+        ],
+        "finding": [
+          "incline bench",
+          "concentration curl",
+          "cable curls",
+          "preacher curls",
+          "preacher curl",
+          "initial 40 degrees of elbow flexion",
+          "BFR"
+        ],
+        "principle": [
+          "Keep elbows tucked",
+          "preacher curl machine",
+          "achieve similar hypertrophy in the elbow flexors",
+          "achieve similar increases in elbow flexor muscle thickness",
+          "can be sufficient to promote optimal muscle growth",
+          "can stimulate muscle hypertrophy even if the initial portion of the range of motion is omitted"
+        ]
+      },
+      "notes": "Six correct mistake chunks exist (0.352-0.460) but ALL rank below four wrong ones (upper arm 0.272, flare 0.313/0.316, momentum 0.335): the taxonomy query, not the KB, is the problem for this fault - a gate cannot fix rank order. No finding measures this fault; 'incline bench 45-60 degrees' (0.370) is what v6 cited as a 'pro tip'."
+    }
+  ]
+}

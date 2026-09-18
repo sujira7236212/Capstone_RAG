@@ -1,0 +1,226 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The anterior limb in both in-line and traditional lunges generates higher biceps femoris and gluteus maximus muscle activation compared to the posterior limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Vastus lateralis muscle activation remains similar regardless of whether an in-line or traditional lunge is performed, and does not differ significantly between the anterior and posterior leg positions.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 15 young, healthy, resistance-trained men (25 ± 5 years), biceps femoris activity was significantly greater in the anterior compared to the posterior position for the in-line lunge (p = 0.003) and the traditional lunge (p < 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus maximus activity was significantly greater in the anterior compared to the posterior position for both the in-line lunge (p < 0.001) and the traditional lunge (p < 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Medio-lateral balance was significantly greater in the in-line exercise in the anterior limb compared to the traditional lunge (p = 0.001).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\lunge_knowledge.pdf [part 1/7]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "In a traditional lunge, the feet are positioned hip-width apart to distribute weight and maintain stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the lunge, the forward knee should maintain a neutral alignment over the second metatarsal.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An in-line lunge variation positions the feet at 50% of hip-width apart, which narrows the base of support and increases the balance challenge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study's experimental protocol involved 15 young, healthy, resistance-trained men with a 10RM of 52.9 ± 14.4 kg in the traditional lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the study's specific lunge protocol, the forward knee was flexed to 45 degrees while the rear knee remained in full extension with both heels in contact with the floor.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Reducing the foot distance to 50% of hip-width apart narrows the base of support, which shifts motor responses to a hip strategy and increases stress on the hip adductors and abductors.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\lunge_knowledge.pdf [part 2/7]",
+    "applies_to_fault": [
+      "insufficient back knee flexion",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The traditional lunge provides greater mediolateral stability compared to the in-line lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The anterior leg in both traditional and in-line lunges experiences significantly greater activation of the biceps femoris and gluteus maximus compared to the posterior leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stance width differences between traditional and in-line lunges do not significantly alter the activation of the vastus lateralis, biceps femoris, gluteus maximus, or gluteus medius.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Mediolateral balance displacement was significantly greater in the anterior limb during the in-line lunge (19.4 ± 4.1 cm) compared to the traditional lunge (14.8 ± 2.9 cm).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Biceps femoris activity was significantly greater in the anterior leg compared to the posterior leg for both the in-line lunge (53% greater) and traditional lunge (68.3% greater).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus maximus activity was significantly greater in the anterior leg compared to the posterior leg for both the in-line lunge (87.7% greater) and traditional lunge (88.3% greater).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing an in-line lunge increases mediolateral balance displacement, which increases the stability challenge during the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\lunge_knowledge.pdf [part 4/7]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The lunge exercise requires coordination of both monoarticular and biarticular muscles across the hip and knee joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Both the anterior and posterior legs should achieve a knee joint range of motion of 0 to 90 degrees during the lunge.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "A wider stance (traditional lunge) provides a more stable base of support compared to a narrower stance (in-line lunge), which demands greater mediolateral balance control.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The highest muscle activation in the anterior leg was observed in the vastus lateralis, reaching a delta percentage of approximately 53.4% in both in-line and traditional lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gluteus maximus showed lower muscle activity compared to the biceps femoris, with a delta percentage of approximately 6% in both lunge variations.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The knee joint range of motion is similar in both the anterior and posterior leg positions, spanning 0 to 90 degrees.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "The in-line lunge showed 23.51% greater mediolateral balance demands compared to the traditional lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A narrower base of support increases mediolateral instability, forcing the body to establish active muscular constraints to minimize joint degrees of freedom and stabilize excessive mobility.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Entering the sticking region of the lunge puts the anterior limb muscles in a poor mechanical force position where suboptimal muscle fiber length and myofilament overlap make it difficult to exert force.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\lunge_knowledge.pdf [part 5/7]",
+    "applies_to_fault": [
+      "insufficient back knee flexion",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The anterior limb in a lunge generates higher biceps femoris and gluteus maximus muscle activation compared to the posterior limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The vastus lateralis shows similar activation levels between the anterior and posterior legs, as well as between the in-line and traditional lunge variations.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gluteus medius acts primarily in the frontal plane of the hip joint to serve as a stabilizer during the sagittal-plane lunge movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The in-line lunge variation is recommended to challenge medio-lateral balance under load for balance or stability adaptations.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The anterior limb generated the highest biceps femoris and gluteus maximus muscle activation when compared to the posterior limb during the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The vastus lateralis showed similar activation between the anterior and posterior legs and between the in-line and traditional lunge exercises.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The in-line lunge showed greater medio-lateral balance when compared to the traditional lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\lunge_knowledge.pdf [part 6/7]",
+    "applies_to_fault": []
+  }
+]

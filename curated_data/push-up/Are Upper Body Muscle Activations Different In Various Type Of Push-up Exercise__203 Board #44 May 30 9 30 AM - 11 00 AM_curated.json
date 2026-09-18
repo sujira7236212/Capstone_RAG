@@ -1,0 +1,23 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Upper Body and Grip",
+    "content_type": "Performance Outcome",
+    "core_principles": [
+      "Push-up hand positioning alters muscle activation: aligning the index finger with the spine increases Triceps Brachii activation compared to pinky alignment.",
+      "Elite rock climbers demonstrate symmetrical bilateral finger flexor strength and endurance, showing no significant bilateral deficit between dominant and non-dominant hands even after 30 minutes of climbing.",
+      "Postactivation potentiation (PAP) can be induced using heavy resistance or weighted implements (such as hexagonal bar deadlifts or weighted sled sprints) prior to sprinting to optimize muscle contractile performance."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Push-up study: 50 African American subjects performed push-ups with hands spread shoulder width, showing significantly greater activation in the Triceps Brachii (TB) muscle using the index finger alignment position compared to pinky alignment.",
+      "Rock climbing study: 8 elite-level climbers (age: 29.4 ± 4.7 y, climbing experience: 11.1 ± 5.2 y, mean project grade: 9.7 ± 0.3 UIAA) performed a 20-sec isometric contraction with the arm fixed at 90° elbow flexion and 120° of horizontal shoulder abduction.",
+      "Rock climbing study: No statistical differences in absolute force change after 30 min of climbing on a treadwall (rotating at 6 m/min with a 6° overhang) between dominant (29.1 ± 26.1 N) and non-dominant (41.5 ± 63.6 N) hands.",
+      "Rock climbing study: Relative force change after 30 min of climbing was 8.05 ± 7.5% for dominant and 12.09 ± 11.7% for non-dominant hands.",
+      "Rock climbing study: Mean change in force relative to body weight was 0.44 ± 0.39 N/kg BW for dominant and 0.62 ± 0.96 N/kg BW for non-dominant hands.",
+      "PAP study: 31 male subjects (age 16.9 ± 1.4 years) performed either 4 sets of hexagonal bar deadlifts (HBD, n = 8) using body weight to calculate estimated 1RM, or 4 sets of weighted sled sprints (WSS, n = 23) for 15-yards using loads of 25% and 50% BW, followed by a 6-minute rest period."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Are Upper Body Muscle Activations Different In Various Type Of Push-up Exercise__203 Board #44 May 30 9 30 AM - 11 00 AM.pdf [part 3/4]"
+  }
+]

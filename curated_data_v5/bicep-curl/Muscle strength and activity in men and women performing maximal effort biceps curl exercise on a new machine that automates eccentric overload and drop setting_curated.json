@@ -1,0 +1,83 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Perform the bicep curl standing upright with the forearm supinated.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing excessive lumbar extension to lift the load during a bicep curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing excessive shoulder flexion to lift the load during a bicep curl.",
+        "applies_to_fault": [
+          "elbow flare"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 12 men and 9 women, men exhibited less range of motion about the right elbow compared to women (131.2 ± 10.1° vs 142.3 ± 8.7°).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 3/16]",
+    "applies_to_fault": [
+      "elbow flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Position the body during a cable or motorized bicep curl so that the rope is perpendicular to the platform when the elbow is at 90 degrees of flexion with the forearm supinated.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Utilize a controlled repetition tempo of a 2-second concentric phase, a 1-second pause at the top of the curl, and a 2-second eccentric phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When using an eccentric-overload machine, pause for approximately 1 second at the top of the curl to allow the eccentric load to fully engage.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Resist the eccentric load with maximal effort throughout the entire downward phase of the curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Initiate the concentric phase of the curl by pulling as hard and fast as possible from the bottom position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study utilized a target repetition duration of 5 seconds, consisting of a 2-second concentric phase, a 1-second pause at the end of the concentric phase, and a 2-second eccentric phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The setup required the participant's body position to be aligned so that the machine's rope was perpendicular to the platform when the right elbow was at 90 degrees with the forearm supinated.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The motorized resistance machine adjusted load in real time between 0 and 100 kg per rope at a frequency of 50 Hz based on participant performance.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 5/16]",
+    "applies_to_fault": []
+  }
+]

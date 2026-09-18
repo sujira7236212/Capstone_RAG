@@ -1,0 +1,67 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Maintain strict whole-body tension to keep the body aligned as a single rigid segment",
+      "Position the wrists directly below the shoulders so that the arms are perpendicular to the supporting surface in the static position",
+      "Minimize inter-segmental rotation at the elbow, shoulder, and hip during the flight phase of plyometric push-ups"
+    ],
+    "common_mistakes": [
+      "Pronounced hip flexion or segmental motion during the flight phase",
+      "Shoulder-flexion perturbation during flight"
+    ],
+    "specific_findings": [
+      "A 5° shoulder-flexion perturbation during flight displaces the CoM from the nominal pendular arc by approximately L·cos (θ0)·δ ≈ 0.05 m for representative anthropometry (L = 0.60 m, θ0 = 12°)",
+      "At short flight times (tflight = 0.30 s, LOW = 0.50 m), the height discrepancy between models is ∆h = 0.020 m"
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\A Rigid-Body Pendulum Model for Plyometric Push-Up Biomechanic.pdf [part 6/22]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Ankle",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Ensure the arms are fully extended and oriented vertically (perpendicular to the floor) in the initial configuration.",
+      "Maintain a stable ankle joint to act as a fixed pivot, minimizing translational displacement of the ankle at takeoff during explosive push-ups.",
+      "Keep the body rigid to function as a single-segment pendulum rotating about the ankle pivot during the flight phase."
+    ],
+    "common_mistakes": [
+      "Minor translational displacement of the ankle at takeoff.",
+      "Arms not perpendicular to the supporting surface in the initial setup."
+    ],
+    "specific_findings": [
+      "Minor translational displacement of the ankle at takeoff is more common in recreational than in trained push-up execution.",
+      "For a body mass of 75 kg at VH, 0 <= 3.0 m/s, the peak aerodynamic drag force Fd is approximately 0.5 N.",
+      "For representative anthropometric values (LOW ≈ 0.7–0.9 m), the upper bound hand takeoff velocity is VH,0 <= 3.7–4.2 m/s."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\A Rigid-Body Pendulum Model for Plyometric Push-Up Biomechanic.pdf [part 7/22]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Plyometric Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Maintain strict body tension throughout the movement, particularly during the flight phase of plyometric push-ups.",
+      "Keep whole-body alignment secure to prevent unwanted inter-segmental joint motion at the hips and shoulders."
+    ],
+    "common_mistakes": [
+      "Failing to maintain strict body tension, leading to inter-segmental joint motion at the hip and shoulder during the flight phase.",
+      "Loss of whole-body alignment during the flight phase."
+    ],
+    "specific_findings": [
+      "Reported ICC values of 0.80–0.96 for force-plate-derived flight time (t H).",
+      "For a uniform-rod body approximation, the compound-pendulum equivalent length ratio Leq/L is approximately 1.11–1.33.",
+      "The two-point mass model for CoM location introduces positional errors proportional to (1 – cosθ0).",
+      "Numerical agreement between quadrature and ODE implementations established a maximum discrepancy of < 2.5 × 10−7 s."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\A Rigid-Body Pendulum Model for Plyometric Push-Up Biomechanic.pdf [part 18/22]"
+  }
+]

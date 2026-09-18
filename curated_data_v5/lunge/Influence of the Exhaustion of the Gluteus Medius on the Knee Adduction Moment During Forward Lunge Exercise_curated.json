@@ -1,0 +1,526 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Trunk inclination and step-variation both influence muscle activation during the lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean",
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Gluteus medius activity is significantly higher with a larger step-length.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Higher activation in the erector spinae is observed when the trunk is inclined.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a shallow lunge with a shorter step-length reduces gluteus medius activation.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Excessive forward trunk lean increases the activation of the erector spinae.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 20 healthy participants (50% female), gluteus medius (GMED) activity was significantly higher with higher step-length.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "In a study of 12 healthy females, higher activation in the erector spinae was observed when the trunk was inclined as well as during the walking lunge variation.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Individuals 10 months post-ACLR demonstrated significantly lower peak knee flexion, peak knee angular velocity, peak knee net joint moment, and mean GMED amplitude compared to healthy controls.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Targeted GMED fatigue in 15 healthy males increased peak angles and joint ROM in the sagittal and horizontal planes of the hip and knee joints, decreased the net joint moment in the sagittal plane of the knee joint, and significantly increased mean and maximum quadriceps force.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a study of 24 male fitness trainees, hip, knee, and ankle ROM and peak-angles were significantly greater in novices than in seniors, dumbbells reduced hip moments and stiffness in novices, and barbells increased ankle moments in seniors.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Inclining the trunk forward during a lunge shifts the load, resulting in higher activation of the erector spinae.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Using a shorter step length (shallow lunge) limits the recruitment and activation of the gluteus medius muscle.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 16/44]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Forward Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The forward lunge should be executed by stepping anteriorly while the back foot remains in contact with the starting surface, descending until the rear knee is approximately at ankle height.",
+        "applies_to_fault": [
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "During the lowest position of the forward lunge, the trunk should be maintained in a reasonably upright posture.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Maintain a consistent movement rhythm and full range of motion throughout the lunge, avoiding compensatory strategies like excessive pelvic displacement or lateral trunk flexion.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Loss of full range of motion during the lunge, such as failing to lower the rear knee to ankle height.",
+        "applies_to_fault": [
+          "insufficient back knee flexion",
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Compensatory movement strategies under fatigue, including excessive pelvic displacement, lateral trunk flexion, or an excessively forceful initiation of the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The experimental lunge protocol standardized repetitions to a four-second duration, consisting of a two-second concentric phase and a two-second eccentric phase controlled by a metronome.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hip abduction fatigue exercise set a distance of 52 cm between the stance foot and the wall to achieve approximately 30 degrees of hip abduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The fatigue protocol terminated sets when participants reached a rating of perceived exertion of at least 19 on a 20-point Borg scale or showed relevant movement deterioration.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 21/44]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "insufficient back knee flexion",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Forward Lunge",
+    "focus_area": "Knee",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "The hip, knee, and ankle joints of the leading leg during a forward lunge exhibit a biphasic movement pattern consisting of an initial flexion phase during the eccentric portion, followed by an extension phase during the concentric portion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The transition between the eccentric flexion phase and concentric extension phase during a forward lunge occurs at approximately 60% of the normalized ground-contact phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During a forward lunge, the peak knee flexion angle of the leading leg reaches 112.73 ± 7.85° in pre-fatigue and 113.86 ± 6.17° in post-fatigue conditions.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The knee joint range of motion during a forward lunge is 87.88 ± 5.86° in pre-fatigue and increases to 92.58 ± 8.83° in post-fatigue conditions.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "During a forward lunge, the peak hip flexion angle of the leading leg reaches 89.55 ± 7.30° in pre-fatigue and 88.27 ± 6.30° in post-fatigue conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hip joint range of motion during a forward lunge is 55.97 ± 5.44° in pre-fatigue and 57.07 ± 6.81° in post-fatigue conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge, the peak ankle flexion angle of the leading leg reaches 23.14 ± 9.06° in pre-fatigue and 24.02 ± 8.86° in post-fatigue conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak net joint moments at the hip during a forward lunge are -2.13 ± 0.14 Nm/kg in pre-fatigue and -2.03 ± 0.16 Nm/kg in post-fatigue conditions.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 29/44]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Performing the forward lunge under controlled execution conditions can help maintain comparable frontal-plane knee loading characteristics to bilateral squatting.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During the forward lunge, peak hip-joint-moments were -2.13 ± 0.14 Nm/kg pre-fatigue and -2.03 ± 0.16 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak knee-joint-moments during the forward lunge reached -1.23 ± 0.19 Nm/kg pre-fatigue and -1.22 ± 0.12 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak ankle-joint-moments during the forward lunge reached -1.11 ± 0.16 Nm/kg pre-fatigue and -1.06 ± 0.16 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Mean hip-joint-moments decreased from -1.53 ± 0.07 Nm/kg pre-fatigue to -1.47 ± 0.11 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Mean knee-joint-moments decreased from -0.80 ± 0.18 Nm/kg pre-fatigue to -0.79 ± 0.13 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Mean ankle-joint-moments decreased from -0.72 ± 0.11 Nm/kg pre-fatigue to -0.70 ± 0.11 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Peak Knee Adduction Moment (KAM) value observed during the forward lunge was 0.293 ± 0.062 Nm/kg, which is highly comparable to bilateral squatting (0.293 ± 0.346 Nm/kg).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Single-leg squats demonstrated lower Peak Knee Adduction Moment (KAM) values (0.200 ± 0.25 Nm/kg for females and 0.190 ± 0.25 Nm/kg for males) compared to the forward lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 30/44]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Standardizing the forward lunge step length to match individual leg length increases gluteus medius activation and the muscular effort required to maintain movement control.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Maintaining a fixed, standardized movement rhythm during the lunge helps ensure consistent muscle activation and execution quality.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing an unstandardized or self-selected step length that is shorter than individual leg length can lead to lower gluteus medius activation.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The peak Knee Adduction Moment (KAM) during the forward lunge was measured at 0.293 \u0017 0.062 Nm/kg pre-fatigue and 0.2869 \u0017 0.0596 Nm/kg post-fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Mean gluteus medius (GMED) activation during the forward lunge was 19.83 \u0017 8.30 %MVIC when step length and rhythm were standardized, compared to 11.3 \u0017 8.3 %MVIC in unstandardized trials.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Peak gluteus medius (GMED) activation during the forward lunge reached 48.75 \u0017 20.26 %MVIC under standardized conditions compared to 28.4 \u0017 17.9 %MVIC under unstandardized conditions.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Peak gluteus medius (GMED) contraction force during the forward lunge was measured at 4.13 \u0017 2.02 N/kg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Applying an external load corresponding to 60% of the five-repetition maximum increased mean gluteus medius activation to 30 \u0017 9 %MVIC.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using a shorter, self-selected step length reduces the demand on the gluteus medius, which decreases the muscular effort available to maintain movement control and execution consistency.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 31/44]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Forward Lunge",
+    "focus_area": "Hip",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The weight-acceptance phase of the forward lunge, occurring during the first 15% of the ground-contact window, requires significant gluteus medius force production for hip stabilization.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus medius activity increases a second time starting at approximately 60% of the ground-contact phase and peaks at around 90% as the lifter pushes back to the starting position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The forward lunge involves a substantial hip range of motion of approximately 57°.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus medius contraction forces during drop vertical jumps (12.52 ± 3.06 N/kg) exceed those obtained during the forward lunge by approximately a factor of six.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Both measured sEMG activity and simulated muscle force of the gluteus medius show a pronounced increase during approximately the first 15% of the normalized ground-contact window of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus medius sEMG and simulated muscle force exhibit a second increase beginning at approximately 60% of the ground-contact phase, reaching a local maximum at around 90%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Individuals with static valgus alignment exhibit considerably greater gluteus medius forces during the movement than those with varus alignment.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 32/44]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip, Knee, Ankle, and Trunk",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Executing the forward lunge with a deeper position involves increasing peak ankle and knee joint angles.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Maintaining a more dorsally tilted trunk posture with a posterior tilted pelvis shifts the center of mass posteriorly.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the current thesis, pre-fatigue peak joint angles for the forward lunge were 89.55 ± 7.30 degrees for the hip, 112.73 ± 7.85 degrees for the knee, and 23.14 ± 9.06 degrees for the ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Following a fatigue protocol, peak knee joint angles increased from 112.73 ± 7.85 degrees to 113.86 ± 6.17 degrees, while peak hip joint angles reduced from 89.55 ± 7.30 degrees to 88.27 ± 6.30 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Farrokhi et al. (2008) reported peak joint angles during the forward lunge of 87.4 ± 11.8 degrees for the hip, 110.3 ± 5.9 degrees for the knee, and 25.3 ± 5.7 degrees for the ankle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A posterior displacement of the total center of mass, caused by a more posteriorly inclined trunk posture, increases the extensor moment demands of the trailing limb while reducing the net joint moments of the leading limb.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 34/44]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The forward lunge exercise elicits substantial hip abductor activation, supporting the role of the gluteus medius as a frontal-plane stabilizer of the knee joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Fatigue during the forward lunge can lead to compensatory movement strategies, such as adopting a deeper lunge position combined with a more posteriorly tilted pelvis.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Prescribing an unnatural rhythm and step length during the forward lunge can influence movement execution and increase movement variability.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study evaluated a cohort of ten physically active male participants to provide normative biomechanical data regarding the knee adduction moment (KAM) during the forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Comfort et al. (2015) reported peak net joint moments during forward lunges of -2.06 ± 0.32 Nm/kg (left) and -2.12 ± 0.35 Nm/kg (right) for the hip, -1.40 ± 0.13 Nm/kg (left) and -1.30 ± 0.22 Nm/kg (right) for the knee, and -0.99 ± 0.16 Nm/kg (left) and -1.02 ± 0.20 Nm/kg (right) for the ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gao et al. (2023) reported pre-fatigue peak net joint moments of -1.95 ± 0.53 Nm/kg (hip), -1.54 ± 0.68 Nm/kg (knee), and -1.12 ± 0.13 Nm/kg (ankle), and post-fatigue moments of -2.34 ± 0.17 Nm/kg (hip), -1.30 ± 0.30 Nm/kg (knee), and -1.06 ± 0.14 Nm/kg (ankle).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The current thesis observed pre-fatigue peak net joint moments of -2.13 ± 0.14 Nm/kg (hip), -1.23 ± 0.19 Nm/kg (knee), and -1.11 ± 0.16 Nm/kg (ankle), and post-fatigue moments of -2.03 ± 0.16 Nm/kg (hip), -1.22 ± 0.12 Nm/kg (knee), and -1.06 ± 0.16 Nm/kg (ankle).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Kinematic analyses following the fatigue protocol revealed increases in ankle and knee joint angles accompanied by reductions in hip joint angles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 35/44]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Ensure the stride length of the forward lunge is comfortable and individualized, as an excessively long stride can reduce movement control and increase movement variability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Avoid forcing an unnaturally slow movement rhythm, such as four seconds per repetition, to prevent unintended fluctuations in the execution of the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using an excessively long stride length during the forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Executing the forward lunge with an unnaturally slow, externally imposed movement rhythm.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study with 10 participants, approximately half reported that the prescribed stride length for the forward lunge felt intuitively too long, leading to reduced movement control and increased movement variability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An externally imposed movement rhythm of four seconds per repetition during the forward lunge was subjectively perceived by participants as unnaturally long.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The RajagopalLaiUhlrich2023 musculoskeletal model is reported to perform reliably for movements within approximately 120 degrees of hip flexion and 140 degrees of knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Participants in a lunge-related fatigue protocol reported perceiving fatigue predominantly within the gluteus medius of the standing, non-dominant limb.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An excessively long stride length or an unnaturally slow movement rhythm reduces the lifter's perceived level of movement control, which introduces additional movement variability and unintended fluctuations during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 36/44]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The forward lunge requires a comparatively large range of motion relative to standard gait tasks.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increased gluteus medius activation and contraction force during the forward lunge are associated with a reduction in the knee abduction moment.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "data\\lunge\\Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf [part 37/44]",
+    "applies_to_fault": []
+  }
+]

@@ -1,0 +1,553 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Assess ankle dorsiflexion range of motion using the weight-bearing lunge test to identify potential compensatory movement patterns during squatting.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Improve ankle dorsiflexion range of motion to alter high-risk movement patterns and allow for greater knee flexion during squatting.",
+        "applies_to_fault": [
+          "partial_squat",
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting with limited weight-bearing ankle dorsiflexion range of motion, which restricts sagittal-plane motion at the knee and ankle.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 40 physically active adults, individuals with greater ankle dorsiflexion range of motion during a weight-bearing lunge displayed greater knee-flexion and ankle-dorsiflexion displacement and peak knee flexion during overhead-squat and single-legged squat tasks.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Nonweight-bearing passive ankle dorsiflexion range of motion was not associated with changes in ankle or knee kinematics during the overhead-squat, single-legged squat, or jump-landing task.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited ankle dorsiflexion range of motion reduces peak knee flexion and displacement during squatting, which prevents achieving full squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Altered knee kinematics and restricted joint displacement during squatting can contribute to high-risk movement patterns associated with noncontact anterior cruciate ligament (ACL) injury.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Ankle",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Squatting movements should ideally include primarily sagittal-plane motion at all lower extremity joints to perform properly and absorb and dissipate forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Adequate ankle dorsiflexion range of motion is required to allow the forward rotation of the shank at the ankle when the foot is in contact with the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Elevating the heels during an overhead squat can help correct medial-knee displacement by increasing the tibial angle in the anterior direction.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing medial knee displacement, which is a clinical observation of dynamic valgus collapse, during squatting tasks.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Squatting with limited ankle dorsiflexion range of motion, which restricts forward rotation of the shank.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Compensating for limited ankle mobility by reducing sagittal-plane motion at the knee and trunk.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Participants who displayed medial-knee displacement during an overhead squat had approximately 20% less nonweight-bearing, passive ankle dorsiflexion than did those participants without medial-knee displacement.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "The medial-knee displacement observed during the overhead squat was corrected when a 2-inch (5.08-cm) lift was placed under the heel.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "The study utilized specific cutoff points for passive ankle dorsiflexion with the knee extended to classify participants, defining normal as greater than or equal to 15 degrees and limited as less than or equal to 5 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Restrictions in ankle dorsiflexion during weight bearing can potentially increase the plantar-flexion moment when the ankle is dorsiflexed.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ankle dorsiflexion restrictions contribute to limited sagittal-plane motion at the knee and trunk, causing compensatory increases in frontal- and transverse-plane motions that are potentially injurious to the ACL.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Medial knee displacement combined with an anterior tibial shear force places the greatest load on the ACL, increasing the risk of ACL injury.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Anterior cruciate ligament loading is exacerbated when the knee is in a minimally flexed or hyperextended position in conjunction with a large quadriceps muscle contraction.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 2/15]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Perform the overhead squat with feet shoulder-width apart, arms raised vertically overhead, and heels kept in contact with the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform the single-leg squat with hands on the hips and the non-supporting leg raised in front of the body with the foot approximately 10 cm off the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a controlled, consistent cadence during the squat, such as descending for two seconds and returning to the starting position in two seconds.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The mean knee-flexion angle in the starting position was 8 degrees for the overhead squat and 12 degrees for the single-leg squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A successful squat trial in this protocol required reaching at least 60 degrees of knee flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 5/15]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Sufficient weight-bearing ankle dorsiflexion range of motion is required to allow proper ankle dorsiflexion and knee flexion displacement during a squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Attempting to squat with limited weight-bearing ankle dorsiflexion range of motion, which restricts the depth of the squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During the overhead squat, individuals with normal weight-bearing lunge ankle dorsiflexion displayed greater knee-flexion displacement by a mean difference of 14.94 degrees and greater ankle dorsiflexion displacement by a mean difference of 7.89 degrees compared to those with limited range of motion.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "During the overhead squat, the normal weight-bearing lunge group achieved a significantly greater peak knee flexion of 112.71 ± 13.48 degrees compared to 97.45 ± 14.34 degrees in the limited group, representing a mean difference of 15.26 degrees.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "During the single-leg squat, the normal weight-bearing lunge group demonstrated greater knee-flexion displacement by a mean difference of 12.39 degrees, greater ankle dorsiflexion displacement by a mean difference of 6.44 degrees, and greater peak knee flexion (88.71 ± 12.73 degrees vs. 77.09 ± 10.20 degrees) than the limited group.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited weight-bearing ankle dorsiflexion range of motion alters lower extremity kinematics, specifically reducing peak knee flexion and ankle dorsiflexion displacement, which prevents the lifter from reaching full squat depth.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 7/15]",
+    "applies_to_fault": [
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Research Finding",
+    "core_principles": [
+      {
+        "text": "Adequate ankle dorsiflexion range of motion is required to achieve sufficient knee flexion and ankle dorsiflexion displacement during a squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Having limited ankle dorsiflexion range of motion, which restricts the displacement of both the ankle and knee joints during the squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Individuals with limited ankle dorsiflexion range of motion (DF-ROM) during the weight-bearing lunge (WBL) demonstrated altered knee- and ankle-joint kinematics, specifically displaying less knee-flexion and ankle-DF displacement during squatting tasks.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited ankle dorsiflexion range of motion restricts knee-flexion displacement, which directly limits squat depth and can result in a shallower squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 8/15]",
+    "applies_to_fault": [
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Ensure adequate ankle dorsiflexion range of motion to allow for optimal knee flexion and squat depth.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Assess ankle mobility using a weight-bearing lunge test, as limitations in this test are strongly associated with reduced knee flexion during squats.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting with limited ankle dorsiflexion restricts knee forward travel and knee flexion, leading to a shallower squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During an overhead squat, individuals with limited weight-bearing lunge ankle dorsiflexion (n = 20) demonstrated significantly reduced knee flexion of 89.00 degrees (plus or minus 14.62) compared to 103.94 degrees (plus or minus 11.79) in those with normal dorsiflexion.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "During a single-legged squat, individuals with limited weight-bearing lunge ankle dorsiflexion (n = 20) demonstrated significantly reduced knee flexion of 63.97 degrees (plus or minus 10.55) compared to 76.36 degrees (plus or minus 11.02) in those with normal dorsiflexion.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "During an overhead squat, individuals with limited weight-bearing lunge ankle dorsiflexion achieved significantly less ankle dorsiflexion displacement (24.14 degrees plus or minus 4.27) compared to those with normal dorsiflexion (32.03 degrees plus or minus 6.36).",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "During a single-legged squat, individuals with limited weight-bearing lunge ankle dorsiflexion achieved significantly less ankle dorsiflexion displacement (24.23 degrees plus or minus 4.49) compared to those with normal dorsiflexion (30.67 degrees plus or minus 5.67).",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited ankle dorsiflexion restricts knee flexion displacement, which directly prevents the lifter from reaching full squat depth.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 9/15]",
+    "applies_to_fault": [
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Restricted ankle dorsiflexion range of motion can result in altered lower extremity movement patterns during functional tasks such as squatting.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Assessing ankle dorsiflexion range of motion using a weight-bearing lunge measurement is more effective for identifying squatting kinematic differences than nonweight-bearing measurements.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing medial knee displacement, or knee-valgus collapse, during a double-legged squat is a common movement alteration associated with limited ankle mobility.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study's limited group demonstrated a nonweight-bearing ankle dorsiflexion range of motion of 1.63 ± 2.58 degrees with the knee extended, compared to 16.78 ± 2.16 degrees in the normal group.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Group differences in knee and ankle kinematics during squatting were only present when identifying participants as limited based on weight-bearing lunge ankle dorsiflexion range of motion measurements.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Previous research by Bell et al. reported decreased nonweight-bearing ankle dorsiflexion range of motion in individuals who displayed medial knee displacement during a double-legged squat compared with those who did not.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited ankle dorsiflexion range of motion can alter lower extremity movement patterns, which may manifest as medial knee displacement or knee-valgus collapse during squatting.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 10/15]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Elevating the heels with a 2-inch (5.08-cm) heel lift can eliminate medial knee displacement and decrease muscle activation of the gastrocnemius and tibialis anterior during the descent phase of a squat.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Maintaining adequate weight-bearing ankle dorsiflexion range of motion is essential for achieving proper knee-flexion displacement and sagittal-plane depth during squatting tasks.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Greater ankle dorsiflexion range of motion during weight-bearing movements promotes knee-varus displacement, helping to prevent knee-valgus motion.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward (medial knee displacement) during the squat.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Squatting with limited ankle dorsiflexion range of motion, which restricts knee and ankle sagittal-plane displacement and results in smaller peak knee-flexion angles.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Compensating for limited sagittal-plane ankle motion by allowing excessive frontal-plane foot movement, including rearfoot pronation, calcaneal eversion, and talar-head adduction.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A 2-inch (5.08-cm) heel lift decreased muscle activation during the descent phase of the squat in the gastrocnemius and tibialis anterior muscles by 32% and 55%, respectively, in individuals demonstrating medial knee displacement.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "The medial-knee-displacement group displayed significantly greater muscle activation of the hip adductor, gastrocnemius, and tibialis anterior muscles in comparison with the control group.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Individuals with limited weight-bearing lunge ankle dorsiflexion range of motion displayed less sagittal-plane displacement at the knee and ankle during squatting, with effect sizes ranging from 1.31 to 1.86.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Placing a 12-degree wedge under the forefoot to restrict ankle dorsiflexion resulted in decreased peak knee flexion and overall knee-flexion displacement during a double-legged squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Weight-bearing lunge ankle dorsiflexion range of motion predicted anterior-reach distance during the Star Excursion Balance Test with an R^2 value of 0.28.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Increased knee-valgus motion and loading are associated with a higher risk of ACL injury.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Limited ankle dorsiflexion contributes to excessive rearfoot pronation, calcaneal eversion, and talar-head adduction, which can cause internal rotation of the tibia and medial displacement at the knee.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Decreased knee flexion (shallower squat depth) results in a larger patellar tendon-tibial shaft angle, producing greater anterior tibial shear force during quadriceps contraction.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Decreased knee flexion reduces the ability of the hamstrings to offset anterior tibial shear forces and reduce ACL loading.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 11/15]",
+    "applies_to_fault": [
+      "knee valgus",
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Increasing ankle dorsiflexion range of motion facilitates increased knee flexion and knee varus displacement during squatting movements.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Sufficient ankle dorsiflexion range of motion helps minimize anterior shear force and knee-valgus-related ACL loading.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing squats with limited ankle dorsiflexion range of motion, which is associated with medial knee displacement.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Participants demonstrating medial knee displacement during an overhead squat have less ankle dorsiflexion range of motion assessed in non-weight-bearing with 30 degrees of knee flexion.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Ankle dorsiflexion range of motion with the knee flexed was measured at 22.27 plus/minus 4.49 degrees for normal individuals and 8.52 plus/minus 3.76 degrees for those with limited range.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited ankle dorsiflexion range of motion leads to knee-valgus motion, which increases knee-valgus-related ACL loading and the risk of ACL injury.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Reduced ankle dorsiflexion range of motion limits knee flexion, which can increase anterior shear force at the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 12/15]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  }
+]

@@ -1,0 +1,473 @@
+[
+  {
+    "session_id": "SQ-20260831-001",
+    "exercise_id": "squat",
+    "name": "Squat",
+    "date": "2026-08-31",
+    "historical_comparison": {
+      "previous_session_date": "2026-08-30",
+      "previous_overall_score": 73,
+      "previous_correct_reps": 4,
+      "previous_incorrect_reps": 6,
+      "previous_common_errors": [
+        "Butt wink",
+        "Knee valgus"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 6,
+      "incorrect_reps": 4,
+      "overall_score": 79
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 96
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "Butt wink",
+            "state_occurred": "ascending"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 92
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 51
+        },
+        "errors": [
+          {
+            "error_type": "Butt wink",
+            "state_occurred": "descending"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 69
+        },
+        "errors": [
+          {
+            "error_type": "Butt wink",
+            "state_occurred": "ascending"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 72
+        },
+        "errors": [
+          {
+            "error_type": "Partial squat",
+            "state_occurred": "descending"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 83
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 97
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20260831-002",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-08-31",
+    "historical_comparison": {
+      "previous_session_date": "2026-08-30",
+      "previous_overall_score": 70,
+      "previous_correct_reps": 4,
+      "previous_incorrect_reps": 6,
+      "previous_common_errors": [
+        "Shallow lunge",
+        "Excessive forward trunk lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 79
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 69
+        },
+        "errors": [
+          {
+            "error_type": "Excessive forward trunk lean",
+            "state_occurred": "descending"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 92
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "Excessive forward trunk lean",
+            "state_occurred": "ascending"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 84
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 82
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 76
+        },
+        "errors": [
+          {
+            "error_type": "Insufficient back knee flexion",
+            "state_occurred": "descending"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 81
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "PU-20260831-003",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "date": "2026-08-31",
+    "historical_comparison": {
+      "previous_session_date": "2026-08-30",
+      "previous_overall_score": 72,
+      "previous_correct_reps": 9,
+      "previous_incorrect_reps": 1,
+      "previous_common_errors": [
+        "Hip sag",
+        "Partial range of motion"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 10,
+      "incorrect_reps": 0,
+      "overall_score": 87
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 92
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 80
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 83
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 95
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 82
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 93
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "BC-20260831-004",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-08-31",
+    "historical_comparison": {
+      "previous_session_date": "2026-08-30",
+      "previous_overall_score": 75,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "Partial range of motion",
+        "Elbow flare"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 6,
+      "incorrect_reps": 4,
+      "overall_score": 81
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 95
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 83
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 67
+        },
+        "errors": [
+          {
+            "error_type": "Partial range of motion",
+            "state_occurred": "ascending"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 93
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 82
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 93
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 98
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 55
+        },
+        "errors": [
+          {
+            "error_type": "Elbow flare",
+            "state_occurred": "ascending"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 69
+        },
+        "errors": [
+          {
+            "error_type": "Elbow flare",
+            "state_occurred": "ascending"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 77
+        },
+        "errors": [
+          {
+            "error_type": "Elbow flare",
+            "state_occurred": "ascending"
+          }
+        ]
+      }
+    ]
+  }
+]

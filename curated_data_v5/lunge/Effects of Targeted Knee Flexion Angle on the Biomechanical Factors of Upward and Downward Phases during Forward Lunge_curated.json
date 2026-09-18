@@ -1,0 +1,448 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "A forward lunge involves stepping one foot forward, transferring weight to the front leg, and lowering the upper torso downward until the targeted knee is flexed before returning to the starting position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a shallow lunge where the front knee only reaches an 80-degree flexion angle rather than 90 or 100 degrees.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of eight subjects (aged 22.23±1.51 years), the 80° targeted knee flexion condition showed greater anterior and vertical knee joint movements, reaction force, and extensor moment at maximum knee flexion than both the 90° and 100° conditions (p<.05).",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The 80° knee flexed angle condition resulted in greater peak joint reaction force and extensor moment compared with both 90° and 100° conditions between the upward and downward phases of the forward lunge.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The study's conclusion states that as the targeted knee joint flexion angle increases, knee joint movement and kinetic variables become greater during the forward lunge exercise.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A shallower front knee flexion angle of 80° increases the peak joint reaction forces and extensor moments on the knee joint compared to deeper angles of 90° and 100°.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Performing a forward lunge with a stride restricts the anterior-posterior and lateral motions in the knee joint of the front leg during the downward phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 1/11]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Stride length and trunk position affect the peak reaction force and moment generated in the knee of the front leg during a forward lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean",
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Maintain the upper body upright and facing forward during the lunge to control movement of the upper torso.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "The knee flexion angle of the front leg in the downward phase must be carefully managed to prevent injuries to the knee joints during training.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive forward movement of the upper body and trunk segment as the knee flexion angle increases.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study analyzed the effects of front leg knee flexion angles set specifically to 80°, 90°, and 100° on knee joint kinetics.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Approximately 70% of ACL injuries that occur in the knee during sports activities are reported as non-contact injuries that occur during deceleration.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study sample consisted of eight male undergraduate physical education majors (age: 22.23±1.51 years, weight: 69±6.63 kg, and height: 174.88±6.85 cm) with at least one year of weight training.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive forward movement of the upper body and trunk segment generates a large reaction force on the ground surface contacted by the front foot.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Anterior-posterior and lateral positional changes in the knee based on the knee flexion angle increase the contractile force of the muscles involved in the rotational motion of the knee, which increases tibial anterior reaction force and the risk of ACL injury.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Excessive knee extension, abduction, and tibial external rotation during weight-bearing motion may increase the risk of anterior cruciate ligament (ACL) injury.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Excessive abduction and external rotation moments for maintaining lateral balance, along with knee reaction forces from knee flexion, can cause knee injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 2/11]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Achieving a knee flexion angle of 90 degrees or greater (such as 100 degrees) on the front leg during a forward lunge reduces the knee extensor moment compared to a shallower 80-degree angle.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "A deeper knee flexion angle of 100 degrees reduces lateral and vertical joint reaction forces compared to shallower angles of 80 and 90 degrees.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a shallow lunge where the front knee flexion angle only reaches 80 degrees, which increases knee joint displacement and extensor moments.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The knee extensor moment is significantly higher at an 80-degree knee flexion angle (0.980 ± 0.14 Nm/BW) compared to 90 degrees (0.717 ± 0.22 Nm/BW) and 100 degrees (0.362 ± 0.27 Nm/BW).",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Under the 80-degree knee flexion condition, the knee joint displacement showed significantly larger anterior (40.984 ± 4.58 cm) and vertical (-6.641 ± 0.79 cm) movements than under the 90-degree and 100-degree conditions.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The anterior joint reaction force of the knee is significantly higher at a 100-degree flexion angle (1.940 ± 0.77 N/BW) compared to 90 degrees (1.397 ± 0.78 N/BW) and 80 degrees (0.693 ± 0.48 N/BW).",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "At 100 degrees of knee flexion, the vertical joint reaction force is significantly lower (-5.640 ± 3.08 N/BW) compared to 90 degrees (-7.725 ± 0.84 N/BW) and 80 degrees (-8.956 ± 0.79 N/BW).",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the front knee to remain in a shallow 80-degree angle increases the knee extensor moment and vertical joint reaction forces, placing greater mechanical demand on the knee extensors and joint structures.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Increasing the knee flexion angle to 100 degrees significantly increases the anterior joint reaction force, which may increase shear stress on the anterior structures of the knee joint.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 5/11]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Performing a forward lunge with a smaller knee flexion angle of 80 degrees increases the knee extension moment compared to larger angles of 90 and 100 degrees.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Knee joint reaction forces, including lateral, anterior-posterior, and vertical forces, are generally higher during the upward phase of a forward lunge than during the downward phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing the knee flexion angle during a forward lunge from 80 degrees to 90 or 100 degrees increases the peak lateral and anterior-posterior knee joint reaction forces.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a shallow lunge with only 80 degrees of knee flexion, which increases the knee extensor moment compared to deeper lunges.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Under the 80 degree knee flexion angle, the knee extension moment was statistically highest at 1.039 Nm/BW in the downward phase and 1.096 Nm/BW in the upward phase, compared to 0.810 Nm/BW and 0.978 Nm/BW at 90 degrees, and 0.532 Nm/BW and 0.731 Nm/BW at 100 degrees.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Peak anterior-posterior knee joint reaction forces increase with deeper knee flexion, measuring 2.455 N/BW at 80 degrees, 3.104 N/BW at 90 degrees, and 3.346 N/BW at 100 degrees during the downward phase.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Peak vertical knee joint reaction forces reach their highest values at 90 degrees of knee flexion, measuring -8.402 N/BW in the downward phase and -10.184 N/BW in the upward phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A shallower lunge of 80 degrees of knee flexion generates a higher knee extension moment, which increases the mechanical demand on the knee extensor musculature.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Increasing the knee flexion angle to 90 or 100 degrees increases the lateral and anterior-posterior joint reaction forces, which subjects the knee joint to greater shear and lateral loading.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 6/11]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Aim for a deeper knee flexion angle, such as 100 degrees, during the forward lunge to minimize peak vertical, medial, and anterior reaction forces in the knee joint.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a shallow lunge with a knee flexion angle of only 80 degrees increases the peak knee extension moment during both the downward and upward phases.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Allowing insufficient front knee flexion during a lunge increases peak medial and anterior reaction forces in the knee joint.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Peak knee extension moment showed a statistically higher value in downward and upward phases at a targeted knee flexion angle of 80° than at 90° and 100°.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The peak medial and anterior reaction forces in both upward and downward phases decreased as the knee flexion angle increased from 80° to 100°.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The smallest vertical reaction force in both upward and downward phases was found at a targeted knee flexion angle of 100°.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Knee reaction force values generated in medial, anterior, and vertical directions were higher in the upward phase than in the downward phase under all conditions of 80°, 90°, and 100°.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Stronger anterior movement of the fibula caused by ankle and knee movements during deceleration can lead to a higher risk of ACL injury.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increased knee extension, abduction, and external rotation moments generated by muscle contraction during the lunge increase knee joint compression force, which can impact ACL injury.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 7/11]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Avoid excessive anterior movement of the upper torso and lower leg to control the load exerted on the front knee joint.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the upper torso and lower leg to shift too far forward during the lunge, which increases front knee loading.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Peak knee extension moment significantly increases at a targeted knee flexion angle of 80 degrees compared to 100 degrees, and is higher during the upward phase than the downward phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak knee external rotation moment is highest at a 100 degree targeted flexion angle and is lower in the upward phase than in the downward phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak knee abduction moment is statistically higher in the upward phase than in the downward phase at an 80 degree targeted knee flexion angle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Anterior movement of the upper torso and lower leg significantly increases the load exerted on the knee joint of the front leg.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Anterior movement of the upper torso and lower leg increases the load exerted on the knee joint of the front leg, which may elevate knee joint compression forces and impact ACL injury risk.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 8/11]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Adjust the front knee flexion angle during the lunge based on physical ability and training goals, as the size of reaction forces and moments changes based on this angle.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Increasing the front knee flexion angle beyond the lifter's physical capability during a forward lunge, which increases joint stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "An increase in targeted knee flexion angle during a forward lunge causes an increase in anterior-posterior (AP) and vertical movement in the front knee at the point of maximum knee flexion, as well as vertical reaction force and extension moment.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "There are statistically significant differences in peak lateral and AP reaction forces and peak extension moment in both upward and downward phases based on changes in targeted knee flexion angles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "The load exerted on the front knee in the downward phase increases eccentric contraction of the quadriceps and knee extension moment, which increases the shear force of the ACL.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Increases in the kinetic factors of the knee joint based on larger knee flexion angles increase the compressive load on the knee joint and the risk of knee injury.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf [part 9/11]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  }
+]

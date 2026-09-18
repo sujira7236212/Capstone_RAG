@@ -1,0 +1,66 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Spine and Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Maintain a straight spine throughout the movement.",
+      "Keep feet together during the exercise.",
+      "Place hands shoulder-width apart with fingers pointing forward for traditional push-ups.",
+      "Achieve a depth of 90 degrees of elbow flexion during each repetition.",
+      "For suspension push-ups, position hands 10 cm above the surface with slings hanging at the shoulder opening."
+    ],
+    "common_mistakes": [
+      "Failing to achieve the correct depth of 90 degrees elbow flexion.",
+      "Failing to maintain a straight spine."
+    ],
+    "specific_findings": [
+      "The correct depth for a push-up repetition was defined as 90 degrees of elbow flexion.",
+      "For suspension push-ups, the hands were positioned 10 cm above the surface."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\10-week suspension and traditional push-up training.pdf [part 5/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Suspension push-ups require three-dimensional shoulder stability, which forces the stabilizing muscles to work harder than during traditional push-ups.",
+      "Training on an unstable surface (such as suspension straps) forces the extremity musculature to play a greater role in joint stability and motor control.",
+      "Suspension push-ups can increase the effectiveness of the biceps brachii in its role as a shoulder stabilizer.",
+      "Both traditional and suspension push-ups effectively improve shoulder stability, dynamic balance, and power, but suspension push-ups offer superior gains in strength-endurance."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The study compared suspension push-ups (SP, n = 17) and traditional push-ups (TP, n = 15).",
+      "The 90-degree push-up test score improved from 19.29 ± 10.14 to 31.47 ± 12.19 in the SP group (p = 0.0001, Cohen's d = 2.10) and from 19.40 ± 10.33 to 26.86 ± 12.60 in the TP group (p = 0.0001, Cohen's d = 1.22).",
+      "The delta value for the 90-degree push-up test showed a significant difference between groups (SP: -12.18 ± 5.75 vs TP: -7.47 ± 6.12, p = 0.033, Cohen's d = 0.79), indicating greater strength-endurance improvements with suspension push-ups.",
+      "CKCUES scores improved from 24.41 ± 5.22 to 29.05 ± 3.49 in the SP group and from 21.73 ± 4.13 to 26.40 ± 3.86 in the TP group.",
+      "The level of perceived exertion remained 'somewhat hard' or higher until the 8th week in the suspension push-up group and the 10th week in the traditional push-up group."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\10-week suspension and traditional push-up training.pdf [part 7/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Performing push-ups on an unstable surface (such as suspension push-ups) requires synergistic activation of both the shoulder muscles and the abdominal muscles to maintain a stable and proper body position.",
+      "Both suspension and traditional push-up training are effective at improving dynamic balance, with neither showing clear superiority over the other for balance development.",
+      "Training on unstable surfaces can cause a drop in power output compared to stable surfaces."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "A 10-week, 20-session study compared suspension push-ups (n = 17) with traditional push-ups (n = 15).",
+      "By Session 20, the perceived exertion level (CR-10) was significantly lower in the suspension push-up group (2.14 ± 2.46) compared to the traditional push-up group (3.46 ± 1.94) (P = 0.030).",
+      "At Session 18, the perceived exertion level (CR-10) was 3.23 ± 1.67 for the suspension group and 4.13 ± 1.40 for the traditional group (P = 0.062)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\10-week suspension and traditional push-up training.pdf [part 8/12]"
+  }
+]

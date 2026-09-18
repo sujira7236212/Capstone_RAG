@@ -1,0 +1,1551 @@
+[
+  {
+    "id": "07bb38a25a1d49f952b8653aa66a3bfa",
+    "document": "Stand with feet shoulder-width apart, knees slightly bent, and core engaged to prevent lower back arching.",
+    "cmetadata": {
+      "text": "Stand with feet shoulder-width apart, knees slightly bent, and core engaged to prevent lower back arching.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "3bece661d4bfbad66a92858e898e87d8",
+    "document": "Keep the upper arms fixed and close to the torso to isolate the biceps and avoid using momentum.",
+    "cmetadata": {
+      "text": "Keep the upper arms fixed and close to the torso to isolate the biceps and avoid using momentum.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "83acdd2a0d350e67b27f440c592f9232",
+    "document": "Perform a full range of motion from complete arm extension at the bottom to near-maximal elbow flexion at the top.",
+    "cmetadata": {
+      "text": "Perform a full range of motion from complete arm extension at the bottom to near-maximal elbow flexion at the top.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "7fe75a8d3308372b1c83d9b7d6e87e62",
+    "document": "Maintain neutral and straight wrists throughout the movement.",
+    "cmetadata": {
+      "text": "Maintain neutral and straight wrists throughout the movement.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "10ee03516faf56a156ba5e1cc6298541",
+    "document": "Control the tempo by lifting (concentric phase) over 1-2 seconds and lowering (eccentric phase) slowly over 2-3 seconds.",
+    "cmetadata": {
+      "text": "Control the tempo by lifting (concentric phase) over 1-2 seconds and lowering (eccentric phase) slowly over 2-3 seconds.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "8b2e987eea7dbb548148581ac3e8bb41",
+    "document": "Exhale during the concentric lift and inhale during the eccentric lower.",
+    "cmetadata": {
+      "text": "Exhale during the concentric lift and inhale during the eccentric lower.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "b2cee8550095adce2bbdd4337e16c59a",
+    "document": "Swinging the body or using momentum from the hips or shoulders to lift the weight.",
+    "cmetadata": {
+      "text": "Swinging the body or using momentum from the hips or shoulders to lift the weight.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "474f62191c2e75158ce73568831d7990",
+    "document": "Failing to achieve complete arm extension at the bottom of the movement.",
+    "cmetadata": {
+      "text": "Failing to achieve complete arm extension at the bottom of the movement.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "5a464fae501dc18944cb13e8cc33b567",
+    "document": "Allowing the elbows to flare outward during the curl.",
+    "cmetadata": {
+      "text": "Allowing the elbows to flare outward during the curl.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "98d03cc78ca47904c1b4c0059806ea7e",
+    "document": "Using 'cheating' techniques with body momentum, which increases injury risk without enhancing muscle growth.",
+    "cmetadata": {
+      "text": "Using 'cheating' techniques with body momentum, which increases injury risk without enhancing muscle growth.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "af9482511cbbc62f20499a32d2055841",
+    "document": "Electromyographic (EMG) studies demonstrate high activation of the biceps brachii, reaching peak levels of up to 95% of maximum voluntary contraction (MVC) during the concentric phase of standard dumbbell curls.",
+    "cmetadata": {
+      "text": "Electromyographic (EMG) studies demonstrate high activation of the biceps brachii, reaching peak levels of up to 95% of maximum voluntary contraction (MVC) during the concentric phase of standard dumbbell curls.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "finding",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "4fd83046a6685ff4c45c45839dd39ad5",
+    "document": "A 2025 study on untrained individuals found similar biceps brachii hypertrophy outcomes compared to strict form despite the increased volume load with cheating.",
+    "cmetadata": {
+      "text": "A 2025 study on untrained individuals found similar biceps brachii hypertrophy outcomes compared to strict form despite the increased volume load with cheating.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]",
+      "item_kind": "finding",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "3471f69b9feeb5fb05bfe693106b7c4f",
+    "document": "Use a supinated grip (palms up) to maximize biceps brachii excitation and contraction during the ascending phase.",
+    "cmetadata": {
+      "text": "Use a supinated grip (palms up) to maximize biceps brachii excitation and contraction during the ascending phase.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "8f72f87343208c382a913e0d6489d3a6",
+    "document": "Use a neutral grip (palms facing each other) to target the brachialis and brachioradialis.",
+    "cmetadata": {
+      "text": "Use a neutral grip (palms facing each other) to target the brachialis and brachioradialis.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "1a9457c5e491bda5778e2c085c8c4674",
+    "document": "Use a pronated grip (palms down) to target the brachioradialis and forearm extensors, enhancing grip strength and wrist stability.",
+    "cmetadata": {
+      "text": "Use a pronated grip (palms down) to target the brachioradialis and forearm extensors, enhancing grip strength and wrist stability.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "53a6592865cad78fe346d9ef622bfbf0",
+    "document": "Perform curls seated with back support to minimize lower back arching, shoulder elevation, and momentum.",
+    "cmetadata": {
+      "text": "Perform curls seated with back support to minimize lower back arching, shoulder elevation, and momentum.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "6898d4d992a968a8aa4ba4f665e1c639",
+    "document": "Brace the core during standing curls to prevent excessive body swinging.",
+    "cmetadata": {
+      "text": "Brace the core during standing curls to prevent excessive body swinging.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "acdd7946f61bf99b3bf9f6b2ecc7650f",
+    "document": "Use a preacher bench to fix the upper arms, eliminating shoulder compensation and isolating the biceps.",
+    "cmetadata": {
+      "text": "Use a preacher bench to fix the upper arms, eliminating shoulder compensation and isolating the biceps.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "a6047928e4833509b99abee807170b11",
+    "document": "Perform curls on an incline bench set at 45-60 degrees to increase the stretch on the biceps' long head at the bottom position.",
+    "cmetadata": {
+      "text": "Perform curls on an incline bench set at 45-60 degrees to increase the stretch on the biceps' long head at the bottom position.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "35f028b5c6dadd2a2bc4bc919a19a231",
+    "document": "Use an EZ-bar to allow a semi-supinated grip, reducing wrist strain compared to a straight barbell.",
+    "cmetadata": {
+      "text": "Use an EZ-bar to allow a semi-supinated grip, reducing wrist strain compared to a straight barbell.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "8b117fccef43a1966d2a9e702b8c290e",
+    "document": "Maintain a neutral wrist alignment (straight wrists without excessive flexion or extension) to prevent joint torque.",
+    "cmetadata": {
+      "text": "Maintain a neutral wrist alignment (straight wrists without excessive flexion or extension) to prevent joint torque.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "a24353a3a99180917270eaa2b2fc2acf",
+    "document": "Beginners should use a wider-than-shoulder-width stance to improve base stability.",
+    "cmetadata": {
+      "text": "Beginners should use a wider-than-shoulder-width stance to improve base stability.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "principle",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "2bf592bbdc56d4531344077e44bf8485",
+    "document": "Lower back arching during the lift.",
+    "cmetadata": {
+      "text": "Lower back arching during the lift.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "mistake",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "c556150f232d32463a436b912ba53ff1",
+    "document": "Shoulder elevation and shoulder compensation to assist the curl.",
+    "cmetadata": {
+      "text": "Shoulder elevation and shoulder compensation to assist the curl.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "mistake",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "826a6da7be7be195d936207e8d5d209c",
+    "document": "Excessive swinging of the body (using momentum) during standing curls.",
+    "cmetadata": {
+      "text": "Excessive swinging of the body (using momentum) during standing curls.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "mistake",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "3bd39e0de2273c6f7a9873c2159b438d",
+    "document": "Allowing the wrists to excessively flex or extend instead of maintaining a straight, neutral alignment.",
+    "cmetadata": {
+      "text": "Allowing the wrists to excessively flex or extend instead of maintaining a straight, neutral alignment.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "mistake",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "a46b1ba33ccd4705bb0156d0e0101c5f",
+    "document": "Performing the curl on an incline bench at an angle of 45-60 degrees increases the stretch on the biceps' long head at the bottom position.",
+    "cmetadata": {
+      "text": "Performing the curl on an incline bench at an angle of 45-60 degrees increases the stretch on the biceps' long head at the bottom position.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]",
+      "item_kind": "finding",
+      "focus_area": "Arms",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "d5b3e46447a5b4eab002e98a5e765f7b",
+    "document": "Keep elbows fixed at the sides during standard dumbbell curls to ensure isolation.",
+    "cmetadata": {
+      "text": "Keep elbows fixed at the sides during standard dumbbell curls to ensure isolation.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "131a424e121542c3dc943dc7d16e95c5",
+    "document": "Utilize a full range of motion from full elbow extension to complete flexion.",
+    "cmetadata": {
+      "text": "Utilize a full range of motion from full elbow extension to complete flexion.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "74bafbb0c1c24e18c78bc1cd63f998d3",
+    "document": "Maintain a neutral wrist position throughout the curl.",
+    "cmetadata": {
+      "text": "Maintain a neutral wrist position throughout the curl.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "dd5d6ce479cf6ab41a7e11f1d01fd67a",
+    "document": "Emphasize a slow, controlled eccentric phase to maximize muscle tension.",
+    "cmetadata": {
+      "text": "Emphasize a slow, controlled eccentric phase to maximize muscle tension.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "0de4b15e3154793a90a106c0f2096477",
+    "document": "For concentration curls, brace the triceps area of the upper arm against the inner thigh to restrict movement and isolate the biceps.",
+    "cmetadata": {
+      "text": "For concentration curls, brace the triceps area of the upper arm against the inner thigh to restrict movement and isolate the biceps.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "e37c6c6ac542cc4e0d84cf640221bdab",
+    "document": "Squeeze the biceps intensely at the top of the movement for peak contraction.",
+    "cmetadata": {
+      "text": "Squeeze the biceps intensely at the top of the movement for peak contraction.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "950ab4db22a9a143984c0bda69271656",
+    "document": "Swinging the body or using momentum to lift the weight.",
+    "cmetadata": {
+      "text": "Swinging the body or using momentum to lift the weight.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "ecd3b06ddd05aa200b7bd4e5d9f4fb17",
+    "document": "Failing to keep the upper arm stationary during the curl.",
+    "cmetadata": {
+      "text": "Failing to keep the upper arm stationary during the curl.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "7c7dfe8076c34b1cfc51db9e3a971d01",
+    "document": "According to crowdsourced data from Strength Level, the one-repetition maximum (1RM) standards for hammer curls for men (per dumbbell) are approximately: Beginner ~18 lb (8 kg), Novice ~33 lb (15 kg), Intermediate ~51 lb (23 kg), Advanced ~75 lb (34 kg), Elite ~101 lb (46 kg).",
+    "cmetadata": {
+      "text": "According to crowdsourced data from Strength Level, the one-repetition maximum (1RM) standards for hammer curls for men (per dumbbell) are approximately: Beginner ~18 lb (8 kg), Novice ~33 lb (15 kg), Intermediate ~51 lb (23 kg), Advanced ~75 lb (34 kg), Elite ~101 lb (46 kg).",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "finding",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "1f93ac92970147b49ed6529303eca8d8",
+    "document": "According to a 2014 study by the American Council on Exercise (ACE), the concentration curl elicits the highest biceps activation among tested curl variations, achieving approximately 98% maximum voluntary contraction (MVC).",
+    "cmetadata": {
+      "text": "According to a 2014 study by the American Council on Exercise (ACE), the concentration curl elicits the highest biceps activation among tested curl variations, achieving approximately 98% maximum voluntary contraction (MVC).",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]",
+      "item_kind": "finding",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "4f9933b569a57c831f2071768042182a",
+    "document": "Emphasize controlled form, full range of motion, and progressive overload.",
+    "cmetadata": {
+      "text": "Emphasize controlled form, full range of motion, and progressive overload.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "f577a93665e85641a8dfdbf4ea0e630c",
+    "document": "For Zottman curls, curl upward with a supinated grip, rotate wrists to a pronated grip at the top, and lower slowly to target both biceps and forearms.",
+    "cmetadata": {
+      "text": "For Zottman curls, curl upward with a supinated grip, rotate wrists to a pronated grip at the top, and lower slowly to target both biceps and forearms.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "855e7be0e3ed2d7b1520136c774e4061",
+    "document": "Use an EZ-bar to reduce wrist pronation and pressure on the elbows and shoulders compared to a straight barbell.",
+    "cmetadata": {
+      "text": "Use an EZ-bar to reduce wrist pronation and pressure on the elbows and shoulders compared to a straight barbell.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "3b0118d5b0558defbfe196fce8eddc3c",
+    "document": "Perform incline dumbbell curls on a bench angled at 45-60 degrees with arms fully extended to maximize the stretch on the long head of the biceps.",
+    "cmetadata": {
+      "text": "Perform incline dumbbell curls on a bench angled at 45-60 degrees with arms fully extended to maximize the stretch on the long head of the biceps.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "643df832ef34be613f68fcb1d2b228d6",
+    "document": "Utilize the incline bench to support the back, minimize lumbar stress, and prevent cheating with momentum.",
+    "cmetadata": {
+      "text": "Utilize the incline bench to support the back, minimize lumbar stress, and prevent cheating with momentum.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "fb3c1f6d4fe7e8bcd61fa053b3b3720d",
+    "document": "Focus on a slow eccentric (lowering) phase to minimize momentum and maximize muscle activation.",
+    "cmetadata": {
+      "text": "Focus on a slow eccentric (lowering) phase to minimize momentum and maximize muscle activation.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "acff326f586a97b5525184e68f81fa67",
+    "document": "Cheating by using momentum to lift the weight",
+    "cmetadata": {
+      "text": "Cheating by using momentum to lift the weight",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "mistake",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "b4a09c3390b5072cb72303544400316f",
+    "document": "Failing to maintain a slow, controlled eccentric lowering phase",
+    "cmetadata": {
+      "text": "Failing to maintain a slow, controlled eccentric lowering phase",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "mistake",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "691605ec26b4eae5579f34a303f47b82",
+    "document": "Incline bench set at 45-60 degrees",
+    "cmetadata": {
+      "text": "Incline bench set at 45-60 degrees",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "e3251d2906d8f4f2368f26aa37c91c40",
+    "document": "The 21s technique consists of three phases in one set: seven partial repetitions from the bottom (full extension) to the halfway point, seven partials from halfway to full flexion, and seven full-range curls",
+    "cmetadata": {
+      "text": "The 21s technique consists of three phases in one set: seven partial repetitions from the bottom (full extension) to the halfway point, seven partials from halfway to full flexion, and seven full-range curls",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "b4199fc0bb2052b492a3082938f3a898",
+    "document": "Load recommendations of 60-80% of one-repetition maximum (1RM) for 8-12 controlled repetitions",
+    "cmetadata": {
+      "text": "Load recommendations of 60-80% of one-repetition maximum (1RM) for 8-12 controlled repetitions",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "641431cd1bb0064aa8dd243f79720e77",
+    "document": "Beginners starting at lower loads around 50% of 1RM to prioritize form",
+    "cmetadata": {
+      "text": "Beginners starting at lower loads around 50% of 1RM to prioritize form",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "using momentum",
+        "swinging torso",
+        "not full extension"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "8209fcff28b259f884b10cdc033dc9f5",
+    "document": "Keep elbows tucked at the sides during the curl.",
+    "cmetadata": {
+      "text": "Keep elbows tucked at the sides during the curl.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "f06429de67ae3af1c7255c08245d5fdb",
+    "document": "Lower the weight slowly to full extension to maintain control and tension.",
+    "cmetadata": {
+      "text": "Lower the weight slowly to full extension to maintain control and tension.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "3c6491f30c40111b57a47e0170ac6860",
+    "document": "Align the elbows with the lever's fulcrum when using a preacher curl machine.",
+    "cmetadata": {
+      "text": "Align the elbows with the lever's fulcrum when using a preacher curl machine.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "edabbe1e3f67c725a626a5c89dcbb3a0",
+    "document": "Adjust grip width to target different heads of the biceps: a narrow grip targets the long head (outer portion), while a shoulder-width or wider grip targets the short head (inner portion).",
+    "cmetadata": {
+      "text": "Adjust grip width to target different heads of the biceps: a narrow grip targets the long head (outer portion), while a shoulder-width or wider grip targets the short head (inner portion).",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "96ac18537abd0962ea6fba1eec9c5526",
+    "document": "Keep the torso stable and avoid using body swing or momentum to lift the weight.",
+    "cmetadata": {
+      "text": "Keep the torso stable and avoid using body swing or momentum to lift the weight.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "6185a3ca1a5a3bbb087bc13edc138c52",
+    "document": "Control the eccentric lowering phase to sustain tension throughout the movement.",
+    "cmetadata": {
+      "text": "Control the eccentric lowering phase to sustain tension throughout the movement.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "principle",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "d147d56ecce19113b7de4044b14b7af6",
+    "document": "Using momentum or body swing to assist in lifting the weight.",
+    "cmetadata": {
+      "text": "Using momentum or body swing to assist in lifting the weight.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "006d93089acd282cbfb9bcd387ea5ce2",
+    "document": "Failing to fully extend the elbows at the bottom of the movement.",
+    "cmetadata": {
+      "text": "Failing to fully extend the elbows at the bottom of the movement.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "7772a8553fdf8019326900a0c0ddebe9",
+    "document": "Using a neutral grip on a standard preacher pad, which may be less optimal for alignment and biceps brachii activation compared to a supinated grip.",
+    "cmetadata": {
+      "text": "Using a neutral grip on a standard preacher pad, which may be less optimal for alignment and biceps brachii activation compared to a supinated grip.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "mistake",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "a26cdf8b49a5962e2fed57d828e0f740",
+    "document": "According to a 2014 study by the American Council on Exercise (ACE), cable curls rank second highest among common bicep exercises for biceps activation, achieving approximately 81% maximum voluntary contraction (MVC).",
+    "cmetadata": {
+      "text": "According to a 2014 study by the American Council on Exercise (ACE), cable curls rank second highest among common bicep exercises for biceps activation, achieving approximately 81% maximum voluntary contraction (MVC).",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "finding",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "6db90d05835d26a26ef229f8a5b2b174",
+    "document": "An isometric hold in the chin-up position should be maintained for 10-30 seconds to intensely engage the biceps brachii.",
+    "cmetadata": {
+      "text": "An isometric hold in the chin-up position should be maintained for 10-30 seconds to intensely engage the biceps brachii.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]",
+      "item_kind": "finding",
+      "focus_area": "Elbow",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "1b5df86b525b9f680c6ecd2921322d16",
+    "document": "Keep upper arms stationary during standard dumbbell curls to minimize momentum.",
+    "cmetadata": {
+      "text": "Keep upper arms stationary during standard dumbbell curls to minimize momentum.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "3e6d4a590a22016c7c1259eac17e120c",
+    "document": "Use a neutral grip (palms facing each other) during hammer curls to target the brachialis and brachioradialis.",
+    "cmetadata": {
+      "text": "Use a neutral grip (palms facing each other) during hammer curls to target the brachialis and brachioradialis.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "added76158d7675752594e3933d3224d",
+    "document": "Brace the elbow on the inner thigh during concentration curls for strict isolation of the biceps brachii.",
+    "cmetadata": {
+      "text": "Brace the elbow on the inner thigh during concentration curls for strict isolation of the biceps brachii.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "52a0c096c29710d9a001ebf3064af66f",
+    "document": "Perform incline dumbbell curls on a 45-60 degree incline bench to provide a deeper stretch at the bottom, emphasizing the long head.",
+    "cmetadata": {
+      "text": "Perform incline dumbbell curls on a 45-60 degree incline bench to provide a deeper stretch at the bottom, emphasizing the long head.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "93036710303837f39d41af25f9bf366d",
+    "document": "On preacher curls, keep upper arms flat on the pad and start with arms fully extended downward, then curl upward by flexing the elbows.",
+    "cmetadata": {
+      "text": "On preacher curls, keep upper arms flat on the pad and start with arms fully extended downward, then curl upward by flexing the elbows.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "59c41ece19ebc91f03b7353d5da76926",
+    "document": "Lower the weight slowly and under control, emphasizing the eccentric phase.",
+    "cmetadata": {
+      "text": "Lower the weight slowly and under control, emphasizing the eccentric phase.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "13df75acb5e78c79da155bf1393b0bcf",
+    "document": "To target the long head (biceps peak), position the arms behind the torso (shoulder extension) to create a deeper stretch at the bottom.",
+    "cmetadata": {
+      "text": "To target the long head (biceps peak), position the arms behind the torso (shoulder extension) to create a deeper stretch at the bottom.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "a4402fe486a474f6a9d0ad7ef0ce8c76",
+    "document": "Using momentum or swinging the body to lift the weight.",
+    "cmetadata": {
+      "text": "Using momentum or swinging the body to lift the weight.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "mistake",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "222c286bd010c9011358456a5fb48bae",
+    "document": "Improper setup or excessive extension on preacher curls, which can stress the elbows or forearms.",
+    "cmetadata": {
+      "text": "Improper setup or excessive extension on preacher curls, which can stress the elbows or forearms.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "mistake",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "80f8554554a0e29899d456fdc3b4b5a9",
+    "document": "Allowing tension to drop off at the top (shortened position) of a preacher curl.",
+    "cmetadata": {
+      "text": "Allowing tension to drop off at the top (shortened position) of a preacher curl.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "mistake",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "8ace294c613c6e33eed75bf6a42311cd",
+    "document": "Using a limited range of motion in some setups, which may not fully lengthen the biceps.",
+    "cmetadata": {
+      "text": "Using a limited range of motion in some setups, which may not fully lengthen the biceps.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "mistake",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "9f6f8b9a550b60e6fd73b88ba59535c5",
+    "document": "Incline dumbbell curls are performed on an incline bench angled at 45-60°.",
+    "cmetadata": {
+      "text": "Incline dumbbell curls are performed on an incline bench angled at 45-60°.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "66df7c4c5e047a3a90d0122186f6516d",
+    "document": "Preacher curls tend to promote greater hypertrophy in the distal (lower, near-elbow) portion of the biceps brachii and brachialis compared to incline curls, which favor proximal (upper) growth.",
+    "cmetadata": {
+      "text": "Preacher curls tend to promote greater hypertrophy in the distal (lower, near-elbow) portion of the biceps brachii and brachialis compared to incline curls, which favor proximal (upper) growth.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "7ceca599291d416156155bf9842de9b6",
+    "document": "Studies have shown preacher curls leading to approximately 10% increases in distal muscle thickness.",
+    "cmetadata": {
+      "text": "Studies have shown preacher curls leading to approximately 10% increases in distal muscle thickness.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "0784846817092c0d3e3c54522db52e6f",
+    "document": "Comparative trials demonstrated superior distal development of preacher curls versus incline variations, showing greater distal thickness gains of ~10% vs. ~6% in some protocols.",
+    "cmetadata": {
+      "text": "Comparative trials demonstrated superior distal development of preacher curls versus incline variations, showing greater distal thickness gains of ~10% vs. ~6% in some protocols.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "87ba6f1e7c3d06079f4c61b6face3567",
+    "document": "Recommendations for preacher curls include performing 3–4 sets of 8–15 reps, focusing on slow eccentrics of 3–4 seconds.",
+    "cmetadata": {
+      "text": "Recommendations for preacher curls include performing 3–4 sets of 8–15 reps, focusing on slow eccentrics of 3–4 seconds.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Correct Form",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [
+        "not full extension",
+        "using momentum",
+        "swinging torso"
+      ],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "d9acecf3168a7bc145c8b77f8c2f0faf",
+    "document": "Incline Dumbbell Curls: Perform on a 45–60° incline bench, allowing arms to hang behind the body to maximize long head stretch and emphasize the proximal biceps.",
+    "cmetadata": {
+      "text": "Incline Dumbbell Curls: Perform on a 45–60° incline bench, allowing arms to hang behind the body to maximize long head stretch and emphasize the proximal biceps.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "1c835b4eb18949c42328876e51223d4e",
+    "document": "Bayesian Cable Curls: Face away from a low cable pulley with the arm extended behind the torso to maintain constant tension and bias the long head in a lengthened position.",
+    "cmetadata": {
+      "text": "Bayesian Cable Curls: Face away from a low cable pulley with the arm extended behind the torso to maintain constant tension and bias the long head in a lengthened position.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "905105646a5799dde83e23eabdf313b8",
+    "document": "Drag Curls: Drag the bar up along the torso by keeping the elbows back and maintaining shoulder extension to emphasize the long head in the mid-range.",
+    "cmetadata": {
+      "text": "Drag Curls: Drag the bar up along the torso by keeping the elbows back and maintaining shoulder extension to emphasize the long head in the mid-range.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "0fba1902198fab39143f947cefd23fcb",
+    "document": "21s: Perform 7 bottom-half reps, 7 top-half reps, and 7 full reps per set for metabolic stress.",
+    "cmetadata": {
+      "text": "21s: Perform 7 bottom-half reps, 7 top-half reps, and 7 full reps per set for metabolic stress.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "570b72be8830c4beed8d2dcadb7fb36c",
+    "document": "Waiter Curl: Hold the dumbbell vertically at the top of the movement for a focused peak contraction.",
+    "cmetadata": {
+      "text": "Waiter Curl: Hold the dumbbell vertically at the top of the movement for a focused peak contraction.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "principle",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "7615106083126dcb351b0851e5844b68",
+    "document": "Incline dumbbell curls are performed on a 45–60° incline bench.",
+    "cmetadata": {
+      "text": "Incline dumbbell curls are performed on a 45–60° incline bench.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "dba63cf9f08f6d48738a242cbaeaf767",
+    "document": "Regional hypertrophy studies show greater upper biceps growth with incline dumbbell curls compared to preacher-style curls.",
+    "cmetadata": {
+      "text": "Regional hypertrophy studies show greater upper biceps growth with incline dumbbell curls compared to preacher-style curls.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  },
+  {
+    "id": "fda89933d42dc42e544956cbb58fca60",
+    "document": "Recent research (e.g., Attarieh et al., 2025) found similar overall biceps hypertrophy between Bayesian cable curls and preacher curls in matched protocols.",
+    "cmetadata": {
+      "text": "Recent research (e.g., Attarieh et al., 2025) found similar overall biceps hypertrophy between Bayesian cable curls and preacher curls in matched protocols.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]",
+      "item_kind": "finding",
+      "focus_area": "Biceps",
+      "exercise_id": "bicep-curl",
+      "content_type": "Exercise Variation",
+      "source_short": "grokipedia.com/page/Bicep_curl",
+      "applies_to_fault": [],
+      "window_exercise_type": "Bicep Curl"
+    }
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Stand upright with feet a comfortable width apart and the back against a wall to stabilize the body during the curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Use an elbow stabilizing plate or maintain strict elbow positioning to ensure that the full range of motion of the elbow joint is achieved and to prevent swinging the elbows.",
+        "applies_to_fault": [
+          "elbow flare",
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Control the movement by performing both the concentric and eccentric phases of the curl with a controlled tempo, such as approximately one second for each phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Swinging the elbows during the bicep curl instead of keeping them stabilized.",
+        "applies_to_fault": [
+          "elbow flare"
+        ]
+      },
+      {
+        "text": "Failing to achieve the full range of motion of the elbow joint during each repetition.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A 21-year-old female performing 3 sets of bilateral dumbbell bicep curls to failure at 30% 1RM (totaling 143 repetitions) developed exertional rhabdomyolysis with a peak creatine kinase (CK) concentration of approximately 12,200 U/L.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Acute swelling immediately after high-repetition bicep curls to failure increased biceps muscle thickness by 17.6% (from 1.943 cm to 2.285 cm).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Echo intensity of the biceps brachii, a surrogate measure of muscle damage and edema, increased by 10.8% immediately post-exercise, peaked at 34.9% above baseline at 4 days post-exercise, and remained 16.7% elevated at 6 days post-exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing high-repetition bicep curls to failure can result in severe muscle damage and swelling proximal to the elbows, rendering the lifter temporarily unable to fully extend their forearms.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\bicep-curl\\Exertional Rhabdomyolysis in a 21-year-old, Healthy Female after Performing Three Sets of the Biceps Curl Exercise to Failure with 30% 1rm A Case Report.pdf [part 3/4]",
+    "applies_to_fault": [
+      "elbow flare",
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Exercising muscles at a longer length by completing a full range of motion of the elbow joint produces more muscle damage.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing low-load, high-repetition resistance exercise to failure significantly increases the time the muscle is under tension and the total work performed, which can cause severe muscle damage.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A 21-year-old healthy female was diagnosed with exertional rhabdomyolysis after completing 3 sets of bilateral dumbbell biceps curls at 30% 1RM (3.4 kg) for 143 total repetitions, resulting in a peak creatine kinase (CK) concentration of approximately 12,200 U/L.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing exercises that place the muscle at a longer length through a full range of motion can increase muscle damage and potentially lead to exertional rhabdomyolysis.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\Exertional Rhabdomyolysis in a 21-year-old, Healthy Female after Performing Three Sets of the Biceps Curl Exercise to Failure with 30% 1rm A Case Report.pdf [part 4/4]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  }
+]

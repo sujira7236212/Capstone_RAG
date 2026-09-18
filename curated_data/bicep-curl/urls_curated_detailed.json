@@ -1,0 +1,72 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Perform movements with a full range of motion to maximize mechanical tension, which is the primary driver of hypertrophy.",
+      "Maintain a controlled tempo, specifically focusing on controlled eccentrics lasting 2 to 3 seconds.",
+      "Avoid rushed partial repetitions."
+    ],
+    "common_mistakes": [
+      "Rushed partial repetitions",
+      "Failing to use a full range of motion"
+    ],
+    "specific_findings": [
+      "Tempo: controlled eccentrics (2 to 3 seconds) with full range of motion beat rushed partial reps.",
+      "Volume: roughly 10 to 20 hard sets per muscle group per week, with newer clients thriving at the lower end.",
+      "Intensity: most work in the 65 to 85 percent range (about 6 to 12 reps).",
+      "Protein: commonly around 1.6 to 2.2 grams per kilogram daily for clients pursuing muscle growth."
+    ],
+    "applies_to_fault": [
+      "not full extension"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.nasm.org/resource-center/blog/training/9-of-the-best-arm-sculpting-exercises-to-tone-and-strengthen) [part 1/2]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "The biceps brachii is most powerful as an elbow flexor in a supinated (palms up) position and loses significant power as the arm rotates inward.",
+      "The brachialis and brachioradialis receive more activation as the arm rotates from a supinated to a neutral or pronated position.",
+      "Hammer curls (neutral grip) are less stressful on the elbow joint and reduce tension on the elbow's tendons compared to supinated curls.",
+      "To perform a hammer curl, stand with a comfortable stance, knees slightly bent, and hold the weights with a neutral grip (palms facing each other)."
+    ],
+    "common_mistakes": [
+      "Allowing the elbows to pull forward during curls (often caused by the biceps brachii acting as a biarticular muscle attempting to stabilize the shoulder while flexing the elbow)."
+    ],
+    "specific_findings": [
+      "The brachialis is actually the primary flexor of the elbow, generating 50-60% of the force."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl) [part 1/3]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Stand with a neutral, comfortable stance with feet about shoulder-width apart.",
+      "Tuck the elbows near the waist so they remain stationary in the same position during the entire range of motion.",
+      "Maintain a supinated grip (palms up) for bicep curls to maximize bicep brachii activation during flexion.",
+      "Lower the dumbbells in a slow and controlled manner to focus on the eccentric contraction.",
+      "Keep the body as still as possible during the lift to prevent momentum from assisting."
+    ],
+    "common_mistakes": [
+      "Exhibiting excessive swaying or body movement to cheat the weight up.",
+      "Allowing the elbows to drift forward or away from the waist during the movement."
+    ],
+    "specific_findings": [
+      "For hypertrophy, use a weight that allows for 8-12 reps, or high reps of 12+ occasionally, ensuring the muscles are brought close to failure."
+    ],
+    "applies_to_fault": [
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl) [part 2/3]"
+  }
+]

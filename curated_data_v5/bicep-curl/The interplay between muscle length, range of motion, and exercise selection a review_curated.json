@@ -1,0 +1,568 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Training at longer muscle lengths elicits more favorable muscle growth compared to training at shorter muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Select exercises and ranges of motion that impose a relevant external torque when the muscle is in a lengthened position to optimize muscle hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using a restricted range of motion that avoids training the muscle at longer, fully stretched lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Failing to train at longer muscle lengths or select ranges of motion with relevant external torque in the lengthened position limits the potential for optimal muscle hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 1/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Training through a full range of motion or focusing on the initial range of motion where the muscle is at longer lengths optimizes muscle hypertrophy compared to training only at short muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Contractions performed at moderate to longer muscle lengths are associated with more favorable sarcomere overlap and passive elastic contributions, which can improve active force-generating capacity.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to reach full extension at the bottom of a curl and training exclusively in the final, shortened range of motion limits muscle growth.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Studies show that both full range of motion (ROM) and initial ROM training (contracting exclusively at longer muscle lengths) are superior to training at the final ROM (contracting exclusively at shorter muscle lengths) for inducing muscle hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing contractions exclusively at shorter muscle-tendon unit lengths (more flexed joint positions) reduces cross-bridge formation and force output due to suboptimal sarcomere overlap.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Restricting movement to the final range of motion (short muscle lengths) results in suboptimal muscle hypertrophy compared to utilizing the initial range of motion where the muscle is fully stretched.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 2/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Selecting exercises that alter joint angles or place peak torque at the initial, more elongated portion of the range of motion may optimize hypertrophic adaptations.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Training the biceps brachii at a long muscle length requires concomitant external torque at that lengthened position to effectively optimize muscle growth.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 3/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Range of Motion",
+    "content_type": "Range-of-motion guidance",
+    "core_principles": [
+      {
+        "text": "Training at longer muscle lengths or medium muscle lengths enhances the physiological responses and hypertrophic stimulus compared to training at short muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Performing contractions in a range of motion where the muscle is stretched increases passive tension, which contributes to triggering hypertrophic signaling cascades.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing partial range of motion repetitions that restrict the muscle to short muscle lengths, thereby avoiding the fully stretched position.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Force production and Akt activation were found to be higher when muscles contracted at medium lengths (ML) and long lengths (LL) compared to short lengths (SL), where activation was similar to unstimulated conditions.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Phosphorylation levels of mechano-responsive kinases, specifically Akt and p70S6K, are contingent upon muscle length, with contractions at long lengths (LL) and medium lengths (ML) enhancing this response.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to train at longer muscle lengths reduces the mechanical tension and passive tension generated by elements like titin, which diminishes the overall hypertrophic stimulus.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Concentric contractions that excessively shorten the muscle fiber increase the radial distance between actin and myosin filaments, which may decrease calcium interaction with troponin and diminish the muscle's capacity to generate active force.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 4/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Preacher Curl",
+    "focus_area": "Elbow",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Training in the portion of the range of motion where peak torque occurs, such as 45 degrees to 50 degrees of elbow flexion during preacher curls, can stimulate muscle hypertrophy even if the initial portion of the range of motion is omitted.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing preacher curls with an intermediate range of motion that omits the initial portion of the movement from 0 degrees to 49 degrees of elbow flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Pinto et al. observed a similar increase in elbow flexor muscle size when comparing biceps preacher curls performed with full range of motion versus intermediate range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the preacher curl, the peak of torque and greatest external moment arm occur at approximately 45 degrees to 50 degrees of elbow flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Goto et al. observed greater hypertrophy of the triceps brachii after intermediate range of motion compared to full range of motion during lying elbow extensions.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "In the lying elbow extension, the peak torque and greatest external moment arm occur at approximately 90 degrees of elbow flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 9/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Barbell preacher curls can be performed using either a full range of motion (0º–130º) or an intermediate range of motion (50º–100º) to achieve similar increases in elbow flexor muscle thickness.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Dumbbell supinating curls and Bayesian curls can be performed using either the initial range of motion (approximately 50% of full ROM) or a full range of motion to achieve similar hypertrophy in the elbow flexors.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A 10-week study by Pinto et al. on untrained men performing barbell preacher curls showed similar elbow flexor muscle thickness increases between full ROM (0º–130º) at 7.2% and intermediate ROM (50º–100º) at 7.8%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An 8-week study by Wolf et al. on trained men performing dumbbell supinating curls and Bayesian curls found that initial ROM (~50% of full ROM) and full ROM resulted in similar elbow flexor hypertrophy (~5% growth for both at 55% of humeral length, and ~4% for initial ROM vs ~3% for full ROM at 45% of humeral length).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 11/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Training the bicep curl at longer muscle lengths, which corresponds to the initial range of motion starting from full elbow extension (0º), optimizes muscle hypertrophy.",
+        "applies_to_fault": [
+          "partial range_of_motion"
+        ]
+      },
+      {
+        "text": "Ensuring the movement includes the bottom portion of the curl (initial ROM) is critical for targeting the distal region of the biceps brachii.",
+        "applies_to_fault": [
+          "partial range_of_motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to achieve complete arm extension at the bottom of the curl and instead performing partial repetitions only in the top portion of the range of motion (final ROM, such as 68º–135º or 80º–130º).",
+        "applies_to_fault": [
+          "partial range_of_motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study by Pedrosa et al. on seated preacher curls, training the initial ROM (0º–68º) induced greater increases in biceps brachii cross-sectional area at the distal site (24.0%) compared to the final ROM of 68º–135º (13.1%), while proximal site gains were similar (20.0% vs 21.1%).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a study by Sato et al. on preacher curls, training the initial ROM (0º–50º) resulted in significantly greater distal muscle thickness increases (12.7%) compared to the final ROM of 80º–130º (2.1%), with similar gains at proximal (5.0% vs 3.7%) and middle (6.9% vs 5.0%) sites.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Restricting the bicep curl to the top half of the movement (final ROM) reduces the hypertrophic stimulus at longer muscle lengths, resulting in significantly less muscle growth in the distal portion of the biceps brachii.",
+        "applies_to_fault": [
+          "partial range_of_motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
+    "applies_to_fault": [
+      "partial range_of_motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Preacher Curl",
+    "focus_area": "Biceps",
+    "content_type": "Range of Motion Guidance",
+    "core_principles": [
+      {
+        "text": "Training the biceps at longer muscle lengths, such as the initial range of motion or full range of motion, promotes greater distal muscle hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "The range of motion variable serves as a means of training the muscle at lengthened positions with relevant torque in that position to maximize hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Using mechanical stops or visual marks to control range of motion prevents self-regulating repetitions outside the desired range, which can negatively impact the muscle length-tension curve.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing preacher curls only in the final range of motion (shortened position) limits muscle growth compared to training in the initial range of motion (lengthened position).",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Pedrosa et al. [59] compared performing the preacher curl at the initial ROM vs. final ROM and observed greater hypertrophy of the biceps brachii at the distal site but without difference at the proximal site.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Sato et al. [64] compared performing the biceps preacher curl at the initial vs. final ROM and observed greater hypertrophy in the distal site of the elbow flexors after initial ROM training.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Wolf et al. [63] showed a similar hypertrophic response in the elbow flexors and extensors after 8 weeks of training with full and initial ROM using four exercises targeted for the elbow flexor and four for the elbow extensors.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Training the biceps preacher curl only in the final range of motion (shortened position) results in lower hypertrophy responses at the distal site of the biceps brachii and elbow flexors.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 13/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Preacher curls can be performed with either cables or barbells to achieve similar hypertrophic results in the middle portion of the elbow flexors.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing preacher curls rather than incline biceps curls can be used to specifically target hypertrophy at the distal region of the elbow flexors.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a 10-week study by Nunes et al. comparing cable and barbell preacher curls in untrained young adults, similar increases in elbow flexor muscle thickness at the middle site were observed (7.0% for cable vs. 8.0% for barbell).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a 9-week study by Zabaleta-Korta et al. on resistance-trained young women, the preacher curl group increased the distal site of the elbow flexors by 9.7% compared to 2.6% in the inclined biceps curl group.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 16/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "To optimize muscle growth, combine training at longer muscle lengths with relevant external torque rather than relying on long muscle length alone.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "The inclined biceps curl positions the elbow flexors at a longer muscle length, while the preacher biceps curl positions them at a shorter muscle length due to shoulder flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the preacher curl, barbell resistance imposes peak torque at the initial portion of the range of motion, whereas cable resistance shifts peak torque to the intermediate portion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Relying on exercises like the inclined biceps curl where there is no relevant external torque in the most lengthened, initial portion of the range of motion may fail to maximize muscle growth.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Zabaleta-Korta et al. compared the inclined biceps curl to the preacher biceps curl and found no differences in elbow flexor size at the proximal and middle sites, but the preacher curl induced a more favorable increase in the distal site.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Nunes et al. compared preacher curls using cables versus barbells and found no difference in elbow flexor hypertrophy, despite cables imposing peak torque in the intermediate range of motion and barbells imposing peak torque at the initial range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 17/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Range of Motion",
+    "content_type": "Range of Motion Guidance",
+    "core_principles": [
+      {
+        "text": "Training muscles at longer muscle lengths promotes structural adaptations such as increased fascicle length and sarcomerogenesis.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Avoiding training at longer muscle lengths, which limits the potential for length-dependent muscle adaptations.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Structural adaptations (e.g., increased fascicle length, sarcomerogenesis) occur in the muscle after training at longer muscle lengths, theoretically attenuating the contribution of passive structures to force production in future training sessions.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Most of the studies investigating training at longer muscle lengths were conducted with untrained individuals for a short period that varied from 5 to 15 weeks.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to train at longer muscle lengths may prevent structural adaptations like increased fascicle length and sarcomerogenesis, which theoretically attenuates the contribution of passive structures to force production in future training sessions.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 18/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Training at moderate to longer muscle lengths combined with meaningful external torque in that position is critical for maximizing hypertrophic adaptations.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Utilizing a full range of motion or the initial range of motion combines training at longer muscle lengths with high external torque to induce greater muscle growth.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Training only at shorter muscle lengths, such as the final range of motion, fails to optimize muscle growth.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Training the muscle in a lengthened position but with reduced external torque in that position fails to induce greater hypertrophic gains.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Training at longer muscle lengths can result in a reduction in performance, such as peak force, and reduced muscle excitation immediately after a training session and in the recovery period for up to 48 hours.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to train at longer muscle lengths by restricting movement to shorter muscle lengths (final ROM) fails to optimize muscle hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 19/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Range of Motion",
+    "content_type": "Range of Motion Guidance",
+    "core_principles": [
+      {
+        "text": "Training muscles at moderate to longer muscle lengths induces more favorable hypertrophy compared to training at shorter muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Range of motion configurations should be used as a strategy to train muscles at longer lengths under relevant external torque to optimize muscular hypertrophy.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing training or isometric contractions exclusively at shorter muscle lengths limits the hypertrophic response.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 20/24]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  }
+]

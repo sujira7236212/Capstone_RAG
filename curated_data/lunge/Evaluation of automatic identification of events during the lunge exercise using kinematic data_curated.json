@@ -1,0 +1,21 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Keep the heel of the front (dominant) leg flat on the ground at all times during the lunge.",
+      "Lunge forward to a standardized distance of approximately 75% of the dominant leg length."
+    ],
+    "common_mistakes": [
+      "Lifting the heel of the front (dominant) leg off the ground during the lunge."
+    ],
+    "specific_findings": [
+      "Subjects performed lunges forward to a marked distance equaling 75% of the subject's dominant leg length.",
+      "Keeping the heel of the dominant leg on the ground at all times is required to prevent excessive patellofemoral stress."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Evaluation of automatic identification of events during the lunge exercise using kinematic data.pdf [part 2/5]"
+  }
+]

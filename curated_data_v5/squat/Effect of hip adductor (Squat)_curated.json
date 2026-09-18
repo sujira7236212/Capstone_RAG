@@ -1,0 +1,1415 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Squatting without hip adduction and squatting with maximum isometric hip adductor exertion promote balanced activities of the vastus medialis oblique (VMO) and vastus lateralis (VL) muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with 70% and 100% isometric hip adductor exertion increases both VMO and VL muscle activities.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting combined with hip adduction can be performed either by squeezing the entire time or squeezing at 60 degrees of knee flexion with no significant difference in VMO and VL muscle activities.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 30 healthy young adults, the %MVC of the VMO during squatting with 70% and 100% of isometric hip adductor exertion was greater than squatting without hip adduction (38.35-62.13% vs. 35.77% %MVC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The %MVC of the VL significantly increased from 0% to 100% hip adductor exertion (36.2% to 73.60% %MVC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The VMO:VL ratio during squatting without hip adduction was greater than squatting with 35% and 70% of hip adduction exertion (1.06 vs. 0.76-0.87), but not significantly different from squatting with maximum hip adduction (0.94-1.00).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Imbalanced activities of the VMO and VL muscles can lead to abnormal patellar tracking.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 1/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Performing a normal squat or a squat combined with maximum hip adduction effort promotes a balanced activation ratio between the vastus medialis oblique (VMO) and vastus lateralis (VL) muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting combined with moderate to maximum hip adduction force (70% to 100% of maximum effort) can be utilized to increase the overall muscle activation of both the vastus medialis oblique (VMO) and vastus lateralis (VL).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The timing of hip adduction during a squat, whether maintained throughout the entire movement or initiated specifically at 60 degrees of knee flexion, does not significantly alter VMO and VL muscle activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting with low-to-moderate hip adduction force (35% to 70% of maximum effort) reduces the VMO:VL activation ratio compared to a normal squat, which may lead to muscle imbalance.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 30 healthy subjects, the VMO:VL ratio during a normal squat was significantly higher than during a squat with 35% and 70% hip adduction force (1.06 vs. 0.76-0.87).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "VMO activation (%MVC) during a squat combined with 70% and 100% hip adduction force was significantly greater than during a normal squat (38.35% - 62.13% vs. 35.77% MVC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "VL activation (%MVC) increased progressively as hip adduction force increased, ranging from 36.2% to 73.60% MVC.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The VMO:VL ratio during a squat with maximum hip adduction force (0.94-1.00) did not differ significantly from a normal squat (1.06).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An imbalance between the vastus medialis oblique (VMO) and vastus lateralis (VL) muscles can disrupt normal patellar tracking, leading to patellofemoral joint malalignment and patellofemoral pain syndrome (PFPS).",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 2/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The vastus medialis oblique (VMO) muscle acts as the dynamic medial stabilizer that counteracts the lateral force of the vastus lateralis (VL) and iliotibial band to maintain normal patellar tracking.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Activating the hip adductor muscles during a squat can enhance VMO recruitment because the fibers of the VMO attach to the adductor muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To keep the patella balanced within the intercondylar groove, the EMG activity ratio of the VMO to the VL should ideally be approximately 1.0.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "An insufficiency or delayed activation of the VMO muscle relative to the VL muscle represents an altered motor control pattern.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Ideally, magnitude EMG activity ratio of the VMO and VL muscles should be about 1.0 for the patella to be balanced within the intercondylar groove.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A VMO:VL ratio of less than 1.0 is commonly observed in patellofemoral pain syndrome (PFPS) due to decreased VMO activity or increased VL activity.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Insufficiency of the VMO muscle contraction leads to abnormal patellar tracking, causing abnormal loading patterns on the patellofemoral joint and surrounding soft tissues.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Abnormal patellar tracking and loading can result in dysfunction, degenerative changes within the patellofemoral joint, and impaired soft tissues.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 4/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The VMO muscle should be trained with closed kinetic chain exercises such as squatting to promote motor control in functional and specific activities.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Short arc closed kinetic chain knee extension exercises, such as the squat, should be performed to 60 degrees of knee flexion in healthy individuals and patellofemoral pain patients to promote greater recruitment of the VMO muscle in relation to the VL muscle without pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with additional isometric hip adduction should be executed at 60 degrees of knee flexion to provide greater muscle activity.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining hip adduction throughout the entire range of the squat is proposed to stabilize the origin and stretch the VMO muscle, providing greater VMO activity throughout the entire range.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing hip adduction after squatting to a specific knee angle is an alternative sequence that is easy and comfortable to perform.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing squats combined with maximum isometric hip adduction can be strenuous, potentially exacerbating pain and leading to fatigue of the hip adductor and vasti muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Several authors recommended that short arc CKC knee extension exercise such as squat in healthy individual and patellofemoral pain patient should be increased to 60 degrees knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study examines the effects of 0%, 35%, 70%, and 100% hip adductor exertion combined with squatting on VMO and VL EMG activities.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study compares two exercise sequences: squeeze entire time-squat exercise (SE-SE) and squeeze at 60 degrees knee flexion-squat exercise (SF-SE).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing squats with maximum isometric hip adduction may exacerbate pain and lead to fatigue of the hip adductor and vasti muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 5/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Incorporating hip adductor exertion during a squat can enhance the activity of the vastus medialis oblique (VMO) muscle and promote balanced activity between the VMO and vastus lateralis (VL).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using an elastic ball with pressure biofeedback during squats can be used to combine hip adduction with the squatting movement to retrain the VMO.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The fibers of the vastus medialis oblique (VMO) orientate medially at 55 degrees relative to the femoral line.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The fibers of the vastus lateralis (VL) orientate laterally by 15 degrees against the femoral line.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The vastus medialis oblique (VMO) arises from the tendon of the adductor magnus and directly inserts into the medial border of the patella.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An imbalance between the medial pull of the vastus medialis oblique (VMO) and the lateral pull of the vastus lateralis (VL) disrupts normal patellar tracking during knee extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 6/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "As the knee flexes, the center of gravity shifts further from the center of rotation of the patellofemoral joint, requiring greater quadriceps force to counterbalance the increased flexion moment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The contact area of the patella increases and moves proximally as the knee flexes to 90 degrees, which helps distribute and compensate for the larger patellofemoral joint reaction forces.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Subjecting the knee to excessive flexion during squatting without accounting for the highly elevated patellofemoral joint reaction forces, especially in individuals with pre-existing patellofemoral disorders.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The quadriceps lever arm increases rapidly as the knee extends to 45 degrees, lengthening by approximately 30%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The quadriceps muscle requires approximately 60% of its total capacity to extend the knee during the last 15 degrees of extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Removing the patella reduces the quadriceps lever arm by 33% to almost 70%, requiring the muscle to produce 30% more force than normal to extend the knee.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During squatting, the patellofemoral joint reaction force can reach up to 7 times body weight.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Stair climbing requires up to 60 degrees of knee flexion and generates patellofemoral joint reaction forces of 3.3 times body weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lifting an object requires a knee joint range of motion of 0 to 117 degrees of flexion.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Abnormal patellar movement during knee flexion and extension leads to abnormal stress and loading patterns on the patella, which may contribute to degenerative changes within the patellofemoral joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Abnormal patellar tracking provides abnormal loads to the surrounding soft tissue, causing impairments and tissue damage.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increased knee flexion increases the angle between the quadriceps tendon force and the patellar tendon force, resulting in a larger patellofemoral joint reaction force.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 8/41]",
+    "applies_to_fault": [
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Single Leg Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Maintain balanced activity between the vastus medialis obliquus (VMO) and vastus lateralis (VL) muscles to ensure normal patellofemoral tracking.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Assess patellar tracking by observing the motion path of the patella during knee flexion and extension, such as during a single leg squat.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing abnormal patellar tracking, which typically presents as excessive lateral or medial deviation of the patella.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing tightness or hyperactivity of lateral structures (vastus lateralis, iliotibial band, lateral retinaculum) or weakness of medial muscles (vastus medialis and VMO) to disrupt patellar stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Exhibiting the J sign, characterized by a sudden medial deviation of the patella in early flexion during a single leg squat, or lateral deviation at the terminal phase of extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Based on physiological cross-sectional area, the vastus lateralis contributes approximately 40% of the quadriceps muscle force, while the vastus medialis assists with approximately 20-35%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The J sign is defined as a sudden medial deviation of the patella in early flexion during a single leg squat, or lateral deviation at the terminal phase of extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Abnormal patellar tracking leads to abnormal distribution of forces along the patellofemoral articular surface, quadriceps tendon, patellar tendon, and adjacent soft tissues.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Deficits or compensation in any of the three interdependent systems (osseoligamentous structures, muscles, and neuromuscular control) alters patellar tracking, which affects the magnitude and distribution of forces acting on the patellofemoral joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 9/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Maintain a supportive medial arch to avoid excessive foot pronation during lower limb movements.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive foot pronation (flat foot) due to a lack of a supportive medial arch.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Allowing compensatory internal rotation of the tibia or femur during lower limb movement.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Excessive foot pronation leads to compensatory internal rotation of the tibia or femur, which contributes to knee valgus.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Lateral patellar tilt and lateral translation are associated with patellofemoral disorder and anterior knee pain.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Posterior tilt of the patella causes infrapatellar fat pad irritation and leads to inferior patella pain, usually triggered by knee extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Abnormal proximal-distal positioning of the patella (patella alta or patellar baja) leads to abnormal loading on the patellofemoral joint, which is associated with anterior knee pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellar alta is associated with recurrent subluxation of the patella.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An increased sulcus angle indicates a shallow femoral sulcus, which is associated with recurrent patellofemoral joint subluxation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An increase in the congruence angle is associated with anterior knee pain and patellofemoral disorders.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 12/41]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The valgus angle of the knee can be reduced by increasing the base of support and placing the feet further apart.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive knee valgus (genu valgum or knock-knees) during standing or movement.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The normal range for the Q angle in a healthy population is approximately 10-20 degrees, which is greater in women (15-20 degrees) than in men (10-15 degrees).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The normal frontal plane alignment of the knee is slightly valgus, ranging between 5 to 15 degrees.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "In adults, the femoral neck normally positions anteriorly with respect to the plane of the femoral condyles in approximately 15 degrees of antiversion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An excessive valgus angle directly associates with an increasing lateral pulling force of the quadriceps muscle.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "An increased Q angle indicates a greater lateral pull on the patella, providing larger stress between the lateral facet of the patella and the lateral trochlea of the femur, which is associated with patellofemoral pain and anterior knee pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Genu recurvatum (hyperextension of the knee) affects patellofemoral joint mechanics and can lead to patellofemoral disorders.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Excessive femoral neck antiversion leads to compensatory medial rotation of the hip or lateral rotation of the tibia, which alters patellofemoral mechanics and can cause patellofemoral disorders.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 13/41]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Training the posterior fibers of the gluteus medius can decrease hip internal rotation and the valgus force vector at the knee.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Maintaining flexibility in the iliotibial band, hamstrings, gastrocnemius, and quadriceps is essential to preserve normal patellofemoral joint mechanics.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ensuring adequate calf muscle flexibility prevents compensatory foot pronation at the subtalar joint caused by limited talocrural joint dorsiflexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining quadriceps flexibility is necessary to avoid limitations in knee flexion.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the hip to internally rotate and create a valgus force vector at the knee due to weak gluteus medius muscles.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Experiencing limited knee flexion during lower body movements due to tightness of the quadriceps muscle.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Compensating with foot pronation at the subtalar joint due to tight calf muscles limiting talocrural joint dorsiflexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A contralateral asymptomatic leg of patellofemoral pain syndrome (PFPS) patients should be treated when the muscle strength of the quadriceps of the symptomatic leg loses more than 15%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In individuals with pain-free knees, the electromyography (EMG) ratio of the vastus medialis obliques (VMO) to vastus lateralis (VL) should be approximately 1.0 to keep the patella balanced within the intercondylar groove.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Several authors found that the vastus medialis obliques (VMO) to vastus lateralis (VL) EMG ratio was less than 1.0 in people with patellofemoral pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Weakness of the quadriceps muscle alters patellofemoral joint mechanics, which can lead to patellofemoral pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tightness of the iliotibial band provides excessive lateral force on the patella, which can externally rotate the tibia and cause excessive lateral tracking of the patella during knee motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tightness of the hamstring muscle increases posterior force on the knee, which increases pressure between the patella and the femur.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tightness of the hamstring muscle requires greater force to be generated by the quadriceps, which increases the patellofemoral joint reaction force.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tightness of the quadriceps muscle increases the force of contact between the patella and the femur.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tightness of the quadriceps muscle requires greater force for knee extension, which increases the patellofemoral joint reaction force.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Dysfunction or reduced activation of the vastus medialis obliques (VMO) relative to the vastus lateralis (VL) causes lateral patella shifts and increased lateral patella pressure, predisposing the lifter to lateral subluxation, dislocation, or degenerative disorders of the patellofemoral joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the knees to cave inward (valgus) increases stress on the knee joint.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 14/41]",
+    "applies_to_fault": [
+      "knee valgus",
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Retraining of the vastus medialis oblique (VMO) should focus on restoring dynamic patellar stability by correcting patellar tracking through the appropriate timing and intensity of VMO and vastus lateralis (VL) activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Flexibility of overall and isolated parts of the quadriceps should be evaluated and improved to maintain normal distribution of patellofemoral stress during knee motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The vastus medialis oblique (VMO) and vastus lateralis (VL) play a major role in maintaining patellar tracking, particularly in the first 30 degrees of knee flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing an imbalance in activation where the vastus lateralis (VL) fires earlier than the vastus medialis oblique (VMO) disrupts optimal patellofemoral tracking.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Having decreased flexibility in the vastus lateralis (VL) can abnormally lengthen the vastus medialis oblique (VMO) and alter patellar tracking.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Some authors argue whether the appropriate number of the VMO:VL EMG activity ratio for healthy subjects should be 1.1 or 0.85.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In individuals with patellofemoral pain syndrome (PFPS), the EMG onset of the vastus lateralis (VL) occurred earlier than the vastus medialis oblique (VMO), whereas they occurred simultaneously in healthy subjects.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The vastus medialis oblique (VMO) and vastus lateralis (VL) have a major role in maintaining patellar tracking particularly in the first 30 degrees of knee flexion where the patella is not supported by the femoral trochlea.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Decreased overall quadriceps flexibility directly increases patellofemoral stress during knee motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Decreasing vastus lateralis (VL) flexibility may lengthen the vastus medialis oblique (VMO), leading to an increase in lateral patellofemoral stress and stress between the lateral facet of the patella and the medial aspect of the lateral femoral trochlea.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Reduced coordination of motor units between the vastus medialis oblique (VMO) and vastus lateralis (VL) leads to anterior knee pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 15/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Range of Motion and Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The position of the hips should be neutral or slightly externally rotated during the squat to decrease the Q-angle and lateral forces acting on the patella.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "For individuals with patellofemoral pain, limiting squat depth to 45 to 60 degrees of knee flexion can help avoid excessive patellofemoral compressive forces while still recruiting the vastus medialis obliquus.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing squats combined with isometric hip adduction at 60 degrees of knee flexion provides safe and effective muscle activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting to a depth of 75 to 90 degrees of knee flexion when suffering from patellofemoral pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Knee pain was usually induced when squatting with 75-90 degrees knee flexion in individuals with patellofemoral pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing squat depth to 60 degrees knee flexion promotes greater recruitment of the VMO muscle in relation to the VL muscle compared to 45 degrees knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stensdotter et al. (2003) found that the onset of EMG activity of the VMO and VL muscles in closed chain knee extension was more simultaneous than in the open chain.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to maintain neutral or slightly externally rotated hips increases the Q-angle and lateral forces acting on the patella.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Squatting with deeper knee flexion increases patellofemoral joint compressive forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Experiencing pain during a squat has an inhibitory effect on quadriceps muscle contraction.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 16/41]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Incorporating simultaneous hip adduction during squat exercises, such as a semi-squat or wall squat, can increase vastus medialis oblique (VMO) activity.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing squats with hip adduction can promote a greater muscle balance between the medial and lateral quadriceps muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Activating the gluteus medius to control internal rotation of the femur during closed kinetic chain exercises helps maintain proper patellofemoral mechanics.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to control internal rotation of the femur during closed kinetic chain exercises due to weakness or inactivity of the gluteus medius.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Hertel et al. (2003) reported that VMO activation when combining knee extension with hip abduction was not preferentially enhanced compared with VL.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Cerny (1995) and Kast and Jewett (1993) reported that the addition of hip internal or external rotation with knee extension exercise did not provide a beneficial effect on VMO activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Additional isometric hip adduction with OKC knee extension exercises has not been shown to selectively increase VMO activity, whereas incorporating simultaneous hip adduction during squat exercises (CKC) has been associated with increased VMO activity.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Inability of the gluteus medius to control internal rotation of the femur during closed kinetic chain exercises, combined with VMO inhibition, may lead to excessive lateral tracking of the patella.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 17/41]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintaining hip adduction throughout the entire range of a squat is proposed to stabilize the origin of the vastus medialis oblique (VMO) continuously.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing hip adduction only when squatting to a specific angle is an alternative sequence that is easier, more comfortable, and believed to stabilize the VMO origin and stretch its length at that specific knee flexion angle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Up-training the vastus medialis oblique (VMO) while maintaining vastus lateralis (VL) activity is a more successful strategy for muscle retraining than trying to down-train the VL.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing strenuous squatting with hip adduction can exacerbate pain and lead to fatigue of the hip adductor and vasti muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Attempting to reduce vastus lateralis (VL) activity directly during retraining is difficult and often results in an unintended decrease in vastus medialis oblique (VMO) activity.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "LeVeau and Rogers (1980) found that subjects reported difficulty reducing VL activity without decreasing VMO activity, but succeeded in increasing VMO activity while maintaining VL activity below the threshold level.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Imbalanced activation between the vastus medialis oblique (VMO) and vastus lateralis (VL) can alter patellofemoral joint forces and contribute to patellar malalignment and knee pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 18/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Wall Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Stand with the back against a wall, placing the feet approximately 10 cm away from the wall, shoulder-width apart, with hands across the chest.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Slightly externally rotate both hips during the squat setup.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to align in a valgus position, where the feet cannot touch together when standing with the knees closed.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Slightly externally rotating both hips in the starting position is aimed to decrease the Q angle and lateral force acting on the patella.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Knee hyperextension is defined as an angle of more than 10 degrees formed by the lateral femoral line and the lateral line of the leg during standing.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to slightly externally rotate the hips can increase the Q angle and lateral force acting on the patella.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 19/41]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Wall Squat",
+    "focus_area": "Knee",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Maintain light contact between the back and the wall throughout the wall squat exercise.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For the squeeze-entire-time squat variation, squeeze an elastic ball between the thighs to the target exertion level before descending, then bend the knees to 60 degrees of flexion and hold.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For the squeeze-at-flexion squat variation, bend the knees to 60 degrees of flexion first, then squeeze an elastic ball between the thighs to the target exertion level and hold.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study protocol compared squatting at 60 degrees of knee flexion under seven conditions, including 0%, 35%, 70%, and 100% maximum hip adductor exertion against an elastic ball inflated to an initial pressure of 180 mmHg.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 20/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Squats can be performed with concurrent hip adductor exertion (squeezing) either throughout the entire range of motion or initiated specifically at 60 degrees of knee flexion to alter quadriceps muscle recruitment.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 30 healthy subjects (15 males, 15 females), performing a squat with 100% hip adductor exertion throughout the movement (SE-SE) increased VMO activation to 62.14% ± 27.25% MVC and VL activation to 73.60% ± 35.00% MVC, compared to 35.77% ± 14.23% VMO and 36.27% ± 14.25% VL during a standard squat without adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The VMO:VL ratio was highest during a standard squat without hip adduction (1.057 ± 0.404) and decreased when hip adduction was introduced, measuring 0.800 ± 0.326 at 35% exertion, 0.865 ± 0.347 at 70% exertion, and 0.935 ± 0.410 at 100% exertion during the squeeze-entire-time squat (SE-SE).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a squat with hip adductor exertion initiated at 60 degrees of knee flexion (SF-SE) at 100% effort resulted in a VMO activation of 60.68% ± 27.32% MVC, a VL activation of 68.36% ± 29.01% MVC, and a VMO:VL ratio of 0.994 ± 0.469.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 21/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Incorporating hip adductor exertion (squeezing) during a squat significantly increases the muscle activation of both the vastus medialis oblique (VMO) and vastus lateralis (VL).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Choosing between squeezing the hip adductors only at 60 degrees of knee flexion versus squeezing during the entire duration of the squat does not significantly alter VMO or VL muscle activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Hip adductor exertion level (0%, 35%, 70%, and 100%) has a statistically significant effect on VMO, VL, and VMO:VL ratio (p < 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The choice of exercise sequence (squeezing at 60 degrees knee flexion versus squeezing the entire time) shows no significant difference for VMO (p = 0.221), VL (p = 0.072), or VMO:VL ratio (p = 0.999).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "VMO and VL muscle activation (normalized RMS %MVC) significantly increases with higher levels of hip adductor exertion (p < 0.05 for all pairwise comparisons between 0%, 35%, 70%, and 100% exertion).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The VMO:VL ratio is significantly different when comparing 0% hip adductor exertion to 35% exertion (p < 0.001) and 70% exertion (p = 0.002), but not when compared to 100% exertion (p = 0.141).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 22/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Squatting with hip adduction (squeezing) can be performed either throughout the entire range of motion or specifically initiated at 60 degrees of knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squeezing to perform hip adduction only at 60 degrees of knee flexion is perceived as more comfortable by lifters than squeezing continuously throughout the entire range of the squat.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squeezing to adduct the hips continuously throughout the entire range of a squat is highly demanding and can cause premature fatigue of the quadriceps and hip adductors.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "At 35% hip adductor exertion during continuous squeezing (SE-SE), VMO activation was 30.43 +/- 11.25% MVC, which was significantly lower than VL activation at 41.71 +/- 18.37% MVC (p = 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At 70% hip adductor exertion during continuous squeezing (SE-SE), VMO activation was 44.02 +/- 17.01% MVC, which was significantly lower than VL activation at 55.40 +/- 23.70% MVC (p = 0.015).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At 35% hip adductor exertion when squeezing at 60 degrees knee flexion (SF-SE), VMO activation was 28.15 +/- 12.86% MVC, which was significantly lower than VL activation at 40.99 +/- 17.60% MVC (p < 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At 70% hip adductor exertion when squeezing at 60 degrees knee flexion (SF-SE), VMO activation was 38.35 +/- 17.21% MVC, which was significantly lower than VL activation at 50.55 +/- 21.63% MVC (p = 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "No significant differences in VMO and VL activation were found at 0% exertion (VMO: 35.77 +/- 14.23% MVC, VL: 36.27 +/- 14.25% MVC) or at 100% exertion in either squatting sequence.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "There were no statistically significant differences in VMO activity, VL activity, or the VMO:VL ratio when comparing continuous squeezing (SE-SE) to squeezing only at 60 degrees of knee flexion (SF-SE).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Exerting hip adduction at the beginning and continuously for the entire range of a squat requires larger effort and can lead to fatigue of the overall quadriceps and hip adductor muscles when reaching 60 degrees of knee flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 23/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Squatting without hip adduction encourages balanced activity between the vastus medialis obliquus (VMO) and vastus lateralis (VL) muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with 70% and 100% hip adductor exertion increases vastus medialis obliquus (VMO) activity compared to squatting without hip adduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing squats with a low level (35%) of hip adductor exertion, which fails to produce balanced activation between the VMO and VL muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Squatting without hip adduction produced a VMO:VL ratio of 1.06, showing no significant difference between VMO and VL activities.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with 35% hip adductor exertion resulted in the lowest VMO:VL ratio of 0.76 for the SF-SE sequence and 0.80 for the SE-SE sequence.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Cerny (1995) and Earl et al (2001) reported that the squat with maximum isometric hip adduction presented higher VMO and VL activities than the squat without hip adduction but with no significant difference in the VMO:VL ratio.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Squatting with 35% hip adductor exertion enhances activation of the VL muscle but not the VMO muscle, which prevents balanced activation of the knee extensors.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 24/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Performing a squat with maximum (100%) hip adductor exertion promotes greater recruitment of both the VMO and VL muscles while maintaining balanced activation between them.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Adding strong hip adduction during a squat can enhance recruitment of the VMO muscle because the VMO originates from the adductor muscles, and adductor contraction provides a stable origin.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squats with strong sub-maximum (70%) or maximum (100%) hip adduction enhance VMO activation, whereas weak sub-maximum (35%) hip adduction does not.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using only a weak sub-maximum (35%) hip adductor exertion during a squat reduces VMO activity compared to a standard squat without hip adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a squat with only 70% hip adductor exertion can lead to an imbalanced VMO:VL activation ratio.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The VMO:VL ratio during a squat with 70% hip adductor exertion was lower (0.85 for SF-SE and 0.87 for SE-SE) than during a squat without hip adduction (1.06).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with 35% hip adductor exertion resulted in the lowest VMO activity, even lower than squatting without hip adduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An imbalanced VMO:VL activation ratio (such as from a 70% hip adductor exertion squat) may promote progressively lateral tracking of the patella.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 25/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "During a squat without targeted hip adduction, the hip adductor muscles contract isometrically to maintain a neutral hip position in the transverse plane.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Combining a squat with strong hip adduction (70% to 100% exertion) increases the activation of both the vastus medialis obliquus (VMO) and vastus lateralis (VL) muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Strong concentric or isometric contraction of the hip adductors provides a stable origin for the VMO and transfers a larger physiological stretch to it, enhancing its activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a squat with weak, sub-maximum (35%) hip adductor exertion, which results in eccentric contraction of the adductors and decreases VMO activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During a squat at 60 degrees of knee flexion, the hip adductor muscles undergo eccentric contraction when attempting to regulate a weak 35% hip adduction exertion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with maximum (100%) hip adductor exertion produces greater activation of both the VMO and VL muscles compared to squatting without hip adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with weak sub-maximum (35%) hip adductor exertion results in lower VMO activity but higher VL activity compared to squatting without hip adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with strong sub-maximum (70%) hip adductor exertion increases both VMO and VL muscle activity compared to squatting without hip adduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An eccentric contraction of the hip adductors during a squat with weak (35%) adduction provides an unstable origin for the VMO and fails to transfer physiological stretch, decreasing VMO activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Strong concentric or isometric contraction of the hip adductors during a squat with 70% or 100% exertion transfers a larger physiological stretch to the VMO, altering its length-tension properties and enhancing its activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 26/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Squatting with maximum isometric hip adduction can promote a greater muscle balance between the vastus medialis obliquus (VMO) and vastus lateralis (VL) muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When squatting with an elastic ball between the knees, taller subjects should place their feet closer together than shorter subjects to maintain proper leg positioning.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using a small towel roll, soft bolster, or weak elastic band for hip adduction resistance during a squat can lead to improper knee alignment.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Performing a squat with sub-maximum hip adduction can result in a lower VMO:VL activation ratio than squatting without hip adduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Squatting with sub-maximum hip adduction (at 35% and 70%) showed a lower VMO:VL ratio than squatting without hip adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Subjects with a height between 150-180 cm could successfully use an elastic ball with a diameter of 16.5 cm for hip adduction during squats without discomfort.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using inadequate resistance objects like a small towel roll, soft bolster, or weak elastic band causes excessive valgus posture of the knee.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Failing to promote muscle balance between the VMO and VL muscles can hinder the treatment and recovery of patellofemoral pain syndrome (PFPS).",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 27/41]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Begin training the VMO muscle with a standard squat without hip adduction to establish balanced activity between the VMO and VL muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Progress the exercise to a squat with 70% hip adductor exertion to increase VMO recruitment while avoiding fatigue and pain aggravation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Progress to a squat with maximum hip adductor exertion to maximize VMO recruitment and promote balanced activity between the VMO and VL muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Use an elastic ball with pressure biofeedback during the squat to provide feedback and monitor hip adductor exertion levels.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing the squat with only 35% hip adductor exertion, which fails to recruit the VMO sufficiently.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Squatting with 35% hip adductor exertion induces low VMO recruitment and imbalanced activity between the VMO and VL muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with 70% and 100% hip adductor exertion increases both VMO and VL activities, enhancing overall quadriceps strengthening.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The VMO muscle is the only dynamic medial stabilizer which counteracts the lateral force produced by the VL muscle and the iliotibial band in order to maintain normal tracking of the patella.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An imbalance in activation where the VL dominates over an insufficient VMO muscle causes lateral tracking of the patella.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Low VMO recruitment from incorrect adductor exertion levels (such as 35%) promotes abnormal lateral patellar movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 28/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "To achieve balanced activation between the VMO and VL muscles, perform the squat either without hip adduction or with maximum isometric hip adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with isometric hip adduction can be performed either through the entire range of the squat or specifically when holding at 60 degrees of knee flexion, as both methods yield similar VMO and VL activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An elastic ball with pressure biofeedback can be used during squatting with isometric hip adduction to provide real-time feedback on exertion levels.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing the squat with submaximal hip adductor exertion, such as 35% or 70% effort, leads to imbalanced activation between the VMO and VL muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The squat with 35% hip adductor exertion presented small VMO activity but high VL activity compared to squatting without hip adduction, resulting in the most imbalanced activity between the two muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The squat with 70% hip adductor exertion provided higher VMO and VL activities than squatting without hip adduction, but the muscle activities remained imbalanced.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The squat with maximum hip adduction presented the highest VMO and VL activities and demonstrated balanced activity between the two muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "There were no differences in VMO and VL muscle activity between performing hip adduction through the entire range of the squat versus performing it only when squatting at 60 degrees of knee flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Imbalanced activity between the VMO and VL muscles, particularly with VMO insufficiency, is associated with patellofemoral dysfunction.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 29/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Wall Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "To perform the wall squat with hip adduction, stand straight with your back touching the wall, hands crossed over the chest, feet hip-width apart, toes pointing straight forward, and heels approximately 10 centimeters away from the wall.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squat straight down along the wall until the knees are bent to an angle of 60 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorporate hip adduction (squeezing inward) during the squat to increase the activation of the Vastus Medialis Oblique (VMO) and promote muscle balance between the VMO and the Vastus Lateralis (VL).",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study protocol utilized a sample size of 30 healthy participants to evaluate VMO and VL muscle activity during a wall squat at 60 degrees of knee flexion combined with hip adduction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The protocol measured hip adduction force at 35% and 70% of maximum voluntary isometric contraction (MVIC) using a plastic ball adapted with a sphygmomanometer.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For electromyography (EMG) tracking, the VMO electrode is placed 3 centimeters superior to the superior-medial border of the patella and 4 centimeters medially, oriented at a 55-degree angle to the femoral shaft.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For electromyography (EMG) tracking, the VL electrode is placed 10 centimeters superior to the superior border of the patella and 6 to 8 centimeters lateral to the line connecting the ASIS and the center of the patella, oriented at a 15-degree angle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 34/41]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Squatting while simultaneously adducting the hips against resistance, such as a ball placed between the thighs, can be used to target and increase the activation of the vastus medialis oblique (VMO) muscle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The squat with hip adduction can be performed by maintaining adduction throughout the entire movement or by squatting to a 60-degree knee flexion angle before initiating the hip adduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study compared seven squatting conditions, including squatting without adduction and squatting with hip adduction at 35%, 70%, and maximum effort, either throughout the movement or at a static 60-degree knee flexion angle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The exercise protocol required participants to squat to a knee flexion angle of 60 degrees and hold the position for 2 seconds.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An imbalance between the vastus medialis oblique (VMO) and vastus lateralis (VL) can lead to patellofemoral pain syndrome (anterior knee pain) and patellar joint pathology.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Weakness in the knee extensors and VMO imbalance can contribute to chronic knee muscle or ligament injuries and knee osteoarthritis.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/4d1d6dc1-446e-43b6-b4c1-0511aeec228e/scratchpad/rerun_data\\squat\\Effect of hip adductor (Squat).pdf [part 35/41]",
+    "applies_to_fault": []
+  }
+]

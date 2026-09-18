@@ -1,0 +1,24 @@
+# --- secrets ---
+# .env holds a live GOOGLE_API_KEY and the two DATABASE_URLs. Never commit it;
+# .env.example carries the key names instead.
+.env
+
+# --- environment / build artefacts ---
+.venv/
+__pycache__/
+*.pyc
+
+# --- machine-local editor & tool state ---
+.claude/
+.vscode/
+
+# --- large or regenerable data ---
+# data/ (45 MB) and excluded_from_kb/ (36 MB) are the third-party research PDFs the KB
+# was built from. They are static, would need Git LFS, and carry their own licensing.
+# The curated extraction of them (curated_data/, curated_data_v5/) IS committed, so the
+# KB stays reproducible from the repo without shipping the papers.
+data/
+excluded_from_kb/
+
+# Raw dump from check_chunks.py (~550 KB), regenerable.
+chunk_results.txt

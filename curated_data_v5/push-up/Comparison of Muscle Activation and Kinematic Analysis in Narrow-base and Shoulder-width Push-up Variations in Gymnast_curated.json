@@ -1,0 +1,360 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Triceps",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Narrow-width push-ups can be utilized as an advanced variation of traditional shoulder-width push-ups to target the triceps brachii with greater intensity.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of a 25-year-old male gymnast, narrow-width push-ups (NWPP) elicited triceps brachii EMG activity of 5.11 ± 1.97 mV and 105.83 ± 18.54 %MVC.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a study of a 25-year-old male gymnast, shoulder-width push-ups (SWPP) produced triceps brachii EMG activity of 3.91 ± 1.36 mV and 74.32 ± 16.9 %MVC.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 1/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Narrow-base push-ups elicit greater triceps brachii activation compared to shoulder-width push-ups, making them highly effective for targeting the triceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shoulder-width push-ups show higher activation in the pectoralis major and anterior deltoid, making them suitable for general chest and shoulder strength development.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Narrow-based push-ups enhance shoulder stability and triceps strength, which benefits movements requiring narrow arm positions.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study by Mankowski et al. (2016) compared narrow-based and shoulder-width push-ups over a 12-week training period in collegiate gymnasts, finding narrow-based push-ups elicited greater triceps brachii activation and shoulder-width showed higher activation in the pectoralis major.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 2019 study by Jang et al. found that narrow-based push-ups led to significantly higher activation of the triceps brachii, while shoulder-width push-ups showed increased activation of the pectoralis major and anterior deltoid among elite gymnasts.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Simpson and Drury (2018) found that narrow-based push-ups enhanced shoulder stability and triceps strength, which directly benefited gymnasts during movements requiring narrow arm positions like the planche and handstand push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 2/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Narrow-based push-ups are highly effective for isolating the triceps and building endurance in the anterior deltoid and rotator cuff.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shoulder-width push-ups provide a broader base of support, which improves postural control and reduces the risk of improper alignment during high-repetition sets.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shoulder-width push-ups are superior for targeting and building endurance in the pectoralis major and overall chest musculature.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorporating both narrow-based and shoulder-width push-ups into a training regimen helps develop balanced upper-body endurance and joint stability.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Losing postural control and experiencing improper alignment during high-repetition sets, especially when fatigued.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Jang et al. (2019) concluded that narrow-based push-ups are superior for triceps isolation, while shoulder-width push-ups provide a more balanced upper-body workout.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An EMG study by Chen and Yu (2021) indicated that narrow-based push-ups were superior for triceps recruitment even under fatigued conditions, while shoulder-width push-ups offered better postural control due to a broader base of support.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 10-week endurance training study by Muller et al. (2020) on adolescent gymnasts found that narrow-based push-up training increased fatigue resistance in the triceps and anterior deltoid, whereas shoulder-width push-up training improved endurance in the pectoralis major.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tanaka and Yamada (2022) found that narrow-based push-ups increased endurance in the stabilizing muscles of the shoulder, particularly the rotator cuff, while shoulder-width push-ups enhanced chest endurance.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to maintain proper muscle balance and alignment increases the risk of overuse injuries in high-stress areas like the rotator cuff, shoulder girdle, and elbow joints.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 3/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Incorporate both narrow-based and shoulder-width push-ups to ensure balanced development of the upper body and reduce the risk of overuse injuries.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform narrow-based push-ups to place greater emphasis on the triceps and shoulder stabilizers, which are crucial for preventing injuries during pressing movements.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform shoulder-width push-ups to engage a broader range of muscles, including the pectoralis major and anterior deltoid.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Utilize narrow-based push-ups during rehabilitation for rotator cuff injuries to rebuild strength without overloading the shoulder joint prematurely.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study by Lee et al. (2017) found that narrow-based push-ups improved shoulder stability by strengthening the triceps and rotator cuff muscles to maintain proper joint alignment during overhead movements.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rodriguez and Mendes (2023) found that narrow-based push-ups were particularly effective in the rehabilitation phase for athletes with rotator cuff injuries, allowing them to rebuild strength without premature shoulder joint overload.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Kim et al. (2019) found that narrow-based push-ups significantly improved gymnasts' ability to perform planche progressions, as triceps activation directly transferred to the required elbow extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Kim et al. (2019) found that shoulder-width push-ups benefited gymnasts performing dynamic skills, such as vaults and ring swings, where chest and shoulder strength were more important.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Uncorrected muscle imbalances from lacking push-up variation can lead to conditions such as rotator cuff strains, elbow tendinitis, and shoulder impingements.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 4/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Chest and Arms",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "For a shoulder-width push-up, position the hands shoulder-width apart, directly under the shoulder joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For a narrow-width push-up, position the hands directly beneath the sternum.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain an aligned body in a prone position with the feet on the ground.",
+        "applies_to_fault": [
+          "hip sag"
+        ]
+      },
+      {
+        "text": "Perform push-ups in controlled cycles, such as a fixed 2-second repetition rate starting from the top position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study of a single 25-year-old male gymnastic player (65 kg) compared the EMG response of the pectoralis major and triceps brachii during narrow-width and shoulder-width push-ups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The push-up cycle was standardized using a metronome to fix the repetition rate at 2 seconds, starting from the top position.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 5/8]",
+    "applies_to_fault": [
+      "hip sag"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Elbow",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Hand placement during push-ups significantly impacts muscle activation, particularly in the triceps brachii.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Narrow-width push-ups generate higher electromyography (EMG) activity in the triceps brachii compared to shoulder-width push-ups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A standard push-up involves flexing the elbows until the chest approaches the floor, followed by extending the elbows back to the initial position.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using a narrow-width hand position can restrict the elbow joint's range of motion during the push-up.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The average elbow joint angle was found to be 139.81 degrees in the shoulder-width push-up (SWPP) and 135.22 degrees in the narrow-width push-up (NWPP).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The range of motion in the wide-width push-up (WWPP) spans from 164.99 to 96.91 degrees, whereas the narrow-width push-up (NWPP) spans from 154.45 to 118.23 degrees.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "The coefficient of correlation between elbow joint angle alteration and triceps EMG amplitude is 0.099 during NWPP and 0.882 during SWPP.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean triceps brachii EMG RMS value was 19.97 +/- 0.39 for SWPP and 21.04 +/- 0.26 for NWPP.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Right hand triceps EMG response was higher than the left hand during both push-up variations (SWPP-Right: 21.19 +/- 0.84, NWPP-Right: 22.75 +/- 0.23, SWPP-Left: 18.66 +/- 0.53, NWPP-Left: 19.33 +/- 0.71).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Restricting the range of motion during narrow-width push-ups develops and concentrates the load on the elbow joint.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 6/8]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Elbow",
+    "content_type": "Joint Mechanics",
+    "core_principles": [
+      {
+        "text": "Narrow-width push-ups target the triceps more effectively by increasing triceps muscle activation and requiring a deeper range of elbow movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shoulder-width push-ups distribute the load more evenly between the shoulders and elbows, making them highly suitable for general upper-body conditioning.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Achieving deeper elbow flexion during push-ups increases the mechanical load and muscular demand on the triceps.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During narrow-width push-ups, the elbow extension angle was 154.45 ± 3.96 degrees and the flexion angle was 118.23 ± 11.51 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During shoulder-width push-ups, the elbow extension angle was 164.99 ± 3.09 degrees and the flexion angle was 96.91 ± 6.20 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Narrow-width push-ups recruit more motor units and result in higher %MVC in the triceps compared to shoulder-width push-ups.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing narrow-width push-ups places greater localized strain on the elbow joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to reach deep elbow flexion reduces the mechanical load and contractile demand placed on the triceps muscle.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 7/8]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Narrow width push-ups are more effective for targeting the triceps brachii due to the greater internal moment required at the elbow joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Standard width push-ups provide a more balanced upper-body workout and elicit more pectoralis major activity, making them better for overall chest development.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Research by Simpson and Drury (2018) indicated that standard width push-ups may elicit more pectoralis major activity, supporting the variation for overall chest development.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf [part 8/8]",
+    "applies_to_fault": []
+  }
+]

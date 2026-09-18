@@ -1,0 +1,450 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Perform squats with deeper knee flexion, such as 50 degrees or 80 degrees, to increase the activation of the vastus medialis obliquus relative to the vastus lateralis.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing shallow squats at only 20 degrees of knee flexion, which limits the relative activation of the vastus medialis obliquus.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Allowing the knees to cave inward into a valgus position during the squat.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 18 healthy participants (7 male, 11 female), squatting to depths of 50 degrees and 80 degrees of knee flexion significantly increased the VMO:VL EMG ratio compared to a shallow 20 degrees squat (p = 0.031 and p = 0.028, respectively).",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Altering knee position to varus or valgus did not significantly affect the VMO:VL EMG ratio (p = 0.44) in semi-squat exercises.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An altered dynamic balance or activation ratio between the vastus medialis obliquus and vastus lateralis can lead to maltracking of the patella, contributing to patellofemoral pain syndrome.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 1/10]",
+    "applies_to_fault": [
+      "knee valgus",
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Maintaining muscular equilibrium between the vastus medialis obliquus (VMO) and vastus lateralis (VL) is necessary to prevent altered forces acting upon the patellofemoral joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Preferentially strengthening the VMO to achieve a VMO:VL ratio greater than 1 increases the medial dynamic stabilization of the patella.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing closed-kinetic chain exercises like squats promotes functional stability and decreases compression and shear forces acting through the tibiofemoral joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Training with deep squats elicits more favorable adaptations on knee extensor muscle size and function compared with training with shallow squats.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing an imbalance in contraction and activation between the VMO and VL, which prevents the VMO from counteracting the lateral force vector of the VL and iliotibial band.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing shallow squats instead of deep squats, which limits adaptations in knee extensor muscle size and function.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study investigated the effects of altering squat depth and knee position on the VMO:VL ratio in an asymptomatic population of 18 subjects (7 males, 11 females, mean age 22.39 plus or minus 2.25 years).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An upset in the muscular equilibrium between the VMO and VL alters the forces acting upon the patellofemoral joint, leading to the maltracking of the patella within the trochlear groove.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Inability of the VMO to counteract the lateral force vector of the VL and iliotibial band results in a lateral displacement of the patella.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lateral maltracking of the patella results in abnormal joint stress and subsequent articular cartilage wear.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Training with shallow squats results in inferior adaptations on knee extensor muscle size and function compared to deep squats.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
+    "applies_to_fault": [
+      "partial_squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "For a neutral squat alignment, position the feet 30 cm apart at the heel with a 7° external rotation, ensuring the knees track directly over the big toe.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward into a valgus position during the squat.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study's experimental protocol defined neutral knee tracking as knees moving over the big toe with feet 30 cm apart at the heel and externally rotated 7°, while comparing this to a 20° valgus deviation and a 20° varus deviation.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 3/10]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Position the feet in approximately 7 degrees of external rotation (or within a range of 5 to 18 degrees) to optimize balance during the squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain full foot contact with the floor, avoiding any movement that causes one side of the foot to lift or clear from the platform.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the knees aligned in a neutral path over the toes rather than caving inward or pushing excessively outward.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward (valgus or 'knees in') during the descent or ascent of the squat.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Allowing the foot to pronate or supinate excessively to the point where one side of the foot lifts off the platform.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Lower limb muscle activity peaks at 70 to 90 degrees of knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squat depths greater than 70 to 90 degrees of knee flexion show significant stress on the structures of the knee joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A foot position of 7 degrees of external rotation is within the optimal 5 to 18 degrees range for standing and gait balance.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the knees to cave inward (valgus) alters the relative activation of the vastus medialis obliques (VMO) and vastus lateralis (VL), which act antagonistically on patellar tracking.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Squatting to depths greater than 90 degrees of knee flexion places significant stress on the internal structures of the knee joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 4/10]",
+    "applies_to_fault": [
+      "knee valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Squatting to deeper angles, such as 50 degrees and 80 degrees of knee flexion, increases the VMO:VL muscle activation ratio compared to shallow 20-degree squats.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing shallow squats at 20 degrees of knee flexion limits the activation of the vastus medialis oblique (VMO) relative to the vastus lateralis (VL).",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Allowing the knees to cave into a valgus position alters the muscle activation patterns of the vastus medialis oblique (VMO) and vastus lateralis (VL).",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Squat depth had a significant effect on the VMO:VL ratio (F(2.34) = 28.40, p < 0.001, η2 = 0.63), with both 50° and 80° squats showing increases in the ratio (p = 0.031 and p = 0.028, respectively) compared with a 20° squat.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "The interaction of squat depth and knee position was significant for VMO:VL ratio (F(2.7, 45.9) = 5.97, p = 0.002, η2 = 0.26).",
+        "applies_to_fault": [
+          "partial squat",
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "The differences between muscle activations for shallow squats compared with the deepest ones are higher for valgus (VMO: 57.33 / 10.07 = 47.26, VL: 72.27 / 18.20 = 54.07) compared with movements in varus (VMO: 46.53 / 10.55 = 35.98, VL: 64.43 / 17.86 = 46.57) positions.",
+        "applies_to_fault": [
+          "partial squat",
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "There was no statistically significant difference in VMO:VL ratios found between male and female participants (F(1.6) = 0.028, p = 0.872) or between dominant and non-dominant limbs (F(1.17) < 0.001, p = 0.994).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 5/10]",
+    "applies_to_fault": [
+      "knee valgus",
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Squats are commonly taught with a 'knees over toes' neutral position, with the foot in a slightly externally rotated position.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Increasing squat depth from 20° to 50° or 80° of knee flexion significantly increases the VMO:VL muscle activation ratio.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting to a shallow depth of only 20° of knee flexion limits the activation ratio of the vastus medialis obliquus relative to the vastus lateralis.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "Allowing the knees to cave inward (valgus position) or push outward (varus position) during a squat alters the knee movement path from the recommended neutral alignment.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study of 18 participants found no significant difference in VMO:VL ratio when comparing semi-squat exercises in neutral, varus (20° outwards), and valgus (20° inwards) knee positions.",
+        "applies_to_fault": [
+          "knee valgus"
+        ]
+      },
+      {
+        "text": "Both 50° and 80° squat depths showed significant increases in VMO:VL ratio compared with the 20° squat depth.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      },
+      {
+        "text": "At a neutral knee position, the VMO:VL ratio increased from 0.73 ± 0.35 at 20° depth to 0.93 ± 0.39 at 50° depth and 0.91 ± 0.38 at 80° depth.",
+        "applies_to_fault": [
+          "partial squat"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 6/10]",
+    "applies_to_fault": [
+      "knee valgus",
+      "partial squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Perform squats to a mid-range depth of 40 to 90 degrees of knee flexion to increase levels of VMO activation relative to the VL, compared to a shallow depth of 0 to 30 degrees.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Squatting deeper increases the overall magnitude of muscle contraction and loading, resulting in greater training effects through the overload principle compared to shallower squats.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing shallow squats (0 to 30 degrees of knee flexion) limits VMO activation relative to the VL and reduces the overall magnitude of muscle contraction.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The VMO:VL ratios obtained from this study ranged from 0.69 to 0.96 during exercise conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "No significant difference in VMO:VL ratio was found when comparing a squat to 50 degrees with 80 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "VMO has increased levels of activation, relative to VL, when semi-squat exercises are performed to a mid-range (40-90 degrees) of knee flexion, as opposed to an early range (0-30 degrees) depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "None of the conditions tested resulted in preferential VMO activation, meaning no condition achieved a VMO:VL ratio greater than 1.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Training with exercises that result in a VMO:VL ratio lower than 1:1 (such as shallow squats) will result in greater strength gains in the VL muscle, potentially increasing the lateral force acting on the patella and thus increasing patellofemoral symptoms.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
+    "applies_to_fault": [
+      "partial_squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "To train quadriceps strength while minimizing joint reaction force and stress, perform closed kinetic chain exercises within a range of 0 to 50 degrees of knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For patellofemoral pain syndrome rehabilitation, utilize closed kinetic chain exercises to promote functional stability while maximizing quadriceps strength and minimizing patellofemoral joint reaction force.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing deep squats beyond 50 degrees of knee flexion when suffering from patellofemoral pain, which can provoke pain due to high compressive loads.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The optimal range of motion to train quadriceps strength with minimal joint reaction force and stress is between 0 and 50 degrees of knee flexion during closed kinetic chain exercises.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Functional activities such as ascending and descending stairs, squatting, and prolonged sitting share a functional range of knee flexion between 0 and 40 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Relative activation of the vastus medialis oblique (VMO) and vastus lateralis (VL) is not influenced by gender, leg dominance, or knee position in semi-squat exercises.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increases in relative VMO activation occur at deeper squat depths of 50 and 80 degrees of knee flexion compared to 20 degrees, but no single condition results in preferential VMO activation with a VMO:VL ratio greater than 1.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Increasing squat depth increases the compressive load on the patellofemoral joint, which can provoke pain in individuals with patellofemoral pain syndrome.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 8/10]",
+    "applies_to_fault": []
+  }
+]

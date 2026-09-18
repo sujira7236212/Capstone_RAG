@@ -1,0 +1,154 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Suspension push-ups require high motor control demands and the generation of muscle force to overcome the load and maintain stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing push-ups on unstable suspension straps increases the challenge of maintaining dynamic balance and stabilization while exposing the upper extremity to greater loads.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The 90-degree push-up test is a standard method for assessing upper body strength-endurance, requiring the lifter to lower until reaching a 90-degree angle.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 32 young men (17 suspension, 15 traditional), both groups improved physical performance after 10 weeks, but the suspension group showed a significantly greater improvement in the 90-degree push-up test (P < 0.05).",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\10-week suspension and traditional push-up training.pdf [part 2/12]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Perform the traditional push-up on a stable surface with hands shoulder-width apart and fingers pointed forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a straight spine and keep the feet together during the movement.",
+        "applies_to_fault": [
+          "hip sag"
+        ]
+      },
+      {
+        "text": "Ensure the correct depth of 90 degrees of elbow flexion is acquired during each repetition.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "For suspension push-ups, hang the slings at the shoulder opening with the hands positioned ten centimeters above the surface.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to acquire the correct depth of 90 degrees of elbow flexion.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Failing to maintain a straight spine during the movement.",
+        "applies_to_fault": [
+          "hip sag"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In the suspension push-up protocol, the slings were hung at the shoulder opening while the participant's hands were positioned exactly ten centimeters above the surface.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study protocol monitored body form and required repetitions to be repeated if the correct depth of 90 degrees was not acquired.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\10-week suspension and traditional push-up training.pdf [part 5/12]",
+    "applies_to_fault": [
+      "hip sag",
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Performing push-ups on an unstable suspension system forces the extremity musculature to play a greater role in joint stability and strains synergistic and stabilizing muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Suspension push-ups can be utilized to increase the biceps brachii muscle's effectiveness in shoulder stabilization and motor control.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of healthy young men, the suspension push-up group (n = 17) improved their 900 PU test score from 19.29 ± 10.14 to 31.47 ± 12.19, whereas the traditional push-up group (n = 15) improved from 19.40 ± 10.33 to 26.86 ± 12.60.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Suspension push-up training was significantly more effective in strength-endurance progress than traditional push-up training, showing a delta score of -12.18 ± 5.75 compared to -7.47 ± 6.12 (p = 0.033).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\10-week suspension and traditional push-up training.pdf [part 7/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "When performing push-ups on an unstable surface, synergistic activation of both the shoulder muscles and the abdominal muscles is necessary to maintain a stable and proper body position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study comparing suspension push-ups (n = 17) and traditional push-ups (n = 15) over 10 weeks, the suspension group reported significantly lower perceived exertion (CR-10 of 2.14 ± 2.46) than the traditional group (3.46 ± 1.94) by the 20th session.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Both suspension and traditional push-up training improve dynamic balance, but neither training modality shows superiority over the other.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\10-week suspension and traditional push-up training.pdf [part 8/12]",
+    "applies_to_fault": []
+  }
+]

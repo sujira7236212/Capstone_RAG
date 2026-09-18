@@ -1,0 +1,189 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Thighs",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The forward lunge utilizes eccentric contractions of the quadriceps and gastrocnemius muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hamstring muscles contract isometrically during the first part of the stance phase of a forward lunge, rather than eccentrically.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of five experienced athletes performing five cycles of walking and jumping forward lunges, motion analysis and electromyography of the lateral hamstrings, rectus femoris, and lateral gastrocnemius revealed no hamstring eccentric contractions, showing instead that the hamstrings contract isometrically during the first part of the stance phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Scandinavian Med Sci Sports - 2009 - Jönhagen - Muscle activation and length changes during two lunge exercises .pdf [part 1/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "During the jumping forward lunge, the hip and upper body lean more forward than in the walking forward lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "The jumping forward lunge can be initiated from a sprint start position with one foot in front.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study of five experienced male athletes with a mean age of 31 (range 27-39) analyzed muscle activity and motion during walking and jumping forward lunges.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Scandinavian Med Sci Sports - 2009 - Jönhagen - Muscle activation and length changes during two lunge exercises .pdf [part 2/8]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The jumping forward lunge consistently elicits higher muscle activation in the rectus femoris, lateral hamstrings, and lateral gastrocnemius compared to the walking forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The jumping forward lunge results in a greater range of motion at the hip, knee, and ankle joints compared to the walking forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Both walking and jumping forward lunges elicit longer periods of eccentric contraction for the rectus femoris and lateral gastrocnemius than for the hamstring muscle groups.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 5 athletes, the jumping forward lunge elicited a greater range of motion at the hip, knee, and ankle joints compared to the walking forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the walking forward lunge and jumping forward lunge, the rectus femoris muscle was contracting eccentrically for 54 /C69% and 44 /C68% of the lunge cycle, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the walking forward lunge and jumping forward lunge, the hamstring muscles were contracting eccentrically for only 18 /C68% and 19 /C68% of the lunge cycle, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the walking forward lunge and jumping forward lunge, the lateral gastrocnemius muscle was contracting eccentrically for 61 /C63% and 63 /C612% of the cycle, respectively.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Scandinavian Med Sci Sports - 2009 - Jönhagen - Muscle activation and length changes during two lunge exercises .pdf [part 4/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "During the first part of a forward lunge, negative work is performed as the downward vertical momentum has to be decreased.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The rectus femoris experiences high EMG activity during the early foot strike of a jumping lunge to absorb the higher impact forces sustained during heel-strike.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hamstring, rectus femoris, and gastrocnemius muscles undergo a stretch-shortening cycle during both walking and jumping lunges.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Individual subject data indicated eccentric hamstring contraction during the walking lunge or jumping lunge accounting for 18% and 19% of the total lunge cycle from approach to toe-off.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gastrocnemius muscle has a similar pattern for both lunge motions, with eccentric contraction accounting for 61% in walking lunges and 63% in jumping lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A quasi-isometric contraction with a relatively high muscle activity of the hamstrings occurs during the initial phases (approximately 0-20%) of the forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The angle of the hip has more impact on the length of the hamstrings than the angle of the knee due to the longer moment arm at the hip, and this relation increases with increasing knee angle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Scandinavian Med Sci Sports - 2009 - Jönhagen - Muscle activation and length changes during two lunge exercises .pdf [part 5/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Legs",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "When using lunge exercises for training or rehabilitation, the difficulty of both walking forward lunges and jump forward lunges should be gradually increased.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Begin training with the walking forward lunge and progress to the jump forward lunge to minimize the risk of injury due to the high levels of activation in the jump variation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Activation values during the lunges often exceeded 100% of the maximum voluntary isometric contraction (MVIC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The quadriceps contract eccentrically during the first part of a forward lunge, especially during the jump forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hamstrings exhibit an isometric contraction during the initial period of the stance phase of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gastrocnemius works eccentrically during most of the stance phase of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Contrary to popular belief in the track and field community, the forward lunge is not an exercise that elicits prolonged eccentric hamstring activity.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to gradually progress from walking forward lunges to jump forward lunges increases the risk of injury due to the high muscle activation levels required during the jump variation.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Scandinavian Med Sci Sports - 2009 - Jönhagen - Muscle activation and length changes during two lunge exercises .pdf [part 7/8]",
+    "applies_to_fault": []
+  }
+]

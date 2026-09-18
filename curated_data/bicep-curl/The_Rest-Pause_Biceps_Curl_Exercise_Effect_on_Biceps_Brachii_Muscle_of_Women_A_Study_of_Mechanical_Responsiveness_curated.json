@@ -1,0 +1,147 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "The Biceps Brachii (BB) generates mechanical force that induces a rotational moment at the elbow joint to provide limb movement.",
+      "Strengthening methods for the BB include resistance training (bicep curls, chin-ups, pull-ups), isometric exercises, and eccentric training.",
+      "Resistance training creates tension in the muscle to increase strength and size.",
+      "Isometric exercises involve contracting the muscle without movement, targeting specific muscle fibers and improving endurance.",
+      "Eccentric training focuses on the lowering (lengthening) phase of an exercise to increase strength, size, and endurance.",
+      "Mechanical stress from weightlifting causes micro-tears in muscle fibers, which rebuild stronger and larger during recovery."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Blemker et al. observed that the strain value in the BB fiber varied from 0.0-2.4, with the highest strain value obtained around the distal aponeurosis.",
+      "Knarr obtained a maximum stress of -110.67 kPa during eccentric motion in a study of eight subjects using finite element method and MRI.",
+      "Hwang et al. found that the average integrated electromyography (EMG) signal during fatigue equals approximately 250 µV when repeating dumbbell curls 20 times at 20%, 35%, 50%, and 75% maximum voluntary contraction levels.",
+      "Kawczyński observed 24% and 8% of maximum voluntary isometric and isokinetic contractions in athletes and non-athletes, respectively, during eccentric exercise performed 25 times with dumbbells in the 50 to 180 degree range of motion (sample size of 24 subjects).",
+      "Li et al. identified a linear correlation between muscle fatigue and resistance using a non-invasive electrical impedance myography system on 10 volunteers.",
+      "Dereshgi et al. demonstrated a linear correlation between the magnitude of force applied to the BB muscle fiber (applying static forces between 2.5 N and 100 N in 5 N steps) and displacement, stress, and strain."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 2/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Muscle Function",
+    "content_type": "Biomechanics Measurement",
+    "core_principles": [
+      "Isometric force transducers are used to measure muscle force during isometric contractions.",
+      "Ultrasound imaging is utilized to measure changes in muscle length.",
+      "Electromyography (EMG) is employed to measure muscle activation.",
+      "Combining measurement methods, such as an isokinetic dynamometer with EMG or ultrasound with an isometric force transducer, provides a more complete understanding of muscle function.",
+      "In vivo methods to measure muscle mechanical behavior can involve surgically exposing the muscle and attaching it to a force transducer or implanting sensors."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 3/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "RPBC (Bicep Curl)",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "The Biceps Brachii (BB) is a dominant two-joint muscle in the front of the arm that facilitates movement at both the shoulder and elbow joints.",
+      "The RPBC exercise is designed to load the Biceps Brachii muscle beyond its normal capacity, resulting in stress, strain, and displacement within the muscle tissue.",
+      "Elbow joint moment and Biceps Brachii muscle force can be calculated using angular displacement, angular velocity, and angular acceleration of the elbow joint."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The study investigated the displacement, stress, and strain behavior changes in the Biceps Brachii muscles of ten young women subjects during the RPBC exercise.",
+      "The representative Biceps Brachii muscle was modeled with a density of 1056 kg/m^3, a Young's modulus of 1.162 x 10^6 Pa, and a Poisson's ratio of 0.4.",
+      "The representative bone was modeled with a density of 2570 kg/m^3, a Young's modulus of 1.0 x 10^10 Pa, and a Poisson's ratio of 0.3.",
+      "The representative tendon was modeled with a density of 1670 kg/m^3, a Young's modulus of 1.6 x 10^6 Pa, and a Poisson's ratio of 0.497.",
+      "Exercises were recorded using a camera with a 30 Hz image capture rate, and a 6 Hz low-pass filter was applied to the position data.",
+      "The Biceps Brachii muscle's nonlinear behavior was examined using a four-node tetrahedron-type hyperelastic element (SOLID285 element).",
+      "The stress state within the element was determined using the Cauchy stress tensor equation: σ = 2C1(I1 - 3) + 2C2(I2 - 3)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 6/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "RPBC (Bicep Curl)",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "The elbow joint performs flexion during phases t1 to t4 and extension during phases t5 to t7.",
+      "The highest joint moment and muscle force occur when the elbow joint is fixed at 90 degrees and during movement between 90 degrees and 135 degrees.",
+      "Minimum muscle forces occur during isometric contraction at the largest elbow joint angle (135 degrees).",
+      "Muscle force in concentric contraction is significantly higher compared to eccentric contraction during this exercise.",
+      "Increasing exercise weight leads to heightened muscle activation, contraction, and fiber displacement, though the relationship is non-linear."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The study analyzed ten women with a training background using Finite Element Analysis (FEA).",
+      "Elbow joint states were defined as: t1 (0° to 90°), t2 (fixed at 90°), t3 (90° to 135°), t4 (fixed at 135°), t5 (135° to 90°), t6 (fixed at 90°), and t7 (90° to 0°).",
+      "Maximum muscle forces for 2 kg, 3 kg, and 5 kg weights were approximately 200-250 N, 300-350 N, and 450-500 N respectively.",
+      "Mean forces generated by the BB muscle were 169.04 N (at 2 kg), 242.63 N (at 3 kg), and 362.14 N (at 5 kg).",
+      "The mean of maximum muscle force during RPBC was 233.33 N at 2 kg, 319.06 N at 3 kg, and 478.80 N at 5 kg.",
+      "An increase in weight from 2 kg to 3 kg (50% increase) resulted in a 43.5% increase in mean muscle force and a 36.7% increase in maximum muscle force.",
+      "An increase in weight from 3 kg to 5 kg (66.6% increase) resulted in a 49.2% increase in mean muscle force and a 50.0% increase in maximum muscle force.",
+      "Maximum displacements of the BB muscles were 18.90 µm (at 2 kg), 25.76 µm (at 3 kg), and 37.56 µm (at 5 kg).",
+      "Weight increases of 50% and 150% (relative to 2 kg) resulted in a ~38% and ~106% increase in the mean of maximum displacements of the BB muscle."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 8/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Rest-Pause Biceps Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "The Rest-Pause Biceps Curl (RPBC) exercise enhances muscle growth and force in the Biceps Brachii through increased activation and fatigue.",
+      "RPBC leads to heightened muscle displacement and stress, causing microtrauma that drives muscle repair, adaptation, and increased size/force.",
+      "The exercise involves a combination of isometric, concentric, and eccentric contractions.",
+      "The Biceps Brachii is responsible for elbow joint flexion, forearm supination, and assisting in shoulder movement.",
+      "There is a linear correlation between muscle force and mechanical behavior (displacement, stress, and strain) as dumbbell weight increases."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Study population consisted of ten healthy women aged 20 to 30 years with a training background.",
+      "Maximum displacement of 37.56 µm was achieved in the Biceps Brachii muscle when lifting 5 kg dumbbells.",
+      "Maximum stress of 355.89 Pa was achieved in the Biceps Brachii muscle when lifting 5 kg dumbbells.",
+      "Maximum strain of 3.06 × 10−4 % was achieved in the Biceps Brachii muscle when lifting 5 kg dumbbells.",
+      "Mechanical responsiveness was evaluated at specific dumbbell weights of 2 kg, 3 kg, and 5 kg."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 1/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Rest-Pause Biceps Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Biomechanics and Exercise Physiology",
+    "core_principles": [
+      "The Biceps Brachii (BB) is a two-headed muscle in the upper arm that functions to flex the elbow and supinate the forearm.",
+      "The Rest-Pause Biceps Curl (RPBC) is a high-intensity resistance training technique designed to increase muscle force and hypertrophy.",
+      "RPBC involves performing a traditional biceps curl with a short rest period between each repetition, allowing the muscle to partially recover and enable more repetitions.",
+      "Muscle force generation and displacement vary based on muscle fiber type and training status, with fast-twitch fibers producing more force than slow-twitch fibers.",
+      "Consistent bicep training over time leads to greater muscle force, displacement, stress, and strain during exercises."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Maximum stress values were 180.70 Pa, 246.26 Pa, and 355.89 Pa for light (2 kg), medium (3 kg), and heavy (5 kg) dumbbells, respectively.",
+      "Maximum strain values were 1.55 x 10^-4, 2.12 x 10^-4, and 3.06 x 10^-4 for 2 kg, 3 kg, and 5 kg dumbbells, respectively.",
+      "The mean of the maximum stress-strain values of the ten subjects increased by ~37% and ~105%, relative to the weight ratios of the dumbbells.",
+      "The study was conducted on ten women subjects with a mean age of ~24 years and a background of training.",
+      "A non-linear correlation emerged between dumbbell weights and stress-strain behavior, while a linear correlation was found between stress-strain values and muscle force generation values."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 9/13]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Biceps Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Effectively target the Biceps Brachii (BB) muscle during resistance training for optimal results.",
+      "Analyze the mechanical behavior of the Biceps Brachii muscle to understand resistance training mechanisms."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf [part 10/13]"
+  }
+]

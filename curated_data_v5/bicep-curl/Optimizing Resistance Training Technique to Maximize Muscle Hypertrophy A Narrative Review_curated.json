@@ -1,0 +1,183 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Eccentric actions should be performed in a sufficiently controlled manner to ensure that the muscle controls the descent of the weight rather than relying solely on gravitational forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Utilizing a partial range of motion at long muscle lengths can be sufficient to promote optimal muscle growth for the biceps brachii.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Relying solely on gravitational forces to lower the weight during the eccentric phase of the repetition.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Nogueira et al. [16] demonstrated that a faster concentric phase duration of 1 second resulted in significantly greater biceps brachii hypertrophy when compared to a slower concentric phase duration of 3 seconds in a cohort of older men.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Pereira et al. [17] found that performing a 4 second eccentric phase elicited greater absolute biceps brachii hypertrophy when compared to a 1 second eccentric phase, with both groups employing a 1 second concentric repetition tempo.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A systematic review by Kassiano et al. [26] found that a partial range of motion at long muscle lengths is sufficient to promote optimal muscle growth for the biceps brachii.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf [part 3/10]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Posture",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Strict technique on a barbell biceps curl involves maintaining a more upright posture with minimal hip and leg drive to direct maximum stimulation to the target muscle group.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Non-strict technique on a barbell biceps curl involves a variable posture that sways back and forth, permitting assistance from the gluteals, erector spinae, and other muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A mechanical modeling simulation by Arandjelovic [40] concluded that using a moderate amount of momentum at the beginning of each repetition can allow for heavier loads and better overload in biomechanically advantageous positions, whereas excessive momentum reduces target muscle loading.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 9-week study on calf training [30] found that altering foot position (pointing feet outward or inward) resulted in greater hypertrophy of different aspects of the calf muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using excessive amounts of momentum during an exercise results in lower loading of the target muscles, potentially impairing the hypertrophic stimulus.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using non-strict technique with a swaying posture allows gluteals, erector spinae, and other muscles to assist, which may reduce the direct stimulation directed to the biceps brachii.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\bicep-curl\\Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf [part 5/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Range of Motion",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Employ a range of motion that allows the target muscle to be fully stretched.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Utilize an eccentric and concentric phase duration that spans an overall repetition duration of 2 to 8 seconds.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Diminish the involvement of non-target muscles by minimizing the use of external momentum when possible.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using external momentum or involving unintended muscle groups, such as the hip extensors during a bicep curl, to complete the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing partial repetitions at shorter muscle lengths rather than longer muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A repetition tempo of 2–8 s seems to be sufficient to maximize hypertrophy, and it is currently unclear whether extending the concentric or eccentric phase of a repetition will lead to greater hypertrophy.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Partial repetitions at shorter-muscle lengths are not as hypertrophic as partial repetitions at longer-muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Involving non-target muscles working at short muscle lengths, such as the hip extensors during a bicep curl, generates fatigue that may not be worth the trade-off because they are unlikely to benefit from the stimulus.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\bicep-curl\\Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf [part 6/10]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Arm",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "It is recommended to minimize the involvement of other joints to ensure repetitions adhere to the recommended repetition tempo and range of motion.",
+        "applies_to_fault": [
+          "elbow flare",
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "To maximize muscle growth, training should emphasize a full range of motion, specifically focusing on training at long muscle lengths.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Eccentric and concentric repetition tempos can vary based on preference, provided the total repetition duration is maintained within a specific range.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "To maximize hypertrophy, the total repetition length (eccentric and concentric phases combined) should be between 2 and 8 seconds.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Training with 5 to 8 repetitions in reserve can lead to increases in muscle hypertrophy.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf [part 7/10]",
+    "applies_to_fault": [
+      "elbow flare",
+      "partial range of motion"
+    ]
+  }
+]

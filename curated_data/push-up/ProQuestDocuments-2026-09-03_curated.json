@@ -1,0 +1,25 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Push-ups promote shoulder joint stability through muscle cocontraction.",
+      "Adjusting hand and wrist positions during push-ups can selectively activate specific muscles to target scapular stability.",
+      "Hand position significantly affects the activation of the lower trapezius, upper trapezius, biceps brachii, and serratus anterior.",
+      "Lateral hand placement is highly effective for maximizing serratus anterior activation."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Study population consisted of 31 healthy young male participants aged 23.65 ± 0.49 years.",
+      "Participants performed push-ups under 11 conditions combining hand position (medial, neutral, lateral), forearm rotation (pronation, supination), and shoulder rotation (internal, external).",
+      "Significant effect of hand position on the lower trapezius (p = 0.01, η2 = 0.088).",
+      "Significant effect of hand position on the upper trapezius (p = 0.002, η2 = 0.13).",
+      "Significant effect of hand position on the biceps brachii (p = 0.003, η2 = 0.132).",
+      "Significant effect of hand position on the serratus anterior (p < 0.001, η2 = 0.215), with lateral hand placement exhibiting the greatest activation.",
+      "No significant differences in muscle activation were found in the triceps brachii and pectoralis major across the tested hand positions."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\ProQuestDocuments-2026-09-03.pdf"
+  }
+]

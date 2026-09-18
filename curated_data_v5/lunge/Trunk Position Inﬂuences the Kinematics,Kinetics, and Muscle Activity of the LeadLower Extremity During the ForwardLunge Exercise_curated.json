@@ -1,0 +1,405 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Performing a forward lunge with the trunk leaned forward increases the hip extensor impulse and the recruitment of the hip extensors, specifically the gluteus maximus and biceps femoris.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Performing a forward lunge with the trunk extended does not significantly alter joint impulse or activation of the lower extremity musculature compared to a normal erect lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 10 healthy adults (5 males, 5 females; mean age 26.7 +/- 3.2 years), performing a lunge with the trunk forward (LTF) resulted in significant increases in peak hip flexion angle, hip extensor and ankle plantar flexor impulse, and gluteus maximus and biceps femoris EMG (P < 0.015) compared to a normal lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "In a study of 10 healthy adults, performing a lunge with trunk extension (LTE) resulted in a significant increase in peak ankle dorsiflexion angle and a significant decrease in peak hip flexion angle (P < 0.015) compared to a normal lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 1/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Performing the forward lunge with the trunk extended (erect) can be used to increase the muscular response of the knee extensors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Performing the forward lunge with the addition of trunk flexion (leaning the trunk forward) can be used to increase the action of the hip extensors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study analyzed 10 healthy adults (5 males, 5 females) with a mean age of 26.7 ± 3.2 years, height of 1.73 ± 0.07 m, and mass of 62.5 ± 9.8 kg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The researchers hypothesized that compared to a normal lunge with the trunk erect, a lunge with the trunk forward would increase the muscular actions of the hip extensors and ankle plantar flexors while decreasing the muscular actions of the knee extensors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "The researchers hypothesized that a lunge with trunk extension would increase the muscle activity of the knee extensors and decrease the muscular response of the hip extensors and ankle plantar flexors compared to a normal erect lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge shifts the muscular demand, increasing the load on the hip extensors and ankle plantar flexors while reducing the load on the knee extensors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Keeping the trunk extended or erect during a lunge shifts the muscular demand, increasing the load on the knee extensors while reducing the load on the hip extensors and ankle plantar flexors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 2/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain a vertical and upright position of the trunk during a normal forward lunge.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Lower the body by flexing the lead and trailing knees simultaneously during the descent.",
+        "applies_to_fault": [
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "Lower the trailing knee until it is approximately 2 to 3 cm short of contacting the ground.",
+        "applies_to_fault": [
+          "insufficient back knee flexion",
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Control the speed of the lunge so that the descending and ascending phases are equal in duration.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Losing balance or failing to maintain a consistent, controlled speed of movement during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The standardized step length for the lunge was set equal to the distance from the subject's greater trochanter to the floor.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "The target depth for the trailing knee was defined as 2 to 3 cm short of contacting the ground.",
+        "applies_to_fault": [
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "The lunge speed was controlled at a rate of 6 seconds per repetition, consisting of a 3-second descending phase and a 3-second ascending phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 4/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "insufficient back knee flexion",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Trunk position during a lunge significantly influences lower extremity joint angles, joint impulses, and muscle activation patterns.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Leaning the trunk forward during a lunge increases hip flexion, hip extensor impulse, and ankle plantar flexor impulse.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Keeping the trunk erect or extended during a lunge increases peak ankle dorsiflexion, peak knee flexion, and knee extensor impulse.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the trunk forward excessively reduces the knee extensor impulse and peak knee flexion, shifting the training load away from the quadriceps.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 10 subjects, peak hip flexion angle was significantly greater during the lunge with trunk forward (LTF) condition (107.9 degrees +/- 9.7 degrees) compared to the normal lunge (NL) (87.4 degrees +/- 11.8 degrees) and lunge with trunk extension (LTE) (79.7 degrees +/- 11.5 degrees).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Peak knee flexion angle during the lunge with trunk extension (LTE) condition (113.4 degrees +/- 7.4 degrees) was significantly greater than the lunge with trunk forward (LTF) condition (104.3 degrees +/- 11.1 degrees).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Peak ankle dorsiflexion was significantly greater during the lunge with trunk extension (LTE) condition (31.4 degrees +/- 3.5 degrees) compared to normal lunge (NL) (25.3 degrees +/- 5.7 degrees) and lunge with trunk forward (LTF) (24.3 degrees +/- 4.9 degrees).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Knee extensor impulse was significantly greater for the lunge with trunk extension (LTE) condition (2.6 +/- 0.6 N-m-s/kg) compared to the lunge with trunk forward (LTF) condition (2.1 +/- 0.5 N-m-s/kg).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Hip extensor impulse for the lunge with trunk forward (LTF) condition (5.2 +/- 1.0 N-m-s/kg) was significantly greater than normal lunge (NL) (3.9 +/- 0.7 N-m-s/kg) and lunge with trunk extension (LTE) (3.5 +/- 0.9 N-m-s/kg).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Ankle plantar flexor impulse was significantly greater during the lunge with trunk forward (LTF) condition (2.5 +/- 0.4 N-m-s/kg) compared to normal lunge (NL) (1.7 +/- 0.4 N-m-s/kg) and lunge with trunk extension (LTE) (2.0 +/- 0.5 N-m-s/kg).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Gluteus maximus EMG activity was significantly greater in the lunge with trunk forward (LTF) condition (22.3% +/- 12.0% MVIC) compared to the normal lunge (NL) condition (18.5% +/- 11.0% MVIC).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Biceps femoris EMG activity was significantly greater in the lunge with trunk forward (LTF) condition (17.9% +/- 9.6% MVIC) compared to the normal lunge (NL) condition (11.9% +/- 6.4% MVIC).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward (LTF) shifts the mechanical demand (joint impulse) away from the knee joint and increases the loading on the hip extensors (gluteus maximus and biceps femoris) and ankle plantar flexors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Keeping the trunk erect or extended (LTE) increases the mechanical demand (joint impulse) on the knee extensors and increases peak knee flexion and ankle dorsiflexion, which may increase stress on the knee joint.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 5/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Leaning the trunk forward during a lunge can be used to target the hip extensors, as it increases hip extensor impulse and gluteus maximus and biceps femoris EMG activity.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Performing a lunge with trunk extension reduces peak hip flexion and increases peak ankle dorsiflexion compared to a normal lunge, but does not alter joint impulses or muscle activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Lunge with trunk forward (LTF) resulted in a significantly greater hip extensor impulse of 5.2 +/- 1.0 N*m*s/kg compared to 3.9 +/- 0.7 N*m*s/kg in the normal lunge (NL) and 3.5 +/- 0.9 N*m*s/kg in the lunge with trunk extension (LTE) condition.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Gluteus maximus EMG activity during the LTF was significantly greater at 22.3% +/- 12.0% MVIC compared to 18.5% +/- 11.0% MVIC in the NL condition.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Biceps femoris EMG activity during the LTF was significantly greater at 17.9% +/- 9.6% MVIC compared to 11.9% +/- 6.4% MVIC in the NL condition.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "The LTF condition resulted in a 27% increase in vertical ground reaction force for the lead lower extremity compared to the NL condition.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Subjects demonstrated a 47% increase in plantar flexor impulse during the LTF condition compared to the NL condition.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases the vertical ground reaction force on the lead leg by 27%, which increases the loading impulse on all joints of the lead lower extremity.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Leaning the trunk forward shifts the body's center of mass forward relative to the base of support, causing a 47% increase in plantar flexor impulse.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 6/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Research Finding",
+    "core_principles": [
+      {
+        "text": "Performing a lunge with an erect trunk (LTE) results in a smaller peak hip flexion angle compared to performing it with a forward trunk lean.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Despite kinematic differences such as a lesser peak hip flexion angle in the lunge trunk erect (LTE) condition, there were no differences in joint impulse at the hip, knee, and ankle, or lower extremity EMG between the two trunk position conditions.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 7/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Trunk and upper extremity position during the lunge exercise can significantly affect the biomechanics of the lower extremities.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Performing a forward lunge with the trunk forward increases the recruitment of the hip extensors.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Performing a forward lunge with trunk extension does not significantly alter joint impulse or the activation of the lower extremity musculature.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Performing a forward lunge with the trunk forward (LTF) is characterized by an increase in hip extensor impulse and a concomitant increase in the muscular actions of the hip extensors when compared to a normal lunge (NL).",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Relatively small differences in joint kinematics of 6° to 7° were detected between the normal lunge (NL) and lunge with trunk extension (LTE) conditions.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases the range of hip and trunk flexion, which shifts the body's center of mass forward and increases weight bearing on the lead lower extremity.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "source": "data\\lunge\\Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf [part 8/10]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  }
+]

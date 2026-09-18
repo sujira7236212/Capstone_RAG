@@ -1,0 +1,232 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Start in a standing position and then take a step with one foot.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Position one foot in front and one foot behind the torso, similar to a split stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the feet about hip-width apart during the setup.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ensure the distance between the front foot and back foot is a length that is greater than a walking stride.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 1/4]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form and Common Mistakes",
+    "core_principles": [
+      {
+        "text": "The torso should be straight and the abdominals should be tight.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "The scapula should be retracted and depressed with the eyes looking forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The toes and knees of both legs should be pointing forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The back heel should be off the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The distance between the front and back foot should be a length that is greater than a walking stride.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "While keeping the torso straight and abdominals tight, lower the hips until both knees are bent at about a 90-degree angle, if possible.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "Make sure the front knee is directly above the ankle and not over the toe.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push through the front heel to return to the starting position while contracting the glutes, quadriceps, and calves.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Once in the appropriate starting position, the hips should move down and up in a straight line.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Quite often, the lunge is plagued from the start due to a stride length that is too short.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Even a slight turn of the lead foot or lead knee inward during a forward lunge can occur.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The back foot is often externally rotated for stability compensation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Beginners tend to lean too far forward during the eccentric phase of the exercise.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "To compensate for balance and strength challenges, the torso can lean forward during the downward phase.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "At the lowest point of the downward movement, the hip, knee, and ankle joints should be no less than 90 degrees.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      },
+      {
+        "text": "While keeping the torso straight and abdominals tight, lower the hips until both knees are bent at about a 90-degree angle, if possible.",
+        "applies_to_fault": [
+          "shallow lunge",
+          "insufficient back knee flexion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "If the feet are too close together, the downward movement results in an increased amount of stress on the knee joint, specifically the patellar tendon.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Even a slight turn of the lead foot or lead knee inward during a forward lunge can increase the torque stress of the knee joint of the front leg, potentially leading to increased knee pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Leaning too far forward during the eccentric phase can increase the shear force at the knee joint, increasing the risk of injury or pain.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Lunges performed without optimal technique can create unnecessary joint stress that can limit performance, exacerbate pre-existing injuries, and potentially cause pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 2/4]",
+    "applies_to_fault": [
+      "excessive forward trunk lean",
+      "insufficient back knee flexion",
+      "shallow lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The lunge does not have to be a full movement to be effective, as even a small range of motion will activate the muscles used, challenge balance, and incorporate functionality.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Once the initial position is achieved, the lunge can be performed effectively without movement of the feet until the repetitions are completed.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Elevating the front leg just a few inches decreases stress on the front leg, reducing the difficulty of the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using a chair for support and reduced range of motion allows the glute of the front leg to sit on the chair during the lower phase before returning to the starting position.",
+        "applies_to_fault": [
+          "shallow lunge"
+        ]
+      },
+      {
+        "text": "Performing side lunges places more mechanical stress on the muscles of the hip joints, specifically the glutes and hamstrings.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorporating an unstable surface under the front leg forces stabilizer muscles to activate more and prime movers to work harder.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Holding weight with straight arms overhead, in front, or to the sides of the body increases the lever length, making the lunge more difficult.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing split squat jumps from a split stance without a forward step can be used to increase power.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Elevating the front leg decreases stress on the front leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using an unstable surface under the front leg forces the stabilizer muscles to activate more and prime movers to work harder to execute the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Holding weight further away from the moving joints increases the lever length, which increases the difficulty of the exercise.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing side lunges increases mechanical stress on the muscles of the hip joints, including the glutes and hamstrings.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 3/4]",
+    "applies_to_fault": [
+      "shallow lunge"
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Using an unstable implement utilizing water inertia during a bicep curl increases instability in the paraspinal and deltoid muscles for both men and women.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Men experience greater overall instability in the biceps compared to women when performing curls with an unstable water-filled implement.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Paraspinal muscle instability during the bicep curl was significantly higher in the 50% open water condition (CV = 26.5 \u0017 14.5) and 100% open water condition (CV = 27.1 \u0017 9.9) compared to the stable condition (CV = 15.0 \u0017 9.1).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Deltoid muscle instability was greatest at the 100% open water setting (CV = 38.5 \u0017 23.2) compared to the stable setting (CV = 21.0 \u0017 7.5).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For the bicep, men showed greater overall instability (CV = 30.9 \u0017 17.0) compared to women (CV = 22.9 \u0017 8.4) when using the unstable water-filled implement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Percent MVC activated in the bicep was significantly greater for women (50% open = 97.7 \u0017 57.6, 100% open = 88.1 \u0017 55.6, stable = 87.0 \u0017 50.1) compared to men (50% open = 39.5 \u0017 17.0, 100% open = 38.3 \u0017 18.3, stable = 31.8 \u0017 11.1).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Percent MVC activated in the paraspinal muscles was significantly greater for women (50% open = 36.7 \u0017 22.3, 100% open = 47.5 \u0017 29.0, stable = 38.6 \u0017 23.9) compared to men (50% open = 15.1 \u0017 10.0, 100% open = 16.2 \u0017 8.8, stable = 14.3 \u0017 9.6).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\Core Muscle Activation During Unstable Bicep Curl Using a Water-Filled Training Tube_1339 Board #132 May 28, 8 00 AM - 9 30 AM.pdf [part 2/2]",
+    "applies_to_fault": []
+  }
+]

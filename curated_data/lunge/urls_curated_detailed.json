@@ -1,0 +1,79 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "An upright trunk (90/90 lunge) positions the upper body weight directly over the hips, increasing torque on the forward knee and making the movement quadriceps-dominant.",
+      "A slight forward lean of the trunk distributes the load evenly between the hip and knee joints, increasing gluteus maximus involvement.",
+      "Adding trunk rotation toward the forward leg (e.g., rotating the right shoulder toward the left knee when the left foot is forward) eccentrically loads the gluteus maximus in both the sagittal and transverse planes.",
+      "Keep the forward heel firmly on the ground and distribute weight evenly across the forward foot to maximize glute recruitment.",
+      "Maintain solid hip-knee-ankle alignment throughout the movement.",
+      "Avoid taking strides that are too long to prevent using momentum to propel yourself back up.",
+      "Reaching toward the ground with your hands during bodyweight or dumbbell lunges can help soften the landing and reinforce eccentric control."
+    ],
+    "common_mistakes": [
+      "Lifting the forward heel off the ground while decelerating toward the floor.",
+      "Taking strides that are too long, which causes the exerciser to rely on momentum rather than controlled muscle contraction to return to the starting position."
+    ],
+    "specific_findings": [
+      "An upright trunk tends to create what is often called a 90/90 lunge where both knees at the bottom of the move are 90° angles.",
+      "In an upright lunge, the forward knee experiences more torque because it is the joint farthest from the load of the body, making it more quadriceps dominant."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\urls.txt (https://web.archive.org/web/20200529194046/https://blog.nasm.org/training-benefits/lunge-effective-lower-body-training-exercise)"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Legs",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Stand with the feet hip-width apart.",
+      "Grip one dumbbell in each hand with the palms facing each other and the arms straight down by the side.",
+      "Keep the back straight throughout the movement.",
+      "Step forward and, as the front foot hits the floor, lower the back knee towards the floor.",
+      "Descend to a comfortable range of motion.",
+      "Push through the front foot to return to the starting position with feet back together."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "applies_to_fault": [
+      "back not straight"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\urls.txt (https://www.acefitness.org/resources/everyone/exercise-library/363/lunge/)"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Maintain lateral space between your legs to help with balance rather than walking a tightrope.",
+      "Set the length of the lunge to approximately twice your hip width.",
+      "Keep the front foot fully rooted flat on the floor at all times.",
+      "Keep your torso straight and upright, avoiding leaning forward or backward.",
+      "Ensure the front knee stays behind the toes.",
+      "If stability is limited, regress the exercise by keeping the back heel on the ground or holding onto a support."
+    ],
+    "common_mistakes": [
+      "Lunge step is too short or too long.",
+      "Placing feet on the same line, reducing stability.",
+      "Front knee collapsing inward or shaking.",
+      "Front heel lifting off the ground.",
+      "Leaning the torso forward or backward.",
+      "Jerky movements, particularly when stepping back.",
+      "Stepping heel first.",
+      "Knees traveling past the toes."
+    ],
+    "specific_findings": [
+      "The length of the lunge is about 2x hip width (if the front heel comes off the ground, the lunge is too short; if you have to lean forward to step, the lunge is too long)."
+    ],
+    "applies_to_fault": [
+      "back not straight",
+      "front knee past toes"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\urls.txt (https://themerisoiutechnique.com/2015/12/25/lunges-common-mistakes-and-correct-technique/)"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "bde0b07c5e85373715f631d37c6ed3e7",
+    "text": "Hip range of motion flexion is between 0 and 135 degrees (noted as 135 /C176) and extension is between 0 and 15 degrees (noted as 15/C176).",
+    "cmetadata": {
+      "text": "Hip range of motion flexion is between 0 and 135 degrees (noted as 135 /C176) and extension is between 0 and 15 degrees (noted as 15/C176).",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 3/7]",
+      "item_kind": "finding",
+      "focus_area": "Knee",
+      "exercise_id": "lunge",
+      "content_type": "Movement Screening",
+      "source_short": "KritzCroninHume2009BodyweightlungeSCJ",
+      "applies_to_fault": [],
+      "window_exercise_type": "Lunge"
+    }
+  },
+  {
+    "id": "1dc12879f446d8c1c1deb02ca79c8c72",
+    "text": "Mean hip range of motion during a forward lunge has been reported to be 95 6 27/C176 of flexion.",
+    "cmetadata": {
+      "text": "Mean hip range of motion during a forward lunge has been reported to be 95 6 27/C176 of flexion.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Hip and Lumbar Spine",
+      "exercise_id": "lunge",
+      "content_type": "Correct Form and Injury Prevention",
+      "source_short": "KritzCroninHume2009BodyweightlungeSCJ",
+      "applies_to_fault": [],
+      "window_exercise_type": "Forward Lunge"
+    }
+  },
+  {
+    "id": "c2070ac652256442075edd85c91623b4",
+    "text": "A 2/C176 increase in extension from a neutral spine position increases compressive stress within the posterior annulus by an average of 16%.",
+    "cmetadata": {
+      "text": "A 2/C176 increase in extension from a neutral spine position increases compressive stress within the posterior annulus by an average of 16%.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Hip and Lumbar Spine",
+      "exercise_id": "lunge",
+      "content_type": "Correct Form and Injury Prevention",
+      "source_short": "KritzCroninHume2009BodyweightlungeSCJ",
+      "applies_to_fault": [],
+      "window_exercise_type": "Forward Lunge"
+    }
+  },
+  {
+    "id": "5b0cc20499afb2590d5843aa9071da52",
+    "text": "A downward direction of gaze increases trunk flexion by up to 4.5/C176 during squatting movements.",
+    "cmetadata": {
+      "text": "A downward direction of gaze increases trunk flexion by up to 4.5/C176 during squatting movements.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 4/7]",
+      "item_kind": "finding",
+      "focus_area": "Hip and Lumbar Spine",
+      "exercise_id": "lunge",
+      "content_type": "Correct Form and Injury Prevention",
+      "source_short": "KritzCroninHume2009BodyweightlungeSCJ",
+      "applies_to_fault": [],
+      "window_exercise_type": "Forward Lunge"
+    }
+  },
+  {
+    "id": "28d5e5baf861b6a11a4f67ad84766106",
+    "text": "The correct depth for a push-up repetition was defined as 90 degrees (noted as 900 in text) of elbow flexion.",
+    "cmetadata": {
+      "text": "The correct depth for a push-up repetition was defined as 90 degrees (noted as 900 in text) of elbow flexion.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\10-week suspension and traditional push-up training.pdf [part 5/12]",
+      "item_kind": "finding",
+      "focus_area": "Spine and Elbow",
+      "exercise_id": "push-up",
+      "content_type": "Correct Form",
+      "source_short": "10-week suspension and traditional push-up training",
+      "applies_to_fault": [],
+      "window_exercise_type": "Push-up"
+    }
+  },
+  {
+    "id": "2b944ce73a7ee49a9935e837cdb63f87",
+    "text": "Study protocol required performing 5 squats to 90 degrees (text states '90 8') of flexion with knees collapsing inward (ML malaligned).",
+    "cmetadata": {
+      "text": "Study protocol required performing 5 squats to 90 degrees (text states '90 8') of flexion with knees collapsing inward (ML malaligned).",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 3/12]",
+      "item_kind": "finding",
+      "focus_area": "Knee",
+      "exercise_id": "squat",
+      "content_type": "Biomechanics",
+      "source_short": "Muscle Activation Patterns During Different Squat Techniques",
+      "applies_to_fault": [],
+      "window_exercise_type": "Squat"
+    }
+  },
+  {
+    "id": "80b8148049bdf0a548e8a0157c71c949",
+    "text": "Study protocol required performing 5 squats to 90 degrees (text states '90 8') of flexion while lifting heels off the floor.",
+    "cmetadata": {
+      "text": "Study protocol required performing 5 squats to 90 degrees (text states '90 8') of flexion while lifting heels off the floor.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 3/12]",
+      "item_kind": "finding",
+      "focus_area": "Knee",
+      "exercise_id": "squat",
+      "content_type": "Biomechanics",
+      "source_short": "Muscle Activation Patterns During Different Squat Techniques",
+      "applies_to_fault": [],
+      "window_exercise_type": "Squat"
+    }
+  },
+  {
+    "id": "94070aacb48f4ed40d929d80880ce82e",
+    "text": "Flexing at the spine before 1208 (120 degrees) of hip flexion when squatting may indicate restriction in the posterior fibers of the iliotibial band or lack of lumbar control.",
+    "cmetadata": {
+      "text": "Flexing at the spine before 1208 (120 degrees) of hip flexion when squatting may indicate restriction in the posterior fibers of the iliotibial band or lack of lumbar control.",
+      "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 9/22]",
+      "item_kind": "finding",
+      "focus_area": "Trunk and Lower Back",
+      "exercise_id": "squat",
+      "content_type": "Correct Form and Biomechanical Analysis",
+      "source_short": "TheBackSquatAProposedAssessment",
+      "applies_to_fault": [],
+      "window_exercise_type": "Back Squat"
+    }
+  }
+]

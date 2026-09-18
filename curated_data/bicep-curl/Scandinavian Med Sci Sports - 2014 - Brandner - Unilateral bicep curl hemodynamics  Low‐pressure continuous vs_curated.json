@@ -1,0 +1,103 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Cardiovascular",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Light-load resistance exercise (20-30% 1-RM) combined with blood flow restriction (BFR) can increase muscle strength and size similarly to traditional heavy-load resistance exercise (>65% 1-RM).",
+      "BFR training offers a lower mechanical stress alternative for clinical and elderly populations where heavy-load training is contraindicated.",
+      "Continuous low-pressure BFR is associated with lower hemodynamic stress compared to intermittent high-pressure BFR.",
+      "The tolerability and hemodynamic safety of BFR are influenced by cuff width, restriction pressure, and whether the restriction is continuous or intermittent."
+    ],
+    "common_mistakes": [
+      "Applying continuous BFR at pressures equal to or greater than resting systolic blood pressure when using a wide cuff, which can make the exercise intolerable and lead to failure to complete the session."
+    ],
+    "specific_findings": [
+      "Twelve young males completed four unilateral elbow flexion exercise trials in a balanced, randomized crossover design.",
+      "Heavy load (HL) was defined as 80% one-repetition maximum (1-RM) and light load (LL) as 20% 1-RM.",
+      "Continuous BFR (BFR-C) was applied at 80% resting systolic blood pressure.",
+      "Intermittent BFR (BFR-I) was applied at 130% resting systolic blood pressure.",
+      "Exercising heart rate, blood pressure, cardiac output, and rate-pressure product were significantly greater for HL and BFR-I compared with LL.",
+      "The magnitude of hemodynamic stress for BFR-C (80% SBP continuous) was between that of HL and LL.",
+      "Unilateral elbow flexion exercise (20% 1-RM) using a relatively wide cuff (14 cm) was not well tolerated by participants when BFR was applied continuously using pressures equal to or greater than resting systolic blood pressure."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Scandinavian Med Sci Sports - 2014 - Brandner - Unilateral bicep curl hemodynamics  Low‐pressure continuous vs.pdf [part 1/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow Flexors",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "When using relatively wide cuffs for continuous blood flow restriction (BFR) exercise, low pressures below systolic blood pressure (SBP) should be used.",
+      "Higher pressures equal to or greater than SBP can be used during intermittent BFR application.",
+      "Continuous BFR involves keeping the cuff inflated throughout the entire exercise bout, including inter-set rest periods.",
+      "Intermittent BFR involves inflating the cuff prior to each set and releasing the pressure immediately after the final repetition of each set.",
+      "BFR exercise alters hemodynamics by elevating heart rate (HR) and reducing stroke volume (SV) and venous return compared to load-matched non-BFR light-load resistance exercise."
+    ],
+    "common_mistakes": [
+      "Using excessively high pressures (e.g., SBP or higher) during continuous BFR, which can prevent completion of the exercise."
+    ],
+    "specific_findings": [
+      "Continuous BFR with wide cuffs should use low pressures (< SBP; i.e., 90–100 mmHg), whereas higher pressures (≥ SBP; i.e., 150–160 mmHg) could be used during intermittent application.",
+      "Participants were able to complete intermittent BFR exercise at pressures up to 130% of SBP (∼155 mmHg).",
+      "Downs et al. (2014) showed SBP and DBP were higher during BFR exercise (range: 140–156 and 67–80 mmHg) compared with HLRE (134 ± 4 and 58 ± 3 mmHg) and LLRE (127 ± 4 and 57 ± 3 mmHg).",
+      "The study sample consisted of twelve (n = 12) recreationally active male participants (mean ± SD: 23 ± 3 years; 179.9 ± 7.5 cm; 72.6 ± 8.2 kg) with no resistance training in the previous 6 months.",
+      "The experimental trials compared heavy load (HL; 80% 1-RM), light-load (LL; 20% 1-RM), LL with continuous BFR (BFR-C; 20% 1-RM), and LL with intermittent BFR (BFR-I; 20% 1-RM)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Scandinavian Med Sci Sports - 2014 - Brandner - Unilateral bicep curl hemodynamics  Low‐pressure continuous vs.pdf [part 2/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Exercise Protocol",
+    "core_principles": [
+      "Perform bicep curls with a controlled repetition timing of 2 seconds concentric and 2 seconds eccentric.",
+      "To isolate the elbow flexors and prevent excessive body movement, stand against a wall with the opposite arm placed behind the back.",
+      "Start the bicep curl with the elbow in full extension and the forearm supinated.",
+      "Coordinate breathing with the movement phases: inspire throughout the eccentric phase and expire throughout the concentric phase to maintain a constant breathing rate and avoid the Valsalva maneuver.",
+      "For Blood Flow Restriction (BFR) training, place the pneumatic cuff around the most proximal portion of the arm.",
+      "Deflate the BFR cuff completely during rest periods (intermittent BFR) to improve participant comfort and tolerance."
+    ],
+    "common_mistakes": [
+      "Excessive body movement or momentum during the lift (failing to keep the back against the wall).",
+      "Failing to start the repetition with the elbow in full extension.",
+      "Improper breathing patterns, such as holding the breath (Valsalva maneuver), which can alter abdominal and blood pressures."
+    ],
+    "specific_findings": [
+      "Repetition timing was monitored at 2-s concentric and 2-s eccentric.",
+      "High Load (HL) protocol consisted of 4 sets of 6 to 8 repetitions at 80% 1-RM with 2.5-min rest between sets.",
+      "Low Load (LL), BFR-C, and BFR-I protocols consisted of 1 set of 30 repetitions followed by 3 sets of 15 repetitions at 20% 1-RM with 30-s rest between sets.",
+      "Average relative work of exercise was 23 ± 3 for HL, which was approximately 1.5-fold greater compared with LL (15 ± 0), BFR-C (15 ± 1), and BFR-I (15 ± 1).",
+      "BFR-C final exercise pressure was 80% resting SBP (91 ± 2 mmHg).",
+      "BFR-I final exercise pressure was 130% SBP (151 ± 4 mmHg) with the cuff completely deflated (0 mmHg) during rest periods.",
+      "Mean 1-RM load was 17.7 ± 2.3 kg.",
+      "Breathing rate was maintained at 15 breaths/min."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Scandinavian Med Sci Sports - 2014 - Brandner - Unilateral bicep curl hemodynamics  Low‐pressure continuous vs.pdf [part 4/12]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Muscle",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Heavy load (HL) training protocols typically utilize 80% of 1-RM for 4 sets of 6 to 8 repetitions.",
+      "Light load (LL) training protocols can utilize 20% of 1-RM for 4 sets with a high-repetition scheme of 30, 15, 15, and 15 reps.",
+      "Continuous Blood Flow Restriction (BFR-C) combined with light load (20% 1-RM) uses a lower restriction pressure based on systolic blood pressure (SBP).",
+      "Intermittent Blood Flow Restriction (BFR-I) combined with light load (20% 1-RM) uses a higher restriction pressure based on systolic blood pressure (SBP)."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "1-RM load in the study was 17.7 ± 2.3 kg.",
+      "Heavy load (HL) at 80% 1-RM equated to 14.2 ± 1.8 kg for 4 sets of 6–8 reps.",
+      "Light load (LL) at 20% 1-RM equated to 3.6 ± 0.5 kg for 4 sets of 30, 15, 15, 15 reps.",
+      "Continuous Blood Flow Restriction (BFR-C) at 20% 1-RM used a restriction pressure of 80% SBP, equating to 91 ± 2 mmHg.",
+      "Intermittent Blood Flow Restriction (BFR-I) at 20% 1-RM used a restriction pressure of 130% SBP, equating to 151 ± 4 mmHg.",
+      "Findings from Brandner et al. (2015) study."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Scandinavian Med Sci Sports - 2014 - Brandner - Unilateral bicep curl hemodynamics  Low‐pressure continuous vs.pdf [part 5/12]"
+  }
+]

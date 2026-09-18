@@ -1,0 +1,84 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "The lunge is a unilateral lower body exercise that improves strength, range of motion, and core stability.",
+      "It involves the triple extension of the hips, knees, and ankles.",
+      "The hamstrings and gastrocnemius act as dynamic stabilizers at the knee joint during the movement.",
+      "To assume the starting position, stand and step with one foot forward and one behind the torso in a split stance.",
+      "Keep feet about hip-width apart.",
+      "The distance between the front and back foot should be greater than a walking stride."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 1/4]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Keep the torso straight and abdominals tight throughout the movement.",
+      "Retract and depress the scapula with eyes looking forward.",
+      "Point the toes and knees of both legs forward.",
+      "Keep the back heel off the ground with a stride length greater than a walking stride.",
+      "Lower the hips until both knees are bent at about a 90-degree angle, ensuring the front knee is directly above the ankle and not over the toe.",
+      "Push through the front heel to return to the starting position while contracting the glutes, quadriceps, and calves.",
+      "Move the hips straight down and up in a vertical line."
+    ],
+    "common_mistakes": [
+      "Feet too close together (stride length too short), increasing stress on the patellar tendon.",
+      "Over-pronation of the foot or the lead knee caving inward, increasing torque stress on the front knee joint.",
+      "External rotation of the back foot or knee for stability compensation, increasing torque stress in the knee joint.",
+      "Forward knee movement during the downward phase (leaning too far forward), increasing shear force at the knee joint.",
+      "Forward torso lean during the downward phase to compensate for balance and strength challenges."
+    ],
+    "specific_findings": [
+      "At the lowest point of the downward movement, the hip, knee, and ankle joints should be no less than 90 degrees.",
+      "If the feet are too close together, the downward movement results in an increased amount of stress on the knee joint, specifically the patellar tendon.",
+      "Even a slight turn of the lead foot or lead knee inward during a forward lunge can increase the torque stress of the knee joint of the front leg.",
+      "Rotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint.",
+      "Leaning too far forward during the eccentric phase increases the shear force at the knee joint."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 2/4]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Exercise Progression and Modification",
+    "core_principles": [
+      "Perform supported lunges by holding onto a stable, non-moving object with one or two hands to increase points of contact and reduce difficulty.",
+      "Reduce the range of motion (ROM) to make the lunge easier while still activating muscles, challenging balance, and maintaining functionality.",
+      "Keep the feet completely stationary once the initial position is achieved to perform the lunge without foot movement until repetitions are completed.",
+      "Elevate the front leg on a box or step a few inches to decrease stress on the front leg and reduce difficulty.",
+      "Use a chair for support and reduced ROM by turning sideways, positioning the starting stance over the seat and under the front hip, and letting the front glute sit on the chair during the lower phase.",
+      "Increase difficulty and mechanical stress on the hip joints (glutes and hamstrings) by making the lunge mobile through alternating lunges, walking lunges forward/backward, or side lunges.",
+      "Increase instability by placing a balance disk, wobble board, BOSU ball, or foam pad under the front leg to force stabilizer muscles to activate more.",
+      "Compound the movement by pairing lunges with upper body exercises (biceps, triceps, deltoids) or alternating them with other lower body exercises like single-leg deadlifts or squats.",
+      "Add resistance away from the body, such as holding weights with straight arms overhead, in front, or to the sides, to increase the lever length and difficulty.",
+      "Add explosiveness using split squat jumps (explosive lunges from a split stance without a forward step) to increase power."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 3/4]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Exercise Variations",
+    "core_principles": [
+      "The lunge can be modified or progressed through variations such as the supported lunge, lunge with a step, lunge onto a chair, and lunge onto an unstable surface.",
+      "Resistance can be loaded differently, including holding weight at the sides or overhead.",
+      "Proper lunge execution should be assessed from both the side and front views, particularly at the bottom position of the movement."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\ptq-4.4.9-the-undervalued-lunge.pdf [part 4/4]"
+  }
+]

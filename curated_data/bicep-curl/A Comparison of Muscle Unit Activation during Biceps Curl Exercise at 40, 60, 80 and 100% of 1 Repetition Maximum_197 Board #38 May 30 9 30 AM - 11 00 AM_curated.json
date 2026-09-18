@@ -1,0 +1,27 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Neuromuscular",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Perception of effort (RPE) during sustained submaximal isometric leg extensions is dissociated from fatigue-related changes in force or EMG amplitude.",
+      "Peak motor unit recruitment of the biceps brachii can be achieved at any workload greater than 60% of 1RM, provided the set is taken to momentary muscular fatigue (MMF).",
+      "Exercise intensity is best defined by the proximity to failure (the final repetition) rather than the initial percentage of 1RM.",
+      "Adhering to a controlled repetition tempo (e.g., 3-1-3-1 seconds) standardizes muscle activation measurements during resistance training.",
+      "Using a weightlifting belt in conjunction with a simultaneous Valsalva maneuver increases intra-abdominal pressure to support the spine during heavy lifts like the deadlift."
+    ],
+    "common_mistakes": [
+      "Assuming that lower-intensity training (e.g., 60% 1RM) cannot achieve maximal motor unit recruitment (it can, if taken to momentary muscular fatigue).",
+      "Defining training intensity solely by the percentage of 1RM rather than proximity to momentary muscular fatigue (the final repetition)."
+    ],
+    "specific_findings": [
+      "For sustained isometric leg extensions (knee joint = 120°), mean times to exhaustion were: RPE 2 = 300.0 ± 0.0 s; RPE 5 = 202.0 ± 95.5 s; RPE 8 = 72.7 ± 27.6 s.",
+      "The percent decline in force during sustained isometric leg extensions decreased with each increase in RPE: RPE 2 = 61.0 ± 18.5%; RPE 5 = 47.4 ± 19.6%; RPE 8 = 24.9 ± 13.2%.",
+      "During biceps curls to momentary muscular fatigue (MMF) with a 3-1-3-1 sec tempo, percent MVC for the concentric portion of the final repetition was 62.5±27.8% at 40% 1RM, 71.7±24.0% at 60% 1RM, 72.8±18.4% at 80% 1RM, and 79.6±18.0% at 100% 1RM.",
+      "There was no significant difference (NSD) in peak motor unit recruitment among 60%, 80%, and 100% 1RM biceps curls when performed to momentary muscular fatigue.",
+      "Wearing a weightlifting belt generally reports 5-15% greater loading during lifts."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\A Comparison of Muscle Unit Activation during Biceps Curl Exercise at 40, 60, 80 and 100% of 1 Repetition Maximum_197 Board #38 May 30 9 30 AM - 11 00 AM.pdf [part 1/2]"
+  }
+]

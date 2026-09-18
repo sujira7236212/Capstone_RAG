@@ -1,0 +1,103 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Performing a partial lunge with anterolateral 45-degree resistance can be used to increase the VMO/VL muscle activity ratio.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Restoring the balance between the vastus medialis oblique (VMO) and vastus lateralis (VL) muscles is important for maintaining proper patellar alignment.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 22 healthy participants, the VMO/VL EMG activity ratio during a partial lunge with anterolateral 45-degree resistance was significantly higher than with no resistance and lateral 90-degree resistance (p < 0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "There was no significant difference in VMO, VL, and VMO/VL muscle activity between male and female subjects during the partial lunge exercises (p > 0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The prevalence of patellofemoral pain syndrome (PFPS) is approximately 25% and is more common in women.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An imbalance between the vastus medialis oblique (VMO) and vastus lateralis (VL) muscles causes a lateral force deviation, increasing pressure on the patella and joint, which can lead to patellofemoral pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Comparison_of_the_VMOVL_EMG_Activity_Ratio_Accordi.pdf [part 1/3]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep the upper body upright during the lunge to maintain proper alignment.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      },
+      {
+        "text": "Position the ankle joint of the front foot at approximately 60 degrees of abduction to increase vastus medialis oblique (VMO) muscle activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Apply resistance from an anterolateral 45-degree direction to the knee during the lunge to selectively increase the VMO/VL muscle activation ratio.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For early-stage rehabilitation where high force is not desired, a partial lunge with approximately 50 degrees of knee flexion can be utilized.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the torso forward during the lunge instead of keeping the upper body upright.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 21 healthy adults in their 20s, the VMO/VL EMG activity ratio was significantly higher during a partial lunge with 45-degree anterolateral resistance (125.31 ± 20.74 %MVIC) compared to no resistance (111.71 ± 21.59 %MVIC) and 90-degree lateral resistance (113.16 ± 24.75 %MVIC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An ankle abduction angle of 60 degrees during the lunge was shown to maximize VMO muscle activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The partial lunge in this study was performed by lowering the body to a knee flexion angle of approximately 50 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "VMO muscle activation reached 58.02 ± 19.71 %MVIC under 45-degree anterolateral resistance, compared to 47.75 ± 18.12 %MVIC with no resistance and 46.45 ± 16.83 %MVIC with 90-degree lateral resistance.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to selectively activate the vastus medialis oblique (VMO) relative to the vastus lateralis (VL) can reduce knee joint stability and is associated with patellofemoral pain syndrome (PFPS).",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\lunge\\Comparison_of_the_VMOVL_EMG_Activity_Ratio_Accordi.pdf [part 2/3]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  }
+]

@@ -1,0 +1,124 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Single-Leg Lunge",
+    "focus_area": "Knee",
+    "content_type": "Joint Mechanics",
+    "core_principles": [
+      "Acknowledge that pre-existing knee injuries, such as anterior cruciate ligament deficiency (ACLD) and concomitant meniscal tears, significantly alter patellofemoral joint kinematics during a single-leg lunge.",
+      "Design or modify closed kinetic chain exercise programs, including single-leg lunges, to account for altered patellar tracking and translation in individuals with ACL and meniscal injuries."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Anterior cruciate ligament-deficient (ACLD) knees had significantly smaller patellar flexion than anterior cruciate ligament-intact (ACLI) knees by approximately 5° to 10° (p < 0.05) during a single-leg lunge.",
+      "ACLD knees with meniscal tears (medial, lateral, or combined) exhibited approximately 1° to 2° more patellar lateral tilting than ACLI knees (p < 0.05).",
+      "ACLD groups with medial meniscal deficiencies showed a consistent increase in lateral patellar translation of 2 to 4 mm compared to the ACLI group during a single-leg lunge.",
+      "The study evaluated 60 unilateral ACLD patients divided into four equal groups of 15 based on the presence and type of meniscal tears (isolated ACLD, ACLD with medial meniscal tears, ACLD with lateral meniscal tears, and ACLD with combined medial/lateral meniscal tears)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 1/9]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Stand with feet hip-width apart.",
+      "Keep the back and shoulders straight.",
+      "Keep the rectus abdominis muscle tight to stabilize the core.",
+      "Take a big step forward and slowly bend both knees until the back knee is just above the floor.",
+      "Use the non-dominant/other leg only to maintain body stability."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The means of patellar flexion angle at TFJ flexion angles of 0°, 30°, 60°, 90°, and 120° were 5.5°, 9.8°, 19.2°, 38.3°, and 64.0°, respectively.",
+      "ACLD (anterior cruciate ligament deficient) groups showed significantly increased lateral tilt during almost the whole knee flexion procedure of the single-leg lunge.",
+      "The increase in lateral tilt was more significant in ACLD knees with medial meniscus deficiency than other ACLD knees.",
+      "The means of patellar lateral tilt angle of ACLI and Groups 1–4 were 2.4°, 6.1°, 9.9°, 8.0°, and 7.7°, respectively.",
+      "The means of patellar lateral translation of ACLI and Groups 1–4 were 5.1, 6.0, 7.9, 6.0, and 7.0 mm, respectively."
+    ],
+    "applies_to_fault": [
+      "back not straight"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 4/9]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Single-leg lunge",
+    "focus_area": "Knee",
+    "content_type": "Joint Mechanics",
+    "core_principles": [
+      "During a single-leg lunge, the patella predominantly flexes in the sagittal plane, with the patellar flexion angle being approximately half of the overall knee flexion angle in healthy knees.",
+      "Normal lunge kinematics involve internal tibial rotation and a degree of knee valgus during the movement.",
+      "Pre-existing knee conditions, such as ACL deficiency or meniscus tears, significantly alter patellar tracking and tibiofemoral rotation during a lunge, requiring careful monitoring of knee alignment.",
+      "Avoid excessive knee valgus (inward collapse) during the lunge to prevent abnormal joint loading, especially if recovering from knee injuries."
+    ],
+    "common_mistakes": [
+      "Allowing excessive knee valgus (inward knee collapse) during the lunge, which is exacerbated in individuals with medial meniscus deficiencies.",
+      "Altered patellar tracking, such as excessive lateral patellar tilt or lateral translation, particularly during deep knee flexion (up to 120 degrees)."
+    ],
+    "specific_findings": [
+      "At 120° of knee flexion, Group 2 (combined ACL and medial meniscus injuries) showed a significant increase of patella lateral tilt compared to ACL-intact knees (12.9 ± 9.6° vs. 5.3 ± 8.2°, p = 0.002).",
+      "ACLD knees exhibited an increase of about 3–5° in external rotation compared to ACLI knees (p < 0.05).",
+      "The range of motion (ROM) in the frontal plane was approximately 6–8° throughout the single-leg lunge procedure.",
+      "ACLD knees, with or without meniscal deficiency, had significantly less flexion than the ACLI knees (about 5–10°).",
+      "In the ACLI group, the patellar flexion angle was found to be about half of knee flexion.",
+      "ACLD groups with medial meniscal deficiencies showed consistent increased lateral patellar translations (about 2–4 mm) compared to the ACLI group.",
+      "A significant reduction of proximal translation (about 7 mm) was identified in the ACL isolated deficient group compared to the ACLI group when the knee extended, and a reduction of distal translation (about 7 mm) at 60°, 90°, and 120° of knee flexion.",
+      "The isolated ACLD knees showed significantly reduced internal tibial rotations (about 2–3°) when compared to ACLI knees.",
+      "The ACLD knees with concomitant medial meniscus deficiency showed significantly increased valgus (about 2–5°) compared to other groups."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 5/9]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Single-Leg Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Single-leg lunges are closed kinetic chain (CKC) exercises effective for strengthening the quadriceps, gluteus maximus, and hamstrings.",
+      "In individuals with anterior cruciate ligament deficiency (ACLD) or meniscal tears, performing single-leg lunges can alter patellofemoral joint (PFJ) kinematics, specifically increasing lateral patellar tilt and medial tibial translation.",
+      "Altered kinematics during lunges in ACLD knees can lead to joint instability, localized cartilage overloading, and accelerated cartilage degeneration or osteoarthritis (OA).",
+      "Care should be taken with knee flexion depth during lunges for injured populations, as kinematic deviations like medial tibial translation become more pronounced at deeper flexion angles."
+    ],
+    "common_mistakes": [
+      "Allowing excessive femoral external rotation and subsequent lateral patellar tilt during knee flexion to compensate for ACL deficiency.",
+      "Allowing excessive medial tibial translation (knee caving/shifting inward) during the descent of the lunge, particularly past 60 degrees of flexion in injured knees."
+    ],
+    "specific_findings": [
+      "ACLD knees with concomitant lateral meniscus deficiency showed significantly increased medial tibia translations (about 10 mm) compared to other groups from 60° of knee flexion.",
+      "ACLD knees with concomitant medial and lateral meniscus deficiency showed significantly increased medial tibia translations (about 10 mm) compared to other groups at terminal knee flexion ranges (90–120°).",
+      "The ROM in mediolateral translation during a single-leg lunge was small (1–2 cm).",
+      "Partial medial meniscectomy (<33% of medial meniscus resection) led to prevalent PFJ OA (OR, 13.76; 95% CI, 1.52–124.80)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 6/9]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Single-leg Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Knee alignment during a single-leg lunge directly influences patellar tracking and joint stress.",
+      "Avoiding knee valgus (inward collapse) is critical to prevent abnormal external rotation of the patella.",
+      "Altered tibiofemoral joint kinematics can lead to abnormal contact locations and compression between the patella and the femoral trochlear groove.",
+      "Proper control of tibial rotation and knee valgus during closed kinetic chain exercises like lunges helps protect the patellofemoral joint from cartilage degeneration."
+    ],
+    "common_mistakes": [
+      "Knee valgus (inward collapse of the knee) during the lunge.",
+      "Abnormal tibial rotation (e.g., reduced internal tibial rotation or excessive external femoral rotation)."
+    ],
+    "specific_findings": [
+      "Isolated ACLD knees showed significantly reduced internal tibial rotations (equivalent to external femoral rotation, about 2-3 degrees) compared to ACL-intact knees.",
+      "ACLD knees with concomitant medial meniscus deficiency showed significantly increased valgus (about 2-5 degrees) compared to other groups.",
+      "ACLD knees with concomitant lateral meniscus deficiency showed significantly increased medial tibia translations at 60 degrees of knee flexion.",
+      "ACLD knees with combined medial and lateral meniscus deficiency showed significantly increased medial tibia translations at terminal knee flexion ranges (90-120 degrees).",
+      "The study enrolled 60 subjects to analyze patellofemoral and tibiofemoral joint kinematics during a single-leg lunge."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf [part 8/9]"
+  }
+]

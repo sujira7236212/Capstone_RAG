@@ -1,0 +1,163 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Limb",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "The lunge is a multi-joint exercise that increases hip and knee extensor muscle strength.",
+      "The anterior limb generates significantly higher biceps femoris and gluteus maximus muscle activation compared to the posterior limb in both in-line and traditional lunges.",
+      "Vastus lateralis muscle activation does not significantly differ between in-line and traditional lunges, nor does it differ between the anterior and posterior leg positions.",
+      "The in-line lunge presents greater medio-lateral (ML) balance demands in the anterior limb compared to the traditional lunge."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Study population consisted of fifteen young, healthy, resistance-trained men (25 ± 5 years) performing exercises at their 10 repetition maximum.",
+      "Biceps femoris activity was significantly greater in the anterior compared to the posterior position for the in-line lunge (p = 0.003) and traditional lunge (p < 0.001).",
+      "Gluteus maximus activity was significantly greater in the anterior compared to posterior position for the in-line lunge (p < 0.001) and traditional lunge (p < 0.001).",
+      "Medio-lateral (ML) balance was significantly greater in the in-line exercise in the anterior limb (p = 0.001)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 1/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanics Comparison",
+    "core_principles": [
+      "In the traditional lunge, feet are positioned hip-width apart, whereas in the in-line lunge, feet are positioned at 50% hip-width apart.",
+      "Knee extensors and hip extensors act as the prime movers during lunges.",
+      "Hip abductors, such as the gluteus medius, act as secondary movers or stabilizers.",
+      "The in-line lunge provides a narrower base of support, creating a more challenging medio-lateral balance task.",
+      "Motor responses in the medio-lateral direction during narrow-base lunges are dominated by a hip strategy, stressing the hip adductors and abductors.",
+      "Proper execution in this protocol involves positioning the barbell in a high-bar alignment on the shoulders, with the forward knee flexed to 45 degrees before returning to full extension.",
+      "Maintain neutral alignment of the forward knee over the second metatarsal.",
+      "Keep the rear knee fully extended and both heels in contact with the floor throughout the movement."
+    ],
+    "common_mistakes": [
+      "Allowing the forward knee to deviate from neutral alignment over the second metatarsal.",
+      "Losing heel contact with the floor during the movement.",
+      "Allowing the rear knee to flex during the stride-stance lunge."
+    ],
+    "specific_findings": [
+      "In the traditional lunge, feet are hip-width apart, while in the in-line lunge, feet are positioned at 50% hip-width apart.",
+      "The study analyzed 15 young, healthy, resistance-trained men (age: 25 ± 5 years, height: 175.7 ± 7.7 cm, mass: 81 ± 8 kg, 10RM of traditional lunge: 52.9 ± 14.4 kg, with 5 ± 2 years of training experience).",
+      "A pilot study of n = 5 was used to determine that 14 subjects were needed for an alpha level of 0.05 and statistical power of 0.80.",
+      "The protocol required the forward knee to be flexed to 45 degrees.",
+      "Motor responses in the medio-lateral direction were dominated by a hip strategy, citing Jancová (2008)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 2/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Perform lunge variations (traditional and in-line) with a controlled cadence, such as 60 beats per minute.",
+      "Maintain a continuous movement without stopping between the eccentric (lowering) and concentric (rising) phases of the lunge.",
+      "Allow adequate rest (at least 5 minutes between heavy load adjustments and 30 minutes between different lunge variations) to prevent neuromuscular fatigue.",
+      "Refrain from strenuous lower body exercise for at least 48 hours prior to maximal strength testing to ensure accurate performance and recovery."
+    ],
+    "common_mistakes": [
+      "Pausing or stopping between the eccentric and concentric phases of the lunge.",
+      "Insufficient rest between maximal effort sets, leading to premature neuromuscular fatigue."
+    ],
+    "specific_findings": [
+      "The study compared four experimental lunge conditions: (1) traditional lunge with dominant leg in front, (2) traditional lunge with dominant leg in back, (3) in-line lunge with dominant leg in front, and (4) in-line lunge with dominant leg in back.",
+      "Subjects performed a 10-repetition maximum (10RM) test at a 60 beat cadence.",
+      "Load adjustments for the 10RM test were made by 4–10 kg when the target reps were not achieved on the first attempt.",
+      "sEMG signals were recorded at a sampling rate of 2000 Hz.",
+      "VL electrode placement was at 2/3 of the distance between the anterior spina iliac and the superior aspect of the lateral side of the patella.",
+      "BF electrode placement was at 50% on the line between the ischial tuberosity and the lateral epicondyle of the tibia.",
+      "GM electrode placement was at 50% of the distance between the sacral vertebrae and the greater trochanter.",
+      "GMd electrode placement was at 50% on the line from the iliac crest to the trochanter.",
+      "For VL and BF MVICs, subjects were seated with their knee flexed at 90º and the strap placed on the distal tibia.",
+      "For GM MVIC, subjects laid prone with their knee flexed at 90º and the strap placed on the distal region of the thigh.",
+      "For GMd MVIC, subjects laid prone with their knee extended and the strap placed on the distal region of both lower limbs in hip abduction.",
+      "Mediolateral (ML) displacement of the center of pressure was assessed using a Wii Fit Balance Board under the anterior lower limb with a sampling rate of 37 Hz, calibrated with a weight of 10 kgf."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 3/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Limb",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Traditional and in-line lunges elicit similar overall muscle activation in the lower limbs.",
+      "Biceps femoris and gluteus maximus activity is significantly higher in the anterior (front) leg compared to the posterior (back) leg during both lunge variations.",
+      "Vastus lateralis and gluteus medius activation levels do not significantly differ between the front and back legs.",
+      "The in-line lunge demands significantly greater mediolateral balance control compared to the traditional lunge.",
+      "Stance width variations between traditional and in-line lunges do not alter sagittal plane muscle activation of the prime movers or stabilizers."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Biceps Femoris activity was significantly greater in the anterior compared to the posterior position: in-line (p = 0.003; d = 1.19; Δ% = 53) and traditional (p < 0.001; d = 1.69; Δ% = 68.3).",
+      "Gluteus Maximus activity was significantly greater in the anterior compared to the posterior position: in-line (p < 0.001; d = 3.96; Δ% = 87.7) and traditional (p < 0.001; d = 3.45; Δ% = 88.3).",
+      "Mediolateral balance displacement was significantly greater in the in-line exercise in the anterior limb (19.4 ± 4.1 cm) compared to the traditional lunge (14.8 ± 2.9 cm; p = 0.001; d = 0.81; Δ% = 23.51).",
+      "Intraclass Correlation Coefficients (ICCs) for all RMS data ranged between 0.91 and 0.98."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 4/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "The lunge is a complex multi-joint task requiring coordination of monoarticular and biarticular muscles across the knee and hip.",
+      "The anterior and posterior legs experience highly distinct mechanical demands and muscle activation profiles, meaning each leg must be analyzed separately.",
+      "The anterior leg functions similarly to a squat, with the vastus lateralis (VL) acting as a primary knee stabilizer and prime mover.",
+      "The posterior leg exhibits significantly lower biceps femoris (BF) and gluteus maximus (GM) activation compared to the anterior leg.",
+      "Vastus lateralis (VL) activation remains similar between both the anterior and posterior legs due to comparable knee range of motion (0 to 90 degrees).",
+      "Narrowing the stance width (as in an in-line lunge) reduces the base of support, significantly challenging mediolateral (ML) balance and requiring a hip-dominant stabilization strategy.",
+      "Muscles of the anterior limb during a lunge may experience a 'sticking region' where muscle fiber length and myofilament overlap are suboptimal for maximal force production."
+    ],
+    "common_mistakes": [
+      "Failing to stabilize the hip and core to counter the increased mediolateral instability caused by a narrower stance width (in-line lunge)."
+    ],
+    "specific_findings": [
+      "The highest muscle activation was observed in the VL (Δ% = ~53.4, for both exercises).",
+      "The GM presented lower muscle activity when compared to the BF (Δ% = ~6, for both exercises).",
+      "The ROM of the knee joint was similar in both leg positions (0-90 degrees).",
+      "The in-line lunge showed greater ML balance when compared to the traditional exercise (Δ% = 23.51)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 5/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Thigh",
+    "content_type": "Exercise Comparison",
+    "core_principles": [
+      "Both traditional and in-line lunges demonstrate similar overall levels of lower limb muscle activation.",
+      "The anterior limb in a lunge generates higher activation of the biceps femoris and gluteus maximus compared to the posterior limb.",
+      "The vastus lateralis shows similar activation levels between both the front and back legs, as well as between traditional and in-line lunge variations.",
+      "The gluteus medius acts primarily in the frontal plane of the hip joint to stabilize the pelvis during the sagittal plane movement of the lunge.",
+      "The in-line lunge is highly recommended for challenging and training medio-lateral balance and stability under load."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The anterior limb generated the highest biceps femoris (BF) and gluteus maximus (GM) muscle activation when compared to the posterior limb.",
+      "The vastus lateralis (VL) showed similar activation between legs and exercises.",
+      "The in-line lunge showed greater medio-lateral (ML) balance demands when compared to the traditional lunge.",
+      "The study utilized a Wii Fit Balance Board to analyze medio-lateral (ML) balance."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 6/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Limb",
+    "content_type": "Research References",
+    "core_principles": [
+      "In-line and traditional lunge variations differ in their demands on balance and lower limb muscle activation.",
+      "Knee joint-angle positions during squatting exercises significantly affect muscle activation levels.",
+      "Joint position influences electromyographic (EMG) activity and torque generation of the hamstrings and gluteus maximus during isometric contractions."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\lunge_knowledge.pdf [part 7/7]"
+  }
+]

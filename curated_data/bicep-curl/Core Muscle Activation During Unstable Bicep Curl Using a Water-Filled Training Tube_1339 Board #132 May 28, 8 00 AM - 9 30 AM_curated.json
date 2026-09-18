@@ -1,0 +1,24 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl and Leg Extension",
+    "focus_area": "Core and Stabilizers",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Using an unstable load, such as a water-filled tube (slosh tube), is an effective method to create muscle instability and train for stability.",
+      "Performing a bicep curl with an unstable water-inertia implement increases instability in the paraspinal and deltoid muscles for both men and women.",
+      "Men experience greater overall instability in the biceps compared to women when using an unstable water-filled implement.",
+      "Women exhibit significantly higher muscle activation (%MVC) in the biceps and paraspinal muscles during unstable bicep curls compared to men."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Significant instability was seen in the paraspinal muscles for both genders at the 50% (CV= 26.5 ± 14.5) and 100% (CV= 27.1 ± 9.9) condition compared to stable (CV= 15.0 ± 9.1).",
+      "Across all subjects the deltoid showed greatest instability at the 100% open setting (CV= 38.5 ± 23.2) compared to stable (CV= 21.0 ± 7.5).",
+      "For the bicep, men showed greater overall instability (CV= 30.9 ± 17.0) compared to women (CV= 22.9 ± 8.4).",
+      "Percent MVC activated was significantly greater for women for the bicep (50% open = 97.7 ± 57.6, 100% open = 88.1 ± 55.6, stable = 87.0 ± 50.1) compared to men (50% open = 39.5 ± 17.0, 100% open = 38.3 ± 18.3, stable = 31.8 ± 11.1).",
+      "Percent MVC activated was significantly greater for women for the paraspinal muscles (50% open = 36.7 ± 22.3, 100% open = 47.5 ± 29.0, stable = 38.6 ± 23.9) compared to men (50% open = 15.1 ± 10.0, 100% open = 16.2 ± 8.8, stable = 14.3 ± 9.6).",
+      "The leg extension study utilized 8 men (age= 19.9± 1.6y, ht=178.8 ± 8.9cm, mass= 103.3 ± 48.5kg, Leg Ext 1RM= 136.5 ± 15.9kg) and 8 women (age= 20.1 ± 1.1y, ht=164.9 ± 9.8cm, mass= 62.9 ± 12.2kg, Leg Ext 1RM= 91.5 ± 15.5kg) performing trials with an 11.4 kg tube partially filled with water."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Core Muscle Activation During Unstable Bicep Curl Using a Water-Filled Training Tube_1339 Board #132 May 28, 8 00 AM - 9 30 AM.pdf [part 2/2]"
+  }
+]

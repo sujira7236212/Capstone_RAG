@@ -1,0 +1,85 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The movement should start with the elbow joint in full extension, flexing the forearm until the dumbbells reach the top of the shoulders, and then returning to the starting position.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "The elbows must be kept close to the body during the movement.",
+        "applies_to_fault": [
+          "elbow flare"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a simulation comparing dumbbell curls with 6 kg and 10.7 kg, the rate of increase of elbow peak moment was 57.7% and the rate of increase of peak muscle force was 38.3%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing the dumbbell load from 6 kg to 10.7 kg resulted in a 44.4% increase in maximum strain and a 37.3% increase in maximum stress in the biceps brachii finite element model.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Biomechanical analysis indicates that increasing the dumbbell load does not increase the muscle force of the biceps brachii at the same rate.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf [part 1/5]",
+    "applies_to_fault": [
+      "elbow flare",
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "The muscle moment arm distance changes during the dumbbell curl exercise, which means that increasing the exercise load does not scale muscle contraction or mechanical response at a linear rate.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The peak joint moment was calculated to be 18.88 Nm with a 6 kg dumbbell and 29.78 Nm with a 10.7 kg dumbbell.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The peak muscle force of the biceps brachii was calculated to be 645.66 N with a 6 kg dumbbell and 893.04 N with a 10.7 kg dumbbell.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Comparing 6 kg and 10.7 kg dumbbells, the rate of increase of load was 78.3%, the rate of increase of peak joint moment was 57.7%, and the rate of increase of peak muscle force was 38.3%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maximum strain on the tendon was calculated as 4.44 mm/mm with a 6 kg dumbbell and 6.42 mm/mm with a 10.7 kg dumbbell.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean maximum stress (σmax) was 4.85 MPa with a 6 kg dumbbell and 7.46 MPa with a 10.7 kg dumbbell, while the peak value of σmax was 7.76 MPa and 10.66 MPa, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Comparing the two loads, the rate of increase of maximum stress was 44.4% and the rate of increase of maximum strain was 37.3%.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf [part 4/5]",
+    "applies_to_fault": []
+  }
+]

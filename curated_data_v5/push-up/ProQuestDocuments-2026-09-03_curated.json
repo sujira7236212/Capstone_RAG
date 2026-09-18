@@ -1,0 +1,36 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Adjusting hand and wrist positions during push-ups can selectively activate the serratus anterior to target scapular stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lateral hand placement can be utilized during push-ups to maximize the activation of the serratus anterior muscle.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 31 healthy young male participants (23.65 ± 0.49 years), hand position had a significant effect on serratus anterior activation (p < 0.001, η2 = 0.215), with lateral hand placement exhibiting the greatest activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Hand position significantly affected lower trapezius (p = 0.01, η2 = 0.088), upper trapezius (p = 0.002, η2 = 0.13), and biceps brachii (p = 0.003, η2 = 0.132) activation during push-ups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "No significant differences in muscle activation were found in the triceps brachii and pectoralis major across the tested hand and wrist positions.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\ProQuestDocuments-2026-09-03.pdf",
+    "applies_to_fault": []
+  }
+]

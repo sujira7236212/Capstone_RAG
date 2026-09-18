@@ -1,0 +1,54 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Stand upright with feet a comfortable width apart and the back against a wall to prevent body swinging and momentum use.",
+      "Keep the elbows fixed or use an elbow stabilizing plate to ensure full range of motion of the elbow joint is achieved and to prevent swinging of the elbows.",
+      "Maintain a controlled tempo, such as a 1-second concentric phase and a 1-second eccentric phase.",
+      "Avoid excessive volume to failure (especially high-repetition, low-load training to failure), which can trigger severe muscle damage, extreme swelling, and exertional rhabdomyolysis."
+    ],
+    "common_mistakes": [
+      "Swinging the elbows during the lift.",
+      "Failing to achieve a full range of motion at the elbow joint.",
+      "Using body momentum or swinging the torso to assist in lifting the weight.",
+      "Performing excessive repetitions to failure (e.g., high-repetition low-load sets) leading to severe clinical muscle damage."
+    ],
+    "specific_findings": [
+      "The subject used an elbow stabilizing plate (Bicep Bomber, Body Solid, Inc., Forest Park, IL, USA), which ensured that the full range of motion of the elbow joint was achieved during each repetition and that the subject did not swing their elbows during the exercise.",
+      "A metronome was set to 60 beats per minute and each participant was instructed to perform the concentric and eccentric phases of the exercise corresponding with each tick of the metronome. Therefore, the concentric and eccentric phase of each repetition were approximately 1 s in duration.",
+      "Using a 3.4-kg (7.5-lb) load on each dumbbell, the subject completed 87 repetitions, 28 repetitions, and 28 repetitions during sets 1, 2, and 3, respectively, for a total of 143 repetitions.",
+      "Three days after her second laboratory visit, the subject reported that she was unable to fully extend her forearms due to excessive swelling at and just proximal to both elbows, with the left elbow appearing more swollen than the right.",
+      "Several hours later, she was called and informed that her blood test results indicated a CK concentration 11,683 U/L (Figure 4), and she was instructed to go to the emergency room for further testing and monitoring. Therefore, later on the 3rd day post-exercise (approximately 78 hours post-exercise), the subject checked into an emergency room, where she received two saline bags intravenously. Her CK concentration was tested again and reported at approximately 12,200 U/L."
+    ],
+    "applies_to_fault": [
+      "not full extension",
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Exertional Rhabdomyolysis in a 21-year-old, Healthy Female after Performing Three Sets of the Biceps Curl Exercise to Failure with 30% 1rm A Case Report.pdf [part 3/4]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Performing exercises through a full range of motion (exercising muscles at a longer length) can produce greater muscle damage.",
+      "Low-load, high-repetition resistance exercise performed to failure significantly increases time under tension and total work, which can lead to severe muscle damage.",
+      "Gradually progress volume and intensity to avoid extreme muscle damage and potential exertional rhabdomyolysis, even in healthy, active individuals."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "A 21-year-old healthy female was diagnosed with exertional rhabdomyolysis after completing 3 sets of bilateral dumbbell biceps curls at 30% 1RM (3.4 kg) for 143 total repetitions.",
+      "The subject's creatine kinase (CK) concentrations peaked at approximately 12,200 U/L.",
+      "The subject was the first of approximately 48 subjects in the research group's studies to be diagnosed with exertional rhabdomyolysis under these training conditions."
+    ],
+    "applies_to_fault": [
+      "not full extension"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Exertional Rhabdomyolysis in a 21-year-old, Healthy Female after Performing Three Sets of the Biceps Curl Exercise to Failure with 30% 1rm A Case Report.pdf [part 4/4]"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "Aligning the index finger with the spine during shoulder-width push-ups can be used to target and increase the activation of the triceps brachii muscle.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study of 50 subjects performing shoulder-width push-ups showed a significantly greater peak EMG activation in the triceps brachii muscle when using an index finger alignment with the spine compared to a pinky finger alignment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Male subjects experienced significantly greater EMG activation in the triceps brachii, pectoralis major, and anterior deltoid muscles during push-ups compared to female subjects.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\Are Upper Body Muscle Activations Different In Various Type Of Push-up Exercise__203 Board #44 May 30 9 30 AM - 11 00 AM.pdf [part 3/4]",
+    "applies_to_fault": []
+  }
+]

@@ -1,0 +1,276 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Perform movements with a full range of motion to maximize mechanical tension, which is the primary driver of hypertrophy.",
+      "Maintain a controlled tempo, specifically focusing on controlled eccentrics lasting 2 to 3 seconds.",
+      "Avoid rushed partial repetitions."
+    ],
+    "common_mistakes": [
+      "Rushed partial repetitions",
+      "Failing to use a full range of motion"
+    ],
+    "specific_findings": [
+      "Tempo: controlled eccentrics (2 to 3 seconds) with full range of motion beat rushed partial reps.",
+      "Volume: roughly 10 to 20 hard sets per muscle group per week, with newer clients thriving at the lower end.",
+      "Intensity: most work in the 65 to 85 percent range (about 6 to 12 reps).",
+      "Protein: commonly around 1.6 to 2.2 grams per kilogram daily for clients pursuing muscle growth."
+    ],
+    "applies_to_fault": [
+      "not full extension"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.nasm.org/resource-center/blog/training/9-of-the-best-arm-sculpting-exercises-to-tone-and-strengthen) [part 1/2]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Stand with feet shoulder-width apart, knees slightly bent, and core engaged to prevent lower back arching.",
+      "Keep the upper arms fixed and close to the torso to isolate the biceps and avoid using momentum.",
+      "Perform a full range of motion from complete arm extension at the bottom to near-maximal elbow flexion at the top.",
+      "Maintain neutral and straight wrists throughout the movement.",
+      "Control the tempo by lifting (concentric phase) over 1-2 seconds and lowering (eccentric phase) slowly over 2-3 seconds.",
+      "Exhale during the concentric lift and inhale during the eccentric lower."
+    ],
+    "common_mistakes": [
+      "Swinging the body or using momentum from the hips or shoulders to lift the weight.",
+      "Failing to achieve complete arm extension at the bottom of the movement.",
+      "Allowing the elbows to flare outward during the curl.",
+      "Using 'cheating' techniques with body momentum, which increases injury risk without enhancing muscle growth."
+    ],
+    "specific_findings": [
+      "Electromyographic (EMG) studies demonstrate high activation of the biceps brachii, reaching peak levels of up to 95% of maximum voluntary contraction (MVC) during the concentric phase of standard dumbbell curls.",
+      "A 2025 study on untrained individuals found similar biceps brachii hypertrophy outcomes compared to strict form despite the increased volume load with cheating."
+    ],
+    "applies_to_fault": [
+      "not full extension",
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 1/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Arms",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Use a supinated grip (palms up) to maximize biceps brachii excitation and contraction during the ascending phase.",
+      "Use a neutral grip (palms facing each other) to target the brachialis and brachioradialis.",
+      "Use a pronated grip (palms down) to target the brachioradialis and forearm extensors, enhancing grip strength and wrist stability.",
+      "Perform curls seated with back support to minimize lower back arching, shoulder elevation, and momentum.",
+      "Brace the core during standing curls to prevent excessive body swinging.",
+      "Use a preacher bench to fix the upper arms, eliminating shoulder compensation and isolating the biceps.",
+      "Perform curls on an incline bench set at 45-60 degrees to increase the stretch on the biceps' long head at the bottom position.",
+      "Use an EZ-bar to allow a semi-supinated grip, reducing wrist strain compared to a straight barbell.",
+      "Maintain a neutral wrist alignment (straight wrists without excessive flexion or extension) to prevent joint torque.",
+      "Beginners should use a wider-than-shoulder-width stance to improve base stability."
+    ],
+    "common_mistakes": [
+      "Lower back arching during the lift.",
+      "Shoulder elevation and shoulder compensation to assist the curl.",
+      "Excessive swinging of the body (using momentum) during standing curls.",
+      "Allowing the wrists to excessively flex or extend instead of maintaining a straight, neutral alignment."
+    ],
+    "specific_findings": [
+      "Performing the curl on an incline bench at an angle of 45-60 degrees increases the stretch on the biceps' long head at the bottom position."
+    ],
+    "applies_to_fault": [
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 2/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Keep elbows fixed at the sides during standard dumbbell curls to ensure isolation.",
+      "Utilize a full range of motion from full elbow extension to complete flexion.",
+      "Maintain a neutral wrist position throughout the curl.",
+      "Emphasize a slow, controlled eccentric phase to maximize muscle tension.",
+      "For concentration curls, brace the triceps area of the upper arm against the inner thigh to restrict movement and isolate the biceps.",
+      "Squeeze the biceps intensely at the top of the movement for peak contraction."
+    ],
+    "common_mistakes": [
+      "Swinging the body or using momentum to lift the weight.",
+      "Failing to keep the upper arm stationary during the curl."
+    ],
+    "specific_findings": [
+      "According to crowdsourced data from Strength Level, the one-repetition maximum (1RM) standards for hammer curls for men (per dumbbell) are approximately: Beginner ~18 lb (8 kg), Novice ~33 lb (15 kg), Intermediate ~51 lb (23 kg), Advanced ~75 lb (34 kg), Elite ~101 lb (46 kg).",
+      "According to a 2014 study by the American Council on Exercise (ACE), the concentration curl elicits the highest biceps activation among tested curl variations, achieving approximately 98% maximum voluntary contraction (MVC)."
+    ],
+    "applies_to_fault": [
+      "not full extension",
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 3/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Emphasize controlled form, full range of motion, and progressive overload.",
+      "For Zottman curls, curl upward with a supinated grip, rotate wrists to a pronated grip at the top, and lower slowly to target both biceps and forearms.",
+      "Use an EZ-bar to reduce wrist pronation and pressure on the elbows and shoulders compared to a straight barbell.",
+      "Perform incline dumbbell curls on a bench angled at 45-60 degrees with arms fully extended to maximize the stretch on the long head of the biceps.",
+      "Utilize the incline bench to support the back, minimize lumbar stress, and prevent cheating with momentum.",
+      "Focus on a slow eccentric (lowering) phase to minimize momentum and maximize muscle activation."
+    ],
+    "common_mistakes": [
+      "Cheating by using momentum to lift the weight",
+      "Failing to maintain a slow, controlled eccentric lowering phase"
+    ],
+    "specific_findings": [
+      "Incline bench set at 45-60 degrees",
+      "The 21s technique consists of three phases in one set: seven partial repetitions from the bottom (full extension) to the halfway point, seven partials from halfway to full flexion, and seven full-range curls",
+      "Load recommendations of 60-80% of one-repetition maximum (1RM) for 8-12 controlled repetitions",
+      "Beginners starting at lower loads around 50% of 1RM to prioritize form"
+    ],
+    "applies_to_fault": [
+      "using momentum",
+      "swinging torso",
+      "not full extension"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 4/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Keep elbows tucked at the sides during the curl.",
+      "Lower the weight slowly to full extension to maintain control and tension.",
+      "Align the elbows with the lever's fulcrum when using a preacher curl machine.",
+      "Adjust grip width to target different heads of the biceps: a narrow grip targets the long head (outer portion), while a shoulder-width or wider grip targets the short head (inner portion).",
+      "Keep the torso stable and avoid using body swing or momentum to lift the weight.",
+      "Control the eccentric lowering phase to sustain tension throughout the movement."
+    ],
+    "common_mistakes": [
+      "Using momentum or body swing to assist in lifting the weight.",
+      "Failing to fully extend the elbows at the bottom of the movement.",
+      "Using a neutral grip on a standard preacher pad, which may be less optimal for alignment and biceps brachii activation compared to a supinated grip."
+    ],
+    "specific_findings": [
+      "According to a 2014 study by the American Council on Exercise (ACE), cable curls rank second highest among common bicep exercises for biceps activation, achieving approximately 81% maximum voluntary contraction (MVC).",
+      "An isometric hold in the chin-up position should be maintained for 10-30 seconds to intensely engage the biceps brachii."
+    ],
+    "applies_to_fault": [
+      "not full extension",
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 5/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Keep upper arms stationary during standard dumbbell curls to minimize momentum.",
+      "Use a neutral grip (palms facing each other) during hammer curls to target the brachialis and brachioradialis.",
+      "Brace the elbow on the inner thigh during concentration curls for strict isolation of the biceps brachii.",
+      "Perform incline dumbbell curls on a 45-60 degree incline bench to provide a deeper stretch at the bottom, emphasizing the long head.",
+      "On preacher curls, keep upper arms flat on the pad and start with arms fully extended downward, then curl upward by flexing the elbows.",
+      "Lower the weight slowly and under control, emphasizing the eccentric phase.",
+      "To target the long head (biceps peak), position the arms behind the torso (shoulder extension) to create a deeper stretch at the bottom."
+    ],
+    "common_mistakes": [
+      "Using momentum or swinging the body to lift the weight.",
+      "Improper setup or excessive extension on preacher curls, which can stress the elbows or forearms.",
+      "Allowing tension to drop off at the top (shortened position) of a preacher curl.",
+      "Using a limited range of motion in some setups, which may not fully lengthen the biceps."
+    ],
+    "specific_findings": [
+      "Incline dumbbell curls are performed on an incline bench angled at 45-60°.",
+      "Preacher curls tend to promote greater hypertrophy in the distal (lower, near-elbow) portion of the biceps brachii and brachialis compared to incline curls, which favor proximal (upper) growth.",
+      "Studies have shown preacher curls leading to approximately 10% increases in distal muscle thickness.",
+      "Comparative trials demonstrated superior distal development of preacher curls versus incline variations, showing greater distal thickness gains of ~10% vs. ~6% in some protocols.",
+      "Recommendations for preacher curls include performing 3–4 sets of 8–15 reps, focusing on slow eccentrics of 3–4 seconds."
+    ],
+    "applies_to_fault": [
+      "not full extension",
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 6/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Incline Dumbbell Curls: Perform on a 45–60° incline bench, allowing arms to hang behind the body to maximize long head stretch and emphasize the proximal biceps.",
+      "Bayesian Cable Curls: Face away from a low cable pulley with the arm extended behind the torso to maintain constant tension and bias the long head in a lengthened position.",
+      "Drag Curls: Drag the bar up along the torso by keeping the elbows back and maintaining shoulder extension to emphasize the long head in the mid-range.",
+      "21s: Perform 7 bottom-half reps, 7 top-half reps, and 7 full reps per set for metabolic stress.",
+      "Waiter Curl: Hold the dumbbell vertically at the top of the movement for a focused peak contraction."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Incline dumbbell curls are performed on a 45–60° incline bench.",
+      "Regional hypertrophy studies show greater upper biceps growth with incline dumbbell curls compared to preacher-style curls.",
+      "Recent research (e.g., Attarieh et al., 2025) found similar overall biceps hypertrophy between Bayesian cable curls and preacher curls in matched protocols."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://grokipedia.com/page/Bicep_curl) [part 7/7]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "The biceps brachii is most powerful as an elbow flexor in a supinated (palms up) position and loses significant power as the arm rotates inward.",
+      "The brachialis and brachioradialis receive more activation as the arm rotates from a supinated to a neutral or pronated position.",
+      "Hammer curls (neutral grip) are less stressful on the elbow joint and reduce tension on the elbow's tendons compared to supinated curls.",
+      "To perform a hammer curl, stand with a comfortable stance, knees slightly bent, and hold the weights with a neutral grip (palms facing each other)."
+    ],
+    "common_mistakes": [
+      "Allowing the elbows to pull forward during curls (often caused by the biceps brachii acting as a biarticular muscle attempting to stabilize the shoulder while flexing the elbow)."
+    ],
+    "specific_findings": [
+      "The brachialis is actually the primary flexor of the elbow, generating 50-60% of the force."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl) [part 1/3]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Stand with a neutral, comfortable stance with feet about shoulder-width apart.",
+      "Tuck the elbows near the waist so they remain stationary in the same position during the entire range of motion.",
+      "Maintain a supinated grip (palms up) for bicep curls to maximize bicep brachii activation during flexion.",
+      "Lower the dumbbells in a slow and controlled manner to focus on the eccentric contraction.",
+      "Keep the body as still as possible during the lift to prevent momentum from assisting."
+    ],
+    "common_mistakes": [
+      "Exhibiting excessive swaying or body movement to cheat the weight up.",
+      "Allowing the elbows to drift forward or away from the waist during the movement."
+    ],
+    "specific_findings": [
+      "For hypertrophy, use a weight that allows for 8-12 reps, or high reps of 12+ occasionally, ensuring the muscles are brought close to failure."
+    ],
+    "applies_to_fault": [
+      "using momentum",
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl) [part 2/3]"
+  }
+]

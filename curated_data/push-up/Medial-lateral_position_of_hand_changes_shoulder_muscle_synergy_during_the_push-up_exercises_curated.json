@@ -1,0 +1,65 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Altering the medial-lateral hand position (narrow, normal, or wide) changes shoulder muscle synergy and coordination during the push-up.",
+      "Two distinct muscle synergies control the push-up: Synergy 1 activates at the lowest position of the movement, while Synergy 2 is active before and after the lowest position (during the descent and ascent phases).",
+      "The most active muscles during these synergies correspond to shoulder and elbow extension and flexion."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The study analyzed 15 fitness athletes (weight: 68.35±7.18 kg, height: 175±3.40 cm, age: 24.50±7.5 years, and experience: 12±3 years).",
+      "Two synergies were extracted from the EMG of 14 upper body muscles using a Non-negative matrix factorization (NMF) algorithm.",
+      "The minimum similarity of synergy coefficient was observed between normal and wide positions for both synergy 1 (SP=0.88) and synergy 2 (SP=0.79).",
+      "The minimum similarity of synergy weight was observed between normal and wide positions for both synergy 1 (SP=0.91) and synergy 2 (SP=0.84)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Medial-lateral_position_of_hand_changes_shoulder_muscle_synergy_during_the_push-up_exercises.pdf [part 1/6]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body Muscles",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "Push-up variations (narrow, normal, and wide) recruit upper body muscles through distinct muscle synergies.",
+      "Synergy 1 is primarily activated at the lowest position of the push-up.",
+      "Synergy 2 is activated before and after reaching the lowest position of the push-up."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The local_VAF for all 14 muscles and push-up types (narrow, normal, wide) was greater than 0.75, demonstrating the reliability of the muscle synergies.",
+      "The minimum similarity of synergy coefficient was observed between normal and wide positions for both synergy 1 (SP=0.88) and synergy 2 (SP=0.79).",
+      "The minimum similarity of synergy weight was observed between normal and wide positions for both synergy 1 (SP=0.91) and synergy 2 (SP=0.84)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Medial-lateral_position_of_hand_changes_shoulder_muscle_synergy_during_the_push-up_exercises.pdf [part 3/6]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder and Elbow",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "The standard push-up involves two distinct muscle synergies extracted from 14 muscles.",
+      "Synergy 1 is activated at the lowest position of the push-up, corresponding to the transition phase.",
+      "Synergy 2 is active before and after the lowest position, corresponding to the descent and ascent phases.",
+      "Varying hand positions (narrow, normal, and wide) alters how the central nervous system coordinates and controls muscle groups.",
+      "The greatest difference in muscle coordination strategies (CNS control) occurs between the normal and wide hand positions."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Two synergies were extracted from the EMG of 14 muscles.",
+      "The minimum similarity of both synergy coefficient and synergy weight were observed between normal and wide positions (Synergy 1 coefficient similarity of 0.88 and Synergy 2 coefficient similarity of 0.79).",
+      "Synergy 1 similarity coefficients across hand positions were: Narrow VS Normal = 0.91, Normal VS Wide = 0.88, and Narrow VS Wide = 0.96.",
+      "Synergy 2 similarity coefficients across hand positions were: Narrow VS Normal = 0.85, Normal VS Wide = 0.79, and Narrow VS Wide = 0.95.",
+      "Synergy Weight Synergy 1 similarity values were: Narrow VS Normal = 0.94, Normal VS Wide = 0.91, and Narrow VS Wide = 0.92.",
+      "Synergy Weight Synergy 2 similarity values were: Narrow VS Normal = 0.86, Normal VS Wide = 0.84, and Narrow VS Wide = 0.89."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Medial-lateral_position_of_hand_changes_shoulder_muscle_synergy_during_the_push-up_exercises.pdf [part 4/6]"
+  }
+]

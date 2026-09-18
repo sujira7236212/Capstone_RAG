@@ -1,0 +1,70 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain strict whole-body tension throughout the flight phase of a plyometric push-up to ensure the body behaves as a single rigid segment.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing pronounced hip flexion or segmental motion of the body during the flight phase of a plyometric push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A 5-degree shoulder-flexion perturbation during the flight phase of a push-up displaces the center of mass from the nominal pendular arc by approximately 0.05 meters for representative anthropometry where body length is 0.60 meters and the initial angle is 12 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Pronounced hip flexion or segmental motion during the flight phase of a push-up produces deviations from the predicted pendular arc, reducing movement consistency and performance estimation.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\A Rigid-Body Pendulum Model for Plyometric Push-Up Biomechanic.pdf [part 6/22]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Whole Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The initial configuration of the push-up requires the arms to be fully extended and oriented vertically, perpendicular to the floor.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Recreational execution of push-ups often involves minor translational displacement of the ankle at takeoff.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "For a body mass of 75 kg at hand velocity up to 3.0 m/s, the peak aerodynamic drag force is approximately 0.5 N.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For representative anthropometric arm lengths of 0.7 to 0.9 meters, the upper bound of hand take-off velocity is 3.7 to 4.2 m/s.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Minor translational displacement of the ankle at takeoff alters the effective pivot location and introduces position-dependent errors in biomechanical calculations.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\A Rigid-Body Pendulum Model for Plyometric Push-Up Biomechanic.pdf [part 7/22]",
+    "applies_to_fault": []
+  }
+]

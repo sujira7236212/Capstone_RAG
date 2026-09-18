@@ -1,0 +1,153 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "During the walking forward lunge, the hamstring undergoes a short period of eccentric contraction at the beginning of the stance phase, characterized by elongation of the muscle preceded by high EMG activity.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the jumping forward lunge, the hamstring muscle length remains almost constant at the first peak, indicating an isometric contraction, followed by a concentric contraction during push-off.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The jumping forward lunge features a pronounced second peak of hamstring activity due to fast hip extension in the push-off phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Both walking and jumping forward lunges produce a burst of rectus femoris EMG activity immediately following foot-strike.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the first part of the stance in the jumping forward lunge, the rectus femoris undergoes an eccentric contraction (muscle lengthening preceded by a peak in activity), followed by a gradual concentric contraction, and ends with an eccentric contraction just before push-off.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For both walking and jumping forward lunges, the gastrocnemius exhibits an initial small burst of EMG activity at foot strike, coinciding with a rapid decrease in muscle length.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The walking forward lunge group improved concentric hamstring strength by 35% after six weeks of training, from 92 Nm to 124 Nm (p<0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The walking forward lunge group showed a significant increase in hamstring strength at day two compared to baseline, reaching a mean strength of 107 Nm (p<0.01).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Immediately after the first training session, quadriceps strength decreased from 171 to 162 Nm (p<0.05) in the walking forward lunge group, and from 150 to 132 Nm (p<0.001) in the jumping forward lunge group.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At two days post-exercise, the jumping forward lunge group still had a significant decrease in quadriceps strength compared to baseline, with a mean of 133 Nm (p<0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The jumping forward lunge group showed a significant 2% increase in 30-meter sprint performance compared to baseline after six weeks of training (p<0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The walking forward lunge group improved mean one-leg hop performance from 198 to 212 cm (p<0.001) after six weeks, while the jumping forward lunge group improved from 191 to 205 cm (p<0.01).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Overall muscle pain measured by VAS during the one-leg jump test increased from a median of 0 to 1 in the walking forward lunge group immediately after exercise, and from 0 to 3.5 in the jumping forward lunge group.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "After two days, the median VAS pain score was 1 (range 0-6) for the walking forward lunge group and 3.5 (range 0-7) for the jumping forward lunge group.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Muscle injury and pain  effects of eccentric exercise, sprint running, forward lunge and sports massage.pdf [part 16/33]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The quadriceps work eccentrically during the first part of a forward lunge, particularly during the jumping forward lunge variation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hamstrings undergo an isometric contraction during the initial period of the stance phase of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gastrocnemius works eccentrically during most of the stance phase of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The length of the hamstrings depends on both the knee and hip angles, with the hip angle having a greater impact on hamstring length than the knee angle.",
+        "applies_to_fault": [
+          "excessive forward trunk lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Believing that the forward lunge elicits prolonged eccentric hamstring activity, whereas it actually undergoes an isometric contraction during the initial stance phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A training study of twenty-eight junior football players over six weeks compared walking forward lunges and jumping forward lunges, finding no significant differences in performance or pain parameters.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gastrocnemius muscle shows two distinct EMG peaks during the lunge stance phase: one in the middle representing an eccentric contraction and one at the end.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Muscle injury and pain  effects of eccentric exercise, sprint running, forward lunge and sports massage.pdf [part 21/33]",
+    "applies_to_fault": [
+      "excessive forward trunk lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Legs",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The quadriceps works eccentrically during the first part of a forward lunge, and this eccentric demand is especially pronounced during a jumping lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hamstrings perform an isometric contraction during the stance phase of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gastrocnemius works eccentrically during a portion of the stance phase of a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Immediately after foot strike during a lunge, eccentric muscle activity occurs primarily in the quadriceps on the front of the thigh, as well as in the hamstrings on the back of the thigh.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A six-week training period of walking lunges performed twice a week (evaluated in a study of 32 soccer players) improved hamstring concentric strength, whereas training with jumping lunges improved sprint running performance.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\lunge\\Muscle injury and pain  effects of eccentric exercise, sprint running, forward lunge and sports massage.pdf [part 25/33]",
+    "applies_to_fault": []
+  }
+]

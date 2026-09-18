@@ -1,0 +1,60 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Start the bicep curl with the elbow in full extension and the forearm supinated.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "Stand against a wall with the opposite arm placed behind the back to prevent excessive body movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Inspire throughout the eccentric phase and expire throughout the concentric phase to maintain a constant breathing rate.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive body movement to assist in lifting the dumbbell.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to start the movement with the elbow in full extension.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study utilized a repetition timing of 2 seconds concentric and 2 seconds eccentric monitored by a metronome.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To minimize the effect of changing abdominal pressures, participants maintained a constant breathing rate of 15 breaths per minute.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failure during 1-RM testing was defined as the final load successfully lifted with correct technique where an additional 0.5 kg could not be lifted.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing a Valsalva maneuver during bicep curls can alter abdominal pressure, which affects cardiac output and blood pressure.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\bicep-curl\\Scandinavian Med Sci Sports - 2014 - Brandner - Unilateral bicep curl hemodynamics  Low‐pressure continuous vs.pdf [part 4/12]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  }
+]

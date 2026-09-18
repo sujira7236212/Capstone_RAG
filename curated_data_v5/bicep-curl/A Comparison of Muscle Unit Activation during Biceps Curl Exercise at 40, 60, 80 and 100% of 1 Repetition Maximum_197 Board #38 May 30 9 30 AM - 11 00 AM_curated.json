@@ -1,0 +1,36 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Peak recruitment of motor units can be accomplished at any workload greater than 60% 1 RM, provided momentary muscular fatigue is achieved.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Exercise intensity is best defined by the final repetition, as opposed to the initial repetition (i.e., percentage of 1RM).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Adhere to a controlled repetition duration, such as a 3-1-3-1 second tempo.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 12 resistance-trained subjects, percent MVC for the concentric portion of the final repetition of bicep curls was 62.5±27.8% at 40% 1RM, 71.7±24.0% at 60% 1RM, 72.8±18.4% at 80% 1RM, and 79.6±18.0% at 100% 1RM, with no significant difference among 60%, 80%, and 100% 1RM.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The recruitment of approximately 70% of MVC at momentary muscular fatigue may, in part, be attributed to the level of resistance training of the subjects and their ability to activate motor units.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\bicep-curl\\A Comparison of Muscle Unit Activation during Biceps Curl Exercise at 40, 60, 80 and 100% of 1 Repetition Maximum_197 Board #38 May 30 9 30 AM - 11 00 AM.pdf [part 1/2]",
+    "applies_to_fault": []
+  }
+]

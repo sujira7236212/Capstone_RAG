@@ -1,0 +1,48 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      "Increasing the ankle abduction angle (turning the foot outward) during the lunge exercise increases the muscle activity of the quadriceps femoris.",
+      "An ankle abduction angle of 60 degrees is highly effective for selective muscle strengthening of the vastus medialis oblique (VMO).",
+      "Strengthening the VMO helps correct muscle imbalances between the vastus lateralis (VL) and VMO, which is key to managing patellofemoral pain syndrome.",
+      "Adduction of the hip joint and the tibia during the lunge exercise is beneficial for VMO activation.",
+      "Abduction of the femur during the lunge diminishes the force delivered to the lateral patellofemoral joint, thereby decreasing pressure on the knee joint."
+    ],
+    "common_mistakes": [
+      "Allowing a muscle imbalance where a weakened vastus medialis oblique (VMO) is overpowered by the vastus lateralis (VL), pulling the patella excessively laterally."
+    ],
+    "specific_findings": [
+      "Fifteen male healthy volunteers participated in the study.",
+      "All participants performed the lunge exercise with different angles of ankle abduction (0°, 20°, 40°, 60°).",
+      "The most significantly increased muscle activity was evident in the vastus medialis oblique (VMO) when the ankle abduction was 60°.",
+      "In a previous study, the lunge exercise was shown to activate the muscle activity of VMO by 77% as compared to other exercise schemes"
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Changes in lower limb muscle activity based on angle of ankle abduction during lunge exercise.pdf [part 1/3]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      "To prevent upper body sway during the lunge, look straight ahead and place hands on the waist.",
+      "Increasing the ankle abduction angle (turning the foot outward) during a lunge gradually increases the muscle activity of the quadriceps femoris (rectus femoris, vastus lateralis, and vastus medialis oblique).",
+      "An ankle abduction angle of 60 degrees is highly effective for selective strengthening of the vastus medialis oblique (VMO)."
+    ],
+    "common_mistakes": [
+      "Allowing the upper body to sway during the movement."
+    ],
+    "specific_findings": [
+      "Study analyzed 15 healthy males (mean age: 21.4 ± 3.0 years, mean weight: 71.5 ± 6.8 kg, mean height: 164.1 ± 7.9 cm).",
+      "VMO muscle activity increased from 44.2 ± 24.0% at 0° ankle abduction to 63.6 ± 33.8% at 60° ankle abduction (p<0.01).",
+      "VL muscle activity increased from 41.3 ± 20.9% at 0° ankle abduction to 57.0 ± 28.7% at 60° ankle abduction (p<0.01).",
+      "RF muscle activity increased from 23.0 ± 12.8% at 0° ankle abduction to 37.6 ± 14.5% at 60° ankle abduction (p<0.01)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Changes in lower limb muscle activity based on angle of ankle abduction during lunge exercise.pdf [part 2/3]"
+  }
+]

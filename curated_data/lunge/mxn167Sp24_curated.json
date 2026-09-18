@@ -1,0 +1,351 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "The forward lunge is a unilateral exercise that increases prime mover muscular strength, stabilizer muscle activity, and range of motion.",
+      "The forward lunge features a high quadriceps-to-hamstrings (Q:H) activation ratio, which physical therapists may avoid during lower body musculoskeletal rehabilitation protocols, particularly ACL rehabilitation.",
+      "The backward lunge is a common alternative to the forward lunge to modify joint angles and muscle activation patterns.",
+      "Different variations of the lunge exercise result in different joint angles, which directly impact muscle activity."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The quadriceps-to-hamstrings activation ratio (Q:H) was significantly higher in the forward lunge than the backward lunge.",
+      "Kinematic data showed a significantly greater knee angle in the forward lunge compared to the backward lunge.",
+      "The markerless motion capture system showed moderate to excellent agreement with the gold standard optical system for measuring joint angles in both forward and backward lunges."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 1/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Identify and correct undesirable movement patterns to reduce the risk of musculoskeletal injury.",
+      "Suboptimal movement patterning often occurs when learning a new physical task or technique.",
+      "Locomotion requires synchronization between the central nervous system and peripheral sensory complexes to adjust descending signals."
+    ],
+    "common_mistakes": [
+      "Suboptimal movement patterning during exercise execution.",
+      "Flaws in neural coordination or physical disruptions of communication due to injury."
+    ],
+    "specific_findings": [
+      "An ankle sprain can cost over $500 per visit when expenses for equipment and personnel are considered."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 3/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Incorporate unilateral movements to strengthen gluteal muscles and prevent femoral anteversion during single-stance movements.",
+      "Select exercises designed to create a balanced quadriceps-to-hamstrings activation ratio to reduce noncontact ACL injury risk.",
+      "Isolate individual movement assessments rather than relying solely on composite scores from movement screens to precisely identify musculoskeletal structures at risk.",
+      "Avoid multiplanar loading of the knee and imbalanced coordination of quadriceps and hamstrings contractions."
+    ],
+    "common_mistakes": [
+      "Knee valgus (knee collapsing inward) during unilateral or single-stance movements like cutting, often caused by weakened gluteal muscles.",
+      "Imbalanced coordination of quadriceps and hamstrings contractions.",
+      "Relying on composite scores of movement screens which can mask specific musculoskeletal risks."
+    ],
+    "specific_findings": [
+      "ACL injuries occur in as many as 1 in 29 female and 1 in 50 male athletes (Montalvo et al., 2019).",
+      "Approximately 75% of ACL injuries occur without contact (Boden, Dean, Feagin, & Garrett, 2000).",
+      "A meta-analysis conducted by Moran and colleagues found that a functional movement screening test battery was not effective as an injury prediction tool (Moran, Schneiders, Mason, & Sullivan, 2017)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 4/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Comparison",
+    "core_principles": [
+      "The lunge is a unilateral foundational movement useful for identifying weakness in hip and knee musculature and identifying movement asymmetries between limbs.",
+      "Traditional forward lunges can create significant stress on the patellofemoral joint and a high quadriceps-to-hamstrings activation ratio (Q:H), leading to anterior shearing stress on the knee joint.",
+      "The backward lunge is a viable alternative to the forward lunge, offering similar positioning and strength-building capacity for the hips and knees.",
+      "Performing a backward lunge produces less patellofemoral joint stress and lower quadriceps activation than a forward lunge, making it highly suitable for ACL rehabilitation patients or those needing to minimize knee joint stress."
+    ],
+    "common_mistakes": [
+      "Using the traditional forward lunge for populations requiring minimal patellofemoral joint stress, such as ACL rehabilitation patients.",
+      "Allowing movement asymmetries between limbs due to unaddressed weakness in hip and knee musculature."
+    ],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 5/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      "Multi-joint exercises increase hamstring coactivation, which helps the ACL prevent anterior tibial displacement.",
+      "The Quadriceps-to-Hamstring (Q:H) ratio is a critical metric for assessing ACL injury risk during exercise.",
+      "Unilateral exercises isolate single limbs to prevent compensatory movement, improve trunk stability, and increase motor unit recruitment.",
+      "During a lunge, control the descent to stop just before the trailing knee contacts the ground.",
+      "Performing a forward lunge with a forward trunk lean increases biceps femoris activity compared to an upright trunk."
+    ],
+    "common_mistakes": [
+      "Performing open kinetic chain knee extensions from 0-40 degrees of extension during ACL rehabilitation due to maximized anterior shear forces.",
+      "Allowing the trailing knee to impact the ground during a lunge.",
+      "Using the traditional forward lunge during ACL rehabilitation despite its high quadriceps-to-hamstring activation ratio."
+    ],
+    "specific_findings": [
+      "Anterior shear forces are maximized from 0-40 degrees of knee extension during seated knee extension exercises.",
+      "The traditional lunge has a high quadriceps-to-hamstring (Q:H) ratio of almost 10:1.",
+      "The leg press exercise, though classified as an OKC activity, did not produce any significant anterior shearing forces.",
+      "In a traditional lunge, a moderate step results in the back knee ending at approximately a 90-degree angle."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 8/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Comparison",
+    "core_principles": [
+      "Using a longer step length during lunges helps reduce anterior tibial translation over the toes and lowers joint forces.",
+      "Lateral lunges place greater biomechanical demands on the knee and ankle compared to traditional forward lunges.",
+      "Suspending the back foot during a lunge (similar to a backward lunge variation) increases hamstring and gluteal activation without significantly changing rectus femoris activation, improving the quadriceps-to-hamstrings (Q:H) ratio.",
+      "Backward lunges can reduce anterior shearing forces and patellofemoral joint loading on the knee compared to forward lunges.",
+      "Forward lunges elicit higher vastus medialis oblique (VMO) activation and peak ground reaction forces than backward lunges."
+    ],
+    "common_mistakes": [
+      "Using a short step length during a lunge, which causes excessive anterior tibial translation over the toes and significantly increases joint forces."
+    ],
+    "specific_findings": [
+      "A short step length results in joint forces almost two times higher than a lunge with a longer step (Escamilla et al., 2022).",
+      "Lunging with the back foot suspended resulted in almost twice as much activation in the hamstrings and gluteus maximus and medius when compared to the traditional forward lunge (Krause et al., 2018).",
+      "The study methodology utilized a sample of 34 healthy subjects (men = 21, women = 13) ranging from 18-30 years of age (mean: 21.62 years, SD: 3.14).",
+      "Vastus medialis oblique activation (VMO) and peak ground reaction force were higher during performance of the forward lunge compared to the backward lunge (Park et al., 2021).",
+      "Higher patellofemoral joint loading was shown during the forward lunge when compared to the backward lunge in a sample of young adult females (Goulette et al., 2021)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 9/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Keep the heel of the dominant (front) leg flat on the ground at all times during the lunge to minimize patellofemoral stress.",
+      "Maintain an upright torso position throughout the movement to ensure consistent muscle activation.",
+      "Step to a standardized distance of approximately 75% of the dominant leg length for both forward and backward lunges."
+    ],
+    "common_mistakes": [
+      "Allowing the heel of the dominant leg to lift off the ground during the bottom of the lunge.",
+      "Failing to maintain an upright torso, which alters muscle activation patterns."
+    ],
+    "specific_findings": [
+      "Lunge distance was set to exactly 75% of the participant's dominant leg length.",
+      "Keeping the heel of the dominant leg on the ground is required to prevent excessive patellofemoral stress, citing Chandler et al. (2002) and Zellmer et al. (2019).",
+      "Peak EMG activation was calculated using a 200-millisecond window averaged around the highest recorded value.",
+      "The biomechanical analysis utilized a 10-camera motion capture system and an 8-camera markerless system concurrently capturing at 100 frames per second (fps) with 54 reflective markers."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 10/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics Assessment",
+    "core_principles": [
+      "Lunge phases (start, bottom, and end) can be determined using kinematic data rather than relying solely on force plates.",
+      "The start of a lunge can be identified when the velocity of the trail leg's heel relative to the pelvis exceeds a specific threshold in the anteroposterior direction.",
+      "The bottom of a lunge is defined by the lowest vertical point (minimum value) of the pelvis.",
+      "The end of a lunge is defined when the anteroposterior heel velocity relative to the pelvis crosses back over a positive velocity threshold.",
+      "Low-velocity movement data, such as lunges, can be filtered at a low frequency (e.g., 1 Hz) to eliminate measurement spikes and artifacts."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "HumanVersion3 is a full body model that contains 40 landmarks with newly trained points added bilaterally on the lower body containing the calcaneus, first metatarsal head, fifth metatarsal head, hallux head, and the patella center.",
+      "The start of the lunge occurred when the velocity of the heel of the nondominant leg relative to the pelvis exceeded -0.2 m/s in the anteroposterior direction.",
+      "The bottom of the lunge was identified as the minimum value of the pelvis in the vertical direction.",
+      "The end of the lunge was defined as the threshold crossing of the anteroposterior heel velocity relative to the pelvis at 0.2 m/s.",
+      "All kinematic data were filtered at 1 Hz to eliminate any spikes or artifacts.",
+      "Thresholds of vertical ground reaction force were set at 20 N to determine the beginning and end of the lunge.",
+      "ICC values less than 0.5 indicated poor validity, values of 0.5-0.75 indicated moderate validity, values of 0.75-0.9 indicated good validity, and values greater than 0.9 indicated excellent validity.",
+      "Of the 34 subjects recruited, complete data from 32 subjects were used for the EMG study, 29 subjects for the kinematics study, and 23 subjects for the validation study."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 11/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Forward lunges elicit significantly higher quadriceps activation compared to backward lunges.",
+      "Hamstring activation levels do not differ significantly between forward and backward lunges.",
+      "The quadriceps-to-hamstrings (Q:H) coactivation ratio is significantly higher in forward lunges than in backward lunges.",
+      "Backward lunges provide a more balanced coactivation ratio (lower Q:H ratio), which may be beneficial for knee joint stability and rehabilitation."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Mean quadriceps activity for the forward lunge was 0.259 mV (SD = 0.113) compared to 0.208 mV (SD = 0.105) for the backward lunge.",
+      "A significant main effect was found for quadriceps activity between lunge types: F(1,30) = 37.75, p < 0.01, η2 = .557.",
+      "Mean hamstrings activity was 0.045 mV (SD = 0.029) for the forward lunge and 0.051 mV (SD = 0.070) for the backward lunge.",
+      "Total mean Q:H ratio was 6.833 (SD = 2.794) for forward lunges and 5.632 (SD = 2.539) for backward lunges.",
+      "A significant main effect was found for the Q:H ratio: F(1,30) = 17.521, p < 0.01, η2 = .369.",
+      "A significant interaction effect between activation ratio and group order was observed: F(1,30) = 4.570, p = 0.041, η2 = .132.",
+      "The study analyzed a sample size of N = 32 participants (15 in the backward-first group, 17 in the forward-first group)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 12/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Backward lunges exhibit a significantly greater maximal hip angle compared to forward lunges.",
+      "Forward lunges result in a significantly greater maximal knee angle compared to backward lunges.",
+      "Forward lunges require a greater knee range of motion (ROM) than backward lunges.",
+      "Lunge direction (forward vs. backward) does not significantly affect hip range of motion (ROM)."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Mean max hip angle was 98.51 (SD = 8.99) degrees for the forward lunge and 102.05 (SD = 8.86) degrees for the backwards lunge (F(1,27) = 17.42, p < 0.01, n2 = 0.392).",
+      "Mean hip range of motion was 89.08 (SD = 6.88) degrees for the forward lunge and 90.97 (SD = 7.98) degrees for the backward lunge.",
+      "Mean max knee angle was 116.42 (SD = 6.62) degrees for the forward lunge and 110.29 (SD = 9.23) degrees for the backward lunge (F(1,27) = 22.84, p < 0.01, n2 = 0.458).",
+      "Mean knee range of motion was 105 (SD = 7.28) degrees for the forward lunge and 98.52 (SD = 9.32) degrees for the reverse lunge (F(1,27) = 23.30, p < 0.01, n2 = 0.463)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 13/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Lunges (both forward and backward) are characterized by specific maximum joint angles and total ranges of motion at the hip and knee.",
+      "Lunge direction (forward vs. backward) significantly influences the maximal joint angles and range of motion achieved at both the hip and the knee.",
+      "Markerless motion capture systems can track lunge kinematics but may systematically underestimate joint angles compared to traditional marker-based systems."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Valid sample size of N = 23 was used to compare marker-based and markerless tracking systems during lunges.",
+      "Forward lunge mean maximal hip angle was 98.80 (SD = 9.23) degrees with marker-based and 86.23 (SD = 8.00) degrees with markerless systems.",
+      "Backward lunge mean maximal hip angle was 102.18 (SD = 9.07) degrees with marker-based and 89.31 (SD = 7.38) degrees with markerless systems.",
+      "Forward lunge mean maximal knee angle was 116.50 (SD = 6.37) degrees with marker-based and 101.66 (SD = 5.06) degrees with markerless systems.",
+      "Backward lunge mean maximal knee angle was 109.94 (SD = 10.17) degrees with marker-based and 95.26 (SD = 9.31) degrees with markerless systems.",
+      "A significant main effect was found for lunge type on maximal hip angle (F(1,22) = 11.889, p = 0.002, n2 = 0.351).",
+      "A significant main effect was found for lunge type on maximal knee angle (F(1,22) = 20.518, p < 0.001, n2 = 0.483).",
+      "The intraclass correlation coefficient (ICC) for absolute agreement of knee max angle in the backward lunge was .957, indicating excellent agreement between systems."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 14/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Forward lunges produce significantly greater quadriceps muscle activity and a higher quadriceps-to-hamstrings (Q:H) activation ratio compared to backward lunges.",
+      "Backward lunges result in lower patellofemoral joint loading and lower quadriceps activation, making them a viable alternative for reducing knee stress.",
+      "Forward lunges achieve a greater total knee range of motion (ROM) than backward lunges.",
+      "Hamstring activation does not significantly differ between standard forward and backward lunges, whereas unstable variations like the rear-foot suspended lunge significantly increase hamstring and gluteal recruitment."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Mean knee range of motion was 105.42 (SD = 6.71) degrees for the forward lunge and 97.49 (SD = 9.68) degrees for the reverse lunge using a marker-based system.",
+      "Mean knee range of motion was 97.22 (SD = 5.45) degrees for the forward lunge and 89.62 (SD = 10.48) degrees for the backward lunge using a markerless system.",
+      "The forward lunge produced a Q:H activation ratio of 6.83, whereas the backward lunge produced a Q:H of 5.63.",
+      "The group that performed the backward lunge first had a 1.88 mV difference between the forward and backward lunge.",
+      "Performing the forward lunge resulted in approximately 24% higher quadriceps EMG values when compared to the backward lunge.",
+      "Krause et al. showed nearly twice as much activity in the hamstrings and gluteals during the rear foot suspended lunge compared to the forward lunge.",
+      "ANOVA results indicated a significant main effect for lunge type on total knee range of motion: F(1,22) = 20.246, p < 0.001, partial eta squared = 0.479."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 15/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Forward lunges elicit a higher quadriceps-to-hamstring (Q:H) activation ratio compared to backward lunges.",
+      "Early ACL rehabilitation protocols should prioritize increasing quadriceps activation to regain patellofemoral joint control before progressing to more difficult variations.",
+      "The order of exercise execution can impact muscle activation; performing a lower-workload variation (like the backward lunge) first may allow for recovery and lead to greater electrical activity in subsequent exercises.",
+      "Unfamiliarity with backward lunges can cause movement instability, which may alter expected muscle activation patterns."
+    ],
+    "common_mistakes": [
+      "Experiencing instability during the backward lunge due to unfamiliarity with the movement pattern and the bottom position of the lunge.",
+      "Failing to account for residual fatigue from familiarization or previous sets, which can artificially reduce quadriceps activation in subsequent exercises."
+    ],
+    "specific_findings": [
+      "The quadriceps-to-hamstring (Q:H) activation ratio for the forward lunge was 6.83.",
+      "The quadriceps-to-hamstring (Q:H) activation ratio for the backward lunge was 5.63.",
+      "The activation ratio (Q:H) was significantly elevated in the forward lunge, consistent with findings by Begalle et al. (2012)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 16/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee and Hip",
+    "content_type": "Biomechanics Comparison",
+    "core_principles": [
+      "Forward lunges result in a greater maximum knee angle and greater knee range of motion compared to backward lunges.",
+      "The increased knee angle and range of motion in the forward lunge are associated with higher quadriceps muscle activity (EMG).",
+      "Backward lunges result in a slightly larger maximum hip angle at the bottom of the movement compared to forward lunges.",
+      "Altering torso/spinal angle during a lunge changes the degree of hip flexion and concurrent muscle activity.",
+      "To accurately measure and execute lunges, ensure starting in a fully extended hip and knee position."
+    ],
+    "common_mistakes": [
+      "Starting the lunge in a partially flexed hip position rather than a fully extended position.",
+      "Failing to control or standardize torso/spinal angle, which unintentionally alters hip joint kinematics and muscle recruitment."
+    ],
+    "specific_findings": [
+      "The forward lunge resulted in a hip angle of 98.51 degrees and a knee angle of 116.42 degrees.",
+      "The backward lunge resulted in a hip angle of 102.05 degrees and a knee angle of 110.29 degrees.",
+      "The knee angle was approximately 6 degrees greater in the forward lunge than the backward lunge.",
+      "Knee range of motion was approximately 7 degrees higher in the forward lunge than the backward lunge.",
+      "The markerless system calculated the difference in total range of motion at the hip between the forward and backward lunge to be -6.49 degrees, whereas the marker-based system found no significant difference.",
+      "The filtering rate for the motion capture data was set at 1Hz."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 17/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Comparison",
+    "core_principles": [
+      "Quadriceps muscle activation is significantly higher in the forward lunge compared to the backward lunge.",
+      "Hamstring muscle activation remains similar between forward and backward lunges.",
+      "Forward lunges result in a higher quadriceps-to-hamstrings coactivation ratio than backward lunges.",
+      "Maximal knee joint angles are larger during forward lunges than backward lunges.",
+      "Total hip range of motion does not differ significantly between forward and backward lunge variations."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Quadriceps activity was significantly higher in the forward lunge than in the backward lunge, leading to a significantly higher quadriceps to hamstrings coactivation ratio.",
+      "Maximal knee joint angles were larger in the forward lunge, compared to the backward lunge.",
+      "Total hip range of motion was not different between lunge types.",
+      "For the validation of the markerless motion capture system, agreement ranged from moderate to excellent, with the forward lunge showing better agreement than the backward lunge.",
+      "Frame filtering was set at 1Hz to remove any potential impulses or artifacts."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 18/23]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      "Trunk position influences the kinematics, kinetics, and muscle activity of the lead lower extremity during the forward lunge exercise.",
+      "Step length and height variations affect patellofemoral joint loading during the forward lunge.",
+      "Co-activation of the hamstrings and quadriceps occurs during the lunge exercise.",
+      "Technique variations influence knee biomechanics during the squat and leg press."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\mxn167Sp24.pdf [part 20/23]"
+  }
+]

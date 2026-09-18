@@ -1,0 +1,73 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      "Keep the shoulder joint fixed and stable during the curl to ensure the elbow joint experiences the primary reaction moment and displacement.",
+      "Isolate the movement to the elbow joint to properly target the biceps brachii muscle and tendon."
+    ],
+    "common_mistakes": [
+      "Allowing excessive displacement or movement at the shoulder joint instead of keeping it fixed."
+    ],
+    "specific_findings": [
+      "The biceps curl movement was analyzed using 6 kg and 10.7 kg dumbbells.",
+      "The shoulder joint was regarded as fixed during the simulation due to observing only a small displacement.",
+      "The biceps brachii model used a tendon length (Lt) of 0.0625 m and a total muscle length (Lm) of 0.312 m.",
+      "Muscle material properties were defined with a density of 1056 kg/m3, Poisson's ratio of 0.4, and Young's modulus of 1.162·106 Pa.",
+      "Tendon material properties were defined with a density of 1670 kg/m3, Poisson's ratio of 0.497, and Young's modulus of 1.6·106 Pa."
+    ],
+    "applies_to_fault": [
+      "swinging torso"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf [part 3/5]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Dumbbell Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Start the movement with the elbow joint in full extension.",
+      "Flex the forearm until the dumbbells reach the top of the shoulders.",
+      "Return the arms to the starting position in a controlled manner.",
+      "Keep the elbows close to the body throughout the entire movement."
+    ],
+    "common_mistakes": [
+      "Failing to start the movement from full elbow extension.",
+      "Allowing the elbows to drift away from the body during the curl."
+    ],
+    "specific_findings": [
+      "Increasing the dumbbell load by 78.3% (from 6 kg to 10.7 kg) resulted in an elbow peak moment increase of only 57.7%.",
+      "With a 78.3% load increase, the rate of increase of peak muscle force of the biceps brachii was 38.3%.",
+      "The rate of increase of maximum strain and maximum stress under this load increase was 44.4% and 37.3%, respectively.",
+      "Increasing the dumbbell load does not increase the muscle force at the same rate."
+    ],
+    "applies_to_fault": [
+      "not full extension"
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf [part 1/5]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Dumbbell Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Joint/Muscle Mechanics",
+    "core_principles": [
+      "The mechanical response of the biceps brachii does not scale linearly with increased dumbbell load.",
+      "The muscle moment arm distance changes dynamically throughout the range of motion of a dumbbell curl, which directly influences the joint moment and muscle force.",
+      "Increasing the external load results in a disproportionately lower increase in peak muscle force due to the changing moment arm and non-linear muscle-tendon properties."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Peak joint moment was 18.88 Nm with a 6 kg dumbbell and 29.78 Nm with a 10.7 kg dumbbell (a 57.7% increase).",
+      "Peak muscle force was 645.66 N with a 6 kg dumbbell and 893.04 N with a 10.7 kg dumbbell (a 38.3% increase).",
+      "Maximum strain was 4.44 mm/mm with a 6 kg dumbbell and 6.42 mm/mm with a 10.7 kg dumbbell (a 37.3% increase).",
+      "Mean maximum stress (σmax) was 4.85 MPa with a 6 kg dumbbell and 7.46 MPa with a 10.7 kg dumbbell.",
+      "Peak maximum stress (σmax) was 7.76 MPa with a 6 kg dumbbell and 10.66 MPa with a 10.7 kg dumbbell (a 44.4% increase in maximum stress)."
+    ],
+    "applies_to_fault": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf [part 4/5]"
+  }
+]

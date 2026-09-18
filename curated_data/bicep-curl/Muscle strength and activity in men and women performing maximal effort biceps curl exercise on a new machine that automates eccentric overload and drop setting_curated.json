@@ -1,0 +1,293 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Eccentric (ECC) resistance exercise is highly effective for preventing and rehabilitating injuries and increasing muscle strength.",
+      "Eccentric overload (accentuated eccentric resistance) involves applying greater resistance during the eccentric (lowering) phase than the concentric (lifting) phase.",
+      "Connected adaptive resistance exercise (CARE) technology can automate eccentric overload and drop sets within and between repetitions without stopping.",
+      "Maximal effort eccentric-concentric training leads to significant muscle fatigue, reducing both strength and electromyographic (EMG) activity over successive repetitions."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Study sample size: 12 men and 9 women performing 25 consecutive coupled maximal ECC-CON repetitions.",
+      "Maximal strength on the CARE machine was greater during the ECC than CON phase (men: 27.1 ± 6.8 kg ECC vs 14.7 ± 2.0 kg CON; women: 16.7 ± 4.7 kg ECC vs 7.6 ± 1.4 kg CON).",
+      "Biceps brachii EMG amplitude relative to CON dumbbell 1RM EMG was 140.1 ± 40.2% (ECC) and 96.7 ± 25.0% (CON) for men, and 165.1 ± 61.1% (ECC) and 89.4 ± 20.4% (CON) for women.",
+      "Repetitions-to-failure with 60% 1RM dumbbells were 12.3 ± 4.4 for men and 15.6 ± 4.7 for women.",
+      "By the 25th CARE repetition, participants reported biceps fatigue of approximately 8 out of 10.",
+      "By the 25th CARE repetition, ECC strength decreased by 63.5 ± 11.6% in men and 44.1 ± 8.0% in women.",
+      "By the 25th CARE repetition, CON strength decreased by 77.5 ± 6.5% in men and 62.5 ± 12.8% in women.",
+      "By the 25th CARE repetition, ECC EMG decreased by 38.6 ± 20.4% in men and 26.2 ± 18.3% in women.",
+      "By the 25th CARE repetition, CON EMG decreased by 36.8 ± 20.4% in men and 23.1 ± 18.4% in women."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 1/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Muscle strength capacity is significantly higher during the eccentric (lengthening) phase than the concentric (shortening) phase.",
+      "Traditional resistance equipment maintains a constant load, which does not match the muscle's capacity profile across different contraction phases.",
+      "Connected adaptive resistance exercise (CARE) machines use software and hardware to adjust resistance in real-time based on volitional force and velocity.",
+      "Automatic drop setting on CARE machines accommodates muscle fatigue, allowing sets to continue past concentric failure without requiring a spotter."
+    ],
+    "common_mistakes": [
+      "Terminating an exercise set prematurely at the point of concentric failure instead of continuing with eccentric overload or drop sets.",
+      "Relying on manual 'releasers' for eccentric overload, which are difficult to use beyond the first repetition.",
+      "Using flywheel machines for eccentric overload without accounting for the fact that the eccentric load is highly dependent on concentric phase performance and cannot be precisely timed or controlled."
+    ],
+    "specific_findings": [
+      "Muscle strength is ~ 40% greater during the eccentric (ECC) than concentric (CON) repetition phase.",
+      "Flywheel machines are used by 7–30% of coaches.",
+      "The study design involved twenty-one participants performing unilateral bicep curl exercise with their right upper-limb across two familiarization sessions and one testing session separated by ~ 7 days."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 2/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      "Perform the dumbbell curl standing upright with the forearm supinated.",
+      "Maintain strict form by avoiding compensatory movements from other joints.",
+      "Warm up before maximal strength testing (e.g., one set of three repetitions at 60% 1RM).",
+      "Allow adequate rest between maximal effort attempts (e.g., 5 minutes between 1RM attempts and 15 minutes before repetitions-to-failure tests)."
+    ],
+    "common_mistakes": [
+      "Performing excessive lumbar extension (leaning back) to help lift the load.",
+      "Performing excessive shoulder flexion (swinging the elbows forward) to assist the lift."
+    ],
+    "specific_findings": [
+      "The study sample consisted of 12 men and 9 women.",
+      "Men had a right elbow range of motion of 131.2 ± 10.1°, while women had 142.3 ± 8.7°.",
+      "Men's body mass was 83.8 ± 14.7 kg compared to women's 62.1 ± 6.9 kg.",
+      "Men's height was 180.6 ± 7.7 cm compared to women's 167.8 ± 5.4 cm.",
+      "EMG signals were acquired at a sampling rate of 2148 Hz with a bandwidth frequency of 20–450 Hz.",
+      "Elbow joint angle was measured using an electrogoniometer with a sampling rate of 519 Hz and a gain of 1400 dB.",
+      "The warm-up before the 1RM test consisted of exactly one set of three repetitions with a 60% 1RM dumbbell.",
+      "A 5-minute rest was given between 1RM attempts, and a 15-minute rest was given before starting the repetitions-to-failure tests."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 3/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Eccentric strength capacity is higher than concentric strength capacity during unilateral bicep curls.",
+      "Connected adaptive resistance exercise (CARE) machines allow for higher eccentric loading compared to concentric loading.",
+      "Maximal eccentric muscle activity (EMG) of the biceps brachii and brachioradialis during adaptive resistance exercise can significantly exceed the EMG activity recorded during a concentric dumbbell 1RM.",
+      "A maximal eccentric-concentric protocol (e.g., 25 repetitions on a CARE machine) induces substantial acute strength loss and high levels of perceived muscle fatigue.",
+      "Men and women exhibit different fatigue profiles, with men experiencing a greater percentage decrease in both concentric and eccentric strength following maximal adaptive resistance exercise."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "DB bicep curl 1RM was 22.6 ± 5.7 kg for men (n = 12) and 12.5 ± 1.7 kg for women (n = 9).",
+      "CARE peak ECC strength reached 31.2 ± 7.1 kg in men and 18.8 ± 1.7 kg in women, compared to peak CON strength of 25.3 ± 7.1 kg in men and 14.6 ± 3.1 kg in women.",
+      "CARE highest average ECC:CON strength ratio was 1.66 ± 0.31 for men and 1.98 ± 0.41 for women.",
+      "ECC biceps brachii RMS amplitude on the CARE machine reached 140.1 ± 40.2% of CON DB 1RM for men and 165.1 ± 61.1% for women.",
+      "ECC brachioradialis RMS amplitude on the CARE machine reached 129.7 ± 56.7% of CON DB 1RM for men and 146.0 ± 43.0% for women.",
+      "Following 25 CARE ECCmax–CONmax repetitions, men experienced a 63.5 ± 11.6% decrease in ECC strength and a 77.5 ± 6.5% decrease in CON strength.",
+      "Following 25 CARE ECCmax–CONmax repetitions, women experienced a 44.1 ± 8.0% decrease in ECC strength and a 62.5 ± 12.8% decrease in CON strength.",
+      "Perceived biceps fatigue on a 0–10 scale reached 7.8 ± 1.9 for men and 8.2 ± 1.4 for women after 25 CARE ECCmax–CONmax repetitions."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 4/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Maintain a 5-second repetition duration: 2-second concentric phase, 1-second pause at the top, 2-second eccentric phase, and no pause at the bottom.",
+      "Stand on the machine platform so that the resistance rope is perpendicular to the platform when the elbow is at 90 degrees with the forearm supinated.",
+      "Perform three warm-up repetitions initially to allow the machine to calibrate and identify the concentric and eccentric movement ranges.",
+      "To achieve maximal eccentric overload, pause for approximately 1 second at the end of the concentric phase to allow the eccentric resistance to load.",
+      "Resist the eccentric load with maximal effort throughout the entire eccentric phase.",
+      "Initiate the concentric phase as hard and fast as possible, pulling against the last resistance experienced during the eccentric phase."
+    ],
+    "common_mistakes": [
+      "Failing to pause at the top of the concentric phase, which prevents the machine from loading the maximal eccentric resistance.",
+      "Not resisting the eccentric load with maximal effort during the eccentric phase.",
+      "Failing to attempt the concentric phase as hard and fast as possible at the end of the eccentric phase.",
+      "Allowing fatigue to slow repetition pacing below the target 5-second duration."
+    ],
+    "specific_findings": [
+      "The target repetition duration was exactly 5 seconds: 2-s CON phase, 1-s pause at the end of the CON phase, and 2-s ECC phase.",
+      "A metronome set to 60 beats per minute was used to provide auditory pacing.",
+      "A 15-minute rest period was provided between the repetition-to-failure tests.",
+      "The CARE machine adjusted resistances between 0 and 100 kg per rope in real time at a frequency of 50 Hz.",
+      "The protocol required 25 consecutive ECCmax–CONmax unilateral bicep curl repetitions.",
+      "The starting position required the rope to be perpendicular to the platform when the right elbow was at 90 degrees with the forearm supinated.",
+      "The target resistance selected was a supramaximal resistance approximately 2 kg higher than the participant's eccentric maximum strength."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 5/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Eccentric overload protocols (ECCmax-CONmax) demand high levels of neural drive.",
+      "During standard dumbbell 1RM tests, biceps brachii EMG activity is lower in the eccentric phase compared to the concentric phase.",
+      "With specialized eccentric overload equipment, biceps brachii EMG activity in the eccentric phase can be increased to levels similar to the concentric phase, despite higher forces being generated during the eccentric phase.",
+      "An automatic drop setting feature allows for continuous maximal effort repetitions without stopping, leading to substantial muscle fatigue.",
+      "Strength loss and fatigue during consecutive maximal eccentric-concentric repetitions are most pronounced within the first 15 repetitions, after which the reduction in strength tends to lessen or plateau."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "The correlation (Pearson’s r) between participants’ dumbbell 1RM and initial CON phase average strength on the CARE machine was 0.964.",
+      "Biceps brachii RMS amplitudes in the ECC phase, but not the CON phase, were greater at the start of the CARE machine protocol than during the equivalent repetition phase of the dumbbell CON 1RM test.",
+      "Participants completed 25 consecutive ECCmax–CONmax repetitions without stopping due to the automatic drop setting feature of the CARE machine.",
+      "Reductions in strength were most pronounced within repetitions 1–15 after which they lessened or plateaued."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 6/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Eccentric (ECC) phase strength is naturally greater than concentric (CON) phase strength during bicep curls.",
+      "Using adaptive resistance technology (like a CARE machine) allows for accentuated eccentric loading and automatic weight reduction as muscles fatigue.",
+      "Maximal eccentric and concentric (ECCmax-CONmax) training demands high levels of neural drive to agonist muscles (biceps brachii and brachioradialis).",
+      "During high-repetition maximal efforts, reductions in strength are closely accompanied by reductions in neural drive (EMG RMS amplitude).",
+      "Strength and neural drive reductions are most pronounced during the initial phase of a high-repetition set (first 12 to 15 repetitions) before reaching a plateau."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Men lost 64% of ECC and 78% of CON phase strength by the end of a 25-repetition set.",
+      "Women lost 44% of ECC and 63% of CON phase strength by the end of a 25-repetition set.",
+      "At the end of the exercise, men perceived they had only 8% of arm strength remaining, with biceps fatigue at 7.8 out of 10 and biceps pain at 4 out of 10.",
+      "At the end of the exercise, women perceived they had only 3% of arm strength remaining, with biceps fatigue at 8.2 out of 10 and biceps pain at 5.9 out of 10.",
+      "The mean difference between ECC and CON phase strength at the start of exercise was 10.5 kg [95% CI: 7.6, 13.4 kg] for men (Hedges g = 1.528).",
+      "The mean difference between ECC and CON phase strength at the start of exercise was 7.1 kg [95% CI: 5.4, 8.9 kg] for women (Hedges g = 3.669).",
+      "The mean raw difference between initial and final ECC strength was -17.9 kg [-21.5, -14.2 kg] for men and -6.8 kg [-8.2, -5.4 kg] for women.",
+      "The mean raw difference between initial and final CON strength was -12.9 kg [-15.5, -10.4 kg] for men and -4.8 kg [-5.8, -3.8 kg] for women.",
+      "ECC and CON phase strength plateaued after the first 15 repetitions in men and after the first 12 repetitions in women."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 7/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Eccentric-concentric maximum (ECCmax-CONmax) repetitions demand high levels of neural drive.",
+      "Adaptive resistance technology can safely and feasibly deliver accentuated eccentric resistance throughout the exercise.",
+      "Men may experience greater reductions in eccentric and concentric phase muscle strength and EMG (greater susceptibility to fatigue) compared to women during maximal bicep curl sets."
+    ],
+    "common_mistakes": [
+      "Prescribing eccentric overload using equipment not specifically designed for that purpose."
+    ],
+    "specific_findings": [
+      "In men, biceps brachii EMG RMS amplitude during the ECC phase of ECCmax–CONmax repetitions on the CARE machine was greater than during the ECC phase of the CON dumbbell 1RM (mean raw difference [95% CI] = 0.000188 V [0.000097, 0.000279 V]; Hedges g [95% CI] = 0.565 [0.184, 0.946]).",
+      "In men, biceps brachii EMG RMS amplitude during the CON phase of ECCmax–CONmax repetitions on the CARE machine was similar to during the CON phase of the CON dumbbell 1RM (mean raw difference = − 0.000032 V [− 0.000505, − 0.000147 V]; Hedges g = − 0.081 [− 0.339, 0.176]).",
+      "In women, biceps brachii EMG RMS amplitude during the ECC phase of ECCmax–CONmax repetitions on the CARE machine was greater than during the ECC phase of the CON dumbbell 1RM (mean raw difference = 0.000148 V [0.000062, 0.000233 V]; Hedges g = 1.005 [0.186, 1.825]).",
+      "In women, biceps brachii EMG RMS amplitude during the CON phase of ECCmax–CONmax repetitions on the CARE machine was greater than during the CON phase of the CON dumbbell 1RM (mean raw difference = − 0.000073 V [− 0.000159, 0.000012 V]; Hedges g = − 0.379 [− 0.872, 0.115])."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 8/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Maximal eccentric-concentric (ECCmax-CONmax) repetitions on adaptive resistance machines are associated with high motor unit firing rates and neurophysiological underpinnings of increased muscle strength.",
+      "Adaptive resistance technology can automatically reduce resistance (drop setting) to allow continuous high-effort repetitions without stopping.",
+      "Training with near-maximal dumbbell loads (e.g., 80% 1RM) provides high neural drive but limits volume to few repetitions before concentric failure.",
+      "Using moderate dumbbell loads (e.g., 60% 1RM) allows for more repetitions but sacrifices neural drive at the beginning of the exercise set."
+    ],
+    "common_mistakes": [
+      "Sacrificing neural drive at the start of a set by using lighter dumbbell loads to achieve higher repetition volumes.",
+      "Experiencing premature concentric failure during high-load dumbbell training before achieving sufficient eccentric stimulation."
+    ],
+    "specific_findings": [
+      "In men, biceps brachii EMG RMS amplitude was lower during the ECC than CON phase of the CON dumbbell 1RM test (mean difference [95% CIs] = -0.000315 V [-0.000417, -0.000214 V]; Hedges g [95% CIs] = -1.013 [-1.589, 0.437]).",
+      "In men, biceps brachii EMG RMS amplitude was similar during the ECC and CON phases of initial ECCmax-CONmax repetitions on the CARE machine (mean difference = -0.000095 V [-0.000201, 0.000010 V]; Hedges g = -0.249 [-0.550, 0.051]).",
+      "In women, biceps brachii EMG RMS amplitude was lower during the ECC than CON phase of the CON dumbbell 1RM test (mean difference = -0.000241 V [-0.000341, -0.000141 V]; Hedges g = -1.270 [-2.173, -0.367]).",
+      "In women, biceps brachii EMG RMS amplitude was similar during the ECC and CON phases of initial ECCmax-CONmax repetitions on the CARE machine (mean difference = -0.000020 V [-0.000083, 0.000043 V]; Hedges g = -0.118 [-0.497, 0.261]).",
+      "The CARE machine permitted completion of 25 consecutive ECCmax-CONmax repetitions without stopping by automatically reducing resistance.",
+      "Performing the bicep curl with a near maximal dumbbell load of 80% 1RM results in concentric phase failure after approximately 5 repetitions."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 9/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Drop setting, particularly 'stepwise load reduction training', is an efficient strategy to increase muscle size and strength while saving time.",
+      "Automated adaptive resistance technology (like the CARE machine) enables eccentric (ECC) overload and seamless drop setting without the need to manually remove weight plates.",
+      "Maximal effort protocols (ECCmax-CONmax) exhibit a decrease in EMG amplitude over time as fatigue sets in, whereas submaximal repetitions-to-failure (60% and 80% 1RM) show an increase in EMG amplitude over time.",
+      "Strength reductions during maximal automated drop-set protocols occur primarily within the first 15 repetitions, after which they tend to plateau."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "By the end of the protocol, CON and ECC phase strength were reduced ~ 70 and ~ 55%, respectively.",
+      "Strength losses were accompanied by 20–30% reductions in biceps brachii and brachioradialis EMG.",
+      "By repetition 5, participants perceived they had already lost ~ 50% of their maximal strength capacity, and perceived only ~ 5% remaining by the end.",
+      "On average, men completed 12.3 and 6.5 repetitions during the repetitions-to-failure tests with dumbbells equal to 60 and 80% of 1RM, respectively.",
+      "On average, women completed 15.6 and 6.2 repetitions during the repetitions-to-failure tests with dumbbells equal to 60 and 80% of 1RM, respectively.",
+      "The mean loss in muscle strength during the exercise protocol on the CARE machine was greater in men than women."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 10/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Anterior Upper-Limb",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Men exhibit greater muscle fatigability and strength loss than women during high-intensity resistance exercise like maximal eccentric-concentric bicep curls.",
+      "Concentric phase strength decreases more than eccentric phase strength by the end of a high-repetition maximal set for both sexes.",
+      "Greater muscle mass in men can lead to higher intramuscular pressure on arteries, limiting blood flow and oxygen supply (perfusion) to the working muscles.",
+      "Sex differences in muscle size and fatigability are particularly pronounced in the anterior upper-limb muscles during high-force exercises like bicep curls."
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      "Men lost approximately 64% of their ECC phase strength and 78% of their CON phase strength by the end of 25 maximal repetitions.",
+      "Women lost approximately 44% of their ECC phase strength and 63% of their CON phase strength by the end of 25 maximal repetitions.",
+      "Reductions in agonist EMG at the end of exercise tended to be higher in men (35–40%) than women (25–30%).",
+      "Men exhibited a 39% mean reduction in ECC phase biceps brachii EMG amplitude (mean raw difference: -0.000326 V [95% CI: -0.000505, -0.000147 V]; Hedges g = -1.062).",
+      "Men exhibited a 37% mean reduction in CON phase biceps brachii EMG amplitude (mean raw difference: -0.000342 V [95% CI: -0.000503, -0.000181 V]; Hedges g = -1.192).",
+      "Women exhibited a 26% mean reduction in ECC phase biceps brachii EMG amplitude (mean raw difference: -0.000120 V [95% CI: -0.000186, -0.000055 V]; Hedges g = -1.112).",
+      "Women exhibited a 23% mean reduction in CON phase biceps brachii EMG amplitude (mean raw difference: -0.000116 V [95% CI: -0.000184, -0.000048 V]; Hedges g = -0.761)."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 11/16]"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Physiology",
+    "core_principles": [
+      "Perform ECCmax-CONmax repetitions at maximal tension, immediately transitioning from the eccentric (ECC) to concentric (CON) phase to minimize muscle relaxation.",
+      "Slow velocity contractions in elbow flexor tasks tend to fatigue men more than women.",
+      "Drop set resistance exercise is a time-efficient strategy that allows a large volume of exercise to be completed in a short duration.",
+      "Eccentric overload (higher resistance in the ECC phase than the CON phase) aligns with the human skeletal muscle capacity to generate higher forces eccentrically."
+    ],
+    "common_mistakes": [
+      "Allowing muscles to relax or pausing too long between the eccentric and concentric phases when continuous maximal tension is desired."
+    ],
+    "specific_findings": [
+      "A strong correlation of r = 0.964 was found between the dumbbell 1RM and maximal CON phase strength on the CARE machine.",
+      "The average rating of perceived biceps fatigue prior to the CARE machine protocol was approximately 1.5 out of 10.",
+      "Participants performed 25 consecutive ECCmax–CONmax repetitions on the CARE machine.",
+      "Participants rested for 15 min between tests to mitigate carryover of fatigue.",
+      "Agonist EMG amplitude during use of the CARE machine was comparable to or greater than during the dumbbell 1RM depending on the exercise phase."
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf [part 12/16]"
+  }
+]

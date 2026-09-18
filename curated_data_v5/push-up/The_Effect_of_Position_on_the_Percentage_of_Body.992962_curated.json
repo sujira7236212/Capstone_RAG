@@ -1,0 +1,311 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Extremity",
+    "content_type": "Loading Guidance",
+    "core_principles": [
+      {
+        "text": "In both traditional and modified push-ups, the individual supports less weight in the up position compared to the down position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Range of motion may need to be altered to accommodate strength differences in beginners and clients rehabilitating from injury.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "The pattern of resistance in push-up exercises is influenced by differing moment arms between the support surface contact point (knees or feet) and the hands.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study of 28 highly strength-trained male subjects analyzed the vertical ground reaction force as a percentage of body mass in the up and down positions of traditional and modified push-ups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The percentage change in percentage of body mass supported from the up to the down position was greater in the modified (knees-down) push-up variant compared to the traditional push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 1/10]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain a rigid spine and lower-extremity segments throughout the push-up movement.",
+        "applies_to_fault": [
+          "hip sag"
+        ]
+      },
+      {
+        "text": "Maintain an angle of approximately 180 degrees between the upper and lower body during the exercise.",
+        "applies_to_fault": [
+          "hip sag"
+        ]
+      },
+      {
+        "text": "Position the hands slightly wider than shoulder-width apart with the shoulders positioned directly over the hands.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a push-up with the forearm in 90 degrees of internal rotation.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Elbow axial forces during the traditional push-up range from 37% to 45% of body mass.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study evaluated 28 highly strength-trained male subjects (mean age 33.62 years, body mass 84.66 kg, height 178.98 cm) from special forces and SWAT units.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing a push-up with the forearm in 90 degrees of internal rotation results in the greatest posterior and varus elbow shear forces.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 2/10]",
+    "applies_to_fault": [
+      "hip sag"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The traditional push-up requires supporting a higher percentage of body mass than the modified push-up in both the up and down positions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The percentage of body mass supported increases from the up position to the down position in both traditional and modified push-ups.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 28 subjects, participants supported 69.16% (± 2.83%) of their body mass in the up position and 75.04% (± 2.62%) in the down position of a traditional push-up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a study of 28 subjects, participants supported 53.56% (± 4.27%) of their body mass in the up position and 61.80% (± 3.48%) in the down position of a modified push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 4/10]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Biomechanical Loading",
+    "core_principles": [
+      {
+        "text": "The traditional push-up supports a greater percentage of body mass than the modified knees-down push-up in both the up and down positions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A greater percentage of body mass is supported in the down position of a push-up compared to the up position.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "The traditional push-up results in greater electromyography (EMG) activity in both the pectoralis major and the triceps brachii muscles than the modified push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to lower completely to the down position reduces the peak resistance and muscular demand of the exercise.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The percent change in body mass supported from the up to the down position in the traditional and modified push-ups was 8.59 ± 3.77% and 15.76 ± 7.03%, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak vertical ground reaction forces equal to 66% and 53% of body mass have been reported over the traditional and modified push-up range of motion, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Axial elbow joint reaction forces of 37% and 38% of body weight were reported in the up and down positions of the traditional push-up, respectively.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Not reaching the full down position prevents the whole-body center of mass from moving further from the point of contact, which reduces the torque and subsequent force required by the upper body musculature.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 5/10]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Performing a push-up with a plus, which includes scapular protraction at the top of the movement, preferentially activates the serratus anterior over the upper trapezius to support proper scapular positioning.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a push-up with a plus results in high activation of both the upper and lower subscapularis and the infraspinatus muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Traditional push-ups are highly effective for strengthening the rotator cuff muscles due to increased weight-bearing demands, whereas modified push-ups are useful for targeting the serratus anterior and optimizing the upper trapezius to serratus anterior ratio.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "It may be necessary to temporarily modify the range of motion of the push-up to accommodate strength limitations at the bottom of the movement, progressively increasing the depth as strength improves.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a wall push-up results in an undesirably high upper trapezius to serratus anterior activation ratio compared to a traditional push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During upper-extremity pressing motions, the lowest force is exerted at the bottom of the lift in shoulder horizontal abduction and elbow flexion, while the highest force is exerted near full elbow extension at an angle of approximately 120 degrees.",
+        "applies_to_fault": [
+          "partial range of motion"
+        ]
+      },
+      {
+        "text": "There is a significantly greater proportional increase in the percentage of body mass supported from the up to the down position in the modified push-up compared to the traditional push-up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The modified push-up is characterized by a lower arm elevation level and smaller weight-bearing demand but achieves equivalent serratus anterior activation compared to the push-up with a plus.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "As arm elevation increases during a push-up, greater demand is placed on the upper trapezius that may not be countered by the serratus anterior unless upper extremity weight-bearing is also increased.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The modified push-up features a relatively greater change in resistance over the full range of motion due to a larger torso-to-surface angle and a greater increase in the center of mass moment arm, which can stress individuals with shoulder or lumbar spine pathologies if not managed.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 6/10]",
+    "applies_to_fault": [
+      "partial range of motion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Ensure correct execution of the modified push-up is monitored, especially at the bottom of the range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Be aware of the relatively greater change in resistance over the full range of motion during closed-chain exercises.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "An excessive demand placed on the serratus anterior muscle at the bottom of the range of motion during a modified push-up can promote altered scapular kinematics, particularly in the early stages of post-surgical shoulder rehabilitation.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 7/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The modified push-up is an effective alternative for individuals unable to perform a traditional push-up and is suitable for beginning a weight-bearing rehabilitation program.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The traditional push-up is more demanding than the modified push-up and is effective for strengthening the prime movers and rotator cuff muscles due to increased forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Utilize the modified push-up to promote scapulothoracic stability in early rehabilitation, and progress to the traditional push-up to focus on glenohumeral joint stability and strength.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Alter the range of motion or exercise variation for individuals with upper-extremity injuries so that the increase in resistance through the range of motion does not put undue stress on weak or injured structures.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The modified push-up features a reduced percentage of body weight supported and elevated serratus anterior activity, making it optimal for balancing the upper trapezius and serratus anterior strength ratio.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Although the overall resistance is lower in a modified push-up compared with a traditional push-up, the change in resistance is greater over the range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to alter the range of motion or exercise selection during upper-extremity rehabilitation can cause the increase in resistance through the range of motion to put undue stress on weak or injured structures.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "data\\push-up\\The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf [part 8/10]",
+    "applies_to_fault": []
+  }
+]
