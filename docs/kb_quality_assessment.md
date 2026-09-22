@@ -464,3 +464,46 @@ User สั่งลบทั้ง 3 แหล่งหลังอ่านค
 3. `kb_gemini_curated_v4` / `kb_local_curated_v4` ยังไม่ถูกลบ — เก็บไว้เป็น fallback/comparison ตามเดิม
 
 ---
+
+## 12. Generation-side metric เข้า `eval/` (2026-09-22)
+
+ก่อนหน้านี้ฝั่ง retrieval วัดซ้ำได้ด้วยคำสั่งเดียว (`eval/eval_retrieval.py`) แต่ฝั่ง generation วัดด้วยสคริปต์ชั่วคราวใน scratchpad — เถียงกันด้วยตัวเลขเดิมซ้ำไม่ได้ ย้ายเข้ามาเป็น `eval/eval_generation.py` + `eval/jargon_terms.json` + `eval/test_eval_generation.py`
+
+```
+python eval/eval_generation.py compare_output/compare_result_v10.md
+python eval/eval_generation.py compare_output/compare_result_v{9,10}.md --show-hits --out compare_output/generation_v9_vs_v10.md
+python eval/test_eval_generation.py
+```
+
+วัดจากรายงานที่มีอยู่แล้ว ไม่เรียก LLM ซ้ำ (deterministic 100%) สองตัวเลข:
+
+1. **unglossed jargon** — ศัพท์คลินิก/ชีวกลศาสตร์ที่ไม่มีคำแปลภาษาชาวบ้านในประโยคเดียวกัน = วัด *Translation rule*
+2. **longest shared word n-gram** ระหว่าง `### Retrieved KB Context` กับคำตอบของท่าเดียวกัน = วัด *Grounding rule part 2* (ลอกประโยค) เสริมด้วย `spans ≥6` = จำนวนช่วงที่ลอกทั้งหมด ไม่ใช่แค่ช่วงยาวสุด
+
+**ฝั่ง WITHOUT RAG ถูกให้คะแนนด้วยโดยตั้งใจ** — ไม่เคยเห็น context เลย ตัวเลข n-gram ของมันจึงเป็น *chance floor* ของรายงานนั้น (ความยาวที่ข้อความสองชิ้นเรื่องสควอทบังเอิญตรงกัน) ค่า RAG ที่ใกล้ floor = ไม่ลอก ค่าที่สูงกว่า floor มาก = ลอก
+
+### 12.1 Baseline v9 vs v10 (รายงานเต็ม `compare_output/generation_v9_vs_v10.md`)
+
+| report | side | unglossed jargon | longest n-gram | spans ≥6 |
+|---|---|---|---|---|
+| v9 | WITH RAG | **17** | **20** | 13 |
+| v9 | WITHOUT RAG | 3 | 6 (floor) | 1 |
+| **v10** | **WITH RAG** | **1** | **9** | 3 |
+| v10 | WITHOUT RAG | 0 | 6 (floor) | 1 |
+
+ยืนยันการวินิจฉัยเดิมของ prompt v10 ด้วยตัวเลขที่รันซ้ำได้: v9 ฝั่ง RAG ลอกประโยคจาก context ยาว 20 คำ ("descend until the top of the thigh is at least parallel with…", "allowing the spine to flex during a squat compromises back curvature…") — ไม่ใช่แค่ "เลือกใช้ศัพท์ยาก" · v10 เหลือ 9 คำ คือ "2 to 3 cm short of contacting the ground" ซึ่งเป็น**ตัวเลขเป้าหมาย** ที่ Grounding rule part 1 สั่งให้คงไว้เป๊ะ ๆ — ยอมรับได้ · unglossed ที่เหลือ 1 ตัวคือ "center of mass" ในคำตอบ lunge
+
+**หมายเหตุ:** สคริปต์นี้นับ v9 ได้ 17 ขณะที่ตัวเลขที่จดไว้ตอนรันมือคือ 18 — ต่างกันที่ขอบเขต term list ไม่ใช่ที่ parser (n-gram ตรงกันเป๊ะทั้ง 20 และ 9) เวลาอ้างตัวเลขให้บอกด้วยว่ามาจาก `eval/jargon_terms.json` เวอร์ชันไหน เหมือนที่คะแนน golden set ต้องบอกชื่อ collection
+
+### 12.2 กับดักที่ test คุมไว้
+
+- **parser** — ตัว feedback มีหัวข้อ `### ` ของตัวเอง (Progress Tracking / Error Breakdown / Next Session Plan) และมีเส้น `---` / `***` อยู่ข้างใน ตัด section ด้วยสองอย่างนี้จะเหลือแค่ย่อหน้าแรกแล้วนับได้ราวครึ่งเดียว (เคยนับ v9 ได้ 10 แทน 18) → ตัดที่ `## Exercise:` และหัวข้อ 4 ตัวที่รู้จักเท่านั้น
+- **allowed term บังศัพท์ยาก** — "hip" อยู่ใน allowed_bare ถ้า match allowed ก่อนแล้วกินช่วงตัวอักษรไป "hip extensors" จะหายทั้งวลี (เจอจริงตอนรันรอบแรก: hip/knee extensors หลุดหมด) → รวมเป็นลิสต์เดียวเรียงวลียาวก่อน
+- **ชื่อ error จาก session** — prompt สั่งให้ใช้ชื่อ error ตาม JSON เป๊ะ ๆ ("Knee valgus") การนับเป็น jargon = ลงโทษโมเดลที่ทำตามคำสั่ง → สคริปต์อ่านชื่อจาก `mock_data/mock_sessions.json` (รวม `previous_common_errors` ด้วย เพราะ prompt สั่งให้ชมเวลาอาการหาย) แล้วยกเว้นให้
+
+### 12.3 ค้างไว้
+
+- term list เป็น judgment call ล้วน ๆ (ไม่ได้ generate จาก prompt เพราะต้องจับศัพท์ที่ prompt **ลืม** ใส่ด้วย) ถ้าแก้ list ตัวเลขเปลี่ยน — ควรแก้พร้อมบันทึกเหตุผลในไฟล์ JSON
+- ยังไม่มี metric ฝั่ง "ตัวเลขในคำตอบตรงกับ session JSON ไหม" (rep number / score) — ตอนนี้ยังตรวจด้วยตาจากรายงาน
+
+---
