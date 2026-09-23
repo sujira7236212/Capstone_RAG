@@ -528,11 +528,17 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
         | StrOutputParser()
     )
 
+    # `report_label` exists only to name the block in the report (mock_sessions_per_fault.json
+    # runs three Squat sessions, so the exercise name alone no longer identifies one). It is
+    # bookkeeping, not session data - sending it would tell the model which fault to expect,
+    # and would label the clean session "clean session" before it has read a single rep.
+    payload = {k: v for k, v in session_data.items() if k != "report_label"}
+
     import time
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            response = rag_chain.invoke(json.dumps(session_data, indent=2))
+            response = rag_chain.invoke(json.dumps(payload, indent=2))
             print(f"Call successful, sleeping 15s to respect rate limits...")
             time.sleep(15)
             return response, context, metrics
@@ -607,10 +613,10 @@ and were actually placed in the context.
         f.write("---\n\n")
 
         for mock in mocks:
-            exercise_name = mock["name"]
-            print(f"Processing {exercise_name}...")
+            block_name = mock.get("report_label") or mock["name"]
+            print(f"Processing {block_name}...")
 
-            f.write(f"## Exercise: {exercise_name}\n\n")
+            f.write(f"## Exercise: {block_name}\n\n")
 
             rag_output, rag_context, metrics = generate_feedback_compare(
                 mock, use_rag=True, collection_name=args.collection, raw_query=args.raw_query

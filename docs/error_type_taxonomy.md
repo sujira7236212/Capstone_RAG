@@ -140,3 +140,57 @@ error_type (code จากทีม 1)  ──► ERROR_TAXONOMY  ──► { re
 - `mock_data/mock_sessions.json` — error string ทั้งหมดเปลี่ยนเป็นชุด §5.1 (จำนวน rep/score เท่าเดิม); ชุดเดิมเก็บไว้ที่ `mock_data/mock_sessions_legacy_errors.json`
 - `test_rag_compare.py` — รับ `--mock / --raw-query / --collection / --out / --skip-no-rag` และพิมพ์ตาราง retrieval metrics ต่อ exercise ในรายงาน
 - `kb_coverage.py` — `--query-mode raw|expanded|both`
+
+---
+
+## 6. ชุด mock แยกกฎละ session (2026-09-22) — `mock_data/mock_sessions_per_fault.json`
+
+### 6.1 ทำไมต้องมีชุดที่สอง
+
+`mock_sessions.json` (4 session ตามท่า) ครอบคลุมแค่ **6 จาก 10 กฎ** — `Knee valgus`, `Shallow lunge`, `Hip sag`, push-up `Partial range of motion` ไม่เคยถูกยิงผ่าน pipeline เลย (session push-up ในชุดนั้นไม่มี error สักข้อ) จึงไม่เคยรู้ว่า 4 กฎนี้ให้ feedback ได้ดีแค่ไหน
+
+และต่อให้เติม error เข้าไปในไฟล์เดิม ก็ยัง**วัดรายกฎไม่ชัด**: 1 session = 1 คำตอบของ LLM ที่มี Error Breakdown 2–3 อาการปนกัน โดยที่ context ของทุกอาการถูกต่อเข้า prompt เดียวกัน — §5.4 บันทึกไว้แล้วว่าอาการข้างเคียงรั่วข้ามกันจริง (chunk `using momentum` โผล่ไปอยู่ในคำอธิบาย `Partial range of motion`) แยก session จึงเป็นเครื่องมือวัดที่ตรงกว่า: **หนึ่ง session = หนึ่งกฎ = หนึ่งบล็อกในรายงาน**
+
+ชุดเดิมไม่ถูกแทนที่ — ยังเป็น baseline ของ `compare_result_v9/v10.md` และเป็นเคส multi-fault ที่สมจริงกว่า เลือกด้วย `--mock`
+
+### 6.2 หน้าตาของชุดใหม่ (11 session)
+
+| session_id | exercise | กฎที่ทดสอบ | rep ที่ผิด | phase | รูปแบบที่ตั้งใจให้เกิด |
+|---|---|---|---|---|---|
+| SQ-20260921-001 | squat | Butt wink | 4, 6, 8, 9 | descending ×4 | เกาะอยู่ที่จังหวะลง |
+| SQ-20260921-002 | squat | Knee valgus | 3, 5, 8, 10 | ascending ×4 | เกาะอยู่ที่จังหวะดันขึ้น |
+| SQ-20260921-003 | squat | Partial squat | 7, 8, 9, 10 | descending ×4 | ล้าท้ายเซ็ต (4 rep สุดท้ายรวด) |
+| PU-20260921-004 | push-up | Hip sag | 6, 7, 9, 10 | desc ×3 + asc ×1 | ล้าท้ายเซ็ต แต่ไม่ต่อเนื่อง |
+| PU-20260921-005 | push-up | Partial range of motion | 2, 5, 8, 10 | descending ×4 | กระจายทั้งเซ็ต ไม่ใช่ความล้า |
+| LU-20260921-006 | lunge | Excessive forward trunk lean | 1, 3, 5, 7 | desc ×3 + asc ×1 | ผิดตอนต้น แล้วหายไปตอนท้าย |
+| LU-20260921-007 | lunge | Shallow lunge | 2, 4, 6, 9 | descending ×4 | กระจายทั้งเซ็ต |
+| LU-20260921-008 | lunge | Insufficient back knee flexion | 5, 7, 8, 10 | descending ×4 | ครึ่งหลังของเซ็ต |
+| BC-20260921-009 | bicep-curl | Elbow flare | 6, 8, 9, 10 | ascending ×4 | ล้าท้ายเซ็ต |
+| BC-20260921-010 | bicep-curl | Partial range of motion | 3, 4, 7, 10 | desc ×2 + asc ×2 | ผิดทั้งหัวและท้ายของ rep |
+| PU-20260921-011 | push-up | *(ไม่มี error)* | — | — | ทดสอบ no-error branch ของ prompt v10 |
+
+รูปแบบใน 2 คอลัมน์สุดท้ายไม่ได้สุ่ม — มันคือสิ่งที่ prompt สั่งให้ LLM อ่านให้ออก ("Use the rep detail: if the error clusters in one phase … or in the later reps of the set, say so") ชุดนี้จึงมีทั้งแบบเกาะ phase, แบบล้าท้ายเซ็ต, แบบกระจาย และแบบหายไปตอนท้าย ให้ตรวจได้ว่าโมเดลอ่านออกจริงหรือเดาว่า "ล้า" ทุกครั้ง
+
+**ค่าคงที่ของทุก session:** 10 rep, ผิด 4 rep ถูก 6 rep, `overall_score` = ค่าเฉลี่ยของ rep score ปัดเศษ (invariant เดียวกับไฟล์เดิม), rep ที่ผิดคะแนน 54–69 และต้องต่ำกว่า rep ที่ถูกทุกตัวในเซ็ตเดียวกัน — ผิด 4 rep เท่ากันหมดโดยตั้งใจ เพื่อให้เทียบคุณภาพ feedback ข้ามกฎได้โดยไม่มีความรุนแรงของอาการมาเป็นตัวแปรกวน
+
+**`historical_comparison`:** ทุก session มีกฎที่กำลังทดสอบอยู่ใน `previous_common_errors` ด้วย และส่วนใหญ่พ่วงกฎพี่น้องของท่าเดียวกันที่ "หายไปแล้ว" — ทดสอบกฎ *"The previous session's error list is history … credit them for clearing it, and never attach it to a rep they did today"* ส่วน 3 session (SQ-002, PU-005, LU-008) ตั้งใจให้คะแนน**ตกลง**จากครั้งก่อน เพื่อดูว่าโมเดลยอมพูดถึง regression ไหม ไม่ใช่เชียร์อย่างเดียว
+
+### 6.3 `report_label` — field ใหม่ที่ LLM ไม่ได้เห็น
+
+ชุดนี้มี 3 session ชื่อ `Squat` ทั้งหมด ถ้า `test_rag_compare.py` ยังตั้งหัวข้อด้วย `name` เฉย ๆ รายงานจะมีหัวข้อ `## Exercise: Squat` ซ้ำ 3 อัน และ `eval_generation.session_error_names()` ซึ่ง key ด้วยชื่อท่า จะยุบทั้ง 3 เหลืออันสุดท้าย
+
+- `test_rag_compare.py` — หัวข้อใช้ `report_label or name`, และ **ตัด `report_label` ออกก่อน `json.dumps` ที่ส่งเข้า LLM** เพราะมันคือ bookkeeping ไม่ใช่ข้อมูล session: ส่งไปก็เท่ากับบอกใบ้ว่าจะเจออาการอะไร และจะติดป้าย session สะอาดว่า "clean session" ตั้งแต่ก่อนอ่าน rep แรก
+- `eval_generation.py` — `session_error_names()` key ด้วย `report_label` ให้ตรงกับหัวข้อในรายงาน
+
+ผลพลอยได้: ตาราง `eval/eval_generation.py` กลายเป็นตารางรายกฎทันที (1 แถวต่อกฎต่อ side) โดยไม่ต้องแก้ตัวชี้วัด
+
+### 6.4 วิธีรัน
+
+```
+python test_rag_compare.py --mock mock_data/mock_sessions_per_fault.json --out compare_result_per_fault.md
+python eval/eval_generation.py compare_output/compare_result_per_fault.md --mock mock_data/mock_sessions_per_fault.json
+```
+
+ราคา: 11 session × 2 side = 22 LLM call (ใส่ `--skip-no-rag` ถ้าสนใจเฉพาะฝั่ง RAG → 11 call)
+
+**สิ่งที่คาดไว้ล่วงหน้า** จาก §5.3/§5.4 — ใช้เป็นสมมติฐานที่รอบนี้จะพิสูจน์: `Insufficient back knee flexion` ควรออกมาแย่ที่สุด (KB ไม่มีเนื้อหาเรื่องเข่าหลังงอไม่พอเลย ได้แต่ chunk เรื่องเข่าหลัง*ทั่วไป* ซึ่งเป็นอาการตรงข้าม), push-up `Hip sag` กับ squat `Partial squat` ควรบางเพราะ KB มี mistake แค่ 1–2 ตัว, ส่วน `Elbow flare` และ `Butt wink` ควรออกมาดีที่สุด

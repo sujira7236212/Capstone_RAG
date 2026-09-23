@@ -221,7 +221,12 @@ def load_terms(path):
 
 
 def session_error_names(mock_path):
-    """{exercise name -> [error_type, ...]} for both sessions in the comparison.
+    """{report block name -> [error_type, ...]} for both sessions in the comparison.
+
+    The key must be whatever test_rag_compare.py put in the `## Exercise:` heading, which
+    is `report_label` when the session file carries one - mock_sessions_per_fault.json runs
+    one session per fault, so three of them are called Squat and keying on the exercise name
+    would collapse them onto whichever came last.
 
     The previous session's errors count too: the prompt tells the model to credit a fault
     the user has cleared, so "you wiped out knee valgus" is the instructed wording even
@@ -236,7 +241,8 @@ def session_error_names(mock_path):
     for mock in mocks:
         names = {e["error_type"] for r in mock.get("reps_detail", []) for e in r.get("errors", [])}
         names.update(mock.get("historical_comparison", {}).get("previous_common_errors", []))
-        out[mock.get("name") or mock.get("exercise_id")] = sorted(names)
+        key = mock.get("report_label") or mock.get("name") or mock.get("exercise_id")
+        out[key] = sorted(names)
     return out
 
 
