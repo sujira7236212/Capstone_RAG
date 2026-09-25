@@ -14,8 +14,9 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 |---|---|---|---|---|---|---|---|
 | B0 | gate ปัจจุบัน (v7 gate, v5 KB) | 10/10 · 0.62 · 1 | 0.15 (0.21) / 0.26 | 60 / 6 / 77 | 0.78 | 14 · 10 · 141 · 34 · 151 | baseline |
 | R0 | normalize `fault_tags` ใน DB (ข้อมูล ไม่ใช่ flag) | 10/10 · 0.61 · 1 | 0.15 (0.21) / 0.26 — 62/411 (+1) | 61 / 6 / 77 | 0.79 | 0 · 10 · 146 · 34 · 159 | **เก็บ** |
+| R1 | `--tag-mode union` (TAG_BONUS 0.03) | 10/10 · 0.49 · **2** | 0.14 (0.21) / 0.24 — **57**/411 (−5) | 56 / 6 / 79 | **0.71** | 0 · 0 · 150 · 34 · 170 | **revert** |
 
-รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md`
+รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md`
 
 ## บันทึก
 
@@ -46,3 +47,22 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - tag_spelling 14 ตัว: เข้า context 2, ที่เหลือไปอยู่ quota (+8) / rank (+5) — **tag ถูกแล้วแต่ช่องเต็ม** ตรงกับข้อสังเกตจาก B0 ว่าตัวกั้นจริงคือ quota/rank (R1–R2)
 - golden precision 0.62 → 0.61: context golden 58 → 59 ตัว (neutral +1) good เท่าเดิม 36 — ไม่ใช่เกณฑ์ของขั้น retrieval แต่จดไว้
 - สรุป: ขั้นนี้แก้ข้อมูลที่ผิด ไม่ใช่นโยบายการค้น จึงไม่มีทางเลือก revert ที่สมเหตุสมผล ผลต่อ recall เล็กตามคาด
+
+### R1 — `--tag-mode union` (2026-09-25) → revert (default คง `prefer`)
+**เปลี่ยน:** `TAG_MODE` ใน `test_rag_compare.py` (flag `--tag-mode` ทั้งใน `test_rag_compare.py` และ `eval/eval_retrieval.py`)
+- `prefer` (default = พฤติกรรมเดิม): ใช้สระที่มี tag อย่างเดียวถ้ามี hit ไม่มีค่อย fallback ไปสระไม่มี tag — รันซ้ำแล้ว report ตรงกับ R0 ทุกบรรทัด (ต่างแค่ header)
+- `union`: ค้นทั้ง 2 สระ (CANDIDATE_K ละ 12) → merge ตาม id → gate บนระยะที่ปรับแล้ว: tag ตรง fault −`TAG_BONUS`, tag เป็น fault อื่นอย่างเดียว +`TAG_BONUS`, tag ว่าง ±0 · `TAG_BONUS` = 0.03 (= ความกว้าง `RELATIVE_MARGIN`) ตั้งก่อนรัน ไม่ได้จูนจากผล · chunk ที่เก็บยังใช้ระยะดิบ (ลำดับ context / `best` คงสเกลเดิม) · budget 9 เท่าเดิม
+- eval: miss reason `tag_filter` ใช้ `metrics["tag_exclusive"]` แทน `tagged` (ภายใต้ union สระไม่มี tag รันเสมอ ที่หลุดจึงเป็น `rank`)
+
+**ผล: ไม่ผ่าน 3 ใน 4 ข้อ** — recall 62 → 57 facts (−5), golden bad 1 → 2, pool-precision 0.79 → 0.71 (−0.08 เกินเพดาน 0.05) · wrong_fault 6 = 6
+- tag_filter 10 → 0 แต่จาก 10 fact นั้นเข้า context แค่ **1** (bicep partial ROM, "Dumbbell supinating curls and Bayesian curls…") ที่เหลือไปอยู่ rank 4 / quota 4 / margin 1
+- เสีย fact ที่ R0 เคยได้ 6 ตัว ทั้งหมดหลุดที่ **quota** — ส่วนใหญ่เป็น `finding` ที่ tag ตรงและ relevant ถูกแย่งช่องโดย `finding` ที่ไม่มี tag ซึ่งเป็น**ประโยคบรรยาย protocol ของงานวิจัย**: "A successful squat trial in this protocol required reaching at least 60 degrees of knee flexion." (ขึ้นทั้งใต้ butt wink และ partial squat), "The push-up cycle was standardized using a metronome…", "The partial lunge in this study was performed by lowering the body to… 50" (ใต้ trunk lean และ back knee) — ศัพท์องศา/ความลึกตรงกับ query จึง embed ใกล้ แต่ไม่มีเนื้อหาให้คำแนะนำ
+- ใต้ insufficient back knee flexion มี mistake "Excessive lumbar extension during the lunge." (ไม่มี tag, judge = wrong_fault) เข้ามาแทน wrong_fault ตัวเดิมที่ถูก penalty ("A shallower lunge of 80 degrees…" tag = shallow lunge) → wrong_fault รวมเท่าเดิม
+- chunk 4 ตัวใน context เป็น `unlabeled` (butt wink 2, partial squat 1, back knee 1) — ไม่เคยเป็น candidate ของ pool (ไม่มี tag และไม่ติด top-40 ของ 4 query ที่ไม่ filter kind) นับเป็นไม่ relevant ใน pool-precision ต่อให้ relevant ทั้ง 4 ก็ได้ 60/79 = 0.76 recall −5 ยังอยู่ (unlabeled ไม่ใช่ near-dup ของ fact ใน pool จึงไม่เปลี่ยน recall)
+- golden precision 0.61 → 0.49 (good 36 → 30) · bad ตัวใหม่อยู่ใต้ bicep partial ROM
+
+**sensitivity (ไม่ใช้ตัดสิน, จดไว้ดูทิศทาง):** `TAG_BONUS` 0.06 → recall 62 · wrong_fault **5** · pool-precision 0.78 · golden bad 1 | 0.10 → recall 62 · wrong_fault 5 · 0.79 · bad 1
+- bonus ใหญ่ขึ้นทำให้ union กลับไปเหมือน `prefer` (tag ชนะเสมอ) recall ไม่ขึ้นที่ค่าไหนเลย → ไม่ผ่านเกณฑ์ "recall ขึ้น" ที่ทุก bonus ไม่ใช่แค่ค่าน้ำหนักผิด
+- wrong_fault −1 อยู่ใต้ insufficient back knee flexion (2 → 1) — น่าจะเป็น "A shallower lunge of 80 degrees…" (tag shallow lunge) ที่โดน penalty แรงขึ้น (ยืนยันแล้วเฉพาะที่ 0.03 ว่าตัวนี้หลุด) — ผลข้างเคียงที่ดีเพียงอย่างเดียว เล็กเกินจะเก็บทั้งขั้น
+
+**ข้อสรุป:** filter แบบ exclusive ทำงานมีประโยชน์กับ `finding` — กันประโยค protocol ที่ embedding แยกไม่ออก ตัวที่หลุดเพราะ tag_filter (10) น้อยกว่าที่ quota ต่อ kind กินอยู่มาก (159) ตรงกับข้อสังเกตจาก B0/R0 · ปัญหา protocol-sentence เป็นงานของ reranker (R6) หรือ facet `number`/`definition` (K1) — ถ้าทำ R6 แล้วค่อยลอง union ซ้ำใน leave-one-out

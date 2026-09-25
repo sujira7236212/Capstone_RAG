@@ -76,6 +76,20 @@ RELATIVE_MARGIN = 0.03
 # Jaccard token overlap above which two kept chunks are treated as the same fact.
 NEAR_DUP_JACCARD = 0.72
 
+# How the fault_tags pre-pass (KB v5) combines with plain semantic search - see _search().
+#   prefer - tagged pool only whenever it has any hit for the kind, untagged search as a
+#            fallback when it is empty (behaviour through R0).
+#   union  - both pools, merged, gated on distance adjusted by TAG_BONUS: tagged with this
+#            fault -TAG_BONUS, tagged only with other faults +TAG_BONUS, untagged (fault_tags
+#            "") unchanged. Most v5 chunks are untagged (the curator tags only items it could
+#            pin to one fault), so under `prefer` a fault with a single tagged chunk of a kind
+#            hid every untagged chunk of that kind (ablation B0: miss reason tag_filter).
+# TAG_BONUS = one RELATIVE_MARGIN width: a tagged chunk competes as if it were one margin
+# closer, i.e. it survives the gate whenever it is within 2x margin of an untagged best.
+# Set before the R1 run, not tuned on it.
+TAG_MODE = "prefer"
+TAG_BONUS = 0.03
+
 NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
 
 
@@ -155,8 +169,12 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trac
     no reason to re-derive it from cosine distance). If the tagged pool is empty - either
     `code` is None, or this is a kb_gemini_curated_v4 collection where every chunk's
     fault_tags is "" because v4 never tagged per item - fall back to the untagged search,
-    which is exactly today's behaviour. Returns (kept, tagged) so callers/metrics can see
-    which path served the query.
+    which is exactly today's behaviour. That is TAG_MODE "prefer". Under "union" both
+    searches always run and are merged, ranked by distance adjusted with TAG_BONUS (see
+    TAG_MODE); the gate below then runs on the adjusted distance, while `kept` still
+    carries the raw one so context order and metrics stay on the embedding's scale.
+    Returns (kept, tagged): `tagged` = the tag-filtered search had hits, i.e. `code`'s tag
+    influenced this kind's result.
 
     `trace`: optional list; when given, every candidate in the pool is appended with the
     gate's decision for it (kept / quota / margin / dup) so eval/eval_retrieval.py can say
@@ -172,20 +190,25 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trac
             filter={**base_filter, "fault_tags": {"$like": f"%|{code}|%"}},
         )
         tagged = bool(hits)
-    if not hits:
-        hits = vectorstore.similarity_search_with_score(query, k=CANDIDATE_K, filter=base_filter)
+    if TAG_MODE == "union" and code:
+        hits = _union_by_tag(hits, vectorstore.similarity_search_with_score(
+            query, k=CANDIDATE_K, filter=base_filter), code)
+    else:
+        if not hits:
+            hits = vectorstore.similarity_search_with_score(query, k=CANDIDATE_K, filter=base_filter)
+        hits = [(doc, score, score) for doc, score in hits]
     if not hits:
         return [], False
-    best = hits[0][1]
+    best = hits[0][2]
     cutoff = min(ABS_DISTANCE_CAP[kind], best + RELATIVE_MARGIN)
     kept = []
-    for doc, score in hits:
+    for doc, score, adj in hits:
         text = _chunk_text(doc)
         # Same decisions, same order as the original early-break loop: hits are sorted by
-        # distance, so once one is past the cutoff every later one is too.
+        # (adjusted) distance, so once one is past the cutoff every later one is too.
         if len(kept) >= MAX_PER_KIND[kind]:
             reason = "quota"
-        elif score > cutoff:
+        elif adj > cutoff:
             reason = "margin"
         elif _is_near_duplicate(text, already_kept):
             reason = "dup"
@@ -194,11 +217,32 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trac
             kept.append((doc, score))
             already_kept.append(text)
         if trace is not None:
-            trace.append({"kind": kind, "text": text, "score": score, "reason": reason,
+            trace.append({"kind": kind, "text": text, "score": score, "adj": adj, "reason": reason,
                           "tagged": tagged, "code": code})
         elif reason in ("quota", "margin"):
             break
     return kept, tagged
+
+
+def _union_by_tag(tagged_hits, plain_hits, code):
+    """TAG_MODE "union": merge the tag-filtered and plain top-k into one list of
+    (doc, raw distance, adjusted distance) sorted by adjusted distance. A chunk in both
+    lists appears once. Adjustment by the chunk's own fault_tags, not by which list it
+    came from - a tagged chunk can rank in the plain top-k too."""
+    merged = {}
+    for doc, score in list(tagged_hits) + list(plain_hits):
+        key = doc.id or (_chunk_text(doc), doc.metadata.get("source"))
+        if key in merged:
+            continue
+        tags = doc.metadata.get("fault_tags") or ""
+        if f"|{code}|" in tags:
+            adj = score - TAG_BONUS
+        elif tags.strip("|"):
+            adj = score + TAG_BONUS
+        else:
+            adj = score
+        merged[key] = (doc, score, adj)
+    return sorted(merged.values(), key=lambda h: h[2])
 
 
 def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
@@ -246,14 +290,20 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
             # Best distance is measured on the raw pool, not on `kept`: a query whose
             # closest chunk fails the cap still tells us how far off it was. Probe the
             # SAME pool _search actually kept from (tagged if the tag-filter had hits,
-            # untagged otherwise) so `best` describes the pool the gate saw.
+            # untagged otherwise) so `best` describes the pool the gate saw. Under union
+            # that is the whole unfiltered pool (raw distance, before TAG_BONUS).
+            # `tag_exclusive`: the tag filter shut the untagged chunks out of this kind's
+            # search altogether (prefer mode with tagged hits) - eval_retrieval.py's
+            # tag_filter miss reason only exists then.
+            tag_exclusive = tagged and TAG_MODE != "union"
             probe_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
-            if tagged:
+            if tag_exclusive:
                 probe_filter["fault_tags"] = {"$like": f"%|{code}|%"}
             pool = vectorstore.similarity_search_with_score(query, k=1, filter=probe_filter)
             metrics.append({
                 "error": label, "kind": kind, "query": query,
                 "best": pool[0][1] if pool else None, "kept": len(kept), "tagged": tagged,
+                "tag_exclusive": tag_exclusive,
             })
             for doc, score in kept:
                 blocks.append((score, doc, kind, label))
@@ -315,6 +365,7 @@ def metrics_table(metrics):
     something, so `best`/`kept` describe that narrower pool, not the plain semantic one) -
     see _search()'s `tagged` return value. v4 collections never show `*`: every chunk's
     fault_tags is "", so the tag pass always comes back empty and falls back to plain search.
+    Under TAG_MODE "union" `*` only means the tag boosted some chunk; `best` is the plain pool's.
     """
     by_error = {}
     for m in metrics:
@@ -614,11 +665,14 @@ def parse_args():
                     help="report filename inside compare_output/")
     ap.add_argument("--skip-no-rag", action="store_true",
                     help="only run the RAG side (halves the LLM calls when the interest is retrieval)")
+    ap.add_argument("--tag-mode", choices=["prefer", "union"], default=TAG_MODE,
+                    help=f"how fault_tags combine with semantic search, see TAG_MODE (default: {TAG_MODE})")
     return ap.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
+    TAG_MODE = args.tag_mode
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT
@@ -635,7 +689,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
-| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD} |
+| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
 collection (before any gate), `kept` = chunks that passed the relative/absolute gates and de-duplication

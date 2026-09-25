@@ -195,7 +195,8 @@ def render(rows, collection, show_kept):
 #   tag_spelling - chunk IS tagged with this fault, but spelled so the gate's LIKE filter
 #                  misses it ("|knee_valgus|"); the tagged pool was used for its kind.
 #   tag_filter   - chunk has no tag for this fault, and the tagged pool was non-empty for its
-#                  kind, so the untagged search that would have seen it never ran.
+#                  kind, so the untagged search that would have seen it never ran (TAG_MODE
+#                  "prefer" only - under "union" the untagged search always runs).
 #   rank         - chunk was eligible for its kind's search but not in the top CANDIDATE_K.
 #   margin       - in the top CANDIDATE_K but past best + RELATIVE_MARGIN.
 #   quota        - within the margin but MAX_PER_KIND was already full.
@@ -265,7 +266,7 @@ def evaluate_recall(vs, golden_faults, pool):
         for e in trace:
             if e["text"] not in trace_by_text or e["score"] < trace_by_text[e["text"]]["score"]:
                 trace_by_text[e["text"]] = e
-        tagged_by_kind = {m["kind"]: m["tagged"] for m in metrics if m["error"] == g["code"]}
+        tagged_by_kind = {m["kind"]: m["tag_exclusive"] for m in metrics if m["error"] == g["code"]}
 
         clusters = _cluster([c["text"] for c in f["chunks"] if c["label"] == "relevant"])
         covered, missed = 0, []
@@ -348,6 +349,7 @@ def main():
     ap.add_argument("--margin", type=float, help="override RELATIVE_MARGIN")
     ap.add_argument("--cap", help="override ABS_DISTANCE_CAP, e.g. mistake=0.40,finding=0.38")
     ap.add_argument("--max-per-kind", help="override MAX_PER_KIND, e.g. mistake=3,finding=2")
+    ap.add_argument("--tag-mode", choices=["prefer", "union"], help="override TAG_MODE")
     ap.add_argument("--show-kept", action="store_true", help="list every kept chunk with its good/bad/neutral tag")
     ap.add_argument("--pool", default="eval/relevance_pool.json",
                     help="relevance pool from eval/build_relevance_pool.py; enables recall (single mode). "
@@ -360,6 +362,8 @@ def main():
         trc.RELATIVE_MARGIN = args.margin
     trc.ABS_DISTANCE_CAP = {**trc.ABS_DISTANCE_CAP, **_parse_kv(args.cap, float)}
     trc.MAX_PER_KIND = {**trc.MAX_PER_KIND, **_parse_kv(args.max_per_kind, int)}
+    if args.tag_mode:
+        trc.TAG_MODE = args.tag_mode
 
     with open(args.golden, encoding="utf-8") as f:
         golden = json.load(f)["faults"]
@@ -385,7 +389,8 @@ def main():
         "",
         f"gates: CANDIDATE_K={trc.CANDIDATE_K}, MAX_PER_KIND={trc.MAX_PER_KIND}, "
         f"ABS_DISTANCE_CAP={trc.ABS_DISTANCE_CAP}, RELATIVE_MARGIN={trc.RELATIVE_MARGIN}, "
-        f"NEAR_DUP_JACCARD={trc.NEAR_DUP_JACCARD}",
+        f"NEAR_DUP_JACCARD={trc.NEAR_DUP_JACCARD}, TAG_MODE={trc.TAG_MODE}"
+        + (f", TAG_BONUS={trc.TAG_BONUS}" if trc.TAG_MODE == "union" else ""),
         f"golden: `{args.golden}` · mock: `{args.mock}`",
         report_pool,
         "",
