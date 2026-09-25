@@ -18,8 +18,9 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 | R2 | `--kind-pool single` (margin เดียว งบรวม 9) | 10/10 · 0.61 · 0 | **0.07** (0.21) / 0.10 — **28**/411 (−34) | 28 / 2 / **31** | 0.90 | 0 · 10 · 146 · **194** · 33 | **revert** |
 | (R2 diag) | single + margin/ลำดับเทียบ best ของ kind ตัวเอง — ไม่ใช่ขั้น ไม่ได้อยู่ใน repo | **9/10** · 0.50 · 1 | 0.16 (0.21) / 0.29 — 67/411 (+5) | 66 / **9** / 89 | 0.74 | 0 · 10 · 146 · 7 · 181 | ไม่ผ่าน (wrong_fault) |
 | R4 | `--queries profile` (what / why / fix, margin เทียบ best ของแต่ละ query) | 10/10 · 0.48 · **0** | **0.16** (0.21) / 0.27 — **66**/411 (+4) | 65 / 6 / 81 | 0.80 | 0 · 10 · 108 · 17 · 210 | **เก็บ** (default ใหม่) |
+| R5 | `--hybrid` (BM25 ใน Python, BM25_K 12, BM25_WEIGHT 0.03) | 10/10 · 0.46 · **1** | 0.16 (0.21) / 0.26 — **65**/411 (−1 vs R4) | 64 / **8** / 81 | 0.79 | 0 · 10 · 71 · 17 · 248 | **revert** |
 
-รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md` · R4 `compare_output/ablation_R4_retrieval.md`
+รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md` · R4 `compare_output/ablation_R4_retrieval.md` · R5 `compare_output/ablation_R5_retrieval.md`
 
 ## บันทึก
 
@@ -111,3 +112,27 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - session mode (mock 4 session แบบที่ generation ใช้, ไม่มี pool): golden bad 1 → 0, good 22 → 16 (สาเหตุเดียวกับข้างบน)
 - ข้อจำกัด: relevance pool สร้างจาก 4 query ที่มีแนว why/fix อยู่แล้ว (ถ้อยคำต่างกัน) ตัวหารจึงครอบคลุมของที่ query why/fix หาเจอดีกว่าของที่ไม่มี query ไหนหา — ไม่ใช่ปัญหากับการเทียบ R0 ↔ R4 แต่ควรรู้ไว้
 - ไม่ได้ทำ generation mini-check (ต้องมี `--samples N` ก่อน — ค้างใน G1)
+
+### R5 — `--hybrid` (2026-09-26) → revert (default คง `HYBRID = False`) · เทียบกับ R4
+**เปลี่ยน:** `HYBRID` ใน `test_rag_compare.py` (flag `--hybrid/--no-hybrid` ทั้งใน `test_rag_compare.py` และ `eval/eval_retrieval.py`) + โมดูลใหม่ `kb_bm25.py`
+- **ต่างจากแผน:** แผนเสนอ Postgres full-text + index ใน `ingest.py` แต่ `ts_rank` ไม่มี IDF (คำว่า "squat" ใน corpus squat หนักเท่า "valgus") จึงไม่ใช่ BM25 จริง → ทำ Okapi BM25 ใน Python แทน (k1 1.2, b 0.75, IDF แบบ Lucene จาก chunk ทั้งหมดของท่านั้น, tokenizer `[a-z0-9]+` ตัด stopword ไม่ stem) โหลด text + metadata + embedding ของท่านั้นจาก `langchain_pg_embedding` ครั้งเดียวต่อ process (ท่าละ 348–783 chunk) · ไม่แตะ schema / index / `ingest.py`
+- `_search_hybrid()`: สิทธิ์เข้าสระเดิม (tag `prefer` ต่อ kind) · candidate ต่อ query = vector top-12 ∪ BM25 top-12 (`BM25_K`) · margin ยังวัดจากระยะ vector (ตามแผน: margin อยู่จนถึง R6) · BM25 เปลี่ยนแค่**ลำดับ**ที่แย่งโควตา: key = (ระยะเหนือ best ของ query) − `BM25_WEIGHT` × (BM25 / BM25 สูงสุดของ query) น้อยสุดข้าม query · `BM25_WEIGHT` 0.03 = ความกว้าง margin (เหตุผลเดียวกับ TAG_BONUS) ตั้งก่อนรัน · text ของ BM25 = 3 query ของ R4
+- ตรวจ implementation: `BM25_K = 0, BM25_WEIGHT = 0` ได้ report ตรงกับ R4 ต่างแค่ `best` 1 ช่อง 0.129 ↔ 0.128 (cosine ใน numpy float64 กับ pgvector float32) · default (`HYBRID = False`) ตรงกับ R4
+
+**ผล: ไม่ผ่าน 3 ใน 4 ข้อ** — recall 66 → 65 (−1), wrong_fault 6 → **8**, golden bad 0 → **1**, pool-precision 0.80 → 0.79
+- wrong_fault ที่กลับมา: preacher curl ใต้ elbow flare (golden BAD ตัวเดิมที่ R4 เพิ่งกำจัดได้) และ "Knee valgus and excessive side-to-side knee movement during the lunge…" ใต้ insufficient back knee flexion + finding "forward lean increases biceps femoris activity" ใต้ trunk lean
+- สาเหตุ: คำที่ BM25 จับได้คือศัพท์อวัยวะ/ท่า ("knee", "elbow", "lunge", "curl") ซึ่ง fault ในท่าเดียวกันใช้ร่วมกัน keyword จึงแยก fault ไม่ออก ต่างจาก embedding ที่จับความหมายของอาการ
+- ที่คาดว่า "เจอตัวเลขและชื่อเฉพาะมากขึ้น" ไม่เกิด: query ไม่มีตัวเลขหรือชื่อเฉพาะให้ BM25 จับ (ได้ "40 to 90 degrees" มา 1 เสีย "approximately 90 degrees" และ "0 to 90 degrees" ไป 2)
+- ส่วนใหญ่เป็นการสลับ relevant ↔ relevant มีของดีบ้าง เช่น principle "Avoid excessive anterior movement of the upper torso…" แทน wrong_fault ใต้ trunk lean, "If the lunge step is too short, the front heel may come off the ground."
+
+**แยกผล (ไม่ใช้ตัดสิน):**
+| BM25_K · WEIGHT | recall | wrong_fault | golden bad | pool-precision |
+|---|---|---|---|---|
+| 0 · 0 (= R4) | 66 | 6 | 0 | 0.80 |
+| 12 · 0 (เพิ่ม candidate อย่างเดียว) | 66 | 6 | 0 | 0.80 — context เหมือน R4 ทุกตัว |
+| 0 · 0.03 (เรียงใหม่อย่างเดียว) | 65 | 8 | 1 | 0.79 — เท่ากับ R5 |
+| 12 · 0.015 | 65 | 7 | 0 | 0.79 |
+| 12 · 0.03 (R5) | 65 | 8 | 1 | 0.79 |
+- candidate จาก BM25 ที่ผ่าน margin ได้ไม่เคยชนะโควตา (rank 108 → 71 แต่ไหลไป quota หมด) ความเสียหายทั้งหมดมาจากการเรียงตาม keyword · ไม่มีน้ำหนักไหนที่ recall ขึ้น
+
+**ข้อสรุป:** บน KB นี้กับ query แบบบรรยายอาการ BM25 ไม่เพิ่มอะไร ถ้าจะลองอีกควรเป็นตอนมี query ที่มีตัวเลข/ชื่อเฉพาะ (เช่น dose, ชื่อ drill หลัง K2) · flag และ `kb_bm25.py` คงไว้ (default ปิด)

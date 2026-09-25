@@ -111,6 +111,16 @@ KIND_POOL = "split"
 # Default "profile" since ablation R4 (vs R0: recall 62 -> 66 facts, wrong_fault 6 = 6, golden
 # bad 1 -> 0, pool-precision 0.79 -> 0.80). `--queries fault` restores the R0 behaviour.
 QUERIES = "profile"
+
+# Lexical (BM25) signal next to the vector one - see _search_hybrid() and kb_bm25.py.
+# Per query, BM25_K keyword hits join the vector top-CANDIDATE_K as candidates. The margin
+# still runs on vector distance alone (relevance floor, until a reranker replaces it); BM25
+# only changes the ORDER in which margin-passing chunks claim the per-kind quota, by
+# BM25_WEIGHT * (bm25 / best bm25 for that query): the strongest keyword match gets one
+# RELATIVE_MARGIN width of head start, same reasoning as TAG_BONUS. Fixed before the R5 run.
+HYBRID = False
+BM25_K = CANDIDATE_K
+BM25_WEIGHT = 0.03
 QUERY_PROFILE = {
     "what": "{q}",
     "why": "Harmful consequences, injury risk and joint stress caused by: {q}",
@@ -285,8 +295,8 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
     the kinds whose tag filter had hits, best_by_kind = closest eligible chunk per kind (the
     per-kind `best` metric, comparable with split mode's).
     """
-    if TAG_MODE != "prefer" or QUERIES != "fault":
-        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer', QUERIES 'fault' only")
+    if TAG_MODE != "prefer" or QUERIES != "fault" or HYBRID:
+        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer', QUERIES 'fault', no HYBRID only")
     vec = vectorstore.embeddings.embed_query(query)
     kind_filters, tagged_kinds, best_by_kind = [], set(), {}
     for kind in kinds:
@@ -385,6 +395,67 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
     return kept, tagged, best
 
 
+def _search_hybrid(vectorstore, texts, vecs, exercise_id, kind, already_kept, code=None, trace=None):
+    """HYBRID: _search_multi() over kb_bm25's in-memory corpus, with BM25 as a second signal.
+
+    Same eligible pool (fault_tags "prefer" per kind), same vector candidates (top-CANDIDATE_K
+    per query, exact cosine distance), same margin test on the vector distance above each
+    query's best. Added: each query's top-BM25_K keyword hits join the candidates, and the
+    order that fills the quota is (distance above best) - BM25_WEIGHT * normalised BM25,
+    minimum over queries. With BM25_K = 0 and BM25_WEIGHT = 0 this is _search_multi().
+    Returns (kept, tagged, best) like _search_multi().
+    """
+    import numpy as np
+    import kb_bm25
+    corp = kb_bm25.corpus(vectorstore.collection_name, exercise_id)
+    idx = [i for i, d in enumerate(corp.docs) if d.metadata.get("item_kind") == kind]
+    tagged = False
+    if code:
+        tagged_idx = [i for i in idx if f"|{code}|" in (corp.docs[i].metadata.get("fault_tags") or "")]
+        if tagged_idx:
+            idx, tagged = tagged_idx, True
+    if not idx:
+        return [], False, None
+    idx = np.array(idx)
+    merged = {}  # corpus index -> [raw distance of the rel-argmin query, rel, order key, bm25]
+    best = None
+    for text, vec in zip(texts, vecs):
+        dist = corp.distances(vec, idx)
+        lex = corp.bm25(text, idx)
+        q_best, lex_max = float(dist.min()), float(lex.max())
+        best = q_best if best is None else min(best, q_best)
+        cand = set(np.argsort(dist, kind="stable")[:CANDIDATE_K].tolist())
+        if BM25_K and lex_max > 0:
+            cand |= {j for j in np.argsort(-lex, kind="stable")[:BM25_K].tolist() if lex[j] > 0}
+        for j in cand:
+            score = float(dist[j])
+            rel = score - q_best if score <= ABS_DISTANCE_CAP[kind] else float("inf")
+            key = rel - (BM25_WEIGHT * lex[j] / lex_max if lex_max > 0 else 0.0)
+            m = merged.setdefault(int(idx[j]), [score, rel, key, float(lex[j])])
+            if rel < m[1]:
+                m[0], m[1] = score, rel
+            m[2] = min(m[2], key)
+            m[3] = max(m[3], float(lex[j]))
+    kept = []
+    for i, (score, rel, key, lex) in sorted(merged.items(), key=lambda kv: (kv[1][2], kv[1][0])):
+        doc = corp.docs[i]
+        text = _chunk_text(doc)
+        if len(kept) >= MAX_PER_KIND[kind]:
+            reason = "quota"
+        elif rel > RELATIVE_MARGIN:
+            reason = "margin"
+        elif _is_near_duplicate(text, already_kept):
+            reason = "dup"
+        else:
+            reason = "kept"
+            kept.append((doc, score))
+            already_kept.append(text)
+        if trace is not None:
+            trace.append({"kind": kind, "text": text, "score": score, "rel": rel, "bm25": lex,
+                          "reason": reason, "tagged": tagged, "code": code})
+    return kept, tagged, best
+
+
 def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
                        trace=None):
     """Retrieve KB chunks relevant to the session's actual errors (or general principles
@@ -436,16 +507,23 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
             for doc, score, kind in kept:
                 blocks.append((score, doc, kind, label))
             return
-        if QUERIES == "profile" and code:
-            vecs = [vectorstore.embeddings.embed_query(t.format(q=query)) for t in QUERY_PROFILE.values()]
+        if (QUERIES == "profile" or HYBRID) and code:
+            texts = [t.format(q=query) for t in QUERY_PROFILE.values()] if QUERIES == "profile" else [query]
+            vecs = [vectorstore.embeddings.embed_query(t) for t in texts]
             for kind in kinds:
                 kind_trace = [] if trace is not None else None
-                kept, tagged, best = _search_multi(vectorstore, vecs, exercise_id, kind, kept_texts,
-                                                   code=code, trace=kind_trace)
+                if HYBRID:
+                    kept, tagged, best = _search_hybrid(vectorstore, texts, vecs, exercise_id, kind,
+                                                        kept_texts, code=code, trace=kind_trace)
+                else:
+                    kept, tagged, best = _search_multi(vectorstore, vecs, exercise_id, kind, kept_texts,
+                                                       code=code, trace=kind_trace)
                 if trace is not None:
                     trace.extend({**t, "error": label} for t in kind_trace)
                 metrics.append({
-                    "error": label, "kind": kind, "query": f"{query} (+{'/'.join(list(QUERY_PROFILE)[1:])})",
+                    "error": label, "kind": kind,
+                    "query": query + (f" (+{'/'.join(list(QUERY_PROFILE)[1:])})" if QUERIES == "profile" else "")
+                             + (" [hybrid]" if HYBRID else ""),
                     "best": best, "kept": len(kept), "tagged": tagged, "tag_exclusive": tagged,
                 })
                 for doc, score in kept:
@@ -841,6 +919,8 @@ def parse_args():
                     help=f"per-kind quotas or one shared budget, see KIND_POOL (default: {KIND_POOL})")
     ap.add_argument("--queries", choices=["fault", "profile"], default=QUERIES,
                     help=f"taxonomy query only, or what/why/fix per fault, see QUERIES (default: {QUERIES})")
+    ap.add_argument("--hybrid", action=argparse.BooleanOptionalAction, default=HYBRID,
+                    help=f"add BM25 next to vector search, see HYBRID (default: {HYBRID})")
     return ap.parse_args()
 
 
@@ -849,6 +929,7 @@ if __name__ == "__main__":
     TAG_MODE = args.tag_mode
     KIND_POOL = args.kind_pool
     QUERIES = args.queries
+    HYBRID = args.hybrid
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT
@@ -865,7 +946,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
-| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES} |
+| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES}, HYBRID={HYBRID}{f" (BM25_K={BM25_K}, BM25_WEIGHT={BM25_WEIGHT})" if HYBRID else ""} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
 collection (before any gate), `kept` = chunks that passed the relative/absolute gates and de-duplication
