@@ -21,28 +21,28 @@ by editing `label` in eval/relevance_pool.json and set `"checked": true` on it.
 ## squat / knee valgus — 189 candidates · relevant 118 · wrong_fault 38 · irrelevant 33
 
 **Random sample**
-- `relevant` [consequence] Limited ankle dorsiflexion range of motion can alter lower extremity movement patterns, which may manifest as medial knee displacement or knee-valgus collapse during squatting.  
-  _judge:_ Describes how limited ankle dorsiflexion causes medial knee displacement during squats.
-- `relevant` [finding] The medio-lateral malaligned squat resulted in significantly increased dorsiflexion, ankle inversion, knee flexion, knee abduction, and hip adduction during approximately 10% to 85% of the squat cycle compared with the control squat.  
-  _judge:_ Reports kinematic consequences of mediolateral knee malalignment during squats.
-- `irrelevant` [principle] Perform the lateral monster walk in a squat position rather than an upright straight leg position to generate greater gluteus maximus and medius muscle activity.  
-  _judge:_ Details how to perform lateral monster walks without linking to knee valgus.
-- `relevant` [mistake] Allowing the knees to cave inward so that the outside of the knee crosses the medial malleolus.  
-  _judge:_ Defines what knees caving inward looks like with a specific threshold.
-- `irrelevant` [principle] Squats are commonly taught with a 'knees over toes' neutral position, with the foot in a slightly externally rotated position.  
-  _judge:_ General squat teaching information not directly tied to preventing or fixing knee valgus.
+- `relevant` [principle] Greater ankle dorsiflexion range of motion during weight-bearing movements promotes knee-varus displacement, helping to prevent knee-valgus motion.  
+  _judge:_ Describes how greater ankle dorsiflexion prevents knee-valgus motion.
+- `relevant` [principle] Maintain proper medio-lateral alignment of the knees and hips throughout the squat cycle to avoid altered muscle activation patterns.  
+  _judge:_ Provides a direct form recommendation to prevent mediolateral knee malalignment.
+- `relevant` [mistake] Allowing knee valgus (knees caving inward) to occur during the movement.  
+  _judge:_ Directly names and defines the knee valgus fault.
+- `relevant` [consequence] Increased knee valgus angles are associated with a significantly higher risk of ACL injuries.  
+  _judge:_ Describes the injury consequences associated with increased knee valgus.
+- `irrelevant` [finding] The study of 18 participants found no significant difference in VMO:VL ratio when comparing semi-squat exercises in neutral, varus (20° outwards), and valgus (20° inwards) knee positions.  
+  _judge:_ Specific study finding and sample details regarding semi-squat knee positions.
 
 ## squat / partial squat — 149 candidates · relevant 52 · wrong_fault 57 · irrelevant 40
 
 **Random sample**
-- `wrong_fault` [finding] A deep squat is defined as a squat in which your hips are below the height of your knees, meaning the angle of your knee joint is greater than 100 degrees at the lowest point.  
-  _judge:_ Defines a different exercise variant, the deep squat.
+- `relevant` [consequence] Training with shallow squats results in inferior adaptations on knee extensor muscle size and function compared to deep squats.  
+  _judge:_ States the consequence of shallow squatting on muscle size and function.
 - `irrelevant` [consequence] Squatting with deeper knee flexion increases patellofemoral joint compressive forces.  
   _judge:_ General biomechanical information about knee flexion depth and joint compressive forces.
 - `wrong_fault` [mistake] Allowing the knees to cave inward medially during the squat.  
   _judge:_ Addresses knee valgus, a different squat fault.
-- `relevant` [principle] Squatting deeper increases the overall magnitude of muscle contraction and loading, resulting in greater training effects through the overload principle compared to shallower squats.  
-  _judge:_ Explains the overload principle advantage of deeper squats over shallow squats.
+- `relevant` [consequence] Without squatting to the proper depth, the hamstrings and gluteus muscular complex may not be adequately challenged.  
+  _judge:_ Explains the muscular consequence of not squatting to proper depth.
 - `wrong_fault` [consequence] Overly restricted tibial translation during the squat increases anterior lean of the torso, which increases hip torque and lumbar shear forces.  
   _judge:_ About overly restricted tibial translation and trunk lean, different faults.
 

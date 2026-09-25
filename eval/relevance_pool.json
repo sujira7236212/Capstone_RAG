@@ -695,7 +695,7 @@
     {
      "text": "Squatting with limited weight-bearing ankle dorsiflexion range of motion, which restricts sagittal-plane motion at the knee and ankle.",
      "kind": "mistake",
-     "fault_tags": "|partial_squat|",
+     "fault_tags": "|partial squat|",
      "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
      "via": [
       "q0",
@@ -1104,7 +1104,7 @@
     {
      "text": "Failing to reach parallel squat depth.",
      "kind": "mistake",
-     "fault_tags": "|partial_squat|",
+     "fault_tags": "|partial squat|",
      "source": "data\\squat\\TheBackSquatAProposedAssessment.pdf [part 16/22]",
      "via": [
       "q1",
@@ -1203,7 +1203,7 @@
      "text": "Allowing the knees to cave inward into a valgus position during the squat.",
      "kind": "mistake",
      "fault_tags": "|knee valgus|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 1/10]",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 3/10]",
      "via": [
       "q1"
      ],
@@ -1468,29 +1468,6 @@
     "How to correct knee valgus in the squat: cues, setup changes, drills and correct form"
    ],
    "chunks": [
-    {
-     "text": "Improve ankle dorsiflexion range of motion to alter high-risk movement patterns and allow for greater knee flexion during squatting.",
-     "kind": "principle",
-     "fault_tags": "|partial_squat|knee_valgus|",
-     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
-     "via": [
-      "tag"
-     ],
-     "label": "irrelevant",
-     "reason": "Mentions high-risk movement patterns generally without identifying knee valgus."
-    },
-    {
-     "text": "Altered knee kinematics and restricted joint displacement during squatting can contribute to high-risk movement patterns associated with noncontact anterior cruciate ligament (ACL) injury.",
-     "kind": "consequence",
-     "fault_tags": "|knee_valgus|",
-     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
-     "via": [
-      "tag",
-      "q2"
-     ],
-     "label": "irrelevant",
-     "reason": "Too vague; refers broadly to altered knee kinematics rather than knee valgus."
-    },
     {
      "text": "Elevating the heels during an overhead squat can help correct medial-knee displacement by increasing the tibial angle in the anterior direction.",
      "kind": "principle",
@@ -3188,6 +3165,29 @@
      "reason": "Describes knee inward bowing and its consequence of increased knee torque."
     },
     {
+     "text": "Improve ankle dorsiflexion range of motion to alter high-risk movement patterns and allow for greater knee flexion during squatting.",
+     "kind": "principle",
+     "fault_tags": "|partial squat|knee valgus|",
+     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+     "via": [
+      "tag"
+     ],
+     "label": "irrelevant",
+     "reason": "Mentions high-risk movement patterns generally without identifying knee valgus."
+    },
+    {
+     "text": "Altered knee kinematics and restricted joint displacement during squatting can contribute to high-risk movement patterns associated with noncontact anterior cruciate ligament (ACL) injury.",
+     "kind": "consequence",
+     "fault_tags": "|knee valgus|",
+     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+     "via": [
+      "tag",
+      "q2"
+     ],
+     "label": "irrelevant",
+     "reason": "Too vague; refers broadly to altered knee kinematics rather than knee valgus."
+    },
+    {
      "text": "Excessive anterior translation of the knees over the toes during the squat.",
      "kind": "mistake",
      "fault_tags": "",
@@ -3228,7 +3228,7 @@
     {
      "text": "Squatting with limited weight-bearing ankle dorsiflexion range of motion, which restricts sagittal-plane motion at the knee and ankle.",
      "kind": "mistake",
-     "fault_tags": "|partial_squat|",
+     "fault_tags": "|partial squat|",
      "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
      "via": [
       "q0"
@@ -3675,54 +3675,6 @@
    ],
    "chunks": [
     {
-     "text": "Improve ankle dorsiflexion range of motion to alter high-risk movement patterns and allow for greater knee flexion during squatting.",
-     "kind": "principle",
-     "fault_tags": "|partial_squat|knee_valgus|",
-     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
-     "via": [
-      "tag"
-     ],
-     "label": "irrelevant",
-     "reason": "Focuses on high-risk movement patterns and knee flexion without addressing squat depth."
-    },
-    {
-     "text": "Squatting with limited weight-bearing ankle dorsiflexion range of motion, which restricts sagittal-plane motion at the knee and ankle.",
-     "kind": "mistake",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
-     "via": [
-      "tag",
-      "q0",
-      "q1",
-      "q3"
-     ],
-     "label": "irrelevant",
-     "reason": "Discusses restricted sagittal-plane motion generally without linking it to squat depth."
-    },
-    {
-     "text": "In a study of 40 physically active adults, individuals with greater ankle dorsiflexion range of motion during a weight-bearing lunge displayed greater knee-flexion and ankle-dorsiflexion displacement and peak knee flexion during overhead-squat and single-legged squat tasks.",
-     "kind": "finding",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
-     "via": [
-      "tag"
-     ],
-     "label": "irrelevant",
-     "reason": "Study details comparing kinematics across overhead and single-legged squats."
-    },
-    {
-     "text": "Limited ankle dorsiflexion range of motion reduces peak knee flexion and displacement during squatting, which prevents achieving full squat depth.",
-     "kind": "consequence",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
-     "via": [
-      "tag",
-      "q2"
-     ],
-     "label": "relevant",
-     "reason": "Explains how limited ankle dorsiflexion prevents achieving full squat depth."
-    },
-    {
      "text": "Sufficient weight-bearing ankle dorsiflexion range of motion is required to allow proper ankle dorsiflexion and knee flexion displacement during a squat.",
      "kind": "principle",
      "fault_tags": "|partial squat|",
@@ -4161,43 +4113,6 @@
      "reason": "Focuses on specific study sample details and statistical values."
     },
     {
-     "text": "Training with deep squats elicits more favorable adaptations on knee extensor muscle size and function compared with training with shallow squats.",
-     "kind": "principle",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
-     "via": [
-      "tag",
-      "q2"
-     ],
-     "label": "relevant",
-     "reason": "Explains why shallow squats produce inferior adaptations compared to deep squats."
-    },
-    {
-     "text": "Performing shallow squats instead of deep squats, which limits adaptations in knee extensor muscle size and function.",
-     "kind": "mistake",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
-     "via": [
-      "tag",
-      "q0",
-      "q2"
-     ],
-     "label": "relevant",
-     "reason": "Directly names the fault and its consequence on muscle adaptations."
-    },
-    {
-     "text": "Training with shallow squats results in inferior adaptations on knee extensor muscle size and function compared to deep squats.",
-     "kind": "consequence",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
-     "via": [
-      "tag",
-      "q2"
-     ],
-     "label": "relevant",
-     "reason": "States the consequence of shallow squatting on muscle size and function."
-    },
-    {
      "text": "Squatting to deeper angles, such as 50 degrees and 80 degrees of knee flexion, increases the VMO:VL muscle activation ratio compared to shallow 20-degree squats.",
      "kind": "principle",
      "fault_tags": "|partial squat|",
@@ -4298,61 +4213,6 @@
      ],
      "label": "irrelevant",
      "reason": "Contains specific numerical trial data and standard deviations."
-    },
-    {
-     "text": "Perform squats to a mid-range depth of 40 to 90 degrees of knee flexion to increase levels of VMO activation relative to the VL, compared to a shallow depth of 0 to 30 degrees.",
-     "kind": "principle",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
-     "via": [
-      "tag"
-     ],
-     "label": "relevant",
-     "reason": "Provides guidance on target depth to avoid shallow squatting."
-    },
-    {
-     "text": "Squatting deeper increases the overall magnitude of muscle contraction and loading, resulting in greater training effects through the overload principle compared to shallower squats.",
-     "kind": "principle",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
-     "via": [
-      "tag"
-     ],
-     "label": "relevant",
-     "reason": "Explains the overload principle advantage of deeper squats over shallow squats."
-    },
-    {
-     "text": "Performing shallow squats (0 to 30 degrees of knee flexion) limits VMO activation relative to the VL and reduces the overall magnitude of muscle contraction.",
-     "kind": "mistake",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
-     "via": [
-      "tag"
-     ],
-     "label": "relevant",
-     "reason": "Identifies shallow squat depth and its negative effect on muscle contraction."
-    },
-    {
-     "text": "VMO has increased levels of activation, relative to VL, when semi-squat exercises are performed to a mid-range (40-90 degrees) of knee flexion, as opposed to an early range (0-30 degrees) depth.",
-     "kind": "finding",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
-     "via": [
-      "tag"
-     ],
-     "label": "relevant",
-     "reason": "Compares mid-range depth against shallow early-range depth on muscle activation."
-    },
-    {
-     "text": "Training with exercises that result in a VMO:VL ratio lower than 1:1 (such as shallow squats) will result in greater strength gains in the VL muscle, potentially increasing the lateral force acting on the patella and thus increasing patellofemoral symptoms.",
-     "kind": "consequence",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
-     "via": [
-      "tag"
-     ],
-     "label": "relevant",
-     "reason": "Explains clinical consequences and patellofemoral risks associated with shallow squats."
     },
     {
      "text": "Descend until the top of the thigh is at least parallel with the ground and the hip joint is at least level with or slightly below the knee joint.",
@@ -4481,20 +4341,6 @@
      ],
      "label": "relevant",
      "reason": "Explains negative consequences of failing to squat to proper depth."
-    },
-    {
-     "text": "Failing to reach parallel squat depth.",
-     "kind": "mistake",
-     "fault_tags": "|partial_squat|",
-     "source": "data\\squat\\TheBackSquatAProposedAssessment.pdf [part 16/22]",
-     "via": [
-      "tag",
-      "q0",
-      "q1",
-      "q3"
-     ],
-     "label": "relevant",
-     "reason": "Directly names the fault of failing to reach parallel depth."
     },
     {
      "text": "The appropriate squat depth is the deepest position a client can achieve while maintaining a neutral spine, foot stability, proper joint alignment, and movement control.",
@@ -4640,6 +4486,160 @@
      ],
      "label": "relevant",
      "reason": "Directly names and describes the fault of performing shallow squats."
+    },
+    {
+     "text": "Improve ankle dorsiflexion range of motion to alter high-risk movement patterns and allow for greater knee flexion during squatting.",
+     "kind": "principle",
+     "fault_tags": "|partial squat|knee valgus|",
+     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+     "via": [
+      "tag"
+     ],
+     "label": "irrelevant",
+     "reason": "Focuses on high-risk movement patterns and knee flexion without addressing squat depth."
+    },
+    {
+     "text": "Squatting with limited weight-bearing ankle dorsiflexion range of motion, which restricts sagittal-plane motion at the knee and ankle.",
+     "kind": "mistake",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+     "via": [
+      "tag",
+      "q0",
+      "q1",
+      "q3"
+     ],
+     "label": "irrelevant",
+     "reason": "Discusses restricted sagittal-plane motion generally without linking it to squat depth."
+    },
+    {
+     "text": "In a study of 40 physically active adults, individuals with greater ankle dorsiflexion range of motion during a weight-bearing lunge displayed greater knee-flexion and ankle-dorsiflexion displacement and peak knee flexion during overhead-squat and single-legged squat tasks.",
+     "kind": "finding",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+     "via": [
+      "tag"
+     ],
+     "label": "irrelevant",
+     "reason": "Study details comparing kinematics across overhead and single-legged squats."
+    },
+    {
+     "text": "Limited ankle dorsiflexion range of motion reduces peak knee flexion and displacement during squatting, which prevents achieving full squat depth.",
+     "kind": "consequence",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
+     "via": [
+      "tag",
+      "q2"
+     ],
+     "label": "relevant",
+     "reason": "Explains how limited ankle dorsiflexion prevents achieving full squat depth."
+    },
+    {
+     "text": "Training with deep squats elicits more favorable adaptations on knee extensor muscle size and function compared with training with shallow squats.",
+     "kind": "principle",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
+     "via": [
+      "tag",
+      "q2"
+     ],
+     "label": "relevant",
+     "reason": "Explains why shallow squats produce inferior adaptations compared to deep squats."
+    },
+    {
+     "text": "Performing shallow squats instead of deep squats, which limits adaptations in knee extensor muscle size and function.",
+     "kind": "mistake",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
+     "via": [
+      "tag",
+      "q0",
+      "q2"
+     ],
+     "label": "relevant",
+     "reason": "Directly names the fault and its consequence on muscle adaptations."
+    },
+    {
+     "text": "Training with shallow squats results in inferior adaptations on knee extensor muscle size and function compared to deep squats.",
+     "kind": "consequence",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
+     "via": [
+      "tag",
+      "q2"
+     ],
+     "label": "relevant",
+     "reason": "States the consequence of shallow squatting on muscle size and function."
+    },
+    {
+     "text": "Perform squats to a mid-range depth of 40 to 90 degrees of knee flexion to increase levels of VMO activation relative to the VL, compared to a shallow depth of 0 to 30 degrees.",
+     "kind": "principle",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
+     "via": [
+      "tag"
+     ],
+     "label": "relevant",
+     "reason": "Provides guidance on target depth to avoid shallow squatting."
+    },
+    {
+     "text": "Squatting deeper increases the overall magnitude of muscle contraction and loading, resulting in greater training effects through the overload principle compared to shallower squats.",
+     "kind": "principle",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
+     "via": [
+      "tag"
+     ],
+     "label": "relevant",
+     "reason": "Explains the overload principle advantage of deeper squats over shallow squats."
+    },
+    {
+     "text": "Performing shallow squats (0 to 30 degrees of knee flexion) limits VMO activation relative to the VL and reduces the overall magnitude of muscle contraction.",
+     "kind": "mistake",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
+     "via": [
+      "tag"
+     ],
+     "label": "relevant",
+     "reason": "Identifies shallow squat depth and its negative effect on muscle contraction."
+    },
+    {
+     "text": "VMO has increased levels of activation, relative to VL, when semi-squat exercises are performed to a mid-range (40-90 degrees) of knee flexion, as opposed to an early range (0-30 degrees) depth.",
+     "kind": "finding",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
+     "via": [
+      "tag"
+     ],
+     "label": "relevant",
+     "reason": "Compares mid-range depth against shallow early-range depth on muscle activation."
+    },
+    {
+     "text": "Training with exercises that result in a VMO:VL ratio lower than 1:1 (such as shallow squats) will result in greater strength gains in the VL muscle, potentially increasing the lateral force acting on the patella and thus increasing patellofemoral symptoms.",
+     "kind": "consequence",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
+     "via": [
+      "tag"
+     ],
+     "label": "relevant",
+     "reason": "Explains clinical consequences and patellofemoral risks associated with shallow squats."
+    },
+    {
+     "text": "Failing to reach parallel squat depth.",
+     "kind": "mistake",
+     "fault_tags": "|partial squat|",
+     "source": "data\\squat\\TheBackSquatAProposedAssessment.pdf [part 16/22]",
+     "via": [
+      "tag",
+      "q0",
+      "q1",
+      "q3"
+     ],
+     "label": "relevant",
+     "reason": "Directly names the fault of failing to reach parallel depth."
     },
     {
      "text": "Using an excessively narrow stance during the squat.",
@@ -4974,7 +4974,7 @@
      "text": "Allowing the knees to cave inward into a valgus position during the squat.",
      "kind": "mistake",
      "fault_tags": "|knee valgus|",
-     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 3/10]",
+     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 1/10]",
      "via": [
       "q0",
       "q1"
@@ -5123,7 +5123,7 @@
      "text": "Restricting anterior knee displacement can result in increased thoracic motion and forces at the hip and back during squats.",
      "kind": "consequence",
      "fault_tags": "",
-     "source": "data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 8/12]",
+     "source": "data\\squat\\Muscle Activation Patterns During Different Squat Techniques.pdf [part 7/12]",
      "via": [
       "q2"
      ],
@@ -12902,7 +12902,7 @@
     {
      "text": "Failing to achieve complete arm extension at the bottom of the curl and instead performing partial repetitions only in the top portion of the range of motion (final ROM, such as 68º–135º or 80º–130º).",
      "kind": "mistake",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "q0",
@@ -12965,7 +12965,7 @@
     {
      "text": "Ensuring the movement includes the bottom portion of the curl (initial ROM) is critical for targeting the distal region of the biceps brachii.",
      "kind": "principle",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "q0",
@@ -13303,7 +13303,7 @@
     {
      "text": "Restricting the bicep curl to the top half of the movement (final ROM) reduces the hypertrophic stimulus at longer muscle lengths, resulting in significantly less muscle growth in the distal portion of the biceps brachii.",
      "kind": "consequence",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "q1",
@@ -13316,7 +13316,7 @@
     {
      "text": "Training the bicep curl at longer muscle lengths, which corresponds to the initial range of motion starting from full elbow extension (0º), optimizes muscle hypertrophy.",
      "kind": "principle",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "q1",
@@ -13998,7 +13998,7 @@
     {
      "text": "Training the bicep curl at longer muscle lengths, which corresponds to the initial range of motion starting from full elbow extension (0º), optimizes muscle hypertrophy.",
      "kind": "principle",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "tag",
@@ -14013,7 +14013,7 @@
     {
      "text": "Ensuring the movement includes the bottom portion of the curl (initial ROM) is critical for targeting the distal region of the biceps brachii.",
      "kind": "principle",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "tag",
@@ -14028,7 +14028,7 @@
     {
      "text": "Failing to achieve complete arm extension at the bottom of the curl and instead performing partial repetitions only in the top portion of the range of motion (final ROM, such as 68º–135º or 80º–130º).",
      "kind": "mistake",
-     "fault_tags": "|partial range_of_motion|",
+     "fault_tags": "|partial range of motion|",
      "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
      "via": [
       "tag",
@@ -14039,21 +14039,6 @@
      ],
      "label": "relevant",
      "reason": "Directly defines the partial range of motion fault with specific joint angle thresholds."
-    },
-    {
-     "text": "Restricting the bicep curl to the top half of the movement (final ROM) reduces the hypertrophic stimulus at longer muscle lengths, resulting in significantly less muscle growth in the distal portion of the biceps brachii.",
-     "kind": "consequence",
-     "fault_tags": "|partial range_of_motion|",
-     "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
-     "via": [
-      "tag",
-      "q0",
-      "q1",
-      "q2",
-      "q3"
-     ],
-     "label": "relevant",
-     "reason": "Explains the negative hypertrophic consequences of restricting curls to the top half."
     },
     {
      "text": "Training the biceps at longer muscle lengths, such as the initial range of motion or full range of motion, promotes greater distal muscle hypertrophy.",
@@ -14091,6 +14076,21 @@
      ],
      "label": "relevant",
      "reason": "Provides practical methods to prevent and correct limited range of motion repetitions."
+    },
+    {
+     "text": "Restricting the bicep curl to the top half of the movement (final ROM) reduces the hypertrophic stimulus at longer muscle lengths, resulting in significantly less muscle growth in the distal portion of the biceps brachii.",
+     "kind": "consequence",
+     "fault_tags": "|partial range of motion|",
+     "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
+     "via": [
+      "tag",
+      "q0",
+      "q1",
+      "q2",
+      "q3"
+     ],
+     "label": "relevant",
+     "reason": "Explains the negative hypertrophic consequences of restricting curls to the top half."
     },
     {
      "text": "Wolf et al. [63] showed a similar hypertrophic response in the elbow flexors and extensors after 8 weeks of training with full and initial ROM using four exercises targeted for the elbow flexor and four for the elbow extensors.",

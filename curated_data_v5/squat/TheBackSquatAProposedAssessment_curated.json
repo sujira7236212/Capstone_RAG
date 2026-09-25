@@ -1027,7 +1027,7 @@
       {
         "text": "Failing to reach parallel squat depth.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
@@ -1053,7 +1053,7 @@
     ],
     "source": "data\\squat\\TheBackSquatAProposedAssessment.pdf [part 16/22]",
     "applies_to_fault": [
-      "partial_squat"
+      "partial squat"
     ]
   },
   {

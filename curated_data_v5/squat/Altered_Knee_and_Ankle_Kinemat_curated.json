@@ -12,8 +12,8 @@
       {
         "text": "Improve ankle dorsiflexion range of motion to alter high-risk movement patterns and allow for greater knee flexion during squatting.",
         "applies_to_fault": [
-          "partial_squat",
-          "knee_valgus"
+          "partial squat",
+          "knee valgus"
         ]
       }
     ],
@@ -21,7 +21,7 @@
       {
         "text": "Squatting with limited weight-bearing ankle dorsiflexion range of motion, which restricts sagittal-plane motion at the knee and ankle.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
@@ -29,7 +29,7 @@
       {
         "text": "In a study of 40 physically active adults, individuals with greater ankle dorsiflexion range of motion during a weight-bearing lunge displayed greater knee-flexion and ankle-dorsiflexion displacement and peak knee flexion during overhead-squat and single-legged squat tasks.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       },
       {
@@ -41,20 +41,20 @@
       {
         "text": "Limited ankle dorsiflexion range of motion reduces peak knee flexion and displacement during squatting, which prevents achieving full squat depth.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       },
       {
         "text": "Altered knee kinematics and restricted joint displacement during squatting can contribute to high-risk movement patterns associated with noncontact anterior cruciate ligament (ACL) injury.",
         "applies_to_fault": [
-          "knee_valgus"
+          "knee valgus"
         ]
       }
     ],
     "source": "data\\squat\\Altered_Knee_and_Ankle_Kinemat.pdf [part 1/15]",
     "applies_to_fault": [
-      "knee_valgus",
-      "partial_squat"
+      "knee valgus",
+      "partial squat"
     ]
   },
   {

@@ -259,13 +259,13 @@
       {
         "text": "Training the bicep curl at longer muscle lengths, which corresponds to the initial range of motion starting from full elbow extension (0º), optimizes muscle hypertrophy.",
         "applies_to_fault": [
-          "partial range_of_motion"
+          "partial range of motion"
         ]
       },
       {
         "text": "Ensuring the movement includes the bottom portion of the curl (initial ROM) is critical for targeting the distal region of the biceps brachii.",
         "applies_to_fault": [
-          "partial range_of_motion"
+          "partial range of motion"
         ]
       }
     ],
@@ -273,7 +273,7 @@
       {
         "text": "Failing to achieve complete arm extension at the bottom of the curl and instead performing partial repetitions only in the top portion of the range of motion (final ROM, such as 68º–135º or 80º–130º).",
         "applies_to_fault": [
-          "partial range_of_motion"
+          "partial range of motion"
         ]
       }
     ],
@@ -291,13 +291,13 @@
       {
         "text": "Restricting the bicep curl to the top half of the movement (final ROM) reduces the hypertrophic stimulus at longer muscle lengths, resulting in significantly less muscle growth in the distal portion of the biceps brachii.",
         "applies_to_fault": [
-          "partial range_of_motion"
+          "partial range of motion"
         ]
       }
     ],
     "source": "data\\bicep-curl\\The interplay between muscle length, range of motion, and exercise selection a review.pdf [part 12/24]",
     "applies_to_fault": [
-      "partial range_of_motion"
+      "partial range of motion"
     ]
   },
   {

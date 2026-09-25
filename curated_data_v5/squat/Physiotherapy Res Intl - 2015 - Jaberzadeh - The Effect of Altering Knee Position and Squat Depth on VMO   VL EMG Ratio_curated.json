@@ -73,7 +73,7 @@
       {
         "text": "Training with deep squats elicits more favorable adaptations on knee extensor muscle size and function compared with training with shallow squats.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
@@ -85,7 +85,7 @@
       {
         "text": "Performing shallow squats instead of deep squats, which limits adaptations in knee extensor muscle size and function.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
@@ -111,13 +111,13 @@
       {
         "text": "Training with shallow squats results in inferior adaptations on knee extensor muscle size and function compared to deep squats.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 2/10]",
     "applies_to_fault": [
-      "partial_squat"
+      "partial squat"
     ]
   },
   {
@@ -348,13 +348,13 @@
       {
         "text": "Perform squats to a mid-range depth of 40 to 90 degrees of knee flexion to increase levels of VMO activation relative to the VL, compared to a shallow depth of 0 to 30 degrees.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       },
       {
         "text": "Squatting deeper increases the overall magnitude of muscle contraction and loading, resulting in greater training effects through the overload principle compared to shallower squats.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
@@ -362,7 +362,7 @@
       {
         "text": "Performing shallow squats (0 to 30 degrees of knee flexion) limits VMO activation relative to the VL and reduces the overall magnitude of muscle contraction.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
@@ -378,7 +378,7 @@
       {
         "text": "VMO has increased levels of activation, relative to VL, when semi-squat exercises are performed to a mid-range (40-90 degrees) of knee flexion, as opposed to an early range (0-30 degrees) depth.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       },
       {
@@ -390,13 +390,13 @@
       {
         "text": "Training with exercises that result in a VMO:VL ratio lower than 1:1 (such as shallow squats) will result in greater strength gains in the VL muscle, potentially increasing the lateral force acting on the patella and thus increasing patellofemoral symptoms.",
         "applies_to_fault": [
-          "partial_squat"
+          "partial squat"
         ]
       }
     ],
     "source": "data\\squat\\Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf [part 7/10]",
     "applies_to_fault": [
-      "partial_squat"
+      "partial squat"
     ]
   },
   {

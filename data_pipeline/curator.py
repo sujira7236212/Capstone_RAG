@@ -140,6 +140,29 @@ def normalize_ocr_degrees(text: str) -> str:
     return re.sub(r"[ \t]{2,}", " ", text).strip()
 
 
+def _tag_key(tag: str) -> str:
+    return " ".join(str(tag).replace("_", " ").lower().split())
+
+
+def normalize_fault_tags(tags, folder_exercise_id: str) -> list:
+    """Map spelling variants of this exercise's fault codes back onto the code itself.
+
+    The prompt says "use verbatim", but gemini still returned "partial_squat",
+    "knee_valgus" and "partial range_of_motion" on 18 v5 items. Retrieval's tag filter is
+    an exact LIKE '%|<code>|%', so those items were invisible under their own fault
+    (eval tag_spelling miss, compare_output/ablation_log.md B0). Underscore, case and
+    whitespace differences only; a tag that matches no known code is left as it is, and
+    a variant that collapses onto a code already in the list is dropped.
+    """
+    canonical = {_tag_key(code): code for code in faults_for_exercise(folder_exercise_id)}
+    out = []
+    for tag in tags or []:
+        tag = canonical.get(_tag_key(tag), tag)
+        if tag not in out:
+            out.append(tag)
+    return out
+
+
 def is_exercise_mismatch(folder_exercise_id: str, extracted_exercise_type: str, file_path: str,
                          applies_to_fault=None) -> bool:
     """Flags windows whose curated exercise_type doesn't match the folder they live in.
@@ -246,6 +269,8 @@ def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Opti
             for field in ("core_principles", "common_mistakes", "specific_findings", "consequences"):
                 for item in out[field]:
                     item["text"] = normalize_ocr_degrees(item["text"])
+                    item["applies_to_fault"] = normalize_fault_tags(item["applies_to_fault"],
+                                                                    folder_exercise_id)
             return out
             
         except Exception as e:
