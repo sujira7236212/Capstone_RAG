@@ -1,6 +1,6 @@
 # แผนปรับ RAG v2 — เปลี่ยนทีละอย่าง วัดทุกขั้น
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-25 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เสร็จ เก็บ (commit `49863f5`) · R1 ไม่ผ่าน revert (flag คงไว้ default `prefer`) · R2 ไม่ผ่าน revert (flag คงไว้ default `split`) — ถัดไป R4 (R3 ข้ามเพราะต้องมี R2)**
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-25 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เสร็จ เก็บ (commit `49863f5`) · R1 ไม่ผ่าน revert (flag คงไว้ default `prefer`) · R2 ไม่ผ่าน revert (flag คงไว้ default `split`) · R3 ข้าม · **R4 เก็บ (default `--queries profile`)** — ถัดไป R5**
 > ผลทุกขั้นบันทึกใน `compare_output/ablation_log.md`
 
 ## 1. ที่มา
@@ -49,8 +49,8 @@
 | R1 ❌ revert (recall 62→57, golden bad 1→2, pool-precision 0.79→0.71) | `--tag-mode union` | tag จากแบบเลือกทางเดียว → union ของสระที่มี tag กับไม่มี tag + boost/penalty (`TAG_BONUS` 0.03) | tag_filter ↓ · wrong_fault ต้องไม่ ↑ |
 | R2 ❌ revert (recall 62→28, context 77→31 เหลือแต่ mistake) | `--kind-pool single` | เลิกแบ่งสระตาม kind (งบรวมเท่าเดิม = 9 + near-dup) | quota/rank ↓ · diversity อาจ ↓ |
 | R3 ⏭ ข้าม (ต้องมี R2) | `--mmr λ` | MMR เพื่อความหลากหลาย (ต้องมี R2 ก่อน) | diversity กลับมา |
-| **R4** ← ถัดไป | `--queries profile` | multi-query (what / why / fix) | recall ↑ |
-| R5 | `--hybrid` | เพิ่ม BM25 (Postgres full-text + index ใน `ingest.py`) | เจอตัวเลขและชื่อเฉพาะมากขึ้น |
+| R4 ✅ เก็บ (recall 62→66, golden bad 1→0) | `--queries profile` | multi-query (what / why / fix) | recall ↑ |
+| **R5** ← ถัดไป | `--hybrid` | เพิ่ม BM25 (Postgres full-text + index ใน `ingest.py`) | เจอตัวเลขและชื่อเฉพาะมากขึ้น |
 | R6 | `--rerank` | reranker แทน `RELATIVE_MARGIN` | precision ↑ |
 
 ถ้าข้อไหนไม่ผ่านให้ revert แล้วไปข้อถัดไป หลัง R6 ให้ทดสอบถอด R3 อีกรอบ (leave-one-out) เพราะ reranker อาจทำให้ MMR ไม่จำเป็น และลอง `--kind-pool single` + MMR ซ้ำ (R2 พังเพราะ query ทรง mistake ทำให้ระยะของ kind อื่นไกลกว่าเสมอ — R4 แยก query ตามคำถามน่าจะแก้ต้นเหตุ ส่วนเติมช่องขยะใน fault ที่ fact น้อยเป็นงานของ R6) และลอง `--tag-mode union` ซ้ำ เพราะสิ่งที่ทำให้ R1 แพ้ (ประโยค protocol ของงานวิจัยที่ไม่มี tag แย่งช่อง `finding`) คือสิ่งที่ reranker ควรกดลง
@@ -78,18 +78,19 @@
   5. EMG ว่ากล้ามเนื้อไหนทำงานแทน (bicep elbow flare ยังเป็น data gap)
   6. expert QA pairs จากผู้เชี่ยวชาญของระบบ 1
 
-## 4. ผลปัจจุบัน — R0 (ขั้นล่าสุดที่เก็บไว้ · gate v7, KB v5 หลังแก้ tag)
+## 4. ผลปัจจุบัน — R4 (ขั้นล่าสุดที่เก็บไว้ · gate v7 + multi-query, KB v5 หลังแก้ tag)
 
-| ตัววัด | B0 | **R0** |
-|---|---|---|
-| golden (hit · precision · bad) | 10/10 · 0.62 · 1 | 10/10 · 0.61 · 1 |
-| recall micro (ceiling) / macro | 0.15 (0.21) / 0.26 — 61 จาก 411 facts | **0.15** (0.21) / 0.26 — 62 จาก 411 facts |
-| context | 77 chunks: relevant 60 / wrong_fault 6 · pool-precision 0.78 | 77 chunks: relevant 61 / wrong_fault 6 · pool-precision 0.79 |
-| miss by reason | tag_spelling 14 · tag_filter 10 · rank 141 · margin 34 · quota 151 | tag_spelling 0 · tag_filter 10 · **rank 146** · margin 34 · **quota 159** |
+| ตัววัด | B0 | R0 | **R4** |
+|---|---|---|---|
+| golden (hit · precision · bad) | 10/10 · 0.62 · 1 | 10/10 · 0.61 · 1 | 10/10 · 0.48 · **0** |
+| recall micro (ceiling) / macro | 0.15 (0.21) / 0.26 — 61 จาก 411 facts | 0.15 (0.21) / 0.26 — 62 จาก 411 facts | **0.16** (0.21) / 0.27 — 66 จาก 411 facts |
+| context | 77 chunks: relevant 60 / wrong_fault 6 · pool-precision 0.78 | 77 chunks: relevant 61 / wrong_fault 6 · pool-precision 0.79 | 81 chunks: relevant 65 / wrong_fault 6 · pool-precision 0.80 |
+| miss by reason | tag_spelling 14 · tag_filter 10 · rank 141 · margin 34 · quota 151 | tag_spelling 0 · tag_filter 10 · rank 146 · margin 34 · quota 159 | tag_filter 10 · rank 108 · margin 17 · **quota 210** |
 
 - R1 ไม่ผ่าน (รายละเอียด `ablation_log.md` §R1): union ดึง tag_filter กลับมาได้แค่ 1 ใน 10 fact แต่เสีย 6 fact ที่ quota ให้ `finding` ไม่มี tag ที่เป็นประโยค protocol ของงานวิจัย ("A successful squat trial in this protocol required ≥60° knee flexion") → filter แบบ exclusive มีประโยชน์กับ `finding` · `TAG_BONUS` 0.06/0.10 = recall เท่า R0 (ไม่ขึ้น) wrong_fault 5
 - R2 ไม่ผ่าน (รายละเอียด `ablation_log.md` §R2): margin เดียวจาก best รวม = best ของ mistake เสมอ (query ทรง mistake) → principle/consequence หลุด margin ทุก fault · diagnostic ที่วัด margin จาก best ของ kind ตัวเอง: recall 67 (+5) แต่ wrong_fault 6→9 จากการเติมช่องให้ครบ 9 ใน fault ที่ fact น้อย → โควตา+margin ต่อ kind ของเดิมกันขยะได้จริง
-- **R4 ต้องเทียบกับคอลัมน์ R0** (ขั้นล่าสุดที่เก็บ) ใต้ `--tag-mode prefer --kind-pool split` (default) · ประเด็นที่ต้องตัดสินก่อนรัน: query what/why/fix ส่งไป kind ไหนบ้าง (ทุก kind ทุก query แล้ว merge หรือจับคู่ query↔kind) และงบต่อ kind ยังเท่าเดิม
+- R4 เก็บ (รายละเอียด `ablation_log.md` §R4): query what/why/fix + margin เทียบ best ของแต่ละ query ได้ chunk แนวสาเหตุ/วิธีแก้เพิ่ม (heel lift แก้ knee valgus, adductor ตึง) · ตัวกั้นหลักตอนนี้คือ quota (210) · golden precision 0.61→0.48 เป็นเพราะ `must_hit` ยังเป็นถ้อยคำ v4 ต้องเพิ่ม phrasing ถ้าจะใช้ต่อ
+- **R5 ต้องเทียบกับ R4** (`compare_output/ablation_R4_retrieval.md`: recall 66/411 · wrong_fault 6 · golden bad 0 · pool-precision 0.80) ใต้ default ปัจจุบัน (`--tag-mode prefer --kind-pool split --queries profile`)
 - ตารางต่อ fault: `compare_output/ablation_B0_retrieval.md`, `compare_output/ablation_R0_retrieval.md`
 - R0: chunk ที่ tag ถูกแล้ว 14 ตัว เข้า context 2 ตัว ที่เหลือหลุดที่ quota/rank แทน → ตัวกั้นจริงคือ slot ต่อ kind
 - R0 แก้ metadata แล้ว **id ของแถวเปลี่ยน** ตาม metadata (สูตรเดียวกับ `ingest.py`) ถ้าจะแก้ metadata ใน DB อีก ให้ใช้วิธีเดียวกับ `data_pipeline/fix_fault_tags.py` ไม่อย่างนั้น ingest ครั้งหน้าจะ embed แถวนั้นซ้ำ
