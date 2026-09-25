@@ -90,6 +90,17 @@ NEAR_DUP_JACCARD = 0.72
 TAG_MODE = "prefer"
 TAG_BONUS = 0.03
 
+# How the kinds share the context budget - see retrieve_kb_blocks().
+#   split  - one search, one RELATIVE_MARGIN and one MAX_PER_KIND quota per kind (through R1).
+#   single - one search over every requested kind at once (k = CANDIDATE_K per kind, so the
+#            same number of candidates is looked at), one margin from the overall best hit,
+#            one budget = sum of MAX_PER_KIND over those kinds. Which chunks are ELIGIBLE is
+#            unchanged: each kind still applies the fault_tags "prefer" rule on its own (a kind
+#            with any chunk tagged for the fault searches only its tagged chunks). Ablation
+#            B0/R0: most missed facts were lost to a full per-kind quota (159) or to ranking
+#            below the top CANDIDATE_K of their own kind (146), not to the budget as a whole.
+KIND_POOL = "split"
+
 NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
 
 
@@ -245,6 +256,64 @@ def _union_by_tag(tagged_hits, plain_hits, code):
     return sorted(merged.values(), key=lambda h: h[2])
 
 
+def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=None, trace=None):
+    """KIND_POOL "single": the gate of _search() run once over all `kinds` together.
+
+    Eligibility per kind is the same as _search() under TAG_MODE "prefer": a kind with any
+    chunk tagged for `code` contributes only its tagged chunks, any other kind all of its
+    chunks. That is pushed into ONE query as an $or of per-kind filters, so the kinds then
+    compete for one margin (from the overall best hit) and one budget (sum of MAX_PER_KIND
+    over `kinds`). The query is embedded once and reused for every probe.
+
+    Returns (kept, tagged_kinds, best_by_kind): kept = [(doc, score, kind)], tagged_kinds =
+    the kinds whose tag filter had hits, best_by_kind = closest eligible chunk per kind (the
+    per-kind `best` metric, comparable with split mode's).
+    """
+    if TAG_MODE != "prefer":
+        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer' only")
+    vec = vectorstore.embeddings.embed_query(query)
+    kind_filters, tagged_kinds, best_by_kind = [], set(), {}
+    for kind in kinds:
+        kf = {"item_kind": {"$eq": kind}}
+        if code:
+            tf = {"$and": [kf, {"fault_tags": {"$like": f"%|{code}|%"}}]}
+            probe = vectorstore.similarity_search_with_score_by_vector(
+                vec, k=1, filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, tf]})
+            if probe:
+                tagged_kinds.add(kind)
+                kf = tf
+        if kind not in tagged_kinds:
+            probe = vectorstore.similarity_search_with_score_by_vector(
+                vec, k=1, filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, kf]})
+        best_by_kind[kind] = probe[0][1] if probe else None
+        kind_filters.append(kf)
+    hits = vectorstore.similarity_search_with_score_by_vector(
+        vec, k=CANDIDATE_K * len(kinds),
+        filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, {"$or": kind_filters}]})
+    if not hits:
+        return [], tagged_kinds, best_by_kind
+    budget = sum(MAX_PER_KIND[k] for k in kinds)
+    best = hits[0][1]
+    kept = []
+    for doc, score in hits:
+        kind = doc.metadata.get("item_kind")
+        text = _chunk_text(doc)
+        if len(kept) >= budget:
+            reason = "quota"
+        elif score > min(ABS_DISTANCE_CAP[kind], best + RELATIVE_MARGIN):
+            reason = "margin"
+        elif _is_near_duplicate(text, already_kept):
+            reason = "dup"
+        else:
+            reason = "kept"
+            kept.append((doc, score, kind))
+            already_kept.append(text)
+        if trace is not None:
+            trace.append({"kind": kind, "text": text, "score": score, "reason": reason,
+                          "tagged": kind in tagged_kinds, "code": code})
+    return kept, tagged_kinds, best_by_kind
+
+
 def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
                        trace=None):
     """Retrieve KB chunks relevant to the session's actual errors (or general principles
@@ -281,6 +350,21 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
     unknown_codes = []
 
     def collect(query, kinds, label, code=None):
+        if KIND_POOL == "single":
+            kind_trace = [] if trace is not None else None
+            kept, tagged_kinds, best_by_kind = _search_single(
+                vectorstore, query, exercise_id, kinds, kept_texts, code=code, trace=kind_trace)
+            if trace is not None:
+                trace.extend({**t, "error": label} for t in kind_trace)
+            for kind in kinds:
+                metrics.append({
+                    "error": label, "kind": kind, "query": query, "best": best_by_kind[kind],
+                    "kept": sum(1 for _, _, k in kept if k == kind),
+                    "tagged": kind in tagged_kinds, "tag_exclusive": kind in tagged_kinds,
+                })
+            for doc, score, kind in kept:
+                blocks.append((score, doc, kind, label))
+            return
         for kind in kinds:
             kind_trace = [] if trace is not None else None
             kept, tagged = _search(vectorstore, query, exercise_id, kind, kept_texts, code=code,
@@ -667,12 +751,15 @@ def parse_args():
                     help="only run the RAG side (halves the LLM calls when the interest is retrieval)")
     ap.add_argument("--tag-mode", choices=["prefer", "union"], default=TAG_MODE,
                     help=f"how fault_tags combine with semantic search, see TAG_MODE (default: {TAG_MODE})")
+    ap.add_argument("--kind-pool", choices=["split", "single"], default=KIND_POOL,
+                    help=f"per-kind quotas or one shared budget, see KIND_POOL (default: {KIND_POOL})")
     return ap.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
     TAG_MODE = args.tag_mode
+    KIND_POOL = args.kind_pool
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT
@@ -689,7 +776,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
-| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""} |
+| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
 collection (before any gate), `kept` = chunks that passed the relative/absolute gates and de-duplication

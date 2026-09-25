@@ -197,9 +197,11 @@ def render(rows, collection, show_kept):
 #   tag_filter   - chunk has no tag for this fault, and the tagged pool was non-empty for its
 #                  kind, so the untagged search that would have seen it never ran (TAG_MODE
 #                  "prefer" only - under "union" the untagged search always runs).
-#   rank         - chunk was eligible for its kind's search but not in the top CANDIDATE_K.
+#   rank         - chunk was eligible for its kind's search but not in the top CANDIDATE_K
+#                  (KIND_POOL "single": not in the top CANDIDATE_K * kinds of the shared search).
 #   margin       - in the top CANDIDATE_K but past best + RELATIVE_MARGIN.
-#   quota        - within the margin but MAX_PER_KIND was already full.
+#   quota        - within the margin but MAX_PER_KIND was already full (KIND_POOL "single":
+#                  the shared budget, sum of MAX_PER_KIND).
 #   dup          - near-dup of a chunk kept for another fault (session mode only; rare here).
 # ---------------------------------------------------------------------------
 
@@ -250,6 +252,7 @@ def evaluate_recall(vs, golden_faults, pool):
         blocks, metrics = trc.retrieve_kb_blocks(vs, g["exercise_id"], g["exercise_id"], [g["code"]],
                                                  trace=trace)
         context = [trc._chunk_text(doc) for _, doc, _, label in blocks if label == g["code"]]
+        ctx_kinds = [kind for _, _, kind, label in blocks if label == g["code"]]
         label_of = {c["text"]: c["label"] for c in f["chunks"]}
         chunk_meta = {c["text"]: c for c in f["chunks"]}
 
@@ -281,6 +284,7 @@ def evaluate_recall(vs, golden_faults, pool):
             "candidates": len(f["chunks"]), "facts": len(clusters), "covered": covered,
             "kept": len(context),
             "ctx": {lab: ctx_labels.count(lab) for lab in ("relevant", "wrong_fault", "irrelevant", "unlabeled")},
+            "ctx_kinds": {k: ctx_kinds.count(k) for k in KINDS},
             "missed": missed,
         })
     return out
@@ -323,6 +327,9 @@ def render_recall(rows, collection, show_missed):
     else:
         out.append(f"\n**recall summary ({collection})** — nothing to score")
     out.append("  missed facts by reason: " + ", ".join(f"{m} {n}" for m, n in totals.items()))
+    out.append("  context by kind: " + ", ".join(f"{k} {sum(r['ctx_kinds'][k] for r in rows)}" for k in KINDS)
+               + f" · faults missing a kind: " + ", ".join(
+                   f"{k} {sum(1 for r in rows if not r['ctx_kinds'][k])}" for k in KINDS))
     if show_missed:
         out.append("")
         for r in rows:
@@ -350,6 +357,7 @@ def main():
     ap.add_argument("--cap", help="override ABS_DISTANCE_CAP, e.g. mistake=0.40,finding=0.38")
     ap.add_argument("--max-per-kind", help="override MAX_PER_KIND, e.g. mistake=3,finding=2")
     ap.add_argument("--tag-mode", choices=["prefer", "union"], help="override TAG_MODE")
+    ap.add_argument("--kind-pool", choices=["split", "single"], help="override KIND_POOL")
     ap.add_argument("--show-kept", action="store_true", help="list every kept chunk with its good/bad/neutral tag")
     ap.add_argument("--pool", default="eval/relevance_pool.json",
                     help="relevance pool from eval/build_relevance_pool.py; enables recall (single mode). "
@@ -364,6 +372,8 @@ def main():
     trc.MAX_PER_KIND = {**trc.MAX_PER_KIND, **_parse_kv(args.max_per_kind, int)}
     if args.tag_mode:
         trc.TAG_MODE = args.tag_mode
+    if args.kind_pool:
+        trc.KIND_POOL = args.kind_pool
 
     with open(args.golden, encoding="utf-8") as f:
         golden = json.load(f)["faults"]
@@ -390,7 +400,8 @@ def main():
         f"gates: CANDIDATE_K={trc.CANDIDATE_K}, MAX_PER_KIND={trc.MAX_PER_KIND}, "
         f"ABS_DISTANCE_CAP={trc.ABS_DISTANCE_CAP}, RELATIVE_MARGIN={trc.RELATIVE_MARGIN}, "
         f"NEAR_DUP_JACCARD={trc.NEAR_DUP_JACCARD}, TAG_MODE={trc.TAG_MODE}"
-        + (f", TAG_BONUS={trc.TAG_BONUS}" if trc.TAG_MODE == "union" else ""),
+        + (f", TAG_BONUS={trc.TAG_BONUS}" if trc.TAG_MODE == "union" else "")
+        + f", KIND_POOL={trc.KIND_POOL}",
         f"golden: `{args.golden}` · mock: `{args.mock}`",
         report_pool,
         "",

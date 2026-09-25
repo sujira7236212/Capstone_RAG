@@ -15,8 +15,10 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 | B0 | gate ปัจจุบัน (v7 gate, v5 KB) | 10/10 · 0.62 · 1 | 0.15 (0.21) / 0.26 | 60 / 6 / 77 | 0.78 | 14 · 10 · 141 · 34 · 151 | baseline |
 | R0 | normalize `fault_tags` ใน DB (ข้อมูล ไม่ใช่ flag) | 10/10 · 0.61 · 1 | 0.15 (0.21) / 0.26 — 62/411 (+1) | 61 / 6 / 77 | 0.79 | 0 · 10 · 146 · 34 · 159 | **เก็บ** |
 | R1 | `--tag-mode union` (TAG_BONUS 0.03) | 10/10 · 0.49 · **2** | 0.14 (0.21) / 0.24 — **57**/411 (−5) | 56 / 6 / 79 | **0.71** | 0 · 0 · 150 · 34 · 170 | **revert** |
+| R2 | `--kind-pool single` (margin เดียว งบรวม 9) | 10/10 · 0.61 · 0 | **0.07** (0.21) / 0.10 — **28**/411 (−34) | 28 / 2 / **31** | 0.90 | 0 · 10 · 146 · **194** · 33 | **revert** |
+| (R2 diag) | single + margin/ลำดับเทียบ best ของ kind ตัวเอง — ไม่ใช่ขั้น ไม่ได้อยู่ใน repo | **9/10** · 0.50 · 1 | 0.16 (0.21) / 0.29 — 67/411 (+5) | 66 / **9** / 89 | 0.74 | 0 · 10 · 146 · 7 · 181 | ไม่ผ่าน (wrong_fault) |
 
-รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md`
+รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md`
 
 ## บันทึก
 
@@ -66,3 +68,24 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - wrong_fault −1 อยู่ใต้ insufficient back knee flexion (2 → 1) — น่าจะเป็น "A shallower lunge of 80 degrees…" (tag shallow lunge) ที่โดน penalty แรงขึ้น (ยืนยันแล้วเฉพาะที่ 0.03 ว่าตัวนี้หลุด) — ผลข้างเคียงที่ดีเพียงอย่างเดียว เล็กเกินจะเก็บทั้งขั้น
 
 **ข้อสรุป:** filter แบบ exclusive ทำงานมีประโยชน์กับ `finding` — กันประโยค protocol ที่ embedding แยกไม่ออก ตัวที่หลุดเพราะ tag_filter (10) น้อยกว่าที่ quota ต่อ kind กินอยู่มาก (159) ตรงกับข้อสังเกตจาก B0/R0 · ปัญหา protocol-sentence เป็นงานของ reranker (R6) หรือ facet `number`/`definition` (K1) — ถ้าทำ R6 แล้วค่อยลอง union ซ้ำใน leave-one-out
+
+### R2 — `--kind-pool single` (2026-09-25) → revert (default คง `split`)
+**เปลี่ยน:** `KIND_POOL` ใน `test_rag_compare.py` (flag `--kind-pool` ทั้งใน `test_rag_compare.py` และ `eval/eval_retrieval.py`; ไม่ใช้ชื่อ `--pool` เพราะชนกับ relevance pool ของ eval)
+- `split` (default = พฤติกรรมเดิม): report ตรงกับ R0 ทุกบรรทัด (ต่างแค่ header + บรรทัด `context by kind` ที่เพิ่มใหม่)
+- `single` (`_search_single()`): ค้นครั้งเดียวทุก kind (k = CANDIDATE_K × จำนวน kind = 48 เท่าจำนวน candidate เดิมรวมกัน) · margin เดียวจาก best รวม · งบรวม = sum(MAX_PER_KIND) ของ kind ที่ขอ (fault = 9, flawless principle = 2 เท่าเดิม) · **สิทธิ์เข้าสระไม่เปลี่ยน**: แต่ละ kind ยังใช้กฎ tag `prefer` ของตัวเอง (รวมเป็น `$or` ใน query เดียว) — เปลี่ยนจากข้อเสนอเดิม (prefer ทั้ง fault) เพราะนั่นจะเปลี่ยนขอบเขต tag filter ไปด้วยเป็น 2 ตัวแปร
+- eval: เพิ่มบรรทัด `context by kind` (จำนวน chunk ต่อ kind + จำนวน fault ที่ไม่มี kind นั้นเลย) ไว้วัด diversity
+
+**ผล: ไม่ผ่าน** — recall 62 → **28** facts, context 77 → **31** chunks · wrong_fault 6 → 2, golden bad 1 → 0, pool-precision 0.79 → 0.90 (สะอาดขึ้นเพราะเหลือน้อย)
+- context by kind: mistake 30 / finding 1 / principle 0 / consequence 0 — principle และ consequence หายจาก**ทุก** fault (R0: 22 / 18 / 19 / 18 ครบทุก fault)
+- สาเหตุ: **ระยะของแต่ละ kind อยู่คนละระดับ** query ถูกเขียนให้เหมือนประโยค mistake โดยตั้งใจ (บทเรียน v5) mistake จึงใกล้สุดเสมอ เช่น knee valgus best: mistake 0.034 · finding 0.045 · principle 0.090 · consequence 0.091 → cutoff 0.034 + 0.03 = 0.064 ตัด principle/consequence ทิ้งหมด · fact ที่ R0 เคยได้ หลุด 40 ตัว: margin 37 · quota 3
+- ข้อสังเกต: ตัวกั้นที่แท้ของ `split` ไม่ใช่แค่โควตาต่อ kind แต่รวมถึง **margin ต่อ kind** ที่ทำหน้าที่ปรับระดับระยะของแต่ละ kind ให้เท่ากันด้วย — ถอดทั้งคู่พร้อมกันจึงพัง
+- rank 146 เท่า R0 เป็นเรื่องบังเอิญ (ชุด fact ต่างกันฝั่งละ 47)
+
+**diagnostic (ไม่ใช้ตัดสิน, monkeypatch ใน scratch ไม่ได้อยู่ใน repo):** สระเดียว งบรวม 9 ไม่มีโควตาต่อ kind แต่ margin และลำดับวัดจาก best ของ kind ตัวเอง (`score − best_kind`)
+- recall 62 → **67** (+5), macro 0.26 → 0.29 · kind ครบทุก fault (mistake 20 / finding 20 / principle 28 / consequence 21)
+- แต่ wrong_fault 6 → **9**, pool-precision 0.74 (−0.05 พอดีเส้น), golden hit 10 → **9/10** (partial squat: mistake 2 ตัวไม่ good)
+- ได้: butt wink +2, knee valgus / shallow lunge / elbow flare / bicep partial ROM +1 · เสีย: partial squat −1
+- wrong_fault/irrelevant ที่เพิ่มมาจาก **fault ที่มี fact น้อย** (hip sag 13, push-up partial ROM 13, back knee 15, elbow flare 5): R0 ใส่แค่ 6–7 ช่องเพราะโควตา+margin ต่อ kind กั้นไว้ แต่แบบนี้เติมครบ 9 ช่อง ช่องที่เกินจึงเป็นขยะ (back knee wrong_fault 2 → 3, push-up partial ROM 1 → 2, hip sag 0 → 1)
+- ทิศทาง: งบรวมช่วย fault ที่มี fact เยอะ แต่ต้องมีตัวกันไม่ให้เติมช่องเกินเมื่อ fact น้อย — ตรงกับงานของ reranker (R6: ตัดด้วยคะแนนความเกี่ยวข้อง ไม่ใช่ระยะ)
+
+**ข้อสรุป:** R3 (MMR) ต้องมี R2 ก่อน → ข้ามไปด้วย ถัดไป R4 (multi-query what / why / fix) — query แยกตามคำถามจะทำให้ principle/consequence ใกล้สุดใน query ของตัวเองได้ ซึ่งแก้ต้นเหตุที่ระยะต่าง kind ไม่เท่ากัน หลัง R4 (และ R6) ค่อยลองสระเดียว + MMR ซ้ำ
