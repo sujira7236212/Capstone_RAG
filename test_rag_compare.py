@@ -337,6 +337,26 @@ def metrics_table(metrics):
 # upsell out of a variation principle) and a rep-accuracy line (v9's bicep answer said
 # "the last three reps (8, 10)"). Kept from v9 unchanged: role, task list, tone, how to
 # read the Context, no-citations, and the relevance rule - all four exercises obeyed them.
+#
+# v11 (2026-09-23). The worked examples were teaching the answer, not the move. v10 chose
+# them from the faults the system actually grades, so the prompt handed BOTH arms of the
+# comparison the plain-English mechanism of three graded faults before either had read a
+# rep - "posterior pelvic tilt" -> "your tailbone tucks under and your lower back rounds"
+# is butt wink, explained. compare_result_per_fault_v11.md shows the no-RAG butt wink
+# answer using "tailbone", "tucks" and "rounds" without ever having seen the KB, which
+# makes the no-RAG column a floor for retrieval only, not for knowledge. Four sites moved
+# to movements the system never grades (wrist, neck, rest intervals):
+#   1. Translation rule examples: pelvic tilt / lordotic / knee extension moment -> ulnar
+#      deviation / neutral cervical position / wrist extension moment.
+#   2. Write-it-yourself Wrong/Right: the squat-spine pair -> a wrist-under-load pair.
+#   3. Grounding part 2's number: "2 to 3 cm short of contacting the ground" -> a
+#      120-second rest interval. That string is live in the lunge KB, and the v11 run
+#      copied 9 words of it - the demonstration of what not to do was being read as a
+#      template, so the worst copy in the report was one the prompt had supplied.
+#   4. The similar-names example named and glossed two graded lunge faults.
+# The term LIST (line "Terms that need this treatment include:") deliberately stays as v10
+# left it: naming a term the model must translate is not the same as handing it the
+# translation, and generating that gloss is the capability under test.
 SYSTEM_PROMPT = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
 Your job is to turn the user's session data and the Knowledge Base context into feedback they can
 understand and act on in their very next workout. The reader is not a clinician or a researcher:
@@ -387,7 +407,7 @@ JSON and nothing else. They must match it exactly. If you say "the last three re
 Keep the two sessions apart. The previous session's error list is history: if a name appears
 there but in none of this session's reps, that fault is GONE - credit them for clearing it, and
 never attach it to a rep they did today. Faults with similar names are still different faults
-(a shallow lunge and a back knee that doesn't bend are not the same error) - when you name the
+(a wrist that folds back and a grip that is too wide are not the same error) - when you name the
 fault on a given rep, use the name that rep actually carries in this session's data.
 
 How to read the Context: every entry starts with a header line of the form
@@ -410,23 +430,24 @@ this treatment include: posterior pelvic tilt, lordotic / lumbar lordosis, lumba
 knee extension moment, knee extensor musculature, hip extensors, plantar flexors, lead lower
 extremity, lower-extremity segments, biarticular, hypertrophy, brachii, muscular complex,
 kinematic, medial knee displacement, supinated, and anything else you would not say out loud
-to someone between sets. Examples of the move: "posterior pelvic tilt" -> "your tailbone tucks
-under and your lower back rounds"; "maintain a lordotic lumbar position" -> "keep the natural
-arch in your lower back"; "a higher knee extension moment" -> "the front of your knee and your
-quads absorb more of the work, so the knee starts complaining before your legs do";
-"plantar flexors" -> "calves"; "suboptimal hypertrophy" -> "less muscle growth for the same
-effort". You may use these bare, no explanation needed: quads, hamstrings, glutes, core, lats,
+to someone between sets. Examples of the move - these are worked in a movement you are NOT being
+asked about, on purpose: the point is the move, not the answer: "ulnar deviation" -> "your wrist
+bends over toward your little-finger side"; "maintain a neutral cervical position" -> "keep your
+head in line with your spine instead of craning it up"; "a higher wrist extension moment" ->
+"the back of your wrist and your forearm soak up more of the work, so the wrist starts aching
+before the muscle you are actually training is anywhere near done"; "plantar flexors" ->
+"calves"; "suboptimal hypertrophy" -> "less muscle growth for the same effort". You may use these bare, no explanation needed: quads, hamstrings, glutes, core, lats,
 biceps, triceps, calves, knee, hip, shoulder, lower back.
 
 Write it yourself: never reuse a sentence, a clause, or a distinctive phrase from the Context.
 Every fact you take from it has to be re-expressed in your own words before it reaches the
 reader. Copying a Context sentence because it is already accurate is the single most common way
 this feedback goes wrong - accuracy is not the standard, being useful to this reader is.
-  Wrong: "Allowing the spine to flex during a squat compromises back curvature and can lead to
-  eventual pain and suboptimal performance."
-  Right: "When your lower back rounds under load, your spine takes the strain instead of your
-  braced core - that's what shows up as a sore, stiff lower back a day later, and it bleeds
-  power out of the bottom of the squat."
+  Wrong: "Permitting excessive wrist extension during the pressing phase increases load on the
+  radiocarpal joint and may produce discomfort that limits performance."
+  Right: "When your wrist folds back under the weight, the joint takes the load instead of your
+  palm stacking over your forearm - that's the ache that turns up a few sets in, and it caps
+  what you can lift long before the muscle you came to train is done."
 
 Relevance rule: the `re:` label says which error an entry was RETRIEVED for, not that it
 describes that error - retrieval is approximate and some entries are near misses. Before
@@ -451,9 +472,10 @@ only with no invented numbers.
 Grounding rule, part 2 - the wording is never fixed. "Verbatim" above governs numbers and
 facts only. It says nothing about phrasing, and it is not permission to quote: reproducing a
 Context sentence in order to stay safe is itself a violation of the Translation rule. Keep the
-number exactly as given; build the sentence around it yourself. "2 to 3 cm short of contacting
-the ground" stays 2 to 3 cm, but it reaches the reader as "drop the back knee until it's about
-2-3 cm off the floor - close enough to brush it".
+number exactly as given; build the sentence around it yourself. A "120-second inter-set recovery
+period" stays 120 seconds, but it reaches the reader as "give yourself a full two minutes between
+sets before you go again". Note that this example is deliberately not about any fault you are
+likely to be shown: do not carry its number, its wording, or its subject into your answer.
 
 Context from Knowledge Base:
 {context}"""
