@@ -101,6 +101,22 @@ TAG_BONUS = 0.03
 #            below the top CANDIDATE_K of their own kind (146), not to the budget as a whole.
 KIND_POOL = "split"
 
+# Queries embedded per resolved fault - see _search_multi().
+#   fault   - the taxonomy query alone (through R2).
+#   profile - QUERY_PROFILE: the taxonomy query ("what") plus one template each for "why it
+#             matters" and "how to fix it". The taxonomy query is worded like a curator
+#             mistake on purpose (error_taxonomy.py docstring), which keeps mistake chunks
+#             closest; consequence/principle chunks answer the other two questions. Templates
+#             are generic, not per fault, and were fixed before the R4 run.
+# Default "profile" since ablation R4 (vs R0: recall 62 -> 66 facts, wrong_fault 6 = 6, golden
+# bad 1 -> 0, pool-precision 0.79 -> 0.80). `--queries fault` restores the R0 behaviour.
+QUERIES = "profile"
+QUERY_PROFILE = {
+    "what": "{q}",
+    "why": "Harmful consequences, injury risk and joint stress caused by: {q}",
+    "fix": "How to correct it, coaching cues and corrective exercises for: {q}",
+}
+
 NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
 
 
@@ -269,8 +285,8 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
     the kinds whose tag filter had hits, best_by_kind = closest eligible chunk per kind (the
     per-kind `best` metric, comparable with split mode's).
     """
-    if TAG_MODE != "prefer":
-        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer' only")
+    if TAG_MODE != "prefer" or QUERIES != "fault":
+        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer', QUERIES 'fault' only")
     vec = vectorstore.embeddings.embed_query(query)
     kind_filters, tagged_kinds, best_by_kind = [], set(), {}
     for kind in kinds:
@@ -312,6 +328,61 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
             trace.append({"kind": kind, "text": text, "score": score, "reason": reason,
                           "tagged": kind in tagged_kinds, "code": code})
     return kept, tagged_kinds, best_by_kind
+
+
+def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None, trace=None):
+    """QUERIES "profile": the per-kind gate of _search() fed by several queries.
+
+    `vecs` = [query embedding]. Each query runs its own top-CANDIDATE_K search over the same
+    eligible pool (fault_tags "prefer": tagged chunks only if the kind has any). Raw distances
+    are not comparable across queries - the taxonomy query is phrased like the chunks and
+    sits far closer than a template - so every candidate is scored by its distance above
+    THAT query's best hit, taking the smallest over the queries it came back for. The gate
+    then runs on that: within RELATIVE_MARGIN (i.e. inside the margin of at least one
+    query), MAX_PER_KIND quota, near-dup. With a single query this is exactly _search().
+    `kept` carries the raw distance of the query the chunk was closest to relative to its best.
+
+    Returns (kept, tagged, best): best = smallest raw distance over the queries.
+    """
+    base_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
+    filt = base_filter
+    if code and vectorstore.similarity_search_with_score_by_vector(
+            vecs[0], k=1, filter={**base_filter, "fault_tags": {"$like": f"%|{code}|%"}}):
+        filt = {**base_filter, "fault_tags": {"$like": f"%|{code}|%"}}
+    tagged = filt is not base_filter
+    merged = {}
+    for vec in vecs:
+        hits = vectorstore.similarity_search_with_score_by_vector(vec, k=CANDIDATE_K, filter=filt)
+        if not hits:
+            continue
+        q_best = hits[0][1]
+        for doc, score in hits:
+            rel = score - q_best
+            if score > ABS_DISTANCE_CAP[kind]:
+                rel = float("inf")
+            key = doc.id or (_chunk_text(doc), doc.metadata.get("source"))
+            if key not in merged or rel < merged[key][2]:
+                merged[key] = (doc, score, rel)
+    if not merged:
+        return [], False, None
+    best = min(score for _, score, _ in merged.values())
+    kept = []
+    for doc, score, rel in sorted(merged.values(), key=lambda h: (h[2], h[1])):
+        text = _chunk_text(doc)
+        if len(kept) >= MAX_PER_KIND[kind]:
+            reason = "quota"
+        elif rel > RELATIVE_MARGIN:
+            reason = "margin"
+        elif _is_near_duplicate(text, already_kept):
+            reason = "dup"
+        else:
+            reason = "kept"
+            kept.append((doc, score))
+            already_kept.append(text)
+        if trace is not None:
+            trace.append({"kind": kind, "text": text, "score": score, "rel": rel, "reason": reason,
+                          "tagged": tagged, "code": code})
+    return kept, tagged, best
 
 
 def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
@@ -364,6 +435,21 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                 })
             for doc, score, kind in kept:
                 blocks.append((score, doc, kind, label))
+            return
+        if QUERIES == "profile" and code:
+            vecs = [vectorstore.embeddings.embed_query(t.format(q=query)) for t in QUERY_PROFILE.values()]
+            for kind in kinds:
+                kind_trace = [] if trace is not None else None
+                kept, tagged, best = _search_multi(vectorstore, vecs, exercise_id, kind, kept_texts,
+                                                   code=code, trace=kind_trace)
+                if trace is not None:
+                    trace.extend({**t, "error": label} for t in kind_trace)
+                metrics.append({
+                    "error": label, "kind": kind, "query": f"{query} (+{'/'.join(list(QUERY_PROFILE)[1:])})",
+                    "best": best, "kept": len(kept), "tagged": tagged, "tag_exclusive": tagged,
+                })
+                for doc, score in kept:
+                    blocks.append((score, doc, kind, label))
             return
         for kind in kinds:
             kind_trace = [] if trace is not None else None
@@ -753,6 +839,8 @@ def parse_args():
                     help=f"how fault_tags combine with semantic search, see TAG_MODE (default: {TAG_MODE})")
     ap.add_argument("--kind-pool", choices=["split", "single"], default=KIND_POOL,
                     help=f"per-kind quotas or one shared budget, see KIND_POOL (default: {KIND_POOL})")
+    ap.add_argument("--queries", choices=["fault", "profile"], default=QUERIES,
+                    help=f"taxonomy query only, or what/why/fix per fault, see QUERIES (default: {QUERIES})")
     return ap.parse_args()
 
 
@@ -760,6 +848,7 @@ if __name__ == "__main__":
     args = parse_args()
     TAG_MODE = args.tag_mode
     KIND_POOL = args.kind_pool
+    QUERIES = args.queries
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT
@@ -776,7 +865,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
-| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL} |
+| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
 collection (before any gate), `kept` = chunks that passed the relative/absolute gates and de-duplication

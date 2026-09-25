@@ -17,8 +17,9 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 | R1 | `--tag-mode union` (TAG_BONUS 0.03) | 10/10 · 0.49 · **2** | 0.14 (0.21) / 0.24 — **57**/411 (−5) | 56 / 6 / 79 | **0.71** | 0 · 0 · 150 · 34 · 170 | **revert** |
 | R2 | `--kind-pool single` (margin เดียว งบรวม 9) | 10/10 · 0.61 · 0 | **0.07** (0.21) / 0.10 — **28**/411 (−34) | 28 / 2 / **31** | 0.90 | 0 · 10 · 146 · **194** · 33 | **revert** |
 | (R2 diag) | single + margin/ลำดับเทียบ best ของ kind ตัวเอง — ไม่ใช่ขั้น ไม่ได้อยู่ใน repo | **9/10** · 0.50 · 1 | 0.16 (0.21) / 0.29 — 67/411 (+5) | 66 / **9** / 89 | 0.74 | 0 · 10 · 146 · 7 · 181 | ไม่ผ่าน (wrong_fault) |
+| R4 | `--queries profile` (what / why / fix, margin เทียบ best ของแต่ละ query) | 10/10 · 0.48 · **0** | **0.16** (0.21) / 0.27 — **66**/411 (+4) | 65 / 6 / 81 | 0.80 | 0 · 10 · 108 · 17 · 210 | **เก็บ** (default ใหม่) |
 
-รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md`
+รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md` · R4 `compare_output/ablation_R4_retrieval.md`
 
 ## บันทึก
 
@@ -89,3 +90,24 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - ทิศทาง: งบรวมช่วย fault ที่มี fact เยอะ แต่ต้องมีตัวกันไม่ให้เติมช่องเกินเมื่อ fact น้อย — ตรงกับงานของ reranker (R6: ตัดด้วยคะแนนความเกี่ยวข้อง ไม่ใช่ระยะ)
 
 **ข้อสรุป:** R3 (MMR) ต้องมี R2 ก่อน → ข้ามไปด้วย ถัดไป R4 (multi-query what / why / fix) — query แยกตามคำถามจะทำให้ principle/consequence ใกล้สุดใน query ของตัวเองได้ ซึ่งแก้ต้นเหตุที่ระยะต่าง kind ไม่เท่ากัน หลัง R4 (และ R6) ค่อยลองสระเดียว + MMR ซ้ำ
+
+### R3 — `--mmr λ` → ข้าม
+ต้องมี R2 (สระเดียว) ก่อน R2 ไม่ผ่าน จึงข้าม ย้ายไปลองหลัง R4/R6 (ดูแผน)
+
+### R4 — `--queries profile` (2026-09-26) → เก็บ, default ใหม่
+**เปลี่ยน:** `QUERIES` ใน `test_rag_compare.py` (flag `--queries fault|profile` ทั้งใน `test_rag_compare.py` และ `eval/eval_retrieval.py`)
+- `QUERY_PROFILE` = 3 query ต่อ fault: what = query เดิมจาก taxonomy · why = `"Harmful consequences, injury risk and joint stress caused by: {q}"` · fix = `"How to correct it, coaching cues and corrective exercises for: {q}"` — template เดียวทุก fault ตั้งก่อนรัน ไม่ได้จูน ถ้อยคำคนละแบบกับ query why/fix ที่ใช้สร้าง relevance pool (กันวนวงกลม)
+- ทุก query ไปทุก kind (`_search_multi()`) · กฎ tag `prefer` ต่อ kind เหมือนเดิม · แต่ละ query top-12 ของตัวเอง · ระยะดิบข้าม query เทียบกันไม่ได้ (บทเรียน R2) จึงให้คะแนน chunk = ระยะที่ห่างจาก best **ของ query นั้น** เอาค่าน้อยสุดข้าม query → ผ่าน margin ถ้าอยู่ใน margin ของ query ใด query หนึ่ง · โควตาต่อ kind เท่าเดิม · มี query เดียว = `_search()` ทุกประการ (`--queries fault` ได้ report ตรงกับ R0 ต่างแค่ header)
+- ฝั่ง flawless (ไม่มี error) และ `--raw-query` ไม่เปลี่ยน (ใช้ query เดียวเหมือนเดิม)
+
+**ผล: ผ่านทุกข้อ** — recall 62 → **66** facts (+4), macro 0.26 → 0.27, wrong_fault 6 = 6, golden bad 1 → **0**, pool-precision 0.79 → 0.80 · kind ครบทุก fault (mistake 25 / finding 19 / principle 19 / consequence 18)
+- miss: rank 146 → 108, margin 34 → 17, quota 159 → **210** — query เพิ่มแล้วเจอของดีมากขึ้น แต่ช่องต่อ kind เต็ม ตัวกั้นหลักตอนนี้คือโควตา
+- context 77 → 81 chunk (budget 9 เท่าเดิม — fault ที่เคยเหลือช่องว่างได้ของเพิ่ม เช่น hip sag, push-up partial ROM)
+- chunk ที่เข้ามาใหม่เป็นเนื้อหาแนว why/fix ที่แผนต้องการ: "medial-knee displacement … was corrected when a 2-inch lift was placed under the heels" (วิธีแก้ knee valgus) · "Limitations in adductor extensibility … cause valgus knee collapse" (สาเหตุ) · "Knees caving in … commonly associated with overactive adductors…" · "Squatting with the spine in a flexed position increases the risk of disc herniation" · "A lunge with a shorter step length results in joint forces almost two times higher"
+- ที่เสียจริง: "The target depth for the trailing knee was defined as 2 to 3 cm short of contacting the ground." (back knee, ตัวเลขเฉพาะ) · "Descend until the top of the thigh is at least parallel…" (partial squat principle) · partial squat finding เปลี่ยนจาก relevant เป็น irrelevant 1 ตัว
+- wrong_fault เท่าเดิมแต่เปลี่ยนตัว: ออก preacher curl (elbow flare, golden BAD) และ "Knee valgus … during the lunge" (back knee) · เข้า "Using a narrow-width hand position can restrict the elbow joint's range of motion" (push-up partial ROM) และ principle "trunk leaned forward increases the hip extensor impulse" (trunk lean — judge ให้ wrong_fault)
+- unlabeled 1 ตัว (back knee consequence ทั่วไป "Lunges performed without optimal technique can create unnecessary joint stress…")
+- **golden precision 0.61 → 0.48 (good 36 → 30, neutral 22 → 33)** — ไม่ใช่เกณฑ์ ส่วนใหญ่เป็นการสลับ relevant → relevant ที่ตัวใหม่ไม่ตรง `must_hit` (pattern เขียนตามถ้อยคำ v4) เช่น "Maintain a neutral low back position with a slight lordosis" แทน "…neutral, lordotic lumbar position…" · ถ้าจะใช้ golden precision ต่อ ต้องเพิ่ม phrasing ใน `golden_chunks.json` ก่อน
+- session mode (mock 4 session แบบที่ generation ใช้, ไม่มี pool): golden bad 1 → 0, good 22 → 16 (สาเหตุเดียวกับข้างบน)
+- ข้อจำกัด: relevance pool สร้างจาก 4 query ที่มีแนว why/fix อยู่แล้ว (ถ้อยคำต่างกัน) ตัวหารจึงครอบคลุมของที่ query why/fix หาเจอดีกว่าของที่ไม่มี query ไหนหา — ไม่ใช่ปัญหากับการเทียบ R0 ↔ R4 แต่ควรรู้ไว้
+- ไม่ได้ทำ generation mini-check (ต้องมี `--samples N` ก่อน — ค้างใน G1)

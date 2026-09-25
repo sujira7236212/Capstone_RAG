@@ -358,6 +358,7 @@ def main():
     ap.add_argument("--max-per-kind", help="override MAX_PER_KIND, e.g. mistake=3,finding=2")
     ap.add_argument("--tag-mode", choices=["prefer", "union"], help="override TAG_MODE")
     ap.add_argument("--kind-pool", choices=["split", "single"], help="override KIND_POOL")
+    ap.add_argument("--queries", choices=["fault", "profile"], help="override QUERIES")
     ap.add_argument("--show-kept", action="store_true", help="list every kept chunk with its good/bad/neutral tag")
     ap.add_argument("--pool", default="eval/relevance_pool.json",
                     help="relevance pool from eval/build_relevance_pool.py; enables recall (single mode). "
@@ -374,6 +375,8 @@ def main():
         trc.TAG_MODE = args.tag_mode
     if args.kind_pool:
         trc.KIND_POOL = args.kind_pool
+    if args.queries:
+        trc.QUERIES = args.queries
 
     with open(args.golden, encoding="utf-8") as f:
         golden = json.load(f)["faults"]
@@ -401,7 +404,7 @@ def main():
         f"ABS_DISTANCE_CAP={trc.ABS_DISTANCE_CAP}, RELATIVE_MARGIN={trc.RELATIVE_MARGIN}, "
         f"NEAR_DUP_JACCARD={trc.NEAR_DUP_JACCARD}, TAG_MODE={trc.TAG_MODE}"
         + (f", TAG_BONUS={trc.TAG_BONUS}" if trc.TAG_MODE == "union" else "")
-        + f", KIND_POOL={trc.KIND_POOL}",
+        + f", KIND_POOL={trc.KIND_POOL}, QUERIES={trc.QUERIES}",
         f"golden: `{args.golden}` · mock: `{args.mock}`",
         report_pool,
         "",
