@@ -121,6 +121,15 @@ QUERIES = "profile"
 HYBRID = False
 BM25_K = CANDIDATE_K
 BM25_WEIGHT = 0.03
+
+# Cross-encoder reranking in place of RELATIVE_MARGIN - see _search_multi() and kb_rerank.py.
+# Candidates are unchanged (every query's vector top-CANDIDATE_K per kind); each is scored
+# against every query string, best score kept, and the gate becomes score >= RERANK_MIN
+# instead of "within RELATIVE_MARGIN of the best distance". Order within the per-kind quota
+# follows the score. RERANK_MIN = 0.5 on the sigmoid, i.e. logit 0: the model's own
+# relevant / not-relevant boundary, fixed before the R6 run rather than tuned on it.
+RERANK = False
+RERANK_MIN = 0.5
 QUERY_PROFILE = {
     "what": "{q}",
     "why": "Harmful consequences, injury risk and joint stress caused by: {q}",
@@ -340,7 +349,7 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
     return kept, tagged_kinds, best_by_kind
 
 
-def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None, trace=None):
+def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None, trace=None, texts=None):
     """QUERIES "profile": the per-kind gate of _search() fed by several queries.
 
     `vecs` = [query embedding]. Each query runs its own top-CANDIDATE_K search over the same
@@ -351,6 +360,10 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
     then runs on that: within RELATIVE_MARGIN (i.e. inside the margin of at least one
     query), MAX_PER_KIND quota, near-dup. With a single query this is exactly _search().
     `kept` carries the raw distance of the query the chunk was closest to relative to its best.
+
+    RERANK: same candidates, but the margin test and the order are replaced by the
+    cross-encoder score of each chunk against `texts` (the query strings behind `vecs`),
+    best over the queries - see RERANK.
 
     Returns (kept, tagged, best): best = smallest raw distance over the queries.
     """
@@ -376,12 +389,23 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
     if not merged:
         return [], False, None
     best = min(score for _, score, _ in merged.values())
+    if RERANK:
+        # RERANK replaces the margin: gate on the cross-encoder's score (best over `texts`),
+        # order by it. ABS_DISTANCE_CAP stays as the backstop (rel is inf past it).
+        import kb_rerank
+        cands = list(merged.values())
+        rr = kb_rerank.max_scores(texts, [_chunk_text(doc) for doc, _, _ in cands])
+        ranked = sorted(((doc, score, rel, r) for (doc, score, rel), r in zip(cands, rr)),
+                        key=lambda h: (-h[3], h[1]))
+    else:
+        ranked = [(doc, score, rel, None) for doc, score, rel in sorted(merged.values(), key=lambda h: (h[2], h[1]))]
     kept = []
-    for doc, score, rel in sorted(merged.values(), key=lambda h: (h[2], h[1])):
+    for doc, score, rel, rr in ranked:
         text = _chunk_text(doc)
         if len(kept) >= MAX_PER_KIND[kind]:
             reason = "quota"
-        elif rel > RELATIVE_MARGIN:
+        elif (rr < RERANK_MIN or rel == float("inf")) if RERANK else rel > RELATIVE_MARGIN:
+            # under RERANK "margin" = below RERANK_MIN, i.e. the relevance gate either way
             reason = "margin"
         elif _is_near_duplicate(text, already_kept):
             reason = "dup"
@@ -390,8 +414,8 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
             kept.append((doc, score))
             already_kept.append(text)
         if trace is not None:
-            trace.append({"kind": kind, "text": text, "score": score, "rel": rel, "reason": reason,
-                          "tagged": tagged, "code": code})
+            trace.append({"kind": kind, "text": text, "score": score, "rel": rel, "rerank": rr,
+                          "reason": reason, "tagged": tagged, "code": code})
     return kept, tagged, best
 
 
@@ -507,7 +531,9 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
             for doc, score, kind in kept:
                 blocks.append((score, doc, kind, label))
             return
-        if (QUERIES == "profile" or HYBRID) and code:
+        if (QUERIES == "profile" or HYBRID or RERANK) and code:
+            if HYBRID and RERANK:
+                raise ValueError("HYBRID and RERANK are not implemented together")
             texts = [t.format(q=query) for t in QUERY_PROFILE.values()] if QUERIES == "profile" else [query]
             vecs = [vectorstore.embeddings.embed_query(t) for t in texts]
             for kind in kinds:
@@ -517,13 +543,13 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                                                         kept_texts, code=code, trace=kind_trace)
                 else:
                     kept, tagged, best = _search_multi(vectorstore, vecs, exercise_id, kind, kept_texts,
-                                                       code=code, trace=kind_trace)
+                                                       code=code, trace=kind_trace, texts=texts)
                 if trace is not None:
                     trace.extend({**t, "error": label} for t in kind_trace)
                 metrics.append({
                     "error": label, "kind": kind,
                     "query": query + (f" (+{'/'.join(list(QUERY_PROFILE)[1:])})" if QUERIES == "profile" else "")
-                             + (" [hybrid]" if HYBRID else ""),
+                             + (" [hybrid]" if HYBRID else "") + (" [rerank]" if RERANK else ""),
                     "best": best, "kept": len(kept), "tagged": tagged, "tag_exclusive": tagged,
                 })
                 for doc, score in kept:
@@ -921,6 +947,8 @@ def parse_args():
                     help=f"taxonomy query only, or what/why/fix per fault, see QUERIES (default: {QUERIES})")
     ap.add_argument("--hybrid", action=argparse.BooleanOptionalAction, default=HYBRID,
                     help=f"add BM25 next to vector search, see HYBRID (default: {HYBRID})")
+    ap.add_argument("--rerank", action=argparse.BooleanOptionalAction, default=RERANK,
+                    help=f"cross-encoder gate instead of RELATIVE_MARGIN, see RERANK (default: {RERANK})")
     return ap.parse_args()
 
 
@@ -930,6 +958,7 @@ if __name__ == "__main__":
     KIND_POOL = args.kind_pool
     QUERIES = args.queries
     HYBRID = args.hybrid
+    RERANK = args.rerank
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT
@@ -946,7 +975,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
-| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES}, HYBRID={HYBRID}{f" (BM25_K={BM25_K}, BM25_WEIGHT={BM25_WEIGHT})" if HYBRID else ""} |
+| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES}, HYBRID={HYBRID}{f" (BM25_K={BM25_K}, BM25_WEIGHT={BM25_WEIGHT})" if HYBRID else ""}, RERANK={RERANK}{f" (min {RERANK_MIN})" if RERANK else ""} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
 collection (before any gate), `kept` = chunks that passed the relative/absolute gates and de-duplication

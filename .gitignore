@@ -22,3 +22,7 @@ excluded_from_kb/
 
 # Raw dump from check_chunks.py (~550 KB), regenerable.
 chunk_results.txt
+
+# --- caches ---
+# kb_rerank.py's cross-encoder scores, keyed by model + query + chunk text; rebuilt on demand.
+.cache/

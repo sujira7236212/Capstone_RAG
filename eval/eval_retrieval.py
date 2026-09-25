@@ -199,7 +199,8 @@ def render(rows, collection, show_kept):
 #                  "prefer" only - under "union" the untagged search always runs).
 #   rank         - chunk was eligible for its kind's search but not in the top CANDIDATE_K
 #                  (KIND_POOL "single": not in the top CANDIDATE_K * kinds of the shared search).
-#   margin       - in the top CANDIDATE_K but past best + RELATIVE_MARGIN.
+#   margin       - in the top CANDIDATE_K but past best + RELATIVE_MARGIN (RERANK: cross-encoder
+#                  score below RERANK_MIN).
 #   quota        - within the margin but MAX_PER_KIND was already full (KIND_POOL "single":
 #                  the shared budget, sum of MAX_PER_KIND).
 #   dup          - near-dup of a chunk kept for another fault (session mode only; rare here).
@@ -360,6 +361,8 @@ def main():
     ap.add_argument("--kind-pool", choices=["split", "single"], help="override KIND_POOL")
     ap.add_argument("--queries", choices=["fault", "profile"], help="override QUERIES")
     ap.add_argument("--hybrid", action=argparse.BooleanOptionalAction, help="override HYBRID")
+    ap.add_argument("--rerank", action=argparse.BooleanOptionalAction, help="override RERANK")
+    ap.add_argument("--rerank-min", type=float, help="override RERANK_MIN")
     ap.add_argument("--show-kept", action="store_true", help="list every kept chunk with its good/bad/neutral tag")
     ap.add_argument("--pool", default="eval/relevance_pool.json",
                     help="relevance pool from eval/build_relevance_pool.py; enables recall (single mode). "
@@ -380,6 +383,10 @@ def main():
         trc.QUERIES = args.queries
     if args.hybrid is not None:
         trc.HYBRID = args.hybrid
+    if args.rerank is not None:
+        trc.RERANK = args.rerank
+    if args.rerank_min is not None:
+        trc.RERANK_MIN = args.rerank_min
 
     with open(args.golden, encoding="utf-8") as f:
         golden = json.load(f)["faults"]
@@ -408,7 +415,8 @@ def main():
         f"NEAR_DUP_JACCARD={trc.NEAR_DUP_JACCARD}, TAG_MODE={trc.TAG_MODE}"
         + (f", TAG_BONUS={trc.TAG_BONUS}" if trc.TAG_MODE == "union" else "")
         + f", KIND_POOL={trc.KIND_POOL}, QUERIES={trc.QUERIES}, HYBRID={trc.HYBRID}"
-        + (f" (BM25_K={trc.BM25_K}, BM25_WEIGHT={trc.BM25_WEIGHT})" if trc.HYBRID else ""),
+        + (f" (BM25_K={trc.BM25_K}, BM25_WEIGHT={trc.BM25_WEIGHT})" if trc.HYBRID else "")
+        + (f", RERANK=True (min {trc.RERANK_MIN})" if trc.RERANK else ""),
         f"golden: `{args.golden}` · mock: `{args.mock}`",
         report_pool,
         "",

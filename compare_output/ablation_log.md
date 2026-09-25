@@ -19,6 +19,7 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 | (R2 diag) | single + margin/ลำดับเทียบ best ของ kind ตัวเอง — ไม่ใช่ขั้น ไม่ได้อยู่ใน repo | **9/10** · 0.50 · 1 | 0.16 (0.21) / 0.29 — 67/411 (+5) | 66 / **9** / 89 | 0.74 | 0 · 10 · 146 · 7 · 181 | ไม่ผ่าน (wrong_fault) |
 | R4 | `--queries profile` (what / why / fix, margin เทียบ best ของแต่ละ query) | 10/10 · 0.48 · **0** | **0.16** (0.21) / 0.27 — **66**/411 (+4) | 65 / 6 / 81 | 0.80 | 0 · 10 · 108 · 17 · 210 | **เก็บ** (default ใหม่) |
 | R5 | `--hybrid` (BM25 ใน Python, BM25_K 12, BM25_WEIGHT 0.03) | 10/10 · 0.46 · **1** | 0.16 (0.21) / 0.26 — **65**/411 (−1 vs R4) | 64 / **8** / 81 | 0.79 | 0 · 10 · 71 · 17 · 248 | **revert** |
+| R6 | `--rerank` (bge-reranker-v2-m3, gate sigmoid ≥ 0.5) | — | — | — | — | — | **เลื่อน** (เครื่องไม่พอ ยังไม่ได้วัด) |
 
 รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md` · R4 `compare_output/ablation_R4_retrieval.md` · R5 `compare_output/ablation_R5_retrieval.md`
 
@@ -136,3 +137,17 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - candidate จาก BM25 ที่ผ่าน margin ได้ไม่เคยชนะโควตา (rank 108 → 71 แต่ไหลไป quota หมด) ความเสียหายทั้งหมดมาจากการเรียงตาม keyword · ไม่มีน้ำหนักไหนที่ recall ขึ้น
 
 **ข้อสรุป:** บน KB นี้กับ query แบบบรรยายอาการ BM25 ไม่เพิ่มอะไร ถ้าจะลองอีกควรเป็นตอนมี query ที่มีตัวเลข/ชื่อเฉพาะ (เช่น dose, ชื่อ drill หลัง K2) · flag และ `kb_bm25.py` คงไว้ (default ปิด)
+
+### R6 — `--rerank` (2026-09-26) → เลื่อน ยังไม่ได้วัด (เครื่องไม่พอ) · default คง `RERANK = False`
+**ออกแบบไว้ (ตั้งก่อนรัน):** candidate เหมือน R4 ทุกอย่าง (3 query × vector top-12 ต่อ kind, tag `prefer`) · cross-encoder `BAAI/bge-reranker-v2-m3` ให้คะแนนคู่ (query, chunk) ทุก query เอาค่าสูงสุด · gate แทน `RELATIVE_MARGIN`: sigmoid(logit) ≥ `RERANK_MIN` 0.5 (= logit 0 เส้นแบ่งของโมเดลเอง) · เรียงตามคะแนน โควตาต่อ kind + near-dup เดิม · `ABS_DISTANCE_CAP` คงเป็น backstop · เลือก local cross-encoder เพราะไม่ใช่ตระกูลเดียวกับ judge ของ relevance pool (`gemini-3.8-flash`) · Gemini API ไม่มี endpoint rerank; Vertex AI Ranking API ต้องใช้ GCP project + billing + ADC (ไม่รับ API key)
+- โค้ด: `RERANK` / `RERANK_MIN` + flag `--rerank` ใน `test_rag_compare.py` (ใน `_search_multi()`) และ `eval/eval_retrieval.py` (`--rerank`, `--rerank-min`) · โมดูลใหม่ `kb_rerank.py` (cache คะแนนใน `.cache/rerank/`, gitignored) · default ปิด → eval ได้ report ตรงกับ R4 (ต่างแค่ header)
+
+**ติดอะไร:** เครื่อง dev มี RAM 5.9 GB · commit limit 23.9 GB (RAM + page file 18 GB) ถูกใช้ไป ~21.7 GB จากหลายโปรแกรมรวมกัน (Docker/WSL 1.1 GB, VS Code 1.5 GB, antivirus 0.85 GB, …) เหลือว่าง ~2 GB
+1. น้ำหนัก fp32 2.27 GB: safetensors map ไฟล์แบบ copy-on-write ซึ่ง Windows คิดเต็มขนาดกับ commit → "paging file is too small" (os error 1455) · แก้: `kb_rerank._fp16_dir()` แปลงเป็น fp16 (1.14 GB, `.cache/models/`) ด้วยการอ่านไฟล์ทีละ 64 MB — ทำงานได้ (15 วินาที)
+2. ติดตั้ง `torch==2.13.0+cu126` (แทนตัว CPU) เพื่อรันบน GTX 1650 4 GB — `torch.cuda.is_available()` True, arch มี sm_75
+3. โหลด fp16 ผ่าน transformers ยังโดน error 1455 (DLL ของ CUDA กิน commit ไปแล้ว) · แก้: สร้างโมเดลบน meta device แล้วอ่านน้ำหนักเองทีละ 32 MB ส่งขึ้น GPU (`_read_tensors()`)
+4. ยังโดน `CUDA out of memory` ตอนจองไป 827 MB ทั้งที่ GPU ว่าง 2.4 GB — บน Windows (WDDM) หน่วยความจำที่ CUDA จองถูกนับกับ commit ของระบบด้วย commit ที่เหลือจึงไม่พอ
+- ทางที่ยังไม่ได้ลอง: ปิดโปรแกรมอื่นให้เหลือ commit ≥ ~1.5 GB แล้วโหลดใหม่ · `BAAI/bge-reranker-base` (278M ครึ่งหนึ่งของ v2-m3) · เครื่องที่ RAM มากกว่า · reranker แบบ hosted (Vertex / Cohere)
+- **ยังไม่มีการโหลดโมเดลสำเร็จเลย** โค้ดส่วน `_get_model()` / `_predict()` จึงยังไม่ได้ผ่านการทดสอบจริง ต้อง smoke test ก่อนใช้ (คู่ relevant ต้องได้คะแนนสูงกว่าคู่ protocol sentence ชัดเจน)
+
+**ผลต่อแผน:** leave-one-out หลัง R6 (ลอง union / สระเดียว + MMR ซ้ำ) เลื่อนตาม · ขั้นที่เก็บล่าสุดยังเป็น **R4** · เหตุผลที่ข้ามได้: ตัวกั้นหลักตอนนี้คือโควตาต่อ kind (210) และ KB ขาดเนื้อหา dose/drill ซึ่ง reranker แก้ไม่ได้ · ถ้าเครื่อง deploy สเปกใกล้เครื่องนี้ reranker 568M ก็ใช้จริงไม่ได้อยู่ดี
