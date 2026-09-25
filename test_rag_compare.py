@@ -133,7 +133,7 @@ def _chunk_text(doc):
     return doc.metadata.get("text") or doc.page_content
 
 
-def _search(vectorstore, query, exercise_id, kind, already_kept, code=None):
+def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trace=None):
     """One vector search, with the kind filter pushed INTO the query.
 
     v5 fetched top-k filtered only on exercise_id and dropped the wrong item_kind
@@ -157,6 +157,11 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None):
     fault_tags is "" because v4 never tagged per item - fall back to the untagged search,
     which is exactly today's behaviour. Returns (kept, tagged) so callers/metrics can see
     which path served the query.
+
+    `trace`: optional list; when given, every candidate in the pool is appended with the
+    gate's decision for it (kept / quota / margin / dup) so eval/eval_retrieval.py can say
+    WHY a relevant chunk never reached the context. Kept set is identical with or without
+    it - the loop below only stopped breaking early so later candidates get a reason too.
     """
     base_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
     tagged = False
@@ -175,19 +180,29 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None):
     cutoff = min(ABS_DISTANCE_CAP[kind], best + RELATIVE_MARGIN)
     kept = []
     for doc, score in hits:
-        if score > cutoff:
-            break
         text = _chunk_text(doc)
-        if _is_near_duplicate(text, already_kept):
-            continue
-        kept.append((doc, score))
-        already_kept.append(text)
+        # Same decisions, same order as the original early-break loop: hits are sorted by
+        # distance, so once one is past the cutoff every later one is too.
         if len(kept) >= MAX_PER_KIND[kind]:
+            reason = "quota"
+        elif score > cutoff:
+            reason = "margin"
+        elif _is_near_duplicate(text, already_kept):
+            reason = "dup"
+        else:
+            reason = "kept"
+            kept.append((doc, score))
+            already_kept.append(text)
+        if trace is not None:
+            trace.append({"kind": kind, "text": text, "score": score, "reason": reason,
+                          "tagged": tagged, "code": code})
+        elif reason in ("quota", "margin"):
             break
     return kept, tagged
 
 
-def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False):
+def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
+                       trace=None):
     """Retrieve KB chunks relevant to the session's actual errors (or general principles
     for a flawless session). Returns (blocks, metrics) where blocks is a list of
     (distance, doc, kind, error_label) sorted by distance - the structured form of what
@@ -212,6 +227,9 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
     asks the model to repeat the source to the user, but the label stays in the header so
     the report reader can trace a fact in the output back to its chunk - v5 passed bare
     sentences with no attribution at all, which made that check impossible.
+
+    `trace`: optional list passed through to _search() - see there. Each entry also gets
+    the error label it was retrieved for.
     """
     kept_texts = []
     blocks = []
@@ -220,7 +238,11 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
 
     def collect(query, kinds, label, code=None):
         for kind in kinds:
-            kept, tagged = _search(vectorstore, query, exercise_id, kind, kept_texts, code=code)
+            kind_trace = [] if trace is not None else None
+            kept, tagged = _search(vectorstore, query, exercise_id, kind, kept_texts, code=code,
+                                   trace=kind_trace)
+            if trace is not None:
+                trace.extend({**t, "error": label} for t in kind_trace)
             # Best distance is measured on the raw pool, not on `kept`: a query whose
             # closest chunk fails the cap still tells us how far off it was. Probe the
             # SAME pool _search actually kept from (tagged if the tag-filter had hits,
