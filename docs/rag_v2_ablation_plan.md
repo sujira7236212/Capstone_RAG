@@ -1,7 +1,18 @@
 # แผนปรับ RAG v2 — เปลี่ยนทีละอย่าง วัดทุกขั้น
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-25 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เสร็จ เก็บ (commit `49863f5`) · R1 ไม่ผ่าน revert (flag คงไว้ default `prefer`) · R2 ไม่ผ่าน revert (flag คงไว้ default `split`) · R3 ข้าม · **R4 เก็บ (default `--queries profile`)** · R5 ไม่ผ่าน revert (flag คงไว้ default ปิด) — ถัดไป R6**
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-26 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เก็บ (`49863f5`) · R1 ไม่ผ่าน (`960e4c9`) · R2 ไม่ผ่าน (`31a65bc`) · R3 ข้าม · **R4 เก็บ = default ปัจจุบัน (`36b456e`)** · R5 ไม่ผ่าน (`2ff454b`) · R6 เลื่อน เครื่องไม่พอ (`f4272fc`) — ขั้น R จบที่ R4 ถัดไป: ดู §0**
 > ผลทุกขั้นบันทึกใน `compare_output/ablation_log.md`
+
+## 0. เริ่มต่อจากตรงนี้ (session ใหม่)
+
+1. อ่านไฟล์นี้ แล้วอ่าน `compare_output/ablation_log.md` (รายละเอียด + ตัวเลขของทุกขั้น) · ทุกคำสั่งและกับดักอยู่ใน §5
+2. **retrieval ปัจจุบัน = R4** — default ใน `test_rag_compare.py` คือ `--tag-mode prefer --kind-pool split --queries profile --no-hybrid --no-rerank` · ตัวเลขฐานที่ขั้นถัดไปต้องเทียบ = §4 คอลัมน์ R4 (`compare_output/ablation_R4_retrieval.md`)
+3. **B0 สร้างซ้ำไม่ได้แล้ว** (R0 แก้ `fault_tags` ใน DB) → baseline เก่าที่สุดที่รันได้คือ R0 = `--queries fault` (report ตรงกับ `ablation_R0_retrieval.md` ทุกบรรทัด ต่างแค่ header)
+4. ขั้นถัดไป (เลือกอันเดียว ตามกติกา §2):
+   - **G1 — แนะนำเป็นอันดับแรก** ยังไม่เคยวัดฝั่ง generation เลยตั้งแต่เริ่มแผน ต้องรู้ก่อนว่า recall 62→66 ของ R4 ทำให้คำตอบดีขึ้นจริงไหม · ต้องสร้างเครื่องมือก่อน 2 อย่าง (ดู Checkpoint G1 ใน §3)
+   - **C1** แยก config (refactor ผลต้องเท่าเดิม)
+   - **K1/K2** เพิ่ม facet / เนื้อหา dose-drill — ต้นเหตุหลักที่ RAG ไม่ชนะ no-RAG (KB ไม่มี prescription/dose)
+5. R6 (reranker) ค้างเพราะเครื่อง — ไม่ต้องรอ ดู §4
 
 ## 1. ที่มา
 
@@ -13,11 +24,13 @@
    - ค้นจากสระเดียว และหาความหลากหลายแบบนุ่ม (MMR) แทนโควตาตายตัว
    - ย้ายสิ่งที่ prompt ต้องการไปไว้ใน config (`retrieval_profile.yaml`)
    - เก็บ facet เป็น metadata หลายค่าที่ retag ได้โดยไม่ต้อง re-extract หรือ re-embed
+   - **อัปเดตหลัง R2/R4:** สระเดียว + margin เดียวใช้ไม่ได้ (ระยะของแต่ละ kind อยู่คนละระดับ query ทรง mistake ทำให้ kind อื่นหลุดหมด) → ได้ความหลากหลายจาก multi-query (R4) แทน · สระเดียว + MMR รอ reranker (R6)
 3. ให้**เปลี่ยนทีละอย่าง** เพื่อรู้ว่าขั้นไหนทำให้ดีขึ้นหรือแย่ลง
 
 ## 2. กติกาการทดลอง
 
-1. **หนึ่งขั้น = หนึ่งตัวแปร = หนึ่ง commit** ทำเป็น flag ใน CLI (default = พฤติกรรมเดิม) เพื่อสลับ A/B และ revert ได้
+1. **หนึ่งขั้น = หนึ่งตัวแปร = หนึ่ง commit** ทำเป็น flag ใน CLI (default = พฤติกรรมเดิม) เพื่อสลับ A/B และ revert ได้ · ขั้นที่**เก็บ** ให้เปลี่ยน default เป็นพฤติกรรมใหม่ (แบบ R4) · ขั้นที่ไม่ผ่านเก็บ flag ไว้ default ปิด · ทุกขั้นต้องเช็กว่า default ยังได้ report ตรงกับขั้นที่เก็บล่าสุด (ต่างแค่ header)
+   - ตั้งค่าพารามิเตอร์ใหม่ (น้ำหนัก, threshold, template) **ก่อนรัน** และจดเหตุผล ห้ามจูนจากผล eval · sweep ค่าอื่นได้แต่จดเป็น "ไม่ใช้ตัดสิน"
 2. **แต่ละขั้นวนแบบนี้:** implement ข้อเดียว → รัน eval → จดผล → ตัดสินใจเก็บหรือ revert → **หยุดรายงาน user** → ค่อยเริ่มข้อถัดไป เทียบกับ "ขั้นล่าสุดที่เก็บไว้" ไม่ใช่เทียบกับ B0
 3. **เกณฑ์เก็บขั้น retrieval** (ต้องผ่านทุกข้อ):
    - recall ขึ้น
@@ -43,7 +56,7 @@
 
 ### ขั้น R — retrieval (ทีละข้อ ตามลำดับ)
 
-| ขั้น | flag (เสนอ) | เปลี่ยนแค่ | คาดว่า |
+| ขั้น | flag | เปลี่ยนแค่ | คาดว่า |
 |---|---|---|---|
 | **R0** ✅ เก็บ (recall 61→62 facts, tag_spelling 14→0) | (แก้ข้อมูล ไม่ใช่ flag) | normalize `fault_tags` ใน DB: `\|knee_valgus\|` → `\|knee valgus\|` ฯลฯ แก้แค่ metadata ไม่ re-embed · backup แถวที่แก้ลง `data_pipeline/backups/` ก่อน แบบเดียวกับ `fix_ocr_degrees.py` · ต้องแก้ต้นทางด้วย (`curator.py` หรือ `ingest.py`) กันไม่ให้กลับมาอีก | tag_spelling 14 → 0 · recall ↑ เล็กน้อย (partial squat, bicep partial ROM) |
 | R1 ❌ revert (recall 62→57, golden bad 1→2, pool-precision 0.79→0.71) | `--tag-mode union` | tag จากแบบเลือกทางเดียว → union ของสระที่มี tag กับไม่มี tag + boost/penalty (`TAG_BONUS` 0.03) | tag_filter ↓ · wrong_fault ต้องไม่ ↑ |
@@ -51,14 +64,19 @@
 | R3 ⏭ ข้าม (ต้องมี R2) | `--mmr λ` | MMR เพื่อความหลากหลาย (ต้องมี R2 ก่อน) | diversity กลับมา |
 | R4 ✅ เก็บ (recall 62→66, golden bad 1→0) | `--queries profile` | multi-query (what / why / fix) | recall ↑ |
 | R5 ❌ revert (recall 66→65, wrong_fault 6→8, golden bad 0→1) | `--hybrid` | เพิ่ม BM25 (ทำใน Python `kb_bm25.py` แทน Postgres full-text เพราะ `ts_rank` ไม่มี IDF) | เจอตัวเลขและชื่อเฉพาะมากขึ้น |
-| **R6** ← ถัดไป | `--rerank` | reranker แทน `RELATIVE_MARGIN` | precision ↑ |
+| R6 ⏸ เลื่อน (RAM 6 GB / commit ไม่พอโหลด bge-reranker-v2-m3 แม้ fp16 บน GPU — ดู log §R6) | `--rerank` | reranker แทน `RELATIVE_MARGIN` | precision ↑ |
 
-ถ้าข้อไหนไม่ผ่านให้ revert แล้วไปข้อถัดไป หลัง R6 ให้ทดสอบถอด R3 อีกรอบ (leave-one-out) เพราะ reranker อาจทำให้ MMR ไม่จำเป็น และลอง `--kind-pool single` + MMR ซ้ำ (R2 พังเพราะ query ทรง mistake ทำให้ระยะของ kind อื่นไกลกว่าเสมอ — R4 แยก query ตามคำถามน่าจะแก้ต้นเหตุ ส่วนเติมช่องขยะใน fault ที่ fact น้อยเป็นงานของ R6) และลอง `--tag-mode union` ซ้ำ เพราะสิ่งที่ทำให้ R1 แพ้ (ประโยค protocol ของงานวิจัยที่ไม่มี tag แย่งช่อง `finding`) คือสิ่งที่ reranker ควรกดลง
+ถ้าข้อไหนไม่ผ่านให้ revert แล้วไปข้อถัดไป **(เลื่อนไปพร้อม R6)** หลัง R6 ให้ทดสอบถอด R3 อีกรอบ (leave-one-out) เพราะ reranker อาจทำให้ MMR ไม่จำเป็น และลอง `--kind-pool single` + MMR ซ้ำ (R2 พังเพราะ query ทรง mistake ทำให้ระยะของ kind อื่นไกลกว่าเสมอ — R4 แยก query ตามคำถามน่าจะแก้ต้นเหตุ ส่วนเติมช่องขยะใน fault ที่ fact น้อยเป็นงานของ R6) และลอง `--tag-mode union` ซ้ำ เพราะสิ่งที่ทำให้ R1 แพ้ (ประโยค protocol ของงานวิจัยที่ไม่มี tag แย่งช่อง `finding`) คือสิ่งที่ reranker ควรกดลง
 
-**Checkpoint G1:** รัน generation ของ retrieval ที่ดีที่สุดเทียบกับ B0 ด้วย prompt v11 เดิม เพื่อดูว่า retrieval ที่ดีขึ้นทำให้คำตอบดีขึ้นจริงไหม ต้องมี `--samples N` ใน `test_rag_compare.py` และ `eval/judge_pairwise.py` ก่อน (ยังไม่ได้ทำทั้งสองอย่าง)
+**Checkpoint G1 ← ถัดไป:** ดูว่า retrieval ที่ดีขึ้นทำให้คำตอบดีขึ้นจริงไหม
+- เทียบ RAG ของ **R4 (default)** กับ **R0 (`--queries fault`)** — ไม่ใช่ B0 (สร้างซ้ำไม่ได้, ดู §0) · prompt v11 เดิม (`SYSTEM_PROMPT` ใน `test_rag_compare.py`) · mock `mock_data/mock_sessions_per_fault.json` (10 fault + 1 clean session) · LLM `gemini-3.5-flash-lite` @ 0.7 · n=5 ต่อ session (กติกา §2 ข้อ 4)
+- ต้องสร้างก่อน (ยังไม่มีทั้งสองอย่าง):
+  1. `--samples N` ใน `test_rag_compare.py` — generate N ครั้งต่อ session (ตอนนี้ครั้งเดียว) และเก็บ output แยกให้ judge อ่านได้ (เช่น JSON ข้าง report)
+  2. `eval/judge_pairwise.py` — judge แบบ blind: สลับตำแหน่ง A/B แบบสุ่ม ไม่บอกว่าข้างไหนเป็น R0/R4 ให้คะแนนตามเกณฑ์ SportsGPT (Accuracy / Feasibility …) · judge ควรคนละรุ่นกับ generator
+- ใช้ `eval/eval_generation.py` (unglossed jargon + longest shared n-gram กับ context) ประกอบได้ · generation เสียค่า API ทุกครั้ง แจ้ง user ก่อนรันเต็ม
 
 ### ขั้น C — แยก config (refactor ต้องได้ผลเท่าเดิม)
-- C1 ย้าย query template และงบไปไว้ใน `retrieval_profile.yaml` แล้วรันซ้ำ **context ต้องเหมือนเดิมทุกตัว**
+- C1 ย้าย `QUERY_PROFILE` (query template), งบ (`MAX_PER_KIND`, `CANDIDATE_K`, `RELATIVE_MARGIN`) และ default ของ flag (`TAG_MODE`, `KIND_POOL`, `QUERIES`, `HYBRID`, `RERANK`) จาก `test_rag_compare.py` ไปไว้ใน `retrieval_profile.yaml` แล้วรันซ้ำ **context ต้องเหมือนเดิมทุกตัว** — report ของ `eval_retrieval.py` ต้องตรงกับ `ablation_R4_retrieval.md` (ต่างแค่ header)
 
 ### ขั้น P — prompt (ทีละข้อ แต่ละข้อเป็น checkpoint generation)
 - **P1** อธิบาย Context โดยไม่ผูกกับ kind (แก้ bug ที่ "How to read the Context" ขาด `consequence` ไปด้วย)
@@ -77,6 +95,7 @@
   4. cue แบบ external focus (Wulf)
   5. EMG ว่ากล้ามเนื้อไหนทำงานแทน (bicep elbow flare ยังเป็น data gap)
   6. expert QA pairs จากผู้เชี่ยวชาญของระบบ 1
+- หลัง K2 (มี dose / ชื่อ drill / ตัวเลขใน KB) ลอง `--hybrid` (R5) ซ้ำ — R5 แพ้เพราะ query ไม่มีตัวเลขหรือชื่อเฉพาะให้ BM25 จับ มีแต่ศัพท์อวัยวะที่ทุก fault ในท่าเดียวกันใช้ร่วมกัน
 
 ## 4. ผลปัจจุบัน — R4 (ขั้นล่าสุดที่เก็บไว้ · gate v7 + multi-query, KB v5 หลังแก้ tag)
 
@@ -91,11 +110,12 @@
 - R2 ไม่ผ่าน (รายละเอียด `ablation_log.md` §R2): margin เดียวจาก best รวม = best ของ mistake เสมอ (query ทรง mistake) → principle/consequence หลุด margin ทุก fault · diagnostic ที่วัด margin จาก best ของ kind ตัวเอง: recall 67 (+5) แต่ wrong_fault 6→9 จากการเติมช่องให้ครบ 9 ใน fault ที่ fact น้อย → โควตา+margin ต่อ kind ของเดิมกันขยะได้จริง
 - R4 เก็บ (รายละเอียด `ablation_log.md` §R4): query what/why/fix + margin เทียบ best ของแต่ละ query ได้ chunk แนวสาเหตุ/วิธีแก้เพิ่ม (heel lift แก้ knee valgus, adductor ตึง) · ตัวกั้นหลักตอนนี้คือ quota (210) · golden precision 0.61→0.48 เป็นเพราะ `must_hit` ยังเป็นถ้อยคำ v4 ต้องเพิ่ม phrasing ถ้าจะใช้ต่อ
 - R5 ไม่ผ่าน (รายละเอียด `ablation_log.md` §R5): BM25 จับศัพท์อวัยวะ/ท่าที่ fault ในท่าเดียวกันใช้ร่วมกัน → ดึง wrong_fault กลับมา (preacher curl ใต้ elbow flare) · candidate จาก BM25 ไม่เคยชนะโควตา ความเสียหายมาจากการเรียงตาม keyword ล้วน ๆ
-- **R6 ต้องเทียบกับ R4** (`compare_output/ablation_R4_retrieval.md`: recall 66/411 · wrong_fault 6 · golden bad 0 · pool-precision 0.80) ใต้ default ปัจจุบัน (`--tag-mode prefer --kind-pool split --queries profile --no-hybrid`) · ต้องเลือกก่อนรัน: reranker ตัวไหน (cross-encoder local เช่น bge-reranker หรือ LLM judge แบบ pointwise) และ cutoff แทน margin ตั้งอย่างไร — **ห้ามใช้ `gemini-3.8-flash` ตัวเดียวกับ judge ของ relevance pool** เพราะจะวัดตัวเองด้วยตัวเอง
-- ตารางต่อ fault: `compare_output/ablation_B0_retrieval.md`, `compare_output/ablation_R0_retrieval.md`
+- R6 เลื่อน (รายละเอียด `ablation_log.md` §R6): ออกแบบ + โค้ดเสร็จ (`kb_rerank.py`, `--rerank`, default ปิด) แต่โหลดโมเดลไม่สำเร็จบนเครื่องนี้ — `.venv` ถอยกลับเป็น `torch==2.13.0+cpu` แล้ว (คืนพื้นที่ดิสก์) · ถ้ากลับมาทำบน GPU: `pip install "torch==2.13.0+cu126" --index-url https://download.pytorch.org/whl/cu126 --no-deps` (~2.5 GB) + ปิดโปรแกรมอื่นให้ commit ว่าง ≥ ~1.5 GB · smoke test `kb_rerank.scores()` ก่อน แล้วเทียบกับ R4 · ทางเลือกถ้าเครื่องยังไม่พอ: `bge-reranker-base` หรือ reranker แบบ hosted (ไม่ใช่ตระกูล Gemini)
+- **ขั้นที่เก็บล่าสุด = R4** ขั้นถัดไปที่ไม่ต้องรอ R6: Checkpoint G1 (ต้องทำ `--samples N` + `eval/judge_pairwise.py` ก่อน), C1, K1/K2
+- ตารางต่อ fault: `compare_output/ablation_{B0,R0,R1,R2,R4,R5}_retrieval.md` (R6 ยังไม่มี)
 - R0: chunk ที่ tag ถูกแล้ว 14 ตัว เข้า context 2 ตัว ที่เหลือหลุดที่ quota/rank แทน → ตัวกั้นจริงคือ slot ต่อ kind
 - R0 แก้ metadata แล้ว **id ของแถวเปลี่ยน** ตาม metadata (สูตรเดียวกับ `ingest.py`) ถ้าจะแก้ metadata ใน DB อีก ให้ใช้วิธีเดียวกับ `data_pipeline/fix_fault_tags.py` ไม่อย่างนั้น ingest ครั้งหน้าจะ embed แถวนั้นซ้ำ
-- chunk wrong_fault ทั้ง 6 ตัวใน context ตรวจด้วยตาแล้ว สมเหตุสมผลทุกตัว เช่น preacher curl ใต้ elbow flare และเข่า**หน้า** 80° ใต้ insufficient back knee flexion
+- chunk wrong_fault 6 ตัวใน context **ของ R0** ตรวจด้วยตาแล้ว สมเหตุสมผลทุกตัว เช่น preacher curl ใต้ elbow flare และเข่า**หน้า** 80° ใต้ insufficient back knee flexion · R4 ยังได้ 6 แต่สลับไป 2 ตัว (preacher curl ออก, narrow-hand push-up + trunk-lean principle เข้า — ดู log §R4) ตัวใหม่ยังไม่ได้ตรวจด้วยตา
 - **ข้อจำกัด:** near-dup (Jaccard 0.72) รวม paraphrase ที่ใช้คำต่างกันไม่ได้ recall จึงต่ำกว่าความจริง แต่ใช้เทียบระหว่างขั้นได้เพราะตัวหารเท่ากัน
 
 ## 5. วิธีรัน + กับดัก
@@ -105,9 +125,19 @@ docker ps                                                   # ต้องเห
 python eval/eval_retrieval.py --mode single --show-missed --out compare_output/ablation_<step>_retrieval.md
 python eval/build_relevance_pool.py                         # เฉพาะเมื่อ KB เปลี่ยน หรือ judge prompt เปลี่ยน (~20 นาที)
 python eval/test_eval_generation.py                         # ต้องผ่านทุก commit
+python test_rag_compare.py --mock mock_data/mock_sessions_per_fault.json --out compare_result_per_fault_<ver>.md
+                                                            # generation RAG vs no-RAG (เสียค่า API; --skip-no-rag = ฝั่ง RAG อย่างเดียว)
 ```
+
+flag ของ retrieval (ใช้ได้ทั้ง `test_rag_compare.py` และ `eval/eval_retrieval.py`; ค่าหลังลูกศร = default ปัจจุบัน):
+- `--queries fault|profile` → `profile` (R4) · `fault` = R0
+- `--tag-mode prefer|union` → `prefer` · `--kind-pool split|single` → `split` · `--hybrid/--no-hybrid` → ปิด · `--rerank/--no-rerank` → ปิด
+- เฉพาะ eval: `--margin`, `--cap`, `--max-per-kind`, `--rerank-min`, `--mode single|session|both`, `--pool ''` (ข้าม recall)
+- summary ของ eval มีบรรทัด `context by kind` (จำนวน chunk ต่อ kind + fault ที่ไม่มี kind นั้นเลย) ไว้ดู diversity
 
 - ใช้ `.venv/Scripts/python.exe` และตั้ง `PYTHONIOENCODING=utf-8`
 - Bash tool ทำ backslash หาย → ข้อความหรือโค้ดที่มี `\` ให้เขียนด้วย Edit/Write tool
 - สคริปต์ชั่วคราวที่ต่อ DB ต้องเรียก `load_dotenv(".env")` แบบระบุ path (`load_dotenv()` เปล่า ๆ พังตอนรันผ่าน stdin)
 - ถ้าเจอ `DATABASE_URL not set` แปลว่ายังไม่ได้โหลด `.env` ถ้าเจอ connection timeout แปลว่า Docker ยังไม่ได้เปิด
+- **เครื่อง dev มี RAM 5.9 GB** และ commit memory ว่างแค่ ~2 GB ตอนเปิด Docker + VS Code — โมเดล local ขนาด ≥ 1 GB (เช่น reranker) โหลดไม่ขึ้น ดู log §R6
+- git เตือน `LF will be replaced by CRLF` ตอน commit ไฟล์ .md/.py — ไม่เป็นไร

@@ -1,6 +1,6 @@
 # Ablation log — RAG v2 (เปลี่ยนทีละอย่าง)
 
-แผน: `C:\Users\HP\.claude\plans\quiet-honking-moler.md` · กติกา: หนึ่งขั้น = หนึ่งตัวแปร เทียบกับขั้นล่าสุดที่เก็บไว้
+แผน: `docs/rag_v2_ablation_plan.md` · กติกา: หนึ่งขั้น = หนึ่งตัวแปร เทียบกับขั้นล่าสุดที่เก็บไว้
 
 เกณฑ์เก็บขั้น retrieval: recall ขึ้น **และ** ctx wrong_fault ไม่เพิ่ม **และ** golden bad ไม่เพิ่ม **และ** pool-precision ไม่ต่ำกว่าขั้นก่อน − 0.05
 
@@ -144,7 +144,7 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 
 **ติดอะไร:** เครื่อง dev มี RAM 5.9 GB · commit limit 23.9 GB (RAM + page file 18 GB) ถูกใช้ไป ~21.7 GB จากหลายโปรแกรมรวมกัน (Docker/WSL 1.1 GB, VS Code 1.5 GB, antivirus 0.85 GB, …) เหลือว่าง ~2 GB
 1. น้ำหนัก fp32 2.27 GB: safetensors map ไฟล์แบบ copy-on-write ซึ่ง Windows คิดเต็มขนาดกับ commit → "paging file is too small" (os error 1455) · แก้: `kb_rerank._fp16_dir()` แปลงเป็น fp16 (1.14 GB, `.cache/models/`) ด้วยการอ่านไฟล์ทีละ 64 MB — ทำงานได้ (15 วินาที)
-2. ติดตั้ง `torch==2.13.0+cu126` (แทนตัว CPU) เพื่อรันบน GTX 1650 4 GB — `torch.cuda.is_available()` True, arch มี sm_75
+2. ติดตั้ง `torch==2.13.0+cu126` (แทนตัว CPU) เพื่อรันบน GTX 1650 4 GB — `torch.cuda.is_available()` True, arch มี sm_75 · หลังตัดสินใจเลื่อน R6 ถอยกลับเป็น `torch==2.13.0+cpu` แล้ว (คืนพื้นที่ดิสก์)
 3. โหลด fp16 ผ่าน transformers ยังโดน error 1455 (DLL ของ CUDA กิน commit ไปแล้ว) · แก้: สร้างโมเดลบน meta device แล้วอ่านน้ำหนักเองทีละ 32 MB ส่งขึ้น GPU (`_read_tensors()`)
 4. ยังโดน `CUDA out of memory` ตอนจองไป 827 MB ทั้งที่ GPU ว่าง 2.4 GB — บน Windows (WDDM) หน่วยความจำที่ CUDA จองถูกนับกับ commit ของระบบด้วย commit ที่เหลือจึงไม่พอ
 - ทางที่ยังไม่ได้ลอง: ปิดโปรแกรมอื่นให้เหลือ commit ≥ ~1.5 GB แล้วโหลดใหม่ · `BAAI/bge-reranker-base` (278M ครึ่งหนึ่งของ v2-m3) · เครื่องที่ RAM มากกว่า · reranker แบบ hosted (Vertex / Cohere)
