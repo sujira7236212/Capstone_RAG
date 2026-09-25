@@ -1,6 +1,6 @@
 # แผนปรับ RAG v2 — เปลี่ยนทีละอย่าง วัดทุกขั้น
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-25 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เสร็จ เก็บ (commit `49863f5`) — ถัดไป R1**
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-25 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เสร็จ เก็บ (commit `49863f5`) · R1 ไม่ผ่าน revert (flag คงไว้ default `prefer`) — ถัดไป R2**
 > ผลทุกขั้นบันทึกใน `compare_output/ablation_log.md`
 
 ## 1. ที่มา
@@ -46,14 +46,14 @@
 | ขั้น | flag (เสนอ) | เปลี่ยนแค่ | คาดว่า |
 |---|---|---|---|
 | **R0** ✅ เก็บ (recall 61→62 facts, tag_spelling 14→0) | (แก้ข้อมูล ไม่ใช่ flag) | normalize `fault_tags` ใน DB: `\|knee_valgus\|` → `\|knee valgus\|` ฯลฯ แก้แค่ metadata ไม่ re-embed · backup แถวที่แก้ลง `data_pipeline/backups/` ก่อน แบบเดียวกับ `fix_ocr_degrees.py` · ต้องแก้ต้นทางด้วย (`curator.py` หรือ `ingest.py`) กันไม่ให้กลับมาอีก | tag_spelling 14 → 0 · recall ↑ เล็กน้อย (partial squat, bicep partial ROM) |
-| **R1** ← ถัดไป | `--tag-mode union` | tag จากแบบเลือกทางเดียว → union ของสระที่มี tag กับไม่มี tag + boost/penalty | tag_filter ↓ · wrong_fault ต้องไม่ ↑ |
-| R2 | `--pool single` | เลิกแบ่งสระตาม kind (งบรวมเท่าเดิม = 9 + near-dup) | quota/rank ↓ · diversity อาจ ↓ |
+| R1 ❌ revert (recall 62→57, golden bad 1→2, pool-precision 0.79→0.71) | `--tag-mode union` | tag จากแบบเลือกทางเดียว → union ของสระที่มี tag กับไม่มี tag + boost/penalty (`TAG_BONUS` 0.03) | tag_filter ↓ · wrong_fault ต้องไม่ ↑ |
+| **R2** ← ถัดไป | `--pool single` | เลิกแบ่งสระตาม kind (งบรวมเท่าเดิม = 9 + near-dup) | quota/rank ↓ · diversity อาจ ↓ |
 | R3 | `--mmr λ` | MMR เพื่อความหลากหลาย (ต้องมี R2 ก่อน) | diversity กลับมา |
 | R4 | `--queries profile` | multi-query (what / why / fix) | recall ↑ |
 | R5 | `--hybrid` | เพิ่ม BM25 (Postgres full-text + index ใน `ingest.py`) | เจอตัวเลขและชื่อเฉพาะมากขึ้น |
 | R6 | `--rerank` | reranker แทน `RELATIVE_MARGIN` | precision ↑ |
 
-ถ้าข้อไหนไม่ผ่านให้ revert แล้วไปข้อถัดไป หลัง R6 ให้ทดสอบถอด R3 อีกรอบ (leave-one-out) เพราะ reranker อาจทำให้ MMR ไม่จำเป็น
+ถ้าข้อไหนไม่ผ่านให้ revert แล้วไปข้อถัดไป หลัง R6 ให้ทดสอบถอด R3 อีกรอบ (leave-one-out) เพราะ reranker อาจทำให้ MMR ไม่จำเป็น และลอง `--tag-mode union` ซ้ำ เพราะสิ่งที่ทำให้ R1 แพ้ (ประโยค protocol ของงานวิจัยที่ไม่มี tag แย่งช่อง `finding`) คือสิ่งที่ reranker ควรกดลง
 
 **Checkpoint G1:** รัน generation ของ retrieval ที่ดีที่สุดเทียบกับ B0 ด้วย prompt v11 เดิม เพื่อดูว่า retrieval ที่ดีขึ้นทำให้คำตอบดีขึ้นจริงไหม ต้องมี `--samples N` ใน `test_rag_compare.py` และ `eval/judge_pairwise.py` ก่อน (ยังไม่ได้ทำทั้งสองอย่าง)
 
@@ -87,7 +87,8 @@
 | context | 77 chunks: relevant 60 / wrong_fault 6 · pool-precision 0.78 | 77 chunks: relevant 61 / wrong_fault 6 · pool-precision 0.79 |
 | miss by reason | tag_spelling 14 · tag_filter 10 · rank 141 · margin 34 · quota 151 | tag_spelling 0 · tag_filter 10 · **rank 146** · margin 34 · **quota 159** |
 
-- R1 ต้องเทียบกับคอลัมน์ R0 ไม่ใช่ B0
+- R1 ไม่ผ่าน (รายละเอียด `ablation_log.md` §R1): union ดึง tag_filter กลับมาได้แค่ 1 ใน 10 fact แต่เสีย 6 fact ที่ quota ให้ `finding` ไม่มี tag ที่เป็นประโยค protocol ของงานวิจัย ("A successful squat trial in this protocol required ≥60° knee flexion") → filter แบบ exclusive มีประโยชน์กับ `finding` · `TAG_BONUS` 0.06/0.10 = recall เท่า R0 (ไม่ขึ้น) wrong_fault 5
+- **R2 ต้องเทียบกับคอลัมน์ R0** (ขั้นล่าสุดที่เก็บ) และรันใต้ `--tag-mode prefer` (default) · R2 เลิกแบ่งสระตาม kind แต่ tag pre-pass ยังเป็นต่อ kind — ต้องตัดสินใจว่า tag filter ใช้กับสระเดียวอย่างไร (เสนอ: `prefer` บนสระเดียว = ถ้ามี tag hit ของ fault ใช้แค่สระ tag) แล้วจดไว้ก่อนรัน
 - ตารางต่อ fault: `compare_output/ablation_B0_retrieval.md`, `compare_output/ablation_R0_retrieval.md`
 - R0: chunk ที่ tag ถูกแล้ว 14 ตัว เข้า context 2 ตัว ที่เหลือหลุดที่ quota/rank แทน → ตัวกั้นจริงคือ slot ต่อ kind
 - R0 แก้ metadata แล้ว **id ของแถวเปลี่ยน** ตาม metadata (สูตรเดียวกับ `ingest.py`) ถ้าจะแก้ metadata ใน DB อีก ให้ใช้วิธีเดียวกับ `data_pipeline/fix_fault_tags.py` ไม่อย่างนั้น ingest ครั้งหน้าจะ embed แถวนั้นซ้ำ
