@@ -2,6 +2,7 @@
 
 **สถานะ:** §1–§4 คือประวัติ (2026-09-08) — ชุด code 10 ตัวใน §3 เป็นชุดที่**เดา**ขึ้นก่อนเห็นกฎจริง
 **2026-09-11:** ได้ inventory กฎจริงของระบบ 1 แล้ว → `error_taxonomy.py` และ `mock_sessions.json` ถูกจัดใหม่ตาม **§5** (ชุด §3 ถูกแทนที่ทั้งหมด)
+**2026-09-27:** ระบบ 1 เปลี่ยนชุดกฎ (สเปก [`docs/system1/RULES_AND_FSM_CONDENSED.md`](system1/RULES_AND_FSM_CONDENSED.md) sync 2026-09-25) → `error_taxonomy.py` ใช้ **§7** (12 กฎ — **ร่าง รอ user ยืนยันกฎและชื่ออาการ** ดู [`rule_change_v6_plan.md`](rule_change_v6_plan.md)) · §5–§6 กลายเป็นประวัติ · mock/eval ยังใช้รหัส §5 อยู่จนถึงขั้น T5
 
 ---
 
@@ -194,3 +195,29 @@ python eval/eval_generation.py compare_output/compare_result_per_fault.md --mock
 ราคา: 11 session × 2 side = 22 LLM call (ใส่ `--skip-no-rag` ถ้าสนใจเฉพาะฝั่ง RAG → 11 call)
 
 **สิ่งที่คาดไว้ล่วงหน้า** จาก §5.3/§5.4 — ใช้เป็นสมมติฐานที่รอบนี้จะพิสูจน์: `Insufficient back knee flexion` ควรออกมาแย่ที่สุด (KB ไม่มีเนื้อหาเรื่องเข่าหลังงอไม่พอเลย ได้แต่ chunk เรื่องเข่าหลัง*ทั่วไป* ซึ่งเป็นอาการตรงข้าม), push-up `Hip sag` กับ squat `Partial squat` ควรบางเพราะ KB มี mistake แค่ 1–2 ตัว, ส่วน `Elbow flare` และ `Butt wink` ควรออกมาดีที่สุด
+
+---
+
+## 7. ชุดกฎ 2026-09-25 (12 กฎ) — แทนที่ §5
+
+ที่มา: สเปก `docs/system1/RULES_AND_FSM_CONDENSED.md` ของทีมระบบ 1 (หัวข้อ "Form rules") · key = rule name ที่ rep summary บันทึกไว้ · `aliases` ตัวแรก = cue ที่แสดงบนจอ (upstream อาจส่ง cue มาแทน) · `resolve()` ถือว่า `_` กับช่องว่างเป็นตัวเดียวกัน
+
+| ท่า | rule (code) | วัดอะไร · เกณฑ์ | cue | รหัส §5 เดิม |
+|---|---|---|---|---|
+| squat | `knee_depth` | มุมเข่าเฉลี่ยต่ำสุด > 100° | Lower to 90 degrees | `partial squat` |
+| squat | `knee_valgus` | มุมระหว่างหน้าแข้งสองข้าง > 11° และเข่าเข้าใน (วัดช่วงเข่า 92–108°) | Push knees out | `knee valgus` |
+| squat | `knee_varus` | มุมเดียวกัน > 8° และเข่าออกนอก | Keep knees in line | — **ใหม่** |
+| squat | `back_straight` | trunk tilt จากแนวดิ่ง > 35° (10 เฟรม) — *ไม่ใช่ความโค้งของหลัง* | Keep back straight | `butt wink` — **ความหมายเปลี่ยน ไม่ map** |
+| push-up | `body_alignment` | มุม shoulder-hip-ankle < 160° (สะโพกตก **หรือ** โด่ง) | Body not straight | `hip sag` (กว้างขึ้น) |
+| push-up | `elbow_depth` | มุมศอกเฉลี่ยต่ำสุด > 110° | Lower Your Chest | `partial range of motion` |
+| lunge | `front_knee_too_shallow` | เข่าหน้าต่ำสุด > 105° | Lower your front knee | `shallow lunge` |
+| lunge | `front_knee_too_deep` | เข่าหน้าต่ำสุด < 70° | Raise your front knee | — **ใหม่** |
+| lunge | `torso_upright` | trunk tilt (ข้างที่น้อยกว่า) > 20° (10 เฟรม) | Keep Torso Upright | `excessive forward trunk lean` |
+| lunge | `back_knee_form` | เข่าหลังที่จุดต่ำสุด > 120° | Bend your back knee toward the floor | `insufficient back knee flexion` |
+| bicep-curl | `elbow_away` | มุม elbow-shoulder-hip > 45° (ไม่บอกทิศ: ออกข้าง/หน้า/หลัง) | Keep Elbows at Your Sides | `elbow flare` |
+| bicep-curl | `full_rom` | ไม่ได้ทั้ง งอ ≤ 55° และ เหยียด ≥ 145° | Full range of motion | `partial range of motion` |
+
+- **`query`** ที่ความหมายไม่เปลี่ยนใช้ถ้อยคำเดิมที่วัดไว้แล้ว (§5.3 และหมายเหตุของ `full_rom`) · เขียนใหม่เฉพาะ `back_straight`, `body_alignment`, `elbow_away` และเขียนขึ้นใหม่สำหรับ `knee_varus`, `front_knee_too_deep` (รูปแบบเดียวกับ curator mistake)
+- **`LEGACY_CODES`** เปลี่ยนเป็นแยกตามท่า (เพราะ `partial range of motion` ของ §5 ชี้ไปคนละกฎใน push-up กับ bicep-curl) · มีรหัส §5 และรหัสยุค v4 · **ไม่มี `butt wink`** → session เก่าที่ส่ง "Butt wink" จะตกไปที่ fallback และถูก log
+- ผลต่อ KB: `curated_data_v5` / `kb_gemini_curated_v5` ยังติด tag ของ §5 → ต้อง re-tag ด้วย LLM (ขั้น T3 ในแผน) เพราะ `butt wink` map ไปที่ `back_straight` ไม่ได้ และ `knee_varus` / `front_knee_too_deep` ไม่เคยถูกถามตอน curate
+- ทดสอบ: `python test_error_taxonomy.py`, `python data_pipeline/test_normalize_fault_tags.py`

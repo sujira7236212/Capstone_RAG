@@ -19,6 +19,9 @@ __pycache__/
 # KB stays reproducible from the repo without shipping the papers.
 data/
 excluded_from_kb/
+# Byte-identical (or same-paper) copies pulled out of data/ so the curator does not
+# curate the same paper twice; kept only so the rule-named filing is not lost.
+data_duplicates/
 
 # Raw dump from check_chunks.py (~550 KB), regenerable.
 chunk_results.txt

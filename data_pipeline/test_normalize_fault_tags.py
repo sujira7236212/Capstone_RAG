@@ -11,16 +11,19 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from curator import normalize_fault_tags
 
 CASES = [
-    # the three variants seen in v5
-    (("squat", ["partial_squat"]), ["partial squat"]),
-    (("squat", ["knee valgus", "knee_valgus"]), ["knee valgus"]),
-    (("bicep-curl", ["partial range_of_motion"]), ["partial range of motion"]),
+    # the v5 kind of variant (space vs underscore), against the 2026-09-25 rule names
+    (("squat", ["knee depth"]), ["knee_depth"]),
+    (("squat", ["knee valgus", "knee_valgus"]), ["knee_valgus"]),
+    (("bicep-curl", ["full rom"]), ["full_rom"]),
     # case / whitespace, order kept
-    (("squat", ["Butt  Wink", "partial_squat"]), ["butt wink", "partial squat"]),
+    (("squat", ["Back  Straight", "knee depth"]), ["back_straight", "knee_depth"]),
     # must NOT change: already canonical, unknown code, another exercise's code
-    (("lunge", ["shallow lunge"]), ["shallow lunge"]),
+    (("lunge", ["torso_upright"]), ["torso_upright"]),
     (("squat", ["heels_lifting"]), ["heels_lifting"]),
-    (("push-up", ["partial_squat"]), ["partial_squat"]),
+    (("push-up", ["knee depth"]), ["knee depth"]),
+    # a superseded code is a different word, not a spelling: mapping it is the
+    # retagger's job (LEGACY_CODES), not this function's
+    (("squat", ["partial squat"]), ["partial squat"]),
     (("squat", []), []),
     (("squat", None), []),
 ]

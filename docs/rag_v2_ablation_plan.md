@@ -5,6 +5,9 @@
 
 ## 0. เริ่มต่อจากตรงนี้ (session ใหม่)
 
+> ⚠️ **2026-09-27: แผนนี้พักไว้** — ระบบ 1 เปลี่ยนชุดกฎเป็น 12 กฎ ต้องทำ KB v6 ก่อน ดู [`rule_change_v6_plan.md`](rule_change_v6_plan.md)
+> (รอ user ยืนยันกฎและชื่ออาการ) · ห้ามรัน eval บน `kb_gemini_curated_v5` ระหว่างนี้ เพราะ taxonomy ใช้รหัสใหม่แล้ว · ตัวเลข §4 ใช้เป็น baseline ต่อไม่ได้ ต้องวัดใหม่บน v6
+
 1. อ่านไฟล์นี้ แล้วอ่าน `compare_output/ablation_log.md` (รายละเอียด + ตัวเลขของทุกขั้น) · ทุกคำสั่งและกับดักอยู่ใน §5
 2. **retrieval ปัจจุบัน = R4** — default ใน `test_rag_compare.py` คือ `--tag-mode prefer --kind-pool split --queries profile --no-hybrid --no-rerank` · ตัวเลขฐานที่ขั้นถัดไปต้องเทียบ = §4 คอลัมน์ R4 (`compare_output/ablation_R4_retrieval.md`)
 3. **B0 สร้างซ้ำไม่ได้แล้ว** (R0 แก้ `fault_tags` ใน DB) → baseline เก่าที่สุดที่รันได้คือ R0 = `--queries fault` (report ตรงกับ `ablation_R0_retrieval.md` ทุกบรรทัด ต่างแค่ header)
