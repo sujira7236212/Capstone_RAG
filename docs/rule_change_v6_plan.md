@@ -1,7 +1,7 @@
 # แผนรับกฎใหม่ของระบบ 1 → KB v6
 
 > ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-27 · สถานะ: **พักไว้ — รอ user ยืนยันกฎและชื่ออาการผิดกับทีมระบบ 1**
-> T1 ทำแล้ว (ยังไม่ commit, เป็นร่าง) · T2 เสร็จ · T3–T5 ยังไม่เริ่ม
+> T1 ทำแล้ว (ร่าง) · T2 เสร็จ · T3–T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
 > แผนนี้**มาก่อน**ขั้นที่ค้างอยู่ใน [`rag_v2_ablation_plan.md`](rag_v2_ablation_plan.md) (G1/C1/K1/P) เพราะรหัส fault เปลี่ยน ตัวเลข R4 เดิมจึงเทียบกับ KB ใหม่ไม่ได้
 
 ## 0. เริ่มต่อจากตรงนี้
@@ -9,8 +9,8 @@
 1. ถาม user ว่ายืนยันกฎและชื่ออาการกับทีมระบบ 1 แล้วหรือยัง ผลที่ได้อาจเปลี่ยนข้อไหนได้บ้างดูที่ §3
 2. ถ้ากฎ/ชื่อเปลี่ยนจากสเปก → แก้ `error_taxonomy.py` (T1) ให้ตรงก่อน แล้วรัน `python test_error_taxonomy.py`
 3. ตอบคำถามที่ค้างใน §4 แล้วค่อยทำ T4 → curate เต็ม → T5 ตามลำดับ (§2)
-4. สิ่งที่ยังไม่ได้ commit (working tree): `error_taxonomy.py`, `test_error_taxonomy.py`, `data_pipeline/test_normalize_fault_tags.py`,
-   `docs/error_type_taxonomy.md` (§7 + หัวไฟล์), `.gitignore` (`data_duplicates/`), `docs/system1/RULES_AND_FSM_CONDENSED.md`, ไฟล์นี้
+4. งานทั้งหมดอยู่บน branch `rule-change-v6` (commit `f2bb8e8`) — `git switch rule-change-v6` ก่อนทำต่อ · ถ้ากฎเปลี่ยนให้แก้บน branch นี้
+   แล้วค่อย merge เข้า `main` หลังจบ T5
 5. ⚠️ **ห้ามรัน eval retrieval/generation บน `kb_gemini_curated_v5` จนกว่าจะจบ T5** — taxonomy ใช้รหัสใหม่แล้ว แต่ KB v5 ยังติด tag เก่า
    ผลจะเพี้ยน (บางรหัสบังเอิญ match เพราะ `_` ใน SQL LIKE คือ wildcard ตัวเดียว เช่น `knee_valgus` ↔ `knee valgus` แต่ส่วนใหญ่ไม่ match)
 
@@ -111,4 +111,3 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 1. `data/general/feedback_and_cueing/` (Lincoln, Neumann, Smith, Stien — วิธีให้ feedback) ข้อเสนอ: **ไม่ curate เข้า KB** เก็บไว้ใช้ออกแบบ prompt ขั้น P5
 2. `data/general/` ที่เหลือ (`basics_of_strength_and_conditioning_manual.pdf`, `injury/Bonilla2022…`) ข้อเสนอ: ส่วนที่พูดถึงท่าเฉพาะ
    ให้ย้ายไปอยู่ใต้ท่านั้น แทนที่จะถูกคัดทิ้ง (ดู T4)
-3. จะ commit T1 + T2 ตอนนี้ หรือรอผลยืนยันกฎก่อน
