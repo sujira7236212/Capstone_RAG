@@ -109,6 +109,27 @@ def test_shared_spans():
     check("threshold respected", eg.shared_spans(answer, context, 12), [])
 
 
+def test_multi_sample_report():
+    """`test_rag_compare.py --samples N` numbers the headings. Every sample must be kept -
+    storing sections by heading name alone would silently score only the last one."""
+    multi = REPORT.replace("### WITH RAG\n", "### WITH RAG (sample 1/2)\nFirst answer.\n\n"
+                                              "### WITH RAG (sample 2/2)\n")
+    block = eg.parse_report(multi)[0]
+    check("both samples kept", len(block["samples"]["WITH RAG"]), 2)
+    check("first sample is block[side]", block["WITH RAG"], "First answer.")
+    assert "Brace harder" in block["samples"]["WITH RAG"][1], "second sample truncated"
+    import tempfile
+    with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tf:
+        tf.write(multi)
+    try:
+        rows = eg.score_report(tf.name, SPEC, MARKERS, 120, 6, {})
+    finally:
+        os.remove(tf.name)
+    check("one row per sample", [r["side"] for r in rows],
+          ["WITH RAG #1", "WITH RAG #2", "WITHOUT RAG"])
+    check("jargon counted per sample", [len(r["hits"]) for r in rows], [0, 2, 0])
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_"):

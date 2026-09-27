@@ -57,17 +57,24 @@ SIDES = ("WITH RAG", "WITHOUT RAG")
 # ---------------------------------------------------------------------------
 
 def parse_report(text):
-    """-> [{"exercise", "Retrieval metrics", "Retrieved KB Context", "WITH RAG", ...}]"""
+    """-> [{"exercise", "Retrieval metrics", "Retrieved KB Context", "WITH RAG", ...,
+            "samples": {"WITH RAG": [...], ...}}]
+
+    A report run with `test_rag_compare.py --samples N` repeats each side's heading as
+    `### WITH RAG (sample i/N)`. block[kind] is the first occurrence (what a one-sample
+    report always had); block["samples"][kind] keeps every occurrence in order."""
     exercises = []
     starts = [(m.start(), m.group(1)) for m in EXERCISE_RE.finditer(text)]
     for n, (pos, name) in enumerate(starts):
         end = starts[n + 1][0] if n + 1 < len(starts) else len(text)
         body = text[pos:end]
-        block = {"exercise": name}
+        block = {"exercise": name, "samples": {}}
         heads = [(m.start(), m.end(), m.group(1)) for m in SECTION_RE.finditer(body)]
         for i, (_, hend, kind) in enumerate(heads):
             stop = heads[i + 1][0] if i + 1 < len(heads) else len(body)
-            block[kind] = body[hend:stop].strip()
+            section = body[hend:stop].strip()
+            block.setdefault(kind, section)
+            block["samples"].setdefault(kind, []).append(section)
         exercises.append(block)
     return exercises
 
@@ -259,16 +266,16 @@ def score_report(path, spec, markers, window, min_span, by_exercise):
         names = by_exercise.get(block["exercise"]) or error_names(block.get("Retrieval metrics"))
         vocab = build_vocab(spec, names)
         for side in SIDES:
-            answer = block.get(side)
-            if answer is None:
-                continue
-            hits = unglossed_jargon(answer, vocab, markers, window)
-            spans = shared_spans(word_tokens(answer), ctx_tokens, min_span) if ctx_tokens else []
-            rows.append({
-                "report": os.path.basename(path), "exercise": block["exercise"], "side": side,
-                "hits": hits, "longest": spans[0] if spans else (0, ""),
-                "spans": spans, "words": len(word_tokens(answer)),
-            })
+            answers = block["samples"].get(side, [])
+            for i, answer in enumerate(answers, 1):
+                hits = unglossed_jargon(answer, vocab, markers, window)
+                spans = shared_spans(word_tokens(answer), ctx_tokens, min_span) if ctx_tokens else []
+                rows.append({
+                    "report": os.path.basename(path), "exercise": block["exercise"],
+                    "side": side if len(answers) == 1 else f"{side} #{i}", "base_side": side,
+                    "hits": hits, "longest": spans[0] if spans else (0, ""),
+                    "spans": spans, "words": len(word_tokens(answer)),
+                })
     return rows
 
 
@@ -285,13 +292,21 @@ def render(rows, min_span, show_hits):
     out.append("")
     for report in dict.fromkeys(r["report"] for r in rows):
         for side in SIDES:
-            srows = [r for r in rows if r["report"] == report and r["side"] == side]
+            srows = [r for r in rows if r["report"] == report and r["base_side"] == side]
             if not srows:
                 continue
             jargon = sum(len(r["hits"]) for r in srows)
             longest = max(r["longest"][0] for r in srows)
+            n_ex = len({r["exercise"] for r in srows})
+            if len(srows) == n_ex:
+                across = f"{n_ex} exercises"
+            else:
+                # --samples N report: totals grow with N, so the per-answer means are the
+                # numbers comparable across reports with different sample counts.
+                across = (f"{len(srows)} answers ({n_ex} exercises) · mean {jargon / len(srows):.2f} "
+                          f"per answer, mean longest {sum(r['longest'][0] for r in srows) / len(srows):.1f}")
             out.append(f"**{report} — {side}**: unglossed jargon **{jargon}** across "
-                       f"{len(srows)} exercises · longest shared n-gram **{longest}** words · "
+                       f"{across} · longest shared n-gram **{longest}** words · "
                        f"spans ≥{min_span}: {sum(len(r['spans']) for r in srows)}")
 
     if show_hits:

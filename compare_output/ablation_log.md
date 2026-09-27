@@ -151,3 +151,26 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - **ยังไม่มีการโหลดโมเดลสำเร็จเลย** โค้ดส่วน `_get_model()` / `_predict()` จึงยังไม่ได้ผ่านการทดสอบจริง ต้อง smoke test ก่อนใช้ (คู่ relevant ต้องได้คะแนนสูงกว่าคู่ protocol sentence ชัดเจน)
 
 **ผลต่อแผน:** leave-one-out หลัง R6 (ลอง union / สระเดียว + MMR ซ้ำ) เลื่อนตาม · ขั้นที่เก็บล่าสุดยังเป็น **R4** · เหตุผลที่ข้ามได้: ตัวกั้นหลักตอนนี้คือโควตาต่อ kind (210) และ KB ขาดเนื้อหา dose/drill ซึ่ง reranker แก้ไม่ได้ · ถ้าเครื่อง deploy สเปกใกล้เครื่องนี้ reranker 568M ก็ใช้จริงไม่ได้อยู่ดี
+
+### G1 — checkpoint generation R0 ↔ R4 (2026-09-26) → เครื่องมือเสร็จ ยังไม่ได้รันเต็ม (รอ user อนุมัติค่า API)
+**เครื่องมือที่สร้าง:**
+- `test_rag_compare.py --samples N`: retrieval ครั้งเดียว generate N ครั้งจาก context เดียวกัน · report ใช้หัว `### WITH RAG (sample i/N)` (N = 1 ได้หัวเดิม) · เขียน JSON คู่กับ report (`<out>.json`: payload ที่ model เห็น, context, metrics, ทุก sample, config retrieval, sha1 ของ system prompt) บันทึกหลังจบทุก session
+- `eval/eval_generation.py` อ่าน report หลาย sample ได้ (เดิมเก็บแค่ตัวสุดท้าย) สรุปเป็นค่าเฉลี่ยต่อคำตอบ · report sample เดียวได้ผลเท่าเดิมทุกบรรทัด (ตรวจกับ `compare_result_per_fault_v12.md`) · เพิ่ม test ใน `test_eval_generation.py`
+- `eval/judge_pairwise.py`: judge `gemini-3.8-flash` @ 0 (คนละรุ่นกับ generator `gemini-3.5-flash-lite` แต่ตระกูลเดียวกัน — มี key แค่ Gemini) · จับคู่ sample i ของ A กับ sample i ของ B ใน session เดียวกัน · สลับตำแหน่งแบบสุ่ม `Random(seed|label|i)` · judge ไม่รู้ว่าข้างไหนเป็น run ไหน · เกณฑ์ SportsGPT 4 ด้าน (Accuracy / Comprehensiveness / Professionalism / Feasibility — นิยามตามเปเปอร์: interpretation correctness / inference depth / expert-level specificity / actionability of quantitative details) + overall แบบ pairwise และคะแนน 1–5 (รอง) · สรุปด้วย sign test (ตัด tie) · session ที่ context เหมือนกันสองข้างแยกเป็น **control** · มี position check · cache คำตัดสินใน `<out>.json` (รันต่อได้)
+- `--reference none|union`: `none` = judge เห็นแค่ session + สองคำตอบ (แบบ SportsGPT) · `union` = เห็น entry จาก context ของทั้งสอง run ด้วย (ตัด header, ไม่ซ้ำ, สลับลำดับ ไม่บอกว่ามาจาก run ไหน)
+
+**context R0 ↔ R4 ต่อ session (mock per-fault):** ต่างกันทุก fault session (10/10) แต่ต่างแค่ 1–5 chunk จาก 7–9 (knee valgus ต่างมากสุด: R0 เท่านั้น 4 / R4 เท่านั้น 5 · push-up partial ROM: R4 เพิ่ม 1 ตัว ไม่เสียอะไร) · clean session context เหมือนกันทุกตัว → ใช้เป็น control
+
+**smoke test (ไม่ใช้ตัดสิน, ไฟล์อยู่ scratch ไม่ได้เก็บ):** knee valgus + clean session × 2 sample × 2 config
+- ทุกส่วนทำงานครบ (report → JSON → judge → report · eval_generation อ่านหลาย sample ได้)
+- **เจอปัญหาของ judge แบบไม่มี context:** chunk ใหม่ของ R4 "medial-knee displacement … was corrected when a 2-inch (5.08-cm) lift was placed under the heel" → generator แนะนำ "วาง lift 2 นิ้วใต้ส้นเท้า" ทั้ง 2 sample → judge บอกว่า "excessive, unrealistic", "bizarre" และให้ R0 ชนะทุกด้าน (2/2) · judge ที่ไม่เห็นหลักฐานตัดสินด้วยความรู้ทั่วไปของตัวเอง ซึ่งก็คือความรู้ที่ no-RAG มีอยู่แล้ว → เอียงต่อต้าน fact เฉพาะจาก KB ที่ดูแปลก · (ข้อสังเกตด้วย: chunk นั้นเป็นผลของ**การทดสอบ** ankle mobility ไม่ใช่ใบสั่งฝึก — generator แปลงเป็นคำแนะนำเอง ซึ่งเป็นปัญหาฝั่ง prompt/P-step ได้ด้วย)
+- user เลือก: รัน judge **ทั้งสองแบบ** (none + union) บนคู่เดียวกัน
+
+**เกณฑ์อ่านผล G1 (ตั้งก่อนรัน):**
+- ตัวหลัก = `overall` ของ 50 คู่ใน 10 fault session (5 sample × 10) · sign test สองทาง ตัด tie
+- "R4 ทำให้คำตอบดีขึ้น" = R4 ชนะมากกว่า และ p < 0.05 **ทั้งสองแบบ judge** · "แย่ลง" = R0 ชนะ p < 0.05 ทั้งสองแบบ · ถ้าสองแบบไม่ตรงกัน = ผลขึ้นกับว่า judge เห็นหลักฐานไหม (รายงานพร้อมเหตุผลของ judge ว่าตัดสินด้วย fact ตัวไหน) · นอกนั้น = "แยกไม่ออกที่ n = 5"
+- control (clean session 5 คู่) ควรออกใกล้ครึ่ง ๆ · position check ควรใกล้ 50% ถ้าไม่ใช่ ให้ลดน้ำหนักผลหลัก
+- ประกอบ (ไม่ใช้ตัดสิน): 4 ด้านแยก, คะแนน 1–5, `eval_generation.py` (jargon ต่อคำตอบ, longest shared n-gram เฉลี่ย)
+- G1 **ไม่ revert R4** (R4 ผ่านเกณฑ์ retrieval แล้ว) ถ้า R4 แย่ลง ให้ดูว่า chunk ไหนที่ generator ใช้ผิด → ป้อนเข้าขั้น P (prompt) ไม่ใช่ขั้น R
+
+**ค่าใช้จ่ายรันเต็ม:** generation 11 session × 5 × 2 config = 110 call `gemini-3.5-flash-lite` (~45–50 นาทีเพราะ sleep 15 วินาที) + judge 55 คู่ × 2 แบบ = 110 call `gemini-3.8-flash` (prompt ~10–12k ตัวอักษร)

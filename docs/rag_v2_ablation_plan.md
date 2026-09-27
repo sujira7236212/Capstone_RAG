@@ -1,6 +1,6 @@
 # แผนปรับ RAG v2 — เปลี่ยนทีละอย่าง วัดทุกขั้น
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-26 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เก็บ (`49863f5`) · R1 ไม่ผ่าน (`960e4c9`) · R2 ไม่ผ่าน (`31a65bc`) · R3 ข้าม · **R4 เก็บ = default ปัจจุบัน (`36b456e`)** · R5 ไม่ผ่าน (`2ff454b`) · R6 เลื่อน เครื่องไม่พอ (`f4272fc`) — ขั้น R จบที่ R4 ถัดไป: ดู §0**
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-26 · สถานะ: **ขั้น 0 เสร็จ (commit `928b4a3`, `062ec47`, `8737754`) · R0 เก็บ (`49863f5`) · R1 ไม่ผ่าน (`960e4c9`) · R2 ไม่ผ่าน (`31a65bc`) · R3 ข้าม · **R4 เก็บ = default ปัจจุบัน (`36b456e`)** · R5 ไม่ผ่าน (`2ff454b`) · R6 เลื่อน เครื่องไม่พอ (`f4272fc`) — ขั้น R จบที่ R4 · **G1: เครื่องมือเสร็จ + smoke test แล้ว รอ user อนุมัติรันเต็ม** ถัดไป: ดู §0**
 > ผลทุกขั้นบันทึกใน `compare_output/ablation_log.md`
 
 ## 0. เริ่มต่อจากตรงนี้ (session ใหม่)
@@ -9,7 +9,7 @@
 2. **retrieval ปัจจุบัน = R4** — default ใน `test_rag_compare.py` คือ `--tag-mode prefer --kind-pool split --queries profile --no-hybrid --no-rerank` · ตัวเลขฐานที่ขั้นถัดไปต้องเทียบ = §4 คอลัมน์ R4 (`compare_output/ablation_R4_retrieval.md`)
 3. **B0 สร้างซ้ำไม่ได้แล้ว** (R0 แก้ `fault_tags` ใน DB) → baseline เก่าที่สุดที่รันได้คือ R0 = `--queries fault` (report ตรงกับ `ablation_R0_retrieval.md` ทุกบรรทัด ต่างแค่ header)
 4. ขั้นถัดไป (เลือกอันเดียว ตามกติกา §2):
-   - **G1 — แนะนำเป็นอันดับแรก** ยังไม่เคยวัดฝั่ง generation เลยตั้งแต่เริ่มแผน ต้องรู้ก่อนว่า recall 62→66 ของ R4 ทำให้คำตอบดีขึ้นจริงไหม · ต้องสร้างเครื่องมือก่อน 2 อย่าง (ดู Checkpoint G1 ใน §3)
+   - **G1 — กำลังทำ** ยังไม่เคยวัดฝั่ง generation เลยตั้งแต่เริ่มแผน ต้องรู้ก่อนว่า recall 62→66 ของ R4 ทำให้คำตอบดีขึ้นจริงไหม · เครื่องมือเสร็จแล้ว (`--samples N`, `eval/judge_pairwise.py`) · smoke test ผ่าน · เกณฑ์อ่านผลตั้งไว้แล้วใน `ablation_log.md` §G1 · **เหลือ: รันเต็มเมื่อ user อนุมัติ** (คำสั่งอยู่ใน Checkpoint G1 ใน §3) แล้วจดผล
    - **C1** แยก config (refactor ผลต้องเท่าเดิม)
    - **K1/K2** เพิ่ม facet / เนื้อหา dose-drill — ต้นเหตุหลักที่ RAG ไม่ชนะ no-RAG (KB ไม่มี prescription/dose)
 5. R6 (reranker) ค้างเพราะเครื่อง — ไม่ต้องรอ ดู §4
@@ -68,11 +68,19 @@
 
 ถ้าข้อไหนไม่ผ่านให้ revert แล้วไปข้อถัดไป **(เลื่อนไปพร้อม R6)** หลัง R6 ให้ทดสอบถอด R3 อีกรอบ (leave-one-out) เพราะ reranker อาจทำให้ MMR ไม่จำเป็น และลอง `--kind-pool single` + MMR ซ้ำ (R2 พังเพราะ query ทรง mistake ทำให้ระยะของ kind อื่นไกลกว่าเสมอ — R4 แยก query ตามคำถามน่าจะแก้ต้นเหตุ ส่วนเติมช่องขยะใน fault ที่ fact น้อยเป็นงานของ R6) และลอง `--tag-mode union` ซ้ำ เพราะสิ่งที่ทำให้ R1 แพ้ (ประโยค protocol ของงานวิจัยที่ไม่มี tag แย่งช่อง `finding`) คือสิ่งที่ reranker ควรกดลง
 
-**Checkpoint G1 ← ถัดไป:** ดูว่า retrieval ที่ดีขึ้นทำให้คำตอบดีขึ้นจริงไหม
+**Checkpoint G1 ← กำลังทำ (เครื่องมือเสร็จ รอรันเต็ม):** ดูว่า retrieval ที่ดีขึ้นทำให้คำตอบดีขึ้นจริงไหม
 - เทียบ RAG ของ **R4 (default)** กับ **R0 (`--queries fault`)** — ไม่ใช่ B0 (สร้างซ้ำไม่ได้, ดู §0) · prompt v11 เดิม (`SYSTEM_PROMPT` ใน `test_rag_compare.py`) · mock `mock_data/mock_sessions_per_fault.json` (10 fault + 1 clean session) · LLM `gemini-3.5-flash-lite` @ 0.7 · n=5 ต่อ session (กติกา §2 ข้อ 4)
-- ต้องสร้างก่อน (ยังไม่มีทั้งสองอย่าง):
-  1. `--samples N` ใน `test_rag_compare.py` — generate N ครั้งต่อ session (ตอนนี้ครั้งเดียว) และเก็บ output แยกให้ judge อ่านได้ (เช่น JSON ข้าง report)
-  2. `eval/judge_pairwise.py` — judge แบบ blind: สลับตำแหน่ง A/B แบบสุ่ม ไม่บอกว่าข้างไหนเป็น R0/R4 ให้คะแนนตามเกณฑ์ SportsGPT (Accuracy / Feasibility …) · judge ควรคนละรุ่นกับ generator
+- เครื่องมือ ✅ (รายละเอียด `ablation_log.md` §G1):
+  1. `--samples N` ใน `test_rag_compare.py` — generate N ครั้งจาก context เดียว + JSON คู่กับ report (`<out>.json`) · `eval_generation.py` อ่าน report หลาย sample ได้
+  2. `eval/judge_pairwise.py` — blind pairwise, judge `gemini-3.8-flash`, เกณฑ์ SportsGPT 4 ด้าน + overall, sign test, control = session ที่ context เหมือนกัน (clean session), position check · `--reference none|union` (user เลือกรันทั้งสองแบบ — judge ที่ไม่เห็นหลักฐานลงโทษ fact จาก KB ที่ดูแปลก ดู log)
+- คำสั่งรันเต็ม (เสียค่า API: 110 generation + 110 judge call):
+  ```
+  python test_rag_compare.py --mock mock_data/mock_sessions_per_fault.json --queries fault --samples 5 --skip-no-rag --out g1_R0.md
+  python test_rag_compare.py --mock mock_data/mock_sessions_per_fault.json --samples 5 --skip-no-rag --out g1_R4.md
+  python eval/judge_pairwise.py compare_output/g1_R0.json compare_output/g1_R4.json --names R0 R4 --reference none  --show-reasons --out compare_output/g1_pairwise_none.md
+  python eval/judge_pairwise.py compare_output/g1_R0.json compare_output/g1_R4.json --names R0 R4 --reference union --show-reasons --out compare_output/g1_pairwise_union.md
+  python eval/eval_generation.py compare_output/g1_R0.md compare_output/g1_R4.md --mock mock_data/mock_sessions_per_fault.json --out compare_output/g1_generation.md
+  ```
 - ใช้ `eval/eval_generation.py` (unglossed jargon + longest shared n-gram กับ context) ประกอบได้ · generation เสียค่า API ทุกครั้ง แจ้ง user ก่อนรันเต็ม
 
 ### ขั้น C — แยก config (refactor ต้องได้ผลเท่าเดิม)
@@ -111,7 +119,7 @@
 - R4 เก็บ (รายละเอียด `ablation_log.md` §R4): query what/why/fix + margin เทียบ best ของแต่ละ query ได้ chunk แนวสาเหตุ/วิธีแก้เพิ่ม (heel lift แก้ knee valgus, adductor ตึง) · ตัวกั้นหลักตอนนี้คือ quota (210) · golden precision 0.61→0.48 เป็นเพราะ `must_hit` ยังเป็นถ้อยคำ v4 ต้องเพิ่ม phrasing ถ้าจะใช้ต่อ
 - R5 ไม่ผ่าน (รายละเอียด `ablation_log.md` §R5): BM25 จับศัพท์อวัยวะ/ท่าที่ fault ในท่าเดียวกันใช้ร่วมกัน → ดึง wrong_fault กลับมา (preacher curl ใต้ elbow flare) · candidate จาก BM25 ไม่เคยชนะโควตา ความเสียหายมาจากการเรียงตาม keyword ล้วน ๆ
 - R6 เลื่อน (รายละเอียด `ablation_log.md` §R6): ออกแบบ + โค้ดเสร็จ (`kb_rerank.py`, `--rerank`, default ปิด) แต่โหลดโมเดลไม่สำเร็จบนเครื่องนี้ — `.venv` ถอยกลับเป็น `torch==2.13.0+cpu` แล้ว (คืนพื้นที่ดิสก์) · ถ้ากลับมาทำบน GPU: `pip install "torch==2.13.0+cu126" --index-url https://download.pytorch.org/whl/cu126 --no-deps` (~2.5 GB) + ปิดโปรแกรมอื่นให้ commit ว่าง ≥ ~1.5 GB · smoke test `kb_rerank.scores()` ก่อน แล้วเทียบกับ R4 · ทางเลือกถ้าเครื่องยังไม่พอ: `bge-reranker-base` หรือ reranker แบบ hosted (ไม่ใช่ตระกูล Gemini)
-- **ขั้นที่เก็บล่าสุด = R4** ขั้นถัดไปที่ไม่ต้องรอ R6: Checkpoint G1 (ต้องทำ `--samples N` + `eval/judge_pairwise.py` ก่อน), C1, K1/K2
+- **ขั้นที่เก็บล่าสุด = R4** ขั้นถัดไปที่ไม่ต้องรอ R6: Checkpoint G1 (เครื่องมือเสร็จ รอรันเต็ม), C1, K1/K2
 - ตารางต่อ fault: `compare_output/ablation_{B0,R0,R1,R2,R4,R5}_retrieval.md` (R6 ยังไม่มี)
 - R0: chunk ที่ tag ถูกแล้ว 14 ตัว เข้า context 2 ตัว ที่เหลือหลุดที่ quota/rank แทน → ตัวกั้นจริงคือ slot ต่อ kind
 - R0 แก้ metadata แล้ว **id ของแถวเปลี่ยน** ตาม metadata (สูตรเดียวกับ `ingest.py`) ถ้าจะแก้ metadata ใน DB อีก ให้ใช้วิธีเดียวกับ `data_pipeline/fix_fault_tags.py` ไม่อย่างนั้น ingest ครั้งหน้าจะ embed แถวนั้นซ้ำ
@@ -126,7 +134,10 @@ python eval/eval_retrieval.py --mode single --show-missed --out compare_output/a
 python eval/build_relevance_pool.py                         # เฉพาะเมื่อ KB เปลี่ยน หรือ judge prompt เปลี่ยน (~20 นาที)
 python eval/test_eval_generation.py                         # ต้องผ่านทุก commit
 python test_rag_compare.py --mock mock_data/mock_sessions_per_fault.json --out compare_result_per_fault_<ver>.md
-                                                            # generation RAG vs no-RAG (เสียค่า API; --skip-no-rag = ฝั่ง RAG อย่างเดียว)
+                                                            # generation RAG vs no-RAG (เสียค่า API; --skip-no-rag = ฝั่ง RAG อย่างเดียว;
+                                                            #   --samples N = N คำตอบต่อ session + JSON ข้าง report)
+python eval/judge_pairwise.py <A>.json <B>.json --names A B --reference none|union --out compare_output/<name>.md
+                                                            # blind pairwise judge (เสียค่า API; cache คำตัดสินใน <name>.json)
 ```
 
 flag ของ retrieval (ใช้ได้ทั้ง `test_rag_compare.py` และ `eval/eval_retrieval.py`; ค่าหลังลูกศร = default ปัจจุบัน):

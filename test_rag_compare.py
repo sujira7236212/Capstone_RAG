@@ -849,11 +849,19 @@ DEFAULT_COLLECTION = embedding_config.default_collection()
 # result above says they still work well.
 
 
+GENERATION_ERROR = "Error occurred during generation"
+
+
 def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAULT_COLLECTION,
-                              raw_query=False):
-    """Returns (feedback_text, context_used, metrics) so the caller can log exactly what
+                              raw_query=False, samples=1):
+    """Returns (feedback_texts, context_used, metrics) so the caller can log exactly what
     the model was given - v5 returned only the text, which is why verifying a suspected
-    hallucination meant re-running the whole script with an ad-hoc print statement."""
+    hallucination meant re-running the whole script with an ad-hoc print statement.
+
+    `samples`: how many answers to generate from the same context (checkpoint G1 - at
+    temperature 0.7 one answer per session cannot tell a retrieval change from sampling
+    noise). Retrieval runs once; `feedback_texts` is a list of `samples` strings. A failed
+    call yields a string starting with GENERATION_ERROR in its slot, not an exception."""
     llm = ChatGoogleGenerativeAI(model=LLM_MODEL, temperature=LLM_TEMPERATURE, max_retries=1)
 
     system_prompt = SYSTEM_PROMPT
@@ -904,20 +912,24 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
     payload = {k: v for k, v in session_data.items() if k != "report_label"}
 
     import time
-    max_retries = 3
-    for attempt in range(max_retries):
-        try:
-            response = rag_chain.invoke(json.dumps(payload, indent=2))
-            print(f"Call successful, sleeping 15s to respect rate limits...")
-            time.sleep(15)
-            return response, context, metrics
-        except Exception as e:
-            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
-                if attempt < max_retries - 1:
-                    print(f"Rate limit hit. Sleeping for 45 seconds before retry {attempt+1}/{max_retries}...")
-                    time.sleep(45)
-                    continue
-            return f"Error occurred during generation: {e}", context, metrics
+
+    def one_call():
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = rag_chain.invoke(json.dumps(payload, indent=2))
+                print(f"Call successful, sleeping 15s to respect rate limits...")
+                time.sleep(15)
+                return response
+            except Exception as e:
+                if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+                    if attempt < max_retries - 1:
+                        print(f"Rate limit hit. Sleeping for 45 seconds before retry {attempt+1}/{max_retries}...")
+                        time.sleep(45)
+                        continue
+                return f"{GENERATION_ERROR}: {e}"
+
+    return [one_call() for _ in range(samples)], context, metrics
 
 
 def get_mocks(path="mock_data/mock_sessions.json"):
@@ -949,7 +961,14 @@ def parse_args():
                     help=f"add BM25 next to vector search, see HYBRID (default: {HYBRID})")
     ap.add_argument("--rerank", action=argparse.BooleanOptionalAction, default=RERANK,
                     help=f"cross-encoder gate instead of RELATIVE_MARGIN, see RERANK (default: {RERANK})")
-    return ap.parse_args()
+    ap.add_argument("--samples", type=int, default=1,
+                    help="answers generated per session and side from the same context (default 1); "
+                         "every answer also goes to the JSON written next to the report, which "
+                         "eval/judge_pairwise.py reads")
+    args = ap.parse_args()
+    if args.samples < 1:
+        ap.error("--samples must be >= 1")
+    return args
 
 
 if __name__ == "__main__":
@@ -975,6 +994,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
+| samples per session | {args.samples} |
 | retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES}, HYBRID={HYBRID}{f" (BM25_K={BM25_K}, BM25_WEIGHT={BM25_WEIGHT})" if HYBRID else ""}, RERANK={RERANK}{f" (min {RERANK_MIN})" if RERANK else ""} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
@@ -985,8 +1005,26 @@ and were actually placed in the context.
 
 """
 
+    def sample_heading(side, i):
+        # One sample keeps the historical heading. More than one numbers them; the suffix
+        # still matches eval/eval_generation.py's section pattern, which scores each sample.
+        return f"### {side}\n" if args.samples == 1 else f"### {side} (sample {i}/{args.samples})\n"
+
+    import hashlib
     os.makedirs("compare_output", exist_ok=True)
     out_path = os.path.join("compare_output", args.out)
+    # Machine-readable twin of the report: every sample, plus the context and the exact
+    # payload the model saw, so eval/judge_pairwise.py never has to parse the markdown back.
+    json_path = os.path.splitext(out_path)[0] + ".json"
+    run = {
+        "report": args.out, "mock": args.mock, "collection": args.collection,
+        "raw_query": args.raw_query, "llm": LLM_MODEL, "temperature": LLM_TEMPERATURE,
+        "samples": args.samples,
+        "system_prompt_sha1": hashlib.sha1(SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
+        "retrieval": {"TAG_MODE": TAG_MODE, "KIND_POOL": KIND_POOL, "QUERIES": QUERIES,
+                      "HYBRID": HYBRID, "RERANK": RERANK},
+        "sessions": [],
+    }
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("# Feedback Comparison: RAG vs NO-RAG\n\n")
         f.write(run_config_md)
@@ -1002,8 +1040,9 @@ and were actually placed in the context.
 
             f.write(f"## Exercise: {block_name}\n\n")
 
-            rag_output, rag_context, metrics = generate_feedback_compare(
-                mock, use_rag=True, collection_name=args.collection, raw_query=args.raw_query
+            rag_outputs, rag_context, metrics = generate_feedback_compare(
+                mock, use_rag=True, collection_name=args.collection, raw_query=args.raw_query,
+                samples=args.samples,
             )
             f.write("### Retrieval metrics\n")
             f.write(metrics_table(metrics) + "\n\n")
@@ -1013,13 +1052,27 @@ and were actually placed in the context.
             # cite something that was actually there?" check a matter of reading one file.
             f.write("### Retrieved KB Context (RAG run)\n")
             f.write("```text\n" + rag_context + "\n```\n\n")
-            f.write("### WITH RAG\n")
-            f.write(rag_output + "\n\n")
+            for i, text in enumerate(rag_outputs, 1):
+                f.write(sample_heading("WITH RAG", i))
+                f.write(text + "\n\n")
 
+            no_rag_outputs = []
             if not args.skip_no_rag:
-                no_rag_output, _, _ = generate_feedback_compare(mock, use_rag=False)
-                f.write("### WITHOUT RAG\n")
-                f.write(no_rag_output + "\n\n")
+                no_rag_outputs, _, _ = generate_feedback_compare(mock, use_rag=False, samples=args.samples)
+                for i, text in enumerate(no_rag_outputs, 1):
+                    f.write(sample_heading("WITHOUT RAG", i))
+                    f.write(text + "\n\n")
             f.write("---\n\n")
+            f.flush()
 
-    print(f"Done! Results saved to {out_path}")
+            run["sessions"].append({
+                "label": block_name, "exercise_id": mock.get("exercise_id"),
+                "payload": {k: v for k, v in mock.items() if k != "report_label"},
+                "context": rag_context, "metrics": metrics,
+                "rag": rag_outputs, "no_rag": no_rag_outputs,
+            })
+            # Rewritten after every session so an interrupted run keeps what it paid for.
+            with open(json_path, "w", encoding="utf-8") as jf:
+                json.dump(run, jf, ensure_ascii=False, indent=1)
+
+    print(f"Done! Results saved to {out_path} and {json_path}")
