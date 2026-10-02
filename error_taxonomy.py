@@ -6,42 +6,37 @@ In production those strings come from the angle-threshold team, not from us. Map
 here means the retrieval query stays stable and testable no matter what wording the
 upstream system sends.
 
-The fault set below is the upstream system's rule set as of 2026-09-25: 12 rules over
-4 exercises, keyed by the rule name its rep summary records (`knee_depth`,
-`knee_valgus`, ...). Source of truth: docs/system1/RULES_AND_FSM_CONDENSED.md from the upstream team
-(the "Form rules" section - metric, threshold, cue). It replaced the 10-rule snapshot
-of 2026-09-11 (docs/error_type_taxonomy.md section 5), which itself replaced an earlier
-guessed set. Old codes that still describe one of these rules live in LEGACY_CODES,
-because curated_data/ (v4) and curated_data_v5/ still carry them in `applies_to_fault`
-and older mock sessions still send them.
+The fault set below is the upstream system's rule set as of 2026-09-28: 12 rules over
+4 exercises, keyed by the rule name its rep summary records (`partial_squat`,
+`knee_valgus`, ...). Source of truth: docs/system1/RULES_AND_FSM_CONDENSED.md from the
+upstream team (the "Form rules" section - metric, threshold, cue). The 2026-09-28 sync
+renamed 10 of the 12 rules of 2026-09-25 (`knee_depth` -> `partial_squat`, ...) without
+changing what they measure; those names are in LEGACY_CODES. The 2026-09-25 set itself
+replaced the 10-fault snapshot of 2026-09-11 (docs/error_type_taxonomy.md section 5).
+Old codes that still describe one of these rules live in LEGACY_CODES, because
+curated_data/ (v4) and curated_data_v5/ still carry them in `applies_to_fault` and older
+mock sessions still send them.
 
-Two of the 2026-09-11 codes did NOT carry over one-to-one:
-- squat "butt wink" (lumbar flexion at the bottom) has no rule now. back_straight
-  measures trunk tilt from vertical and the spec says outright it is "trunk lean, not
-  spine curvature", so "butt wink" is deliberately absent from LEGACY_CODES.
-- push-up "hip sag" became body_alignment, which also fires on piked hips.
-knee_varus and front_knee_too_deep are new; no older code maps onto them.
+Mapping notes against the 2026-09-11 codes:
+- squat "butt wink" maps to rounded_back. The rule itself measures trunk lean ("not
+  spine curvature"), but expert Ton named its faults rounded back and arched back, and
+  the expert answered (2026-10-01, eval/rule_cards.json squat.back_posture oq1/oq2)
+  that both forward trunk lean and butt wink count as this fault.
+- push-up "hip sag" became hip_sag_or_pike, which also fires on piked hips.
+knee_varus and excessive_front_knee_flexion are new; no older code maps onto them.
 
 The upstream may send either the rule name or the cue it shows on screen ("Push knees
 out"), so each cue is also listed in `aliases`; resolve() matches on either, and
 ignores the difference between "_" and " " ("knee valgus" finds knee_valgus).
 
-How to word a `query` (measured on kb_local_curated_v4 with all-MiniLM-L6-v2, see
-docs/error_type_taxonomy.md section 5): write it the way the curator writes a
-common_mistakes item - "Allowing the ...", "Failing to ...", "Squatting too shallow ..."
-- not as a clinical label. A bare label is both too far from the right chunk ("Butt
-wink" -> 0.601, "Elbow flare" -> 0.438) and, being short, roughly equidistant from
-every chunk of that exercise, so it passes the usable-distance bar on unrelated text
-("Partial squat" -> 21 "usable" mistakes, best of which is about heels lifting).
-
-The distances above are MiniLM-specific and stale now that embedding_config.DEFAULT_MODE
-is "gemini" (docs/kb_quality_assessment.md section 10) - gemini-embedding-2 puts
-everything in a much tighter band (raw labels like "Elbow flare" land around 0.40
-instead of MiniLM's 0.438, expanded queries around 0.04 instead of 0.057). The
-principle held up under re-measurement (expanded beats raw by the same wide margin),
-just not these exact numbers - don't cite them as current.
-    "Elbow flare"                                          -> 0.438 (nothing usable)
-    "Allowing the elbows to flare outward or drift ..."    -> 0.057 (exact chunk)
+How each `query` was written (Q-spec, docs/eval_v6_plan.md E2): from the definition,
+includes and excludes of the rule's card in eval/rule_cards.json, never from the KB and
+never from the card's anchors. Each must share fewer than 5 consecutive words with KB
+v5 and with the anchors (eval/check_rule_cards.py --queries). Form: one descriptive
+sentence of what the lifter does wrong - a bare label ("Elbow flare") lands roughly
+equidistant from every chunk of the exercise - with only positive content, because the
+embedding cannot read "not X" and would pull X in. What the rule excludes is the
+card's job, not the query's.
 """
 
 # Nested by exercise_id because a fault name can recur across exercises (the 2026-09-11
@@ -54,19 +49,15 @@ just not these exact numbers - don't cite them as current.
 #                 curator shows the LLM when it tags items (data_pipeline/curator.py)
 #   aliases     - other strings the upstream may send; the on-screen cue comes first
 #   rule_th     - the 2026-09-11 upstream rule's Thai name, where that rule survived
-#   display_th  - Thai fault label for the end user
+#   display_th  - Thai fault label for the end user (same as the card's display_th)
 #   focus_area  - joint/region, for future health-profile cross-referencing
 #                 (see docs/future_user_health_profile.md)
 #   source      - "expert" (defined by the PT consultant) or "web" (fitness-literature
 #                 term - no fixed clinical name, so the query must be descriptive)
-#
-# A query whose meaning did not change keeps its measured wording from 2026-09-11 (see
-# the full_rom note). Only back_straight, body_alignment and elbow_away were reworded to
-# the new rule's meaning, and knee_varus / front_knee_too_deep are new.
 ERROR_TAXONOMY = {
     "squat": {
-        "knee_depth": {
-            "query": "Squatting too shallow, thighs not reaching parallel: partial or quarter squat depth",
+        "partial_squat": {
+            "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend",
             "aliases": ["Lower to 90 degrees", "quarter squat"],
             "rule_th": "ความลึกของการย่อ",
             "display_th": "ย่อไม่สุด / สควอทตื้น",
@@ -74,7 +65,7 @@ ERROR_TAXONOMY = {
             "source": "web",
         },
         "knee_valgus": {
-            "query": "Knee valgus: knees caving inward (medial knee displacement) during the squat",
+            "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement)",
             "aliases": ["Push knees out"],
             "rule_th": "เข่าไม่เลยปลายเท้า",
             "display_th": "เข่าบิดเข้าด้านใน",
@@ -82,33 +73,35 @@ ERROR_TAXONOMY = {
             "source": "expert",
         },
         "knee_varus": {
-            "query": "Knee varus: pushing the knees too far outward past the feet, often with the toes turned out, during the squat",
+            "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much",
             "aliases": ["Keep knees in line"],
             "rule_th": "",
             "display_th": "เข่าบานออกด้านนอก",
             "focus_area": "knee",
             "source": "web",
         },
-        "back_straight": {
-            "query": "Excessive forward lean of the trunk during the squat: the torso tilting too far forward instead of staying upright",
+        "rounded_back": {
+            # Ton's fault order first (rounded, then arched), then the forward lean the
+            # rule actually measures. Butt wink and the lean both count (oq2, oq1).
+            "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward",
             "aliases": ["Keep back straight"],
             "rule_th": "มุมของหลัง",
-            "display_th": "ลำตัวโน้มไปข้างหน้ามากเกินไป",
-            "focus_area": "trunk",
+            "display_th": "หลังค่อม / หลังแอ่น",
+            "focus_area": "spine",
             "source": "expert",
         },
     },
     "push-up": {
-        "body_alignment": {
-            "query": "Failing to keep the body in a straight line during the push-up: letting the hips sag or piking the hips up",
+        "hip_sag_or_pike": {
+            "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling",
             "aliases": ["Body not straight", "sagging hips"],
             "rule_th": "แนวลำตัว",
             "display_th": "ลำตัวไม่ตรง (สะโพกตกหรือโด่ง)",
             "focus_area": "lumbar spine",
             "source": "expert",
         },
-        "elbow_depth": {
-            "query": "Not lowering deep enough: incomplete elbow flexion, failing to reach 90 degrees during the push-up",
+        "partial_pushup": {
+            "query": "Push-ups that stop too high: lowering only partway, so the elbows bend well short of 90 degrees and the chest stays far from the floor",
             "aliases": ["Lower Your Chest", "half push-up"],
             "rule_th": "มุมการงอศอก",
             "display_th": "ลงไม่สุด / วิดพื้นครึ่งท่า",
@@ -117,32 +110,35 @@ ERROR_TAXONOMY = {
         },
     },
     "lunge": {
-        "front_knee_too_shallow": {
-            "query": "Shallow lunge: step too short, insufficient front knee flexion, front knee not reaching 90 degrees",
+        "shallow_lunge": {
+            # Step length left out until the card's lunge oq1 is answered.
+            "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel",
             "aliases": ["Lower your front knee", "insufficient front knee flexion"],
             "rule_th": "มุมเข่าหน้า",
-            "display_th": "ก้าวสั้นเกินไป เข่าหน้างอไม่พอ",
+            "display_th": "ย่อไม่ลึกพอ เข่าหน้างอไม่พอ",
             "focus_area": "knee",
             "source": "web",
         },
-        "front_knee_too_deep": {
-            "query": "Lunging too deep: excessive front knee flexion, the front knee bending well past 90 degrees at the bottom of the lunge",
+        "excessive_front_knee_flexion": {
+            # A short step and the knee travelling past the toes are left out until the
+            # card's oq1/oq2 for this rule are answered.
+            "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load",
             "aliases": ["Raise your front knee"],
             "rule_th": "",
             "display_th": "ย่อเข่าหน้าลึกเกินไป",
             "focus_area": "knee",
             "source": "web",
         },
-        "torso_upright": {
-            "query": "Leaning the torso forward, excessive trunk lean during the lunge",
+        "forward_trunk_lean": {
+            "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright",
             "aliases": ["Keep Torso Upright"],
             "rule_th": "มุมลำตัว",
             "display_th": "ก้มตัวไปหน้ามากเกินไป",
             "focus_area": "spine",
             "source": "web",
         },
-        "back_knee_form": {
-            "query": "Insufficient back knee flexion: rear knee not lowering toward the floor during the lunge",
+        "straight_back_leg": {
+            "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg",
             "aliases": ["Bend your back knee toward the floor"],
             "rule_th": "มุมเข่าหลัง",
             "display_th": "เข่าหลังงอไม่สุด",
@@ -151,24 +147,19 @@ ERROR_TAXONOMY = {
         },
     },
     "bicep-curl": {
-        "elbow_away": {
-            "query": "Allowing the upper arm to swing away from the torso during the curl: the elbows drifting forward, flaring outward or moving back instead of staying at the sides",
+        "elbow_flare": {
+            "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body",
             "aliases": ["Keep Elbows at Your Sides", "elbow drift"],
             "rule_th": "การขยับข้อศอกด้านข้าง",
             "display_th": "ศอกไม่แนบลำตัว (กาง / ลอยไปหน้า / ไปหลัง)",
             "focus_area": "elbow",
             "source": "web",
         },
-        "full_rom": {
-            # Reworded 2026-09-11 after eval/eval_retrieval.py showed the old query
-            # ("Partial range of motion: not fully extending or fully flexing the elbow
-            # (half rep) during the curl") ranked all six correct chunks (0.35-0.46) BELOW
-            # four wrong ones - upper arm stationary 0.27, elbow flare 0.31, momentum 0.34 -
-            # so the gate kept 0 correct / 3 wrong. The word "elbow" pulled every
-            # elbow-related fault; naming the two end positions the way the curator does
-            # ("complete arm extension at the bottom", "full elbow flexion at the top")
-            # puts the correct chunks at 0.27-0.33 and the nearest wrong one at 0.31 (#4).
-            "query": "Failing to achieve complete arm extension at the bottom of the curl and full elbow flexion at the top: partial repetitions with a limited range of motion",
+        "partial_curl": {
+            # The 2026-09-11 query was reworded to the curator's own phrasing after an eval
+            # on v5 (leakage, docs/eval_v6_plan.md section 1); this one is written from the
+            # card. It still avoids the word "elbow", which pulled elbow_flare chunks.
+            "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions)",
             "aliases": ["Full range of motion", "half rep"],
             "rule_th": "การเหยียด/งอศอกไม่สุด",
             "display_th": "ยกไม่สุดช่วง",
@@ -181,30 +172,42 @@ ERROR_TAXONOMY = {
 # Superseded codes that describe the same fault as a current rule, per exercise (the
 # 2026-09-11 set reused "partial range of motion" for two different rules). Needed
 # because curated_data_v5/ and kb_gemini_curated_v5 (2026-09-11 codes) and curated_data/
-# v4 (pre-inventory codes) carry them in `applies_to_fault`, and older mock sessions
-# send them. Old codes with no current rule behind them are deliberately absent - "butt
-# wink" above all (see module docstring) - so they fall through to the raw-string
-# fallback and get logged, which is the signal we want.
+# v4 (pre-inventory codes) carry them in `applies_to_fault`, older mock sessions send
+# them, and data/ subfolders are still named after the 2026-09-25 rules
+# (data/lunge/front_knee_too_deep/). Old codes with no current rule behind them are
+# deliberately absent, so they fall through to the raw-string fallback and get logged,
+# which is the signal we want.
 LEGACY_CODES = {
     "squat": {
-        "partial squat": "knee_depth",       # 2026-09-11
+        "knee_depth": "partial_squat",       # 2026-09-25
+        "back_straight": "rounded_back",     # 2026-09-25
+        "partial squat": "partial_squat",    # 2026-09-11
         "knee valgus": "knee_valgus",        # 2026-09-11
+        "butt wink": "rounded_back",         # 2026-09-11 (expert, 2026-10-01)
         "knees behind toes": "knee_valgus",  # pre-inventory (v4)
     },
     "push-up": {
-        "hip sag": "body_alignment",                   # 2026-09-11
-        "partial range of motion": "elbow_depth",      # 2026-09-11
+        "body_alignment": "hip_sag_or_pike",            # 2026-09-25
+        "elbow_depth": "partial_pushup",                # 2026-09-25
+        "hip sag": "hip_sag_or_pike",                   # 2026-09-11
+        "partial range of motion": "partial_pushup",    # 2026-09-11
     },
     "lunge": {
-        "shallow lunge": "front_knee_too_shallow",           # 2026-09-11
-        "excessive forward trunk lean": "torso_upright",     # 2026-09-11
-        "insufficient back knee flexion": "back_knee_form",  # 2026-09-11
-        "back not straight": "torso_upright",                # pre-inventory (v4)
+        "front_knee_too_shallow": "shallow_lunge",                 # 2026-09-25
+        "front_knee_too_deep": "excessive_front_knee_flexion",     # 2026-09-25
+        "torso_upright": "forward_trunk_lean",                     # 2026-09-25
+        "back_knee_form": "straight_back_leg",                     # 2026-09-25
+        "shallow lunge": "shallow_lunge",                          # 2026-09-11
+        "excessive forward trunk lean": "forward_trunk_lean",      # 2026-09-11
+        "insufficient back knee flexion": "straight_back_leg",     # 2026-09-11
+        "back not straight": "forward_trunk_lean",                 # pre-inventory (v4)
     },
     "bicep-curl": {
-        "elbow flare": "elbow_away",               # 2026-09-11
-        "partial range of motion": "full_rom",     # 2026-09-11
-        "not full extension": "full_rom",          # pre-inventory (v4)
+        "elbow_away": "elbow_flare",                  # 2026-09-25
+        "full_rom": "partial_curl",                   # 2026-09-25
+        "elbow flare": "elbow_flare",                 # 2026-09-11
+        "partial range of motion": "partial_curl",    # 2026-09-11
+        "not full extension": "partial_curl",         # pre-inventory (v4)
     },
 }
 

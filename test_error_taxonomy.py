@@ -1,4 +1,4 @@
-"""Cases for error_taxonomy.resolve() against the 2026-09-25 rule set: rule name, the
+"""Cases for error_taxonomy.resolve() against the 2026-09-28 rule set: rule name, the
 on-screen cue, "_" vs " ", superseded codes, and the codes that must stay unknown.
 Plain asserts so it runs without pytest:
 
@@ -12,24 +12,32 @@ CASES = [
     # (error_type, exercise_id) -> expected code, or None for unknown
     (("knee_valgus", "squat"), "knee_valgus"),
     (("Knee Valgus", "squat"), "knee_valgus"),
+    (("partial_squat", "squat"), "partial_squat"),
     (("Push knees out", "squat"), "knee_valgus"),
     (("Keep knees in line", "squat"), "knee_varus"),
-    (("Keep back straight", "squat"), "back_straight"),
-    (("Lower Your Chest", "push-up"), "elbow_depth"),
-    (("Raise your front knee", "lunge"), "front_knee_too_deep"),
-    (("Full range of motion", "Bicep Curl"), "full_rom"),
-    # superseded codes, per exercise
-    (("Partial squat", "squat"), "knee_depth"),
-    (("Hip sag", "push-up"), "body_alignment"),
-    (("Partial range of motion", "push-up"), "elbow_depth"),
-    (("Partial range of motion", "bicep-curl"), "full_rom"),
-    (("Elbow flare", "bicep-curl"), "elbow_away"),
-    (("Excessive forward trunk lean", "lunge"), "torso_upright"),
+    (("Keep back straight", "squat"), "rounded_back"),
+    (("Lower Your Chest", "push-up"), "partial_pushup"),
+    (("Raise your front knee", "lunge"), "excessive_front_knee_flexion"),
+    (("Full range of motion", "Bicep Curl"), "partial_curl"),
+    # 2026-09-25 names (also the data/ subfolder names)
+    (("knee_depth", "squat"), "partial_squat"),
+    (("back_straight", "squat"), "rounded_back"),
+    (("body_alignment", "push-up"), "hip_sag_or_pike"),
+    (("front_knee_too_deep", "lunge"), "excessive_front_knee_flexion"),
+    (("full_rom", "bicep-curl"), "partial_curl"),
+    # 2026-09-11 codes, per exercise
+    (("Partial squat", "squat"), "partial_squat"),
+    (("Butt wink", "squat"), "rounded_back"),
+    (("Hip sag", "push-up"), "hip_sag_or_pike"),
+    (("Partial range of motion", "push-up"), "partial_pushup"),
+    (("Partial range of motion", "bicep-curl"), "partial_curl"),
+    (("Elbow flare", "bicep-curl"), "elbow_flare"),
+    (("Excessive forward trunk lean", "lunge"), "forward_trunk_lean"),
     # no current rule behind these
-    (("Butt wink", "squat"), None),
     (("heels lifting", "squat"), None),
     # another exercise's code does not leak across
     (("knee_valgus", "lunge"), None),
+    (("back_straight", "lunge"), None),
 ]
 
 
