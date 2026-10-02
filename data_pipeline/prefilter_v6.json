@@ -1,0 +1,839 @@
+{
+ "description": "T3a whole-file prefilter for curating KB v6 (docs/rule_change_v6_plan.md T3a). drop = no content on the form of the four exercises usable for any of the 12 rules; unsure = keep. pending = not assessed, waiting for the user. The curator skips drop (T4 --skip-list); T3 must not start while any entry is pending.",
+ "criteria_ref": "docs/rule_change_v6_plan.md#t3a",
+ "entries": [
+  {
+   "path": "data/bicep-curl/A Comparison of Muscle Unit Activation during Biceps Curl Exercise at 40, 60, 80 and 100% of 1 Repetition Maximum_197 Board #38 May 30 9 30 AM - 11 00 AM.pdf",
+   "decision": "drop",
+   "reason": "Conference proceedings page; the biceps-curl abstract only measures biceps EMG at 40-100% 1RM to fatigue (load intensity), and the rest of the page is unrelated abstracts (isometric leg extension RPE). No form content.",
+   "read": "proceedings page, full text",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf",
+   "decision": "keep",
+   "reason": "Finite-element study of biceps load, but its method section states the standard dumbbell-curl form (start from full elbow extension, elbows kept close to the body) - usable for elbow_flare / partial_curl correct form.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf",
+   "decision": "keep",
+   "reason": "Fatigue-induced compensation in the biceps curl: more shoulder flexion/elevation as the biceps fatigues - the upper arm leaving the torso.",
+   "read": "abstract + outline",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Biceps Brachii and Brachioradialis Excitation in Biceps Curl Exercise Different Handgrips, Different Synergy.pdf",
+   "decision": "keep",
+   "reason": "Handgrip EMG study whose technique section prescribes arms parallel to the trunk with no humerus flexion (correct elbow position).",
+   "read": "abstract + outline + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Biceps Disorder Rehabilitation for the Athlete A Continuum of Moderate to High-Load Exercises.pdf",
+   "decision": "drop",
+   "reason": "Rehab progression of 11 mostly non-curl exercises (pull-ups, Xco shakes, air punch) by EMG; the only curl is an inclined-curl variant. No standard-curl form content. Re-check 2026-10-02 (whole text, guidance/cause sentences): only protocol descriptions of rehab exercises (inclined curl: keep the upper arm vertical); no causes or corrections for the standard curl.",
+   "read": "abstract + keyword skim + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Bilateral Biceps Curl Shows Distinct Biceps Brachii and Anterior Deltoid Excitation Comparing Straight vs. EZ Barbell Coupled with Arms Flexion No-Flexion.pdf",
+   "decision": "keep",
+   "reason": "Compares curls with vs without arm (shoulder) flexion - the upper arm moving forward during the curl, i.e. elbow drift.",
+   "read": "abstract + outline",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Core Muscle Activation During Unstable Bicep Curl Using a Water-Filled Training Tube_1339 Board #132 May 28, 8 00 AM - 9 30 AM.pdf",
+   "decision": "drop",
+   "reason": "Conference abstract on core activation with a water-filled unstable tube during curls (equipment variant); page also carries unrelated abstracts. No form-fault content.",
+   "read": "proceedings page, full text",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Distinct muscle growth and strength adaptations after preacher and incline biceps curls.pdf",
+   "decision": "drop",
+   "reason": "Hypertrophy outcome of preacher vs incline curl variants (shoulder-position-specific training study); nothing on standard-curl form faults.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Exertional Rhabdomyolysis in a 21-year-old, Healthy Female after Performing Three Sets of the Biceps Curl Exercise to Failure with 30% 1rm A Case Report.pdf",
+   "decision": "drop",
+   "reason": "Case report of exertional rhabdomyolysis after curls to failure (clinical/biochemical outcome); page otherwise references. Re-check 2026-10-02 (whole text, guidance/cause sentences): the only form mention is protocol - an elbow stabiliser kept full ROM and stopped elbow swing; no guidance. Full read 2026-10-02 (user request): no form fault is described; the only arm-position text is the protocol (back against the wall, elbow stabiliser for full ROM and no elbow swing). The discussion suggests the full ROM enforced by the stabiliser may have added muscle damage - read alone this argues against full ROM, the opposite of partial_curl feedback. The post-exercise inability to extend the arm is swelling from rhabdomyolysis, not a form fault.",
+   "read": "whole case report read",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/From Continuous sEMG Signals to Discrete Muscle State Tokens A Robust and Interpretable Representation Framework.pdf",
+   "decision": "keep",
+   "reason": "Mostly an sEMG representation method, but its dataset appendix defines a faulty biceps curl (excessive shoulder flexion moving the upper arm forward) with the muscle changes. Unsure - kept.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Muscle strength and activity in men and women performing maximal effort biceps curl exercise on a new machine that automates eccentric overload and drop setting.pdf",
+   "decision": "drop",
+   "reason": "Eccentric-overload machine (CARE) vs dumbbells: strength, EMG, fatigability. Form appears only as test protocol rules. Re-check 2026-10-02 (whole text, guidance/cause sentences): only a test rule (no excessive lumbar extension or shoulder flexion to lift the load); no guidance.",
+   "read": "abstract + outline + keyword skim + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf",
+   "decision": "keep",
+   "reason": "Narrative review of technique for hypertrophy with sections on range of motion and exercise kinematics (full vs partial ROM).",
+   "read": "abstract + outline",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/Scandinavian Med Sci Sports - 2014 - Brandner - Unilateral bicep curl hemodynamics  Low‐pressure continuous vs.pdf",
+   "decision": "drop",
+   "reason": "Hemodynamics (blood pressure, heart rate) of blood-flow-restriction vs traditional curls. No form content. Re-check 2026-10-02 (whole text, guidance/cause sentences): only protocol (back against a wall to prevent body movement).",
+   "read": "abstract + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/THE COMPARISON OF MUSCLE ACTIVATION AND PERFORMANCE IN A NEUTRAL AND SUPINATED GRIP BICEP CURL.pdf",
+   "decision": "drop",
+   "reason": "Student poster: brachioradialis EMG/torque with neutral vs supinated grip on an isokinetic dynamometer. No form-fault content.",
+   "read": "full page",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/The Effect of Shoulder Flexion Angles on the  Recruitment of Upper-extremity Muscles during  Isometric Contraction.pdf",
+   "decision": "keep",
+   "reason": "Isometric curl-machine study of shoulder flexion angle vs biceps recruitment - upper-arm position relates to elbow_flare. Unsure - kept.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf",
+   "decision": "keep",
+   "reason": "Thesis on how increasing load changes biceps curl technique.",
+   "read": "title page + abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/The interplay between muscle length, range of motion, and exercise selection a review.pdf",
+   "decision": "keep",
+   "reason": "Review of muscle length and range of motion in exercise selection (full vs partial ROM).",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/The_Rest-Pause_Biceps_Curl_Exercise_Effect_on_Biceps_Brachii_Muscle_of_Women_A_Study_of_Mechanical_Responsiveness.pdf",
+   "decision": "drop",
+   "reason": "Musculoskeletal-model study of biceps stress/strain under rest-pause sets at 2-5 kg. No form-fault content.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.nasm.org/resource-center/blog/training/9-of-the-best-arm-sculpting-exercises-to-tone-and-strengthen",
+   "list": "data/bicep-curl/urls.txt",
+   "decision": "keep",
+   "reason": "NASM hypertrophy guide; states full range of motion beats rushed partial reps. Unsure - kept.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl",
+   "list": "data/bicep-curl/urls.txt",
+   "decision": "keep",
+   "reason": "Hammer vs biceps curl article with proper-form sections for the biceps curl.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl/",
+   "list": "data/bicep-curl/urls.txt",
+   "decision": "keep",
+   "reason": "ACE seated biceps curl steps: do not move elbows forward, lower back to start. Cues carry over to the standing curl.",
+   "read": "article",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.acefitness.org/resources/pros/expert-articles/9033/building-better-biceps-evidence-based-exercises-for-strength-and-function/",
+   "list": "data/bicep-curl/urls.txt",
+   "decision": "keep",
+   "reason": "ACE EMG comparison of eight curl exercises with practitioner notes; little form content. Unsure - kept.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/elbow_away/Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf",
+   "decision": "keep",
+   "reason": "Shoulder position and biceps EMG in the curl (upper-arm position).",
+   "read": "title (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/bicep-curl/full_rom/Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf",
+   "decision": "keep",
+   "reason": "Systematic review of range of motion and muscle growth (full vs partial ROM).",
+   "read": "title (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/general/basics_of_strength_and_conditioning_manual.pdf",
+   "decision": "keep",
+   "reason": "Strength and conditioning manual with coaching points for the back squat, forward/walking lunge, EZ-bar curl and planks (hips sag/pike, thigh parallel, torso angle).",
+   "read": "table of contents + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/general/feedback_and_cueing/Lincoln2023_TeachingMovementPatterns_NSCA-PTQ.pdf",
+   "decision": "drop",
+   "reason": "Kept out of the KB by user decision 2026-10-02: used only for prompt design (P5). Content: progressions and cueing for teaching movement patterns; little rule-specific content (rigid plank-like push-up, box-squat cue for heels rising).",
+   "read": "whole text read 2026-10-02",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/general/feedback_and_cueing/Neumann2019_AttentionalFocus_Weightlifting_SR_FrontSportsActLiving.pdf",
+   "decision": "drop",
+   "reason": "Kept out of the KB by user decision 2026-10-02: used only for prompt design (P5). Content: systematic review of external vs internal attentional focus (force, EMG); no form content.",
+   "read": "whole text read 2026-10-02",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/general/feedback_and_cueing/Smith2020_FitnessPedagogy_Feedback_NSCA-Coach.pdf",
+   "decision": "drop",
+   "reason": "Kept out of the KB by user decision 2026-10-02: used only for prompt design (P5). Content: fitness pedagogy and feedback types; a few rule-related lines (looking down -> forward lean, knees out slightly, elbows at the ribs).",
+   "read": "whole text read 2026-10-02",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/general/feedback_and_cueing/Stien2022_VerbalVsTechFeedback_BackSquat_BMCSSMR.pdf",
+   "decision": "drop",
+   "reason": "Kept out of the KB by user decision 2026-10-02: used only for prompt design (P5). Content: verbal vs technological feedback in back-squat training; only a cue table (push with both feet, engage core, slight outward knee rotation).",
+   "read": "whole text read 2026-10-02",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/general/injury/Bonilla2022_FitnessCenterInjuries_IJERPH.pdf",
+   "decision": "keep",
+   "reason": "Review of fitness-centre injuries: improper technique as a cause, knee valgus, lumbar load, practical exercise modifications.",
+   "read": "abstract + outline + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/A combined anterior cruciate ligamentMeniscal injury alters the patellofemoral joint kinematics of anterior cruciate ligament-deficient knees during a single-leg lunge exercise A cross-sectional study.pdf",
+   "decision": "drop",
+   "reason": "Patellofemoral 6-DOF kinematics of ACL-deficient knees with meniscal tears during a single-leg lunge (patient imaging study); nothing on lunge depth, trunk or rear-leg form.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Altered movement strategy during functional movement after an ACL injury, despite ACL reconstruction.pdf",
+   "decision": "drop",
+   "reason": "Movement strategy after ACL injury/reconstruction; the forward-lunge rating looks at knee valgus and pelvic drop, which are not lunge rules. Re-check 2026-10-02 (whole text, guidance/cause sentences): only the test instruction (knee ~90 deg, upper body upright, rear foot on the ground); no causes or corrections.",
+   "read": "abstract + keyword skim + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf",
+   "decision": "keep",
+   "reason": "Forward vs lateral lunge knee moments and the FMS in-line lunge score.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Changes in lower limb muscle activity based on angle of ankle abduction during lunge exercise.pdf",
+   "decision": "drop",
+   "reason": "Quadriceps EMG at four ankle-abduction (foot) angles in the lunge; foot angle is not one of the rules.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Comfort2015_ForwardReverseLunge_JointLoading_JAthlTrain.pdf",
+   "decision": "keep",
+   "reason": "Joint kinetics and kinematics of forward/reverse lunge and related rehab exercises (knee and hip loading).",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Comparison_of_the_VMOVL_EMG_Activity_Ratio_Accordi.pdf",
+   "decision": "drop",
+   "reason": "VMO/VL EMG ratio under external resistance directions in a partial lunge for patellofemoral pain; no form content.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Effects of Foot Progression Angle and Stance Width on Lower-Limb Muscle Activation During the Holding Phase of Forward Lunge Exercises in Healthy Adults A Randomized Within-Participant Crossover Study.pdf",
+   "decision": "drop",
+   "reason": "Muscle activation with foot progression angle and stance width in the lunge hold; depth and trunk appear only as fixed protocol cues. Re-check 2026-10-02 (whole text, guidance/cause sentences): only protocol cues (90 deg front knee, upright trunk, rear knee off the floor; trials repeated on trunk lean > 10 deg); no causes or corrections.",
+   "read": "abstract + keyword skim + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf",
+   "decision": "keep",
+   "reason": "Novice vs experienced lunge biomechanics (larger joint ROM and improper actions in novices) with loading positions.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf",
+   "decision": "keep",
+   "reason": "Effect of the targeted front-knee flexion angle on forward-lunge biomechanics (depth).",
+   "read": "introduction",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Evaluation of automatic identification of events during the lunge exercise using kinematic data.pdf",
+   "decision": "drop",
+   "reason": "Methods paper on automatic event detection in the lunge from kinematic data; no form guidance.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Influence of the Exhaustion of the Gluteus Medius on the Knee Adduction Moment During Forward Lunge Exercise.pdf",
+   "decision": "drop",
+   "reason": "Master thesis on gluteus medius fatigue and the knee adduction moment (osteoarthritis loading) during the forward lunge; KAM is not one of the lunge rules. Re-check 2026-10-02 (whole text, guidance/cause sentences): only protocol (rear knee to ankle height, trunk reasonably upright); rest is KAM/osteoarthritis.",
+   "read": "title page + table of contents + keyword skim + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/KritzCroninHume2009BodyweightlungeSCJ.pdf",
+   "decision": "keep",
+   "reason": "Screening the body-weight forward lunge pattern: what faults to look for.",
+   "read": "summary",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Muscle injury and pain  effects of eccentric exercise, sprint running, forward lunge and sports massage.pdf",
+   "decision": "drop",
+   "reason": "Doctoral thesis on hamstring injury, sprinting and massage; its lunge chapter is the same study as the Jonhagen 2009 paper in this folder (kept separately).",
+   "read": "title page + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Scandinavian Med Sci Sports - 2009 - Jönhagen - Muscle activation and length changes during two lunge exercises .pdf",
+   "decision": "keep",
+   "reason": "Muscle activation and length changes during two forward-lunge variants. Unsure - kept.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf",
+   "decision": "keep",
+   "reason": "Split-squat step length and frontal tibia angle vs muscle forces (knee travel, step length).",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Song2023_StepLength_SplitSquat_FrontBioeng.pdf",
+   "decision": "keep",
+   "reason": "Effect of step length on split-squat kinematics, kinetics and EMG.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/The Relationship Between Foot Posture, Dorsiflexion Range of Motion and Lower Extremity Biomechanics During a Drop-Landing Task.pdf",
+   "decision": "drop",
+   "reason": "Drop-landing study on foot posture and dorsiflexion; the lunge appears only as the weight-bearing lunge test for ankle range.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Trunk Position Inﬂuences the Kinematics,Kinetics, and Muscle Activity of the LeadLower Extremity During the ForwardLunge Exercise.pdf",
+   "decision": "keep",
+   "reason": "Trunk position (upright vs forward) changes lead-limb kinematics, kinetics and EMG in the forward lunge.",
+   "read": "first page",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf",
+   "decision": "keep",
+   "reason": "Trunk and shank position vs patellofemoral stress in lead and trail limbs during the forward lunge.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/lunge_knowledge.pdf",
+   "decision": "keep",
+   "reason": "In-line vs traditional lunge technique: balance and muscle activation.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/mxn167Sp24.pdf",
+   "decision": "keep",
+   "reason": "Dissertation validating AI motion capture on forward/backward lunges; its review discusses trunk angle and step length effects. Unsure - kept.",
+   "read": "title page + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/ptq-4.4.9-the-undervalued-lunge.pdf",
+   "decision": "keep",
+   "reason": "NSCA article on lunge technique and benefits.",
+   "read": "introduction",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://web.archive.org/web/20200529194046/https://blog.nasm.org/training-benefits/lunge-effective-lower-body-training-exercise",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "NASM article on lunge positions (upright vs slight forward trunk) and variations.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.acefitness.org/resources/everyone/exercise-library/363/lunge/",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "ACE lunge exercise steps (back straight, lower the rear knee toward the floor).",
+   "read": "article",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://themerisoiutechnique.com/2015/12/25/lunges-common-mistakes-and-correct-technique/",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "Lunge common mistakes and correct technique.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/back_knee_form/Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf",
+   "decision": "keep",
+   "reason": "Bulgarian split squat: rear-leg moment and forward trunk-lean conditions.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/back_knee_form/Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf",
+   "decision": "keep",
+   "reason": "Split-squat rear-leg muscle forces.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/front_knee_too_deep/Escamilla2022_PatellofemoralLoad_ForwardSideLunge_IJSPT.pdf",
+   "decision": "keep",
+   "reason": "Patellofemoral loading in forward and side lunge with step variations.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/front_knee_too_deep/Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf",
+   "decision": "keep",
+   "reason": "Knee in front of vs behind the toes in the forward step lunge and patellar tendon stress.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/torso_upright/AygunPolat2025_TrunkPosition_BulgarianSplitSquat_BMCSSMR.pdf",
+   "decision": "keep",
+   "reason": "Trunk position (neutral vs flexed) in the Bulgarian split squat and muscle activation.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/torso_upright/Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf",
+   "decision": "keep",
+   "reason": "Straight vs inclined trunk in three lunge exercises and muscle activation.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/10-week suspension and traditional push-up training.pdf",
+   "decision": "drop",
+   "reason": "10-week suspension vs traditional push-up training: physical-performance outcomes of a training programme; no form content. Re-check 2026-10-02 (whole text, guidance/cause sentences): only protocol (straight spine, 90 deg depth required for a rep to count); no causes or corrections.",
+   "read": "abstract + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/A Rigid-Body Pendulum Model for Plyometric Push-Up Biomechanic.pdf",
+   "decision": "drop",
+   "reason": "Rigid-body pendulum model for estimating plyometric push-up flight time and power; a measurement model, not form.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/Are Upper Body Muscle Activations Different In Various Type Of Push-up Exercise__203 Board #44 May 30 9 30 AM - 11 00 AM.pdf",
+   "decision": "drop",
+   "reason": "Conference abstract on triceps/pectoral/deltoid EMG with two hand positions; the page's other abstracts are unrelated (ski insoles, jumps).",
+   "read": "proceedings pages, full text",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/Comparison of Muscle Activation and Kinematic Analysis in Narrow-base and Shoulder-width Push-up Variations in Gymnast.pdf",
+   "decision": "drop",
+   "reason": "Single gymnast, narrow vs shoulder-width push-up triceps EMG and joint angles; hand width is not one of the rules.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/Core Muscle Activity during Physical Fitness Exercises A Systematic Review.pdf",
+   "decision": "drop",
+   "reason": "Systematic review cataloguing core-muscle EMG across many fitness exercises; the push-up appears as one EMG table row, no form guidance.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/Medial-lateral_position_of_hand_changes_shoulder_muscle_synergy_during_the_push-up_exercises.pdf",
+   "decision": "drop",
+   "reason": "Shoulder muscle synergy with narrow/normal/wide hand positions; hand width is not one of the rules.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/ProQuestDocuments-2026-09-03.pdf",
+   "decision": "drop",
+   "reason": "Abstract on wrist, hand and humeral rotation vs upper-extremity EMG in push-ups; not one of the rules.",
+   "read": "full page",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/Systematic Review of Core Muscle Activity During Physical Fitness Exercises.pdf",
+   "decision": "drop",
+   "reason": "Systematic review of deep-core EMG (multifidus, transverse abdominis) across fitness exercises; no push-up form guidance.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/The_Biomechanics_of_the_Push_up.pdf",
+   "decision": "keep",
+   "reason": "Contreras et al. - biomechanics of the push-up (technique and variations). The accepted-manuscript copy (_jonathan.pdf) was deleted by the user 2026-10-02 as a duplicate.",
+   "read": "first page",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf",
+   "decision": "keep",
+   "reason": "Percentage of body mass supported at the top vs the bottom (elbows ~90 deg) of push-up variants; relates to depth. Unsure - kept.",
+   "read": "abstract + keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "NASM complete guide to proper push-up form and technique.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.nasm.org/resource-center/exercise-library/push-up",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "NASM push-up exercise-library page (setup and execution cues).",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://web.archive.org/web/20210118193018/https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "NASM progressions and regressions; covers keeping form when an exercise is scaled (includes push-up regressions). Unsure - kept.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels/",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "ACE: trunk and hips stay stable during the push-up; common incorrect execution.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "ACE push-up steps: full body extension with no bend at hips or knees.",
+   "read": "article",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.nasm.org/resource-center/blog/recovery/lower-crossed-syndrome?srsltid=AU7gw4WbY6gUjlx3eB5EIzOdNB2590dLD9f5qzqrysE1kCXMLgtxni9c",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "NASM lower crossed syndrome: causes (prolonged sitting, tight hip flexors, weak glutes/deep core) and correction (hip-flexor stretching, glute activation, planks with a posterior pelvic position) of an over-arched lower back - the arching part of hip_sag_or_pike. Not push-up specific. Unsure - kept (flipped from drop on the 2026-10-02 re-check).",
+   "read": "article + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/body_alignment/GarciaJaen2020_AbdominalHollowing_Plank_IJERPH.pdf",
+   "decision": "keep",
+   "reason": "Abdominal hollowing in the prone plank (trunk alignment).",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/push-up/body_alignment/SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf",
+   "decision": "keep",
+   "reason": "Training programme to improve trunk-stability push-up performance.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf",
+   "decision": "keep",
+   "reason": "NSCA article on customising the squat pattern to anthropometry (depth, stance, trunk angle).",
+   "read": "introduction",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Altered_Knee_and_Ankle_Kinemat.pdf",
+   "decision": "keep",
+   "reason": "Dill et al. 2014: knee and ankle kinematics in squatting with limited dorsiflexion. The second copy (knee_depth/Dill2014_...) was deleted by the user 2026-10-02 as a duplicate.",
+   "read": "first page",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Effect of hip adductor (Squat).pdf",
+   "decision": "drop",
+   "reason": "Master thesis on VMO/VL EMG while squeezing the hip adductors during the squat (patellofemoral rehab); measures muscle activity only, no form-fault content. Re-check 2026-10-02 (whole text, guidance/cause sentences): recommends limiting the squat to ~60 deg knee flexion for patellofemoral pain rehab, which would contradict partial_squat feedback; no form-fault content.",
+   "read": "abstract + page text check + full-text re-check",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Lu2022_HeelLiftInsoles_BarbellSquat_Bioengineering.pdf",
+   "decision": "keep",
+   "reason": "Heel-lift insoles in the barbell squat: changes in ankle, knee, hip and trunk kinematics.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Muscle Activation Patterns During Different Squat Techniques.pdf",
+   "decision": "keep",
+   "reason": "Muscle activation with different squat techniques (knee alignment variations).",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf",
+   "decision": "keep",
+   "reason": "Back-squat errors: lumbar hyperlordosis and knee valgus, neutral spine and knee alignment.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Physiotherapy Res Intl - 2015 - Jaberzadeh - The Effect of Altering Knee Position and Squat Depth on VMO   VL EMG Ratio.pdf",
+   "decision": "keep",
+   "reason": "Neutral vs varus vs valgus knee paths at three squat depths and VMO:VL ratio.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf",
+   "decision": "keep",
+   "reason": "Biomechanical review of the squat: stance, foot rotation, trunk position, tibia position and depth.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/TheBackSquatAProposedAssessment.pdf",
+   "decision": "keep",
+   "reason": "Deconstructs back-squat technique and proposes a screening tool for known faults.",
+   "read": "abstract",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat",
+   "list": "data/squat/urls.txt",
+   "decision": "keep",
+   "reason": "NASM squat biomechanics and coaching decisions.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://web.archive.org/web/20201111145937/https://blog.nasm.org/newletter/diving-deeper-squat-common-misconceptions",
+   "list": "data/squat/urls.txt",
+   "decision": "keep",
+   "reason": "NASM squat misconceptions (knees past toes, knee alignment cues).",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://web.archive.org/web/20201201215505/https://blog.nasm.org/newletter/squat-form",
+   "list": "data/squat/urls.txt",
+   "decision": "keep",
+   "reason": "NASM squat form: what compensations indicate.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "url": "https://www.healthline.com/health/fitness/deep-squat",
+   "list": "data/squat/urls.txt",
+   "decision": "keep",
+   "reason": "Healthline deep squat how-to and form.",
+   "read": "article skim",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/back_straight/Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf",
+   "decision": "keep",
+   "reason": "Spine-focused verbal instruction and spine flexion during lifting.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_depth/Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf",
+   "decision": "keep",
+   "reason": "Hip and ankle range of motion vs squat depth.",
+   "read": "first page (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_valgus/Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf",
+   "decision": "keep",
+   "reason": "Exercise intervention reduces knee valgus during squatting.",
+   "read": "first page (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_valgus/Cronstrom2020_KneeAbduction_ACLRisk_MetaAnalysis_BMCMSD.pdf",
+   "decision": "keep",
+   "reason": "Meta-analysis: knee abduction during weight-bearing tasks and future ACL injury risk (consequence of valgus).",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_valgus/Forman2023_ElasticBands_KneeValgus_SquatReview_IJSPT.pdf",
+   "decision": "keep",
+   "reason": "Elastic bands to reduce dynamic knee valgus in squat-based movements.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_valgus/Sahabuddin2021_HipAnkleExercise_KneeValgus_SR_PeerJ.pdf",
+   "decision": "keep",
+   "reason": "Hip and ankle exercise interventions to reduce dynamic knee valgus.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_valgus/Werner2022_KneeAlignmentInstructions_Focus_IJERPH.pdf",
+   "decision": "keep",
+   "reason": "External vs internal focus instructions for knee alignment; the task is landings/jumps rather than the squat, but the knee-alignment cues apply. Unsure - kept.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_valgus/Wilczynski2020_DynamicKneeValgus_ModifiableFactors_IJERPH.pdf",
+   "decision": "keep",
+   "reason": "Modifiable factors of dynamic knee valgus in single-leg squat and landing tests.",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_varus/Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf",
+   "decision": "keep",
+   "reason": "Stance width and foot angle effects on knee, hip and trunk motion in the squat (knee varus/valgus).",
+   "read": "abstract (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  },
+  {
+   "path": "data/squat/knee_varus/Lorenzetti2020_Correction_HowToSquat_BMCSSMR.pdf",
+   "decision": "keep",
+   "reason": "One-page correction to Lorenzetti 2018 about the knee-varus sentence.",
+   "read": "full page (rule-named subfolder)",
+   "reviewer": "claude",
+   "date": "2026-10-02"
+  }
+ ]
+}

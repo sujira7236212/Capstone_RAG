@@ -1,7 +1,7 @@
 # แผนรับกฎใหม่ของระบบ 1 → KB v6
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — Q-spec + card ยืนยันแล้ว ถัดไป T3a**
-> T1 ✅ (user ยืนยัน Q-spec 2026-10-02) · T2 ✅ · T4 ออกแบบใหม่แล้ว ยังไม่ implement · T3a / T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — T3a เสร็จ ถัดไป T4**
+> T1 ✅ (user ยืนยัน Q-spec 2026-10-02) · T2 ✅ · T3a ✅ · T4 ออกแบบใหม่แล้ว ยังไม่ implement · T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
 > แผนนี้**มาก่อน**ขั้นที่ค้างอยู่ใน [`rag_v2_ablation_plan.md`](rag_v2_ablation_plan.md) (G1/C1/K1/P) เพราะรหัส fault เปลี่ยน ตัวเลข R4 เดิมจึงเทียบกับ KB ใหม่ไม่ได้
 > **เป้าหมายตอนนี้ (2026-10-01):** ไปให้ถึงขั้นที่ Gemini ให้ feedback บน KB v6 ก่อน eval หนัก (E3/E4/E6/E7 และ G1) เลื่อนไปทำหลังจากนั้น
 
@@ -18,7 +18,7 @@
 3. **ถัดไป — ตามลำดับ ห้ามสลับ:**
    1. ~~user ยืนยัน Q-spec~~ ✅ 2026-10-02
    2. ~~ใส่ `approval` → commit card + taxonomy พร้อมกัน ก่อน T3a~~ ✅ 2026-10-02 (หลักฐานว่าเฉลยและ query นิยามไว้ก่อนอ่านเอกสาร) · **หลังจากนี้ห้ามแก้ `query` อีกโดย Claude** เพราะ T3a ทำให้ Claude อ่านต้นฉบับแล้ว ถ้าต้องแก้ให้ user แก้เอง หรือทำเป็น Q-tuned
-   3. **T3a** Claude คัดเอกสารที่ไม่เกี่ยวออกทั้งไฟล์ (§2) — ต้องทำหลังข้อ 2 เท่านั้น
+   3. ~~**T3a** Claude คัดเอกสารที่ไม่เกี่ยวออกทั้งไฟล์~~ ✅ 2026-10-02 (keep 71 · drop 31)
    4. **T4** แก้ curator ตามแบบใหม่ (§2)
    5. **T3** curate (แจ้งขนาดงานและค่า API ก่อนรัน) → **T5** ingest → E5 split → mock 12 กฎ + clean → generate
 4. ⚠️ **ห้ามรัน eval retrieval/generation บน `kb_gemini_curated_v5` จนกว่าจะจบ T5** — taxonomy ใช้รหัสใหม่แล้ว แต่ KB v5 ยังติด tag เก่า
@@ -79,7 +79,8 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 - สเปกของระบบ 1 ย้ายจาก `data/rule and rep count/` ไปที่ `docs/system1/`
 - โฟลเดอร์ว่าง `data/lunge/front_knee_too_shallow/`, `data/push-up/elbow_depth/` ปล่อยไว้ (ไม่มีผล)
 
-### T3a — Claude คัดเอกสารที่ไม่เกี่ยวออก ทั้งไฟล์ ⏸ (ต้องทำหลัง commit Q-spec + card)
+### T3a — Claude คัดเอกสารที่ไม่เกี่ยวออก ทั้งไฟล์ ✅ 2026-10-02
+- **ผล:** 102 หน่วย · keep 71 · drop 31 (27 + feedback_and_cueing 4 ไว้ทำ prompt) (ตรวจ drop ซ้ำทั้งไฟล์ตามที่ user ขอ: u077 กลับเป็น keep · user ลบไฟล์ซ้ำ 2 ไฟล์ออกจาก `data/`) → `data_pipeline/prefilter_v6.json` + [`prefilter_v6_review.md`](prefilter_v6_review.md) (drop, keep ที่ไม่แน่ใจ 10) · user ตรวจแล้ว
 - **หน่วยที่ตัดคือทั้งไฟล์** (หรือทั้ง URL ใน `urls.txt`) ไม่ตัดเนื้อหาบางส่วนในไฟล์ (user ตัดสิน 2026-10-01)
 - เกณฑ์ตัด: ไฟล์ไม่มีเนื้อหาเกี่ยวกับท่าทางของ 4 ท่าที่ใช้กับกฎข้อใดข้อหนึ่งใน 12 ข้อได้เลย (ลักษณะอาการ สาเหตุ ผลเสีย วิธีแก้ หรือท่าที่ถูก)
   · **ไม่แน่ใจให้เก็บไว้** เพราะ curator คัดเนื้อหาที่ไม่เกี่ยวราย window อยู่แล้ว ขั้นนี้มีไว้ตัดไฟล์ที่ไม่เกี่ยวชัด ๆ เพื่อลดค่า API และ noise เท่านั้น
@@ -88,6 +89,16 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 - **ลำดับสำคัญ:** ต้องทำหลัง commit Q-spec และ card เพราะถ้า Claude อ่านต้นฉบับก่อนเขียน query สำนวนของต้นฉบับซึ่ง KB v6 จะสรุปมาอาจติดเข้าไปใน query (leakage)
   ถ้าจะทำ Q-hyde ภายหลัง ต้องรันใน context ที่สะอาดผ่าน API ตาม E2 ไม่ใช่ใน session ที่อ่านต้นฉบับแล้ว
 - รายงานต้องเขียนว่ามีขั้นคัดเอกสารทั้งไฟล์โดย LLM (Claude) ก่อน curate พร้อมจำนวนไฟล์ที่ตัดและเหตุผล
+- **ขั้นตอน (user อนุมัติ 2026-10-02)** · ขอบเขต 102 หน่วย = PDF 85 + URL 17 (เดิม 104 ก่อน user ลบไฟล์ซ้ำ 2 ไฟล์) ใน `urls.txt` 4 ไฟล์ (ไม่รวม `data_duplicates/`)
+  1. สคริปต์ทำรายการทุกไฟล์/URL ลงโครง `prefilter_v6.json` (กันตกหล่น)
+  2. ดึงข้อความตัวอย่างลง scratchpad (ไม่เข้า repo, ไม่เรียก API): PDF ใช้ pypdf → จำนวนหน้า, bookmark, ชื่อเรื่อง, abstract, 2 หน้าแรก · PDF สแกนใช้ Read tool ดูภาพหน้า · URL ใช้ trafilatura แบบเดียวกับ `load_urls_main_content()`
+  3. ตัดสินทีละหน่วย อ่านเพิ่มเฉพาะเมื่อไม่พอ · ก้ำกึ่ง: ท่าดัดแปลง keep ถ้ากลไกใช้กับท่ามาตรฐานได้ · กลุ่มคนเฉพาะ (เช่น ACL) keep ถ้ามี kinematics ที่ใช้กับกฎได้ · งาน hypertrophy/EMG keep ถ้าพูดถึง ROM/ตำแหน่งข้อต่อ/เทคนิค drop ถ้าวัดแค่ผลโปรแกรม · ตำรา keep ทั้งเล่มถ้ามีบทที่เกี่ยว · URL ดึงไม่ได้ keep + บันทึก "fetch failed"
+  4. ต่อหน่วยบันทึก `path`/`url`, `decision` (keep/drop/pending), `reason`, `read` (อ่านส่วนไหน), `reviewer`, `date` · **ไม่บันทึกว่าเกี่ยวกับกฎไหน** (กันกลายเป็น hint ให้ curator ขัดกับ T4 ข้อ 4)
+  5. `docs/prefilter_v6_review.md` ให้ user ตรวจ: ตาราง drop + keep ที่ไม่แน่ใจ ต่อท่า + จำนวนสรุป
+  6. สคริปต์ตรวจว่าทุกหน่วยอยู่ครั้งเดียวพอดี และ decision ถูกค่า
+  7. user ตรวจ drop → commit → T4 (`--skip-list`) · **T3 เริ่มไม่ได้ถ้ายังมี `pending`**
+  - ห้าม: ลบ/ย้ายไฟล์ใน `data/` · เปิด `curated_data_v5/` หรือ log คัดออกของ v5 · แก้ `query`/card · เรียก Gemini/API ที่เสียเงิน
+  - `general/feedback_and_cueing/` 4 ไฟล์: user ตัดสินให้ใช้ทำ prompt อย่างเดียว → `drop` (T4 ข้อ 3)
 
 ### T4 — แก้ curator (`data_pipeline/curator.py`) ⏸ ออกแบบใหม่ 2026-10-01
 1. **`--skip-list data_pipeline/prefilter_v6.json`**: ข้ามไฟล์และ URL ที่ `decision == "drop"` และ log ไว้ (ไม่สร้าง marker ปลอมใน `excluded_from_kb_v6/`)
@@ -99,7 +110,9 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
    - output: `curated_data_v6/<ท่า>/general__<ชื่อไฟล์>_curated.json` (ingest ใช้ path ชั้นแรกเป็น `exercise_id` อยู่แล้ว) ส่วนที่เหลือเขียนลง `curated_data_v6/general/`
    - `is_exercise_mismatch()` ไม่ใช้กับ `general` (ตอนนี้มันคัด window ที่ LLM บอกว่าเป็น "Squat" ทิ้ง)
    - ทดสอบ: unit test ของฟังก์ชันที่ route item ไปตามท่า (มี tag ท่าเดียว / tag 2 ท่า / ไม่มี tag แต่ map ได้ / map ไม่ได้)
-3. **`general/feedback_and_cueing/` (4 ไฟล์) ไม่เอาเข้า KB** ใส่ไว้ใน skip list เป็น drop เหตุผล "ใช้ออกแบบ prompt ขั้น P5" · `general/injury/` ให้ T3a ตัดสิน
+3. **`general/feedback_and_cueing/` (4 ไฟล์) ไม่เอาเข้า KB — ใช้ออกแบบ prompt ขั้น P5 อย่างเดียว** (user ตัดสิน 2026-10-02 หลัง Claude อ่านทั้ง 4 ไฟล์: เนื้อหาตรงกฎมีแค่ไม่กี่ประโยค)
+   · อยู่ใน `prefilter_v6.json` เป็น `drop` แล้ว ไม่ต้องใส่ skip list แยก
+   · `general/injury/` ให้ T3a ตัดสิน
 4. **ไม่ใช้ hint `filed_under_rule`** (ยกเลิกข้อเสนอเดิม) โฟลเดอร์ย่อยตามชื่อกฎ (`data/squat/knee_valgus/`) ไม่มีผลต่อ tag เลย ทำให้ tag มาจากเนื้อหาล้วน ๆ
    และตัดข้อจำกัดใน §7 ของ `eval_v6_plan.md` เรื่อง tag ไม่อิสระจาก source folder ออกได้ · โฟลเดอร์ชั้นท่า (`squat/` ฯลฯ) ยังเป็นตัวกำหนด
    `exercise_id` และ `is_exercise_mismatch()` ยังทำงานเหมือนเดิมสำหรับ 4 ท่า
@@ -140,5 +153,5 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 
 ## 4. คำถามก่อน T4 — ตอบแล้ว (2026-10-01)
 
-1. `data/general/feedback_and_cueing/` → **ไม่ curate เข้า KB** เก็บไว้ใช้ออกแบบ prompt ขั้น P5 (อยู่ใน skip list ของ T4)
+1. `data/general/feedback_and_cueing/` → **ไม่ curate เข้า KB** ใช้ออกแบบ prompt ขั้น P5 (ยืนยันอีกครั้ง 2026-10-02 หลังอ่านเนื้อหา · ดู T4 ข้อ 3)
 2. `data/general/` ที่เหลือ → curator เลือกท่าและ tag เองจากเนื้อหา ไม่อิงโฟลเดอร์ (T4 ข้อ 2) · `injury/Bonilla2022…` ให้ T3a ตัดสินว่าเก็บหรือตัด
