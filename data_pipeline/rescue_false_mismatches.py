@@ -31,6 +31,13 @@ def curated_path_for(mismatch_file: str, rel_dir: str) -> str:
 
 
 def rescue():
+    global CURATED_DIR, EXCLUDED_DIR
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--curated", default=CURATED_DIR, help="curated folder (default: ./curated_data)")
+    ap.add_argument("--excluded", default=EXCLUDED_DIR, help="excluded folder (default: ./excluded_from_kb)")
+    args = ap.parse_args()
+    CURATED_DIR, EXCLUDED_DIR = os.path.abspath(args.curated), os.path.abspath(args.excluded)
     rescued_total = 0
     for root, _dirs, files in os.walk(EXCLUDED_DIR):
         rel_dir = os.path.relpath(root, EXCLUDED_DIR)

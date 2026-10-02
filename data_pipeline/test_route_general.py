@@ -44,6 +44,7 @@ for given, expected in [
     ("Back Squat", "squat"), ("Push-up", "push-up"), ("Forward Lunge", "lunge"),
     ("Dumbbell Biceps Curl", "bicep-curl"), ("Generic", None), ("", None),
     ("Leg Curl", None), ("Hamstring Curl", None), ("Deadlift", None),
+    ("Bulgarian Split Squat", "lunge"), ("Split Squat", "lunge"),
 ]:
     check(f"exercise_for_type({given!r})", exercise_for_type(given), expected)
 

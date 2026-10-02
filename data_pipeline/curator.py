@@ -108,7 +108,10 @@ EXERCISE_ALIASES = {
     "bicep-curl": ("bicepcurl", "bicepscurl", "curl"),
     "push-up": ("pushup", "pressup"),
     "squat": ("squat",),
-    "lunge": ("lunge",),
+    # A (Bulgarian) split squat is a stationary lunge; the rear-leg papers filed under
+    # data/lunge/back_knee_form/ are split-squat studies, and round 1 of v6 binned 8 of
+    # their windows as "Bulgarian Split Squat" until this alias existed.
+    "lunge": ("lunge", "splitsquat"),
 }
 
 
@@ -148,6 +151,8 @@ def exercise_for_type(exercise_type: str) -> Optional[str]:
             if any(a in norm or norm in a for a in aliases)]
     if hits == ["bicep-curl"] and any(w in norm for w in _NOT_BICEP_CURL):
         return None
+    if sorted(hits) == ["lunge", "squat"] and "splitsquat" in norm:
+        return "lunge"  # "split squat" also contains "squat"
     return hits[0] if len(hits) == 1 else None
 
 
