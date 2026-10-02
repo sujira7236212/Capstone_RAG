@@ -1,5 +1,6 @@
-"""Cases for error_taxonomy.resolve() against the 2026-09-28 rule set: rule name, the
-on-screen cue, "_" vs " ", superseded codes, and the codes that must stay unknown.
+"""Cases for error_taxonomy.resolve() against the 2026-09-28 rule set: rule name,
+"_" vs " ", superseded codes, and the codes that must stay unknown (including the
+on-screen cues - the upstream sends the rule name, so there is no alias list).
 Plain asserts so it runs without pytest:
 
     python test_error_taxonomy.py
@@ -13,12 +14,9 @@ CASES = [
     (("knee_valgus", "squat"), "knee_valgus"),
     (("Knee Valgus", "squat"), "knee_valgus"),
     (("partial_squat", "squat"), "partial_squat"),
-    (("Push knees out", "squat"), "knee_valgus"),
-    (("Keep knees in line", "squat"), "knee_varus"),
-    (("Keep back straight", "squat"), "rounded_back"),
-    (("Lower Your Chest", "push-up"), "partial_pushup"),
-    (("Raise your front knee", "lunge"), "excessive_front_knee_flexion"),
-    (("Full range of motion", "Bicep Curl"), "partial_curl"),
+    (("hip_sag_or_pike", "push-up"), "hip_sag_or_pike"),
+    (("straight_back_leg", "lunge"), "straight_back_leg"),
+    (("partial_curl", "Bicep Curl"), "partial_curl"),
     # 2026-09-25 names (also the data/ subfolder names)
     (("knee_depth", "squat"), "partial_squat"),
     (("back_straight", "squat"), "rounded_back"),
@@ -35,6 +33,9 @@ CASES = [
     (("Excessive forward trunk lean", "lunge"), "forward_trunk_lean"),
     # no current rule behind these
     (("heels lifting", "squat"), None),
+    # on-screen cues are not codes
+    (("Push knees out", "squat"), None),
+    (("Keep back straight", "squat"), None),
     # another exercise's code does not leak across
     (("knee_valgus", "lunge"), None),
     (("back_straight", "lunge"), None),

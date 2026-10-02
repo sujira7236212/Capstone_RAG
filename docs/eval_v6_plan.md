@@ -5,14 +5,14 @@
 
 ## 0. เริ่มต่อจากตรงนี้
 
-0. **E1 ร่างเสร็จ (2026-09-30), รอผู้เชี่ยวชาญอนุมัติ**
+0. **E1 เสร็จ — ผู้เชี่ยวชาญอนุมัติ card ครบ 12 ใบ (บันทึก 2026-10-02, card_version 1, ไม่ใส่ชื่อผู้อนุมัติตามที่ user ขอ)**
    - `eval/rule_cards.json` มี 12 card และ anchor 173 ประโยค (relevant 6 · wrong_fault 5–6 · irrelevant 3 ต่อ card) ข้อความภาษาอังกฤษคือสิ่งที่ judge ได้เห็น ภาษาไทยเป็นคำแปลสำหรับผู้เชี่ยวชาญ
    - `python eval/check_rule_cards.py` ตรวจโครงสร้าง ตรวจว่า card ครอบคลุมกฎตามสเปก และตรวจ n-gram กับ KB v5 ผลตอนนี้: ผ่าน · 0 hit ที่ ≥5 คำ (ร่างแรกมี 24 hit ใน 23 anchor ส่วนใหญ่เป็นวลีทั่วไปอย่าง "at the bottom of the" เขียนใหม่ทั้งหมดแล้ว)
    - `python eval/render_rule_cards.py` สร้าง `docs/rule_cards_review.md` เป็นเอกสารที่ส่งให้ผู้เชี่ยวชาญอนุมัติ
    - มีคำถามถึงผู้เชี่ยวชาญ 6 ข้อ ที่สำคัญคือ `squat.back_posture` oq1/oq2 (นับลำตัวโน้ม และ butt wink ไหม) ซึ่งมีผลต่อ `query` ของ T1 ด้วย
    - หลังอนุมัติ: ใส่ชื่อผู้อนุมัติและวันที่ใน `approval` แล้ว commit ก่อน T3
    - **2026-10-01:** `squat.back_posture` oq1 = นับลำตัวโน้ม · oq2 = นับ butt wink (บันทึกใน `answer` ของ open question, ไม่ต้องเพิ่ม `card_version` เพราะ card ยังไม่เคยอนุมัติ)
-   - **E2 Q-spec ร่างแล้ว (2026-10-01):** `query` ทั้ง 12 ตัวใน `error_taxonomy.py` เขียนจาก card โดย Claude รอ user ตรวจและยืนยัน · ตรวจด้วย `python eval/check_rule_cards.py --queries` (0 hit กับ KB v5 และ anchor)
+   - **E2 Q-spec ยืนยันแล้ว (2026-10-02):** `query` ทั้ง 12 ตัวใน `error_taxonomy.py` เขียนจาก card โดย Claude user แก้และยืนยันแล้ว · ตรวจด้วย `python eval/check_rule_cards.py --queries` (0 hit กับ KB v5 และ anchor)
 1. ถาม user ว่าได้ API key ของค่ายไหนมาเพิ่มบ้าง เพราะจะใช้ตัดสินว่า E4 ทำแบบเต็ม (3 ค่าย) หรือแบบ fallback (§6)
 2. E1 เริ่มได้ทันทีที่ระบบ 1 ยืนยันกฎแล้ว (§3 ของแผน v6) และ**ต้องเสร็จและได้รับอนุมัติก่อน T3 (curate v6)**
 3. ห้ามเปิดดู `curated_data_v5/`, `curated_data_v6/` หรือผลค้นจาก KB ระหว่างเขียน rule card, anchor และ Q-spec
@@ -46,7 +46,7 @@
 | cross-exercise leak | chunk ที่ `exercise_id` ไม่ตรงกับท่าของ session โผล่ใน context | = 0 |
 | negative: clean session | session ที่ไม่มีท่าผิด | context ว่าง |
 | negative: data gap | กฎที่ใน pool ไม่มี `relevant` เลย (เช่น `knee_varus` ถ้า KB ไม่มีเนื้อหา) | รายงานเป็น data gap ไม่นับเป็นความผิดของ retrieval |
-| alias stability | ส่ง rule name, cue และ legacy code ของกฎเดียวกัน แล้วเทียบ context (Jaccard) · ไม่รวมชื่อไทย เพราะระบบ 1 ไม่ส่งชื่อไทยแน่นอน (user ยืนยัน 2026-10-02) และ `resolve()` ก็ไม่จับคู่ `display_th` | = 1.0 เพราะ `resolve()` ควรพาไป query เดียวกัน |
+| alias stability | ส่ง rule name และ legacy code ของกฎเดียวกัน แล้วเทียบ context (Jaccard) · ไม่รวม cue และชื่อไทย เพราะระบบ 1 ส่ง `error_type` = key เท่านั้น (user ยืนยัน 2026-10-02) จึงลบ `aliases` และ `display_th` ออกจาก taxonomy แล้ว | = 1.0 เพราะ `resolve()` ควรพาไป query เดียวกัน |
 | anchor discrimination | collection เล็กที่มีแต่ anchor ของทุกกฎในท่าเดียวกัน (ไม่มี KB อยู่ในนั้น) → ค้นด้วย query ของกฎ X แล้ว anchor `relevant` ของ X ต้องอยู่เหนือ anchor ของกฎพี่น้อง | วัดว่า query แยกกฎที่คล้ายกันออกจากกันได้ไหม โดยไม่ต้องพึ่ง KB |
 | source-folder recall | ค้นกฎ X แล้วนับสัดส่วน chunk ที่มาจากเปเปอร์ใน `data/<ท่า>/<X>/` เทียบกับโฟลเดอร์ของกฎอื่น | ใช้ดูแนวโน้มเท่านั้น (เปเปอร์หนึ่งพูดได้หลายเรื่อง) |
 

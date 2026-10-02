@@ -6,6 +6,7 @@
     "English text is what the LLM judge sees (the KB is English). Thai is for the expert who approves the card; en and th must say the same thing.",
     "concept_id never changes. rule_names[0] is the current system-1 rule name; the rest are earlier names of the same rule. A rename only edits rule_names (no re-approval); a change of meaning bumps card_version and needs re-approval of that card.",
     "Anchor labels: relevant = the sentence helps a user fix THIS fault; wrong_fault = it describes a different form fault (another rule, or a fault the system has no rule for); irrelevant = no form fault at all.",
+    "approval: the expert approved all 12 cards at card_version 1; the name is withheld at the user's request, and date is the day the approval was recorded (2026-10-02).",
     "An anchor with depends_on is labelled on the assumption the draft makes for that open question; if the expert answers the other way, flip or drop it."
   ],
   "cards": [
@@ -59,7 +60,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "squat.knee_valgus",
@@ -112,7 +113,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "squat.knee_varus",
@@ -166,7 +167,7 @@
       "open_questions": [
         {"id": "oq1", "en": "The causes and consequences were drafted from general coaching knowledge because little is written about knees splaying outward. Are they correct and complete?", "th": "สาเหตุและผลเสียที่ร่างไว้มาจากความรู้ทั่วไป เพราะมีเอกสารพูดถึงเข่าบานออกน้อย ถูกต้องและครบหรือไม่"}
       ],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "squat.back_posture",
@@ -224,7 +225,7 @@
         {"id": "oq2", "en": "Does หลังค่อม (rounded back) include the lower back rounding at the bottom as the pelvis tucks under (butt wink)? The draft says yes.", "th": "หลังค่อมรวมถึงหลังล่างงอตอนอยู่จุดต่ำสุดเพราะเชิงกรานม้วนเข้า (butt wink) ด้วยหรือไม่ ร่างนี้นับรวม",
          "answer": {"value": "yes", "en": "Yes: butt wink counts as a form of rounded back.", "th": "นับ: butt wink เป็นหลังค่อมแบบหนึ่ง", "date": "2026-10-01"}}
       ],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "push-up.body_line",
@@ -274,7 +275,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "push-up.insufficient_depth",
@@ -324,7 +325,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "lunge.insufficient_depth",
@@ -376,7 +377,7 @@
       "open_questions": [
         {"id": "oq1", "en": "Earlier versions linked a step that is too short to a shallow lunge. Is step length a cause of this fault, of the too-deep fault (excessive_front_knee_flexion), or neither? The draft counts step length only when the text ties it to depth, and lists a short step as a cause of the too-deep fault.", "th": "เวอร์ชันก่อนโยงการก้าวสั้นเกินกับลันจ์ตื้น ระยะก้าวเป็นสาเหตุของอาการนี้ ของอาการย่อลึกเกิน (excessive_front_knee_flexion) หรือไม่เกี่ยวทั้งคู่ ร่างนี้นับระยะก้าวเฉพาะเมื่อข้อความโยงกับความลึก และใส่การก้าวสั้นเป็นสาเหตุของอาการย่อลึกเกิน"}
       ],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "lunge.excessive_front_knee_flexion",
@@ -431,7 +432,7 @@
         {"id": "oq1", "en": "Does the front knee travelling far past the toes count as this fault? The draft counts it only when the text ties it to the knee bending too much.", "th": "เข่าหน้าพุ่งเลยปลายเท้ามากนับเป็นอาการนี้ด้วยหรือไม่ ร่างนี้นับเฉพาะเมื่อข้อความโยงกับการที่เข่างอมากเกิน"},
         {"id": "oq2", "en": "Is a step that is too short a cause of this fault? (See oq1 on lunge.insufficient_depth.)", "th": "การก้าวสั้นเกินเป็นสาเหตุของอาการนี้หรือไม่ (ดู oq1 ของ lunge.insufficient_depth)"}
       ],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "lunge.forward_trunk_lean",
@@ -481,7 +482,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "lunge.straight_back_leg",
@@ -531,7 +532,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "bicep-curl.elbow_drift",
@@ -582,7 +583,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     },
     {
       "concept_id": "bicep-curl.partial_range",
@@ -632,7 +633,7 @@
         ]
       },
       "open_questions": [],
-      "approval": {"approved_by": null, "date": null, "card_version": null}
+      "approval": {"approved_by": "expert (name withheld)", "date": "2026-10-02", "card_version": 1}
     }
   ]
 }

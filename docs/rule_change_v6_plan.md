@@ -1,7 +1,7 @@
 # แผนรับกฎใหม่ของระบบ 1 → KB v6
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-01 · สถานะ: **กำลังทำ — T1 ทำใหม่เสร็จ (ร่าง Q-spec รอ user ตรวจ)**
-> T1 ✅ (ร่าง ยังไม่ commit) · T2 ✅ · T4 ออกแบบใหม่แล้ว ยังไม่ implement · T3a / T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — Q-spec + card ยืนยันแล้ว ถัดไป T3a**
+> T1 ✅ (user ยืนยัน Q-spec 2026-10-02) · T2 ✅ · T4 ออกแบบใหม่แล้ว ยังไม่ implement · T3a / T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
 > แผนนี้**มาก่อน**ขั้นที่ค้างอยู่ใน [`rag_v2_ablation_plan.md`](rag_v2_ablation_plan.md) (G1/C1/K1/P) เพราะรหัส fault เปลี่ยน ตัวเลข R4 เดิมจึงเทียบกับ KB ใหม่ไม่ได้
 > **เป้าหมายตอนนี้ (2026-10-01):** ไปให้ถึงขั้นที่ Gemini ให้ feedback บน KB v6 ก่อน eval หนัก (E3/E4/E6/E7 และ G1) เลื่อนไปทำหลังจากนั้น
 
@@ -10,12 +10,14 @@
 1. **กฎนิ่งแล้ว** — user ยืนยันคร่าว ๆ (2026-10-01) ว่าอาการของทั้ง 12 กฎถูกต้อง และถือว่ากฎชุดนี้ไม่เปลี่ยนอีก
    คำตอบของ `squat.back_posture` ใน `eval/rule_cards.json`: **oq1 = นับ** (ลำตัวโน้มไปหน้ามากเกินเป็น relevant) · **oq2 = นับ** (butt wink เป็นหลังค่อมแบบหนึ่ง)
    → `butt wink` กลับเข้า `LEGACY_CODES` โดย map ไปที่ `rounded_back`
-2. **T1 รอบใหม่เสร็จ (ยังไม่ commit)** key = ชื่อกฎ 2026-09-28 · ชื่อ 2026-09-25 อยู่ใน `LEGACY_CODES` · `query` ทั้ง 12 ตัวเขียนใหม่จาก card (= **Q-spec** ร่างโดย Claude)
-   · `python test_error_taxonomy.py` 24/24 · `python data_pipeline/test_normalize_fault_tags.py` 10/10
+2. **T1 เสร็จ — user ยืนยัน key และ Q-spec ทั้ง 12 ตัว (2026-10-02)** key = ชื่อกฎ 2026-09-28 · ชื่อ 2026-09-25 อยู่ใน `LEGACY_CODES` · `query` เขียนจาก card (Claude ร่าง user แก้ `partial_pushup` แล้วยืนยัน)
+   · ลบ `rule_th`, `display_th`, `aliases` ออกแล้ว เพราะระบบ 1 ส่ง `error_type` = key ตรงตัวเสมอ (ไม่ส่ง cue หรือชื่อไทย) · `resolve()` ยังใช้อยู่ (จับ key, `_`/ช่องว่าง, `LEGACY_CODES`)
+   · ผู้เชี่ยวชาญอนุมัติ card ครบ 12 ใบ (card_version 1) · `approval` ไม่ใส่ชื่อตามที่ user ขอ
+   · `python test_error_taxonomy.py` 23/23 · `python data_pipeline/test_normalize_fault_tags.py` 10/10
    · `python eval/check_rule_cards.py --queries` ผ่าน: query ซ้ำกับ KB v5 และ anchor ไม่ถึง 5 คำ
 3. **ถัดไป — ตามลำดับ ห้ามสลับ:**
-   1. user ตรวจและแก้ Q-spec ใน `error_taxonomy.py` แล้วยืนยัน (ตามกติกา E2: Claude ร่างได้ แต่ user ต้องเป็นคนยืนยัน)
-   2. ใส่ `approval` ใน `eval/rule_cards.json` → **commit card + taxonomy พร้อมกัน ก่อน T3a** (หลักฐานว่าเฉลยและ query นิยามไว้ก่อนอ่านเอกสาร)
+   1. ~~user ยืนยัน Q-spec~~ ✅ 2026-10-02
+   2. ~~ใส่ `approval` → commit card + taxonomy พร้อมกัน ก่อน T3a~~ ✅ 2026-10-02 (หลักฐานว่าเฉลยและ query นิยามไว้ก่อนอ่านเอกสาร) · **หลังจากนี้ห้ามแก้ `query` อีกโดย Claude** เพราะ T3a ทำให้ Claude อ่านต้นฉบับแล้ว ถ้าต้องแก้ให้ user แก้เอง หรือทำเป็น Q-tuned
    3. **T3a** Claude คัดเอกสารที่ไม่เกี่ยวออกทั้งไฟล์ (§2) — ต้องทำหลังข้อ 2 เท่านั้น
    4. **T4** แก้ curator ตามแบบใหม่ (§2)
    5. **T3** curate (แจ้งขนาดงานและค่า API ก่อนรัน) → **T5** ingest → E5 split → mock 12 กฎ + clean → generate

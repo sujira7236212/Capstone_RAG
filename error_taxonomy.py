@@ -25,9 +25,9 @@ Mapping notes against the 2026-09-11 codes:
 - push-up "hip sag" became hip_sag_or_pike, which also fires on piked hips.
 knee_varus and excessive_front_knee_flexion are new; no older code maps onto them.
 
-The upstream may send either the rule name or the cue it shows on screen ("Push knees
-out"), so each cue is also listed in `aliases`; resolve() matches on either, and
-ignores the difference between "_" and " " ("knee valgus" finds knee_valgus).
+The upstream sends `error_type` as the rule name itself, never the on-screen cue or a
+Thai label (confirmed 2026-10-02), so there is no alias list. resolve() still ignores
+the difference between "_" and " " ("knee valgus" finds knee_valgus).
 
 How each `query` was written (Q-spec, docs/eval_v6_plan.md E2): from the definition,
 includes and excludes of the rule's card in eval/rule_cards.json, never from the KB and
@@ -47,9 +47,6 @@ card's job, not the query's.
 # value:
 #   query       - fault-name phrasing sent to the vector store, and the description the
 #                 curator shows the LLM when it tags items (data_pipeline/curator.py)
-#   aliases     - other strings the upstream may send; the on-screen cue comes first
-#   rule_th     - the 2026-09-11 upstream rule's Thai name, where that rule survived
-#   display_th  - Thai fault label for the end user (same as the card's display_th)
 #   focus_area  - joint/region, for future health-profile cross-referencing
 #                 (see docs/future_user_health_profile.md)
 #   source      - "expert" (defined by the PT consultant) or "web" (fitness-literature
@@ -58,25 +55,16 @@ ERROR_TAXONOMY = {
     "squat": {
         "partial_squat": {
             "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend",
-            "aliases": ["Lower to 90 degrees", "quarter squat"],
-            "rule_th": "ความลึกของการย่อ",
-            "display_th": "ย่อไม่สุด / สควอทตื้น",
             "focus_area": "hip",
             "source": "web",
         },
         "knee_valgus": {
             "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement)",
-            "aliases": ["Push knees out"],
-            "rule_th": "เข่าไม่เลยปลายเท้า",
-            "display_th": "เข่าบิดเข้าด้านใน",
             "focus_area": "knee",
             "source": "expert",
         },
         "knee_varus": {
             "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much",
-            "aliases": ["Keep knees in line"],
-            "rule_th": "",
-            "display_th": "เข่าบานออกด้านนอก",
             "focus_area": "knee",
             "source": "web",
         },
@@ -84,9 +72,6 @@ ERROR_TAXONOMY = {
             # Ton's fault order first (rounded, then arched), then the forward lean the
             # rule actually measures. Butt wink and the lean both count (oq2, oq1).
             "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward",
-            "aliases": ["Keep back straight"],
-            "rule_th": "มุมของหลัง",
-            "display_th": "หลังค่อม / หลังแอ่น",
             "focus_area": "spine",
             "source": "expert",
         },
@@ -94,17 +79,11 @@ ERROR_TAXONOMY = {
     "push-up": {
         "hip_sag_or_pike": {
             "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling",
-            "aliases": ["Body not straight", "sagging hips"],
-            "rule_th": "แนวลำตัว",
-            "display_th": "ลำตัวไม่ตรง (สะโพกตกหรือโด่ง)",
             "focus_area": "lumbar spine",
             "source": "expert",
         },
         "partial_pushup": {
-            "query": "Push-ups that stop too high: lowering only partway, so the elbows bend well short of 90 degrees and the chest stays far from the floor",
-            "aliases": ["Lower Your Chest", "half push-up"],
-            "rule_th": "มุมการงอศอก",
-            "display_th": "ลงไม่สุด / วิดพื้นครึ่งท่า",
+            "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor",
             "focus_area": "elbow",
             "source": "web",
         },
@@ -113,9 +92,6 @@ ERROR_TAXONOMY = {
         "shallow_lunge": {
             # Step length left out until the card's lunge oq1 is answered.
             "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel",
-            "aliases": ["Lower your front knee", "insufficient front knee flexion"],
-            "rule_th": "มุมเข่าหน้า",
-            "display_th": "ย่อไม่ลึกพอ เข่าหน้างอไม่พอ",
             "focus_area": "knee",
             "source": "web",
         },
@@ -123,25 +99,16 @@ ERROR_TAXONOMY = {
             # A short step and the knee travelling past the toes are left out until the
             # card's oq1/oq2 for this rule are answered.
             "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load",
-            "aliases": ["Raise your front knee"],
-            "rule_th": "",
-            "display_th": "ย่อเข่าหน้าลึกเกินไป",
             "focus_area": "knee",
             "source": "web",
         },
         "forward_trunk_lean": {
             "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright",
-            "aliases": ["Keep Torso Upright"],
-            "rule_th": "มุมลำตัว",
-            "display_th": "ก้มตัวไปหน้ามากเกินไป",
             "focus_area": "spine",
             "source": "web",
         },
         "straight_back_leg": {
             "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg",
-            "aliases": ["Bend your back knee toward the floor"],
-            "rule_th": "มุมเข่าหลัง",
-            "display_th": "เข่าหลังงอไม่สุด",
             "focus_area": "knee",
             "source": "web",
         },
@@ -149,9 +116,6 @@ ERROR_TAXONOMY = {
     "bicep-curl": {
         "elbow_flare": {
             "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body",
-            "aliases": ["Keep Elbows at Your Sides", "elbow drift"],
-            "rule_th": "การขยับข้อศอกด้านข้าง",
-            "display_th": "ศอกไม่แนบลำตัว (กาง / ลอยไปหน้า / ไปหลัง)",
             "focus_area": "elbow",
             "source": "web",
         },
@@ -160,9 +124,6 @@ ERROR_TAXONOMY = {
             # on v5 (leakage, docs/eval_v6_plan.md section 1); this one is written from the
             # card. It still avoids the word "elbow", which pulled elbow_flare chunks.
             "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions)",
-            "aliases": ["Full range of motion", "half rep"],
-            "rule_th": "การเหยียด/งอศอกไม่สุด",
-            "display_th": "ยกไม่สุดช่วง",
             "focus_area": "elbow",
             "source": "web",
         },
@@ -243,14 +204,14 @@ def all_faults():
 
 
 def _lookup(key: str, exercise_id: str):
-    """Match order: code -> alias -> query -> legacy code. `key` is a _match_key().
+    """Match order: code -> query -> legacy code. `key` is a _match_key().
     Returns (exercise_id, code, entry) or None."""
     faults = ERROR_TAXONOMY.get(exercise_id, {})
     for code, entry in faults.items():
         if key == _match_key(code):
             return exercise_id, code, entry
     for code, entry in faults.items():
-        if key in (_match_key(a) for a in entry["aliases"]) or key == _match_key(entry["query"]):
+        if key == _match_key(entry["query"]):
             return exercise_id, code, entry
     for old, code in LEGACY_CODES.get(exercise_id, {}).items():
         if key == _match_key(old):
@@ -259,7 +220,7 @@ def _lookup(key: str, exercise_id: str):
 
 
 def resolve(error_type: str, exercise_id: str = "") -> dict:
-    """Return {query, code, display_th, focus_area, exercise_id, known, raw} for one error_type.
+    """Return {query, code, focus_area, source, exercise_id, known, raw} for one error_type.
 
     `exercise_id` is required to disambiguate codes shared across exercises; when it is
     empty every exercise is searched, first hit wins. Unknown codes fall back to the raw
@@ -278,9 +239,6 @@ def resolve(error_type: str, exercise_id: str = "") -> dict:
     return {
         "query": str(error_type),
         "code": key,
-        "aliases": [],
-        "rule_th": "",
-        "display_th": str(error_type),
         "focus_area": "",
         "source": "",
         "exercise_id": ex,
