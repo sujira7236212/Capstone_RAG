@@ -5,7 +5,7 @@ covers rep counting (the FSM) and form feedback (the rules) for four exercises: 
 lunge and bicep curl. It holds no history, evidence or open items. Those live in
 `docs/rule_based/RULES_AND_FSM.md`.
 
-Synced from code on 2026-09-25 (`src/fsm_counter/`, `src/rule_based/`,
+Synced from code on 2026-09-28 (`src/fsm_counter/`, `src/rule_based/`,
 `src/pipeline/placement_guide.py`). If a value here disagrees with the code, the code wins.
 
 ## Units and conventions
@@ -24,10 +24,10 @@ Synced from code on 2026-09-25 (`src/fsm_counter/`, `src/rule_based/`,
 
 | Exercise | Counting angle | Rep counts when | Rules (priority order) |
 |---|---|---|---|
-| Squat | mean of both knees | knee angle reaches 120 or below, then returns to 160 or above | knee_depth, knee_valgus, knee_varus, back_straight |
-| Push-up | mean of both elbows | elbow angle reaches 110 or below, then returns to 150 or above | body_alignment, elbow_depth |
-| Lunge | the more-bent knee | knee angle reaches 105 or below, then returns to 155 or above | front_knee_too_shallow, front_knee_too_deep, torso_upright, back_knee_form |
-| Bicep curl | the active arm's elbow | elbow angle reaches 55 or below, then returns to 155 or above | elbow_away, full_rom |
+| Squat | mean of both knees | knee angle reaches 120 or below, then returns to 160 or above | partial_squat, knee_valgus, knee_varus, rounded_back |
+| Push-up | mean of both elbows | elbow angle reaches 110 or below, then returns to 150 or above | hip_sag_or_pike, partial_pushup |
+| Lunge | the more-bent knee | knee angle reaches 105 or below, then returns to 155 or above | shallow_lunge, excessive_front_knee_flexion, forward_trunk_lean, straight_back_leg |
+| Bicep curl | the active arm's elbow | elbow angle reaches 55 or below, then returns to 155 or above | elbow_flare, partial_curl |
 
 Exercise name aliases (same FSM and same rules):
 - Push-up: `pushup`, `diamond_pushup`
@@ -64,10 +64,10 @@ counting. The only link between them is the `RepEvent` the FSM emits each frame:
 |---|---|---|
 | `left_knee` / `right_knee` | hip - knee - ankle | squat and lunge counting, squat and lunge knee rules |
 | `left_elbow` / `right_elbow` | shoulder - elbow - wrist | push-up and curl counting, push-up and curl depth rules |
-| `left_shoulder_angle` / `right_shoulder_angle` | elbow - shoulder - hip (0 = upper arm along the torso) | curl elbow_away |
-| `left_body_alignment` / `right_body_alignment` | shoulder - hip - ankle | push-up body_alignment |
+| `left_shoulder_angle` / `right_shoulder_angle` | elbow - shoulder - hip (0 = upper arm along the torso) | curl elbow_flare |
+| `left_body_alignment` / `right_body_alignment` | shoulder - hip - ankle | push-up hip_sag_or_pike |
 | `thigh_split` | angle between the two hip->knee thigh lines (0 = legs together) | lunge attempt gate |
-| trunk tilt (computed in the rules, not an angle key) | hip->shoulder line vs world vertical | squat back_straight, lunge torso_upright, arming posture check |
+| trunk tilt (computed in the rules, not an angle key) | hip->shoulder line vs world vertical | squat rounded_back, lunge forward_trunk_lean, arming posture check |
 
 ## FSM rep counting
 
@@ -164,9 +164,21 @@ layer.
 - Each exercise has a priority-ranked list of rules. Priority 1 is the most important.
 - Frame rules are checked on every frame inside an attempt (from `REP_STARTED` until the attempt
   completes or is abandoned). A frame rule fires only after 10 consecutive violated frames
-  (`FRAME_RULE_MIN_FRAMES`). A clean frame or a frame without enough data resets the streak.
+  (`FRAME_RULE_MIN_FRAMES`). A clean frame, or a frame where the rule's own joints score below 0.3,
+  resets the streak to 0. For example, 5 violated frames, then 1 clean frame, then 5 violated
+  frames gives no warning.
+- The streak also resets at every rep boundary. Nothing is checked between reps.
+- A frame the pipeline skips as low-confidence (see Pipeline, step 2) never reaches the rules, so it
+  neither adds to nor resets a streak: 5 violated frames, 1 skipped frame, 5 violated frames does
+  fire.
+- 10 is a count of processed frames, not a duration: about 0.23 s at 44 fps, 0.33 s at 30 fps and
+  0.67 s at 15 fps.
+- Once a frame rule fires, the rep is recorded as incorrect even if the fault stops. The on-screen
+  text stays for 1 second after the fault clears.
 - Rep rules are checked once, at `REP_COMPLETED` and also at `REP_ABANDONED`. An abandoned attempt
-  is not counted but still gets its rep-rule warning ("not counted, and here is why").
+  is not counted but still gets its rep-rule warning ("not counted, and here is why"). They have no
+  10-frame debounce: each reads one number per rep, usually the deepest angle (a single frame). The
+  squat knee rules instead average over the frames with the knee at 92-108.
 - A rule returns violated, satisfied, or no verdict. No verdict (missing or low-confidence
   landmarks, no 3D data, or a precondition not met) is never a warning and never makes a rep
   incorrect.
@@ -183,7 +195,7 @@ layer.
   ideal form value. This is an intent, not a guarantee; some bars are set tighter and can
   occasionally warn on acceptable form.
 
-### Squat rule 1: knee_depth
+### Squat rule 1: partial_squat
 
 - Exercise: squat. Priority: 1. Scope: rep.
 - Cue shown: "Lower to 90 degrees"
@@ -226,7 +238,7 @@ layer.
 - Meaning: knees splaying outward (V shape), for example with toes turned out, is also a fault.
   The knees should stay parallel. Mutually exclusive with knee_valgus.
 
-### Squat rule 4: back_straight
+### Squat rule 4: rounded_back
 
 - Exercise: squat. Priority: 4. Scope: frame. Needs 3D keypoints.
 - Cue shown: "Keep back straight"
@@ -236,8 +248,11 @@ layer.
   frames.
 - No verdict when: neither side has both shoulder and hip at score 0.3 or higher.
 - Meaning: the torso leans too far forward. It measures trunk lean, not spine curvature.
+- Fault names (expert Ton, in RAG query order): หลังค่อม (Rounded back), หลังแอ่น (Arched back). The rule sees neither
+  directly: it only sees trunk lean, so a rounded or arched back with an upright trunk gives
+  no warning.
 
-### Push-up rule 1: body_alignment
+### Push-up rule 1: hip_sag_or_pike
 
 - Exercise: push-up. Priority: 1. Scope: frame.
 - Cue shown: "Body not straight"
@@ -247,7 +262,7 @@ layer.
 - Meaning: the body is not in a straight line. Catches both sagging hips and piked hips with one
   message.
 
-### Push-up rule 2: elbow_depth
+### Push-up rule 2: partial_pushup
 
 - Exercise: push-up. Priority: 2. Scope: rep.
 - Cue shown: "Lower Your Chest"
@@ -268,7 +283,7 @@ outcomes for a lunge (hip-knee-ankle angle of the front knee at its deepest, deg
 - above 105: not counted, warned "Lower your front knee".
 The coached ideal is 90 degrees for both knees.
 
-### Lunge rule 1: front_knee_too_shallow
+### Lunge rule 1: shallow_lunge
 
 - Exercise: lunge. Priority: 1. Scope: rep.
 - Cue shown: "Lower your front knee"
@@ -280,7 +295,7 @@ The coached ideal is 90 degrees for both knees.
   fires on attempts that were not counted. On a shallow set the rep counter stays at 0 and this cue
   appears on every attempt.
 
-### Lunge rule 2: front_knee_too_deep
+### Lunge rule 2: excessive_front_knee_flexion
 
 - Exercise: lunge. Priority: 2. Scope: rep.
 - Cue shown: "Raise your front knee"
@@ -289,9 +304,9 @@ The coached ideal is 90 degrees for both knees.
 - Fires when: that value is less than 70 (`LUNGE_FRONT_DEEP_MIN`).
 - No verdict when: either knee has no accumulated value.
 - Meaning: the front knee bent too far past the 90 degree ideal. Never fires together with
-  front_knee_too_shallow.
+  shallow_lunge.
 
-### Lunge rule 3: torso_upright
+### Lunge rule 3: forward_trunk_lean
 
 - Exercise: lunge. Priority: 3. Scope: frame. Needs 3D keypoints.
 - Cue shown: "Keep Torso Upright"
@@ -302,7 +317,7 @@ The coached ideal is 90 degrees for both knees.
 - No verdict when: neither side has both shoulder and hip at score 0.3 or higher.
 - Meaning: the torso leans forward instead of staying upright.
 
-### Lunge rule 4: back_knee_form
+### Lunge rule 4: straight_back_leg
 
 - Exercise: lunge. Priority: 4. Scope: rep.
 - Cue shown: "Bend your back knee toward the floor"
@@ -316,13 +331,13 @@ The coached ideal is 90 degrees for both knees.
 - Camera: this rule needs a side view to see the rear leg. That is why the lunge camera band is a
   side-on view (see Camera placement).
 
-### Bicep curl rule 1: elbow_away
+### Bicep curl rule 1: elbow_flare
 
 - Exercise: bicep curl. Priority: 1. Scope: frame. Needs 3D keypoints.
 - Cue shown: "Keep Elbows at Your Sides"
 - Metric: the active arm's `{side}_shoulder_angle`, the elbow-shoulder-hip interior angle in
   degrees. 0 means the upper arm lies along the torso. The active arm comes from the curl FSM.
-- Fires when: the angle is greater than 45 degrees (`BICEP_ELBOW_AWAY_MAX`) for 10 consecutive
+- Fires when: the angle is greater than 45 degrees (`BICEP_ELBOW_FLARE_MAX`) for 10 consecutive
   frames.
 - No verdict when: there is no active arm, or the active arm's shoulder, elbow or hip is missing,
   below score 0.3, or degenerate.
@@ -330,7 +345,7 @@ The coached ideal is 90 degrees for both knees.
   forward or back). A strongly flared elbow can keep the elbow from bending to 55, in which case
   the attempt is not counted but the cue is still shown.
 
-### Bicep curl rule 2: full_rom
+### Bicep curl rule 2: partial_curl
 
 - Exercise: bicep curl. Priority: 2. Scope: rep.
 - Cue shown: "Full range of motion"
@@ -353,7 +368,7 @@ are app units, not degrees from the camera. Either mirror side is accepted.
 |---|---|---|
 | Squat | 45 +/- 12 (33 to 57) | must stay below about 58, where knee_valgus and knee_varus stop giving a verdict |
 | Push-up | 45 +/- 25 (20 to 70) | oblique view |
-| Lunge | 75 +/- 10 (65 to 85) | corresponds to a true 90 degree side camera, needed for back_knee_form |
+| Lunge | 75 +/- 10 (65 to 85) | corresponds to a true 90 degree side camera, needed for straight_back_leg |
 | Bicep curl | 45 +/- 12 (33 to 57) | oblique view |
 
 ## Constants reference
@@ -372,19 +387,19 @@ are app units, not degrees from the camera. Either mirror side is accepted.
 | `FRAME_RULE_MIN_FRAMES` | 10 | all frame rules |
 | `MIN_LM_SCORE` | 0.3 | all rules |
 | `PROFILE_RATIO_MIN` | 0.85 | squat knee rules, far-side masking |
-| `SQUAT_DEPTH_TARGET` | 100 | squat knee_depth |
+| `SQUAT_DEPTH_TARGET` | 100 | squat partial_squat |
 | `KNEE_PARALLEL_MAX_INWARD` | 11 | squat knee_valgus |
 | `KNEE_PARALLEL_MAX_OUTWARD` | 8 | squat knee_varus |
 | `KNEE_PARALLEL_BAND` | 8 | squat knee rules |
-| `SQUAT_BACK_TILT_MAX` | 35 | squat back_straight |
-| `PUSHUP_ALIGN_MIN` | 160 | push-up body_alignment |
-| `PUSHUP_ELBOW_TARGET` | 110 | push-up elbow_depth |
-| `LUNGE_FRONT_TARGET` | 105 | lunge count bar, back_knee_form depth gate |
-| `LUNGE_FRONT_SHALLOW_MAX` | 105 | lunge front_knee_too_shallow |
-| `LUNGE_FRONT_DEEP_MIN` | 70 | lunge front_knee_too_deep |
-| `LUNGE_TILT_MAX` | 20 | lunge torso_upright |
-| `LUNGE_BACK_MAX_MIN` | 120 | lunge back_knee_form |
-| `LUNGE_BOTTOM_WINDOW` | 2 | lunge back_knee_form |
-| `BICEP_ELBOW_AWAY_MAX` | 45 | curl elbow_away |
-| `BICEP_FLEX_TARGET` | 55 | curl full_rom |
-| `BICEP_EXT_TARGET` | 145 | curl full_rom |
+| `SQUAT_BACK_TILT_MAX` | 35 | squat rounded_back |
+| `PUSHUP_ALIGN_MIN` | 160 | push-up hip_sag_or_pike |
+| `PUSHUP_ELBOW_TARGET` | 110 | push-up partial_pushup |
+| `LUNGE_FRONT_TARGET` | 105 | lunge count bar, straight_back_leg depth gate |
+| `LUNGE_FRONT_SHALLOW_MAX` | 105 | lunge shallow_lunge |
+| `LUNGE_FRONT_DEEP_MIN` | 70 | lunge excessive_front_knee_flexion |
+| `LUNGE_TILT_MAX` | 20 | lunge forward_trunk_lean |
+| `LUNGE_BACK_MAX_MIN` | 120 | lunge straight_back_leg |
+| `LUNGE_BOTTOM_WINDOW` | 2 | lunge straight_back_leg |
+| `BICEP_ELBOW_FLARE_MAX` | 45 | curl elbow_flare |
+| `BICEP_FLEX_TARGET` | 55 | curl partial_curl |
+| `BICEP_EXT_TARGET` | 145 | curl partial_curl |
