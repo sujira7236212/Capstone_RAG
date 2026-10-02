@@ -354,10 +354,42 @@ def _prompt_context(folder_exercise_id: str) -> dict:
     }
 
 
-def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Optional[dict]:
+# Per-call token usage, appended as JSON lines when set (main() --usage-log). v5 kept
+# none, and the AI Studio usage page showed output ~6x the saved JSON: thinking tokens
+# are billed as output, so they have to be logged to cost a run.
+USAGE_LOG = None
+
+
+def _log_usage(raw_message, label: str, folder_exercise_id: str, relevant: Optional[bool]) -> None:
+    if not USAGE_LOG:
+        return
+    meta = getattr(raw_message, "usage_metadata", None) or {}
+    row = {
+        "source": label,
+        "exercise": folder_exercise_id,
+        "relevant": relevant,
+        "input_tokens": meta.get("input_tokens"),
+        "cached_tokens": (meta.get("input_token_details") or {}).get("cache_read"),
+        "output_tokens": meta.get("output_tokens"),
+        "reasoning_tokens": (meta.get("output_token_details") or {}).get("reasoning"),
+        "total_tokens": meta.get("total_tokens"),
+    }
+    with open(USAGE_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def summarize_usage(path: str) -> str:
+    rows = [json.loads(line) for line in open(path, encoding="utf-8") if line.strip()]
+    tot = {k: sum(r.get(k) or 0 for r in rows)
+           for k in ("input_tokens", "cached_tokens", "output_tokens", "reasoning_tokens")}
+    return f"{len(rows)} calls · " + " · ".join(f"{k} {v:,}" for k, v in tot.items())
+
+
+def curate_knowledge(raw_text: str, folder_exercise_id: str = "general", label: str = "") -> Optional[dict]:
     # Using gemini-3.5-flash
     llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", temperature=0.1)
-    structured_llm = llm.with_structured_output(ExtractedKnowledge)
+    # include_raw keeps the AIMessage so its usage_metadata can be logged.
+    structured_llm = llm.with_structured_output(ExtractedKnowledge, include_raw=True)
 
     prompt = PromptTemplate.from_template(
         "You are an elite sports science, personal trainer, and physical therapy expert.\n"
@@ -406,11 +438,16 @@ def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Opti
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            result = chain.invoke({
+            response = chain.invoke({
                 "raw_text": raw_text,
                 "fault_codes": _fault_code_block(folder_exercise_id),
                 **_prompt_context(folder_exercise_id),
             })
+            result = response["parsed"]
+            _log_usage(response["raw"], label, folder_exercise_id,
+                       None if result is None else result.is_relevant)
+            if result is None:
+                raise ValueError(f"structured output did not parse: {response.get('parsing_error')}")
             if not result.is_relevant:
                 print("[REJECTED] Content is not relevant to exercise feedback.")
                 return None
@@ -481,7 +518,7 @@ def curate_text_block(text: str, source_label: str, folder_exercise_id: str) -> 
             continue
         label = f"{source_label} [part {i+1}/{len(windows)}]" if len(windows) > 1 else source_label
         print(f"Sending {len(window)} characters to LLM for curation ({label})...")
-        data = curate_knowledge(window, folder_exercise_id)
+        data = curate_knowledge(window, folder_exercise_id, label)
         if data:
             data["source"] = label
             # Window-level applies_to_fault is derived, not asked of the LLM (see
@@ -545,7 +582,7 @@ def _routed_output_path(output_base_folder: str, exercise_id: str, stem: str) ->
 
 def process_data_directory(base_folder: str, output_base_folder: str, excluded_base_folder: str,
                             legacy_excluded_folders: tuple = (), skip_paths: dict = None,
-                            skip_urls: dict = None):
+                            skip_urls: dict = None, only: str = None):
     """legacy_excluded_folders: earlier excluded_from_kb/ dirs (e.g. the v4 one) to also check
     for "<stem>_curated_offtopic.json" markers, so a source someone hand-excluded as off-topic
     stays excluded when re-curating into a fresh output_base_folder/excluded_base_folder pair
@@ -556,6 +593,8 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
 
     skip_paths / skip_urls: the 'drop' entries of the T3a prefilter (load_skip_list),
     {absolute path or url: reason}. Those sources are skipped and logged, not curated.
+    only: curate just the files whose path contains this substring (a trial run on one
+    source; the output lands where the full run expects it, so it is not curated twice).
     """
     if not os.path.exists(base_folder):
         print(f"Error: Folder {base_folder} not found.")
@@ -569,6 +608,8 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
                 continue
                 
             file_path = os.path.join(root, file)
+            if only and only.replace("\\", "/") not in file_path.replace(os.sep, "/"):
+                continue
             if os.path.normcase(os.path.abspath(file_path)) in skip_paths:
                 print(f"[PREFILTER DROP] {file_path} - {skip_paths[os.path.normcase(os.path.abspath(file_path))]}")
                 continue
@@ -698,8 +739,14 @@ def main():
                      help="T3a prefilter JSON (e.g. data_pipeline/prefilter_v6.json): files and URLs "
                           "with decision 'drop' are skipped and logged; refuses to run while any "
                           "entry is 'pending'")
+    ap.add_argument("--only", default=None,
+                     help="curate only files whose path contains this substring (trial run on one source)")
+    ap.add_argument("--usage-log", default=None,
+                     help="append one JSON line of token usage per LLM call to this file")
     args = ap.parse_args()
     skip_paths, skip_urls = load_skip_list(args.skip_list, project_root) if args.skip_list else ({}, {})
+    global USAGE_LOG
+    USAGE_LOG = args.usage_log
 
     print("Starting curation process...")
     print(f"Input Directory: {args.data}")
@@ -711,8 +758,10 @@ def main():
         print(f"Skip list: {args.skip_list} ({len(skip_paths)} files, {len(skip_urls)} URLs dropped)")
 
     process_data_directory(args.data, args.out, args.excluded, tuple(args.legacy_excluded),
-                           skip_paths, skip_urls)
+                           skip_paths, skip_urls, args.only)
     print("\nCuration process finished.")
+    if USAGE_LOG and os.path.exists(USAGE_LOG):
+        print(f"Token usage ({USAGE_LOG}): {summarize_usage(USAGE_LOG)}")
 
 if __name__ == "__main__":
     main()
