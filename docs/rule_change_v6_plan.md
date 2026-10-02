@@ -1,7 +1,7 @@
 # แผนรับกฎใหม่ของระบบ 1 → KB v6
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — T3a เสร็จ ถัดไป T4**
-> T1 ✅ (user ยืนยัน Q-spec 2026-10-02) · T2 ✅ · T3a ✅ · T4 ออกแบบใหม่แล้ว ยังไม่ implement · T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — T4 เสร็จ ถัดไป T3 (รอ user อนุมัติค่า API/เวลา)**
+> T1 ✅ (user ยืนยัน Q-spec 2026-10-02) · T2 ✅ · T3a ✅ · T4 ✅ · T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
 > แผนนี้**มาก่อน**ขั้นที่ค้างอยู่ใน [`rag_v2_ablation_plan.md`](rag_v2_ablation_plan.md) (G1/C1/K1/P) เพราะรหัส fault เปลี่ยน ตัวเลข R4 เดิมจึงเทียบกับ KB ใหม่ไม่ได้
 > **เป้าหมายตอนนี้ (2026-10-01):** ไปให้ถึงขั้นที่ Gemini ให้ feedback บน KB v6 ก่อน eval หนัก (E3/E4/E6/E7 และ G1) เลื่อนไปทำหลังจากนั้น
 
@@ -19,7 +19,7 @@
    1. ~~user ยืนยัน Q-spec~~ ✅ 2026-10-02
    2. ~~ใส่ `approval` → commit card + taxonomy พร้อมกัน ก่อน T3a~~ ✅ 2026-10-02 (หลักฐานว่าเฉลยและ query นิยามไว้ก่อนอ่านเอกสาร) · **หลังจากนี้ห้ามแก้ `query` อีกโดย Claude** เพราะ T3a ทำให้ Claude อ่านต้นฉบับแล้ว ถ้าต้องแก้ให้ user แก้เอง หรือทำเป็น Q-tuned
    3. ~~**T3a** Claude คัดเอกสารที่ไม่เกี่ยวออกทั้งไฟล์~~ ✅ 2026-10-02 (keep 71 · drop 31)
-   4. **T4** แก้ curator ตามแบบใหม่ (§2)
+   4. ~~**T4** แก้ curator ตามแบบใหม่~~ ✅ 2026-10-02
    5. **T3** curate (แจ้งขนาดงานและค่า API ก่อนรัน) → **T5** ingest → E5 split → mock 12 กฎ + clean → generate
 4. ⚠️ **ห้ามรัน eval retrieval/generation บน `kb_gemini_curated_v5` จนกว่าจะจบ T5** — taxonomy ใช้รหัสใหม่แล้ว แต่ KB v5 ยังติด tag เก่า
 5. คำถามที่ยังเปิดใน card และ**ไม่**กระทบ T3: lunge oq1/oq2 (ระยะก้าว, เข่าเลยปลายเท้า) และ oq ของ knee_varus · query ของ `shallow_lunge` /
@@ -100,7 +100,10 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
   - ห้าม: ลบ/ย้ายไฟล์ใน `data/` · เปิด `curated_data_v5/` หรือ log คัดออกของ v5 · แก้ `query`/card · เรียก Gemini/API ที่เสียเงิน
   - `general/feedback_and_cueing/` 4 ไฟล์: user ตัดสินให้ใช้ทำ prompt อย่างเดียว → `drop` (T4 ข้อ 3)
 
-### T4 — แก้ curator (`data_pipeline/curator.py`) ⏸ ออกแบบใหม่ 2026-10-01
+### T4 — แก้ curator (`data_pipeline/curator.py`) ✅ 2026-10-02
+- **ทำแล้ว:** `--skip-list` (`load_skip_list`, ไม่รันถ้ามี pending) · `general/` เห็น 12 กฎจัดกลุ่มตามท่า + กติกาให้ระบุท่าเฉพาะเมื่อเอ่ยชื่อตรง ๆ · `route_general_window()` จัดท่าราย item → `curated_data_v6/<ท่า>/general__<stem>_curated.json` · ไม่ใช้ `is_exercise_mismatch()` กับ general · ข้อ 5 **ทำด้วย** (user ตกลง 2026-10-02): `excludes` ของ card เป็นบรรทัด "do not tag when" ใต้ทุกกฎ · prompt ของโฟลเดอร์ท่าเหมือน v5 ทุกคำยกเว้นบรรทัด excludes
+- ทดสอบ: `python data_pipeline/test_route_general.py` (route ท่าเดียว/2 ท่า/ไม่มี tag แต่ map ได้/map ไม่ได้/leg curl, skip list, fault block) · skip list จับไฟล์จริงใน `data/` ได้ 31/31
+- ขนาด T3 (ประเมิน 2026-10-02): 71 หน่วย ≈ 700 window (squat 211 · lunge 202 · bicep-curl 158 · push-up 50 · general 79) · ~2.9 ล้านตัวอักษร
 1. **`--skip-list data_pipeline/prefilter_v6.json`**: ข้ามไฟล์และ URL ที่ `decision == "drop"` และ log ไว้ (ไม่สร้าง marker ปลอมใน `excluded_from_kb_v6/`)
 2. **`general/` ให้ curator เลือกท่าและ tag เองจากเนื้อหา ไม่อิงโฟลเดอร์**
    - prompt ของไฟล์ใต้ `general/` แสดงรหัสกฎทั้ง 12 ตัวจัดกลุ่มตามท่า (ชื่อกฎไม่ซ้ำกันข้ามท่า จึงรู้ท่าได้จาก tag) และสั่งว่า
@@ -116,7 +119,7 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 4. **ไม่ใช้ hint `filed_under_rule`** (ยกเลิกข้อเสนอเดิม) โฟลเดอร์ย่อยตามชื่อกฎ (`data/squat/knee_valgus/`) ไม่มีผลต่อ tag เลย ทำให้ tag มาจากเนื้อหาล้วน ๆ
    และตัดข้อจำกัดใน §7 ของ `eval_v6_plan.md` เรื่อง tag ไม่อิสระจาก source folder ออกได้ · โฟลเดอร์ชั้นท่า (`squat/` ฯลฯ) ยังเป็นตัวกำหนด
    `exercise_id` และ `is_exercise_mismatch()` ยังทำงานเหมือนเดิมสำหรับ 4 ท่า
-5. (ข้อเสนอ ยังไม่ตัดสิน) แสดง `excludes` ของ card ให้ curator เห็นเป็นบรรทัด "do not tag when …" ต่อรหัส เพื่อลด tag สลับระหว่างกฎพี่น้อง
+5. **(ทำแล้ว)** แสดง `excludes` ของ card ให้ curator เห็นเป็นบรรทัด "do not tag when …" ต่อรหัส เพื่อลด tag สลับระหว่างกฎพี่น้อง
    (valgus/varus, shallow/deep lunge, partial_squat/butt wink) · card เป็นนิยามที่ผู้เชี่ยวชาญรับรอง ไม่ใช่เนื้อหา KB การใช้ตรงนี้จึงไม่ทำให้ eval รั่ว
 - หลัง T3: สุ่มอ่าน item ที่ย้ายมาจาก `general/` อย่างน้อย 20 ชิ้น เพราะถ้าจัดท่าผิด เทสต์ cross-exercise leak จะจับไม่ได้ (`exercise_id` จะตรงกับ session พอดี)
 

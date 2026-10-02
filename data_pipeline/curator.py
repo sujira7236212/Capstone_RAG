@@ -7,7 +7,8 @@ from pydantic import BaseModel, Field
 
 # error_taxonomy.py lives in the project root, one level up from data_pipeline/
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from error_taxonomy import faults_for_exercise
+from error_taxonomy import ERROR_TAXONOMY, faults_for_exercise
+from functools import lru_cache
 from typing import List, Optional
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
@@ -115,6 +116,102 @@ def _norm(s: str) -> str:
     return s.lower().replace("-", "").replace("_", "").replace(" ", "")
 
 
+# Sources under data/general/ (and loose files directly under data/) are not filed under
+# one exercise. The curator sees all 12 rules for them and each item is routed to an
+# exercise afterwards (route_general_window), instead of trusting the folder.
+GENERAL = "general"
+
+# Curl names that are not the biceps curl; "curl" alone would otherwise route a hamstring
+# or wrist curl from general/ into bicep-curl.
+_NOT_BICEP_CURL = ("leg", "hamstring", "nordic", "wrist")
+
+
+def _faults_for(folder_exercise_id: str) -> dict:
+    """faults_for_exercise(), except general/ gets every exercise's rules (rule names do
+    not repeat across exercises, so one flat dict is unambiguous)."""
+    if folder_exercise_id != GENERAL:
+        return faults_for_exercise(folder_exercise_id)
+    return {code: q for ex in ERROR_TAXONOMY for code, q in faults_for_exercise(ex).items()}
+
+
+def _exercise_of_code() -> dict:
+    return {code: ex for ex, faults in ERROR_TAXONOMY.items() for code in faults}
+
+
+def exercise_for_type(exercise_type: str) -> Optional[str]:
+    """The one exercise an LLM exercise_type names ('Back Squat' -> 'squat'), else None
+    (Generic, several exercises, or a curl that is not the biceps curl)."""
+    norm = _norm(exercise_type or "")
+    if norm in ("", "generic"):
+        return None
+    hits = [ex for ex, aliases in EXERCISE_ALIASES.items()
+            if any(a in norm or norm in a for a in aliases)]
+    if hits == ["bicep-curl"] and any(w in norm for w in _NOT_BICEP_CURL):
+        return None
+    return hits[0] if len(hits) == 1 else None
+
+
+ITEM_FIELDS = ("core_principles", "common_mistakes", "specific_findings", "consequences")
+
+
+def route_general_window(window: dict) -> dict:
+    """Split one curated general/ window into {exercise_id or 'general': window}.
+
+    An item with tags goes to the exercise of each tag, keeping only that exercise's
+    tags (a tag from two exercises puts a copy in both). An untagged item goes to the
+    exercise the window's exercise_type names, or stays in general/ when it names none.
+    ingest.py takes exercise_id from the first folder level, so the routed windows are
+    written under curated_data_v6/<exercise>/ (process_data_directory).
+    """
+    code_ex = _exercise_of_code()
+    fallback = exercise_for_type(window.get("exercise_type", "")) or GENERAL
+    out = {}
+
+    def bucket(ex):
+        if ex not in out:
+            w = {k: v for k, v in window.items() if k not in ITEM_FIELDS}
+            w.update({field: [] for field in ITEM_FIELDS})
+            w["routed_from"] = GENERAL
+            out[ex] = w
+        return out[ex]
+
+    for field in ITEM_FIELDS:
+        for item in window.get(field, []):
+            by_ex = {}
+            for code in item.get("applies_to_fault", []):
+                if code in code_ex:
+                    by_ex.setdefault(code_ex[code], []).append(code)
+            if not by_ex:
+                bucket(fallback)[field].append({**item, "applies_to_fault": []})
+            for ex, codes in by_ex.items():
+                bucket(ex)[field].append({**item, "applies_to_fault": codes})
+    for w in out.values():
+        w["applies_to_fault"] = sorted({c for f in ITEM_FIELDS for it in w[f] for c in it["applies_to_fault"]})
+    return out
+
+
+def load_skip_list(path: str, project_root: str) -> tuple:
+    """Read data_pipeline/prefilter_v6.json (T3a) -> (dropped file paths, dropped URLs).
+
+    Paths are compared as absolute, case-normalised paths. Refuses to run while any entry
+    is still 'pending', because those files have not been decided yet.
+    """
+    with open(path, encoding="utf-8") as f:
+        entries = json.load(f)["entries"]
+    pending = [e.get("path") or e.get("url") for e in entries if e["decision"] == "pending"]
+    if pending:
+        raise SystemExit(f"[SKIP-LIST] {len(pending)} entries are still 'pending' in {path}: {pending}")
+    paths, urls = {}, {}
+    for e in entries:
+        if e["decision"] != "drop":
+            continue
+        if "path" in e:
+            paths[os.path.normcase(os.path.abspath(os.path.join(project_root, e["path"])))] = e["reason"]
+        else:
+            urls[e["url"]] = e["reason"]
+    return paths, urls
+
+
 # PyPDFLoader renders the degree sign in several journal PDFs as a trailing "8" glued to
 # the number ("1208" for 120°, "90 8" for 90°) or as the raw glyph name "/C176". The LLM
 # notices and annotates it - "1208 (120 degrees)", "90 degrees (noted as 900 in text)" -
@@ -154,7 +251,7 @@ def normalize_fault_tags(tags, folder_exercise_id: str) -> list:
     whitespace differences only; a tag that matches no known code is left as it is, and
     a variant that collapses onto a code already in the list is dropped.
     """
-    canonical = {_tag_key(code): code for code in faults_for_exercise(folder_exercise_id)}
+    canonical = {_tag_key(code): code for code in _faults_for(folder_exercise_id)}
     out = []
     for tag in tags or []:
         tag = canonical.get(_tag_key(tag), tag)
@@ -192,12 +289,69 @@ def is_exercise_mismatch(folder_exercise_id: str, extracted_exercise_type: str, 
         )
     return mismatch
 
+RULE_CARDS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "eval", "rule_cards.json")
+
+
+@lru_cache(maxsize=1)
+def _card_excludes() -> dict:
+    """{rule name: [what the expert-approved card says does NOT count]}.
+
+    The queries are positive-only because an embedding cannot read "not X" (see
+    error_taxonomy.py), but the LLM curator can, and sibling rules (knee_valgus vs
+    knee_varus, shallow_lunge vs excessive_front_knee_flexion) get swapped without it.
+    The card is the approved definition, not KB text, so this does not leak into eval.
+    """
+    with open(RULE_CARDS, encoding="utf-8") as f:
+        cards = json.load(f)["cards"]
+    return {c["rule_names"][0]: [x["en"] for x in c.get("excludes", [])] for c in cards}
+
+
+def _fault_lines(faults: dict, indent: str = "  ") -> list:
+    excludes = _card_excludes()
+    lines = []
+    for code, desc in faults.items():
+        lines.append(f'{indent}- "{code}": {desc}')
+        if excludes.get(code):
+            lines.append(f"{indent}    do not tag when: " + " / ".join(excludes[code]))
+    return lines
+
+
 def _fault_code_block(folder_exercise_id: str) -> str:
+    if folder_exercise_id == GENERAL:
+        lines = []
+        for ex in ERROR_TAXONOMY:
+            lines.append(f"  {ex}:")
+            lines += _fault_lines(faults_for_exercise(ex), indent="    ")
+        return ("KNOWN FAULT CODES, grouped by exercise (use verbatim in applies_to_fault; a code also tells "
+                "which exercise the item is about):\n" + "\n".join(lines))
     faults = faults_for_exercise(folder_exercise_id)
     if not faults:
         return "KNOWN FAULT CODES for this exercise: (none defined)"
-    lines = [f'  - "{code}": {desc}' for code, desc in faults.items()]
-    return "KNOWN FAULT CODES for this exercise (use verbatim in applies_to_fault):\n" + "\n".join(lines)
+    return ("KNOWN FAULT CODES for this exercise (use verbatim in applies_to_fault):\n"
+            + "\n".join(_fault_lines(faults)))
+
+
+def _prompt_context(folder_exercise_id: str) -> dict:
+    """The prompt's exercise-dependent wording. For an exercise folder this reproduces the
+    v5 prompt exactly; general/ gets wording for material not filed under one exercise."""
+    if folder_exercise_id != GENERAL:
+        return {
+            "filed_under": (f"It is filed under the exercise '{folder_exercise_id}'. Extract information an AI "
+                            f"exercise feedback system can use to tell a user what is wrong with their "
+                            f"{folder_exercise_id} technique and why it matters"),
+            "standard": f"standard/plain {folder_exercise_id}",
+            "exercise_type_rule": "",
+        }
+    return {
+        "filed_under": ("It is general material, not filed under one exercise. The feedback system covers four "
+                        "exercises: squat, push-up, lunge and bicep curl. Extract information an AI exercise "
+                        "feedback system can use to tell a user what is wrong with their technique in any of "
+                        "these four exercises and why it matters"),
+        "standard": "standard/plain form of that exercise",
+        "exercise_type_rule": ("Set exercise_type to one of squat, push-up, lunge or bicep curl ONLY when the text "
+                               "names that exercise explicitly; otherwise use 'Generic'. Do not guess the exercise "
+                               "from the body part or the movement.\n\n"),
+    }
 
 
 def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Optional[dict]:
@@ -208,12 +362,12 @@ def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Opti
     prompt = PromptTemplate.from_template(
         "You are an elite sports science, personal trainer, and physical therapy expert.\n"
         "Your task is to analyze the following raw text retrieved from the web or documents.\n"
-        "It is filed under the exercise '{exercise_id}'. Extract information an AI exercise feedback system can use "
-        "to tell a user what is wrong with their {exercise_id} technique and why it matters: proper form, common "
+        "{filed_under}: proper form, common "
         "mistakes and their consequences, safety cues, joint/muscle mechanics.\n"
         "Mark the text NOT relevant if the exercise is only the vehicle for an unrelated outcome (cardiovascular "
         "risk, blood biochemistry, disease populations, training-program periodisation, equipment marketing), "
         "or if it is fluff, navigation text, advertising, or a reference list.\n\n"
+        "{exercise_type_rule}"
         "{fault_codes}\n"
         "Every item in core_principles, common_mistakes, specific_findings, and consequences is an object "
         "{{\"text\": ..., \"applies_to_fault\": [...]}}. Tag each item's applies_to_fault with only the codes "
@@ -226,8 +380,8 @@ def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Opti
         "one). Tagging this would make the feedback system cite it as justification FOR the fault it is "
         "supposed to correct.\n"
         "  2. The item is specific to a named variant of the exercise that changes the mechanics (e.g. preacher "
-        "curl, incline curl, cable curl, concentration curl are NOT the same movement as a standard/plain "
-        "{exercise_id}) - UNLESS the item's guidance is stated as true for the standard movement too, not just "
+        "curl, incline curl, cable curl, concentration curl are NOT the same movement as a "
+        "{standard}) - UNLESS the item's guidance is stated as true for the standard movement too, not just "
         "that variant.\n\n"
         "IMPORTANT: core_principles and common_mistakes should capture the text's guidance even if it is general knowledge. "
         "Separately, populate specific_findings ONLY with concrete details that are specific to this source and go beyond "
@@ -254,8 +408,8 @@ def curate_knowledge(raw_text: str, folder_exercise_id: str = "general") -> Opti
         try:
             result = chain.invoke({
                 "raw_text": raw_text,
-                "exercise_id": folder_exercise_id,
                 "fault_codes": _fault_code_block(folder_exercise_id),
+                **_prompt_context(folder_exercise_id),
             })
             if not result.is_relevant:
                 print("[REJECTED] Content is not relevant to exercise feedback.")
@@ -339,8 +493,11 @@ def curate_text_block(text: str, source_label: str, folder_exercise_id: str) -> 
                 for item in data[field]
                 for code in item["applies_to_fault"]
             })
-            if is_exercise_mismatch(folder_exercise_id, data["exercise_type"], label,
-                                    data["applies_to_fault"]):
+            # general/ is not an exercise, so the folder test would throw away every window
+            # the LLM names an exercise for - the content we want. Those are routed per item
+            # instead (route_general_window in process_data_directory).
+            if folder_exercise_id != GENERAL and is_exercise_mismatch(
+                    folder_exercise_id, data["exercise_type"], label, data["applies_to_fault"]):
                 excluded.append(data)
             else:
                 accepted.append(data)
@@ -380,8 +537,15 @@ def load_urls_main_content(urls):
 # ---------------------------------------------------------
 # 3. Process All Files in 'data' Folder
 # ---------------------------------------------------------
+def _routed_output_path(output_base_folder: str, exercise_id: str, stem: str) -> str:
+    """Where a general/ source's items routed to an exercise are written. ingest.py reads
+    exercise_id from the first folder level, and the general__ prefix keeps the origin visible."""
+    return os.path.join(output_base_folder, exercise_id, f"general__{stem}_curated.json")
+
+
 def process_data_directory(base_folder: str, output_base_folder: str, excluded_base_folder: str,
-                            legacy_excluded_folders: tuple = ()):
+                            legacy_excluded_folders: tuple = (), skip_paths: dict = None,
+                            skip_urls: dict = None):
     """legacy_excluded_folders: earlier excluded_from_kb/ dirs (e.g. the v4 one) to also check
     for "<stem>_curated_offtopic.json" markers, so a source someone hand-excluded as off-topic
     stays excluded when re-curating into a fresh output_base_folder/excluded_base_folder pair
@@ -389,10 +553,14 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
     "_offtopic" marker is honoured from legacy folders - "_mismatch"/"_curated_mismatch" markers
     were produced by the OLD name-substring exercise check and should be re-judged fresh by
     is_exercise_mismatch() here, which now also trusts per-item applies_to_fault tags.
+
+    skip_paths / skip_urls: the 'drop' entries of the T3a prefilter (load_skip_list),
+    {absolute path or url: reason}. Those sources are skipped and logged, not curated.
     """
     if not os.path.exists(base_folder):
         print(f"Error: Folder {base_folder} not found.")
         return
+    skip_paths, skip_urls = skip_paths or {}, skip_urls or {}
 
     for root, dirs, files in os.walk(base_folder):
         for file in files:
@@ -401,7 +569,10 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
                 continue
                 
             file_path = os.path.join(root, file)
-            
+            if os.path.normcase(os.path.abspath(file_path)) in skip_paths:
+                print(f"[PREFILTER DROP] {file_path} - {skip_paths[os.path.normcase(os.path.abspath(file_path))]}")
+                continue
+
             # Determine output path early to skip if already processed
             rel_path = os.path.relpath(root, base_folder)
             folder_exercise_id = 'general' if rel_path == '.' else rel_path.split(os.sep)[0]
@@ -430,7 +601,10 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
                 for legacy_folder in legacy_excluded_folders
             )
 
-            if os.path.exists(output_path) or already_excluded:
+            routed_done = folder_exercise_id == GENERAL and any(
+                os.path.exists(_routed_output_path(output_base_folder, ex, filename_without_ext))
+                for ex in ERROR_TAXONOMY)
+            if os.path.exists(output_path) or already_excluded or routed_done:
                 print(f"Skipping already processed file: {file_path}")
                 continue
                 
@@ -447,7 +621,9 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
                 try:
                     with open(file_path, "r", encoding="utf-8") as f:
                         urls = [line.strip() for line in f.readlines() if line.strip()]
-                    docs = load_urls_main_content(urls)
+                    for url in [u for u in urls if u in skip_urls]:
+                        print(f"[PREFILTER DROP] {url} - {skip_urls[url]}")
+                    docs = load_urls_main_content([u for u in urls if u not in skip_urls])
                 except Exception as e:
                     print(f"Error loading URLs: {e}")
             
@@ -471,6 +647,20 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
                 accepted, excluded = curate_text_block(full_text, file_path, folder_exercise_id)
                 curated_results.extend(accepted)
                 excluded_results.extend(excluded)
+
+            if folder_exercise_id == GENERAL and curated_results:
+                by_ex = {}
+                for window in curated_results:
+                    for ex, routed in route_general_window(window).items():
+                        by_ex.setdefault(ex, []).append(routed)
+                curated_results = by_ex.pop(GENERAL, [])
+                for ex, windows in by_ex.items():
+                    path = _routed_output_path(output_base_folder, ex, filename_without_ext)
+                    os.makedirs(os.path.dirname(path), exist_ok=True)
+                    with open(path, 'w', encoding='utf-8') as f:
+                        json.dump(windows, f, indent=2, ensure_ascii=False)
+                    n = sum(len(w[field]) for w in windows for field in ITEM_FIELDS)
+                    print(f"Routed {n} item(s) from general/ to {ex}: {path}")
 
             if curated_results:
                 os.makedirs(output_dir, exist_ok=True)
@@ -504,7 +694,12 @@ def main():
                           "already judged off-topic there is not re-curated into a fresh --out "
                           "(repeatable; e.g. --legacy-excluded ./excluded_from_kb when curating "
                           "into curated_data_v5 alongside the untouched v4 curated_data)")
+    ap.add_argument("--skip-list", default=None,
+                     help="T3a prefilter JSON (e.g. data_pipeline/prefilter_v6.json): files and URLs "
+                          "with decision 'drop' are skipped and logged; refuses to run while any "
+                          "entry is 'pending'")
     args = ap.parse_args()
+    skip_paths, skip_urls = load_skip_list(args.skip_list, project_root) if args.skip_list else ({}, {})
 
     print("Starting curation process...")
     print(f"Input Directory: {args.data}")
@@ -512,8 +707,11 @@ def main():
     print(f"Excluded (mismatch) Directory: {args.excluded}")
     if args.legacy_excluded:
         print(f"Legacy excluded folders (offtopic markers only): {args.legacy_excluded}")
+    if args.skip_list:
+        print(f"Skip list: {args.skip_list} ({len(skip_paths)} files, {len(skip_urls)} URLs dropped)")
 
-    process_data_directory(args.data, args.out, args.excluded, tuple(args.legacy_excluded))
+    process_data_directory(args.data, args.out, args.excluded, tuple(args.legacy_excluded),
+                           skip_paths, skip_urls)
     print("\nCuration process finished.")
 
 if __name__ == "__main__":
