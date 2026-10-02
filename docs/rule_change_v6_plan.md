@@ -1,18 +1,27 @@
 # แผนรับกฎใหม่ของระบบ 1 → KB v6
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-09-27 · สถานะ: **พักไว้ — รอ user ยืนยันกฎและชื่ออาการผิดกับทีมระบบ 1**
-> T1 ทำแล้ว (ร่าง) · T2 เสร็จ · T3–T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-01 · สถานะ: **กำลังทำ — T1 ทำใหม่เสร็จ (ร่าง Q-spec รอ user ตรวจ)**
+> T1 ✅ (ร่าง ยังไม่ commit) · T2 ✅ · T4 ออกแบบใหม่แล้ว ยังไม่ implement · T3a / T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
 > แผนนี้**มาก่อน**ขั้นที่ค้างอยู่ใน [`rag_v2_ablation_plan.md`](rag_v2_ablation_plan.md) (G1/C1/K1/P) เพราะรหัส fault เปลี่ยน ตัวเลข R4 เดิมจึงเทียบกับ KB ใหม่ไม่ได้
+> **เป้าหมายตอนนี้ (2026-10-01):** ไปให้ถึงขั้นที่ Gemini ให้ feedback บน KB v6 ก่อน eval หนัก (E3/E4/E6/E7 และ G1) เลื่อนไปทำหลังจากนั้น
 
 ## 0. เริ่มต่อจากตรงนี้
 
-1. ถาม user ว่ายืนยันกฎและชื่ออาการกับทีมระบบ 1 แล้วหรือยัง ผลที่ได้อาจเปลี่ยนข้อไหนได้บ้างดูที่ §3
-2. ถ้ากฎ/ชื่อเปลี่ยนจากสเปก → แก้ `error_taxonomy.py` (T1) ให้ตรงก่อน แล้วรัน `python test_error_taxonomy.py`
-3. ตอบคำถามที่ค้างใน §4 แล้วค่อยทำ T4 → curate เต็ม → T5 ตามลำดับ (§2)
-4. งานทั้งหมดอยู่บน branch `rule-change-v6` (commit `f2bb8e8`) — `git switch rule-change-v6` ก่อนทำต่อ · ถ้ากฎเปลี่ยนให้แก้บน branch นี้
-   แล้วค่อย merge เข้า `main` หลังจบ T5
-5. ⚠️ **ห้ามรัน eval retrieval/generation บน `kb_gemini_curated_v5` จนกว่าจะจบ T5** — taxonomy ใช้รหัสใหม่แล้ว แต่ KB v5 ยังติด tag เก่า
-   ผลจะเพี้ยน (บางรหัสบังเอิญ match เพราะ `_` ใน SQL LIKE คือ wildcard ตัวเดียว เช่น `knee_valgus` ↔ `knee valgus` แต่ส่วนใหญ่ไม่ match)
+1. **กฎนิ่งแล้ว** — user ยืนยันคร่าว ๆ (2026-10-01) ว่าอาการของทั้ง 12 กฎถูกต้อง และถือว่ากฎชุดนี้ไม่เปลี่ยนอีก
+   คำตอบของ `squat.back_posture` ใน `eval/rule_cards.json`: **oq1 = นับ** (ลำตัวโน้มไปหน้ามากเกินเป็น relevant) · **oq2 = นับ** (butt wink เป็นหลังค่อมแบบหนึ่ง)
+   → `butt wink` กลับเข้า `LEGACY_CODES` โดย map ไปที่ `rounded_back`
+2. **T1 รอบใหม่เสร็จ (ยังไม่ commit)** key = ชื่อกฎ 2026-09-28 · ชื่อ 2026-09-25 อยู่ใน `LEGACY_CODES` · `query` ทั้ง 12 ตัวเขียนใหม่จาก card (= **Q-spec** ร่างโดย Claude)
+   · `python test_error_taxonomy.py` 24/24 · `python data_pipeline/test_normalize_fault_tags.py` 10/10
+   · `python eval/check_rule_cards.py --queries` ผ่าน: query ซ้ำกับ KB v5 และ anchor ไม่ถึง 5 คำ
+3. **ถัดไป — ตามลำดับ ห้ามสลับ:**
+   1. user ตรวจและแก้ Q-spec ใน `error_taxonomy.py` แล้วยืนยัน (ตามกติกา E2: Claude ร่างได้ แต่ user ต้องเป็นคนยืนยัน)
+   2. ใส่ `approval` ใน `eval/rule_cards.json` → **commit card + taxonomy พร้อมกัน ก่อน T3a** (หลักฐานว่าเฉลยและ query นิยามไว้ก่อนอ่านเอกสาร)
+   3. **T3a** Claude คัดเอกสารที่ไม่เกี่ยวออกทั้งไฟล์ (§2) — ต้องทำหลังข้อ 2 เท่านั้น
+   4. **T4** แก้ curator ตามแบบใหม่ (§2)
+   5. **T3** curate (แจ้งขนาดงานและค่า API ก่อนรัน) → **T5** ingest → E5 split → mock 12 กฎ + clean → generate
+4. ⚠️ **ห้ามรัน eval retrieval/generation บน `kb_gemini_curated_v5` จนกว่าจะจบ T5** — taxonomy ใช้รหัสใหม่แล้ว แต่ KB v5 ยังติด tag เก่า
+5. คำถามที่ยังเปิดใน card และ**ไม่**กระทบ T3: lunge oq1/oq2 (ระยะก้าว, เข่าเลยปลายเท้า) และ oq ของ knee_varus · query ของ `shallow_lunge` /
+   `excessive_front_knee_flexion` จึงยังไม่พูดถึงระยะก้าวและเข่าเลยปลายเท้า ถ้าได้คำตอบก่อน T3 ให้เติมได้ ถ้าได้หลัง T3 แก้แค่ card
 
 ## 1. ที่มา
 
@@ -26,7 +35,7 @@
 |---|---|---|---|
 | squat `partial squat` | `knee_depth` (>100°) | เปลี่ยนแค่ชื่อ | 85 |
 | squat `knee valgus` | `knee_valgus` | เปลี่ยนแค่ชื่อ | 149 |
-| squat `butt wink` (lumbar flexion) | `back_straight` = trunk tilt >35° ("not spine curvature") | **เปลี่ยน — map ไม่ได้** | 57 |
+| squat `butt wink` (lumbar flexion) | `back_straight` = trunk tilt >35° ("not spine curvature") | เปลี่ยน · ผู้เชี่ยวชาญตอบ 2026-10-01 ว่านับ butt wink เป็น `rounded_back` | 57 |
 | — | squat `knee_varus` | **ใหม่** | 0 |
 | push-up `hip sag` | `body_alignment` (sag **หรือ** pike) | กว้างขึ้น | 20 |
 | push-up `partial range of motion` | `elbow_depth` (>110°) | เปลี่ยนแค่ชื่อ | 24 |
@@ -52,12 +61,14 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 
 ## 2. ขั้นตอน
 
-### T1 — taxonomy ใหม่ ✅ ทำแล้ว (ร่าง ยังไม่ commit)
-- `error_taxonomy.py`: key = rule name · `aliases[0]` = cue บนจอ · `LEGACY_CODES` แยกต่อท่า (§5 + ยุค v4) · **ไม่มี `butt wink`**
-  · `resolve()` ถือ `_` = ช่องว่าง · `query` เดิมที่วัดแล้วคงไว้ เขียนใหม่เฉพาะ `back_straight`, `body_alignment`, `elbow_away`,
-  `knee_varus`, `front_knee_too_deep`
-- ทดสอบ: `python test_error_taxonomy.py` (17/17) · `python data_pipeline/test_normalize_fault_tags.py` (10/10)
-- รายละเอียด: `docs/error_type_taxonomy.md` §7
+### T1 — taxonomy ใหม่ ✅ ทำใหม่ 2026-10-01 (ร่าง ยังไม่ commit)
+- `error_taxonomy.py`: key = ชื่อกฎ 2026-09-28 · `aliases[0]` = cue บนจอ · `display_th` ตรงกับ card
+- `LEGACY_CODES` ต่อท่า: ชื่อ 2026-09-25 (ซึ่งเป็นชื่อโฟลเดอร์ย่อยใน `data/` ด้วย) + รหัส 2026-09-11 + ยุค v4 · **`butt wink` → `rounded_back`** (oq2)
+- `query` = **Q-spec** ทั้ง 12 ตัวเขียนใหม่จาก `definition`/`includes` ของ card (ไม่ใช้ anchor ไม่เปิด KB) เป็นประโยคบรรยายเชิงบวกเท่านั้น
+  (embedding อ่าน "ไม่ใช่ X" ไม่ออก และจะดึง X มาแทน) · query เดิมของ `full_rom` ที่จูนให้ตรงกับสำนวน curator ถูกแทนที่แล้ว
+- `rounded_back`: ครอบคลุมหลังค่อม (รวม butt wink) หลังแอ่น และลำตัวโน้มไปหน้า เรียงตามลำดับที่ Ton กำหนด
+- ทดสอบ: `python test_error_taxonomy.py` (24/24) · `python data_pipeline/test_normalize_fault_tags.py` (10/10)
+  · `python eval/check_rule_cards.py --queries` (flag ใหม่: key ตรงกับสเปก, query ซ้ำกับ KB v5 และ anchor < 5 คำ)
 
 ### T2 — จัดการ `data/` ✅ เสร็จ
 - ย้ายไป `data_duplicates/` (คงโครงโฟลเดอร์, อยู่ใน `.gitignore`): Coratella2023, Boyd2017, Marchetti2018, Rusin2018 (MD5 ตรงกับไฟล์ที่ root)
@@ -66,13 +77,33 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 - สเปกของระบบ 1 ย้ายจาก `data/rule and rep count/` ไปที่ `docs/system1/`
 - โฟลเดอร์ว่าง `data/lunge/front_knee_too_shallow/`, `data/push-up/elbow_depth/` ปล่อยไว้ (ไม่มีผล)
 
-### T4 — แก้ curator (`data_pipeline/curator.py`) ⏸ รอคำตอบ §4
-- โฟลเดอร์ย่อย: ถ้า `rel_path` ชั้นที่ 2 ตรงกับรหัสใน `faults_for_exercise()` → ส่ง `filed_under_rule` เป็น hint ใน prompt
-  ("เปเปอร์นี้หามาเพื่อกฎ X แต่ tag ตามเนื้อหาของแต่ละ item") และบันทึกลง window
-- `general`: ตอนนี้ `is_exercise_mismatch("general", …)` ใช้ alias `("general",)` → window ที่ LLM บอกว่าเป็น "Squat" ถูก**คัดทิ้ง**
-  และ retrieval (`test_rag_compare.py`) filter `exercise_id == ท่าของ session` → chunk `general` **ไม่ถูกดึงมาใช้เลย**
-  ข้อเสนอ: window ที่ `exercise_type` map ได้กับ 1 ใน 4 ท่า (`EXERCISE_ALIASES`) → เขียนลงใต้ท่านั้นและ tag ด้วยกฎของท่านั้น
-  ส่วนที่เป็นเรื่องทั่วไปจริงเก็บไว้ที่ `general/` (ยังไม่ถูกดึงใช้ จนกว่าจะมีขั้น R ที่เพิ่ม `exercise_id IN (ท่า, 'general')`)
+### T3a — Claude คัดเอกสารที่ไม่เกี่ยวออก ทั้งไฟล์ ⏸ (ต้องทำหลัง commit Q-spec + card)
+- **หน่วยที่ตัดคือทั้งไฟล์** (หรือทั้ง URL ใน `urls.txt`) ไม่ตัดเนื้อหาบางส่วนในไฟล์ (user ตัดสิน 2026-10-01)
+- เกณฑ์ตัด: ไฟล์ไม่มีเนื้อหาเกี่ยวกับท่าทางของ 4 ท่าที่ใช้กับกฎข้อใดข้อหนึ่งใน 12 ข้อได้เลย (ลักษณะอาการ สาเหตุ ผลเสีย วิธีแก้ หรือท่าที่ถูก)
+  · **ไม่แน่ใจให้เก็บไว้** เพราะ curator คัดเนื้อหาที่ไม่เกี่ยวราย window อยู่แล้ว ขั้นนี้มีไว้ตัดไฟล์ที่ไม่เกี่ยวชัด ๆ เพื่อลดค่า API และ noise เท่านั้น
+- วิธีอ่าน: ชื่อเรื่อง, abstract, สารบัญ, หัวข้อ, และอ่านผ่าน ๆ เฉพาะส่วนที่จำเป็นต่อการตัดสิน
+- บันทึก `data_pipeline/prefilter_v6.json`: ต่อไฟล์มี `path`, `decision` (keep/drop), `reason`, `reviewer` ("claude"), `date` · user ตรวจรายการ drop ก่อน T3
+- **ลำดับสำคัญ:** ต้องทำหลัง commit Q-spec และ card เพราะถ้า Claude อ่านต้นฉบับก่อนเขียน query สำนวนของต้นฉบับซึ่ง KB v6 จะสรุปมาอาจติดเข้าไปใน query (leakage)
+  ถ้าจะทำ Q-hyde ภายหลัง ต้องรันใน context ที่สะอาดผ่าน API ตาม E2 ไม่ใช่ใน session ที่อ่านต้นฉบับแล้ว
+- รายงานต้องเขียนว่ามีขั้นคัดเอกสารทั้งไฟล์โดย LLM (Claude) ก่อน curate พร้อมจำนวนไฟล์ที่ตัดและเหตุผล
+
+### T4 — แก้ curator (`data_pipeline/curator.py`) ⏸ ออกแบบใหม่ 2026-10-01
+1. **`--skip-list data_pipeline/prefilter_v6.json`**: ข้ามไฟล์และ URL ที่ `decision == "drop"` และ log ไว้ (ไม่สร้าง marker ปลอมใน `excluded_from_kb_v6/`)
+2. **`general/` ให้ curator เลือกท่าและ tag เองจากเนื้อหา ไม่อิงโฟลเดอร์**
+   - prompt ของไฟล์ใต้ `general/` แสดงรหัสกฎทั้ง 12 ตัวจัดกลุ่มตามท่า (ชื่อกฎไม่ซ้ำกันข้ามท่า จึงรู้ท่าได้จาก tag) และสั่งว่า
+     "ใส่ท่าเฉพาะเมื่อข้อความเอ่ยชื่อท่านั้นตรง ๆ ห้ามเดา"
+   - **ท่าของแต่ละ item**: ถ้ามี tag → ท่าของ tag (ถ้ามี tag จาก 2 ท่า ให้เขียน item ลงทั้งสองท่า) · ถ้าไม่มี tag → ใช้ `exercise_type` ของ window
+     ถ้า map ได้กับ 1 ใน 4 ท่าผ่าน `EXERCISE_ALIASES` · ถ้า map ไม่ได้ → อยู่ใน `general/` (ตอนนี้ retrieval ยังไม่ดึงจาก general)
+   - output: `curated_data_v6/<ท่า>/general__<ชื่อไฟล์>_curated.json` (ingest ใช้ path ชั้นแรกเป็น `exercise_id` อยู่แล้ว) ส่วนที่เหลือเขียนลง `curated_data_v6/general/`
+   - `is_exercise_mismatch()` ไม่ใช้กับ `general` (ตอนนี้มันคัด window ที่ LLM บอกว่าเป็น "Squat" ทิ้ง)
+   - ทดสอบ: unit test ของฟังก์ชันที่ route item ไปตามท่า (มี tag ท่าเดียว / tag 2 ท่า / ไม่มี tag แต่ map ได้ / map ไม่ได้)
+3. **`general/feedback_and_cueing/` (4 ไฟล์) ไม่เอาเข้า KB** ใส่ไว้ใน skip list เป็น drop เหตุผล "ใช้ออกแบบ prompt ขั้น P5" · `general/injury/` ให้ T3a ตัดสิน
+4. **ไม่ใช้ hint `filed_under_rule`** (ยกเลิกข้อเสนอเดิม) โฟลเดอร์ย่อยตามชื่อกฎ (`data/squat/knee_valgus/`) ไม่มีผลต่อ tag เลย ทำให้ tag มาจากเนื้อหาล้วน ๆ
+   และตัดข้อจำกัดใน §7 ของ `eval_v6_plan.md` เรื่อง tag ไม่อิสระจาก source folder ออกได้ · โฟลเดอร์ชั้นท่า (`squat/` ฯลฯ) ยังเป็นตัวกำหนด
+   `exercise_id` และ `is_exercise_mismatch()` ยังทำงานเหมือนเดิมสำหรับ 4 ท่า
+5. (ข้อเสนอ ยังไม่ตัดสิน) แสดง `excludes` ของ card ให้ curator เห็นเป็นบรรทัด "do not tag when …" ต่อรหัส เพื่อลด tag สลับระหว่างกฎพี่น้อง
+   (valgus/varus, shallow/deep lunge, partial_squat/butt wink) · card เป็นนิยามที่ผู้เชี่ยวชาญรับรอง ไม่ใช่เนื้อหา KB การใช้ตรงนี้จึงไม่ทำให้ eval รั่ว
+- หลัง T3: สุ่มอ่าน item ที่ย้ายมาจาก `general/` อย่างน้อย 20 ชิ้น เพราะถ้าจัดท่าผิด เทสต์ cross-exercise leak จะจับไม่ได้ (`exercise_id` จะตรงกับ session พอดี)
 
 ### T3 — curate ใหม่ทั้งหมด ⏸
 - `python data_pipeline/curator.py --out curated_data_v6 --excluded excluded_from_kb_v6 --legacy-excluded ./excluded_from_kb`
@@ -80,34 +111,32 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 - ขนาด: ประมาณ **840 window จาก PDF** (squat 202, lunge 264, bicep 171, push-up 106, general 96) + หน้าเว็บจาก `urls.txt` 17 หน้า
   เทียบกับ v5 ที่มี 229 window → ใช้เวลาหลายชั่วโมงและเสียค่า API (`gemini-3.5-flash`) **แจ้ง user ก่อนรัน**
 - ความเสี่ยงที่รับไว้: ข้อความ item เปลี่ยน (LLM ไม่ deterministic) · ต้องดึงหน้าเว็บใหม่ (เนื้อหาอาจเปลี่ยนหรือหายไปแล้ว)
-- หลังรัน: เทียบ v5↔v6 ต่อ source (จำนวน window/item, จำนวนที่ถูก exclude, จำนวน tag ต่อกฎ) · ถ้า `knee_varus`/`front_knee_too_deep`
-  ได้ 0 = KB ขาดเนื้อหา ไม่ใช่ tagger พัง → จดเป็น data gap · สุ่มอ่าน item ที่ติด tag `back_straight` ต้องเป็นเรื่องลำตัวโน้ม ไม่ใช่หลังงอ
+- หลังรัน: เทียบ v5↔v6 ต่อ source (จำนวน window/item, จำนวนที่ถูก exclude, จำนวน tag ต่อกฎ) · ถ้า `knee_varus`/`excessive_front_knee_flexion`
+  ได้ 0 = KB ขาดเนื้อหา ไม่ใช่ tagger พัง → จดเป็น data gap · สุ่มอ่าน item ที่ติด tag `rounded_back` ต้องเป็นหลังค่อม (รวม butt wink) หลังแอ่น หรือลำตัวโน้มไปหน้า
 - v5 (`curated_data_v5/`, `kb_gemini_curated_v5`) เก็บไว้เป็นตัวสำรอง ไม่ลบ
 
 ### T5 — ingest + eval ใหม่ ⏸
 - `python ingest.py --data-folder ./curated_data_v6 --collection kb_gemini_curated_v6`
-- `mock_data/mock_sessions_per_fault.json` → 12 session (1 ต่อกฎ) + clean session ใช้รหัสใหม่
-- สร้าง `eval/relevance_pool.json` ใหม่ (`eval/build_relevance_pool.py`) และเขียน `must_hit` ใน `eval/golden_chunks.json` ใหม่
-- รัน R4 default บน v6 = **baseline ใหม่** → จดลง `compare_output/ablation_log.md` แล้วอัปเดต §0/§4 ของ `rag_v2_ablation_plan.md`
+- `mock_data/mock_sessions_per_fault.json` → 12 session (1 ต่อกฎ, ชื่อกฎ 2026-09-28) + clean session · ไฟล์ปัจจุบันยังมี 9 รหัสเก่า
+- ~~เขียน `must_hit` ใน `eval/golden_chunks.json` ใหม่~~ ยกเลิก (2026-09-28): eval v6 ทำตาม [`eval_v6_plan.md`](eval_v6_plan.md) E5 → E3 → E4
+  (แยก dev/test ก่อน แล้วสร้าง pool ที่ judge หลายค่ายตัดสินจาก rule card)
+- รัน R4 default บน v6 = **baseline ใหม่** (E6 · รายงานบน dev, `--final` ครั้งเดียว) → จดลง `compare_output/ablation_log.md` แล้วอัปเดต §0/§4 ของ `rag_v2_ablation_plan.md`
 - `python kb_coverage.py` บน v6: coverage ต่อกฎ 12 ตัว
 
 ### (ภายหลัง) P-rule-card — ใส่ rule card จากสเปกเข้า prompt เป็น checkpoint generation แยก
 
-## 3. เรื่องที่รอยืนยันกับทีมระบบ 1 และผลต่อแผน
+## 3. เรื่องที่ยืนยันกับทีมระบบ 1 และผลต่อแผน
 
-| ต้องยืนยัน | ถ้าต่างจากสเปก ต้องแก้ |
-|---|---|
-| รายชื่อกฎ 12 ข้อครบและถูก (มีเพิ่ม/ตัด/รวมไหม) | `ERROR_TAXONOMY` + `LEGACY_CODES` + test · ถ้ามีกฎใหม่ต้องเขียน `query` ใหม่ในรูป curator mistake |
-| **string ที่ระบบ 1 ส่งมาเป็น `error_type`** จริง ๆ: rule name (`knee_valgus`)? cue ("Push knees out")? ชื่ออาการ? ภาษาไทย? | key/`aliases` ใน taxonomy (ตอนนี้รับทั้ง rule name และ cue) |
-| ชื่ออาการผิดที่จะแสดงให้ user เห็น (ไทย) | `display_th` ใน taxonomy |
-| `back_straight` วัดแค่ trunk tilt จริง ไม่รวมหลังงอ (butt wink) | ถ้ารวมด้วย → เพิ่ม `butt wink` เข้า `LEGACY_CODES` และขยาย `query` |
-| `elbow_away` ไม่บอกทิศ (ออกข้าง/หน้า/หลัง) | ถ้ามีทิศ → อาจแยกเป็นหลายรหัส |
-| ส่งค่ามุมจริงต่อ rep มาด้วยไหม (สเปกบอกว่า rep summary เก็บ "per-rep metric values") | ถ้าส่ง → ขั้น P-rule-card ใช้บอก user ได้ว่า "เข่าต่ำสุด 112° เป้า 100°" |
+| เรื่อง | สถานะ (2026-10-01) | ผลต่อแผน |
+|---|---|---|
+| รายชื่อกฎ 12 ข้อครบและถูก | ✅ ยืนยันคร่าว ๆ ว่าอาการถูก และกฎไม่เปลี่ยนแล้ว | T1 ทำใหม่ตามชื่อ 2026-09-28 |
+| `rounded_back` นับลำตัวโน้ม / butt wink ไหม | ✅ นับทั้งคู่ (card oq1, oq2) | `butt wink` อยู่ใน `LEGACY_CODES` · query ครอบคลุมทั้งสองอย่าง |
+| ชื่ออาการที่แสดงให้ user เห็น (ไทย) | ใช้ `display_th` ของ card | `display_th` ใน taxonomy ตรงกับ card แล้ว |
+| **string ที่ระบบ 1 ส่งมาเป็น `error_type`** จริง ๆ | ยังไม่ยืนยัน — **ไม่กระทบ T3** | taxonomy รับทั้งชื่อกฎ, cue และชื่อเก่าแล้ว ถ้าเป็นรูปอื่นแค่เพิ่ม `aliases` |
+| `elbow_flare` ไม่บอกทิศ (ออกข้าง/หน้า/หลัง) | ยังไม่ยืนยัน — ไม่กระทบ T3 | ถ้ามีทิศในอนาคต อาจแยกรหัส |
+| ส่งค่ามุมจริงต่อ rep มาด้วยไหม | ยังไม่ยืนยัน — ไม่กระทบ T3 | ถ้าส่ง → ขั้น P-rule-card ใช้บอก user ได้ว่า "เข่าต่ำสุด 112° เป้า 100°" |
 
-**สำคัญ:** ต้องยืนยันก่อน T3 เพราะรายชื่อกฎและ `query` ถูกฝังลงใน tag ตอน curate ถ้าเปลี่ยนทีหลังต้อง curate ใหม่อีกรอบ
+## 4. คำถามก่อน T4 — ตอบแล้ว (2026-10-01)
 
-## 4. คำถามที่ยังค้าง (ต้องตอบก่อน T4)
-
-1. `data/general/feedback_and_cueing/` (Lincoln, Neumann, Smith, Stien — วิธีให้ feedback) ข้อเสนอ: **ไม่ curate เข้า KB** เก็บไว้ใช้ออกแบบ prompt ขั้น P5
-2. `data/general/` ที่เหลือ (`basics_of_strength_and_conditioning_manual.pdf`, `injury/Bonilla2022…`) ข้อเสนอ: ส่วนที่พูดถึงท่าเฉพาะ
-   ให้ย้ายไปอยู่ใต้ท่านั้น แทนที่จะถูกคัดทิ้ง (ดู T4)
+1. `data/general/feedback_and_cueing/` → **ไม่ curate เข้า KB** เก็บไว้ใช้ออกแบบ prompt ขั้น P5 (อยู่ใน skip list ของ T4)
+2. `data/general/` ที่เหลือ → curator เลือกท่าและ tag เองจากเนื้อหา ไม่อิงโฟลเดอร์ (T4 ข้อ 2) · `injury/Bonilla2022…` ให้ T3a ตัดสินว่าเก็บหรือตัด
