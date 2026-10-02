@@ -364,10 +364,15 @@ def _log_usage(raw_message, label: str, folder_exercise_id: str, relevant: Optio
     if not USAGE_LOG:
         return
     meta = getattr(raw_message, "usage_metadata", None) or {}
+    resp = getattr(raw_message, "response_metadata", None) or {}
     row = {
         "source": label,
         "exercise": folder_exercise_id,
         "relevant": relevant,
+        # the API's model_version (langchain_google_genai stores it as model_name), so
+        # batches curated days apart can be shown to have used the same model
+        "model_version": resp.get("model_name"),
+        "finish_reason": resp.get("finish_reason"),
         "input_tokens": meta.get("input_tokens"),
         "cached_tokens": (meta.get("input_token_details") or {}).get("cache_read"),
         "output_tokens": meta.get("output_tokens"),
