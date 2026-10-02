@@ -1,0 +1,45 @@
+{
+ "description": "T3 curation in rounds (user decision 2026-10-02). Round 1 = practitioner guides, fault reviews and rule-targeted papers covering all 12 rules; later rounds are added before ingest/E5, never chosen from eval results. A urls.txt entry curates every kept URL in that list. Run: python data_pipeline/curator.py --out curated_data_v6 --excluded excluded_from_kb_v6 --skip-list data_pipeline/prefilter_v6.json --usage-log data_pipeline/curation_usage_v6.jsonl --batch data_pipeline/curation_batches_v6.json <name>",
+ "batches": {
+  "trial": {
+   "note": "Done 2026-10-02 with --only before batches existed (53 windows).",
+   "files": ["data/general/basics_of_strength_and_conditioning_manual.pdf"]
+  },
+  "round1": {
+   "note": "~253 windows. Every rule gets 2+ direct sources; thin rules (knee_varus, straight_back_leg, excessive_front_knee_flexion, partial_pushup) get the rule-named papers.",
+   "files": [
+    "data/squat/urls.txt",
+    "data/squat/ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf",
+    "data/squat/Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf",
+    "data/squat/Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf",
+    "data/squat/TheBackSquatAProposedAssessment.pdf",
+    "data/squat/knee_varus/Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf",
+    "data/squat/knee_varus/Lorenzetti2020_Correction_HowToSquat_BMCSSMR.pdf",
+    "data/squat/back_straight/Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf",
+    "data/squat/knee_depth/Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf",
+    "data/squat/knee_valgus/Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf",
+
+    "data/lunge/urls.txt",
+    "data/lunge/ptq-4.4.9-the-undervalued-lunge.pdf",
+    "data/lunge/KritzCroninHume2009BodyweightlungeSCJ.pdf",
+    "data/lunge/lunge_knowledge.pdf",
+    "data/lunge/Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf",
+    "data/lunge/front_knee_too_deep/Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf",
+    "data/lunge/torso_upright/Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf",
+    "data/lunge/back_knee_form/Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf",
+    "data/lunge/back_knee_form/Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf",
+
+    "data/push-up/urls.txt",
+    "data/push-up/The_Biomechanics_of_the_Push_up.pdf",
+    "data/push-up/body_alignment/SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf",
+
+    "data/bicep-curl/urls.txt",
+    "data/bicep-curl/Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf",
+    "data/bicep-curl/Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf",
+    "data/bicep-curl/A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf",
+    "data/bicep-curl/elbow_away/Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf",
+    "data/bicep-curl/full_rom/Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf"
+   ]
+  }
+ }
+}

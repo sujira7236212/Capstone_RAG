@@ -190,6 +190,18 @@ def route_general_window(window: dict) -> dict:
     return out
 
 
+def load_batch(path: str, name: str, project_root: str) -> set:
+    """One named batch of data_pipeline/curation_batches_v6.json -> absolute paths. A URL
+    batch entry is its urls.txt file (the curator fetches a list file as one unit)."""
+    with open(path, encoding="utf-8") as f:
+        files = json.load(f)["batches"][name]["files"]
+    out = {os.path.normcase(os.path.abspath(os.path.join(project_root, p))) for p in files}
+    missing = [p for p in files if not os.path.exists(os.path.join(project_root, p))]
+    if missing:
+        raise SystemExit(f"[BATCH] {len(missing)} file(s) in batch '{name}' do not exist: {missing}")
+    return out
+
+
 def load_skip_list(path: str, project_root: str) -> tuple:
     """Read data_pipeline/prefilter_v6.json (T3a) -> (dropped file paths, dropped URLs).
 
@@ -587,7 +599,7 @@ def _routed_output_path(output_base_folder: str, exercise_id: str, stem: str) ->
 
 def process_data_directory(base_folder: str, output_base_folder: str, excluded_base_folder: str,
                             legacy_excluded_folders: tuple = (), skip_paths: dict = None,
-                            skip_urls: dict = None, only: str = None):
+                            skip_urls: dict = None, only: str = None, batch: set = None):
     """legacy_excluded_folders: earlier excluded_from_kb/ dirs (e.g. the v4 one) to also check
     for "<stem>_curated_offtopic.json" markers, so a source someone hand-excluded as off-topic
     stays excluded when re-curating into a fresh output_base_folder/excluded_base_folder pair
@@ -600,6 +612,7 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
     {absolute path or url: reason}. Those sources are skipped and logged, not curated.
     only: curate just the files whose path contains this substring (a trial run on one
     source; the output lands where the full run expects it, so it is not curated twice).
+    batch: absolute, case-normalised paths to curate (load_batch); None means every file.
     """
     if not os.path.exists(base_folder):
         print(f"Error: Folder {base_folder} not found.")
@@ -614,6 +627,8 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
                 
             file_path = os.path.join(root, file)
             if only and only.replace("\\", "/") not in file_path.replace(os.sep, "/"):
+                continue
+            if batch is not None and os.path.normcase(os.path.abspath(file_path)) not in batch:
                 continue
             if os.path.normcase(os.path.abspath(file_path)) in skip_paths:
                 print(f"[PREFILTER DROP] {file_path} - {skip_paths[os.path.normcase(os.path.abspath(file_path))]}")
@@ -748,8 +763,12 @@ def main():
                      help="curate only files whose path contains this substring (trial run on one source)")
     ap.add_argument("--usage-log", default=None,
                      help="append one JSON line of token usage per LLM call to this file")
+    ap.add_argument("--batch", nargs=2, metavar=("BATCHES_JSON", "NAME"), default=None,
+                     help="curate only the files of one named batch, e.g. "
+                          "data_pipeline/curation_batches_v6.json round1")
     args = ap.parse_args()
     skip_paths, skip_urls = load_skip_list(args.skip_list, project_root) if args.skip_list else ({}, {})
+    batch = load_batch(args.batch[0], args.batch[1], project_root) if args.batch else None
     global USAGE_LOG
     USAGE_LOG = args.usage_log
 
@@ -761,9 +780,11 @@ def main():
         print(f"Legacy excluded folders (offtopic markers only): {args.legacy_excluded}")
     if args.skip_list:
         print(f"Skip list: {args.skip_list} ({len(skip_paths)} files, {len(skip_urls)} URLs dropped)")
+    if batch is not None:
+        print(f"Batch: {args.batch[1]} from {args.batch[0]} ({len(batch)} files)")
 
     process_data_directory(args.data, args.out, args.excluded, tuple(args.legacy_excluded),
-                           skip_paths, skip_urls, args.only)
+                           skip_paths, skip_urls, args.only, batch)
     print("\nCuration process finished.")
     if USAGE_LOG and os.path.exists(USAGE_LOG):
         print(f"Token usage ({USAGE_LOG}): {summarize_usage(USAGE_LOG)}")
