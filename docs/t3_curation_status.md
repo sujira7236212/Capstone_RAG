@@ -1,11 +1,11 @@
 # T3 — สถานะการ curate KB v6 (handoff)
 
 > อัปเดต 2026-10-03 · branch `rule-change-v6` · แผนหลัก [`rule_change_v6_plan.md`](rule_change_v6_plan.md) · เปิดไฟล์นี้ก่อนเมื่อทำ T3 ต่อใน session ใหม่
-> **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · **ถัดไป: ข้อ 4 ingest** (DB อยู่ใน Docker `pgvector-db` localhost:5432 ต้องเปิด Docker Desktop ก่อน)
+> **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · ข้อ 4 ingest ✅ `kb_gemini_curated_v6` 1,845 row (= item ทั้งหมด) · **ถัดไป: ข้อ 6 mock 12 กฎ** — รอ user ตอบรูปแบบข้อมูลระบบ 1 (abandoned rep · state_occurred · previous_common_errors) · DB อยู่ใน Docker `pgvector-db` localhost:5432
 
 ## 0. เริ่มต่อจากตรงนี้
 
-1. ทำ §8.1 ต่อจากข้อ 4 (ingest) แล้วข้อ 6 (mock) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อ/ย้ายไฟล์ใน `data/` เพราะ path คือ id)
+1. ทำ §8.1 ต่อจากข้อ 6 (mock) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อ/ย้ายไฟล์ใน `data/` เพราะ path คือ id)
 2. ~~รันรอบ 2a~~ เสร็จแล้ว
 3. หลังรันทุกรอบ: `python data_pipeline/tag_coverage.py curated_data_v6` → ดูกฎที่ยังต่ำกว่าเกณฑ์ (§4) · เช็ค log หา `FOLDER MISMATCH` (§6.1)
 4. ครบทุกรอบแล้ว: commit `curated_data_v6/` + `data_pipeline/curation_usage_v6.jsonl` → T5 ingest → E5 split → mock 12 กฎ + clean → generate
