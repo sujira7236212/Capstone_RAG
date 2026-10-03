@@ -17,8 +17,11 @@ import os
 # useful for A/B-ing against the MiniLM fallback without editing this file.
 DEFAULT_MODE = os.environ.get("EMBEDDING_MODE", "gemini")  # "gemini" | "local"
 
+# gemini -> v6 as of 2026-10-03 (docs/t3_curation_status.md 8.1): v5 carries the old
+# taxonomy codes and must not be evaluated any more. Later rounds go to their own
+# collection (kb_gemini_curated_v6b) passed with --collection, not by moving this default.
 COLLECTION_NAMES = {
-    "gemini": "kb_gemini_curated_v5",
+    "gemini": "kb_gemini_curated_v6",
     "local": "kb_local_curated_v4",
 }
 

@@ -1,0 +1,861 @@
+{
+ "report": "smoke_v14.md",
+ "mock": "C:/Users/HP/AppData/Local/Temp/claude/c--Users-HP-Documents-RAG-SYSTEM/ff00b949-2a72-429a-a1a7-392ed8b6748d/scratchpad/mock_smoke_v14.json",
+ "collection": "kb_gemini_curated_v6",
+ "raw_query": false,
+ "llm": "gemini-3.5-flash-lite",
+ "temperature": 0.7,
+ "samples": 1,
+ "system_prompt_sha1": "1b65b49e32467dc288e33ebfb2d08ae19a97240d",
+ "retrieval": {
+  "TAG_MODE": "prefer",
+  "KIND_POOL": "split",
+  "QUERIES": "profile",
+  "HYBRID": false,
+  "RERANK": false
+ },
+ "sessions": [
+  {
+   "label": "Squat — mixed",
+   "exercise_id": "squat",
+   "payload": {
+    "session_id": "SQ-20261003-005",
+    "exercise_id": "squat",
+    "name": "Squat",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 70,
+     "previous_correct_reps": 4,
+     "previous_incorrect_reps": 6,
+     "previous_common_errors": [
+      "knee_valgus",
+      "rounded_back"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 4,
+     "incorrect_reps": 6,
+     "overall_score": 67
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 62
+      },
+      "errors": [
+       {
+        "error_type": "knee_valgus",
+        "state_occurred": "ECCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 55
+      },
+      "errors": [
+       {
+        "error_type": "partial_squat",
+        "state_occurred": "ECCENTRIC"
+       },
+       {
+        "error_type": "rounded_back",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 57
+      },
+      "errors": [
+       {
+        "error_type": "knee_valgus",
+        "state_occurred": "ECCENTRIC"
+       },
+       {
+        "error_type": "rounded_back",
+        "state_occurred": "INFLECTION"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 83
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "partial_squat",
+        "state_occurred": "ECCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 42
+      },
+      "errors": [
+       {
+        "error_type": "partial_squat",
+        "state_occurred": "CONCENTRIC"
+       },
+       {
+        "error_type": "rounded_back",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 54
+      },
+      "errors": [
+       {
+        "error_type": "knee_valgus",
+        "state_occurred": "ECCENTRIC"
+       },
+       {
+        "error_type": "rounded_back",
+        "state_occurred": "INFLECTION"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward (medial knee displacement or knee valgus) during a squat.\n\n[mistake | re: rounded_back | source: blog.nasm.org/newletter/squat-form]\nLosing lumbar lordosis or failing to maintain a neutral low back position during the squat.\n\n[mistake | re: partial_squat | source: TheBackSquatAProposedAssessment]\nSquatting too shallow, where the athlete does not achieve a depth where the tops of the thighs are at least parallel to the ground.\n\n[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward, known as dynamic knee valgus or medial knee displacement, during the descent or ascent of a squat.\n\n[principle | re: knee_valgus | source: TheBackSquatAProposedAssessment]\nDuring the squat, the lateral aspect of the knee should not cross the vertical plane of the medial malleolus to avoid medial displacement.\n\n[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward (medial knee displacement or dynamic knee valgus) during squatting movements.\n\n[principle | re: rounded_back | source: blog.nasm.org/newletter/squat-form]\nMaintaining an upright chest and thoracic position with the scapula retracted is important to attain a correct lumbo-pelvic position during the squat.\n\n[consequence | re: rounded_back | source: TheBackSquatAProposedAssessment]\nAllowing the hips to rise too quickly and increasing trunk flexion during the ascent represents an incorrect back squat that can be a dangerous strategy to the lower back during squatting with progressive external resistance.\n\n[consequence | re: knee_valgus | source: basics_of_strength_and_conditioning_manual]\nAllowing the knees to come together (valgus knee position) increases the strain on the ligaments and muscles surrounding the knee.\n\n[finding | re: rounded_back | source: TheBackSquatAProposedAssessment]\nFlexing at the spine before 120 degrees of hip flexion when squatting may indicate restriction in the posterior fibers of the iliotibial band or a lack of lumbar control.\n\n[consequence | re: rounded_back | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nFailing to maintain correct positioning during the squat can increase joint strain and potential injury to the low back and knees.\n\n[finding | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nA flat lumbar spine during squats is associated with a thinner anterior vertebral wedge, long paraspinal muscles, and/or a long iliopsoas.\n\n[finding | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nVisual knee valgus is clinically defined during a double-legged squat screening when the midpoint of the patella passes medial to the great toe in 3 out of 5 trials.\n\n[principle | re: knee_valgus | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nProper coaching cues, such as 'knees out', and the use of resistance bands can assist in reinforcing correct knee alignment.\n\n[consequence | re: knee_valgus | source: blog.nasm.org/newletter/squat-form]\nOver-pronation of the foot can lead to dynamic knee valgus during the squat.\n\n[finding | re: knee_valgus | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nKnee joint genu valgus during squats is associated with reduced height of the lateral meniscus, decreased hip abductor performance (gluteus maximus and medius), increased femoral anteversion, internal rotation of the tibia, and decreased ankle inversion muscles (tibialis anterior and posterior).\n\n[mistake | re: partial_squat | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nLimiting squat depth (stopping early in a partial squat) due to restricted ankle dorsiflexion or hip mobility.\n\n[mistake | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nAllowing excessive lumbar lordosis (hyperextension) or excessive lumbar flexion during the squat.\n\n[mistake | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nRounding the back, bending forward, raising the heels, or looking down during the ascent phase are common errors that compromise squat effectiveness.\n\n[consequence | re: partial_squat | source: TheBackSquatAProposedAssessment]\nWithout squatting to the proper depth, the hamstrings and gluteus muscular complex may not be adequately challenged.\n\n[principle | re: rounded_back | source: basics_of_strength_and_conditioning_manual]\nNever flex the spine or round forward during a squat.\n\n[principle | re: partial_squat | source: TheBackSquatAProposedAssessment]\nThe descent phase of the squat begins as the hips, knees, and ankles flex, and should continue until the top of the thigh is at least parallel with the ground and the hip joint is at least level with or slightly below the knee joint.\n\n[finding | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nIn a standard squat, the knees are bent at around a 90-degree angle with thighs parallel to the ground.\n\n[principle | re: partial_squat | source: www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat]\nThe appropriate squat depth is the deepest position a client can achieve while maintaining a neutral spine, foot stability, proper joint alignment, and movement control.\n\n[consequence | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nPerforming a partial squat instead of a deep squat may subject the knee joint to higher compressive forces.\n\n[finding | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nScientific research does not substantiate any increased risk of knee injury from performing deep squats.",
+   "metrics": [
+    {
+     "error": "knee_valgus",
+     "kind": "mistake",
+     "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+     "best": 0.045361700377550385,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "knee_valgus",
+     "kind": "finding",
+     "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+     "best": 0.12993987738010926,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "knee_valgus",
+     "kind": "consequence",
+     "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+     "best": 0.11495659783094148,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "knee_valgus",
+     "kind": "principle",
+     "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+     "best": 0.09464284053870209,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_squat",
+     "kind": "mistake",
+     "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+     "best": 0.06223142517992242,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_squat",
+     "kind": "finding",
+     "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+     "best": 0.1849308124143355,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_squat",
+     "kind": "consequence",
+     "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+     "best": 0.16042596101760864,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_squat",
+     "kind": "principle",
+     "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+     "best": 0.1740939720925061,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "rounded_back",
+     "kind": "mistake",
+     "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+     "best": 0.049241951243526816,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "rounded_back",
+     "kind": "finding",
+     "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+     "best": 0.11864398495626005,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "rounded_back",
+     "kind": "consequence",
+     "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+     "best": 0.10862296172242158,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "rounded_back",
+     "kind": "principle",
+     "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+     "best": 0.1005203604077799,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nCompared to your last session on October 2nd, your numbers held pretty steady but haven't broken through yet. Your overall score dipped slightly from 70 to 67, and you matched your previous count with 4 correct reps and 6 incorrect ones (including rep 9, which was an aborted attempt). The good news is that you're staying consistent with your best reps—rep 1, 3, 5, and 7 were solid. However, old habits are still creeping in: both knee caving and lower back rounding carried over from last time, and a new issue with depth popped up. Let's clean these up so your hard work actually translates to better movement.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your knees are caving inward toward each other instead of tracking out over your toes—this showed up on reps 2, 6, and 10 right as you were standing back up out of the bottom.\n*   **Why it matters:** This puts a lot of extra strain on the ligaments and muscles around your knee joint. When your knees drift inward, it costs you power and increases your risk of joint discomfort as you start lifting heavier loads.\n*   **How to fix it:** \n    *   *(a) Cue:* Think about actively driving your knees wide apart as you push up from the bottom.\n    *   *(b) Setup:* Loop a light resistance band just above your knees during your warm-up sets to force your outer hip muscles to switch on and keep your knees tracking straight.\n    *   *(c) Drill:* Do light goblet squats while keeping your focus entirely on pushing your knees outward against a band.\n    *   *(d) Self-check:* Glance at a mirror and make sure the middle of your kneecap stays lined up directly over your big toe throughout the lift.\n\n*   **What it is, in plain words:** Your lower back is rounding out—you can see this happening at the very bottom or as you push back up on reps 4, 6, 9 (the aborted attempt), and 10.\n*   **Why it matters:** Letting your spine flex under load shifts unnecessary stress onto your lower back instead of letting your hips and thighs do the heavy lifting. That's a fast track to lower back stiffness the next day, and it makes your lift much less stable as the weight goes up.\n*   **How to fix it:**\n    *   *(a) Cue:* Keep your chest proud and your upper back tight, imagining you're trying to show the logo on your shirt to someone standing in front of you.\n    *   *(b) Setup:* Pull your shoulder blades down and back hard before you even unrack the weight to lock your upper torso in place.\n    *   *(c) Drill:* Practice bodyweight box squats, pausing at the bottom to check that your lower back hasn't slumped into a curve.\n    *   *(d) Self-check:* Take a side-profile video of your set; your spine should maintain the same natural, straightish line from the top of the descent all the way back up.\n\n*   **What it is, in plain words:** You are cutting your squats short—dropping only partway down before turning around—which happened on reps 4, 8, and attempt 9 while you were lowering down.\n*   **Why it matters:** If you don't go deep enough, your glutes and hamstrings don't get fully challenged, meaning you miss out on the muscle growth and strength gains you're working for. Plus, stopping short can actually place higher compressive forces directly on the front of your knees.\n*   **How to fix it:**\n    *   *(a) Cue:* Aim to get the tops of your thighs at least parallel to the floor—imagine your hip crease dropping just level with the top of your knees.\n    *   *(b) Setup:* Set a box or a sturdy target at the exact depth where your thighs are parallel so you have a physical cue of where to stop.\n    *   *(c) Drill:* Spend a few minutes working on ankle and hip mobility stretches before your session so your joints can actually move through the full range without a fight.\n    *   *(d) Self-check:* Watch your side-profile video to confirm your hip crease is sinking at least level with your knee joint before you start heading back up.\n\n### Next Session Plan\n\n1.  **Warm up with a band:** Put a resistance band around your knees for two light sets of bodyweight squats to train your legs to stay pushed out before you add any weight.\n2.  **Use a depth target:** Set a box or bench at parallel height for your working sets so you hit the right depth every single rep instead of cutting them short.\n3.  **Drop the reps to protect your form:** Stop your working sets one rep *before* your lower back starts rounding out. Fresh, clean reps build better strength than grinding out sloppy ones."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nLet's look at how today stacked up against your last session. You matched your correct rep count at 4 clean reps, but your overall score dipped slightly from 70 down to 67, and you logged 6 incorrect reps/attempts today compared to 6 last time. While you managed to clear some of the heavier form breakdown early on, old habits are creeping back in as fatigue sets in. \n\n---\n\n### Error Breakdown\n\n* **Knee Valgus**\n  * **What it is:** Your knees are caving inward toward each other as you stand back up out of the bottom of the squat.\n  * **Why it matters:** This puts extra twisting stress right across your knee joint and shuts down your glutes, which costs you raw power. You'll feel a pinch or unstable wobble around your kneecaps mid-lift, and it caps how heavy you can safely go before your joints start aching.\n  * **How to fix it:** \n    (a) Cue: \"Spread the floor apart with your feet\" as you press up. \n    (b) Setup: Take a slightly narrower stance or wrap a light resistance band just above your knees to give your legs something to push against. \n    (c) Drill: Perform lighter pause squats, holding for a two-count at the very bottom while actively forcing your knees wide. \n    (d) Self-check: Watch your phone video—your kneecaps should track directly in line with your second and third toes the entire time, never drifting inward.\n  * **Rep detail:** This popped up strictly on the way back up (reps 2, 6, and 10), right when fatigue made it harder to drive through the floor.\n\n* **Partial Squat**\n  * **What it is:** You are cutting your depth short and heading back up before your hips drop far enough.\n  * **Why it matters:** You miss out on full muscle recruitment in your quads and glutes, meaning you're working hard for less actual muscle growth. Over time, you build strength through a very narrow window instead of a full, usable range of motion.\n  * **How to fix it:** \n    (a) Cue: \"Sit between your heels\" until the bottom target is hit. \n    (b) Setup: Set a box or a bench at the correct parallel depth behind you to act as a physical target so you know when to reverse direction. \n    (c) Drill: Drop the load completely and practice bodyweight goblet squats with a three-second descent. \n    (d) Self-check: Look in the mirror from the side—your hip crease should clearly break below the top of your knee cap before you press up.\n  * **Rep detail:** This showed up as you lowered down (reps 4 and 8), and completely cut attempt 9 short in a failed abort.\n\n* **Rounded Back**\n  * **What it is:** Your lower spine is curling forward and losing its flat, strong arch under the weight.\n  * **Why it matters:** Your lower back muscles and spine take the brunt of the load instead of your core and legs locking everything in place. You will feel this as a dull ache or tightness in your lower back right after your set, robbing your torso of the rigidity needed for heavy lifts.\n  * **How to fix it:** \n    (a) Cue: \"Big chest, proud sternum\" to keep your upper torso from collapsing forward. \n    (b) Setup: Bring your grip in slightly closer on the bar or lower the total weight so your core can actually manage the demand. \n    (c) Drill: Practice core bracing planks with a weighted plate on your back to build endurance in the muscles that keep your spine upright. \n    (d) Self-check: Have a gym buddy check if your lower back is flattening out or folding over at the bottom of the squat.\n  * **Rep detail:** This crept in right at the bottom (inflection phase on reps 6 and 10) and on the way up (reps 4 and 9), signaling your core is giving out when the lift gets tough.\n\n---\n\n### Next Session Plan\n1. **Drop the weight by 10%:** Give yourself room to fix your form without grinding through ugly reps.\n2. **Cut your sets short:** Stop your sets a rep or two *before* your form starts falling apart (around rep 5 or 6 based on today), rather than fighting through sloppy technique.\n3. **Focus on depth and chest angle:** Make every single rep hit parallel with a proud chest before you worry about adding more plates back onto the bar."
+   ]
+  },
+  {
+   "label": "Push-up — mixed",
+   "exercise_id": "push-up",
+   "payload": {
+    "session_id": "PU-20261003-003",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 71,
+     "previous_correct_reps": 5,
+     "previous_incorrect_reps": 5,
+     "previous_common_errors": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 4,
+     "incorrect_reps": 6,
+     "overall_score": 65
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 61
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike",
+        "state_occurred": "INFLECTION"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 46
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike",
+        "state_occurred": "CONCENTRIC"
+       },
+       {
+        "error_type": "partial_pushup",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 58
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 44
+      },
+      "errors": [
+       {
+        "error_type": "partial_pushup",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 55
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike",
+        "state_occurred": "INFLECTION"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 40
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike",
+        "state_occurred": "CONCENTRIC"
+       },
+       {
+        "error_type": "partial_pushup",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: hip_sag_or_pike | source: www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels]\nFailing to activate the deep core muscles required to stabilize the spine and pelvis during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to maintain a neutral lumbar spine position during a push-up results in anterior pelvic tilt and trunk lag, indicating impaired trunk stability.\n\n[mistake | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to complete the push-up by only rising one to two inches from the floor due to insufficient upper body strength.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAllowing the lower back to sag or arch during a push-up increases mechanical stress on the vertebral discs.\n\n[mistake | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nAnterior pelvic tilt and trunk lag are common errors where the trunk fails to lift as a single unit during the push-up.\n\n[mistake | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAs fatigue sets in during a push-up, the lower back may arch or sag, causing the kinetic chain checkpoints to migrate out of alignment.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nImproving awareness of lumbar spine position and thoracic spine mobility can help improve trunk stability during a push-up.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide]\nLower the body with control until the chest approaches the floor.\n\n[consequence | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nNot achieving adequate range of motion limits chest stretch and development.\n\n[finding | re: partial_pushup | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe increased force in the down position of a push-up is due to the whole-body center of mass being located further from the point of contact with the floor, which results in greater torque.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nDescend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMore than 60% (n=65/108) of active females failed the Trunk Stability Push Up (TSPU) compared to less than 10% (n=10/101) of active males.\n\n[finding | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a study of active females, 45% of participants passed the Trunk Stability Push-Up (TSPU) post-intervention, with many of those who failed only able to rise one to two inches from the floor.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a pilot study of active females, a six-week multiplanar trunk stability intervention resulted in 9 of 20 participants (45%) improving their Trunk Stability Push Up (TSPU) score to ≥2.",
+   "metrics": [
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "mistake",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.07353249411381724,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "finding",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.23760149030667121,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "consequence",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.1141966445211533,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "principle",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.13662133842301072,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "mistake",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.12236043873775837,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "finding",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.21860639383564218,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "consequence",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.1995772839600306,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "principle",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.18876076079584192,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nYou finished today's session with 4 correct reps out of 10 total entries (which includes 7 completed reps and 3 aborted attempts). Your overall score dipped slightly to 65, down from 71 in your previous session on October 2, and your correct rep count dropped from 5 to 4. Both of your old hurdles—sagging hips and cutting your range of motion short—showed up again today, meaning neither error has cleared yet. \n\n---\n\n### Error Breakdown\n\n* **Sagging lower back or hips**\n  * **What it is:** Your hips and lower back sag toward the floor instead of your entire torso moving as a solid, rigid plank. This showed up at the bottom of rep 3 and rep 9, and crept in right as you started pressing back up on rep 5, rep 6, and rep 10.\n  * **Why it matters:** When your trunk loses stability and your lower back arches, your spinal discs take on extra mechanical stress. That translates into a dull ache or strain in your lower back right in the middle of your set, sapping your core strength and making it hard to trust your form when fatigue sets in.\n  * **How to fix it:**\n    * *(a) Cue:* Squeeze your glutes and brace your abs hard as if someone were about to poke you in the stomach, keeping your whole body locked in a straight line.\n    * *(b) Setup:* Elevate your hands on a sturdy bench or box to reduce the load on your midsection so you can maintain a rigid plank without your lower back arching.\n    * *(c) Drill:* Practice forearm planks on the floor, focusing on tucking your pelvis slightly under to keep your spine neutral.\n    * *(d) Self-check:* Glance at a mirror sideways or set your phone up to record—if your hips drop below the line of your shoulders and ankles, you'll see the sag immediately.\n\n* **Partial push-up range of motion**\n  * **What it is:** You cut the movement short and didn't lower your chest close enough to the floor. This was the main issue when attempt 5 and attempt 10 aborted early during the lowering phase, and it also happened on attempt 8.\n  * **Why it matters:** Stopping well short of the floor robs your chest muscles of a full stretch and limits how much muscle growth you get for your effort. You end up doing extra work for a fraction of the payoff, missing out on the strength gains you came for.\n  * **How to fix it:**\n    * *(a) Cue:* Think about leading with your chest and actively pulling your upper body down toward the floor until your elbows reach roughly a 90-degree bend.\n    * *(b) Setup:* Set a yoga block or a small rolled towel right beneath your chest to give yourself a clear, physical target to touch on every rep.\n    * *(c) Drill:* Drop down to incline push-ups against a high counter or wall where you can consistently hit full depth without your upper body giving out halfway down.\n    * *(d) Self-check:* Feel for that deep stretch across the front of your shoulders and chest at the bottom position—if you don't feel the stretch, you haven't gone low enough.\n\n---\n\n### Next Session Plan\n1. **Drop the volume slightly to protect your form:** Aim for sets of 4 to 5 clean reps max, stopping before your lower back starts to sag or your range of motion shrinks.\n2. **Use an incline for better depth:** Place your hands on an elevated surface for your working sets today so you can hit full chest depth comfortably without form breakdown.\n3. **Rest longer between sets:** Give yourself a full 90 seconds to 2 minutes of recovery so fatigue doesn't rush your setup or cause your hips to drop early."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nLet's look at how today stacked up against your last session on October 2nd. Your overall score dipped slightly from 71 to 65, and your clean rep count dropped from 5 down to 4. Out of 10 total entries today, 4 were completed cleanly, 2 were completed with form faults, and 3 were aborted attempts where your form broke down before finishing. \n\nThe familiar faults are hanging on—both hip sag or pike and partial push-ups showed up again today, just like last time. The main takeaway here is fatigue management: your first four reps looked sharp, but once tiredness set in, your midsection gave out and your depth shortened up on the way down.\n\n***\n\n### Error Breakdown\n\n*   **Hips sagging or piking**\n    *   **What it is:** Your hips are either dropping toward the floor like a sagging hammock or piking up toward the ceiling like a tent, breaking the straight line from your head to your heels. This happened specifically at the bottom of the movement and while pressing back up, usually creeping in as fatigue sets in.\n    *   **Why it matters:** Your core gives out, forcing your lower back to soak up the stress instead of keeping your torso rigid. That's the dull ache in your lower back that shows up mid-set, and it robs your upper body of the stable platform it needs to actually push the weight.\n    *   **How to fix it:** \n        (a) Cue: Squeeze your glutes and brace your stomach as if someone is about to poke you in the ribs.\n        (b) Setup: Take a slightly narrower stance to help lock your hips in, or drop your knees to the floor for a regression if you cannot hold the plank line.\n        (c) Drill: Practice standard front planks on your elbows for 30-second holds to build the endurance your midsection needs.\n        (d) Self-check: Record a side-profile video of your set; if a straight line from your shoulder to your ankle bends in the middle, your hips are drifting.\n\n*   **Partial push-up**\n    *   **What it is:** You are cutting the movement short on the way down, stopping well before your chest gets close to the floor. This cropped up exclusively on your aborted attempts (reps 5, 8, and 10), where the reps were cut short mid-descent.\n    *   **Why it matters:** Your chest and triceps never get through their full range of motion, which means you are leaving muscle growth on the table and cheating yourself out of the strength gains you came for.\n    *   **How to fix it:** \n        (a) Cue: Think about pulling your chest down to an imaginary target an inch off the floor.\n        (b) Setup: Elevate your hands on a sturdy bench or box to make the full range of motion manageable without stalling halfway.\n        (c) Drill: Perform slow-tempo negatives—take a full three seconds to lower yourself all the way to the floor, then drop to your knees to press back up.\n        (d) Self-check: Look for the point where your elbows hit a 90-degree bend; if you are turning back up before your arms reach that depth, you are cutting it short.\n\n***\n\n### Next Session Plan\n\n1.  **Drop the volume to protect your form:** Keep your next set to solid, clean reps, and stop the moment your hips start to sag or your depth starts to shallow out—don't grind through messy reps.\n2.  **Elevate if you need to:** If you find yourself cutting reps short like you did on attempts 5, 8, and 10, put your hands on an elevated surface so you can hit full depth cleanly.\n3.  **Focus on the plank first:** Spend 60 seconds warming up with a tight, active plank before you even start your push-ups to wake your core up."
+   ]
+  },
+  {
+   "label": "Lunge — shallow_lunge",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-001",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 70,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "shallow_lunge"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 71
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 52
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 50
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 47
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 45
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 83
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[mistake | re: shallow_lunge | source: basics_of_strength_and_conditioning_manual]\nFailing to lower the hips until the front thigh is parallel to the floor.\n\n[principle | re: shallow_lunge | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nTo achieve proper depth during a lunge, descend until the trail knee is just prior to touching the ground.\n\n[mistake | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovice lifters may perform backward lunges with shallower knee flexion compared to experienced lifters.\n\n[principle | re: shallow_lunge | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[finding | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring backward barbell lunges, novices achieved a shallower peak knee flexion with a minimal sagittal angle of -99.01 ± 10.02 degrees compared to -108.44 ± 8.33 degrees in experienced lifters.\n\n[finding | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nDuring a forward lunge, a shallower front knee flexion angle of 80° results in a statistically significantly higher knee extensor moment (0.980 Nm/BW) compared to 90° (0.717 Nm/BW) and 100° (0.362 Nm/BW).\n\n[consequence | re: shallow_lunge | source: Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK]\nFailing to sufficiently activate the m. gluteus maximus reduces the generation of posterior shear forces at the tibia, which otherwise potentially contribute to a reduced likelihood of knee injuries.",
+   "metrics": [
+    {
+     "error": "shallow_lunge",
+     "kind": "mistake",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.13532986990690876,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "finding",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.2260629861279687,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "consequence",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.3157588667036424,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "principle",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.1852058922753359,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nYou held steady overall compared to yesterday: your score ticked up slightly from 70 to 71, and you matched your previous count of 6 correct reps. However, that old shallow lunge habit is still hanging around—it showed up on 4 separate attempts today, specifically causing you to cut your reps short on attempts 3, 5, 7, and 9 while lowering down. Let's lock in your depth so you can finish every rep cleanly.\n\n### Error Breakdown\n\n*   **What it is:** You're cutting your lunge short on the way down instead of dropping your hips until your front thigh is parallel to the floor and your back knee hovers just above the ground.\n*   **Why it matters:** Stopping too high changes the angles at your joints and spikes the load right on your quads and knee joint—especially when your front knee angle stays closer to 80 degrees instead of hitting that 90 to 100-degree sweet spot. That means extra wear and tear on your knees while missing out on getting your glutes fully involved to protect the joint.\n*   **How to fix it:** \n    *   (a) Cue: Focus on driving your back knee straight down toward the floor rather than lunging forward.\n    *   (b) Setup: Slow down your descent tempo so you have time to control the bottom position and consciously hit depth on every single step.\n    *   (c) Drill: Practice bodyweight split squats with a low target (like an ab mat or yoga block) placed right beneath your back knee so you have a physical cue for full range of motion.\n    *   (d) Self-check: Glance in the side mirror as you lower down to confirm your front thigh is parallel to the floor and your back knee is just a hair off the ground before you push back up.\n\n### Next Session Plan\n1. **Slow down the descent:** Take a full two seconds to lower yourself on every rep so you stop cutting them short.\n2. **Use a depth target:** Set up a light marker for your back knee on warm-up sets to guarantee you hit the bottom position before driving back up."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nGreat to see you back on the floor. Your overall score ticked up slightly from 70 to 71, and you matched your previous count with 6 fully completed reps. However, you ran into the exact same wall as last time: shallow lunges. You had 4 incorrect reps today, and all 4 of them were actually aborted attempts on the way down (specifically attempts 3, 5, 7, and 9) where you cut the movement short and came back up before hitting proper depth. \n\n---\n\n### Error Breakdown\n\n* **Shallow lunge**\n  * **What it is:** You are cutting your step short on the way down instead of dropping your back knee down toward the floor so your front thigh gets parallel.\n  * **Why it matters:** When you chop the bottom of the movement off, your quads and glutes don't get taken through their full working range, meaning you miss out on the muscle growth and strength gains you're putting in the effort for. As the weight gets heavier, this habit makes your progress stall out because you aren't building strength at the deepest, hardest part of the lunge.\n  * **How to fix it:** \n    * *(a) Cue:* Think about \"kissing the floor\" softly with your back knee on every single descent.\n    * *(b) Setup:* Slow your lowering phase right down to a 3-second count so you have time to control the bottom position rather than rushing to push back up.\n    * *(c) Drill:* Drop the weight entirely and practice static bodyweight split squats, holding the bottom position for a 2-second pause before driving back up.\n    * *(d) Self-check:* Set your phone up to record from the side—you should clearly see your front thigh parallel to the floor at the lowest point.\n\n---\n\n### Next Session Plan\n\n1. **Slow down the lowering phase:** Give yourself a full 3 seconds to step out and lower down on every rep to eliminate those aborted, rushed attempts.\n2. **Prioritize depth over speed:** If you start feeling fatigued and catch yourself cutting the bottom short like you did on attempts 3, 5, 7, and 9, stop the set right there instead of grinding out shallow reps."
+   ]
+  },
+  {
+   "label": "Bicep Curl — partial_curl",
+   "exercise_id": "bicep-curl",
+   "payload": {
+    "session_id": "BC-20261003-002",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 73,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "partial_curl"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 76
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 64
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl",
+        "state_occurred": "ECCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 62
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl",
+        "state_occurred": "ECCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl",
+        "state_occurred": "ECCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 48
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl",
+        "state_occurred": "CONCENTRIC"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[mistake | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPerforming partial repetitions at shorter muscle lengths rather than allowing the muscle to fully stretch.\n\n[principle | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nA complete repetition of a bicep curl requires moving the weight from a position of full elbow extension to a position of full flexion, and returning back to the initial position of full extension.\n\n[mistake | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nLifters frequently start the bicep curl from a slightly flexed elbow position of around 20 degrees instead of starting from full elbow extension.\n\n[principle | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nThe bicep curl should ideally begin from a position of full elbow extension to ensure a complete range of motion.\n\n[consequence | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nFailing to pause at full extension and full flexion increases the risk of sustaining an injury.\n\n[mistake | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion, where the muscle contracts only at short muscle lengths and avoids the initial stretched position.\n\n[finding | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPartial repetitions at shorter-muscle lengths are not as hypertrophic as partial repetitions at longer-muscle lengths.\n\n[consequence | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion results in inferior muscle hypertrophy compared to training with a full range of motion or at longer muscle lengths.\n\n[finding | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nPrevious studies have reported a strategy of starting the bicep curl movement with an elbow joint angle ranging from 15 degrees to 48 degrees.",
+   "metrics": [
+    {
+     "error": "partial_curl",
+     "kind": "mistake",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.13249628730062601,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "finding",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.20733115694913695,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "consequence",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.18345935246106104,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "principle",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.14628557678630105,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nYou banked 6 correct reps today, exactly matching your count from yesterday, and your overall score ticked up slightly from 73 to 76. That said, the same old habit is still hanging around: your old nemesis, the partial curl, showed up on reps 4, 6, and 8 on the way back down, and then cut your attempt short on rep 9 before you even made it up. Let's iron that out so you can get the full benefit of every single rep.\n\n### Error Breakdown\n* **What it is, in plain words:** You are cutting your range of motion short—either by starting the curl with your elbows slightly bent instead of fully straight, or by stopping the lowering phase early and cutting off the bottom stretch. On rep 9, it happened right as you started pulling the weight up.\n* **Why it matters:** When you train only the top half of the movement and skip the fully straightened position, your biceps miss out on the deep stretch. That leaves you with inferior muscle growth for the exact same amount of effort and energy spent, and rushing through the ends of the movement increases your risk of injury over time.\n* **How to fix it:** \n  (a) *Cue:* Think \"dead hang at the bottom\"—let your arms lock out completely straight before every single rep. \n  (b) *Setup change:* Drop the weight slightly if you need to, and take a brief, one-second pause at the very bottom with your arms fully straight before you curl again. \n  (c) *Drill:* Try a lighter set where you focus purely on the bottom stretch, pausing for a full second at full elbow extension on every rep. \n  (d) *Self-check:* Watch a video of your set from the side and look at your elbows at the start and finish of each rep—they should lock out completely straight every time.\n\n### Next Session Plan\n1. **Prioritise full extension:** On your warm-up sets, exaggerate the bottom stretch so you get used to what a truly straight arm feels like before the weight gets heavy.\n2. **Watch the fatigue factor:** Notice how your partials creep in on reps 4, 6, and 8 as you get tired. If your form starts cutting corners, drop the weight or end the set a rep earlier rather than letting the range of motion shrink."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGood effort out there today. Your overall score ticked up slightly from 73 to 76, and you matched your previous count of 6 clean reps. The recurring issue from last time—cutting your reps short—showed up again, appearing on reps 4, 6, 8, and attempt 9. You are still dealing with the same consistency hurdle, but your clean reps are solid. Let's iron out the end of the movement so you can string a full set together.\n\n---\n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting your curls short instead of taking them through the full range of motion. On reps 4, 6, and 8, this happened as you were lowering the weight back down (the eccentric phase), and on attempt 9, you cut the lift short right as you started curling it up (the concentric phase).\n*   **Why it matters:** When you cut your range of motion short, your biceps miss out on the full stretch and contraction they need to grow, meaning you get less muscle building for the exact same amount of effort. It also usually means the weight is getting ahead of your control as fatigue sets in later in the set, which will cap your strength gains when you try to move up in weight.\n*   **How to fix it:** \n    *   (a) *Cue:* Focus on touching your thighs fully at the bottom and bringing the weight all the way up to your collarbone on every single rep.\n    *   (b) *Setup change:* Drop the weight slightly on your next session so you can control the entire path of the movement without rushing the bottom or the top.\n    *   (c) *Drill/Regression:* Practice bodyweight-only air curls or use a very light dumbbell, pausing for a full two seconds at the bottom and top of every rep to teach your body the full path.\n    *   (d) *Self-check:* Watch yourself in a side-profile mirror and make sure your arm straightens out completely at the bottom before you start the next curl.\n\n---\n\n### Next Session Plan\n1. **Drop the weight slightly:** Take a small step down in load for your next bicep curl session so you can handle the full range of motion without your form breaking down toward the end of the set.\n2. **Slow down the descent:** Focus on taking a full two to three seconds to lower the weight on every rep, completely eliminating those rushed, partial cuts on the way down.\n3. **Stop before form breaks:** If you feel yourself starting to cut the reps short due to fatigue—like what happened on reps 4 through 9—stop the set right there instead of grinding through sloppy reps."
+   ]
+  }
+ ]
+}

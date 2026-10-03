@@ -704,6 +704,29 @@ def metrics_table(metrics):
 # The term LIST (line "Terms that need this treatment include:") deliberately stays as v10
 # left it: naming a term the model must translate is not the same as handing it the
 # translation, and generating that gloss is the capability under test.
+#
+# v14 (2026-10-03, docs/t3_curation_status.md 8.1 step 7). Input format only - the session
+# JSON system 1 sends changed under KB v6 (mock_data/build_mock_sessions.py), and v13 read
+# three of its fields wrong:
+#   1. `state_occurred` is now the FSM state, and it is NOT sent to the model in v14 - see
+#      HELD_BACK_FIELDS. The FSM names states after the counting angle (CONCENTRIC = angle
+#      closing: the way DOWN in squat, lunge and push-up, the way UP in a curl), and rep-scope
+#      rules are checked once at the end of the attempt, so for 8 of the 12 rules the state
+#      only marks where the attempt ended. Two smoke runs explained both in the prompt
+#      (compare_output/smoke_v14.md, smoke_v14b.md): CONCENTRIC still came out as "pressing
+#      back up" in 3-4 of 8 answers, rep-scope faults were still tied to a phase in 4, the
+#      words concentric/eccentric/inflection leaked in 2-3, and listing the frame-rule keys
+#      in the prompt made 2 answers print keys. What system 1 actually records is not
+#      confirmed either, so the field waits for that conversation (docs/t3_curation_status.md
+#      8.1) and comes back as its own checkpoint against this baseline.
+#   2. `status: "abort"` is new: an attempt the FSM did not count, which the summary still
+#      counts (total_reps = every entry, an abort with a fault is an incorrect rep).
+#   3. `error_type` is a rule key, not a display name, so "error names must match exactly"
+#      would print snake_case to the user. Keys now identify faults; the reader gets plain
+#      words. The first key on a rep is the highest-priority fault.
+# Deliberately NOT in v14, each its own generation checkpoint against this baseline: the
+# `consequence` gap in "How to read the Context" (P1), P2-P6, the rule card per key
+# (P-rule-card), and option A of docs/t3_curation_status.md 6.7.
 SYSTEM_PROMPT = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
 Your job is to turn the user's session data and the Knowledge Base context into feedback they can
 understand and act on in their very next workout. The reader is not a clinician or a researcher:
@@ -711,8 +734,23 @@ they want to know what went wrong, why it matters to them, and exactly what to d
 Write the way a good coach talks on the gym floor, not the way a paper reads.
 
 You will receive a JSON structure containing:
-1. Current session details (10 reps summary and specific errors).
+1. Current session details (a summary of the set, and every attempt in it with its errors).
 2. Historical comparison (data from their previous session).
+
+How to read the session data:
+- `error_type` is the system's internal key for a fault (lowercase words joined by
+  underscores). It identifies the fault: use it to tell which attempt has which fault, and to
+  compare with `previous_common_errors`, which uses the same keys. Never write a key to the
+  user - name the fault in plain words instead. When an attempt lists more than one error,
+  they are in the system's priority order: the first one is the most important.
+- `status`: "completed" is a counted rep. "abort" is an attempt that started the movement but
+  came back before reaching the point the system counts as a rep, so the system did not count
+  it. The summary still includes it: `total_reps` counts every entry, completed or aborted,
+  and an aborted attempt with a fault counts in `incorrect_reps`. Call an aborted entry an
+  attempt (e.g. "attempt 5"), not a rep, and if any entry aborted, do not tell the user they
+  completed all of them. When the fault on an aborted attempt is about range of motion (not
+  going deep enough, not going far enough), the abort is that fault itself: the attempt was
+  cut short.
 
 Your tasks:
 1. Progress Tracking: Compare their current performance with their previous session. Acknowledge
@@ -737,9 +775,10 @@ Your tasks:
      practise, and if there honestly isn't one for this fault, say so rather than padding;
      (d) a simple self-check so they know it worked - something they can see in a mirror, feel,
      or notice on a phone video.
-   - Use the rep detail: if the error clusters in one phase (descending / ascending) or in the
-     later reps of the set, say so and tailor the advice to it (e.g. stop the set a rep earlier,
-     drop the load, slow the descent).
+   - Use the rep detail: if the error clusters in the aborted attempts or in the later
+     attempts of the set, say so and tailor the advice to it (e.g. stop the set a rep earlier,
+     drop the load, slow the descent). The data does not say in which part of the movement a
+     fault happened, so do not claim one.
 3. Next Session Plan: close with 2-3 short, prioritised things to do in their next workout.
 4. Tone: encouraging, direct, and specific. Short paragraphs and bullets. No filler, no lecture.
 
@@ -749,13 +788,14 @@ Context for something else to change, and do not suggest a different version of 
 (a narrower grip, a different stance) as a way to have something to say. A clean session is the
 result, not a gap to fill.
 
-Stick to their numbers: rep numbers, rep counts, scores and error names come from the session
-JSON and nothing else. They must match it exactly. If you say "the last three reps", list three.
+Stick to their numbers: rep numbers, rep counts, scores and which fault each attempt carries come
+from the session JSON and nothing else. They must match it exactly. If you say "the last three
+reps", list three.
 Keep the two sessions apart. The previous session's error list is history: if a name appears
 there but in none of this session's reps, that fault is GONE - credit them for clearing it, and
 never attach it to a rep they did today. Faults with similar names are still different faults
 (a wrist that folds back and a grip that is too wide are not the same error) - when you name the
-fault on a given rep, use the name that rep actually carries in this session's data.
+fault on a given rep, describe the fault whose key that rep actually carries in this session's data.
 
 How to read the Context: every entry starts with a header line of the form
 [<kind> | re: <which error it was retrieved for> | source: <source name>], followed by the
@@ -847,9 +887,36 @@ DEFAULT_COLLECTION = embedding_config.default_collection()
 # RELATIVE_MARGIN/CANDIDATE_K/MAX_PER_KIND/ABS_DISTANCE_CAP numbers below are still the
 # ones swept against v4 (section 10.4) - not yet re-swept for v5, though the golden-set
 # result above says they still work well.
+#
+# v6 (2026-10-03) is DEFAULT_COLLECTION now: KB v6 under the 12-rule taxonomy
+# (docs/t3_curation_status.md). The gate numbers above are still the v4 sweep, not yet
+# measured on v6 (eval_v6_plan E6).
 
 
 GENERATION_ERROR = "Error occurred during generation"
+
+# Per-error fields the mock carries but the model is not shown yet (prompt v14 comment).
+# The mock files keep them: they are the best guess at system 1's format and the example
+# to take into that conversation. Empty this set once system 1 confirms what they mean.
+HELD_BACK_FIELDS = {"state_occurred"}
+
+
+def model_payload(session_data):
+    """The session JSON exactly as the model sees it.
+
+    `report_label` exists only to name the block in the report (mock_sessions_per_fault.json
+    runs three Squat sessions, so the exercise name alone no longer identifies one). It is
+    bookkeeping, not session data - sending it would tell the model which fault to expect,
+    and would label the clean session "clean session" before it has read a single rep.
+    HELD_BACK_FIELDS are dropped from every error of every rep."""
+    payload = {k: v for k, v in session_data.items() if k != "report_label"}
+    if "reps_detail" in payload:
+        payload["reps_detail"] = [
+            {**rep, "errors": [{k: v for k, v in e.items() if k not in HELD_BACK_FIELDS}
+                               for e in rep.get("errors", [])]}
+            for rep in payload["reps_detail"]
+        ]
+    return payload
 
 
 def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAULT_COLLECTION,
@@ -905,11 +972,7 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
         | StrOutputParser()
     )
 
-    # `report_label` exists only to name the block in the report (mock_sessions_per_fault.json
-    # runs three Squat sessions, so the exercise name alone no longer identifies one). It is
-    # bookkeeping, not session data - sending it would tell the model which fault to expect,
-    # and would label the clean session "clean session" before it has read a single rep.
-    payload = {k: v for k, v in session_data.items() if k != "report_label"}
+    payload = model_payload(session_data)
 
     import time
 
@@ -1067,7 +1130,7 @@ and were actually placed in the context.
 
             run["sessions"].append({
                 "label": block_name, "exercise_id": mock.get("exercise_id"),
-                "payload": {k: v for k, v in mock.items() if k != "report_label"},
+                "payload": model_payload(mock),
                 "context": rag_context, "metrics": metrics,
                 "rag": rag_outputs, "no_rag": no_rag_outputs,
             })

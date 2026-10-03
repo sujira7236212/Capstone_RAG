@@ -1,7 +1,7 @@
 # T3 — สถานะการ curate KB v6 (handoff)
 
 > อัปเดต 2026-10-03 · branch `rule-change-v6` · แผนหลัก [`rule_change_v6_plan.md`](rule_change_v6_plan.md) · เปิดไฟล์นี้ก่อนเมื่อทำ T3 ต่อใน session ใหม่
-> **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · ข้อ 4 ingest ✅ `kb_gemini_curated_v6` 1,845 row (= item ทั้งหมด) · ข้อ 6 mock ✅ 4 ไฟล์ `mock_data/mock_sessions_<ท่า>.json` 20 session (`build_mock_sessions.py`) · **ถัดไป: ข้อ 7 ปรับ prompt** (อธิบาย state ของ FSM + status `abort`) · DB อยู่ใน Docker `pgvector-db` localhost:5432
+> **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · ข้อ 4 ingest ✅ `kb_gemini_curated_v6` 1,845 row (= item ทั้งหมด) · ข้อ 6 mock ✅ 4 ไฟล์ `mock_data/mock_sessions_<ท่า>.json` 20 session (`build_mock_sessions.py`) · **ข้อ 7 กำลังทำ:** prompt v14 ผ่าน smoke แล้ว (`state_occurred` ยังไม่ส่งให้ LLM จนกว่าจะคุยกับระบบ 1 · คำถามอยู่ §8.1 ข้อ 7) → ถัดไปรัน baseline เต็ม 4 ท่า · DB อยู่ใน Docker `pgvector-db` localhost:5432
 
 ## 0. เริ่มต่อจากตรงนี้
 
@@ -170,6 +170,16 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 6. ~~mock 12 กฎ + clean~~ ✅ 2026-10-03: แยก 4 ไฟล์ตามท่า (user เลือก) · ต่อท่า = 1 session ต่อกฎ + mixed + clean (squat 6 · push-up 4 · lunge 6 · bicep-curl 4) · 10 entry ต่อ session · รูปแบบที่ user ยืนยัน: `error_type` และ `previous_common_errors` = key · `state_occurred` = state ของ FSM (CONCENTRIC/INFLECTION/ECCENTRIC) · ครั้งที่ไม่ถูกนับ `status: "abort"` · abort ที่มี error นับเป็น `incorrect_reps` (user) → `total_reps` = correct + incorrect = ทุก entry, `overall_score` เฉลี่ยทุก entry · **สมมติฐาน (รอระบบ 1 ยืนยัน):** abort เป็น entry ใน `reps_detail` · `build_mock_sessions.py --check` ตรวจว่าไม่ขัดสเปก · ไฟล์เก่า (`mock_sessions_per_fault.json` ฯลฯ) เก็บไว้
 7. ปรับ prompt ขั้นต่ำให้ generator รับ key ใหม่ 12 ตัว → generate · P-rule-card / P5 เป็นขั้นแยกทีหลัง
    · ตอนอ่าน feedback ดู §6.2 (lunge ที่บอกว่าลำตัวโน้มไปหน้าดี)
+   - **prompt v14** (2026-10-03, ยังไม่ commit) แก้แค่การอ่าน format: `error_type` = key (บรรยายเป็นภาษาคน ห้ามพิมพ์ key, ตัวแรก = priority สูงสุด) · `abort` (นับใน total/incorrect, เรียก "attempt N") · default collection เป็น v6 (`embedding_config.py`) · **ไม่**แตะ `consequence` (P1), P2–P6, rule card, ทาง A §6.7
+   - **`state_occurred` ยังไม่ส่งให้ LLM** (user 2026-10-03): `HELD_BACK_FIELDS` ใน `test_rag_compare.py` ตัดออกจาก payload · ไฟล์ mock เก็บไว้เหมือนเดิม · เหตุผล: smoke 2 รอบที่อธิบาย state ใน prompt (`compare_output/smoke_v14.md`, `smoke_v14b.md`) ยังอ่าน CONCENTRIC เป็น "ขึ้น" 3–4/8 คำตอบ, ผูกกฎแบบ rep กับช่วง 4/8, คำ concentric/eccentric หลุด 2–3/8 และความหมายจริงยังไม่ยืนยันกับระบบ 1 · smoke รอบ 3 ไม่ส่ง state (`smoke_v14c.md`): key หลุด 0/8 · ตัวเลข/abort ถูก 8/8
+   - เอา state กลับมา = checkpoint generation แยก เทียบกับ baseline v14
+   - **คำถามที่ต้องคุยกับระบบ 1** (รูปแบบ JSON ที่ mock อยู่):
+     1. `state_occurred` ของกฎแบบ frame = state ของ frame แรกที่ผิดหรือไม่ · กฎแบบ rep (ตรวจตอนจบ attempt) ส่ง state อะไร หรือไม่ส่ง
+     2. fault เดียวเกิดหลายครั้งใน rep เดียว ส่งกี่ entry
+     3. abort เป็น entry ใน `reps_detail` ไหม · `rep_no` นับต่อรวม abort ไหม
+     4. `total_reps` / `correct_reps` / `incorrect_reps` ของระบบ 1 นับ abort แบบที่ตกลง (abort ที่มี error = incorrect) หรือไม่
+     5. ส่งค่ามุมต่อ rep มาไหม (สเปกบอก rep summary มี per-rep metric values) · `hip_sag_or_pike` / `elbow_flare` บอกทิศได้ไหม (ค้างใน rule_change_v6_plan §3)
+   - เจอใน smoke แต่ไม่ใช่ format (จดให้ขั้น P): ตัวเลขที่ไม่มีใน context ("พัก 90 วินาที–2 นาที" → P4) · `partial_pushup` ถูกบรรยายผิดเป็น "ดันขึ้นได้นิดเดียว" และ `hip_sag_or_pike` เป็นสะโพกตกอย่างเดียว, `rounded_back` เป็นหลังงอ (→ P-rule-card) · อ้างว่า error "กระจุกช่วงท้ายเซ็ต" ทั้งที่ mock สลับ rep · ชื่อ drill "eccentric push-ups" (Translation rule)
 
 ### 8.2 รายการเอกสารที่จะ curate ทีหลัง (จดไว้ก่อนเห็น feedback)
 เลือกจาก prefilter (keep) ที่ยังไม่อยู่ใน trial / round1 / round2a — **ไม่ใช่จากผล feedback หรือ eval** ·
