@@ -113,7 +113,9 @@
 - fallback ถ้ามีแค่ Gemini: ใช้ 3 รุ่นที่ต่างขนาดกัน แต่ต้องเขียนในรายงานว่าอ่อนกว่า เพราะรุ่นในค่ายเดียวกันมักผิดไปในทางเดียวกัน
 
 ### E5 — แยก dev/test (ทำทันทีหลัง ingest v6 และก่อนรัน eval ใด ๆ)
-- `eval/make_split.py` แยก**เอกสารต้นทาง** 70/30 แบบ stratified ต่อกฎ (ใช้ source folder ของกฎ) seed คงที่ ได้ `eval/split_v6.json` แล้ว commit ทันที
+- `eval/make_split.py` แยก**เอกสารต้นทาง** 70/30 แบบ stratified ต่อกฎ seed คงที่ ได้ `eval/split_v6.json` แล้ว commit ทันที
+  - **เปลี่ยน 2026-10-03 (user อนุมัติ):** stratify ตาม**จำนวน item ที่ติด tag ต่อกฎ + item ต่อท่า** แทน source folder ของกฎ (โฟลเดอร์กฎส่วนใหญ่มี 1 ไฟล์ และ item ที่ติด tag ส่วนใหญ่มาจากเอกสารนอกโฟลเดอร์) · เลือกชุด test ที่สัดส่วนทุก label ใกล้ 30% ที่สุด · เอกสารเดิมถูกล็อก รอบเพิ่มเอกสารใช้ `--round v6b`
+  - ✅ v6: 46 หน่วย (47 source, Lorenzetti 2018+2020 เป็นกลุ่มเดียว) → dev 32 · test 14 · test share ต่อกฎ 16–32% (ต่ำสุด knee_varus)
 - retrieval ยังค้นทั้ง KB แต่ตอนให้คะแนน chunk ใน pool และ chunk ที่ kept จะถูกแบ่งตาม split ของเอกสารต้นทาง
 - `eval/eval_retrieval.py` รายงานแค่ dev เป็นค่าเริ่มต้น · `--final` จะแสดง test และต่อท้ายลง `compare_output/final_log.md` พร้อม commit hash และ config **ทุกครั้ง** รวมถึงรอบที่ผลแย่
 - กติกา: test รันครั้งเดียวต่อ config ที่ freeze แล้ว ห้ามแก้อะไรหลังเห็นผล test แล้วรันใหม่โดยไม่บันทึก

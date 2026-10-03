@@ -1,0 +1,205 @@
+{
+ "description": "Dev/test split of KB v6 source documents (docs/eval_v6_plan.md E5), made by eval/make_split.py. Locked: a document keeps its side in every later round. Score test only with --final.",
+ "ratio_test": 0.3,
+ "groups": [
+  [
+   "squat/knee_varus/Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf",
+   "squat/knee_varus/Lorenzetti2020_Correction_HowToSquat_BMCSSMR.pdf"
+  ]
+ ],
+ "rounds": [
+  {
+   "name": "v6",
+   "seed": 20261003,
+   "curated": "curated_data_v6",
+   "date": "2026-10-03",
+   "documents_added": 46
+  }
+ ],
+ "documents": {
+  "bicep-curl/A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "bicep-curl/Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "bicep-curl/Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "bicep-curl/The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "bicep-curl/The interplay between muscle length, range of motion, and exercise selection a review.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "bicep-curl/elbow_away/Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "bicep-curl/full_rom/Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "general/basics_of_strength_and_conditioning_manual.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://themerisoiutechnique.com/2015/12/25/lunges-common-mistakes-and-correct-technique/": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://web.archive.org/web/20200529194046/https://blog.nasm.org/training-benefits/lunge-effective-lower-body-training-exercise": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://web.archive.org/web/20201111145937/https://blog.nasm.org/newletter/diving-deeper-squat-common-misconceptions": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://web.archive.org/web/20201201215505/https://blog.nasm.org/newletter/squat-form": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://web.archive.org/web/20210118193018/https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.acefitness.org/resources/everyone/exercise-library/363/lunge/": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl/": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels/": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.acefitness.org/resources/pros/expert-articles/9033/building-better-biceps-evidence-based-exercises-for-strength-and-function/": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.healthline.com/health/fitness/deep-squat": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "https://www.nasm.org/resource-center/exercise-library/push-up": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/KritzCroninHume2009BodyweightlungeSCJ.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "lunge/Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/back_knee_form/Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/back_knee_form/Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "lunge/front_knee_too_deep/Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "lunge/lunge_knowledge.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/ptq-4.4.9-the-undervalued-lunge.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "lunge/torso_upright/Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "push-up/The_Biomechanics_of_the_Push_up.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "push-up/The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "push-up/body_alignment/SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf": {
+   "split": "test",
+   "assigned_in": "v6"
+  },
+  "squat/TheBackSquatAProposedAssessment.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/back_straight/Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/knee_depth/Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/knee_valgus/Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  },
+  "squat/knee_varus/Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf": {
+   "split": "dev",
+   "assigned_in": "v6"
+  }
+ }
+}
