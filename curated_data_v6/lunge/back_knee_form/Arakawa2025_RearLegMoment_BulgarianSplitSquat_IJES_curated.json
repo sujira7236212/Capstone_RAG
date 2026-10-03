@@ -1,0 +1,237 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The front lunge places a significant portion of the load on the rear leg, which contributes to the overall biomechanics and hip-dominant nature of the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the front lunge, the rear leg accounts for approximately 25% to 45% of the total load distribution, calculated as rear leg ground reaction force divided by total ground reaction force.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the Bulgarian split squat, the rear leg accounts for approximately 15% of the total load distribution.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Bulgarian split squat reduces the spinal moment by 50% compared to the back squat for the same level of hip extensor demand.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Maintaining substantial trunk leaning under external loads requires a significant low back moment, which can limit the hip extension moment exertion.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf [part 2/10]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bulgarian Split Squat",
+    "focus_area": "Hip",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "In the Bulgarian split squat, stance width and trunk-leaning angles affect the rear leg-derived moment, which acts as an external resistive hip moment against the net hip extension moment of the front leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Bulgarian split squat can be used to target the hip extensors with minimal forward trunk inclination because the rear leg-derived moment provides significant external resistance.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the Bulgarian split squat, the rear leg-derived moment ranges from 76 to 86 Nm in a wide stance and 49 to 71 Nm in a narrow stance, accounting for 70–97% and 62–98% of the total external resistance acting against the front hip extensors, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a narrow stance Bulgarian split squat, the rear leg-derived moment increases significantly as the trunk becomes more upright.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study analyzed nine trained male participants performing bodyweight Bulgarian split squats under two stance conditions (wide and narrow) and three trunk-leaning conditions (additional, natural, and reduced forward lean).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf [part 1/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bulgarian Split Squat",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Leaning the trunk further forward during a Bulgarian Split Squat increases the hip extension moment of the front leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Adopting a more upright trunk position during a Bulgarian Split Squat decreases the hip extension moment of the front leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using a narrower stance in the Bulgarian Split Squat increases the knee extension moment of the front leg compared to a wider stance.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 9 participants, the knee extension moment was significantly higher in the narrow stance (39 ± 9 Nm) compared to the wide stance (25 ± 11 Nm) under natural trunk-lean conditions (P = 0.003).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing trunk forward lean from a natural 76.6° ± 4.0° to 66.9° ± 3.8° in a wide stance significantly increased the hip extension moment from 94 ± 16 Nm to 102 ± 17 Nm (P = 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Reducing trunk forward lean from a natural 76.6° ± 4.0° to 86.9° ± 4.5° in a wide stance significantly decreased the hip extension moment from 94 ± 16 Nm to 87 ± 8 Nm (P = 0.001).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf [part 6/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bulgarian Split Squat",
+    "focus_area": "Hip and Lower Back",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "During the Bulgarian Split Squat, the rear leg-derived moment acts as a substantial external resistive hip flexion moment against the front hip extensors.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Bulgarian Split Squat allows for high hip extensor loading while maintaining an upright trunk posture, decoupling the trade-off between hip loading and spinal demand.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining a more upright trunk posture in a narrow stance during the Bulgarian Split Squat increases the rear leg-derived moment, helping to load the hip extensors without leaning forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing forward trunk lean during the Bulgarian Split Squat increases the hip extension moment at the bottom of the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The standard deviation of the trunk forward lean angle in the natural condition was 4.0° in the wide stance and 5.5° in the narrow stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean hip extension moment at the lowest center of mass ranged from 102 to 87 Nm in the wide stance and from 78 to 63 Nm in the narrow stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the natural trunk-lean condition, the hip extension moment at the lowest center of mass was significantly greater in the wide stance (94 ± 16 Nm) than in the narrow stance (73 ± 10 Nm).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The rear leg-derived moment at the lowest center of mass ranged from 76 to 86 Nm in the wide stance and from 49 to 71 Nm in the narrow stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The rear leg-derived moment accounted for 70% to 97% of the total resistance in the wide stance and 62% to 98% in the narrow stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under bodyweight conditions, the absolute rear leg-derived moment ranged from 49 to 86 Nm.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Increasing forward trunk lean during squatting movements elevates lumbar spine stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf [part 7/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bulgarian Split Squat",
+    "focus_area": "Hip",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "An upright trunk posture during a split squat variation leads to a more extended rear-hip position, which increases the passive hip flexion moment of the rear leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using a narrower stance width in split squat variations causes the rear knee to flex more.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The average peak hip extension angle of the rear leg was 183.8 ± 10.6 degrees in the additional trunk-lean condition and 194.1 ± 6.0 degrees in the reduced trunk-lean condition, indicating that the hip extended by approximately 10 degrees more in the upright-trunk condition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Prior electromyography (EMG) studies reported greater EMG activity in the hip extensors of the front leg during the Bulgarian Split Squat than during other split-squat variations like front and back lunges.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf [part 8/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bulgarian Split Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The Bulgarian split squat can be utilized to increase the mechanical demand on the hip extensors while maintaining a more upright trunk posture.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Minimizing trunk inclination during split squat variations helps to reduce stress on the lower back.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A ±6% difference in relative height (due to a 2–3 cm variation for a leg length of ~80 cm) alters the rear hip angle by only ~2°, suggesting minimal mechanical impact on the resistive moment of the rear leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The rear leg in the Bulgarian split squat generates a mechanically significant resistive moment acting on the front hip extensors, contributing to the hip-dominant nature of the exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Increased trunk inclination or forward trunk lean during lower-body unilateral exercises increases stress on the lower back.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Arakawa2025_RearLegMoment_BulgarianSplitSquat_IJES.pdf [part 9/10]",
+    "applies_to_fault": []
+  }
+]

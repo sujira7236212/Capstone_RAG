@@ -1,0 +1,436 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Incorporating a forward lean of the trunk during a forward lunge significantly increases the ankle plantar flexor moment, hip extensor moment, and activation of the gluteus maximus and biceps femoris muscles relative to a vertical trunk posture.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Restricting forward translation of the lead-limb shank (maintaining a vertical shank) may reduce patellofemoral joint stress in the front knee, but it increases the stress placed on the trail knee.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Technique recommendations for the forward lunge must consider the biomechanical demands imposed on both knees, as the trail limb generally experiences high joint stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing both a forward trunk lean and a forward shank position simultaneously during a lunge maximizes the patellofemoral stress in the lead limb.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 18 healthy participants, the trail limb experienced greater total patellofemoral joint stress relative to the lead limb, regardless of trunk and shank position (P<.0001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A lunge variation with a vertical shank position resulted in significantly greater peak patellofemoral joint stress in the trail limb relative to the lead limb (P<.0001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A forward trunk and shank position resulted in the highest patellofemoral stress in the lead limb (P<.0001).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The head, arms, and trunk consist of approximately 55% of body mass, which explains why trunk position has a significant influence on lower extremity joint moments during the lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases the load and patellofemoral joint stress on the lead limb's knee when combined with a forward shank position.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Restricting forward knee travel on the lead leg shifts the physical demands, resulting in increased patellofemoral joint stress in the trail limb's knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 1/12]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "When performing a lunge, the spine should be kept in a neutral position to maintain natural lumbar lordosis.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To achieve proper depth during a lunge, descend until the trail knee is just prior to touching the ground.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "Maintaining a neutral ankle angle helps keep the shank perpendicular to the ground, preventing anterior translation of the lead-limb knee joint center over the ankle joint center.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study evaluated 18 healthy, recreationally active participants consisting of 5 females and 13 males, with a mean age of 34 ± 13 years, weight of 75.9 ± 10.7 kg, and height of 176.4 ± 8.9 cm.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stride length for participants was normalized to limb length, resulting in a mean stride length of 84.4 ± 5.6 cm.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Participants were instructed to land within a target area ranging from 75% to 100% of their limb length.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lunges were temporally regulated using a metronome set at 55 beats per minute, with each repetition lasting approximately 2 seconds for the forward phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In split squats, constraining the lead shank to a vertical position increases the trail-limb knee extensor moment because the trail limb must support a greater percentage of the total body weight.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Overuse from high frequency or magnitude of load and stress at the patellofemoral joint is implicated in the development of patellofemoral pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Varying the stride length during a forward lunge significantly influences the loading of the cruciate ligaments, hamstrings, and quadriceps of the lead limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Restricting the anterior displacement of the lead knee during a split squat increases the load and extensor moment on the trail-limb knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 2/12]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Study",
+    "core_principles": [
+      {
+        "text": "Altering trunk and shank alignment during a lunge redistributes patellofemoral joint reaction forces and knee extensor impulses between the lead and trail limbs.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 18 participants, a lunge performed with a forward trunk and forward shank (FF) resulted in a lead limb peak patellofemoral joint reaction force of 42.5 ± 8.0 N·kg–1, compared to 40.7 ± 10.0 N·kg–1 for a vertical trunk and vertical shank (VV) lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "A lunge performed with a vertical trunk and vertical shank (VV) resulted in a significantly higher peak patellofemoral joint reaction force in the trail limb (50.7 ± 8.1 N·kg–1) compared to a forward trunk and forward shank (FF) lunge (32.6 ± 10.4 N·kg–1).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The trail limb experienced a higher knee extensor impulse during a vertical trunk, vertical shank (VV) lunge (2.8 ± 0.5 Nm·s·kg–1) compared to a forward trunk, forward shank (FF) lunge (1.9 ± 0.6 Nm·s·kg–1).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "In the lead limb, a forward trunk with a vertical shank (FV) lunge produced a lower peak patellofemoral joint reaction force (35.4 ± 7.5 N·kg–1) compared to both FF (42.5 ± 8.0 N·kg–1) and VV (40.7 ± 10.0 N·kg–1) lunges.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The trail limb patellofemoral joint stress maximum was highest in the vertical trunk, vertical shank (VV) lunge (0.125 ± 0.02 MPa·kg–1) and lowest in the forward trunk, forward shank (FF) lunge (0.0940 ± 0.03 MPa·kg–1).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 5/12]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Performing a lunge with a forward trunk and a vertical shank (FV) minimizes peak patellofemoral joint stress in the lead limb compared to a forward trunk with a forward shank (FF) or a vertical trunk with a vertical shank (VV).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A lunge performed with a vertical trunk and vertical shank (VV) or forward trunk and vertical shank (FV) results in greater peak patellofemoral joint stress in the trail limb compared to the lead limb.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The peak knee flexion angle on the lead limb averaged 90° in the vertical shank positions (FV and VV) and approximately 100° during the shank-forward position (FF).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The trail limb peak knee flexion angle averaged approximately 100° in both vertical-shank conditions (FV and VV) and approximately 105° during the shank-forward condition (FF).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak patellofemoral joint stress was significantly greater in the trail limb compared to the lead limb during FV and VV variations (P < .0001), but was not significantly different during FF (P = .95).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lead-limb knee extensor impulse was significantly greater during FF relative to VV (P = .0005).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the trail limb, the greatest patellofemoral joint reaction force occurred during the vertical trunk with vertical shank (VV) condition.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the lead-limb shank to migrate forward (FF) increases peak patellofemoral joint reaction force and stress in the lead limb compared to keeping a vertical shank (FV).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining an upright vertical trunk (VV) increases peak patellofemoral joint stress and reaction force in the trail limb compared to leaning the trunk forward (FF or FV).",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 6/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Lunge technique, including shank angle and trunk position, significantly influences both joint moments and patellofemoral kinetics of both the lead and trail limbs.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Biomechanical evaluations and recommendations for the forward lunge should consider the loading and kinematics of both the lead and trail limbs, rather than focusing solely on the lead limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The initial weight-acceptance phase of the lead limb involves eccentric loading of the knee extensor muscles, which is followed by concentric loading during the propulsive phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The position of the lead-limb shank influences how load is distributed between the lead and trail limbs during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Patellofemoral joint stress impulse was greater in the trail limb compared to the lead limb during the forward trunk/vertical shank (FV) (P < .0001), vertical trunk/vertical shank (VV) (P < .0001), and forward trunk/forward shank (FF) (P = .0090) conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the trail limb, the patellofemoral joint stress impulse in the forward trunk/forward shank (FF) posture was significantly less than both the forward trunk/vertical shank (FV) (P = .0001) and vertical trunk/vertical shank (VV) (P < .0001) postures.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When the shank was forward, lead-limb knee extensor moments were greater relative to both vertical-shank conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The lowest knee extensor moments in the trail limb occurred when the lead shank was forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A forward trunk and forward shank (FF) posture resulted in an approximately 15% increase in vertical ground reaction force for the lead limb and an approximately 30% decrease for the trail limb relative to the forward trunk and vertical shank (FV) posture.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Forward lean of the trunk during the forward lunge results in greater recruitment of the hamstrings.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the lead shank to project forward increases the knee extensor moments on the lead limb relative to keeping a vertical shank.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The trail limb experiences greater patellofemoral joint stress impulse than the lead limb across forward trunk/vertical shank, vertical trunk/vertical shank, and forward trunk/forward shank variations.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 7/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Working through a limited range of motion of less than 60 degrees of knee flexion can be used to reduce peak patellofemoral joint reaction force in the lead limb during a forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Leaning the trunk forward during a lunge increases the joint moments of the ankle plantar flexors and hip extensors.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Maintaining a vertical shank reduces peak patellofemoral joint reaction force and stress on the lead limb, but increases patellofemoral joint loading on the trail limb.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the trunk forward shifts the muscular demand, increasing the load on the ankle plantar flexors and hip extensors.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Working through a limited range of motion of less than 60 degrees of knee flexion reduces peak patellofemoral joint reaction force in the lead limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining a vertical shank increases trail-limb patellofemoral joint loading to approximately 44-51 N·kg-1, which is higher than the lead-limb peak loading of 35-42 N·kg-1.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The trail limb supports body weight for a longer duration of approximately 3.5 seconds compared to approximately 2.0 seconds for the lead limb across all lunge techniques.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellofemoral joint stress magnitudes in lunges are approximately 7-9 MPa, which is consistent with forward-shank (7 MPa) and vertical-shank (5 MPa) lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Experimental data and computer simulations suggest minimal loading of the anterior cruciate ligament during the forward lunge exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward increases the mechanical demand and joint moments on the ankle plantar flexors and hip extensors.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Maintaining a vertical shank to protect the lead knee shifts the load, resulting in increased patellofemoral joint reaction force and stress on the trail limb.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 8/12]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Lunges can be executed using different variations of trunk and shank alignment, including a forward trunk with a forward shank, a forward trunk with a vertical shank, and a vertical trunk with a vertical shank.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During a forward lunge, a forward trunk lean results in a biceps femoris activation of 17.9% maximum voluntary contraction (MVC) compared to 11.9% MVC with an upright trunk.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge, a forward trunk lean results in a gluteus maximus activation of 22.3% maximum voluntary contraction (MVC) compared to 18.5% MVC with an upright trunk.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge, vastus lateralis activation is 50.9% maximum voluntary contraction (MVC) with a forward trunk lean compared to 45.6% MVC with an upright trunk, representing no significant difference.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 54% difference in patellofemoral joint stress was demonstrated in bilateral barbell squat models when comparing those considering solely net joint moment to those including static optimization.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 9/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Joint Mechanics",
+    "core_principles": [
+      {
+        "text": "The prescription of the forward lunge in an exercise or rehabilitative setting should consider the stresses imposed on both the lead and trail knees.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Patellofemoral joint stresses in the trail limb were greater than those in the lead limb during many of the forward lunge postures under investigation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak patellofemoral joint stresses in the trail knee occurred when the trunk and lead shank were both vertical.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A vertical trunk and shank position will result in significant stress at the patellofemoral joint in the trail limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Changing trunk and shank position significantly alters joint moments and patellofemoral joint reaction force and stress in each limb.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf [part 10/12]",
+    "applies_to_fault": []
+  }
+]

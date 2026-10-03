@@ -1,0 +1,177 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Glutes",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The m. gluteus medius plays a significant role during the split squat, acting as a critical hip abductor to counter dynamic knee valgus collapse.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Achieving greater knee flexion angles in the front leg of a split squat is necessary to generate higher forces in the intermediate part of the m. gluteus maximus.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knee to collapse into excessive knee abduction (dynamic knee valgus) during the movement, which is often associated with lower muscle forces in the hip abductors.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study found a significant difference in how the examined exercises (back squat, split squat, and good mornings) affect individual muscles, with an F-statistic of 4.63 and p < 0.0001.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Exercise type was shown to have an impact on muscle groups with a level of significance close to 0.05, yielding an F-statistic of 2.53 and p = 0.0503.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Generating lower muscle forces in the hip abductor muscles increases the risk of excessive knee abduction, which serves as a significant contributor to ACL injuries.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to sufficiently activate the m. gluteus maximus reduces the generation of posterior shear forces at the tibia, which otherwise potentially contribute to a reduced likelihood of knee injuries.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf [part 6/12]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "To effectively target the hamstrings, consideration must be given to the desired joint range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Split squats can be performed with a limited angle range to more effectively achieve a desired shift in the hamstring-to-quadriceps (H/Q) ratio.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the split squat, there is a slightly greater EMG activation of the vastus lateralis compared to the vastus medialis.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the split squat, EMG measurements indicated higher activation of the quadriceps muscle group in both the front and back legs, whereas musculoskeletal modeled forces tended to emphasize the hamstring muscles in the front leg.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf [part 8/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Knee and Glutes",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Achieving maximum knee flexion during the split squat is key to generating peak forces in the intermediate part of the gluteus maximus.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During the split squat, the mean maximum knee flexion angle was 115.19 degrees (± 6.7 degrees) for the front leg and 104 degrees (± 11.5 degrees) for the rear leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The highest joint moments during the split squat were observed in the rear leg at 2.21 ± 0.6 Nm/kg due to its longer moment arm, compared to 1.52 ± 0.6 Nm/kg in the front leg.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf [part 4/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "In the split squat, the front leg and back leg exhibit distinct muscle activation patterns, with the back leg's gluteus medius medial part generating force primarily at the beginning and end of the motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To target the hamstring muscles (specifically the semimembranosus and biceps femoris) during a split squat, utilize a deep range of motion, as their activation peaks at maximum knee flexion of the front leg.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the front leg of the split squat, the m. semimembranosus and m. biceps femoris reached their peak activation at maximum knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The m. semitendinosus remained nearly inactive during all exercises, registering forces under 5 N/kg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the back leg of the split squat, the m. gluteus medius medial part generated force at the beginning and end of the motion, while other gluteal parts remained mostly inactive.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The front leg of the split squat exhibited minimal activation in the m. rectus femoris, m. vastus lateralis, and m. vastus medialis compared to other exercises.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf [part 5/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "For ACL injury prevention, training the hamstrings at joint angles of 20° to 40° is considered ideal.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The back leg portion of the split squat can be utilized to target the hamstrings within the 20° to 40° joint angle range.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Hamstring forces were highest within the 20°–40° joint angle range during the back leg portion of the split squat.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Training the hamstrings within the 20° to 40° joint angle range is ideal for ACL injury prevention.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\back_knee_form\\Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK.pdf [part 10/12]",
+    "applies_to_fault": []
+  }
+]

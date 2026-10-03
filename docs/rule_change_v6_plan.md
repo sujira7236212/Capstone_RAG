@@ -135,6 +135,7 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 
 ### T5 — ingest + eval ใหม่ ⏸
 - `python ingest.py --data-folder ./curated_data_v6 --collection kb_gemini_curated_v6`
+  · ถ้ากลับมา curate เพิ่มหลัง ingest ไปแล้ว → ingest ลง collection ใหม่ `kb_gemini_curated_v6b` และล็อก split เดิม (ดู [`t3_curation_status.md`](t3_curation_status.md) §8)
 - `mock_data/mock_sessions_per_fault.json` → 12 session (1 ต่อกฎ, ชื่อกฎ 2026-09-28) + clean session · ไฟล์ปัจจุบันยังมี 9 รหัสเก่า
 - ~~เขียน `must_hit` ใน `eval/golden_chunks.json` ใหม่~~ ยกเลิก (2026-09-28): eval v6 ทำตาม [`eval_v6_plan.md`](eval_v6_plan.md) E5 → E3 → E4
   (แยก dev/test ก่อน แล้วสร้าง pool ที่ judge หลายค่ายตัดสินจาก rule card)

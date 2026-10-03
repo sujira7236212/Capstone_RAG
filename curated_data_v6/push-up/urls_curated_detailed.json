@@ -1,0 +1,416 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Brace the core to maintain a neutral spine throughout the movement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Lower the body with control until the chest approaches the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Place the hands approximately shoulder-width apart.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a straight line from the head to the heels.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "A proper push-up begins with a strong plank position and a neutral spine.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive hip sagging or elevated hips during the movement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Experiencing a collapsing trunk or difficulty maintaining a neutral spine.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Allowing forward-head posture or loss of core engagement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Failing to maintain alignment, such as allowing the hips to sag or elevate, reduces the effectiveness of the exercise and reinforces poor movement patterns.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide) [part 1/2]",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-Up",
+    "focus_area": "Chest",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Start in a plank position with hands positioned slightly wider than shoulder-width apart and feet together or hip-width apart.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Engage your core by drawing your navel toward your spine.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Create a straight line from your head to heels, maintaining a neutral spine throughout the movement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Lower your body toward the floor by bending your elbows, descending until your chest nearly touches the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Keep your elbows at approximately 45 degrees from your body.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Press your body upward by extending your elbows, returning to the starting plank position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Avoid locking out your elbows at the top to maintain continuous tension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Descend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Avoid excessive depth that compromises spinal alignment or bouncing at the bottom.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the hips to sag.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Using jerky movements or excessive momentum.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Flaring the elbows too wide.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Not achieving adequate range of motion.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Leaning excessively forward.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Allowing the hips to sag indicates core disengagement and reduces the effectiveness of the exercise.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Using jerky movements or excessive momentum compromises form and reduces muscle engagement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Flaring the elbows too wide increases shoulder stress and reduces chest activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Not achieving adequate range of motion limits chest stretch and development.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Leaning excessively forward shifts emphasis to the shoulders and triceps.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.nasm.org/resource-center/exercise-library/push-up)",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "During a push-up, the kinetic chain checkpoints, including the ears, shoulders, hips, knees, and ankles, should remain aligned in a straight line during both the descent and ascent.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "If a traditional push-up cannot be performed with proper alignment, the exercise can be regressed by elevating the hands on a surface such as a wall or kitchen counter.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "As fatigue sets in during a push-up, the lower back may arch or sag, causing the kinetic chain checkpoints to migrate out of alignment.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "An arching or sagging lower back during a push-up decreases the engagement of the deeper core stabilizers.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "An arching or sagging lower back during a push-up increases the muscular involvement of the lumbar erectors.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Allowing the lower back to sag or arch during a push-up increases mechanical stress on the vertebral discs.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://web.archive.org/web/20210118193018/https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement) [part 1/2]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Chest",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "To regress the push-up, place the hands on a bench or the knees on the floor.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To progress the push-up, elevate the feet onto a box.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The text recommends progressing the push-up by elevating the feet onto a 6 inch box.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://web.archive.org/web/20210118193018/https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement) [part 2/2]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "During the push-up, the trunk and hips should remain as stable as possible to create a lever for the working muscles.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "The deep core muscles must actively engage to stabilize the spine and pelvis so that the force generated by the upper body can move the body around the axis of rotation.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Place the hands a little wider than shoulder-width apart so that the thumbs are pointing toward the midline of the body and the fingers are pointed the same direction as the head.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rotate the elbows to point back toward the feet to increase the strength and stability in the shoulder joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squeeze the thigh and glute muscles to increase stability around the pelvis.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to activate the deep core muscles required to stabilize the spine and pelvis during the push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Failing to stabilize the spine and pelvis prevents the force generated by the pectoral, deltoid, and triceps muscles from efficiently moving the body around the axis of rotation.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels/) [part 1/2]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "To perform a full push-up, start in a high-plank position with the legs hip-width apart and hands pressed into the floor with fingers pointed away from the feet.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Contract the thigh and glute muscles during the push-up to increase stability as you slowly lower the body toward the floor.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For modified push-ups, place the knees together on the floor so they are bent with the feet in the air, and keep the hands about shoulder-width apart.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Grip the floor with the hands and squeeze the thighs during modified push-ups to engage the deep spinal stabilizers and increase core stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For negative push-ups, slowly lower the body toward the floor in a high plank position with feet shoulder-width apart, then place the knees on the floor at the bottom to return to the starting position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using modified push-ups as the primary starting point for learning the push-up may not be suitable for individuals who first need to build a foundation of core strength.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels/) [part 2/2]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Position your hands shoulder-width apart with your fingers facing forward or turned slightly inward, and shift your weight forward until your shoulders are directly over your hands.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Reposition your hands as needed to allow full extension of your body without any bend at the hips or knees.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Stiffen your torso by contracting your core/abdominal muscles, glutes, and quadriceps, and align your head with your spine.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Place your feet together with your ankles dorsiflexed so that your toes are pointed towards your shins.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lower yourself until your chest or chin touches the mat or floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Press upwards through your arms and continue pressing until the arms are fully extended at the elbows.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing your low back to sag or your hips to hike upwards during the downward phase.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Allowing your low back to sag or your hips to hike upwards during the upward phase.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Keeping the elbows close to the sides during the downward phase shifts emphasis from the chest to the triceps and may reduce stresses in the shoulder joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\urls.txt (https://www.acefitness.org/resources/everyone/exercise-library/41/push-up/)",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  }
+]

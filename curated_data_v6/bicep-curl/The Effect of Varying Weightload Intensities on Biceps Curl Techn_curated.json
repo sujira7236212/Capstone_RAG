@@ -1,0 +1,528 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Trunk",
+    "content_type": "Research Finding",
+    "core_principles": [
+      {
+        "text": "Training at intensities less than 90% of an individual's 1 RM is recommended to maintain proper biceps curl technique while still allowing for optimal strength gains.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "As resistance increases during a biceps curl, biomechanical deviations in the shoulder, trunk, body, and knee angles correspondingly increase.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study of ten college-age males performing single repetitions of biceps curls at 60%, 70%, 80%, 90%, and 100% of 1 RM showed that training at intensities less than 90% of 1 RM is more conducive to proper technique.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Biomechanical analysis showed that as resistance increased from 60% to 100% of 1 RM, the magnitude of angular movement in the shoulder, trunk, body, and knee angles correspondingly increased.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 1/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The upper arms and elbows must remain in a fixed position during the bicep curl to ensure the elbow flexors serve as the prime mover muscle group.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "A complete repetition of a bicep curl requires moving the weight from a position of full elbow extension to a position of full flexion, and returning back to the initial position of full extension.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Allowing the upper arms and elbows to move out of a fixed position prevents the elbow flexors from acting as the prime mover, which decreases the training benefit of the curl.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 4/24]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep movement about the shoulder joint to a minimum during the biceps curl to emphasize the role of the elbow flexors as the prime movers.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Train at an optimal intensity level to maintain proper technique, minimize needless body movement, and experience maximal strength gains.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive movement at the shoulder joint during the curl, which shifts work away from the target muscles.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Using incorrect resistance that leads to needless body movement and compromises stability.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The biceps curl operates as a Class III lever system, where the force is the contraction of the biceps muscle, the elbow serves as the fulcrum, and the weight in the hand serves as the resistance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "According to Watkins (1983), a body is most stable when its line of action falls within its base of support.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing movement about the shoulder joint during the biceps curl decreases the emphasis on the elbow flexors as the prime movers of the elbow joint.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Increasing the distance between a joint and the body's line of action increases the force required from the muscles involved with that joint's movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 5/24]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "All repetitions should be performed slowly throughout the full range of motion to achieve maximal benefit.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Controlling the weight, as opposed to swinging or dropping it, places maximal stress on the exercising muscle groups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Pausing at full extension and full flexion, along with slow controlled movement, reduces the risk of sustaining an injury.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing strength exercises against too heavy of a resistance results in poor technique.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During certain phases of concentric contraction, momentum created by body motion assists in movement of the resistance rather than using the muscles exclusively.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Improper technique allows for assisting movement from agonist muscle groups, which reduces the amount of stress placed on the prime mover muscle groups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to pause at full extension and full flexion increases the risk of sustaining an injury.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 8/24]",
+    "applies_to_fault": [
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The upper arms must remain stationary while the lower arms go through the full range of motion.",
+        "applies_to_fault": [
+          "elbow_flare",
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Movement must occur at the elbow joint, with a minimum of assisting movement at the shoulder joint.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "The upper arms should be kept stationary and the elbows pressed into the sides to ensure the curling movement is a result of biceps activation.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Maintain an erect trunk during the execution of the barbell curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The movement should start with the arms in a fully extended position and curl upward to a position of full flexion.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "The repetition should be completed by slowly lowering the weight back to the starting position.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the trunk to move forward or backward during the curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using uncontrolled eccentric movement and explosive concentric contraction against too heavy of a resistance.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Allowing the upper arms to move reduces biceps activation during the curl.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Trunk movement reduces the role of the biceps as the prime mover and allows other body segments to assist in the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk movement increases momentum as the weight is curled upward, further reducing the role of the biceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Uncontrolled eccentric movement and explosive concentric contraction against excessive resistance subjects joints and surrounding structures to excessive torque, compression, and shear forces.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 9/24]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Trunk",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Trunk stability is naturally maintained with minimal movement during a biceps curl when using lighter to moderate loads between 60% and 80% RM.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using trunk extension and flexion (swinging the torso) to complete the lift, which becomes prominent when loads reach 90% to 100% RM.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During a 90% RM biceps curl, a subject exhibited extensive trunk extension of 11.7 degrees during Phase II, moving from an angle of 6.9 degrees to -4.8 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a study of 10 subjects, trunk movement patterns under 90% and 100% RM loads showed significant trunk extension during Phase II and Phase III of the curl, while 60%, 70%, and 80% RM loads resulted in negligible trunk movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 14/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Trunk",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the 100% RM bicep curl condition, the trunk extended dramatically by 15.4 degrees in Phase II and an additional 19.4 degrees in Phase III, reaching a position of -24.7 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At a lower load of 70% RM, trunk movement was minimal, with the trunk flexing only 4.6 degrees in Phase I and extending 2.7 degrees in Phase II.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk flexion and extension during the biceps curl are more pronounced in the 90% RM and 100% RM conditions compared to lower load conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Body angle measurements (using the right shoulder, right ankle, and a vertical line) during the biceps curl showed minimal change at 60%, 70%, and 80% RM, but exhibited more overt flexion and extension at 90% and 100% RM.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 15/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder and Elbow",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The greatest torque is generated by the elbow flexors when the direction of pull is at a 90-degree angle to the bone, where the muscle force is 100% rotary.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "If the angle of pull is less than 90 degrees during elbow extension, the muscle has both rotary and stabilizing components.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Extending the shoulder joint during the initial phase of the curl, causing the elbows to drift behind the body as a compensatory adjustment to overcome inertia.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Flexing the shoulder joint during the curling phase, which causes the elbows to swing forward, with the magnitude of this movement increasing under heavier resistance.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 10 college-aged males with 1 RM values ranging from 85 lbs to 135 lbs, knee movement was more extensive in the 90% RM and 100% RM conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At a 90-degree angle of pull, the elbow flexor muscle force is 100% rotary.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "When the angle of pull of the muscle is greater than 90 degrees during continued elbow flexion, the rotary component of force diminishes and the dislocating component increases, which acts parallel to the bone and away from the axis of rotation.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 17/24]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Trunk",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The elbow flexors are biarticulate muscles crossing both the elbow and shoulder joints, meaning their tension capacity is influenced by the positions of both joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shoulder flexion occurring in conjunction with elbow flexion helps maintain the length of the elbow flexors, preventing them from losing the tension advantage of their resting length.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the shoulder to flex during a bicep curl can provide greater muscle tension when the muscle attachment attains an angle greater than 90 degrees to the bone.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Flexing the trunk forward at the initiation of the bicep curl to generate momentum and overcome the inertia of the weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Starting the lift with the trunk in a pre-flexed position when attempting to curl heavier resistances.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Extending the trunk backward during the concentric phase of the curl to assist the movement and compensate for insufficient arm strength.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the trunk and body angles to reach extreme positions at the completion of the movement under heavy loads.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In the 100% RM condition during Phase IV of the curl, the trunk flexes to slow momentum, stabilize the body, and maintain balance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "As resistance increases, there is a corresponding progressive increase in compensatory shoulder movement and trunk flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using forward trunk flexion to initiate the lift indicates that the elbow flexors are not strong enough to overcome the resistance on their own.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Extending the trunk during the curl serves as a compensatory adjustment to assist movement when there is a lack of sufficient muscular strength in the primary movers.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 18/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Trunk and Knees",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "At lower resistances of 60% to 80% RM, the trunk and knees primarily serve a stabilizing role to maintain balance during the bicep curl.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using trunk extension and flexion to assist in moving the weight, which becomes more pronounced as the resistance increases to 90% and 100% RM.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Extending the knees during the initial phases of the curl to help overcome the inertia of the stationary resistance.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study of 10 college-aged males performing single-repetition bicep curls at 60%, 70%, 80%, 90%, and 100% of 1 RM found that body extension persisted into Phase III only in the 90% and 100% RM conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Knee joint extension was observed during Phase I and Phase II of the bicep curl across all five loading conditions (60% to 100% RM) as an attempt to assist in the upward motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using body flexion and extension to overcome inertia compensates for muscular deficiencies, which alters the biomechanical purity of the bicep curl.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 19/24]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Whole Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Training at lower intensities of an individual's 1 RM is more conducive to maintaining proper biceps curl technique.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining proper technique by training at a lesser intensity may maximize physiological adaptation and reduce the likelihood of injury.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Training at intensities considerably less than an individual's 1 RM can be conducive to proper technique and still allow for optimal strength gains.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using near maximum resistances in strength training exercises can compromise technique and jeopardize safety.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing resistance leads to more improper biomechanical movements during a biceps curl, including increased movement at the shoulder, trunk, body, and knees.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Three distinguishable shoulder movement patterns were observed, with movement more overt in the 90% RM and 100% RM conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Four different movement patterns were identified in the trunk, with more movement present in the 100% RM condition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Four different body movement patterns were observed, with movement more overt in the 100% RM condition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "There was an absence of patterned movement at the knee, however, movement was extensive in the 80% RM and 100% RM conditions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "F-ratio analysis indicated that the greatest amount of variance was present between the 60% RM and 100% RM conditions.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Compromising biceps curl technique by using near maximum resistances may jeopardize safety and reduce physiological adaptation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Training at higher intensities produces biomechanical movements that are incorrect with respect to proper biceps curl technique, increasing the likelihood of injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf [part 20/24]",
+    "applies_to_fault": []
+  }
+]

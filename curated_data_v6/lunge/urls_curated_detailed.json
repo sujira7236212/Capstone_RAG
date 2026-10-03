@@ -1,0 +1,229 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "An upright trunk tends to create a 90/90 lunge where both knees are at 90-degree angles at the bottom of the movement, placing the majority of the upper body weight directly over the hips.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An upright trunk position increases torque on the forward knee, making the movement more quadriceps dominant as the knee extensors bear more responsibility.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Leaning slightly forward with the upper body weight positioned over the mid-thigh distributes demand evenly across the hip, knee, and ankle, which increases gluteus maximus involvement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To maximize glute involvement, keep the forward heel on the ground while decelerating toward the floor and distribute weight evenly across the forward foot.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Adding trunk rotation toward the forward leg while leaning forward eccentrically loads the gluteus maximus in both the sagittal and transverse planes, further increasing its involvement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain solid hip-knee-ankle alignment during multiplanar lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Avoid taking strides that are too long to ensure control is maintained throughout the entire range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Reaching toward the ground with your hands as you step can help soften the landing of each step and reinforce eccentric control.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifting the forward heel off the ground while decelerating toward the floor during a lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking strides that are too long, which leads to using momentum to propel oneself back up.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Taking a stride that is too long causes the exerciser to rely on momentum to propel themselves up, reducing control throughout the range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An upright trunk position causes the forward knee to experience more torque because it is the joint farthest from the load of the body.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\urls.txt (https://web.archive.org/web/20200529194046/https://blog.nasm.org/training-benefits/lunge-effective-lower-body-training-exercise)",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hips and Thighs",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Stand with the feet hip-width apart and grip one dumbbell in each hand with the palms facing each other and the arms straight down by the side.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the back straight and step forward with the lead leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "As the front foot hits the floor, lower the back knee towards the floor.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Descend to a comfortable range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push the front foot into the ground to stand up by bringing both feet back together at the starting position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\urls.txt (https://www.acefitness.org/resources/everyone/exercise-library/363/lunge/)",
+    "applies_to_fault": [
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Have space between your legs to help with balance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The length of the lunge should be about twice your hip width, as a lunge that is too long may force you to lean forward.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Keep your front foot always on the ground, with the whole foot rooted on the floor.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep your body straight at all times, avoiding leaning forward or back when you stand or step.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Keep your front knee behind your toes.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Making the lunge step too short or too long.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing the feet on the same line, which reduces stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the front knee to collapse inward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Having a shaky front knee during the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the front foot to be unstable on the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Leaning the torso forward or backward.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Making jerky movements, particularly when stepping back.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the back knee to go too low when the leg lacks the necessary strength.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Distributing body weight incorrectly.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Aggressively pushing against the ground, particularly when stepping back.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stepping heel first.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the front heel to come off the ground, which can happen if the lunge is too short.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the knees to go over the toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintaining poor posture during the exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Incorrect lunge technique can lead to knee pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect lunge technique can cause ankle pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect lunge technique can cause foot pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect lunge technique can lead to back pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect lunge technique can cause shoulder pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect lunge technique promotes poor posture.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect lunge technique results in not training the right muscles and straining others.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\urls.txt (https://themerisoiutechnique.com/2015/12/25/lunges-common-mistakes-and-correct-technique/)",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  }
+]

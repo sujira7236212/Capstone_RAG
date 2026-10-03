@@ -1,0 +1,206 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "The biceps brachii is most powerful as an elbow flexor when the forearm is in a supinated position, losing significant power as the arm rotates inward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The brachialis and brachioradialis receive increased activation as the arm rotates from a supinated to a neutral or pronated position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing arm curls with a neutral grip reduces stress and tension on the elbow's tendons compared to curls performed in a supinated position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the elbows to pull forward during curls occurs because the biceps brachii is a biarticular muscle involved in both elbow flexion and shoulder stabilization.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The brachialis is the primary flexor of the elbow, generating 50-60% of the force.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl) [part 1/3]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Arms",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Tuck your elbows so that they are flush against your body or near the waist, keeping them in the same stationary position during the entire range of motion.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Bring the weight as far up as possible when flexing the arm.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Allow the weight to lower in a slow and controlled manner.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the body as still as possible during the entire exercise to minimize body movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Exhibiting excessive swaying of the body to get the weight up.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Using a supinated grip puts the wrist in a more compromising position compared to a neutral grip, making it more difficult to maintain correct form when using heavier loads.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.setforset.com/blogs/news/hammer-curl-vs-bicep-curl) [part 2/3]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Seated Biceps Curl",
+    "focus_area": "Arms",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Sit with your back against a back rest so that your head, shoulders, and butt make contact with the bench, and place your feet firmly on the floor.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Grasp two dumbbells with a closed, supinated grip and let your arms hang to your sides, close to your body, with your palms facing forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Depress and retract your scapulae by pushing your shoulders down and back.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Slowly bend each elbow in unison, bringing the dumbbells towards your chest without arching your back or moving your elbows forward.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Maintain a neutral wrist position, avoiding flexion and extension of your wrists.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gently lower the dumbbells back towards the starting position where your arms hang to your sides.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "To emphasize more biceps activity in a variation, turn your palms towards your sides and rotate them forward during the upward phase, allowing the elbows to move forward as the dumbbell reaches your chest.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Arching the back during the upward phase of the curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Moving the elbows forward during the upward phase of the standard curl.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Shrugging the shoulders during the lift.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Flexing or extending the wrists during the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Losing contact between the head, shoulders, or butt and the bench.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl/)",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The biceps brachii muscles are responsible for flexion at the elbow and supination at the forearm, which involves turning the palm upward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing a barbell curl, switching to a dumbbell curl can relieve discomfort in the forearms by allowing for more movement of the hand position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a TRX biceps curl, keeping the elbows elevated helps to maximize the benefit of the exercise.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing an eccentric bent-over row to target the biceps, supinate the grip so the palms face forward, keep the trapezius muscles relaxed, and keep the elbows in toward the ribs.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing a close-grip lat pull-down to recruit the biceps, position the hands shoulder-width apart facing the body, and ensure the elbows pass close to the side of the body as the bar is pulled to the mid-chest.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing other muscles, such as the anterior deltoid and brachioradialis, to become involved in the movement reduces the isolation and load on the biceps brachii.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "An ACE-sponsored study evaluated eight biceps exercises (cable curl, barbell curl, concentration curl, chin-up, EZ curl wide grip, EZ curl narrow grip, incline curl, and preacher curl) using electromyography (EMG) and found that the concentration curl elicited significantly higher muscle activation of the biceps than any of the other exercises tested.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "When other muscles like the anterior deltoid and brachioradialis become involved in the biceps curl movement, they take a portion of the load away from the biceps, reducing the effectiveness of the exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\urls.txt (https://www.acefitness.org/resources/pros/expert-articles/9033/building-better-biceps-evidence-based-exercises-for-strength-and-function/) [part 1/2]",
+    "applies_to_fault": []
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Alignment",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 14/53]",
+    "applies_to_fault": [],
+    "core_principles": [
+      {
+        "text": "Establishing a stable position is critical to maintaining proper body alignment during an exercise, which in turn places the appropriate stress on the target muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Exercises performed while standing typically require that the foot position be slightly wider than hip-width with the heels and balls of the feet in contact with the floor.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Nearly all exercises should be performed using the full range of motion of the joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For most exercises, the hands should be placed at approximately shoulder-width to ensure a balanced, even bar.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Seated or supine exercises performed on a bench require a five-point body contact position consisting of the head in a neutral position on the bench or back pad, shoulders and upper back set evenly on the bench or back pad, buttocks on the bench or seat, and both the right and left feet flat on the floor.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Spine",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 15/53]",
+    "applies_to_fault": [],
+    "core_principles": [
+      {
+        "text": "Instruct athletes to exhale through the sticking point and to inhale during the less stressful phase of the repetition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Valsalva maneuver involves expiring against a closed glottis, which, when combined with contracting the abdomen and rib muscles, creates more rigidity in the abdominal area to help stabilize the spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When lifting a bar from the floor, keep the bar close to the body and the back flat during the upward movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Bend at the knees more than at the hips in order to lift the resistance from the floor.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Breath holding during the Valsalva maneuver should be transient, lasting about 1 to 2 seconds, to stabilize the spine during high exertion before breathing again.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "The increase in intra-abdominal pressure from the Valsalva maneuver can cause dizziness, disorientation, excessively high blood pressure, and blackouts.",
+        "applies_to_fault": []
+      }
+    ],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 33/53]",
+    "applies_to_fault": [],
+    "core_principles": [],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Females sustain noncontact ACL injuries 2 to 8 times more often than males.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A wider pelvis, increased Q-angle, increased leg stiffness upon landing, and decreased thigh muscle strength contribute to a higher incidence of noncontact ACL injuries in females.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 35/53]",
+    "applies_to_fault": [],
+    "core_principles": [
+      {
+        "text": "When performing a squat, lower your hips while keeping your weight on your heels.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge, keep the front foot pointed straight forward and maintain a hip-width stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When lowering the torso during a forward lunge, the front knee should remain positioned directly above the ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When shifting weight during a side lunge, the knee of the flexing leg should remain directly above the ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the non-stepping foot flat on the ground while shifting weight to the active side during a side lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "routed_from": "general"
+  }
+]

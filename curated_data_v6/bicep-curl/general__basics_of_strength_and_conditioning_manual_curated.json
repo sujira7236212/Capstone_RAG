@@ -1,0 +1,58 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "bicep curl",
+    "focus_area": "Arms",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 23/53]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ],
+    "core_principles": [
+      {
+        "text": "Hold the bar at arm's length with elbows completely extended at the start of the movement.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Pull the bar up to the shoulders until the elbows are completely flexed.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Keep the elbows positioned at the sides of the body throughout the entire lift.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Engage the core to stabilize the body and prevent rocking back and forth.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Return the bar to the start position in a slow, controlled manner.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using momentum to complete the lift.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rolling the shoulders forward during any part of the lift.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rocking the body back and forth due to an unengaged core.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "routed_from": "general"
+  }
+]

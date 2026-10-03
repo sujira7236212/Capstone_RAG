@@ -1,0 +1,188 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The force produced by elbow flexors in quasi-static exercises increases with the load moment arm, which affects the direction and magnitude of joint internal forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the Incline Dumbbell Curl protocol, the biceps brachii long head is initially lengthened, whereas in the Dumbbell Preacher Curl the shoulder is flexed and, thus, the biceps long head is initially shortened.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Incline Dumbbell Curl and the classical Dumbbell Biceps Curl result in similar patterns of biceps brachii activation for the whole range of motion, whereas the Dumbbell Preacher Curl elicits high muscle activation only for a short range of elbow joint angle.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study of 22 subjects performing dumbbell curls with a submaximal load of 40% of isometric MVC showed that concentric elbow flexion elicited neuromuscular activity up to 95% of the maximum RMS value during the final phase of Incline Dumbbell Curl and Dumbbell Biceps Curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Dumbbell Preacher Curl elicited neuromuscular activity up to 80% of the maximum RMS value at the beginning of the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "All tested dumbbell curl protocols (DBC, IDC, DPC) elicited a level of activation of the biceps brachii muscle of at least 50% of maximum RMS.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf [part 1/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "The shoulder flexion angle significantly influences the activation pattern of the biceps brachii long head throughout the range of motion of a curl.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During standard Dumbbell Curls (DBC) and Incline Dumbbell Curls (IDC), biceps brachii long head sEMG amplitude increases from the beginning to the end of the concentric contraction, reaching statistical significance at phase 3 (68 to 100 percent of range of motion).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During Dumbbell Preacher Curls (DPC), biceps brachii long head sEMG amplitude decreases from phase 1 (0 to 33 percent of range of motion) to phase 3 (68 to 100 percent of range of motion).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Biceps brachii long head RMS amplitude is higher for Dumbbell Preacher Curls (DPC) at phase 1 (0 to 33 percent of range of motion) and lower at phase 3 (68 to 100 percent of range of motion) compared to Incline Dumbbell Curls (IDC) and standard Dumbbell Curls (DBC).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf [part 3/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The bicep curl should ideally begin from a position of full elbow extension to ensure a complete range of motion.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifters frequently start the bicep curl from a slightly flexed elbow position of around 20 degrees instead of starting from full elbow extension.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Despite being instructed to start from full elbow extension, subjects initiated their movements from a slightly flexed position of around 20 degrees.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Submaximal elbow flexion at 40% MVC elicited neuromuscular activity up to 95% of the maximum RMS value during the third phase of the concentric contraction for both incline dumbbell curl and dumbbell bicep curl protocols.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean range of motion of the concentric and eccentric phases across the dumbbell curl protocols ranged from 115.50 ± 11.20 to 131.91 ± 18.25 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Previous studies have reported a strategy of starting the bicep curl movement with an elbow joint angle ranging from 15 degrees to 48 degrees.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Starting the bicep curl from a slightly flexed position of around 20 degrees serves as a compensation mechanism to optimize the contribution of the elbow flexors and passive tension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shoulder hyperextension during the incline dumbbell curl stretches the long head of the biceps brachii muscle beyond its optimal length, leading to an inefficient actin-myosin coupling.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf [part 4/8]",
+    "applies_to_fault": [
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "In a shoulder-flexed position, the early phase of the concentric contraction requires high muscle activity to overcome the load torque, but the neuromuscular demand for the biceps brachii decreases rapidly throughout the middle and late phases.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The moment arm of the biceps brachii is close to its highest value near the joint angle where resistance torque is maximal, resulting in high RMS values.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The shoulder flexed position in the DPC exercise elicited a muscle activation pattern that significantly decreased from the initial to the final phases of concentric contractions, and increased from the initial to final phases of eccentric contractions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the shoulder flexed position of the DPC exercise, neuromuscular demand decreases rapidly for the biceps brachii throughout the middle and late phases of concentric contraction due to the initial moment arm of the load.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf [part 5/8]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "The Dumbbell Biceps Curl and Incline Dumbbell Curl result in a considerable neuromuscular effort throughout the whole elbow range of motion, making them preferable for improving biceps brachii force.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Dumbbell Preacher Curl elicits high myoelectric activity only within a short range of elbow joint angle, specifically at the beginning of concentric and ending of eccentric contractions.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "All dumbbell curl protocols elicited a level of activation of the biceps brachii muscle of at least 50% of maximum RMS.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For the Dumbbell Preacher Curl cycle, the activation of the biceps brachii long head was maximal only for elbow joint angles close to full extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf [part 6/8]",
+    "applies_to_fault": []
+  }
+]

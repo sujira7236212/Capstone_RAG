@@ -1,0 +1,1019 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "During the descent phase of a squat, the hips flex, the knees flex, and the ankles dorsiflex, while during the ascent phase, the hips extend, the knees extend, and the ankles plantarflex.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gluteus medius plays a critical role in controlling femoral and knee alignment in the frontal plane.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Guide clients to stand with feet approximately shoulder-width apart, position their toes straight ahead or slightly turned out based on individual anatomy, and create tension through the trunk before moving.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For foot position, emphasize the tripod foot concept where the big toe, little toe, and heel should remain connected to the ground throughout the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The appropriate squat depth is the deepest position a client can achieve while maintaining a neutral spine, foot stability, proper joint alignment, and movement control.",
+        "applies_to_fault": [
+          "partial_squat",
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Knees caving in (knee valgus) is a common compensation associated with overactive adductors, overactive tensor fasciae latae (TFL), and underactive gluteus medius and gluteus maximus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Heels rising or feet turning out during a squat frequently indicates limited ankle dorsiflexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Excessive forward lean is commonly associated with limited ankle mobility, limited hip mobility, and underactive anterior core musculature.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Posterior pelvic tilt ('butt wink') occurs when the pelvis tucks under and the low back rounds at the bottom of a squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "A more upright torso shifts more emphasis toward the quadriceps, while greater forward torso lean increases demand on the hips and posterior chain.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat) [part 1/2]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The appropriate squat depth is the deepest position a client can achieve while maintaining a neutral spine, foot stability, proper joint alignment, and movement control.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Goblet squats are particularly useful because the front-loaded position naturally encourages improved posture and core engagement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Effective external cues for the squat include 'push the floor apart,' 'sit down and back between your hips,' 'drive through the ground,' and 'chest proud.'",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Pair squat cues with a strong breath-and-brace strategy before each repetition.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Knee valgus during a squat is commonly associated with overactive adductors and tensor fasciae latae (TFL), along with underactive gluteal musculature.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat) [part 2/2]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Lower Back",
+    "content_type": "Correct Form and Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The squat should be initiated by first driving the hips backwards to eccentrically load the gluteus maximus and initiate an isometric contraction within the hamstrings to help unload the ACL.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the knees aligned over the second and third toes during the squat to maintain proper lower limb alignment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Outward rotation of the legs and feet during a deep squat is acceptable only if the rotation occurs within the hip joint and not at the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Restricting forward knee movement during a squat forces the torso to lean excessively forward at the hips.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Lacking ankle mobility at the talocrural joint causes the talocalcaneal joint to pronate and evert, driving the knees inward.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Having limited adductor extensibility during a wide-stance deep squat causes valgus knee collapse.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Rotating the thighs externally beyond 30 to 40 degrees causes the pelvis to tilt anteriorly, which alters lumbar spine alignment and reduces stability.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The anterior cruciate ligaments (ACL) begin to experience anterior shear forces starting at a 15° knee bend, experience greatest anterior shear forces at a 30° knee bend, and diminish after a 60° knee bend.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The posterior cruciate ligaments (PCL) begin to experience posterior shear forces at a 30° knee bend, experience greatest posterior shear forces at a 60° knee bend, and diminish after a 90° knee bend.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For every 2° of extension of the spine from neutral, the compressive forces on the posterior annulus of each disc increases by an average of 16%.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A wide squat-stance is defined as having the feet placed between 150% and 200% of shoulder width, whereas a narrow squat-stance is no wider than 120% of shoulder width.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Normal foot position is generally considered to be feet parallel to 8-10° of eversion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Restricting forward knee movement generates greater shear forces and torque at the hips and between the individual vertebrae of the lumbar spine, increasing susceptibility to spinal injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Compensating for limited ankle mobility by pronating and everting the talocalcaneal joint drives the knees inward, which increases stress lines along the ACL.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive external femoral rotation beyond 30 to 40 degrees forces an anterior pelvic tilt, translating to increased forces within the hip and lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://web.archive.org/web/20201111145937/https://blog.nasm.org/newletter/diving-deeper-squat-common-misconceptions) [part 1/2]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Spine",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Proper cueing is the maintenance of a rigid spine that is either neutral or slightly flattened.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A dowel can be used to cue proper spinal alignment by keeping constant contact with the sacrum, thoracic spine, and back of the head throughout the movement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allow the tibia to translate forward, reposition the spine to be parallel with the tibia, and let the head fall into a neutral position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Engaging your core and abdominal musculature during the squat can help prevent lumbar hyperextension.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Maintain knee and foot alignment, ensure proper hinging and timing of forward knee translation, and facilitate adequate ankle mobility.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Aim to achieve parallel alignment between your tibia and trunk.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using a head-up position during the squat, which is often a consequence of inadequate hip flexor or ankle mobility that creates a forward trunk lean.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing a head-down position during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Attempting a back squat without adequate thoracic extension, which can compromise lumbar stability.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Experiencing lumbar hyperextension during the squat due to lack of core and abdominal muscle engagement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A head down position by as little as 4.5° from neutral increases spinal flexibility, which in turn increases posterior spinal compression.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Engaging your core and abdominal musculature during the squat can result in greater muscle activation than witnessed during a plank exercise.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A narrow squat-stance is generally considered to be one where the feet are no wider than 120% of shoulder width apart.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A head down position by as little as 4.5° from neutral increases posterior spinal compression and can diminish balance.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A head-up position extends the thoracic spine and increases compressive forces along the entire spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Lacking the thoracic extension required for the back squat position will compromise lumbar stability.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://web.archive.org/web/20201111145937/https://blog.nasm.org/newletter/diving-deeper-squat-common-misconceptions) [part 2/2]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Spine",
+    "content_type": "Correct Form and Common Mistakes",
+    "core_principles": [
+      {
+        "text": "To perform a squat assessment, begin by instructing the client to stand with their feet shoulder width apart (inside of their feet aligned with the outside of their shoulders).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Feet should be straight forward and arms straight above head or with hands gently behind their ears.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Instruct them to descend as far as comfortably allowed while keeping their heels on the ground and pushing the hips back as if sitting in a chair.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "As they perform the squat, eye gaze should remain straightforward and not move upward with any head tilt.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing the squat assessment a slightly extended thoracic spine position is recommended to maintain a chest up position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Maintaining a neutral low back position with a slight lordosis is essential to proper and safe motion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Proper pelvic alignment also allows the muscles of the lumbar spine, erector spinae, quadratus lumborum and oblique muscles to function optimally providing support to the lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Forward head posture, characterized by anterior head carriage or excessive extension of the neck, is a common fault during the squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Hyperkyphosis or excessive rounding of the upper back, including rounding of the shoulders and scapula protraction, can occur during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Losing lumbar lordosis or failing to maintain a neutral low back position during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Excessive thoracic forward lean can occur as the body attempts to compensate if the hips lack mobility.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee valgus, where the outside of the knee crosses the medial malleolus, is a common movement dysfunction during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "It is estimated that correctly performing a squat requires over 200 upper and lower body muscles to work synergistically.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the rehabilitation setting, if quadriceps enhancement is the goal, keeping the squat to less than 90 degrees is desirable since moving past this range of motion has limited benefit.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "ACL injuries occur at a four to six fold greater incidence in females than males and have been associated with increased knee valgus angles.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Forward head posture has been associated with neck pain, shoulder pain, and temporomandibular joint dysfunction.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Hyperkyphosis or excessive rounding of the upper back has been associated with forward head posture as well as limiting cervical range of motion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Intravertebral disc pressure increases as lumbar lordosis is lost, putting one at risk for injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "If the hips lack mobility, this may be seen with excessive thoracic forward lean as the body attempts to compensate.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Increased knee valgus angles are associated with a four to six fold greater incidence of ACL injuries in females than males.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://web.archive.org/web/20201201215505/https://blog.nasm.org/newletter/squat-form) [part 1/5]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Assess whether the tibia and the spine are in parallel alignment during the squat to ensure proper trunk posture.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A stance with feet forward, or with a slight degree of external rotation, and approximately shoulder width apart is desired.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "As one descends, the foot pressure should shift from the mid foot toward the heel and lateral foot during the loading phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Toes should remain on the ground to maintain balance during the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At the bottom position of the squat, ensure there is no excessive forward lean, heels stay on the ground, and knees stay in line with the feet.",
+        "applies_to_fault": [
+          "rounded_back",
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Instruct clients to squat by sitting the hips back as if attempting to sit in a chair to help correct movement patterns.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Limiting tibial translation during a squat can cause an increase in trunk anterior lean to compensate.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The heel rising off the ground during a squat may indicate an ankle dorsiflexion limitation or overactive gastrocnemius muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Knee valgus during a squat may be the result of an over-pronation problem at the foot and ankle.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Fry and colleagues demonstrated that limiting tibial translation inappropriately transfers forces to the hips and low back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Inappropriately limiting tibial translation transfers excessive forces to the hips and low back due to a compensatory increase in trunk anterior lean.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Over-pronation of the foot can lead to dynamic knee valgus during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://web.archive.org/web/20201201215505/https://blog.nasm.org/newletter/squat-form) [part 2/5]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Corrective Exercises and Form",
+    "core_principles": [
+      {
+        "text": "To maximize ankle range of motion, perform self-myofascial release on the gastrocnemius prior to static stretching.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform ankle mobilization in a half-kneeling position to increase dorsiflexion range of motion without gastrocnemius resistance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing ankle mobilization, keep the core activated to prevent hyperextension of the lower back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Perform lateral monster walks in a squat position rather than an upright straight-leg position to generate greater gluteus maximus and medius muscle activity.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Perform the clamshell exercise with a resistance band to strengthen weak hip external rotators and mitigate knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Perform hip bridges with isometric hip abduction against elastic resistance to increase gluteus maximus activation and reduce anterior pelvic tilt.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Maintain a neutral spine and activate the core while performing a hip hinge drill to establish the correct motor pattern for descending in a squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing knee valgus (knees caving inward) to occur during lower extremity movements.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Failing to maintain a neutral spine and proper pelvic control when descending into a squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Hyperextending the lower back during ankle mobilization or squatting movements due to lack of core activation.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Knee valgus has been shown to be a contributing factor to nearly 40,000 ACL injuries per year.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Weak hip external rotators resulting in valgus collapse of the knee are associated with an eight times greater risk of sustaining a second ACL injury.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Choi and colleagues found that gluteus maximus EMG activity was significantly greater while anterior pelvic tilt angle was significantly lower in the hip bridge with isometric hip abduction compared to the hip bridge without the band.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Knee valgus (valgus collapse) increases the risk of sustaining ACL injuries.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Weak hip external rotators that cause valgus collapse of the knee lead to an eight times greater risk of sustaining a second ACL injury.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Failing to maintain core activation and a neutral spine during hip hinging or squatting can lead to hyperextension of the lower back and loss of control over the lumbo-pelvic complex.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://web.archive.org/web/20201201215505/https://blog.nasm.org/newletter/squat-form) [part 3/5]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Core",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Maintaining an upright chest and thoracic position with the scapula retracted is important to attain a correct lumbo-pelvic position during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Reassessing and stretching the posterior chain for overactive and tight hamstring and hip muscles is appropriate if a lifter has difficulty descending properly.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Strengthening the deep spine and major muscles of the low back and core is necessary to improve stability and prevent uncontrolled trunk displacement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "A lack of core stability and decreased core neuromuscular control leads to uncontrolled trunk displacement during the movement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Tight anterior chest muscles prevent proper scapular retraction and make it difficult to maintain an upright chest and thoracic position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Zazulak and colleagues demonstrated that a decrease in core neuromuscular control increases uncontrolled trunk displacement, leading to higher knee ligament strain and ACL injury.",
+        "applies_to_fault": [
+          "rounded_back",
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "McGill and colleagues found that the quadratus lumborum was best suited to be the major stabilizer of the lumbar spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The side support or side bridge exercise was identified to optimally challenge the quadratus lumborum and abdominal wall muscles while minimizing lumbar spinal loads.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The Blackburn Y or horizontal abduction at 100 degrees elicits high EMG activity of the rotator cuff, deltoid, and scapular muscles to re-establish scapular control.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A decrease in core neuromuscular control increases uncontrolled trunk displacement, which leads to higher knee ligament strain and ACL injury.",
+        "applies_to_fault": [
+          "rounded_back",
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Tightness in the hamstrings and hip muscles limits the posterior chain, causing difficulty descending properly during the squat.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Tight anterior chest muscles prevent proper scapular retraction, which impairs the ability to maintain an upright chest and correct lumbo-pelvic position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://web.archive.org/web/20201201215505/https://blog.nasm.org/newletter/squat-form) [part 4/5]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "A deep squat requires your hips to descend lower than your knees, with the angle of your knee joint being greater than 100 degrees at the lowest point.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Your trunk and spine must stay straight, stable, and erect throughout the movement, especially when using weight.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Your feet should typically be shoulder-width apart and remain flat on the floor during the entire movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Your toes should be positioned either straight ahead or at a small, 7-degree toe-out position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Your ankles, knees, and hips should bend in unison while your spine stays straight, allowing your knees to travel forward over your toes and your hips to travel backward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "At the lowest depth of the squat, your pelvis should remain in a neutral position without tucking under or tilting backward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Your knees must stay in alignment with your feet when viewed from the front, preventing them from moving toward the midline of your body.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The upper glutes (gluteus medius and minimus) and hip rotators must be engaged to keep your knees aligned with your feet and prevent inward collapse.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the tailbone to tuck under at the bottom of the squat, commonly known as butt wink.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing the heels to lift off the ground during the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the knees to track incorrectly or collapse toward the midline of the body.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A deep squat is defined as having a knee joint angle greater than 100 degrees at the lowest point, with one study finding the average angle to be greater than 120 degrees.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "In a standard squat, the knees are bent at around a 90-degree angle with thighs parallel to the ground.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "At deep squat depths, the contact between the backs of the thighs and the calves has been shown to decrease the compressive load on the knee joint.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Recent research found no correlation between deep squats and the incidence of tissue injury to bone, ligament, or cartilage.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Some researchers believe compressive forces in the knee may be higher in a partial squat than in a deep squat.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "A proper deep squat setup typically involves a small, 7-degree toe-out position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "One study demonstrated that the strength of the anterior tibialis (shin muscles) correlated with the ability to perform a deep squat among women.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to engage the gluteus medius, minimus, and hip rotators allows the knees to move toward the midline of the body, which increases excessive torque on the joints.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Performing a partial squat instead of a deep squat may subject the knee joint to higher compressive forces.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Compensations from limited joint mobility, such as the tailbone tucking (butt wink) or knees tracking incorrectly, can increase the risk of injury.",
+        "applies_to_fault": [
+          "rounded_back",
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://www.healthline.com/health/fitness/deep-squat) [part 1/3]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The erector spinae muscles in your back keep your spine straight and extended enough to decrease the risk of injury to the spine or intervertebral discs.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Proper care should be taken to maintain a neutral lumbar spine at all times during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Keep your feet flat on the ground to improve your balance, stability, and force production.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Your spine should remain relatively straight and parallel to your shins.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing your heels to lift off the ground, which is often related to poor ankle flexibility and stiffness in the calves.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing your knees to bow inward toward each other as you ascend or descend due to a lack of strength in the gluteal and hip rotator muscles.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Bending the spine and failing to keep it straight and aligned with your pelvis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In one study, the strength of the shin muscles correlated with the ability to perform a deep squat among women.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Research suggests that performing deep squats will result in greater increases in muscle strength and size than performing shallow squats with heavier weight.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Losing neutral lumbar spine alignment increases the risk of injury to the spine or intervertebral discs.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "When your knees come out of alignment and bow inward, there is torque at your knee, which can lead to injury.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Failing to keep your spine straight and aligned with your pelvis increases the risk of strain and shear force in the spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://www.healthline.com/health/fitness/deep-squat) [part 2/3]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep your feet flat on the floor and push back up to a position in which your knees are extended.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing a front squat, rack the weight in your hands relatively level with or slightly below your collar bones.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When performing a back squat, position the weight on your upper back with your hands level with the tops of your shoulder blades.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform deep squats to improve mobility and strength throughout your full range of motion.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Keeping the weight in front of your center of gravity during a front squat puts greater emphasis on the quadriceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keeping the weight behind your center of gravity during a back squat puts greater emphasis on the gluteal muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Scientific research does not substantiate any increased risk of knee injury from performing deep squats.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to use good form during squats increases the risk of injury to your spine and lower body.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\urls.txt (https://www.healthline.com/health/fitness/deep-squat) [part 3/3]",
+    "applies_to_fault": [
+      "partial_squat",
+      "rounded_back"
+    ]
+  }
+]

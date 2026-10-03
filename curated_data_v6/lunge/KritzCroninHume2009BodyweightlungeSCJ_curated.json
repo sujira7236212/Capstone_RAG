@@ -1,0 +1,347 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "A forward lunge is performed as an elongated forward step, flexing the lead hip and knee and dorsiflexing the lead ankle while lowering the body toward the floor.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Identify and correct faulty movement strategies in the lunge pattern prior to prescribing heavy loads and advanced loading schemes.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The forward lunge involves calcaneal eversion, talar plantar flexion and adduction, tibial internal rotation, knee flexion, extension, and abduction, and hip flexion, extension, and adduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 1/7]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Whole Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "During a forward lunge, the head should be straight and centrally aligned over the feet in a neutral position, facing forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The thoracic spine should remain straight or slightly extended, with the shoulders positioned directly above the hips.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The lumbar spine should remain neutral, tall, and stable, without using back extension to assist hip extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hips should be horizontally aligned with the lead knee and ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The front knee should point forward over the small toes and be positioned directly above the lead ankle, while the back knee is flexed.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "The front ankle should be aligned with the knee and hip, and from the side view, it should be directly under the knee.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The front foot must remain flat on the ground, while the back foot is positioned on the ball of the foot with the toes flexed, keeping both feet aligned and balanced.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An indicator of good ankle mobility during a forward lunge is when the athlete can maintain a flat foot position of the lead leg and an aligned flexed foot position during full hip, knee, and ankle flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge, the knee of the front and back leg should be aligned with the hip and ankle during flexion and extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "The head may be positioned forward or tilted to one side, which can be caused by muscle imbalance of the neck flexors and extensors.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The thoracic spine may become flexed, often due to poor or imbalanced trunk extensors.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The lumbar spine may become flexed or excessively extended, which can be caused by weak deep abdominals and gluteus maximus, poor coordination, or poor flexibility in the hip flexors.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The hips may drop to one side or rotate medially or laterally, which can be caused by weak deep abdominals and gluteus maximus, medius, and minimus.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The knees may move medially or laterally during the lunge, which can be caused by poor sequencing of the gluteus maximus, medius, minimus, and deep core muscles, or restricted range of motion in the hip flexors and quadriceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ankles may have limited dorsiflexion, restricting mobility due to stiffness or restricted range of motion of the gastrocnemius and soleus muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The lead foot may roll in or out, which can be caused by poor stability and proprioceptive response.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Faulty movement strategies include turning out of the feet, turning in of the feet, dropping of the arch, and/or lifting of the lead heel off the ground.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Kovacs et al. and Flanagan et al. found that various biomechanically specious positions of the ankle and foot during activities of daily living (i.e., squatting and lunging) resulted in higher forces incurred at the knee and hip.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "The inability to control foot position and the lack of ankle mobility encourage movement strategies that act as injury mechanisms.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increases in joint forces resulting from bad technique during movement overstress joint ligaments and tendons.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 2/7]",
+    "applies_to_fault": [
+      "forward_trunk_lean",
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The athlete should step out far enough so that the lead knee is directly over the lead foot and the heel remains in contact with the ground as the center of mass moves toward the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a neutral lumbar spine during the lunge, avoiding both spinal flexion and excessive spinal extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a 90/90 stance with the hips horizontally aligned.",
+        "applies_to_fault": [
+          "shallow_lunge",
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Keep the knees aligned with the hips and feet, and the ankles aligned with the knee.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the head centered and shoulders/T-spine held down away from the ears in a neutral position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the heel of the lead foot in contact with the floor.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Moving the center of mass more forward than down, causing the heel of the front foot to raise from the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the knee to move in front of the toes on descent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing excessive mediolateral movement of the lead knee during the eccentric and concentric phases of the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing the lunge with spinal flexion or excessive spinal extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Hip range of motion is considerable with flexion between 0 and 135 degrees and extension between 0 and 15 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The cause of mediolateral movement of the lead knee during a forward lunge is hypothesized to be poor strength or activation of the rectus femoris, hamstrings, and hip abductor and adductor muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Moving the center of mass more forward than down and raising the front heel increases patellofemoral shear force and is associated with knee pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Weakness or failure of the hamstrings, rectus femoris, and gastrocnemius to activate at the right time disadvantages the knee and may contribute to a poor movement pattern.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Mediolateral movement of the knee during the eccentric and concentric phases of a lower limb exercise is contraindicated because the knee joint is not designed to accommodate excessive mediolateral or anteroposterior movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 3/7]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The hips should remain parallel with the ground during a forward lunge, with no mediolateral rotation or lateral dropping of the hip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The trunk should remain vertical with the lumbar spine in a neutral position during the lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Maintain a neutral head position with the direction of gaze directed straight ahead during the lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing pelvic and lumbar extensions to take place to artificially increase hip range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing mediolateral rotation or lateral dropping of the hip during the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lunging with an external load and excessive lumbar extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Directing the head position and direction of gaze downward during the movement.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During a forward lunge, mean hip range of motion has been reported to be 95 ± 27 degrees of flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Forces at the hip during a forward lunge have been reported to be 1.25 and 1.31 times the body weight during the downward and upward phases of the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When an increase in hip mobility is achieved through pelvic instability and lumbar extension, the forces incurred by those two regions increase by 10% to 30%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 2-degree increase in extension from a neutral spine position increased compressive stress within the posterior annulus by an average of 16% compared with maintaining a neutral spine position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Athletes hyperextend the lumbar spine to a significant degree when lifting heavier loads at 60% and 80% of 1 repetition maximum.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Movement of the head with a downward direction of gaze during a squat movement increased trunk flexion by up to 4.5 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Achieving hip mobility through pelvic instability and lumbar extension increases the forces incurred by the pelvis and lumbar regions by 10% to 30%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lunging with an external load and excessive lumbar extension dramatically increases compressive forces on the spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 2-degree increase in extension from a neutral spine position increases compressive stress within the posterior annulus by an average of 16%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The compressive strength of a vertebral body is notably reduced when using a lumbar posture that is not neutral.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Directing the head and gaze downward increases trunk flexion, which can lead to excessive forward trunk lean.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 4/7]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "To perform a forward lunge correctly, mobility must be present at the ankles and hips, and stability must be maintained at the knees and trunk.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An athlete should demonstrate several body weight forward lunges with minimal effort before progressing to external loading.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Movement competency under high force with low velocity should be demonstrated before prescribing high-velocity plyometric lunge drills.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The eccentric phase of the lunge pattern is where the most joint forces are recorded, requiring the athlete to demonstrate control via strength within this range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Using incorrect movement strategies during a lunge and excessively loading them may increase the incidence of injury and reduce performance.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\KritzCroninHume2009BodyweightlungeSCJ.pdf [part 5/7]",
+    "applies_to_fault": []
+  }
+]

@@ -1,0 +1,285 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Back",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Maintaining a straight trunk position during lunges keeps the activation of the lower lumbar erector spinae lower compared to an inclined trunk position.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Dynamic lunge variations, such as step-forward and walking lunges, elicit greater muscular activation in the gluteus maximus than static lunges.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the trunk forward into an inclined position during a lunge increases the activation of the lower lumbar erector spinae.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 12 trained young women performing lunges with a 30% body weight overload, lower lumbar erector spinae activation was significantly higher with an inclined trunk (40 ± 29% MVIC) compared to a straight trunk (20 ± 15% MVIC).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Gluteus maximus activation was significantly higher during step-forward (54 ± 20% MVIC) and walking lunges (58 ± 30% MVIC) compared to static lunges (31 ± 12% MVIC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lower lumbar erector spinae activation was significantly higher during walking lunges (40 ± 33% MVIC) compared to static (24 ± 16% MVIC) and forward lunges (26 ± 22% MVIC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk position and lunge variations did not significantly influence the activation of the biceps femoris and rectus femoris muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases the muscular demand and activation of the lower lumbar erector spinae.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\torso_upright\\Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf [part 1/6]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Trunk position during the lunge can influence exercise performance, joint kinematics, and muscle activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a step-forward lunge with a forward-inclined trunk position increases the impulse and recruitment of the hip extensor muscles compared to maintaining a straight, upright trunk.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Forward lunges involve greater hip action, whereas lateral lunges prompt greater contributions from the ankle and knee extensors.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing lunges with the back foot elevated or descending from a box increases the activation of the gluteus medius and hamstrings compared to a standard lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing the lunge under conditions of greater instability leads to higher activation of secondary mover muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Prior research by Farrokhi et al. observed that positioning the trunk in a forward-inclined position during a step-forward lunge increases the impulse and recruitment of hip extensor muscles compared to a straight-trunk position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Prior research by Mausehund et al. observed similar activation of the gluteus maximus and vastus lateralis when the lunge was performed with both feet on the ground, with the back foot elevated, or with the back foot descending from a box.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study protocol analyzed a sample size of 12 healthy women with at least one year of resistance training experience to compare lower lumbar erector spinae, gluteus maximus, biceps femoris, and rectus femoris activation.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Positioning the trunk in a forward-inclined position during a step-forward lunge increases the recruitment and impulse of the hip extensor muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Elevating the back foot or descending from a box during a lunge increases the activation of the gluteus medius and hamstrings compared to a standard lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\torso_upright\\Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf [part 2/6]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "During the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.",
+        "applies_to_fault": [
+          "shallow_lunge",
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Lower the rear knee toward the ground during the descent of the lunge.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Maintain physiological spinal curves throughout the movement, regardless of whether the trunk is held straight or inclined.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform the lunge in a slow and controlled manner, using a tempo such as 2 seconds for the descending phase, a 1-second pause at the bottom, and 2 seconds for the ascending phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\torso_upright\\Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf [part 3/6]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "shallow_lunge",
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Back",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Performing a walking lunge or a step-forwarding lunge increases gluteus maximus activation compared to performing a static lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The choice of trunk position (straight vs. inclined) and lunge variation (static, forward, or walking) does not significantly alter the activation of the biceps femoris or rectus femoris muscles.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases the activation of the lumbar erector spinae muscles compared to maintaining an upright, straight trunk.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Positioning the trunk in a forward-inclined position during a lunge elicited a significantly higher activation of the lumbar erector spinae (40 ± 29% MVIC) compared to the straight-trunk condition (20 ± 15% MVIC, ES = 0.92).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Gluteus maximus activation was significantly higher for step-forwarding (54 ± 20% MVIC, ES = 1.13) and walking (58 ± 30% MVIC, ES = 1.31) lunges compared to static lunges (31 ± 12% MVIC).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a walking lunge, a moderately higher lumbar erector spinae activation was observed compared to static (ES = 0.71) and step-forwarding (ES = 0.63) lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk position did not significantly affect gluteus maximus activation, with values of 45 ± 26% MVIC for the straight trunk and 50 ± 23% MVIC for the inclined trunk.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases the load and muscular demand on the lower back by doubling the activation of the lumbar erector spinae.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\torso_upright\\Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf [part 4/6]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk and Gluteus Maximus",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Performing a static lunge with an inclined trunk can be used to target and increase gluteus maximus recruitment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a forward lunge with a straightened trunk lowers lumbar longissimus activation, making it a suitable variation to avoid discomfort for individuals with low back pain.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During static and forward lunge conditions with the trunk straightened, muscular activation of the lumbar longissimus was lower compared to the walking inclined-trunk condition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gluteus maximus muscle showed relatively high activation of over 50% of maximum voluntary isometric contraction (MVIC) during forward and walking lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a static lunge with an inclined trunk results in a significantly higher gluteus maximus recruitment with an effect size of 0.94 compared to a straight or neutral trunk position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a study of young trained women, variations in trunk position and lunge style did not influence the activation of the rectus femoris and biceps femoris muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a lunge increases lumbar longissimus activation, which can cause unnecessary pain and discomfort for individuals with chronic or acute low back pain.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\torso_upright\\Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf [part 5/6]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Trunk",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Positioning the trunk in a forward-inclined position induces, on average, a greater LLES activation regardless of the variation of lunge exercise performed.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing the lunge in a step-forwarding or walking manner obtains greater gluteus maximus activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk and exercise variations do not influence the activation of the biceps femoris and rectus femoris muscles during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\torso_upright\\Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf [part 6/6]",
+    "applies_to_fault": []
+  }
+]

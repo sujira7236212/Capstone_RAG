@@ -1,0 +1,30 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Common Mistake",
+    "core_principles": [],
+    "common_mistakes": [
+      {
+        "text": "Knee varus is a common movement deficit during the squat, particularly among novice squatters.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "According to the study, knee varus (represented by a positive ΔD* value) is a more common deficit than valgus, with novice squatters expected to exhibit a more positive ΔD* value compared to experienced squatters.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2020_Correction_HowToSquat_BMCSSMR.pdf",
+    "applies_to_fault": [
+      "knee_varus"
+    ]
+  }
+]

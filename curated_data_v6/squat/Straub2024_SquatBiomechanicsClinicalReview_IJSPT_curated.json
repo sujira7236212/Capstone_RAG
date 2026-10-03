@@ -1,0 +1,565 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Trunk",
+    "content_type": "Biomechanical Principles",
+    "core_principles": [
+      {
+        "text": "The moments at the hip and knee during squatting are highly influenced by the orientation of the trunk, which in turn affects the center of mass of the body.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Muscular actions of the hip and knee extensors are required to generate extensor moments to counteract the external flexion moments created during a squat.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During a typical squat, the resultant ground reaction force vector passes anterior to the hip and posterior to the knee, thereby creating flexion moments at both joints.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Moving the trunk from a more upright position to a more forward position shifts the resultant ground reaction force vector, which alters the relative flexion moments and muscular demands at the hip and knee joints.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 1/12]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back and Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Maintaining a neutral spine position increases the moment arm for the spinal extensors, allowing better control of compressive loads and shear forces.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Squatting with the trunk in a more upright position increases the knee flexion moment while decreasing the hip flexion moment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Moving the trunk forward increases the hip flexion moment while decreasing the knee flexion moment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Moving the tibia forward increases the knee flexion moment, whereas keeping the tibia more upright decreases the knee flexion moment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Elevating the heels during squatting facilitates a greater degree of forward tibia inclination, thereby increasing the knee flexion moment and the demand on the quadriceps.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Achieving a forward trunk position using lumbar spine flexion rather than hip flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Rotating the feet outward 30 degrees has been reported to decrease the valgus moment at the knee by 50% while simultaneously increasing the varus moment by 80%.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Rotating the feet outward 30 degrees decreases the external rotation moment at the knee by 20% when compared to a neutral stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting with the hip externally rotated 30 degrees to 50 degrees has been reported to increase hip adductor activity compared to a neutral stance by 17% and 23% respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Varying rotations of the tibia and femur from 30 degrees inward to 80 degrees outward has no effect on quadriceps activity.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Attainment of a forward trunk position using lumbar spine flexion results in decreased tolerance to compressive loads and lumbar spine anterior shear forces.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Greater forward trunk inclination increases the muscular demand on the back extensors to stabilize the trunk.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 2/12]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "When the end range of hip flexion is reached during deep squatting, a posterior pelvic tilt will occur as the femur compresses into the acetabulum.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The relationship between trunk and tibia inclination dictates the relative biomechanical demands of the knee and hip extensors during squatting.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the pelvis to tilt posteriorly, also known as butt wink, at the bottom of a squat when hip flexion limits are exceeded.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Using an excessively wide stance can increase knee valgus moments, potentially leading to inward knee collapse.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A wide stance results in 23% greater knee valgus moments and 19% to 37% higher hip external rotation moments compared to narrow or medium stance squats.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A medium or wide stance squat results in 13% to 61% higher gluteus maximus activity and 18% lower gastrocnemius activity compared to narrow or medium stance squats.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A wider stance increases hip adductor activity during the ascending phase of squatting compared to the descending phase by approximately 50%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus maximus activity increases by 65% when moving from shallow to medium depth squatting.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Compared to medium depth squats, gluteus maximus activity has been reported to be similar, or 25% greater with deep squats (28% vs. 35% MVIC).",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Lumbar erector spinae activity does not increase beyond 90 degrees of knee flexion, suggesting passive structures like the posterior longitudinal ligament resist the spine flexion moment.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Posterior pelvic tilt is coupled with lumbar spine flexion, which subjects the lumbar spine to potentially harmful compressive and shear forces.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Because lumbar erector spinae activity does not increase beyond 90 degrees of knee flexion, passive structures such as the posterior longitudinal ligament must bear the spine flexion moment, increasing the risk of ligamentous strain.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "An increased knee valgus moment from a wide stance increases the mechanical stress pushing the knees inward.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 3/12]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Hip",
+    "content_type": "Biomechanical Demands",
+    "core_principles": [
+      {
+        "text": "The relative demand of the hip and knee extensors during squatting can be predicted based on the relative inclination of the trunk and tibia.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The difference between the sagittal plane inclination of the trunk and the sagittal plane inclination of the tibia (trunk-tibia angle) at peak knee flexion is predictive of the relative muscular demands of the hip and knee extensors.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "According to a study by Barrack et al., the difference between the sagittal plane inclination of the trunk and the sagittal plane inclination of the tibia at peak knee flexion is predictive of the average hip and knee extensor demand ratio.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 4/12]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Squatting depth should not exceed the lifter's available hip flexion to avoid posterior pelvic tilt.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A hip extensor bias is achieved when the degree of trunk inclination exceeds the degree of tibia inclination by 10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A knee extensor bias is achieved when the degree of tibia inclination exceeds the degree of trunk inclination by 10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus maximus activation can be increased by using wider stance squats or placing external band resistance around the thighs.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting to a depth that exceeds available hip flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Using an excessively wide squat stance that exceeds 150% of shoulder width.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A regression model indicated that a trunk-tibia angle of -8° resulted in a hip/knee flexion moment ratio equal to 1.0.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When the degree of trunk inclination exceeds the degree of tibia inclination by 10°, a hip extensor bias can be inferred.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When the degree of tibia inclination exceeds the degree of trunk inclination by 10°, a knee extensor bias squat can be inferred.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A squat stance that exceeds 150% shoulder width may result in elevated knee valgus moments.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Squatting to a depth that exceeds available hip flexion results in a posterior pelvic tilt.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A squat stance exceeding 150% of shoulder width can elevate knee valgus moments.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Hip adduction and internal rotation contribute to patellofemoral joint stress and patellofemoral pain.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Quadriceps force contributes directly to patellofemoral joint reaction force and patellofemoral joint stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 5/12]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "A toe-out position should be considered during the squat to decrease the knee valgus moment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Medium stance squats are preferred over wide stance squats to minimize the knee valgus moment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "To progressively emphasize quadriceps loading, modify the trunk position to be more upright and promote greater tibial inclination.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Care should be taken to avoid valgus and transverse plane moments at the knee by promoting some degree of toe out.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward (valgus) or experiencing transverse plane moments at the knee during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Hip extensor bias is promoted with a trunk-tibia angle greater than 10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Knee extensor bias is promoted with a trunk-tibia angle less than -10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Neutral bias is achieved with a trunk-tibia angle between -10 degrees and 10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellofemoral joint stress steadily increases from partial to medium depth squatting of 0 to 90 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Although up to 25% of patients with FAI can perform deep squats without pain, deep squats impose large amplitudes of hip joint stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An increase in patellofemoral joint stress is caused by a steadily increasing patellofemoral joint reaction force that is more pronounced than the increase in contact area as the knee flexes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Wide stance squats increase the knee valgus moment, which can place extra stress on the knee joint.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Deep squats in patients with FAI impose large amplitudes of hip joint stress and increase the requirements for hip flexion, placing them at greater risk for impingement.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 6/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lumbar Spine and Knee",
+    "content_type": "Correct Form and Injury Prevention",
+    "core_principles": [
+      {
+        "text": "A toe out stance should be considered to promote a greater degree of hip external rotation and gluteal activation, thereby minimizing the potential for hip impingement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk inclination should be limited to avoid excessive lumbar muscle strain.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "To obtain a hip bias squat with limited forward trunk lean, a wider stance width can be used.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Squat depth should be limited to a depth in which a neutral spine can be maintained to avoid posterior pelvic tilt.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Outward toe rotation can be utilized to decrease the knee valgus moment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A medium stance is preferred over a wide stance to decrease the knee valgus moment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Flexing the hip beyond the available range of motion, which leads to posterior pelvic tilt at the bottom of the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing excessive trunk inclination during the squat, which increases strain on the lumbar muscles.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A hip bias squat is characterized by a Trunk-Tibia angle of greater than 10 degrees, whereas a knee bias squat is characterized by a Trunk-Tibia angle of less than -10 degrees, and a neutral bias is between -10 and 10 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Posterior pelvic tilt is coupled with lumbar spine flexion, resulting in increased compressive and shear forces at the lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Excessive trunk inclination during the squat leads to excessive lumbar muscle strain.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 7/12]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Patients with tibiofemoral joint arthritis should progress from a hip bias to a knee bias using trunk-tibia relationship recommendations.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Deep squats should be avoided in individuals with tibiofemoral osteoarthritis to limit joint stress.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "External band resistance around the thighs and a wider stance can be utilized early in rehabilitation to improve gluteal activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Transitioning to a narrower or medium stance squat later in rehabilitation promotes greater tibial inclination and a quadriceps bias.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Outward foot rotation should be limited in the presence of medial compartment osteoarthritis, but advised in the presence of lateral compartment osteoarthritis.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing deep squats when managing tibiofemoral osteoarthritis.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using an outwardly rotated foot position when suffering from medial compartment osteoarthritis.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Tibiofemoral compressive forces during a wide squat are approximately 15% higher compared to a narrow squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An outwardly rotated foot decreases loading in the lateral compartment by decreasing the knee valgus moment, but increases loading in the medial compartment by increasing the knee varus moment.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "High compressive loads in the tibiofemoral joint can worsen osteoarthritis by increasing stress and strain on internal structures such as articular cartilage and menisci.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squatting into a deep position increases tibiofemoral compressive forces and decreases contact area, which increases contact stresses.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An outwardly rotated foot increases loading in the medial compartment of the knee by increasing the knee varus moment.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "An outwardly rotated foot decreases loading in the lateral compartment of the knee by decreasing the knee valgus moment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf [part 8/12]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus"
+    ]
+  }
+]

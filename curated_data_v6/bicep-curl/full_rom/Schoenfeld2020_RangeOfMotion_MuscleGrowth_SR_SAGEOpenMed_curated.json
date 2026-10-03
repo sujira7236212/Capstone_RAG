@@ -1,0 +1,98 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Range of Motion",
+    "core_principles": [
+      {
+        "text": "Performing elbow flexion exercises through a full range of motion (0° to 130°) is recommended to maximize muscle thickness increases compared to a partial range of motion (50° to 100°).",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Restricting the elbow flexion range of motion to a partial range (such as 50° to 100°) instead of using a full range of motion (0° to 130°).",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 30 young, untrained men by Pinto et al., training elbow flexion 2 days per week for 10 weeks resulted in significantly increased elbow flexor muscle thickness for both groups, with effect size differences favoring a full range of motion (0° to 130°) over a partial range of motion (50° to 100°).",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\full_rom\\Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf [part 4/10]",
+    "applies_to_fault": [
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Performing elbow flexion through a complete range of motion ensures that both the long head and short head of the biceps brachii are targeted during their respective active phases.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Restricting the range of motion during elbow flexion, which limits the complete stimulation of both the long and short heads of the biceps brachii.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study by Pinto et al. on elbow flexion showed modest hypertrophic benefits for full versus partial range of motion, resulting in a 9.7% versus 7.8% increase in muscle size (p = 0.07).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During elbow flexion, the long head of the biceps brachii is more active during the early phase of the movement, while the short head becomes more involved during the latter portion of the range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\full_rom\\Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf [part 7/10]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Range of Motion",
+    "content_type": "Research Finding",
+    "core_principles": [
+      {
+        "text": "Performing some heavy training in a shortened range of motion in combination with full range of motion training may elicit alterations in intracellular signaling that positively modulate long-term muscle protein accretion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Employing partial range of motion training with heavy loads may enhance the ability to use more weight during full range movements.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Approximately 94% of the total participant sample in range of motion studies to date has consisted of young men.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Only one study in the reviewed literature on range of motion featured a sample consisting of individuals with previous resistance training experience.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\full_rom\\Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf [part 9/10]",
+    "applies_to_fault": []
+  }
+]

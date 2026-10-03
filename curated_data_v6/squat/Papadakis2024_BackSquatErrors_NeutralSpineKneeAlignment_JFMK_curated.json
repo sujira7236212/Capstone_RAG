@@ -1,0 +1,793 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Back Squat",
+    "focus_area": "Knee and Spine",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Proper form is essential during the back squat to minimize the risk of injury and maximize the benefits.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lumbar hyperlordosis is a common biomechanical error during the back squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee valgus is a common biomechanical error during the back squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 1/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Back Squat",
+    "focus_area": "Lower Back and Knees",
+    "content_type": "Correct Form and Common Mistakes",
+    "core_principles": [
+      {
+        "text": "Successful squatting requires a high level of recruitment from the trunk muscles to provide stabilization for the spine and torso.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "In the starting position, the individual stands with the barbell resting across the upper back, near the C7 vertebrae and trapezius muscles, maintaining a shoulder-width or slightly wider handgrip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "It is crucial to align the head, shoulders, hips, knees, and ankles vertically in the starting position to establish a stable and balanced foundation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the descent phase, the torso must remain rigid as the hips, knees, and ankles flex in a controlled manner.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lumbar hyperlordosis involves excessive arching of the lower back during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee valgus occurs when the knees angle inward during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Older adults perform an average of 45 chair stands daily, with chair transfers involving squatting ranging from 33 to 71 sit-to-stands.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A home-based bodyweight squat program involving community-dwelling older adults 70 years and older performing 100 repetitions daily for four months effectively enhanced neuromuscular adaptations.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A daily exercise routine consisting of 30 seconds of bodyweight squats led to increased maximal squat performance in older adults aged 60 and above over a 24-week period.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive arching of the lower back (lumbar hyperlordosis) can strain the intervertebral discs and facet joints.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee valgus increases stress on the knee joint and potentially contributes to osteoarthritis.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 2/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "To maintain proper form during the squat, the shins and torso should remain parallel, avoiding any rounding of the thoracic or lumbar spine, bending forward at the waist, or allowing the knees to drift inward.",
+        "applies_to_fault": [
+          "rounded_back",
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "During the upward recovery phase, the hips, knees, and ankles should extend while maintaining a rigid torso.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "It is important that the hips and shoulders rise at the same rate until the knees are fully extended.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The chest should be held erect with retracted scapulae to promote thoracic extension and stability, which helps in maintaining a neutral spine and preventing excessive lumbar lordosis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A slight lumbar lordosis, representing the natural curve of the lower back, is necessary to maintain a neutral spine position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Rounding the back, bending forward, raising the heels, or looking down during the ascent phase are common errors that compromise squat effectiveness.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing the knees to drift inward during the squat is a common biomechanical error.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive lumbar extension, known as hyperlordosis, is a common error where the lifter over-arches the lower back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The Back Squat Assessment (BSA) tool developed by Myer et al. includes ten criteria categorized into three domains (upper body, lower body, and movement mechanics) to systematically screen for movement deficits.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive lumbar extension (hyperlordosis) can reduce intervertebral and facet joint space, leading to increased compressive forces on these structures.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The close-packed position of the lumbar vertebrae results in higher impaction forces, which are accentuated when the spine is subjected to increased activation of the back-extensor muscles, particularly during deeper squats.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "For older individuals, failing to maintain a neutral spine and allowing excessive lumbar lordosis can exacerbate conditions such as degenerative disc disease, osteoarthritis, and spinal stenosis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Looking down or failing to keep a neutral neck can increase the risk of cervical strain.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 3/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintaining a neutral pelvis throughout the squat, often achieved through core bracing and controlled breathing, helps mitigate the risks of lumbar hyperextension.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Improving hip mobility can help reduce compensatory lumbar extension, allowing for proper depth without excessive spinal stress.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Using coaching cues such as 'brace your core' and 'keep your ribs down' helps maintain proper spinal alignment and minimizes the risk of hyperlordosis during squatting.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Proper back squat form requires maintaining a neutral spine and proper hip hinge mechanics to avoid excessive lumbar flexion or extension.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive lumbar lordosis (hyperextension) or excessive lumbar flexion during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Exaggerating lumbar lordosis is associated with hyperextension of both shoulders, which causes the elbows to move more posteriorly.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Individuals performing squats may exhibit slight lumbar flexion past the neutral zone with low variability of their lumbar spinal adjustments.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive lumbar lordosis can aggravate symptoms of spinal stenosis, degenerative disc disease, and osteoarthritis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Exaggerated reversal of lumbar lordosis into lumbar flexion may cause vertebral stress fractures in individuals with osteoporosis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Compensatory lumbar extension increases spinal stress during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 4/13]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Perform the back squat while maintaining the most comfortable, symptom-free, neutral spine position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Teach pelvic control in unloaded positions, such as supine progressing to quadruped position, to help find the pain-free zone.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Examine the position of the pelvis in a static standing posture before starting a squat routine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Determine if the client can volitionally change pelvic position and lumbar spine alignment before initiating a squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive pelvic tilt or lumbar hyperlordosis during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Experiencing functional hyperlordosis due to stiffness or tightness of the anterior hip flexor group, including the iliopsoas, tensor fasciae latae, and rectus femoris.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Experiencing functional hyperlordosis due to stiffness or tightness in the lumbar extensors, such as the erector spinae and multifidus.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing genu valgus (knee valgus) to occur during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Normal pelvis orientation in static standing posture should be in slight anterior tilt, with an angle between 0 and 5 degrees for males and 7 and 10 degrees for females.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "In normal pelvic alignment, the anterior superior iliac spine (ASIS) is horizontally aligned with or slightly below, but no more than 1.5 cm below, the posterior superior iliac spine (PSIS).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Genu valgus is associated with decreased hip abductor muscle performance, including the gluteus maximus and medius, and decreased ankle inversion muscles, including the tibialis anterior and posterior.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Muscle stiffness or tightness can result in imbalanced forces acting on the lumbar spine and pelvis during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Genu valgus can be associated with structural impairments such as reduced height of the lateral meniscus or an overly stretched or torn knee joint medial collateral ligament.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 5/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back and Knee",
+    "content_type": "Injury Prevention and Biomechanical Deficits",
+    "core_principles": [
+      {
+        "text": "Find and maintain a neutral spine in the unloaded position before progressing the squat to a loaded standing position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Use hip flexion and extension during a hip hinge motion to complete a back squat rather than spinal motions.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Minimize spinal flexion and extension during the squat to prevent injuries.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Use the bracing technique with core muscles to maintain neutral spinal alignment in any position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Start with the box squat exercise once the individual is able to recognize the neutral spine alignment in a static standing posture.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Exhibiting lumbar hyperlordosis, or excessive arching of the lower back, during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Exhibiting a flat lumbar spine during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Exhibiting anterior pelvic tilt during the squat, which can be caused by poor postural habits and excessive sitting.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Exhibiting posterior pelvic tilt during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Exhibiting excessive knee valgus, where the knees cave inward, during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Using spinal flexion or extension instead of a hip hinge motion to complete the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Lumbar hyperlordosis during squats is associated with structural impairments including a thinner dorsal vertebral wedge and reduced height of the intervertebral disks.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A flat lumbar spine during squats is associated with a thinner anterior vertebral wedge, long paraspinal muscles, and/or a long iliopsoas.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee joint genu valgus during squats is associated with reduced height of the lateral meniscus, decreased hip abductor performance (gluteus maximus and medius), increased femoral anteversion, internal rotation of the tibia, and decreased ankle inversion muscles (tibialis anterior and posterior).",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive knee valgus during squats can cause a knee joint medial collateral ligament (MCL) tear or leave it overly stretched.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive knee valgus is associated with reduced height of the menisci, especially the lateral meniscus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Lumbar hyperlordosis is associated with reduced height of the intervertebral disks.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failing to isolate spinal motion from hip hinge motion and allowing spinal flexion or extension during a loaded squat increases the risk of spinal injuries.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 6/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back and Knee",
+    "content_type": "Correct Form and Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Find and maintain a neutral spine in the unloaded position before progressing to a loaded position when standing.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Perform the squat with a hip hinge motion, utilizing hip flexion and extension rather than spinal motion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Use the bracing technique with core muscles to maintain neutral spinal alignment and minimize spinal flexion and extension.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Replace a stiff dowel with a towel for individuals with limited shoulder range of motion to avoid compensatory excessive lumbar lordosis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Exhibiting an anterior pelvic tilt posture during the squat due to poor postural habits and excessive sitting.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Using spinal flexion or extension instead of a hip hinge motion to complete a back squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Eliciting a compensatory reaction of excessive lumbar lordosis by placing a dowel or bar behind the neck when suffering from thoracic kyphosis or decreased shoulder range of motion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing excessive dynamic knee displacement in the frontal plane during the descent phase of the squat, where the knees collapse inward closer to the midline.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Compared to the back squat, the box squat generates a lower extension peak moment at the L5/S1 level.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to minimize spinal flexion and extension during the squat increases the risk of spinal injuries.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee valgus shifts the load at the knee joint to the lateral structures, increasing stress on the lateral collateral ligament, menisci, and patellofemoral joint.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 7/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Throughout the entire squat progression, cueing should emphasize symptom-free, neutral spine, head, and shoulder positions.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Replacing a stiff dowel with a towel can allow for a less demanding shoulder range of motion and prevent compensatory excessive lumbar lordosis.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Interventions aimed at reducing knee valgus include strengthening the hip abductors and external rotators, improving core stability, and incorporating neuromuscular training to correct movement patterns.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Proper coaching cues, such as 'knees out', and the use of resistance bands can assist in reinforcing correct knee alignment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "During a back squat, the knee should predominantly move in the sagittal plane, with minimal movement in the frontal plane.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Placing a dowel or a bar behind the neck may elicit a compensatory reaction of excessive lumbar lordosis in individuals with shoulder range of motion deficits.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Knee valgus is a common biomechanical deficit characterized by excessive dynamic knee displacement in the frontal plane during the descent phase of the squat, where the knee is positioned inward, closer to the midline.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive frontal plane movement, such as knee valgus or varus, represents incorrect knee alignment during a squat.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In static standing, the knee typically maintains a valgus angle of about 6 degrees.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A valgus angle exceeding 10 degrees is considered pathological, particularly when accompanied by dynamic movements like squats.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Dynamic valgus is often a result of poor neuromuscular control, particularly due to weakness in the hip abductors and external rotators, such as the gluteus medius.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Knee valgus shifts the load at the knee joint to the lateral structures, increasing stress on the lateral collateral ligament, menisci, and patellofemoral joint.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive valgus is a predictor of patellofemoral pain syndrome and ACL injury.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Valgus collapse during squatting in older adults may accelerate joint degeneration or contribute to conditions such as chondromalacia or osteochondritis.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive frontal plane movement, such as knee valgus or varus, causes undue stress on the knee joint.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 8/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Correcting dynamic knee valgus is best achieved through functional neuromuscular training rather than isolated muscle strengthening.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A corrective progression for knee valgus can begin with box squats using a resistance band around the knees to activate the hip abductors and improve motor control.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Progressing from box squats to deeper squats and then to goblet squats helps maintain good postural alignment and reduces ankle dorsiflexion demands.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Using a heel wedge during squats can temporarily address ankle dorsiflexion limitations, though long-term strategies should focus on improving ankle mobility.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Strengthening the intrinsic foot muscles through short foot exercises can help correct excessive ankle eversion and reduce knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Knee valgus often occurs due to neuromuscular deficits in the hip abductors and external rotators, or restricted ankle dorsiflexion.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Squatting with limited ankle mobility can cause individuals to compensate by allowing excessive pronation and medial knee collapse.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Performing the back squat with biomechanical deficits like knee valgus or hyperlordosis increases injury risk.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Normal ankle dorsiflexion among older individuals is 11-12 degrees, whereas the back squat may require 30 degrees or more of ankle dorsiflexion ROM.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Reduced ankle dorsiflexion has been directly linked to increased knee valgus due to compensatory excessive pronation and medial knee collapse.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Compensating for limited ankle mobility by allowing excessive pronation and medial knee collapse leads to dynamic knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Failing to address biomechanical deficits like knee valgus or hyperlordosis during the back squat increases the risk of injury.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK.pdf [part 9/13]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  }
+]

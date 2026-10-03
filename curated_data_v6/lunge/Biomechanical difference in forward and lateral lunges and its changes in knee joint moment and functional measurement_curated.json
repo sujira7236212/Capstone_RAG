@@ -1,0 +1,101 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Performing a lunge requires trunk rotational stability as well as slow control of the knee joint during the motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing unwanted movement in the torso during the lunge indicates a lack of control.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing the lunge with an inadequate range of movement degrades the quality of the exercise.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to maintain the lunge motion within the sagittal plane is a common execution error.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf [part 3/11]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "During a forward lunge, the forefoot and toes should be kept pointing to the front, parallel to the line of stepping.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge, both knees should be held at approximately 90 degrees of flexion at the bottom of the movement.",
+        "applies_to_fault": [
+          "shallow_lunge",
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "During a lateral lunge, the forefoot and toes should point to the front, perpendicular to the line of stepping, while holding the knee of the dominant leg at approximately 90 degrees of flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During an in-line lunge, the trunk should be kept as straight as possible, avoiding any forward, backward, or lateral bending.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the trunk to bend forward, backward, or laterally during an in-line lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf [part 4/11]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The normalized knee flexion/extension moment was 15.45 (4.50) Nm/kg for the forward lunge, 21.57 (4.83) Nm/kg for the lateral lunge, and 16.63 (4.30) Nm/kg for the FMS in-line lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The normalized knee varus/valgus moment was 5.85 (1.18) Nm/kg for the forward lunge, 1.95 (1.94) Nm/kg for the lateral lunge, and 4.70 (1.16) Nm/kg for the FMS in-line lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The normalized knee internal/external rotation moment was 1.12 (0.34) Nm/kg for the forward lunge, -0.24 (0.54) Nm/kg for the lateral lunge, and 0.74 (0.40) Nm/kg for the FMS in-line lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Significant differences were found among forward, lateral, and FMS in-line lunges for knee flexion/extension moments (F(2,28) = 40.5, p < .001), varus/valgus moments (F(2,28) = 6.20, p = .006), and internal/external rotation moments (F(2,28) = 6.87, p = .004).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf [part 5/11]",
+    "applies_to_fault": []
+  }
+]

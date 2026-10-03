@@ -1,0 +1,377 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder",
+    "content_type": "Common Mistake",
+    "core_principles": [
+      {
+        "text": "Maintain stable shoulder joint position during bicep curls to ensure the target muscles perform the movement rather than relying on compensatory shoulder muscle activation.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing more pronounced movement at the shoulder joint during fatigue, which shifts the relative contribution of the movement from the forearm muscles to the shoulder muscles.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Adopting alternative movement patterns and using compensatory muscles when the primary muscle group experiences fatigue or pain.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Adopting compensatory movement patterns during bicep curls significantly decreases the effectiveness of rehabilitation efforts.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Using alternative muscles to complete the movement due to fatigue or pain can cause further injury.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Incorrect muscle use over an extended period of time during rehabilitation exercises may lead to permanent postural deviations.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 1/13]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder and Arm",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "The bicep curl primarily comprises elbow flexion-extension motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During the bicep curl, the biceps brachii acts as the primary mover, while the brachialis and brachioradialis act as synergists.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stabilizer muscles during the bicep curl include the anterior deltoid, posterior deltoid, upper trapezius, flexor carpi ulnaris, and flexor carpi radialis, while the triceps acts as the antagonist.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Compensatory movements during bicep curls possibly involve shoulder elevation-depression, shoulder flexion-extension, and wrist flexion-extension.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study of 12 male participants aged 18 to 35, weighing 65kg to 90kg, analyzed muscle synergy and joint kinematics during standard and fatigued bicep curls using motion capture and sEMG sensors on eight muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 2/13]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Elbow",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Supinate the elbow joint so that the palm faces upward during the curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Flex the elbow while keeping the upper arm close to the trunk.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Once the wrist reaches shoulder height, extend the elbow joint back to the starting position.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Under fatigue, a lifter may fail to perform a complete repetition cycle.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "When a muscle experiences fatigue during bicep curls, the sEMG signal amplitude increases and its median frequency decreases.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 3/13]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Performing a standard bicep curl with load decreases the relative contribution of shoulder muscles (upper trapezius and anterior deltoid) and increases the contribution of forearm muscles (flexor carpi radialis and brachioradialis) compared to a weight-free curl.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Under fatigued conditions during a bicep curl, lifters tend to increase the relative contribution of shoulder muscles, specifically the upper trapezius and anterior deltoid, while decreasing the contribution of forearm muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Under standard bicep curl conditions, the relative contribution of the upper trapezius (UT) and anterior deltoid (AD) decreased from 19.9% and 33.3% (weight-free) to 11.2% and 13.8%, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under standard bicep curl conditions, the relative contribution of the flexor carpi radialis (FCR) and brachioradialis (BRA) increased from 36.2% and 27.5% (weight-free) to 46.6% and 48.1%, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During standard bicep curls, the triceps (TRI) muscle showed a statistically significant decrement in relative contribution from 6.25% to 4.56%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under fatigued bicep curl conditions, the relative contribution of the upper trapezius (UT) and anterior deltoid (AD) increased from 11.2% and 13.8% (standard) to 18.2% and 18.3%, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under fatigued bicep curl conditions, the relative contribution of the flexor carpi radialis (FCR) and flexor carpi ulnaris (FCU) decreased from 46.6% and 14.3% (standard) to 44.7% and 9.06%, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The RMS amplitude of Synergy I activation increased to around 0.86 under standard conditions, showing a steep decrement at around 50% of the bicep curl cycle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under fatigued conditions, the RMS amplitude of Synergy I activation increased to approximately 1.3, exhibiting a sine wave shape that peaks at around 10% and reaches a trough at around 50% of the bicep curl cycle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 6/13]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Maintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Ensure the elbow moves through a full range of motion, typically from 50 to 150 degrees of flexion-extension.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the shoulder to flex more vigorously (by about 20 degrees) under fatigue, which causes the elbows to swing forward.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Starting the curl with the shoulder flexed slightly behind the center of the trunk (around -10 degrees) due to the weight of the dumbbell.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Elevating the shoulder vigorously up to 30 degrees under fatigue, which resembles a shrugging motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study observed a consistent elbow flexion-extension range of motion from 50 to 150 degrees across weight-free and weighted conditions.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Under fatigue, shoulder flexion increased by approximately 20 degrees at around 20% of the bicep curl cycle.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Under fatigue, shoulder elevation increased to 30 degrees at around 20% of the bicep curl cycle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The initial wrist flexion-extension angle decreased from -17 degrees (weight-free) to -21 degrees (standard) and -29 degrees (fatigue).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Muscle synergy analysis showed a statistically significant shift in muscle contribution from the forearm muscles to the shoulder muscles under fatigue.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the shoulder to flex and elevate under fatigue shifts the mechanical load from the forearm muscles to the shoulder muscles, reducing target bicep isolation.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 7/13]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Maintain a stable shoulder position, avoiding excessive shoulder elevation or shoulder flexion-extension during the bicep curl.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Keep the wrist stable throughout the movement, as it tends to become more unstable under fatigue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stand still and limit movement to the upper limb to isolate the target muscles and avoid compensatory movements.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Compensating for fatigue by elevating the shoulder.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Introducing excessive shoulder flexion under fatigue, which causes the elbows to swing forward.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Under fatigue, the RMS amplitude of the sEMG signal from the upper trapezius (UT) increases by 127% compared to standard form.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under fatigue, the relative contribution of the upper trapezius (UT) muscle increases by around 62.5%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under fatigue, the range of motion of shoulder elevation-depression increases approximately 6 degrees from [16,20] degrees to [20,30] degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Under fatigue, the range of motion of shoulder flexion-extension increases approximately 10 degrees from [-10,0] degrees to [0,20] degrees.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Fatigue causes the central nervous system to recruit the upper trapezius muscle to execute the bicep curl, leading to excessive shoulder elevation-depression movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Introducing excessive shoulder flexion under fatigue makes the bicep curl movement unstable and inconsistent.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 9/13]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Shoulder",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [],
+    "common_mistakes": [
+      {
+        "text": "During fatigue, lifters exhibit compensatory movements characterized by a shift in relative contribution from the forearm muscles to the shoulder muscles and increased movement at the shoulder joint.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During the fatigue stage of bicep curls, there is a shift in relative contribution from the forearm muscles to the shoulder muscles, and the activation amplitude for both synergies is significantly increased.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "More pronounced movement is captured on the shoulder joint during the fatigue stage of a bicep curl compared to the standard stage.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Fatigue leads to compensatory shoulder joint movement, which shifts the physical workload from the target forearm and bicep muscles to the shoulder muscles.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors.pdf [part 11/13]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  }
+]

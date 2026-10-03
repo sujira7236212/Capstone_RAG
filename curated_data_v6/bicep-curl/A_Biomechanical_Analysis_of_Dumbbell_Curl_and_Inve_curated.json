@@ -1,0 +1,43 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Dumbbell Curl",
+    "focus_area": "Biceps Brachii",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "The movement is started when the elbow joint is in full extension and the forearm is flexed until dumbbells reach the top of the shoulders.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "The elbows keep close to the body during the movement.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a simulation of dumbbell curls performed with 6 kg and 10.7 kg, although the load increased by 78.3%, the rate of increase of elbow peak moment was 57.7% and the rate of increase of peak muscle force was 38.3%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When increasing the dumbbell load from 6 kg to 10.7 kg, the rate of increase of maximum strain and maximum stress in the biceps brachii are 44.4% and 37.3%, respectively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing the dumbbell load does not increase the muscle force at the same rate.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\A_Biomechanical_Analysis_of_Dumbbell_Curl_and_Inve.pdf [part 1/5]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  }
+]

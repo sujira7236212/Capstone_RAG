@@ -1,0 +1,457 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "A systemic corrective exercise program focusing on hip and ankle strength and flexibility can decrease 2- and 3-dimensional knee valgus during a double-legged squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Increasing ankle-dorsiflexion flexibility can help reduce medial knee displacement and dynamic knee valgus during a squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward (medial knee displacement or dynamic knee valgus) during a double-legged squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Squatting with restricted ankle-dorsiflexion range of motion, which is associated with increased knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a randomized controlled trial of 32 participants, a 10-session directed exercise intervention over 2 to 3 weeks significantly decreased medial knee displacement from 20% to 50% of the double-legged squat phase (P = .02).",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The 10-session exercise intervention significantly improved 3D knee valgus from 30% to 50% of the squat phase (P = .001).",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Ankle-dorsiflexion range of motion with the knee extended significantly increased in the intervention group (P = .009) following the corrective exercise program.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Knee valgus is believed to be a major contributor to noncontact anterior cruciate ligament (ACL) injuries.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A lack of femoral control during squatting can result in excessive femoral adduction and internal rotation, which stresses the anterior cruciate ligament (ACL).",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 1/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Placing a 2-inch heel lift under the heels during a squat can alleviate ankle dorsiflexion restrictions caused by tight gastrocnemius and soleus muscles, thereby normalizing knee alignment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A comprehensive corrective strategy for knee valgus should target both the hip joints proximal and ankle joints distal to the knee.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "A standard screening setup for the double-legged squat involves standing with feet shoulder-width apart, toes pointed straight ahead, and hands overhead with elbows locked.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward, known as dynamic knee valgus or medial knee displacement, during the descent or ascent of a squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Squatting with restricted ankle dorsiflexion due to tightness in the gastrocnemius and soleus muscles.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Visual knee valgus is clinically defined during a double-legged squat screening when the midpoint of the patella passes medial to the great toe in 3 out of 5 trials.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The double-legged squat screening protocol utilizes a 2-inch (5.08-cm) heel lift to differentiate between ankle and hip-muscle imbalances as the primary contributor to dynamic knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Limited ankle dorsiflexion forces biomechanical compensations including increased subtalar pronation, tibial abduction, and internal rotation, which contribute to knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive knee valgus and poor movement quality during squatting or landing tasks are theorized to increase the overall risk of lower extremity injury.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 2/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Common Mistake",
+    "core_principles": [
+      {
+        "text": "Knee valgus can be screened in real time using a categorical yes-no grading system based on whether the patella passes medial to the great toe during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the patella to pass medial to the great toe during a squat is a sign of excessive knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study of 32 volunteers classified participants as having excessive visual knee valgus if the patella passed medial to the great toe in 3 of 5 squats.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 3/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep the knees aligned over the toes during squatting and integrative exercises to maintain proper lower extremity alignment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Inhibit overactive muscles such as the gastrocnemius, lateral hamstring, and adductors by foam rolling each muscle for 2 minutes, allowing the roller to sit for 30 seconds over tight or painful areas.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Lengthen tight muscles including the gastrocnemius, soleus, lateral hamstring, and adductors using static stretches held for 2 sets of 30 seconds.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Strengthen weak muscles such as the medial gastrocnemius, medial hamstring, and tibialis posterior using a slow, controlled tempo.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to displace medially (medial knee displacement or valgus) during the descent phase of the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The corrective exercise intervention consisted of 10 sessions over a 3-week period, focusing on 5 exercises for hip musculature and 5 for ankle musculature.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Strengthening repetitions in the corrective protocol were performed at a controlled 7-count tempo: 1 count concentric, 2 counts isometric, and 4 counts eccentric.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The study identified the gastrocnemius, lateral hamstring, and adductors as overactive muscles, and the medial gastrocnemius, medial hamstring, and tibialis posterior as weak muscles contributing to medial knee displacement.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 5/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "A systematic corrective exercise program focusing on ankle mobility and lower limb strengthening can successfully reduce medial knee displacement and 3D knee valgus during a double-leg squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Increasing ankle-dorsiflexion range of motion with the knee extended is associated with a reduction in frontal-plane knee motion during a squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to collapse or displace medially (medial knee displacement and 3D knee valgus) during the squat phase, particularly from 20% to 50% of the descent.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The intervention group reduced 3D knee-valgus angle (P = .001, F1,150 = 4.43) from 30% to 50% of the squat phase and medial knee displacement (F1,150 = 3.4, P = .02) from 20% to 50% of the squat phase.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Ankle dorsiflexion with the knee extended increased in the intervention group (t1,30 = 2.8, P = .009, d = 0.77), whereas ankle dorsiflexion with the knee flexed did not (t1,30 = 0.47, P = .64).",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 6/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Ankle dorsiflexion restrictions play a significant role in causing knee valgus (medial knee displacement) during a double-leg squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Using a heel lift can temporarily correct excessive medial knee displacement during a squat by placing the ankle in a plantar-flexed position, which increases the available range of ankle-dorsiflexion motion during the descent.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "To permanently improve knee valgus, training programs should incorporate targeted ankle strength and flexibility exercises.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Resolving ankle mobility restrictions allows the knees to track properly over the toes during the descent phase of a squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward (medial knee displacement or knee valgus) during a squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Squatting with restricted ankle dorsiflexion or tight gastrocnemius muscles, which limits ankle range of motion.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Traditional 3D assessment of knee-valgus angle and moment has been shown to predict noncontact ACL injury in females with 78% sensitivity and 73% specificity.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The study's ankle-focused intervention significantly reduced 3D knee valgus by 5 degrees, representing a 64% reduction.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The intervention successfully reduced medial knee displacement (MKD) by an average of 4 cm.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "An MKD assessment combined with tibia length, knee-flexion motion, mass, and quadriceps-to-hamstrings strength ratio predicted high knee-abduction moment with 77% sensitivity and 71% specificity.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Tight plantar flexors increase ankle joint stiffness, forcing compensations such as increased foot pronation and proximal medial knee displacement (knee valgus) to reach the required squat depth.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Gastrocnemius tightness can result in excessive rearfoot pronation and flat foot.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing medial knee displacement (knee valgus) increases knee-abduction moments, which is a key risk factor for noncontact ACL injuries.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 7/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Common Mistake",
+    "core_principles": [
+      {
+        "text": "Interventions to improve knee valgus should include ankle exercises to address restricted ankle motion as part of a comprehensive program.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Maintaining adequate hip-abduction and hip-extension strength is important to control dynamic lower extremity motion and prevent excessive femoral adduction and internal rotation.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to cave inward (medial knee displacement or dynamic knee valgus) during squatting movements.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Squatting with restricted ankle motion, which can limit sagittal-plane motion and contribute to medial knee displacement.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Squatting with weak hip abductors and hip extensors, which can lead to excessive femoral adduction and internal rotation.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A female with 8.2 cm of medial knee displacement (MKD) has a 74% chance of demonstrating a high knee-abduction moment, whereas a 4-cm reduction in MKD reduces this chance to less than 40%.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Individuals classified as having poor single-legged squat technique had 29% less hip-abduction torque compared with those with good technique.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Weakness of the hip extensors and hip abductors may result in excessive femoral adduction and internal rotation, which are components of medial knee displacement.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Excessive medial knee displacement increases the likelihood of demonstrating a high knee-abduction moment.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_valgus\\Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain.pdf [part 9/12]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  }
+]

@@ -1,0 +1,184 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Knee",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "During split squats, the front limb experiences significantly higher quadriceps forces, specifically in the vastus lateralis and vastus intermedius, compared to the rear limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the front limb during split squats, the vastus lateralis experiences the highest forces among the quadriceps muscles, followed by the vastus medialis, vastus intermedius, and rectus femoris.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Varying the step length and tibial angle during a split squat alters the maximal muscle forces experienced by the quadriceps, hamstrings, and gluteus maximus.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Absolute total knee joint contact forces averaged over all participants ranged from 14 to 120 N/kg for all types of split squats in the front limb, and from 17 to 65 N/kg in the rear limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For a split squat with a step length of 85% of leg length and a 60° tibia angle, the front limb quadriceps forces were 6 ± 12 N/kg for the rectus femoris, 22 ± 2 N/kg for the vastus intermedius, 33 ± 4 N/kg for the vastus lateralis, and 29 ± 3 N/kg for the vastus medialis.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For a split squat with a step length of 85% of leg length and a 60° tibia angle, the rear limb quadriceps forces were 27 ± 4 N/kg for the rectus femoris, 5 ± 3 N/kg for the vastus intermedius, 5 ± 5 N/kg for the vastus lateralis, and 7 ± 3 N/kg for the vastus medialis.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf [part 4/11]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Knee and Hip",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "In the front limb of a split squat, vasti muscle forces significantly decrease as the tibial angle increases.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the rear limb of a split squat, vasti muscle forces (m. vastus lateralis and m. vastus medialis) significantly increase with an increasing tibial angle and decrease with a larger step length.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The m. vastus medialis force of the front limb increases significantly when the step length is set above 55% of the lifter's leg length.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a split squat with a large step length and a small tibial angle (60 degrees to 75 degrees) results in significantly higher m. rectus femoris muscle force in the front limb.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the front limb of a split squat, the m. biceps femoris long head and m. semimembranosus forces increase with an increasing step length and a decreasing tibial angle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gluteus maximus muscle forces in the front limb increase substantially as the hip flexion angle increases during a split squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The gluteus maximus and hamstring muscles (except for the m. biceps femoris short head at low knee flexion angles of around 20 degrees) remain almost inactive in the rear limb during split squats.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A wider stance (larger step length) during split squats significantly increases the force produced by the m. biceps femoris short head in the rear limb.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The rectus femoris force of the rear leg remains relatively constant at greater than 7 N/kg over the entire range of motion of the split squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the front limb, the average force of the m. biceps femoris long head is 15.1 +/- 6.2 N/kg and the average force of the m. semimembranosus is 23.7 +/- 9.5 N/kg, which are 3 to 5 times higher than the forces produced by the m. biceps femoris short head.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study evaluated split squat variations using step lengths of 55%, 70%, and 85% of the participant's leg length, and tibial angles of 60 degrees, 75 degrees, and 90 degrees relative to the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Hamstring muscle forces in the rear limb of a split squat are almost negligible, except for the m. biceps femoris short head at low knee flexion angles of around 20 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf [part 6/11]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Performing split squats is preferred if activation of the vasti muscles or a smaller knee flexion angle of approximately 50 to 80 degrees is necessary.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To strengthen the rectus femoris in the rear leg of the split squat, use a large step length and a small tibial angle relative to the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An appropriate split squat setup, including step length and tibial angle relative to the ground, should be considered to prevent injury and address muscular strength asymmetries within the vasti muscles.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The rectus femoris is constantly loaded in the rear leg of the split squat over the entire range of motion from 20 to 100 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To strengthen the gluteus maximus muscles between a hip flexion angle of approximately 40 and 90 degrees, split squats require higher muscular forces and are more efficient than deadlifts or goodmornings.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "External joint moments in the front limb during split squats were reported to be 1.71 plus or minus 0.32 Nm/kg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The muscle force for the long head of the biceps femoris in the front limb during split squats is slightly higher than during deadlifts and goodmornings.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An inappropriate split squat setup regarding step length and tibial angle can fail to prevent injury or fail to address muscular strength asymmetries due to differing loading levels of the vasti muscles in the front and rear legs.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf [part 7/11]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Split Squat",
+    "focus_area": "Thigh",
+    "content_type": "Exercise Variation",
+    "core_principles": [
+      {
+        "text": "By changing step length and the angle of the frontal tibia during split squats, specific parts of the thigh and pelvis muscles can be loaded.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The loading conditions of the split squat are highly dependent upon the step lengths and the frontal tibia angle.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Split squats have been shown to shift the hamstring-to-quadriceps (H:Q) ratio towards the quadriceps, meaning they should be avoided in an ACL-related rehabilitation or prevention environment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During split squats, only the rear leg seems to activate the rectus femoris in a substantial manner.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Shifting the H:Q ratio towards the quadriceps during split squats can be counterproductive or risky in an ACL-related rehabilitation or prevention environment.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf [part 8/11]",
+    "applies_to_fault": []
+  }
+]

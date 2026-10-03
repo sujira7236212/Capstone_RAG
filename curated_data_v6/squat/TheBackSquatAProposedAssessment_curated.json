@@ -1,0 +1,1185 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Spine",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The back squat should start in a standing position with the feet flat on the floor, the knees and hips in a neutral, extended anatomical position, and the spine in an upright position with preservation of its natural curves.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The descent phase of the squat begins as the hips, knees, and ankles flex, and should continue until the top of the thigh is at least parallel with the ground and the hip joint is at least level with or slightly below the knee joint.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "The ascent phase is achieved primarily through triple extension of the hips, knees, and ankles, continuing until the subject has returned to the original extended, starting position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The posterior torso muscles, particularly the erector spinae, must be recruited by isometric muscle action to support an upright posture throughout the entire squat movement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 2/22]",
+    "applies_to_fault": [
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The posterior torso muscles should be assisted by the anterior and lateral abdominal muscles to further stiffen the torso by creating tension for the abdominal wall.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Before initiating the descent phase, the athlete should inhale approximately 80% of maximal inhalation and hold their breath to increase intra-abdominal pressure and enhance stability of the vertebral column.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The athlete should grip the dowel with a pronated grip slightly greater than shoulder-width apart and assume a back squat set-up, with the dowel resting comfortably on their contracted upper back musculature.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A lightweight cylindrical dowel should be used to set up the athlete in a desired upper torso position while controlling for arm position and facilitating engagement of the scapular stabilizers.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The athlete is recommended to inhale approximately 80% of maximal inhalation before the initiation of the descent phase.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The Back Squat Assessment screening tool utilizes ten criteria to be scored, subcategorized into 3 comprehensive domains: upper body, lower body, and movement mechanics.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To initiate the Back Squat Assessment, the athlete should be asked to perform 10 continuous back squat repetitions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A deficit should be marked on the Back Squat Assessment if the individual fails to demonstrate the desired technique of a criterion to perfection during 2 or more repetitions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The recommended dowel for the assessment is a lightweight cylindrical dowel approximately 1 1/4 inches by 36 inches long.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to perform the Valsalva maneuver reduces proximal stiffness, which impairs power development in the shoulders and hips, and decreases limb force output and velocity.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Observed movement impairments or deficits during the back squat suggest that an individual may have an elevated injury risk and suboptimal physical performance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to increase intra-abdominal pressure leaves the spine, which is a flexible rod, less prepared to bear a compressive load.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 3/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Back Squat",
+    "focus_area": "Upper Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Athletes should grip the bar with a pronated grip slightly greater than shoulder-width apart.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The bar should rest comfortably on the contracted upper back musculature, specifically positioned across the posterior deltoids just below C7 of the cervical spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Forearms should be held parallel to the torso.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 4/22]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Torso",
+    "content_type": "Correct Form and Biomechanics",
+    "core_principles": [
+      {
+        "text": "Teaching the athlete to 'bend the bar' by pulling it into the trapezius facilitates the back extensors, shoulder retractors, and latissimus to stiffen the torso.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "If a dowel is not available, the athlete can mimic holding a dowel with open palms under their ears while retracting their scapulae.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The athlete should assume an initial stance position with heels approximately shoulder-width apart and toes pointing forward or slightly outward by no more than 10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Athletes should not exceed 30 degrees of internal ankle rotation or 80 degrees of external rotation to maximize stability and promote normal patella tracking.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The athlete should squat down until the top of the thighs are at least parallel to the ground before returning to the starting position.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using extreme stance widths and foot positions when initially instructing the squat is not recommended.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using an excessively narrow stance can cause excessive forward knee translation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Employing extreme tibial rotation in a closed-chain movement can place excessive stress on static knee structures.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A wide stance may increase patellofemoral and tibiofemoral compressive forces in the knee joint by up to 15% during descent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "It is recommended that athletes do not exceed 30 degrees of internal ankle rotation or 80 degrees of external rotation to maximize stability and promote normal patella tracking.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The initial stance position should have heels approximately shoulder width apart and toes pointing forward or slightly outward by no more than 10 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A wide squat stance increases patellofemoral and tibiofemoral compressive forces in the knee joint by up to 15% during descent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An excessively narrow squat stance increases forward knee translation, which heightens anterior shear forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Extreme tibial rotation in a closed-chain movement increases stress on the static knee structures.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to stiffen the torso by engaging the back extensors, shoulder retractors, and latissimus reduces injury resilience and performance capabilities.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 5/22]",
+    "applies_to_fault": [
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Head and Neck",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The athlete's head should be maintained in a neutral position, or in slight extension, in relation to the spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The neck should be held in line with the plane of the torso.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The point of focus for the gaze should be directed either straight ahead or slightly upward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A slightly upward gaze during the ascent can help guide the athlete to lead with their head and chest rather than raising their hips first.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Maintaining a slight upward gaze throughout the movement may help prevent excessive forward trunk flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the head to move too far forward, backward, or laterally to either side during the squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Excessively tilting the head backward into extreme cervical hyperextension, which may compensate for a lack of thoracic extension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing excessive cervical flexion, which can lead to compensatory lumbar spine extension.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Directing the head too far downward into cervical hyperflexion, which can cause excessive hip and trunk flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Incorrect positioning of the head and neck can negatively cascade into improper spinal positioning and tracking throughout the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Poor body alignment resulting from incorrect head position may predispose an athlete to injury during intense squatting.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Improper neck position can cause muscle strain or injury to the cervical vertebrae.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Excessive cervical flexion can increase lumbar compression forces due to a greater tendency to extend the lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Cervical hyperflexion from looking too far downward causes a significant increase in hip and trunk flexion, which is an suboptimal movement strategy.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 6/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Spine",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain the head and neck in a neutral position throughout the entire squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Direct the gaze slightly upward or forward, ensuring it does not cause the head position to deviate from neutral.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the thoracic spine slightly extended and held rigid, with the chest directed outward and upward to keep the torso more vertical.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Hold the scapulae retracted and depressed while maintaining relative external rotation of the glenohumeral joint to keep the upper torso erect.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Keep the forearms parallel to the spine and the shoulders retracted rather than rolled forward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "The lifter directs their gaze too far downward during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The lifter allows their chest to face downward toward the ground instead of keeping it held upward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The lifter allows flexion or excessive extension of the thoracic spine during the movement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The lifter relaxes or abducts the scapulae, causing the shoulders to roll forward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "A downward gaze increases hip flexion and potentially trunk flexion, which may place increased torque on the vertebral column.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failing to maintain a vertically positioned upper spine, contracted upper back musculature, and chest-up position increases shear forces on the intervertebral disks.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing the shoulders to roll forward and the scapulae to protract prevents major supporting back muscles, such as the latissimus dorsi, erector spinae, trapezius, and rhomboids, from contributing maximally to spinal stability.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 7/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The individual must demonstrate the ability to maintain a stiffened torso with a neutral, lordotic lumbar position as a safe and optimal squat strategy.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The lumbar vertebrae should be maintained in a neutral alignment throughout the entire squat movement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Maintaining a slight lordotic curve in the lumbar region while holding the abdomen upward and rigid promotes trunk stability.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The trunk should remain as upright as possible during the squat to minimize lumbar shear forces associated with forward lean.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The trunk should remain stable throughout the squat without any observation of wavering or displacement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A general guideline to ensure adequate trunk posture is to maintain the line of the trunk parallel to the line of the tibias from the lateral perspective.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the chest to drop down or failing to retract the scapulae during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Experiencing difficulty dissociating the thoracic position from the lower trunk position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failing to maintain a chest-up position due to weakness of the erector spinae, trapezius, and rhomboids.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failing to stiffen the lower back musculature during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Losing the neutral curvature of the lumbar spine when squatting.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing the trunk musculature to relax and letting the trunk collapse downward into excessive trunk flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Decreased core stability and muscular synergism of the trunk and hip stabilizers negatively affect performance in power activities and may increase the incidence of injury due to lack of control of the center of mass.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failure to stiffen the lower back musculature increases the potential to overload spine and back tissues to the point of injury, especially when repeated over time.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Losing the neutral curve of the lumbar spine causes the spine to lose its ability to bear load, which prevents eventual progression of the squat with load.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Excessive forward lean increases lumbar shear forces on the spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 8/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The squat requires sufficient spinal mobility to assume and maintain a slight lordotic posture.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The athlete must stiffen the back musculature to support the spine positioned in a neutral, slightly lordotic position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The trunk angle should remain parallel with the tibial angles during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Executing a squat to at least parallel with only a dowel as external resistance allows a coach to gauge when and if the athlete presents excessive anterior or posterior pelvic tilt.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Losing back tightness can lead to excessive trunk flexion and rounding (kyphosis) of the spine during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Restricting the forward translation of the knees during the squat can increase the anterior forward lean of the trunk.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Tilting the head forward can cause the individual to adopt a forward posture and place excessive pressure on the lower back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Flexing at the spine before 120 degrees of hip flexion when squatting may indicate restriction in the posterior fibers of the iliotibial band or a lack of lumbar control.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to stiffen the back musculature to support a neutral, slightly lordotic spine can result in increased and potentially harmful compressive and shear forces on the lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Squatting with the spine in a flexed position during heavy resistance training increases the risk of disc herniation due to excessive stress placed on the intervertebral discs.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "An unsteady trunk that moves out of an upright position during the squat may indicate general core weakness.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 9/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Hip",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintaining a neutral pelvic tilt during the squat increases activity of the erector spinae and oblique muscles, helping to ensure optimal muscular support for the spine while handling loads.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The athlete should maintain the pelvis in a normal, neutral tilt, particularly during the descent phase and in the final part of the descent.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The hip abductors, including the gluteus medius and gluteus minimus, must stabilize the femurs during the squat to prevent the knees and hips from rotating inward during descent.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The athlete should maintain square, stable hips with minimal mediolateral movement and symmetrical femur positions throughout the entire exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Without proper recruitment of the gluteal muscles, other muscle groups like the quadriceps must bear the load of the squat, which is suboptimal.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tight hip adductors can cause internal rotation of the femurs during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "An athlete lacking hip mobility will demonstrate a compensatory movement pattern of increased trunk flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "An athlete may exhibit mediolateral rotation or unilateral dropping, resulting in asymmetrical hip movement where the line of the hips is not parallel to the ground.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Failing to maintain a neutral pelvic tilt reduces muscular support for the spine and increases the risk for low back injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failing to properly recruit the gluteal muscles forces other muscle groups like the quadriceps to bear the load, increasing the risk of muscle imbalance and injury.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Internal rotation of the femurs during the squat can result from tight hip adductors or weak hip abductors, leading to knee collapse.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Lacking hip mobility forces a compensatory increase in trunk flexion, which increases the load on the lower back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 10/22]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The knees should track over the toes throughout the squat motion, maintaining a neutral frontal plane knee position without medial or lateral displacement.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "During the squat, the lateral aspect of the knee should not cross the vertical plane of the medial malleolus to avoid medial displacement.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The medial aspect of the knee should not cross the vertical plane of the lateral malleolus to avoid excessive lateral displacement.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Allowing natural anterior tibial translation where the knees move past the toes is acceptable, as consciously restricting it can force an excessive forward trunk lean.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Knee valgus, or inward knee collapse, occurs during the squat and is often influenced by decreased hip abductor and external rotation strength, increased hip adductor activity, and restricted ankle dorsiflexion.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Knee varus, or outward bowing of the knees, can occur during the squat and is sometimes used as a compensatory strategy by athletes with flat feet.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Consciously restricting forward translation of the knees past the toes forces the lifter to lean the torso excessively forward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Tibiofemoral and patellofemoral compression forces increase with increasing knee angle, initiating a protective co-contraction between the quadriceps and hamstrings.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Forces on the cruciate ligaments of the knee decrease at high flexion angles, meaning there is no evidence that squatting below parallel increases injury risk to the cruciate or collateral ligaments and menisci.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Consciously restricting forward knee translation increases forward trunk lean, resulting in significantly greater forces at the hip and spine that place these joints at greater risk of injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 11/22]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Ankle",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The squat descent should be initiated by breaking the hips back while allowing unrestricted anterior tibial translation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The athlete should attempt to match the tibia angle in parallel with an upright trunk while keeping their heels on the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The entire foot should remain flat and stable on the ground throughout the entire squat motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The center of pressure in the foot should move from the mid-foot during initial stance toward the heel and lateral foot during the descent phase.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Athletes may excessively translate the knees anteriorly over the toes during the squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Athletes may overly restrict tibial translation during the squat, causing excessive anterior lean of the torso.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Athletes may fail to maintain a flat and stable foot position due to inadequate ankle dorsiflexion or mobility restrictions.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The suggested center of pressure in the foot moves from the mid-foot during initial stance toward the heel and lateral foot, referred to as the 'L' foot loading position, during the descent phase of the squat.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive anterior translation of the knees over the toes increases shearing forces on the knee and results in greater knee extensor torque.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Overly restricted tibial translation increases anterior lean of the torso, which increases hip torque and lumbar shear forces.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Weak gluteal muscles can cause the body to shift load onto the knees by increasing tibia progression instead of loading the hips and glutes.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 12/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Foot, Ankle, and Hip Mechanics",
+    "content_type": "Correct Form, Common Mistakes, Injury Prevention",
+    "core_principles": [
+      {
+        "text": "As the athlete descends, body weight should be emphasized through the heel and lateral foot while keeping the toes on the ground to ensure balance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing more body weight toward the back of the foot facilitates desired hip motion strategies during the entire squat phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing more body weight toward the lateral aspect of the foot encourages improved recruitment of the gluteal muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Although pressure should be emphasized toward the lateral side of the foot, the medial side should not come off of the ground to promote balance and stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The calcaneus should not appear everted relative to the lower leg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The descent is initiated with the breaking of the hips ('hip hinging') while maintaining a rigid, upright trunk.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The athlete should reach back as if sitting in a chair that is slightly too far away as they descend to the desired depth.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The goal should be for the athlete to keep their rear as far away from their ankles while maintaining an upright torso throughout the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The vertical distance between the athlete’s shoulders and hips should remain constant throughout the entire descent.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Body weight should be transferred to and supported by the athlete’s posterior chain musculature, particularly the hamstrings and gluteals, and not placed anteriorly on their knees.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Observations of pronation or supination of the feet and the rolling of the feet inward or outward are suboptimal movement strategies.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lifting heels or toes off of the ground at any time is suboptimal during the back squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ankle inversion or eversion during the squat is also indicative of a biomechanical deficit.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stiffness in the ankle joint from poor dorsiflexion may cause the foot and the knee joints to compensate.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Observation of excessively rapid or unsteady movement of the body during descent should be considered a deficit.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorrect descent mechanics may also be noted if the athlete does not maintain constant speed and control during the entire eccentric phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A common mechanical deficit is for athletes to place load down on the anterior aspect of the knees rather than back on the hips during descent.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The athlete should move at a controlled tempo with no less than 2:1 (descent:ascent) up to a 4:1 ratio in regard to velocity of the eccentric movement compared with the concentric ascent phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A lack of strength in the medial gastrocnemius, tibialis anterior, and/or tibialis posterior decreases the athlete’s ability to control knee valgus and foot pronation motions and may contribute to excessive medial knee displacement and dynamic valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the heels to rise off the ground has been observed to create compensatory torques about the ankles, knees, hips, and lumbar spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "With heels raised off of the ground, the athlete has a smaller surface area and base of support, which may reduce the athlete’s ability to perform a balanced and controlled squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stiffness in the ankle joint from poor dorsiflexion may cause compensations in the foot and knee joints, which may have a negative impact to foot and knee stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Weakness in the ankle musculature decreases the athlete’s ability to control knee valgus and foot pronation motions, which may contribute to excessive medial knee displacement and dynamic valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Placing load down on the anterior aspect of the knees rather than back on the hips during descent may place excessive shear forces on the joints.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 13/22]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Back Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Practicing and mastering controlled descent strategies supports the development of movement patterns that mitigate the risk of training-induced injuries.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Losing descent control toward the later phases of the squat movement is common in athletes with insufficient posterior chain strength.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing high-velocity eccentric squat variations can be dangerous if the muscles are forced to stretch too greatly in a short amount of time.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Favoring a knee-loading strategy increases forces on the anterior knee and decreases recruitment of the posterior chain musculature.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 14/22]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Lower Back",
+    "content_type": "Correct Form, Common Mistakes, and Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The athlete should achieve full depth with the tops of the thighs at least parallel to the ground, where the femurs are slightly past parallel, hips are back, tibias are positioned vertical, and feet are entirely on the ground.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "The descent should be controlled with a proper tempo, avoiding dropping rapidly into the apex of the descent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The ascent of the squat should follow the same path as the descent in the reverse direction, with the hips as the primary driver.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The torso should remain upright during the entire ascent phase, with the shoulders and hips rising at the same pace so that the difference in vertical height between them remains constant.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The back must be kept in a rigid, tight position with stiffened muscles and the lumbar spine in a neutral to slightly extended position.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The athlete should use a hip drive strategy as the primary driver for the ascent and only exhale once the ascent has been completed.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting too shallow, where the athlete does not achieve a depth where the tops of the thighs are at least parallel to the ground.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Using a 'knee-loading' strategy instead of a 'hip-hinge' strategy during the descent, which is characterized by excessive trunk flexion, excessive tibial progression angle, and/or heels coming off the ground.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Lacking lower limb eccentric strength control, causing the athlete to 'drop' into the apex of the descent rather than maintaining a controlled tempo.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the hips to rise faster than the shoulders during the early ascent phase, which increases trunk flexion and decreases the vertical distance between the hips and shoulders.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Positioning the knees too far back in relation to the trunk during the ascent, which forces the athlete to lean forward with their torso to stay in balance.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Positioning the knees too far forward during the ascent, which causes an acute shift of postural balance and forces the athlete to shift their body weight onto their toes instead of their heels.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Descent timing is deficient if it does not follow a 2:1 ratio in relation to ascent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "There is no scientific evidence indicating that squatting below parallel increases the potential for injury to the cruciate and collateral ligaments or menisci in the knee during extreme flexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Without squatting to the proper depth, the hamstrings and gluteus muscular complex may not be adequately challenged.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Training at shallower knee flexion can influence quadriceps-dominant sport skill performance, which can limit performance and increase injury risk.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Allowing the hips to rise too quickly and increasing trunk flexion during the ascent represents an incorrect back squat that can be a dangerous strategy to the lower back during squatting with progressive external resistance.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Positioning the knees too far forward during the ascent influences an inefficient hip drive out of the transition phase of the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 15/22]",
+    "applies_to_fault": [
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Hip and Spine",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "During the ascent of a squat, the vertical distance between the hips and shoulders should remain constant.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "The hips rise too quickly in relation to the shoulders during the ascent of the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A deeper hip joint increases standing stability to the joint but prevents the femur from flexing into a deep squat without pinching the hip joint labrum and joint capsule.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Hips rising too quickly in relation to the shoulders during ascent is associated with posterior chain and hip extension concentric muscle action weakness, as well as a lack of thoracic spine and hip flexor mobility.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Attempting to force a deep squat with a deep hip joint anatomy can pinch the hip joint labrum and joint capsule due to bony restriction.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 16/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Lower Back",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "The pelvic rock test can be used to identify the maximum depth of a kneeling squat before the neutral spine curvature begins to flex, helping to determine the optimal width for the feet and knees.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Lifters with longer legs relative to their torso length generally need to squat with their hips further back to balance knee and hip loads.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lifters with a longer torso relative to leg length can squat with more emphasis on knee motion, keeping the shin parallel to the torso to equally share hip and knee loads.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Do not increase the intensity or resistance of the squat unless consistent, proper form of the back squat can be demonstrated.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using compensatory movement strategies due to poor squat mechanics, which can hinder athletic performance and heighten the risk of sports-related injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Allowing the neutral spine curvature to flex during a deep squat compromises back posture and increases the risk of injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Having a longer femur relative to the torso length creates a long lever, which results in a high patellar tendon load when the knees travel ahead of the toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to demonstrate proper squat mechanics leads to compensatory movement strategies that can hinder athletic performance and heighten the risk of sports-related injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\TheBackSquatAProposedAssessment.pdf [part 17/22]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  }
+]

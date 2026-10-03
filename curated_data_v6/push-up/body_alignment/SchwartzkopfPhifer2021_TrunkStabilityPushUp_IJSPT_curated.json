@@ -1,0 +1,187 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Improving awareness of lumbar spine position and thoracic spine mobility can help improve trunk stability during a push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "A multiplanar exercise approach combining anti-extension and anti-rotation training can help improve trunk stability during a push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a pilot study of active females, a six-week multiplanar trunk stability intervention resulted in 9 of 20 participants (45%) improving their Trunk Stability Push Up (TSPU) score to ≥2.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Poor trunk stability is a risk factor commonly associated with lower extremity injuries, particularly in females.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\body_alignment\\SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf [part 1/8]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Single plane, anti-extension exercises can be utilized to encourage the maintenance of neutral lumbar spine positioning during anteriorly directed forces.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Anterior pelvic tilt and trunk lag are common errors where the trunk fails to lift as a single unit during the push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Anderson et al. reported that 69% (n=20/29) of high school females failed the Trunk Stability Push Up (TSPU) compared to only 13% (n=4/31) of males.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "More than 60% (n=65/108) of active females failed the Trunk Stability Push Up (TSPU) compared to less than 10% (n=10/101) of active males.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "The scoring of the Trunk Stability Push Up (TSPU) test demonstrates excellent inter-rater reliability (kw=0.82) and fair to good intra-rater reliability (k=0.68).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to maintain a neutral lumbar spine position during a push-up results in anterior pelvic tilt and trunk lag, indicating impaired trunk stability.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\body_alignment\\SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf [part 2/8]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Position the hands under the shoulders with the thumbs at the height of the clavicles during the start position of the push-up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push up from the floor as a unit, keeping the shoulders and hips level.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\body_alignment\\SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf [part 4/8]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Performing the trunk stability push-up requires coordinated movement between the upper body, trunk, and pelvis to lift the body as a single unit.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Trunk stability for the push-up can be improved using a combination of anti-extension and anti-rotation exercises that progress in postural demand.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to lift the body as a single unit due to a lack of coordinated movement between the upper body, trunk, and pelvis.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Failing to complete the push-up by only rising one to two inches from the floor due to insufficient upper body strength.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of active females, 45% of participants passed the Trunk Stability Push-Up (TSPU) post-intervention, with many of those who failed only able to rise one to two inches from the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "All subjects in the study scored a 3 bilaterally on the shoulder mobility pattern, indicating that upper quarter mobility restrictions did not contribute to poor TSPU performance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A greater proportion of subjects with high Beighton scores of four or greater passed the TSPU at posttest compared to subjects with low scores of zero to three.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Systemic hypermobility impacts ligamentous integrity, which can lead to poor global stability during movement patterns.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\body_alignment\\SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT.pdf [part 6/8]",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  }
+]

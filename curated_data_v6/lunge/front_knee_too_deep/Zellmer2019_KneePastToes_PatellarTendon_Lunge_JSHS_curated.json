@@ -1,0 +1,413 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The forward step lunge can be performed with the front knee moving in front of the toes to increase patellar tendon stress, or with the knee remaining behind the toes to reduce it.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lunging produces greater quadriceps muscle activation and a higher internal knee extension moment compared to squatting.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 25 subjects (age: 22.69 +/- 0.74 years; height: 169.39 +/- 6.44 cm; mass: 61.55 +/- 9.74 kg), peak patellar tendon stress, stress impulse, quadriceps force, knee moment, knee flexion, and ankle dorsiflexion angle were significantly greater (p < 0.001) during the forward step lunge with the knee in front of the toes compared to the knee behind the toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The peak patellar tendon stress rate did not differ between the forward step lunge with the knee in front of the toes and the variation with the knee behind the toes.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the front knee to travel in front of the toes during a forward step lunge increases the load and stress on the patellar tendon.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keeping the front knee behind the toes during a forward step lunge reduces peak patellar tendon stress, quadriceps force, and knee moment.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 1/9]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain an erect trunk posture throughout the lunge to control kinematics, kinetics, and muscle activity.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Keep the lead-leg foot placement and contact position constrained to a heel strike to foot flat position while executing the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keeping the knee behind the toes is a common cue during performing a proper form of lunges to manage anterior knee motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the trunk to lean forward during a forward lunge can alter kinematics, kinetics, and muscle activity.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Using a short step length during a forward step lunge can increase quadriceps forces and patellofemoral joint force and stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Escamilla et al. reported an increase of up to 30% in quadriceps forces, estimated by electromyography, during a short forward step lunge as compared to a long forward step lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study standardized the lunge step length at 100% of the subject's leg length, measured from the apex of the greater trochanter to the apex of the lateral malleolus.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study compared lunge variations using 25 healthy female subjects with a mean age of 22.69 ± 0.74 years, height of 169.39 ± 6.44 cm, and mass of 61.55 ± 9.74 kg.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to maintain an erect trunk posture and leaning forward during a lunge alters the kinematics, kinetics, and muscle activity of the movement.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Performing a short forward step lunge increases patellofemoral joint force and stress compared to a long forward step lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the knee to translate anteriorly in front of the toes increases the knee-flexion angle, quadriceps force, and patellar tendon stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 2/9]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Performing a forward step lunge while keeping the front knee behind the toes reduces peak patellar tendon stress and quadriceps force.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keeping the front knee behind the toes during a lunge limits knee flexion to a safer range of approximately 110 degrees compared to letting it translate forward.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Peak patellar tendon stress was 11.1% greater during the forward step lunge in front of the toes (0.20 ± 0.02 MPa) than the lunge behind the toes (0.18 ± 0.02 MPa).",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak quadriceps force was significantly higher during the lunge in front of the toes (7.76 ± 0.88 BW) compared to the lunge behind the toes (6.79 ± 0.64 BW).",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak knee flexion angle reached 124.7 ± 7.4° when the knee went in front of the toes, compared to 110.2 ± 4.9° when the knee stayed behind the toes.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak ankle dorsiflexion angle was 46.7 ± 4.7° when the knee went in front of the toes, compared to 19.5 ± 4.5° when the knee stayed behind the toes.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak knee extension moment was greater when the knee went in front of the toes (-0.209 ± 0.006 BW·m) than when it stayed behind the toes (-0.155 ± 0.004 BW·m).",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak patellar tendon stress impulse was greater when the knee went in front of the toes (0.0019 ± 0.0003 MPa·s) than when it stayed behind the toes (0.0016 ± 0.0002 MPa·s).",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak hip flexion angle was significantly greater during the lunge behind the toes (100.0 ± 9.9°) compared to the lunge in front of the toes (89.0 ± 10.3°).",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the knee to translate in front of the toes increases peak patellar tendon stress and stress impulse, which increases the mechanical load on the patellar tendon.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Allowing the knee to translate in front of the toes increases peak quadriceps force and knee extension moment, placing greater demand on the knee extensors.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 3/9]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Joint Mechanics",
+    "core_principles": [
+      {
+        "text": "Performing a forward step lunge with the knee translating beyond the toes results in greater peak patellar tendon stress and patellar tendon stress impulse compared to keeping the knee behind the toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing a forward step lunge with the knee behind the toes increases the peak hip flexion angle and hip extensor moment compared to letting the knee translate forward.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the front knee to translate forward past the toes during a lunge increases the mechanical load and stress on the patellar tendon.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Patellar tendon stress impulse was 18.8% greater during the forward step lunge with the knee in front of the toes (FSL-FT) as compared to the forward step lunge with the knee behind the toes (FSL-BT).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean patellar tendon stress was 25.4% greater during the FSL-FT and 38.5% greater during the FSL-BT at the midpoint of the ascending phase (75% FSL) as compared to the descending phase (25% FSL).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak quadriceps forces and knee extension moment had a greater magnitude, 12.6% and 25.8% respectively, for the FSL-FT compared to the FSL-BT.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak hip flexion moment was 16.5% greater and peak knee flexion angle was 13.2% greater during the FSL-FT as compared to the FSL-BT.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak hip flexion angle was 11.0% greater during the FSL-BT condition compared to the FSL-FT condition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak knee flexion angle, peak ankle dorsiflexion angle, and peak ankle plantar flexion moment were 11.6%, 58.2%, and 59.6% greater, respectively, during the FSL-FT than the FSL-BT.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Translating the knee beyond the toes during a lunge increases peak patellar tendon stress and patellar tendon stress impulse, which increases the mechanical load on the patellar tendon.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 4/9]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Rehabilitation programs incorporating lunges should consider a graded increase in loading rate, as performing these movements at a faster cadence increases patellar tendon loading rates.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk position can be manipulated during the lunge to alter patellar tendon stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing lunges with a faster cadence or rapid knee extension velocity increases the loading rate, which may place soft tissues like the patellar tendon at risk for injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The peak patellar tendon stress and stress impulse were, respectively, 11.1% and 18.8% greater during the FSL-FT than the FSL-BT.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A comparable study reported a 20% to 30% increase in quadriceps force during lunges with increased knee flexion angle, compared to a 12.6% increase in the present study with a standardized step length.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Peak patellar tendon stress occurs at about 60% of the movement during FSL-FT and at 75% during FSL-BT.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak patellar tendon stress appears to occur during the ascending phase of the lunge, likely due to a greater quadriceps force requirement needed to accelerate the center of mass.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Increased knee flexion angle during the lunge increases quadriceps force, which is a main contributing factor to greater patellar tendon stress.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "A higher knee extension moment, higher plantar flexion moment, and lesser hip extensor moment of the lead leg during a front-foot targeted lunge result in higher stress in the patellar tendon.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increased rates of loading from performing lunges at a faster cadence place soft tissues, such as the patellar tendon, at risk for injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 5/9]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Manipulating the sagittal trunk position during a forward step lunge allows for the control of patellar tendon stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "An erect trunk position increases the knee extension moment due to the posterior location of the body's center of mass relative to the knee.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "A study reported a 19.2% increase in knee extension impulse with lunges where the trunk was in more extension as compared to when flexed.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Keeping the trunk in a more upright or extended position during a lunge increases patellar tendon stress and knee extension impulse.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Leaning the trunk forward (flexion) during a lunge shifts the body's center of mass forward, reducing the knee extension moment and decreasing patellar tendon stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 6/9]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Comparison",
+    "core_principles": [
+      {
+        "text": "Performing a forward step lunge with a backward or upright trunk (FSL-BT) reduces patellar tendon stress, quadriceps force, knee extension moment, and knee flexion angle compared to lunging with a forward trunk lean (FSL-FT).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the trunk forward during a forward step lunge (FSL-FT) increases patellar tendon stress, quadriceps force, knee extension moment, and knee flexion angle.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study comparing forward step lunges with a forward trunk (FSL-FT) versus a backward trunk (FSL-BT) demonstrated that patellar tendon stress, stress impulse, quadriceps force, knee extension moment, ankle plantar flexion, and knee flexion angle are higher during FSL-FT.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during a forward step lunge (FSL-FT) causes the patellar tendon to undergo greater loading and stress compared to lunging with a backward trunk (FSL-BT).",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Leaning the trunk forward during a forward step lunge (FSL-FT) increases the quadriceps force and knee extension moment, placing higher demand on the knee joint.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\front_knee_too_deep\\Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS.pdf [part 7/9]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  }
+]

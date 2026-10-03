@@ -1,0 +1,221 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Hip",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Squat stance, foot position, setup, and depth should be customized based on an individual's unique hip anthropometrics rather than a one-size-fits-all approach.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An individual with femoral retroversion typically needs to rotate their hips outward and use a more toed-out stance when squatting.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An individual with femoral anteversion typically tolerates a more toed-forward squat stance.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Applying a dogmatic, one-size-fits-all approach to squatting stance and depth without considering individual anatomical variations of the hip.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In normal femoral version, the femoral head and neck are oriented forward at approximately 15 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The McKibbin Instability Index is used to sum the versions of the femoral neck and hip socket and may be predictive of hip issues with squatting.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Ignoring individual differences in hip anatomy when selecting a squat stance can lead to hip issues and compromise the longevity of the athlete.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf [part 1/4]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Hip",
+    "content_type": "Assessment and Range of Motion",
+    "core_principles": [
+      {
+        "text": "An assessment of hip morphology is indicated to place individuals in the proper squat stance for their specific body type.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Utilize the hip quadrant (or hip scour) test in a supine position to evaluate the femoral acetabular joint's shape, size, and movement capacity at the deepest joint level.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ensure that the spine and pelvis are fully supported in a neutral position during hip testing to avoid compensation patterns that lead to unreliable data.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Test degrees of hip flexion, external rotation, and abduction synergistically to determine the maximum pain-free hip flexion angle, which represents the theoretical limit on squat depth.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the pelvis, spine, or opposite extremity to move or compensate when testing hip range of motion and determining squat depth limits.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In one study, the average Caucasian male was shown to have seven degrees of femoral anteversion (range -2 to 35 degrees) and the average Chinese male had 14 degrees of anteversion (range -4 to 36 degrees).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A study on femoral version across ethnicities showed that Caucasian males had retroversion at a rate of 24.1%, African American males at a rate of 15.1%, and all ethnicities of females at 14.3%.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Exceeding the hip joint's natural structural limit for flexion during a deep squat forces compensatory movement patterns in the pelvis and spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf [part 2/4]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Hip",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Joint centration, which maximizes the surface area contact of the femoral head into the acetabulum, increases the activation of intrinsic stabilizers and allows an optimal length-tension relationship of the gluteal and adductor groups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Squat stance width and the degree of toe-out should be customized to maximize comfort, depth, and proper execution based on individual hip anatomy.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "If ankle mobility is limited, a wider squat stance may be necessary to prevent the center of mass from being too far behind the base of support.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The degree of toe-out or foot abduction angle should align with the angle of external rotation where maximal comfortable hip flexion is achieved.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing lumbar flexion to occur at the bottom of the squat when the limits of hip flexion are exceeded due to an unsuited stance width or angle.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The bilateral quadrant test uses four specific measurements to customize squat stance: buttocks-to-floor distance, distance between knee caps from the mid-patellar line, foot abduction angle from the foot's midline, and distance between heels at the mid-calcaneal line.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The source identifies four primary customized squat stances based on anthropometrics: narrow foot width with minimal foot abduction, narrow foot width with increased foot abduction, wide foot width with minimal foot abduction, and wide foot stance with increased foot abduction.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to find the correct hip abduction angle during deep hip flexion can cause premature lumbar flexion during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Squatting with limited ankle mobility without widening the stance can cause the lifter's center of mass to fall too far behind their base of support.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf [part 3/4]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Hip",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The more retroverted an athlete's hips, the more toe out they will need in the squat to achieve maximal flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For an athlete with more anteverted hips, a relatively more toed forward stance may work better in the squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Testing a combination of stance widths with varying angles of toe out is the best method to determine optimal squat stance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Check different degrees of toe out at different widths until you find the combination of both variables that allows the athlete the best squatting depth with the least compensations to the squatting pattern.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Athlete comfort should dictate the combination of width and toe out taken in the squat stance, as long as known biomechanical faults like knees collapsing in, lumbar flexion, and heels elevating are not present.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Knees collapsing inward during the squat is a biomechanical fault that should be avoided when determining stance width and toe out.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Lumbar flexion during the squat is a biomechanical fault that should be avoided when determining stance width and toe out.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Heels elevating during the squat is a biomechanical fault that should be avoided when determining stance width and toe out.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\ANTHROPOMETRICAL CONSIDERATIONS FOR CUSTOMIZING THE SQUAT PATTERN.pdf [part 4/4]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  }
+]

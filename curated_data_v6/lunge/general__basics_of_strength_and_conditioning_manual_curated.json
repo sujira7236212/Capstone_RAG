@@ -1,0 +1,136 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "lunge",
+    "focus_area": "Legs",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 26/53]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ],
+    "core_principles": [
+      {
+        "text": "Stand in an erect position with dumbbells at the sides, shoulder blades pulled back and down, and feet hip-width apart with toes pointed straight ahead.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Take an exaggerated step forward keeping feet hip-width apart with toes pointed straight ahead.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Sit the hips down until the front thigh is parallel with the floor.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "Maintain balance and push through the heel of the front foot to return to the start position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ensure that the hips and shoulders remain square to the direction facing throughout the entire lift.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep weight on the front heel and keep the back heel pointed to the sky.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Do not allow the front knee to go forward past the toes.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the back heel to roll to the side instead of keeping it pointed to the sky.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the front knee to go forward past the toes during the descent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Failing to lower the hips until the front thigh is parallel to the floor.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During the forward step lunge, the torso should come forward to a 35 to 45 degree angle with the back flat and straight.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 27/53]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ],
+    "core_principles": [
+      {
+        "text": "Take an exaggerated step forward with one leg, keeping the toes pointed straight ahead.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Sit the hips and knee down until the front thigh is parallel with the floor.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "The torso should come forward to a 35 to 45 degree angle with the back flat and straight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain balance as you push off with the back leg and step all the way through to the next lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ensure that the hips and shoulders remain square to the direction facing throughout the entire lift.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep weight on the front heel and keep the back heel pointed to the sky to prevent it from rolling to the side.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Do not allow the front knee to go forward past the toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Avoid taking a middle step for balance as you step through to the next repetition.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the front knee to go forward past the toes during the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the back heel to roll to the side instead of keeping it pointed to the sky.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking an extra middle step for balance when stepping through to the next repetition.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During the lunge, the torso should come forward to a 35 to 45 degree angle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "routed_from": "general"
+  }
+]

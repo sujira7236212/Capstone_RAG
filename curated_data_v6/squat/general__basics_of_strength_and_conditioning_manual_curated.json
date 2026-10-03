@@ -1,0 +1,300 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 24/53]",
+    "applies_to_fault": [
+      "partial_squat",
+      "rounded_back"
+    ],
+    "core_principles": [
+      {
+        "text": "When done correctly, full squats strengthen the muscles, ligaments, and tendons surrounding the knee.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "The core muscles are developed to a large degree by keeping the torso erect during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Stand under the bar with the bar across the center of the shoulders.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Ensure the entire body is under the bar before lifting.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Prior to lifting the bar, inhale to expand the lungs and hold until you have set up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stand erect with the chest filled with air.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Take only one or two steps backward to set up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Grip the bar with a closed, pronated grip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A closer grip activates the muscles in the back.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Head and eyes should be positioned forward to keep the cervical spine in line with the body and help maintain bodyweight distribution throughout the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Not placing the body in the center of the bar during setup.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Not placing the entire body under the bar during setup.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Not filling the body with air and holding during setup.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking more than two steps to set up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gripping the plates and not the bar.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking hands off the bar during the ascending phase.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Gripping the bar with an open grip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tilting the head forward during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Tilting the head backward during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a low-bar squat, the bar sits 1 to 2 inches below the deltoids.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Placing the bar in a high-bar position on top of the trapezius muscles near the base of the neck increases force at the knees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing the bar in a low-bar position 1 to 2 inches below the deltoids increases force at the hips.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tilting the head forward can shift weight to the balls of the feet, placing excess stress on the body, and cause rounding of the back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Tilting the head backward can shift weight to the heels of the feet, causing an improper curvature of the spine and unwanted stress on the neck and back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "squat",
+    "focus_area": "Torso",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 25/53]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ],
+    "core_principles": [
+      {
+        "text": "Inhale deeply to maintain intra-thoracic pressure and prevent bending forward, arching the back, and passing out.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The torso should be held between 35 and 45 degrees from vertical.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The back should be kept flat and straight throughout the movement.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Proper depth is achieved when the mid-thigh is parallel to the floor.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Never flex the spine or round forward during a squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Keep knees pointed out, aligned with the feet, and behind the toes throughout the entire lift.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the torso to lean too far forward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Keeping the torso too upright.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Not squatting with a rigid torso.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Rounding the back during the descent.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Point toes out slightly from neutral to 30 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The torso should be held between 35 and 45 degrees from vertical.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "If the torso is held at less than 35 degrees from vertical, you are too upright.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "If the torso is held at more than 45 degrees from vertical, you are leaning too far forward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to inhale deeply can cause the lifter to bend forward, arch the back, or pass out due to a loss of intra-thoracic pressure.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Failing to maintain an erect position during a front squat causes the bar to roll forward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Weak or unengaged abdominal muscles reduce torso stability and intra-thoracic pressure during the squat.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Generic",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 33/53]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ],
+    "core_principles": [],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to come together in a valgus knee position during movement increases the strain on the joint.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Allowing the knees to come together (valgus knee position) increases the strain on the ligaments and muscles surrounding the knee.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "routed_from": "general"
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\general\\basics_of_strength_and_conditioning_manual.pdf [part 34/53]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus"
+    ],
+    "core_principles": [
+      {
+        "text": "When performing a countermovement (rapid, shallow squat), the hips, knees, and ankles should create a straight line when viewed from the front.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "routed_from": "general"
+  }
+]

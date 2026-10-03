@@ -40,6 +40,18 @@
     "data/bicep-curl/elbow_away/Oliveira2009_ShoulderPosition_BicepsEMG_JSSM.pdf",
     "data/bicep-curl/full_rom/Schoenfeld2020_RangeOfMotion_MuscleGrowth_SR_SAGEOpenMed.pdf"
    ]
+  },
+  "round2a": {
+   "note": "~96 windows (user approved 2026-10-03). Chosen from tag_coverage.py after round1 only: fills rules below 5 tags per type (straight_back_leg, shallow_lunge, partial_pushup, partial_curl).",
+   "files": [
+    "data/lunge/Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise.pdf",
+    "data/lunge/Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf",
+    "data/lunge/Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf",
+    "data/lunge/Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf",
+    "data/push-up/The_Effect_of_Position_on_the_Percentage_of_Body.992962.pdf",
+    "data/bicep-curl/The interplay between muscle length, range of motion, and exercise selection a review.pdf",
+    "data/bicep-curl/The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf"
+   ]
   }
  }
 }

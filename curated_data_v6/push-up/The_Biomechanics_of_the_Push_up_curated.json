@@ -1,0 +1,150 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The standard push-up requires a general stiffening of the knee joints, hip joints, pelvis, and spine to keep the body in a straight line from head to feet.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "During the push-up, the shoulders and elbows flex and extend to raise and lower the body while the scapulae retract and protract to facilitate glenohumeral range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The standard push-up requires supporting a relative load of 69% of bodyweight in the top position and 75% of bodyweight in the bottom position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The knee push-up reduces bodyweight loading to 54% in the top position and 62% in the bottom position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Compressive spinal loading on the L4/L5 joint during a standard push-up reaches 1,838 N.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a standard push-up, mean muscle activation normalized to maximum voluntary contraction is 61% for the pectoralis major, 66% for the triceps brachii, and 42% for the anterior deltoid.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Core muscle activation normalized to maximum voluntary contraction during a standard push-up is 29% for the rectus abdominis, 29% for the external oblique, 24% for the psoas, 10% for the internal oblique, and 9% for the transverse abdominis.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Electromyographic studies show that narrow base push-ups elicit greater activation of the triceps brachii and promote superior activation of the sternal head of the pectoralis major compared to a wide base.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\The_Biomechanics_of_the_Push_up.pdf [part 2/6]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Shifting the torso forward relative to the hands results in increased pectoralis major activity and decreased triceps brachii activity compared with the normal base position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Shifting the torso rearward relative to the hands results in slightly increased pectoralis major and triceps brachii activity.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing push-ups with the feet elevated on a bench and the hands on the ground is more challenging and demanding for the shoulder girdle stabilizers than performing push-ups with the hands on a stability ball and the feet on the ground.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing push-ups with the hands on an unstable surface is more effective for increasing muscle activity than performing them with the feet on the unstable surface, provided the torso angle remains constant.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "According to Ebben et al., the peak vertical ground reaction force of a regular push-up is 64% of total body mass.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-ups performed with the hands elevated on a 61.0-cm box produce a peak vertical ground reaction force of 41% of bodyweight, while knee push-ups produce 49%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-ups performed with the hands elevated on a 30.5-cm box produce a peak vertical ground reaction force of 55% of bodyweight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-ups performed with the feet elevated on a 30.5-cm box produce a peak vertical ground reaction force of 70% of bodyweight, and feet elevated on a 61.0-cm box produce 74%.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "BOSU push-ups increase the activity of the upper, mid, and lower trapezius fibers, but diminish serratus anterior activity compared with standard push-ups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A study by Youdas et al. evaluating the Perfect Push-up device failed to show any significant differences in EMG muscle activation of the triceps brachii, pectoralis major, serratus anterior, and posterior deltoids compared to standard push-ups.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\The_Biomechanics_of_the_Push_up.pdf [part 3/6]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Lumbar Spine",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "The countermovement push-up, performed with maximal speed, is a safe and effective choice for explosive variations to maximize upper-body power because it does not encounter impact forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Wall push-ups and knee push-ups are appropriate regressions for individuals with limited upper-body strength.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-ups using one arm or one leg, or adding a weighted vest, elastic bands, chains, or unstable implements, can be used to increase the difficulty of the exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing advanced forms of plyometric push-ups, such as alternating plyometric push-ups using a medicine ball, can be problematic for individuals with back issues.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "An alternating plyometric push-up using a medicine ball has been shown to induce 6,224 N of compressive forces on the lumbar spine.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Clapping push-ups outperform standard, slow eccentric, one hand on medicine ball, staggered hands, hands on two balls, two hands on one ball, rapid countermovement, one arm, and alternating plyometric push-up variations in pectoralis major and triceps brachii activity.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Performing alternating plyometric push-ups using a medicine ball induces high compressive forces on the lumbar spine, which can exacerbate or cause lower back issues.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\The_Biomechanics_of_the_Push_up.pdf [part 4/6]",
+    "applies_to_fault": []
+  }
+]

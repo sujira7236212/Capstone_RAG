@@ -1,0 +1,431 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle and Hip",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The optimal performance pattern of the squat requires the hips, knees, and ankles to be aligned in parallel, with no mediolateral movement, while the heels remain on the ground at all times.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Increasing the range of motion of ankle dorsiflexion and hip flexion, as well as ankle dorsiflexor strength, can be used to improve squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing mediolateral movement of the knees during the squat deviates from optimal parallel alignment.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 101 healthy subjects, multiple regression analysis showed that ankle dorsiflexion with a flexed knee and hip flexion range of motion were significantly associated with squat depth in male subjects (R2 = 0.435).",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "In a study of 101 healthy subjects, ankle dorsiflexion with an extended knee and dorsiflexor strength were significantly associated with squat depth in female subjects (R2 = 0.324).",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to maintain correct positioning during the squat can increase joint strain and potential injury to the low back and knees.",
+        "applies_to_fault": [
+          "rounded_back",
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_depth\\Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf [part 1/7]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Extremity",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Decreased strength of the hip and ankle musculature reduces the ability to stabilize the lower extremity, which can result in adduction and rotation of the hip and knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Adequate ankle dorsiflexion range of motion is required to achieve peak knee flexion and prevent knee valgus during a squat.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Sufficient hip external rotation range of motion and flexible two-joint hip flexors are necessary to prevent deviation of the hip, knee, and foot during a full squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Activation of the tibialis anterior muscle is required to initiate the downward phase of the squat from an upright position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The rectus femoris shows increased EMG activity in a deep squat, acting as both a hip flexor and a stabilizer at both the hip and knee.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to align inside the hips (medial knee displacement or knee valgus) during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Allowing the knees to align outside the hips (knee varus) during the squat.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Limiting squat depth (stopping early in a partial squat) due to restricted ankle dorsiflexion or hip mobility.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A study of 101 subjects (64 males, 37 females) was conducted to evaluate how hip and ankle range of motion and strength correlate with deep squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Macrum et al. (2012) demonstrated that limited ankle dorsiflexion directly leads to decreased peak knee flexion and an increased knee valgus angle during the squat.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Faulty alignment patterns, such as mediolateral rotation of the hip and knee alignment inside or outside the hip during the squat, induce increases in the compressive and shear forces at the ankle, knee, and hip joints.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_depth\\Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf [part 2/7]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "partial_squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle and Hip",
+    "content_type": "Biomechanical Factors",
+    "core_principles": [
+      {
+        "text": "Ankle dorsiflexion range of motion and hip flexion range of motion are critical biomechanical factors required to achieve a deep squat.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "For males, maximizing ankle dorsiflexion range of motion with a flexed knee and hip flexion range of motion is key to improving squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "For females, improving ankle dorsiflexion range of motion with an extended knee and increasing ankle dorsiflexor strength are key to improving squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to reach adequate squat depth due to restricted ankle dorsiflexion range of motion.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Failing to reach adequate squat depth due to restricted hip flexion range of motion.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Failing to reach adequate squat depth due to insufficient ankle dorsiflexor muscle strength.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 101 healthy subjects (64 males, 37 females), ankle dorsiflexion range of motion with a flexed knee and hip flexion range of motion accounted for 43.5% of the variance in squat depth in males.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "In a study of 101 healthy subjects (64 males, 37 females), ankle dorsiflexion range of motion with an extended knee and ankle dorsiflexor strength accounted for 32.4% of the variance in squat depth in females.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "In male subjects, there was a significant negative correlation between squat depth (where lower values indicate deeper squats) and the range of motion of hip flexion, internal rotation, and ankle dorsiflexion with an extended and flexed knee (r = -0.623 to -0.239).",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "In female subjects, ankle dorsiflexion range of motion with an extended and flexed knee was significantly negatively correlated with squat depth (r = -0.487 to -0.460), while ankle dorsiflexor strength was positively correlated with squat depth (r = 0.279).",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_depth\\Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf [part 4/7]",
+    "applies_to_fault": [
+      "partial_squat"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle, Hip, and Lower Back",
+    "content_type": "Biomechanical Analysis and Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Maintain sufficient ankle dorsiflexion mobility to achieve proper squat depth and prevent compensatory movement patterns.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Ensure adequate hip flexion mobility to avoid compensating with excessive trunk flexion during the descent.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Improve the range of motion of hip internal rotation to help increase squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Maintain adequate ankle dorsiflexor strength to support deep squatting and prevent mediolateral knee movement.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Keep the hips, knees, and feet aligned without excessive inward or outward movement during the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using a trunk flexion strategy to achieve desired squat depth when hip flexion mobility is decreased.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing medial knee displacement (dynamic valgus) during the squat due to restricted ankle dorsiflexion or weak ankle musculature.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Stopping the squat descent early (achieving insufficient squat depth) due to limited ankle dorsiflexion, hip flexion, or hip internal rotation.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Ankle dorsiflexion range of motion with flexed and extended knee accounted for 38.8% of the variance in squat depth in male subjects and 23.7% in female subjects.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "The average ankle dorsiflexion angle required during a squat was reported to be 38.5 ±5.9°.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "The mean hip range of motion has been reported to be 95.4 ±26.6° of flexion to reach a maximal squat.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Squat depth was significantly and negatively correlated with the passive range of motion of hip internal rotation (r = -0.239; p<0.001) in males.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Ankle dorsiflexor muscle strength explained an additional 8.7% of the variance in squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Compensating for decreased hip mobility with a trunk flexion strategy increases stress placed on the lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Restricted ankle dorsiflexion or decreased strength of the ankle musculature can induce excessive medial knee displacement and dynamic valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Limited mobility and stability of the ankle joint can inhibit the performance of proximal joints like the knee and hip during closed-chain deep squatting.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Stiffness or shortness in hip posterior structures, such as the posterior capsule and lateral rotator, prevents the femoral head from gliding posteriorly, resulting in limited hip flexion.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_depth\\Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf [part 5/7]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Ankle and Hip Mobility",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Lumbar stability and thoracic mobility are important factors to decrease compressive and shearing forces of the lumbar region during deep squatting.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "To improve deep squat depth, it is important to increase ankle dorsiflexion and hip flexion range of motion (ROM) in males if they are limited.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "To improve deep squat depth, it is important to increase ankle dorsiflexion range of motion (ROM) and ankle dorsiflexor strength in females if they are limited.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Having limited ankle dorsiflexion range of motion (ROM) or limited hip flexion ROM (in males) restricts squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Having limited ankle dorsiflexion range of motion (ROM) or limited ankle dorsiflexor strength (in females) restricts squat depth.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "All the subjects participating in this study were in their twenties.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The results of this study show that squat depth is negatively related to the ROM of the hip flexion, internal rotation, and ankle dorsiflexion with an extended and flexed knee in males and dorsiflexion with an extended and flexed knee in females.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Strength of the ankle dorsiflexor is positively related to squat depth in females.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "The ROM of the ankle dorsiflexion is a major factor affecting squat depth in both genders, followed by the hip flexion ROM in male and ankle dorsiflexor strength in female subjects.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Lacking lumbar stability and thoracic mobility during deep squatting increases compressive and shearing forces on the lumbar region.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Limited mobility and strength of the ankle and hip joints during squatting can prevent safe performance and increase the risk of related injuries.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_depth\\Kim2015_HipAnkleROM_SquatDepth_JHumKinet.pdf [part 6/7]",
+    "applies_to_fault": [
+      "partial_squat",
+      "rounded_back"
+    ]
+  }
+]

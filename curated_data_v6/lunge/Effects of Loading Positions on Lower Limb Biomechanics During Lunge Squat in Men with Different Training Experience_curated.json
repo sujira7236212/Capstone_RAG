@@ -1,0 +1,491 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Loading Guidance",
+    "core_principles": [
+      {
+        "text": "Novices should prioritize using dumbbells instead of barbells during forward lunges to maintain better stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Novices should be cautious with backward lunges as they are less stable during this movement than experienced lifters.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Experienced lifters may reduce the risk of knee and ankle injury by utilizing barbells for their lunges.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novices performing backward lunges with dumbbells often exhibit joint instability and increased negative power.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 24 male fitness trainees (12 novices and 12 experienced seniors), hip, knee, and ankle range of motion and angle peaks were significantly greater in novices than in seniors (P < 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During forward lunges, using dumbbells reduced hip moments and stiffness in novices (P < 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During forward lunges, using barbells increased ankle moments in seniors (P = 0.022).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During backward lunges, novices demonstrated increased negative power and significant joint instability when training with dumbbells.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using barbells instead of dumbbells during forward lunges can compromise stability in novice lifters.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing backward lunges with dumbbells can lead to joint instability and increased negative power for novice lifters.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 1/15]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Active muscle contraction plays a key role in stabilizing the knee joint and reducing the risk of musculoskeletal system injuries during lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Experienced practitioners reduce co-activation of antagonist muscles and improve eccentric contraction capacity in the gluteus maximus and hamstrings to buffer loads and decrease anterior cruciate ligament tension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Dumbbell loading permits natural weight distribution, reduces peak joint pressures through load dispersion, and challenges dynamic balance.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Inexperienced exercisers often exhibit excessive knee flexion during lunges.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Fitness novices often exhibit compensatory movement patterns, such as anterior trunk tilt and knee valgus, due to inadequate neuromuscular control.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Novices often overcome weak core stability by increasing trunk forward lean, reducing hip flexion angles and causing knee anterior displacement.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Novices performing reverse lunges frequently exhibit excessive hip joint range of motion and insufficient ankle dorsiflexion in the stance leg, compromising movement stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using barbell loading with a high center of mass may amplify postural sway in novices, increasing lumbar shear forces.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During forward lunges, peak knee joint torque positively correlates with patellofemoral joint stress, and excessive ankle dorsiflexion increases eccentric loading on the triceps surae.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Novices often overcome weak core stability by increasing trunk forward lean, reducing hip flexion angles and causing knee anterior displacement, which significantly increases patellar tendon stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive knee flexion and excessive ankle dorsiflexion or plantarflexion may contribute to chronic injuries in the Achilles tendon and plantar fascia.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Anterior trunk tilt and knee valgus intensify the imbalance of shear force and pressure distribution in the lower limb joints.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Increasing trunk forward lean reduces hip flexion angles and causes knee anterior displacement, which significantly increases patellar tendon stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Uncontrolled horizontal plane motions, such as knee valgus or internal rotation, exacerbate joint instability and potentially lead to ligament strains or cartilage wear.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Barbell loading with a high center of mass may amplify postural sway in novices, increasing lumbar shear forces.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 2/15]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Set the lunge stride length to 70% of the leg length, measured from the anterior superior iliac spine to the medial condyle of the tibia, to establish a standardized stride.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Position the feet at shoulder width apart during the lunge setup.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Use dumbbell loading for novices to better accommodate their training level, while reserving barbell loading for experienced practitioners to enhance muscle activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Approach reverse lunges with caution for novices, as their higher movement complexity demands greater joint coordination and muscle synergy.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novices performing lunges often exhibit increased joint instability and suboptimal joint mobility and moment distribution.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The study established a standardized lunge stride length calculated as exactly 70% of the participant's leg length, measured from the anterior superior iliac spine to the medial condyle of the tibia.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study cohort consisted of 24 male participants, divided into 12 novices with up to 3 months of structured training and 12 experienced practitioners with a minimum of 2 years of regular training.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Novices showing increased joint instability during lunges may experience compromised joint mobility and altered moment distribution, which can elevate the risk of exercise-related injuries.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 3/15]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The participant should lower their center of mass while preserving a straight, upright trunk position.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The knee of the trailing leg should bend and approach the ground without making contact with it.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "The lead knee must not extend beyond the toes during the downward phase of the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Each lunge repetition should be completed by returning to a neutral upright stance with full knee extension.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the heel of the front foot to lift off the ground during the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the knee of the trailing leg to make contact with the floor.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 4/15]",
+    "applies_to_fault": [
+      "forward_trunk_lean",
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip and Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [],
+    "common_mistakes": [
+      {
+        "text": "Novice lifters tend to perform forward lunges with significantly greater hip range of motion and deeper hip flexion compared to experienced lifters, which can manifest as an excessive forward trunk lean.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Novice lifters tend to exhibit greater knee range of motion in the sagittal plane during forward lunges compared to experienced lifters.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Novice lifters may perform backward lunges with shallower knee flexion compared to experienced lifters.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During forward barbell lunges, novices demonstrated a significantly larger sagittal hip range of motion of 64.23 ± 16.27 degrees compared to 48.96 ± 4.11 degrees in experienced lifters.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "During forward barbell lunges, novices reached a significantly lower minimal sagittal hip angle of 29.16 ± 7.83 degrees compared to 42.06 ± 11.78 degrees in experienced lifters, indicating greater hip flexion.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "During forward barbell lunges, novices showed a larger sagittal knee range of motion of 110.82 ± 13.36 degrees compared to 98.55 ± 9.16 degrees in experienced lifters.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "During backward barbell lunges, novices achieved a shallower peak knee flexion with a minimal sagittal angle of -99.01 ± 10.02 degrees compared to -108.44 ± 8.33 degrees in experienced lifters.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 6/15]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "forward_trunk_lean",
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Keeping the knee positioned below the toes during lunges reduces stress on the patellar tendon.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novices may exhibit compensatory trunk lean during lunges due to core instability and reduced eccentric contraction ability of the gluteus maximus.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Allowing excessive anterior knee translation where the knee exceeds the toes during lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing higher knee flexion angles during forward lunges.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Relying on underdeveloped hip and knee musculature, which leads to compensatory activation of calf and foot muscles for postural stabilization.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Exhibiting smaller knee joint stiffness and negative power peaks during the eccentric phase of the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Seniors exhibited enhanced hip stability during reverse lunges, with barbell loading leading to a 6.07° inter-group difference in peak angles, compared to 7.24° for dumbbell loading.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the sagittal plane, novices had significantly lower stiffness in all three major joints, indicating they were less able to generate sufficient joint moment for the same range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Compensatory trunk lean can occur due to reduced eccentric contraction of the gluteus maximus, increasing dynamic stresses and indicating core instability.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Anterior knee translation exceeding the toes increases joint stress, heightening injury risks.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Higher knee flexion angles during forward lunges are linked with greater patellofemoral joint stress.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Underdeveloped hip and knee musculature leads to compensatory activation of calf and foot muscles for postural stabilization, increasing vulnerability to overload.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Smaller knee joint stiffness and negative power peaks in beginners highlight a poor absorption capacity during the eccentric phase, which decreases movement efficiency and increases the likelihood of mechanical damage to the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 10/15]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Increasing knee strength and ankle dorsiflexor capability can enhance ankle adaptability during lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Dumbbell loading decreases peak hip moments and horizontal plane knee shear forces in novices, making it effective for stability-oriented training.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using dumbbells reduces spinal shear forces by distributing center-of-mass loading, which improves energy transfer efficiency.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Barbell loading may be appropriate for individuals with knee or ankle sensitivities as it can reduce horizontal plane knee moments.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novices often display a compensatory forward trunk lean due to lower muscular strength, which shifts the center of mass forward.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A 10° raise in ankle plantarflexion increases the risk of calf muscle fatigue, foot overuse injuries, and chronic pressure on the Achilles tendon and plantar ligament.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In both forward and backward lunges, the sagittal plane moments were greatest at the hip, followed by the knee and ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Dumbbell loading decreased peak hip moments and horizontal plane knee shear forces in novices.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A 10° raise in ankle plantarflexion increases the risk of calf muscle fatigue, foot overuse injuries, and chronic pressure on the Achilles tendon and plantar ligament.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Compensatory forward trunk lean moves the body's center of mass frontally, which enhances hip engagement and redistributes knee stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 11/15]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Novices should utilize dumbbells during forward lunges to leverage a lower center of mass for dynamic balance, which reduces hip moments and knee shear forces while enhancing rectus femoris activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Backward lunges loaded with dumbbells can be used to improve dynamic back chain control and increase glute-hamstring co-activation by improving trunk stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Experienced lifters can utilize barbells during forward lunges to enhance target muscle recruitment and during backward lunges to reduce knee-ankle moment fluctuations.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novices often exhibit increased tibialis anterior activity during forward lunges to adjust for limited ankle dorsiflexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The rectus femoris and tibialis anterior had the highest root-mean-square (RMS) values in both forward and backward lunge variations, followed by the gastrocnemius.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In forward lunges, novices using dumbbells exhibited reduced hip moment and knee shear forces with enhanced rectus femoris activation compared to using barbells.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Long-term training for seniors shows significantly higher hip joint stiffness and positive power output in the sagittal plane compared to novices during lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For backward lunges, barbells reduced knee-ankle moment fluctuations in experienced seniors.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Compensating for limited ankle dorsiflexion with increased tibialis anterior activity during forward lunges increases the risk of overuse-related Achilles tendinopathy.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf [part 12/15]",
+    "applies_to_fault": []
+  }
+]

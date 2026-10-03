@@ -1,0 +1,265 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Spine-oriented verbal instructions can decrease spine flexion during lifting, specifically at intersegmental levels in the lower thoracic and upper lumbar regions.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Standard verbal cues to limit bending in the lower back may not be sufficient to target lower lumbar levels (L3/L4 to L5/S1), which are highly prone to injury and pain.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Developing a greater awareness of how to control and modify spinal posture can help individuals avoid irritating their backs during repetitive, prolonged, or loaded flexed postures.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifting with a flexed spine, especially near the end range of motion, is a common technique error.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Performing repetitive flexion or flexing with a heavy load toward the end range of motion increases the risk of injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Following spine-oriented verbal instructions, maximum spine flexion angles significantly (p < 0.05) decreased at intersegmental levels in the lower thoracic and upper lumbar (T8/T9 to L2/L3) regions, but no significant changes were observed at the lower lumbar levels (L3/L4 to L5/S1).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Lifting with a flexed spine, especially near the end range of motion, increases the risk of low back injury and pain.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Repetitive flexion and flexing with a heavy load toward the end range of motion create high stresses on the posterior elements of the intervertebral disc, which can cause disc herniations.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "In a flexed posture, the orientation of the erector spinae musculature changes so that their fibers align along the spine's compressive axis, impairing their ability to counteract anterior shear forces.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The anterior shear failure force of the spine is lower in a flexed posture compared to a neutral posture.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\back_straight\\Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf [part 1/7]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Focusing on how much you round your lower back during lifts and consciously limiting the amount of rounding can reduce spine flexion.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The movement pattern chosen to avoid rounding the back should feel natural and not robotic or awkward.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Regularly approaching maximum spine flexion during lifting.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a pencil pick-up task, verbal instructions to limit lower back rounding significantly decreased the percentage of maximum flexion at T8/T9 (p = 0.0088, d = 1.2), T9/T10 (p = 0.0029, d = 1.2), T12/L1 (p = 0.0067, d = 1.0), and L1/L2 (p = 0.0149, d = 0.9).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "In a free box lift task, verbal instructions to limit lower back rounding significantly decreased the percentage of maximum flexion at T8/T9 (p = 0.016, d = 1.0), T9/T10 (p = 0.012, d = 1.1), T11/T12 (p = 0.049, d = 0.8), T12/L1 (p = 0.0003, d = 1.4), L1/L2 (p = 0.0015, d = 1.2), and L2/L3 (p = 0.0471, d = 0.7).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "In a box lift over a barrier task, verbal instructions to limit lower back rounding significantly decreased the percentage of maximum flexion in the gross lumbar region (p = 0.025, d = 0.9), L1/L2 (p = 0.017, d = 0.9), and L2/L3 (p = 0.031, d = 0.8).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Verbal instructions to limit lower back rounding did not produce statistically significant changes in the percentage of maximum flexion at the lower lumbar levels L3/L4, L4/L5, or L5/S1 across any of the tested lifting tasks (all p-values > 0.076).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Regularly approaching maximum spine flexion during lifting increases the risk of developing low back pain or injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\back_straight\\Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf [part 3/7]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Verbal instructions alone can help reduce flexion at the lower thoracic and upper lumbar levels, but they are often insufficient for reducing flexion in the lower lumbar levels (L3-S1).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Applying regional tactile feedback, such as tape on the skin, can amplify proprioceptive input and successfully help a lifter reduce flexion across all lumbar intersegmental levels.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Allowing sufficient knee flexion during lifting tasks is essential to prevent forcing compensatory spine flexion to reach the ground.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to actively manage lower lumbar (L3-S1) flexion during lifting, as lifters naturally have poorer proprioceptive position sense in the sacral region compared to the upper spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Restricting knee flexion during a lift, which automatically forces the lifter to use greater spine flexion to reach down.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Without verbal instructions, participants consistently reached flexion angles exceeding 65% of their maximum range of motion in the lower lumbar intersegmental levels (L3-S1) during everyday lifting tasks.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Verbal instructions caused a significant decrease in absolute flexion angles at T8/T9 (p = 0.0002), T9/T10 (p = 0.0067), and T12/L1 (p = 0.0462) during a pencil-pickup task.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Verbal instructions significantly decreased absolute flexion angles in the gross lumbar region (p = 0.0281) and multiple intersegmental levels from T8 to L3 during a free-box lifting task.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "When a barrier was used to limit knee flexion, verbal instructions failed to cause any significant changes in absolute spine flexion angles at any regional or intersegmental level.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\back_straight\\Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf [part 4/7]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Lower Back",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Instructions should not instill a fear of flexion-related movement, but rather should focus on developing an awareness of how spine flexion can be controlled under certain scenarios.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "For individuals with a history of flexion-related pain or aggravation, teaching awareness of how they move their spines and how to reduce or control aggravating flexion can be beneficial.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing uncontrolled lumbar spine flexion during lifting tasks can increase the risk of low back pain or injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Verbal instructions designed to reduce spine flexion only resulted in statistically significant reductions in flexion at intersegmental levels at and above L2/L3, failing to significantly reduce flexion in the lower lumbar spine.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Lumbar spine flexion is a population-based risk factor for the development of low back pain or injury.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\back_straight\\Becker2022_SpineFocusedVerbalInstruction_JHumKinet.pdf [part 6/7]",
+    "applies_to_fault": [
+      "rounded_back"
+    ]
+  }
+]

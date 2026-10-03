@@ -1,0 +1,494 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Suitable stance width and foot placement angles should be chosen according to the targeted joint moments.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Special care should be taken to avoid extreme squatting positions, such as a narrow stance with a 42-degree foot angle or a wide stance with a 0-degree foot angle, to prevent excessive joint loading.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novice squatters often exhibit higher mediolateral knee displacement during the movement compared to experienced squatters.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Using extreme combinations of stance and foot angles, such as a narrow stance with a 42-degree foot angle or a wide stance with a 0-degree foot angle, can cause excessively high joint moments.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a study of 21 novice and 21 experienced squatters, increasing the foot angle led to an increased mediolateral knee displacement (ΔD*), while an increased stance width resulted in a decreased ΔD*.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Novice squatters showed a higher mediolateral knee displacement (ΔD*), while additional weight of 50% body weight triggered a decreased ΔD* in experienced squatters.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Squatting in extreme positions, such as a narrow stance with a 42-degree foot angle or a wide stance with a 0-degree foot angle, subjects the knee and hip joints to large joint moments, increasing the risk of lower limb injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf [part 1/10]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "The feet should be positioned at shoulder width or wider, maintaining the feet flat on the ground, with toes pointing forward or slightly outward by no more than 10 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The knees should track over the toes throughout the squat motion without knee displacement either medially or laterally.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "To lower mediolateral movements of the knee, squatting variations such as heel lifts or improving strength in the ankle are recommended.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knees to displace medially or laterally during the squat motion.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Gastrocnemius muscle tightness and increased adductor activity may cause excessive mediolateral knee displacements.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "With increasing load, the range of motion of the lumbar curvature decreases significantly, and the thoracic curvature range of motion decreases with increased additional load on the barbell from 25 to 50% of participant's body weight.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Varying foot placement angles (0°, 21°, and 42°) during squats does not seem to play a major role on either muscle activity or knee joint contact forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The study examined three stance widths: narrow stance (10% of the distance from the greater trochanter to the floor), hip stance (distance between the two anterior superior iliac spines), and wide stance (twice the distance between the anterior superior iliac spines) using a cohort of 42 participants.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A greater knee valgus angle (medial knee displacement) during squatting increases the risk for lower extremity injuries.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf [part 2/10]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Keep your back straight throughout the movements.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Try to go as far downward as possible, at least bringing your thigh parallel to the floor.",
+        "applies_to_fault": [
+          "partial_squat"
+        ]
+      },
+      {
+        "text": "Perform the squat at the same speed in the downward and upward movements.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Place the bar (barbell) on the trapezius muscle and hold it with a comfortable hand position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stand upright and place each foot on the given lines, keeping the heel and second toe aligned.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A wider stance leads to smaller average mean knee deviation, while a wider foot placement angle causes a larger average mean knee deviation.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Within a squat cycle, smaller stance widths and larger foot angles result in a greater average mean knee deviation, which also increases with knee flexion angle.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novice squatters show a significantly higher average mean knee deviation than experienced squatters.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Squatting with a wide stance and 0° foot angle (WS-0°) displays a knee valgus across novice, experienced, and experienced with additional load groups.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Values of average mean knee deviation (ΔD*) were between −17 and 27% of participants’ leg lengths, indicating valgus and varus positions.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "For a wide stance with 0° foot angle (WS-0°), average mean knee deviation (ΔD*) was −1%, −4%, and −7% of the participant’s leg length for novice, experienced, and experienced with additional load respectively.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "For a wide stance with 21° foot angle (WS-21°), average mean knee deviation (ΔD*) was −0.5% and −2.4% of participant’s leg length for experienced without and with additional load.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "The additional load led to smaller lumbar spine ranges of motion (3.0 m−1) compared to the unloaded condition (4.1 m−1) in experienced squatters.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "The foot placement angles and the step widths influenced the hip adduction range of motion by a factor of 1.6 from narrow stance to wide stance and 3.2 from 0° to 42°.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf [part 4/10]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "partial_squat",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "General guidelines recommend that the knees should be maintained vertically between the malleoli in the frontal plane, avoiding either medial or lateral knee displacement.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "The mediolateral displacement of the knee should remain as low as possible throughout the movement to avoid displacement and additional passive forces.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "An increased stance width and an increased foot angle lead to lower maximal adduction moments in the hip with an increased hip adduction range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Excessive mediolateral movement of the knees (medial or lateral knee displacement) is a common deficit during the squat.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Novice squatters tend towards a varus position (knee varus), which is a common deficit.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In experienced squatters, adding load increased all joint moments by a factor of 1.38 to 1.86, except the minimal external knee moment in the frontal plane and the lumbar spine moment, which increased by a factor of 1.1 only.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The lumbar spine moment between different step widths and foot placement angles in the loaded experienced group varied between 1.2 and 2 Nm/kg, leading to a standard deviation of 1.3 Nm/kg, which is more than 2.5 times higher than non-weighted groups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Novice squatters showed a higher knee deviation (ΔD*) compared to experienced squatters, who performed squats in all positions with a ΔD* closer to 0 except in the wide stance with 0° foot angle (WS-0°) position.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Knee varus (negative ΔD*) is a much more common deficit than valgus in the studied cohorts.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "An increasing angle in the foot placement angle led to an increasing knee deviation (ΔD*), while an increased stance width resulted in a decreased knee deviation (ΔD*).",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive mediolateral movement of the knees can signal functional deficits such as enhanced hip adductor activity, malfunction or weakness of the posterior chain complex, or a reduced range of motion of the ankle joint.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Failing to keep mediolateral knee displacement as low as possible throughout the movement causes additional passive forces and increases the risk of injury.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf [part 5/10]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee and Lower Back",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Avoid exaggerated foot placement angles in closed chain movements such as the squat to prevent excessive mediolateral knee displacement.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Perform squats with a moderate foot placement angle of approximately 20° in combination with a moderate stance width with feet approximately shoulder-width apart.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Perform squats with some extra load to help maintain lumbar lordosis throughout the whole squat cycle, as the additional weight can enhance stabilization of the lower back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Using exaggerated foot placement angles or extreme stance widths during the squat.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Failing to maintain lumbar lordosis throughout the squat cycle, which can lead to a loss of lower back stabilization.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Position NS-42° (narrow stance, 42° foot angle) and WS-0° (wide stance, 0° foot angle) led to the highest and lowest mediolateral knee displacement (ΔD*), respectively.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "A moderate foot placement angle of approximately 20° in combination with a moderate stance width (feet approximately shoulder-width apart) is recommended.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "A narrow stance width with a small foot angle causes a higher hip moment, while a wide stance width with a larger foot placement angle causes a higher knee moment in the sagittal plane.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the frontal plane, a narrow stance width with a small foot angle results in higher hip and knee moments.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Knee joint moments in the frontal plane change from external abduction to external adduction within one cycle, and this phenomenon is even higher with larger stance widths.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Extra weight on the barbell does not seem to affect the moments in the lower back, possibly due to a more stabilized posture.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Studies reported a greater stretching of the lateral collateral ligament (LCL) than the medial collateral ligament (MCL), especially in an experienced group, indicating a tendency towards varus limb alignment.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A tendency towards varus limb alignment during the squat causes greater stretching of the lateral collateral ligament (LCL) than the medial collateral ligament (MCL).",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "While extra weight can enhance stabilization of the lower back, it normally leads to higher moments and can cause failure due to fatigue, which causes undesired stress on other musculoskeletal structures.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf [part 6/10]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "To minimize lumbar curvature range of motion and maximize sagittal range of motion in the hip and knee, a wide stance with a 42-degree foot placement angle (WS-42°) is preferable.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Caution should be exercised when performing squats in extreme positions, specifically a narrow stance with a 42-degree foot angle (NS-42°) or a wide stance with a 0-degree foot angle (WS-0°).",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Novice squatters performing unloaded squats tend to exhibit a more varus knee alignment.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Novice squatters without additional weight tend towards a more varus alignment, while experienced squatters showed a lower mediolateral movement.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "To minimize the lumbar curvature RoM, maximize sagittal RoMs in the hip and knee with a high sagittal knee moments, WS-42° with extra weight is preferable, but leads to large RoMs in the transverse and frontal planes in the hip and knee, as well as a lower hip sagittal moment.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "A narrow stance width with small foot angle results in increased hip and knee moments in the frontal plane.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing squats in extreme positions such as NS-42° (narrow stance, 42-degree foot angle) and WS-0° (wide stance, 0-degree foot angle) significantly impacts limb alignment, lower extremity range of motion, and lumbar curvature.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A narrow stance width with a small foot angle results in increased hip and knee moments in the frontal plane, which alters the loading on these joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Performing squats in extreme positions like a narrow stance with a 42-degree foot angle (NS-42°) or a wide stance with a 0-degree foot angle (WS-0°) alters limb alignment and lumbar curvature, potentially increasing stress on the lower back.",
+        "applies_to_fault": [
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR.pdf [part 7/10]",
+    "applies_to_fault": [
+      "knee_varus",
+      "rounded_back"
+    ]
+  }
+]
