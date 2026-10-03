@@ -9,16 +9,16 @@
       "previous_session_date": "2026-10-02",
       "previous_overall_score": 70,
       "previous_correct_reps": 6,
-      "previous_incorrect_reps": 0,
+      "previous_incorrect_reps": 4,
       "previous_common_errors": [
         "shallow_lunge"
       ]
     },
     "summary": {
-      "total_reps": 6,
+      "total_reps": 10,
       "correct_reps": 6,
-      "incorrect_reps": 0,
-      "overall_score": 86
+      "incorrect_reps": 4,
+      "overall_score": 71
     },
     "reps_detail": [
       {
@@ -506,17 +506,17 @@
       "previous_session_date": "2026-10-02",
       "previous_overall_score": 69,
       "previous_correct_reps": 4,
-      "previous_incorrect_reps": 4,
+      "previous_incorrect_reps": 6,
       "previous_common_errors": [
         "forward_trunk_lean",
         "straight_back_leg"
       ]
     },
     "summary": {
-      "total_reps": 8,
+      "total_reps": 10,
       "correct_reps": 4,
-      "incorrect_reps": 4,
-      "overall_score": 72
+      "incorrect_reps": 6,
+      "overall_score": 67
     },
     "reps_detail": [
       {

@@ -11,9 +11,11 @@ Session format = what system 1 sends (user, 2026-10-02/03):
   falling), which is the eccentric muscle phase in squat, lunge and push-up - the prompt has
   to explain the states, not this file.
 - status "completed" = counted rep (REP_COMPLETED, re-descend included); "abort" = an
-  attempt that returned before the count bar (REP_ABANDONED), not counted. Assumption until
-  system 1 confirms: an abort is an entry in reps_detail like a rep, rep_no runs over all
-  entries, and summary.total_reps counts completed reps only.
+  attempt that returned before the count bar (REP_ABANDONED), not counted by the FSM. An
+  abort with a fault is an incorrect rep (user, 2026-10-03), so the summary counts every
+  entry: total_reps = correct_reps + incorrect_reps, overall_score over all entries.
+  Assumption until system 1 confirms: an abort is an entry in reps_detail and rep_no runs
+  over all entries.
 
 check() enforces the spec so a mock never shows something system 1 cannot produce:
 - rep-scope rules are checked once at the end of an attempt: ECCENTRIC on a completed rep,
@@ -93,10 +95,10 @@ SESSIONS = {
             ok(91), ok(90), ok(88), bad(63, ("hip_sag_or_pike", C)), ok(87),
             bad(60, ("hip_sag_or_pike", I)), ok(85), bad(58, ("hip_sag_or_pike", I)), ok(84),
             bad(56, ("hip_sag_or_pike", C))]),
-        ("partial_pushup", (74, 7, 0, ["partial_pushup"]), [
+        ("partial_pushup", (74, 7, 3, ["partial_pushup"]), [
             ok(90), ok(89), ok(88), ok(87), abort(50, "partial_pushup"), ok(85),
             abort(48, "partial_pushup"), ok(84), abort(45, "partial_pushup"), ok(83)]),
-        ("mixed", (71, 5, 3, ["hip_sag_or_pike", "partial_pushup"]), [
+        ("mixed", (71, 5, 5, ["hip_sag_or_pike", "partial_pushup"]), [
             ok(89), ok(88), bad(61, ("hip_sag_or_pike", I)), ok(86),
             abort(46, ("hip_sag_or_pike", C), "partial_pushup"), bad(58, ("hip_sag_or_pike", C)),
             ok(84), abort(44, "partial_pushup"), bad(55, ("hip_sag_or_pike", I)),
@@ -105,7 +107,7 @@ SESSIONS = {
             ok(91), ok(90), ok(89), ok(90), ok(88), ok(89), ok(87), ok(88), ok(86), ok(87)]),
     ],
     "lunge": [
-        ("shallow_lunge", (70, 6, 0, ["shallow_lunge"]), [
+        ("shallow_lunge", (70, 6, 4, ["shallow_lunge"]), [
             ok(89), ok(88), abort(52, "shallow_lunge"), ok(86), abort(50, "shallow_lunge"),
             ok(85), abort(47, "shallow_lunge"), ok(84), abort(45, "shallow_lunge"), ok(83)]),
         ("excessive_front_knee_flexion", (74, 6, 4, ["excessive_front_knee_flexion"]), [
@@ -119,7 +121,7 @@ SESSIONS = {
         ("straight_back_leg", (72, 6, 4, ["straight_back_leg", "shallow_lunge"]), [
             ok(90), ok(89), bad(62, "straight_back_leg"), ok(88), bad(60, "straight_back_leg"),
             ok(86), ok(87), bad(58, "straight_back_leg"), ok(85), bad(57, "straight_back_leg")]),
-        ("mixed", (69, 4, 4, ["forward_trunk_lean", "straight_back_leg"]), [
+        ("mixed", (69, 4, 6, ["forward_trunk_lean", "straight_back_leg"]), [
             ok(88), bad(60, ("forward_trunk_lean", C), "straight_back_leg"), ok(86),
             abort(46, "shallow_lunge"), bad(62, "excessive_front_knee_flexion"), ok(84),
             bad(57, ("forward_trunk_lean", I), "straight_back_leg"),
@@ -132,10 +134,10 @@ SESSIONS = {
             ok(92), ok(90), bad(63, ("elbow_flare", C)), ok(89), ok(88),
             bad(61, ("elbow_flare", C)), ok(86), bad(59, ("elbow_flare", E)), ok(85),
             bad(56, ("elbow_flare", C))]),
-        ("partial_curl", (73, 6, 3, ["partial_curl"]), [
+        ("partial_curl", (73, 6, 4, ["partial_curl"]), [
             ok(91), ok(90), ok(89), bad(64, "partial_curl"), ok(87), bad(62, "partial_curl"),
             ok(86), bad(60, "partial_curl"), abort(48, "partial_curl"), ok(84)]),
-        ("mixed", (70, 5, 4, ["elbow_flare", "partial_curl"]), [
+        ("mixed", (70, 5, 5, ["elbow_flare", "partial_curl"]), [
             ok(90), bad(62, ("elbow_flare", C)), ok(88), bad(61, "partial_curl"), ok(86),
             abort(44, ("elbow_flare", C), "partial_curl"), bad(58, ("elbow_flare", C), "partial_curl"),
             ok(84), bad(57, ("elbow_flare", E)), ok(83)]),
@@ -199,8 +201,9 @@ def build(exercise, n, label, previous, entries):
             "similarity_scores_percent": {"overall": score},
             "errors": [{"error_type": k, "state_occurred": s} for k, s in rep_errors(exercise, status, errors)],
         })
-    done = [r for r in reps if r["status"] == "completed"]
-    correct = sum(1 for r in done if not r["errors"])
+    # An abort with a fault is an incorrect rep (user, 2026-10-03), so the summary counts
+    # every entry: total = correct + incorrect, score averaged over all of them.
+    correct = sum(1 for r in reps if r["status"] == "completed" and not r["errors"])
     p_score, p_correct, p_incorrect, p_errors = previous
     return {
         "session_id": f"{PREFIX[exercise]}-{DATE.replace('-', '')}-{n:03d}",
@@ -216,10 +219,10 @@ def build(exercise, n, label, previous, entries):
             "previous_common_errors": p_errors,
         },
         "summary": {
-            "total_reps": len(done),
+            "total_reps": len(reps),
             "correct_reps": correct,
-            "incorrect_reps": len(done) - correct,
-            "overall_score": round(sum(r["similarity_scores_percent"]["overall"] for r in done) / len(done)),
+            "incorrect_reps": len(reps) - correct,
+            "overall_score": round(sum(r["similarity_scores_percent"]["overall"] for r in reps) / len(reps)),
         },
         "reps_detail": reps,
     }
@@ -238,6 +241,8 @@ def main():
             sys.exit(f"{exercise}: needs one session per rule + mixed + clean (missing {sorted(missing)})")
         for label, previous, entries in sessions:
             check(exercise, label, entries)
+            if previous[1] + previous[2] != len(entries):
+                sys.exit(f"{exercise}/{label}: previous correct + incorrect != {len(entries)}")
             for key in previous[3]:
                 if key not in ERROR_TAXONOMY[exercise]:
                     sys.exit(f"{exercise}/{label}: previous_common_errors has {key!r}")

@@ -167,7 +167,7 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 3. commit `curated_data_v6/` + `curation_usage_v6.jsonl` · จดในรายงานว่าหยุดที่ 2a และกฎที่ยังไม่ถึงเกณฑ์ (น่าจะมี `partial_pushup`) = data gap
 4. T5 ingest → `kb_gemini_curated_v6`
 5. E5 split → commit `eval/split_v6.json` ทันที
-6. ~~mock 12 กฎ + clean~~ ✅ 2026-10-03: แยก 4 ไฟล์ตามท่า (user เลือก) · ต่อท่า = 1 session ต่อกฎ + mixed + clean (squat 6 · push-up 4 · lunge 6 · bicep-curl 4) · 10 entry ต่อ session · รูปแบบที่ user ยืนยัน: `error_type` และ `previous_common_errors` = key · `state_occurred` = state ของ FSM (CONCENTRIC/INFLECTION/ECCENTRIC) · ครั้งที่ไม่ถูกนับ `status: "abort"` · **สมมติฐาน (รอระบบ 1 ยืนยัน):** abort เป็น entry ใน `reps_detail`, `total_reps` นับเฉพาะ completed · `build_mock_sessions.py --check` ตรวจว่าไม่ขัดสเปก · ไฟล์เก่า (`mock_sessions_per_fault.json` ฯลฯ) เก็บไว้
+6. ~~mock 12 กฎ + clean~~ ✅ 2026-10-03: แยก 4 ไฟล์ตามท่า (user เลือก) · ต่อท่า = 1 session ต่อกฎ + mixed + clean (squat 6 · push-up 4 · lunge 6 · bicep-curl 4) · 10 entry ต่อ session · รูปแบบที่ user ยืนยัน: `error_type` และ `previous_common_errors` = key · `state_occurred` = state ของ FSM (CONCENTRIC/INFLECTION/ECCENTRIC) · ครั้งที่ไม่ถูกนับ `status: "abort"` · abort ที่มี error นับเป็น `incorrect_reps` (user) → `total_reps` = correct + incorrect = ทุก entry, `overall_score` เฉลี่ยทุก entry · **สมมติฐาน (รอระบบ 1 ยืนยัน):** abort เป็น entry ใน `reps_detail` · `build_mock_sessions.py --check` ตรวจว่าไม่ขัดสเปก · ไฟล์เก่า (`mock_sessions_per_fault.json` ฯลฯ) เก็บไว้
 7. ปรับ prompt ขั้นต่ำให้ generator รับ key ใหม่ 12 ตัว → generate · P-rule-card / P5 เป็นขั้นแยกทีหลัง
    · ตอนอ่าน feedback ดู §6.2 (lunge ที่บอกว่าลำตัวโน้มไปหน้าดี)
 
