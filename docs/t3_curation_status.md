@@ -1,11 +1,11 @@
 # T3 — สถานะการ curate KB v6 (handoff)
 
 > อัปเดต 2026-10-03 · branch `rule-change-v6` · แผนหลัก [`rule_change_v6_plan.md`](rule_change_v6_plan.md) · เปิดไฟล์นี้ก่อนเมื่อทำ T3 ต่อใน session ใหม่
-> **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · ข้อ 4 ingest ✅ `kb_gemini_curated_v6` 1,845 row (= item ทั้งหมด) · **ถัดไป: ข้อ 6 mock 12 กฎ** — รอ user ตอบรูปแบบข้อมูลระบบ 1 (abandoned rep · state_occurred · previous_common_errors) · DB อยู่ใน Docker `pgvector-db` localhost:5432
+> **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · ข้อ 4 ingest ✅ `kb_gemini_curated_v6` 1,845 row (= item ทั้งหมด) · ข้อ 6 mock ✅ 4 ไฟล์ `mock_data/mock_sessions_<ท่า>.json` 20 session (`build_mock_sessions.py`) · **ถัดไป: ข้อ 7 ปรับ prompt** (อธิบาย state ของ FSM + status `abort`) · DB อยู่ใน Docker `pgvector-db` localhost:5432
 
 ## 0. เริ่มต่อจากตรงนี้
 
-1. ทำ §8.1 ต่อจากข้อ 6 (mock) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อ/ย้ายไฟล์ใน `data/` เพราะ path คือ id)
+1. ทำ §8.1 ต่อจากข้อ 7 (prompt → generate) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อ/ย้ายไฟล์ใน `data/` เพราะ path คือ id)
 2. ~~รันรอบ 2a~~ เสร็จแล้ว
 3. หลังรันทุกรอบ: `python data_pipeline/tag_coverage.py curated_data_v6` → ดูกฎที่ยังต่ำกว่าเกณฑ์ (§4) · เช็ค log หา `FOLDER MISMATCH` (§6.1)
 4. ครบทุกรอบแล้ว: commit `curated_data_v6/` + `data_pipeline/curation_usage_v6.jsonl` → T5 ingest → E5 split → mock 12 กฎ + clean → generate
@@ -167,7 +167,7 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 3. commit `curated_data_v6/` + `curation_usage_v6.jsonl` · จดในรายงานว่าหยุดที่ 2a และกฎที่ยังไม่ถึงเกณฑ์ (น่าจะมี `partial_pushup`) = data gap
 4. T5 ingest → `kb_gemini_curated_v6`
 5. E5 split → commit `eval/split_v6.json` ทันที
-6. mock 12 กฎ + clean (`mock_sessions_per_fault.json` ตอนนี้ยังเป็นรหัสเก่า 9 ตัว)
+6. ~~mock 12 กฎ + clean~~ ✅ 2026-10-03: แยก 4 ไฟล์ตามท่า (user เลือก) · ต่อท่า = 1 session ต่อกฎ + mixed + clean (squat 6 · push-up 4 · lunge 6 · bicep-curl 4) · 10 entry ต่อ session · รูปแบบที่ user ยืนยัน: `error_type` และ `previous_common_errors` = key · `state_occurred` = state ของ FSM (CONCENTRIC/INFLECTION/ECCENTRIC) · ครั้งที่ไม่ถูกนับ `status: "abort"` · **สมมติฐาน (รอระบบ 1 ยืนยัน):** abort เป็น entry ใน `reps_detail`, `total_reps` นับเฉพาะ completed · `build_mock_sessions.py --check` ตรวจว่าไม่ขัดสเปก · ไฟล์เก่า (`mock_sessions_per_fault.json` ฯลฯ) เก็บไว้
 7. ปรับ prompt ขั้นต่ำให้ generator รับ key ใหม่ 12 ตัว → generate · P-rule-card / P5 เป็นขั้นแยกทีหลัง
    · ตอนอ่าน feedback ดู §6.2 (lunge ที่บอกว่าลำตัวโน้มไปหน้าดี)
 

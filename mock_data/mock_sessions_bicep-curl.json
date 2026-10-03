@@ -1,0 +1,493 @@
+[
+  {
+    "session_id": "BC-20261003-001",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "report_label": "Bicep Curl — elbow_flare",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 74,
+      "previous_correct_reps": 6,
+      "previous_incorrect_reps": 4,
+      "previous_common_errors": [
+        "elbow_flare"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 6,
+      "incorrect_reps": 4,
+      "overall_score": 77
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 92
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 63
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 61
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 59
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 56
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "BC-20261003-002",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "report_label": "Bicep Curl — partial_curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 73,
+      "previous_correct_reps": 6,
+      "previous_incorrect_reps": 3,
+      "previous_common_errors": [
+        "partial_curl"
+      ]
+    },
+    "summary": {
+      "total_reps": 9,
+      "correct_reps": 6,
+      "incorrect_reps": 3,
+      "overall_score": 79
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 91
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 64
+        },
+        "errors": [
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 62
+        },
+        "errors": [
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 60
+        },
+        "errors": [
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 48
+        },
+        "errors": [
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 84
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "BC-20261003-003",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "report_label": "Bicep Curl — mixed",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 70,
+      "previous_correct_reps": 5,
+      "previous_incorrect_reps": 4,
+      "previous_common_errors": [
+        "elbow_flare",
+        "partial_curl"
+      ]
+    },
+    "summary": {
+      "total_reps": 9,
+      "correct_reps": 5,
+      "incorrect_reps": 4,
+      "overall_score": 74
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 62
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 61
+        },
+        "errors": [
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 44
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "CONCENTRIC"
+          },
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 58
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "CONCENTRIC"
+          },
+          {
+            "error_type": "partial_curl",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 84
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 57
+        },
+        "errors": [
+          {
+            "error_type": "elbow_flare",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 83
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "BC-20261003-004",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "report_label": "Bicep Curl — clean",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 76,
+      "previous_correct_reps": 6,
+      "previous_incorrect_reps": 4,
+      "previous_common_errors": [
+        "elbow_flare",
+        "partial_curl"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 10,
+      "incorrect_reps": 0,
+      "overall_score": 89
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 92
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 91
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      }
+    ]
+  }
+]
