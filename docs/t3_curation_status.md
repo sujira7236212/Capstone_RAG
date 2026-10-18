@@ -43,8 +43,8 @@ cd data_pipeline && python rescue_false_mismatches.py --curated ../curated_data_
 | T4 curator | `--skip-list` · `general/` เห็น 12 กฎ + route ราย item · card `excludes` เป็น "do not tag when" · ไม่ใช้ mismatch กับ general | `3a98ac9` |
 | usage log / batch | `--usage-log` (input/cached/output/reasoning/model_version/finish_reason) · `--only` · `--batch` | `928264c` `8471ba7` `cada83c` |
 | alias split squat | `splitsquat` → lunge · rescue มี `--curated/--excluded` · `tag_coverage.py` | `fc4a096` |
-| รอบ 2a | 7 ไฟล์ (§5) · batch `round2a` · FOLDER MISMATCH 0 · `model_version` = `gemini-3.5-flash` ทุกครั้ง · `finish_reason` = STOP ทุกครั้ง | (batch file ยังไม่ commit) |
-| **ยังไม่ commit** | `curated_data_v6/` · `data_pipeline/curation_usage_v6.jsonl` (406 แถว) · `round2a` ใน `curation_batches_v6.json` — commit ตอนครบทุกรอบ | — |
+| รอบ 2a | 7 ไฟล์ (§5) · batch `round2a` · FOLDER MISMATCH 0 · `model_version` = `gemini-3.5-flash` ทุกครั้ง · `finish_reason` = STOP ทุกครั้ง | `f6fdf0b` |
+| **commit แล้ว** | `curated_data_v6/` · `data_pipeline/curation_usage_v6.jsonl` (406 แถว) · `round2a` ใน `curation_batches_v6.json` — หยุดที่ 2a (§8) | `f6fdf0b` |
 
 ### ค่าใช้จ่าย (Gemini 3.5 Flash: input $1.50 · cached $0.15 · output $9.00 ต่อ 1M token · thinking คิดเป็น output)
 | รอบ | calls | accept | input | cached | output | ค่า |
@@ -150,7 +150,7 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 | `data_pipeline/curator.py` | curator v6 |
 | `data_pipeline/prefilter_v6.json` | ผล T3a (skip list) |
 | `data_pipeline/curation_batches_v6.json` | รายการไฟล์แต่ละรอบ (`trial`, `round1`, `round2a`) |
-| `data_pipeline/curation_usage_v6.jsonl` | token ต่อครั้ง (ยังไม่ commit · แถว 300–406 = รอบ 2a) |
+| `data_pipeline/curation_usage_v6.jsonl` | token ต่อครั้ง (แถว 300–406 = รอบ 2a) |
 | `data_pipeline/tag_coverage.py` | นับ tag ต่อกฎ |
 | `data_pipeline/test_route_general.py` | เทสต์ route/skip/batch/fault block |
 | `curated_data_v6/<ท่า>/…` | ผล curate (ไฟล์ `general__*.json` = item ที่ route มาจาก `general/`) |
@@ -170,7 +170,7 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 6. ~~mock 12 กฎ + clean~~ ✅ 2026-10-03: แยก 4 ไฟล์ตามท่า (user เลือก) · ต่อท่า = 1 session ต่อกฎ + mixed + clean (squat 6 · push-up 4 · lunge 6 · bicep-curl 4) · 10 entry ต่อ session · รูปแบบที่ user ยืนยัน: `error_type` และ `previous_common_errors` = key · `state_occurred` = state ของ FSM (CONCENTRIC/INFLECTION/ECCENTRIC) · ครั้งที่ไม่ถูกนับ `status: "abort"` · abort ที่มี error นับเป็น `incorrect_reps` (user) → `total_reps` = correct + incorrect = ทุก entry, `overall_score` เฉลี่ยทุก entry · **สมมติฐาน (รอระบบ 1 ยืนยัน):** abort เป็น entry ใน `reps_detail` · `build_mock_sessions.py --check` ตรวจว่าไม่ขัดสเปก · ไฟล์เก่า (`mock_sessions_per_fault.json` ฯลฯ) เก็บไว้
 7. ปรับ prompt ขั้นต่ำให้ generator รับ key ใหม่ 12 ตัว → generate · P-rule-card / P5 เป็นขั้นแยกทีหลัง
    · ตอนอ่าน feedback ดู §6.2 (lunge ที่บอกว่าลำตัวโน้มไปหน้าดี)
-   - **prompt v14** (2026-10-03, ยังไม่ commit) แก้แค่การอ่าน format: `error_type` = key (บรรยายเป็นภาษาคน ห้ามพิมพ์ key, ตัวแรก = priority สูงสุด) · `abort` (นับใน total/incorrect, เรียก "attempt N") · default collection เป็น v6 (`embedding_config.py`) · **ไม่**แตะ `consequence` (P1), P2–P6, rule card, ทาง A §6.7
+   - **prompt v14** (2026-10-03, `e6b2a9a`) แก้แค่การอ่าน format: `error_type` = key (บรรยายเป็นภาษาคน ห้ามพิมพ์ key, ตัวแรก = priority สูงสุด) · `abort` (นับใน total/incorrect, เรียก "attempt N") · default collection เป็น v6 (`embedding_config.py`) · **ไม่**แตะ `consequence` (P1), P2–P6, rule card, ทาง A §6.7
    - **`state_occurred` ยังไม่ส่งให้ LLM** (user 2026-10-03): `HELD_BACK_FIELDS` ใน `test_rag_compare.py` ตัดออกจาก payload · ไฟล์ mock เก็บไว้เหมือนเดิม · เหตุผล: smoke 2 รอบที่อธิบาย state ใน prompt (`compare_output/smoke_v14.md`, `smoke_v14b.md`) ยังอ่าน CONCENTRIC เป็น "ขึ้น" 3–4/8 คำตอบ, ผูกกฎแบบ rep กับช่วง 4/8, คำ concentric/eccentric หลุด 2–3/8 และความหมายจริงยังไม่ยืนยันกับระบบ 1 · smoke รอบ 3 ไม่ส่ง state (`smoke_v14c.md`): key หลุด 0/8 · ตัวเลข/abort ถูก 8/8
    - เอา state กลับมา = checkpoint generation แยก เทียบกับ baseline v14
    - **คำถามที่ต้องคุยกับระบบ 1** (รูปแบบ JSON ที่ mock อยู่):

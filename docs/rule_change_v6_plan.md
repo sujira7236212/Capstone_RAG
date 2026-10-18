@@ -63,7 +63,7 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 
 ## 2. ขั้นตอน
 
-### T1 — taxonomy ใหม่ ✅ ทำใหม่ 2026-10-01 (ร่าง ยังไม่ commit)
+### T1 — taxonomy ใหม่ ✅ ทำใหม่ 2026-10-01 (commit `95eed58` · Q-spec ยืนยัน `cc4f55b`)
 - `error_taxonomy.py`: key = ชื่อกฎ 2026-09-28 · `aliases[0]` = cue บนจอ · `display_th` ตรงกับ card
 - `LEGACY_CODES` ต่อท่า: ชื่อ 2026-09-25 (ซึ่งเป็นชื่อโฟลเดอร์ย่อยใน `data/` ด้วย) + รหัส 2026-09-11 + ยุค v4 · **`butt wink` → `rounded_back`** (oq2)
 - `query` = **Q-spec** ทั้ง 12 ตัวเขียนใหม่จาก `definition`/`includes` ของ card (ไม่ใช้ anchor ไม่เปิด KB) เป็นประโยคบรรยายเชิงบวกเท่านั้น
