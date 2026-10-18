@@ -1,0 +1,712 @@
+{
+ "report": "compare_result_v14_push-up.md",
+ "mock": "mock_data/mock_sessions_push-up.json",
+ "collection": "kb_gemini_curated_v6",
+ "raw_query": false,
+ "llm": "gemini-3.5-flash-lite",
+ "temperature": 0.7,
+ "samples": 3,
+ "system_prompt_sha1": "bd4b464157381df74fed3805f0b36ca8b8177437",
+ "retrieval": {
+  "TAG_MODE": "prefer",
+  "KIND_POOL": "split",
+  "QUERIES": "profile",
+  "HYBRID": false,
+  "RERANK": false
+ },
+ "sessions": [
+  {
+   "label": "Push-up — hip_sag_or_pike",
+   "exercise_id": "push-up",
+   "payload": {
+    "session_id": "PU-20261003-001",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 73,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "hip_sag_or_pike"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 76
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 63
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 58
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 56
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: hip_sag_or_pike | source: www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels]\nFailing to activate the deep core muscles required to stabilize the spine and pelvis during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to maintain a neutral lumbar spine position during a push-up results in anterior pelvic tilt and trunk lag, indicating impaired trunk stability.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAllowing the lower back to sag or arch during a push-up increases mechanical stress on the vertebral discs.\n\n[mistake | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nAnterior pelvic tilt and trunk lag are common errors where the trunk fails to lift as a single unit during the push-up.\n\n[mistake | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAs fatigue sets in during a push-up, the lower back may arch or sag, causing the kinetic chain checkpoints to migrate out of alignment.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nImproving awareness of lumbar spine position and thoracic spine mobility can help improve trunk stability during a push-up.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMore than 60% (n=65/108) of active females failed the Trunk Stability Push Up (TSPU) compared to less than 10% (n=10/101) of active males.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a pilot study of active females, a six-week multiplanar trunk stability intervention resulted in 9 of 20 participants (45%) improving their Trunk Stability Push Up (TSPU) score to ≥2.",
+   "metrics": [
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "mistake",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.07353249411381724,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "finding",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.23760149030667121,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "consequence",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.1141966445211533,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "principle",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.13662133842301072,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nGood effort today. Your overall score ticked up slightly from 73 to 76, and you matched your previous count with 6 clean, solid reps out of 10. That said, your old habit—letting your hips sag—is still hanging around, appearing on reps 4, 6, 8, and 10. Notice how it only shows up in the second half of the set? That tells us your core is giving out as fatigue sets in, causing your trunk to lag behind your upper body instead of lifting as one solid piece.\n\n***\n\n### Error Breakdown\n\n* **What it is, in plain words:** Your lower back arches and your hips drop toward the floor mid-rep, breaking the straight line from your shoulders to your ankles.\n* **Why it matters:** When your midsection gives out, the stress shifts straight onto the discs in your lower back instead of staying locked into your core and upper body. That means you'll start feeling a dull ache or pinch in your lower back as the set drags on, and it robs you of the stable platform you need to push heavy and build real chest and arm strength.\n* **How to fix it:** \n  *(a) Cue to think about:* Squeeze your glutes hard and brace your stomach like someone's about to poke you in the gut right before you start moving.\n  *(b) Setup change:* Drop your knees to the floor for your sets once you feel your form starting to slip, or cut your set short by a rep or two before the breakdown happens.\n  *(c) Drill or regression:* Try practicing plank holds on your toes to build the trunk stability you need to keep your hips locked in place.\n  *(d) Self-check:* Glance at a mirror sideways or set your phone up to record—if your hips hit the floor a split second before your chest does, you know your core let go.\n\n***\n\n### Next Session Plan\n1. **Stop the slide:** Cut your sets off one rep *before* your form breaks down. If reps 4, 6, 8, and 10 are where your hips sag, stop at 3 clean reps per set today and build quality up from there.\n2. **Prioritize the brace:** Spend an extra five seconds setting your core and squeezing your glutes before you even unlock your arms on every single rep.",
+    "### Progress Tracking\nGood effort out there today. Your overall score ticked up slightly from 73 to 76, and you matched your previous performance by banking 6 clean, solid reps. That said, your incorrect rep count stayed locked at 4. The same issue from yesterday—letting your hips sag or hike up—is still showing up, meaning we haven't quite stamped it out yet, but you're keeping your core braced for a bit longer before fatigue sets in.\n\n### Error Breakdown\n\n* **What it is, in plain words:** Your lower back starts to arch and your hips dip toward the floor as you press, meaning your midsection caves in and your torso stops moving as a single rigid block. \n* **Why it matters:** When your trunk fails to stay locked, extra mechanical stress goes straight onto your spinal discs. That translates to a dull, nagging ache in your lower back during or after your set, robbing your chest and arms of a stable platform to push from and risking your long-term joint health as you add weight or volume.\n* **How to fix it:** \n  *(a) Cue:* Think about tucking your tailbone under and pulling your belt buckle toward your belly button to lock your midsection in place.\n  *(b) Setup:* Elevate your hands on a sturdy bench or box for your next session to reduce the load on your core, making it easier to keep your body straight from your head to your heels.\n  *(c) Drill:* Practice the plank hold on your elbows or hands, focusing hard on squeezing your glutes and bracing your abs so your hips never drop.\n  *(d) Self-check:* Notice that this fault only crops up on your later reps (reps 4, 6, 8, and 10)—as fatigue builds, your hips give out. \n* **Use the rep detail:** Notice that your form stays clean on the first three reps and only starts to break down on the later attempts (reps 4, 6, 8, and 10) when fatigue creeps in.\n\n### Next Session Plan\n1. **Cut the sets short:** Stop your sets one rep *before* your hips start to sag—quality over junk volume.\n2. **Use an incline regression:** If you're hitting fatigue and letting your lower back arch by rep 4, drop the floor and elevate your hands on a higher surface so you can finish every rep with a flat back.\n3. **Rest longer:** Give yourself a bit more recovery time between sets to let your core completely reset so you aren't carrying residual fatigue into your next push.",
+    "### Progress Tracking\nGood work stepping back under the bar today—your overall score ticked up to 76 from 73 last session, and you matched your clean rep count with 6 solid reps completed. That said, your old habit is still hanging around: your lower back sagging or hips piking showed up on reps 4, 6, 8, and 10. Notice how it only happens in the back half of the set? That tells us your core endurance is giving out as you fatigue, causing your midsection to lose tension right when you need it most.\n\n### Error Breakdown\n\n* **What it is:** Your hips and lower back are sagging toward the floor or piking up instead of your whole body moving as a single, rigid plank.\n* **Why it matters:** When your midsection gives out, your lower back takes on extra mechanical stress, dumping load straight onto your spinal discs. That costs you core stability and sets you up for a dull, nagging ache in your lower back by the time you finish your set.\n* **How to fix it:** \n  - (a) Cue yourself to squeeze your glutes hard and brace your stomach as if someone is about to poke you in the gut before you even start descending.\n  - (b) Set up with your hands directly under your shoulders and actively push the floor away to lock your upper back in place before initiating the rep.\n  - (c) Try an incline push-up with your hands elevated on a sturdy bench or box to build your core strength without letting your hips sag under horizontal body weight.\n  - (d) Record a quick video from the side and check if your hips and shoulders rise and fall together at the exact same time, or if your hips drop first.\n\n### Next Session Plan\n1. **Cut the set short when form slips:** Since your lower back starts sagging on the later reps (4, 6, 8, and 10), end your sets a rep or two before that breakdown happens so you only practice good movement.\n2. **Prioritize mid-set rest:** Give yourself a full, honest rest between sets to let your core recover fully, ensuring you don't carry accumulated fatigue into your next round."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGreat effort today! Your overall score ticked up slightly from 73 to 76, and you matched your previous count of 6 correct reps. The recurring issue from yesterday—letting your hips sag or pike—showed up again, appearing on reps 4, 6, 8, and 10. Notice how it didn't plague your entire set? It crept in exclusively during the second half of your workout as fatigue set in. Let's look at how to lock that down so you can carry your strong form all the way through to the final rep.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your hips are dropping toward the floor or hiking up toward the ceiling instead of keeping your body in a straight, rigid line from your head to your heels.\n*   **Why it matters:** When your midsection gives way, your lower back takes the brunt of the load instead of your core and chest sharing the work. That means you'll start feeling a dull ache in your lower back by the end of your set, costing you the abdominal engagement you're after and risking strain as you push heavier or higher-rep sets.\n*   **How to fix it:** \n    *   (a) *Cue:* Imagine pulling your belt buckle toward your chin and squeezing your glutes hard like you're holding a coin between your cheeks.\n    *   (b) *Setup change:* Move your feet slightly wider apart to create a more stable base of support before you start your set.\n    *   (c) *Drill:* Drop your knees to the floor for a few strict sets to retrain your core tension, or elevate your hands on a sturdy bench to reduce the load on your midsection until you can hold the plank position cleanly.\n    *   (d) *Self-check:* Glance at a mirror sideways or set your phone up to record—if your hips dip below your shoulder-to-heel line at any point, you'll see it instantly.\n\n### Next Session Plan\n1. **Watch the fatigue cliff:** Since your hip form broke down only on the even-numbered reps in the second half (4, 6, 8, and 10), cut your sets short just before your form starts to fray. Quality beats junk volume every time.\n2. **Prioritise core tension:** Spend an extra 30 seconds setting up your plank position before you even bend your elbows on rep one. Squeeze your glutes and brace your abs before you make a move.",
+    "### Progress Tracking\nGreat job showing upward momentum since yesterday! Your overall score ticked up from 73 to 76, and you matched your previous count of 6 correct reps. The good news is that old bugbear—letting your hips sag or pike—is still showing up, but notice *when* it happens: it didn’t touch your first three reps at all. It only crept in on reps 4, 6, 8, and 10 as fatigue set in later in the set. That tells us your strength is there, but your core stamina is fading toward the finish line. \n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your hips are dropping toward the floor or lifting up into the air like a tent, breaking the straight line from your shoulders to your heels.\n*   **Why it matters:** When your midsection gives out, your lower back takes the brunt of the load instead of your core bracing the movement. That costs you strength and leaves your lower back feeling stiff or achy by the time you finish, while robbing your chest and arms of the stable platform they need to do the actual work.\n*   **How to fix it:** \n    *   *(a) Cue:* Imagine balancing a full cup of water on your lower back, or squeeze your glutes hard as if you are trying to crack a walnut between your cheeks.\n    *   *(b) Setup:* Shorten your sets. Since this only happened on the even-numbered reps in the second half of your set, stop at 3 clean reps today and build back up once your core endurance catches up.\n    *   *(c) Drill:* Drop to an incline push-up with your hands on a sturdy bench or box to take some load off your midsection while you master keeping your body rigid.\n    *   *(d) Self-check:* Glance at a mirror sideways or set your phone up to record; your shoulders, hips, and ankles should move together as one solid plank.\n\n***\n\n### Next Session Plan\n1. **Cap your reps early:** Cut your sets off at 3 clean reps before fatigue ruins your form, taking a solid two-minute break between sets to let your core fully recover.\n2. **Prioritize the plank:** Squeeze your glutes and brace your abs hard on every single rep, treating the push-up as a moving plank rather than just an arm exercise.",
+    "### Progress Tracking\nGood work on consistency today. Your overall score ticked up to 76 (from 73 in your last session), and you matched your previous count of 6 correct reps. That recurring issue with your hips dropping or piking is still hanging around—it popped up in your previous session and showed up again today—so it remains our primary target. The good news is you still powered through 6 clean reps before fatigue started pulling your form out of alignment. \n\n***\n\n### Error Breakdown\n\n* **What it is:** Your hips are sagging toward the floor or piking up toward the ceiling as you push, breaking the straight line from your shoulders to your ankles. This cluster of errors showed up exclusively in the second half of your set (reps 4, 6, 8, and 10), right as fatigue started to set in.\n* **Why it matters:** When your midsection gives out, your lower back takes the brunt of the load instead of your core bracing the movement. You'll feel this as a dull ache in your lower back by the time you finish your set, and it robs your upper body and core of the stable platform they need to drive out maximum strength and muscle growth.\n* **How to fix it:** \n  * *(a) Cue:* Think about pulling your belt buckle up toward your ribs and squeezing your glutes hard to lock your torso in place.\n  * *(b) Setup change:* Drop your rep count on each set and stop one rep *before* your form breaks down—cut your working sets to 3 clean reps if that's where form holds, rather than grinding out ugly reps.\n  * *(c) Drill:* Practice plank holds on your toes for 20 to 30 seconds to build the endurance your midsection needs to stay rigid during the push-up.\n  * *(d) Self-check:* Glance at a mirror sideways or prop your phone up to record a set; if your hips drift lower or higher than your shoulders mid-rep, you'll see it instantly.\n\n***\n\n### Next Session Plan\n1. **Prioritize quality over volume:** Keep your sets short and crisp. The moment your hips start to sag or pike—just like they did on reps 4, 6, 8, and 10 today—shut the set down immediately.\n2. **Lock in the core:** Spend a minute practicing a tight plank before you start your push-ups to wake up the exact muscles you need to keep your hips level."
+   ]
+  },
+  {
+   "label": "Push-up — partial_pushup",
+   "exercise_id": "push-up",
+   "payload": {
+    "session_id": "PU-20261003-002",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 74,
+     "previous_correct_reps": 7,
+     "previous_incorrect_reps": 3,
+     "previous_common_errors": [
+      "partial_pushup"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 7,
+     "incorrect_reps": 3,
+     "overall_score": 75
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 50
+      },
+      "errors": [
+       {
+        "error_type": "partial_pushup"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 48
+      },
+      "errors": [
+       {
+        "error_type": "partial_pushup"
+       }
+      ]
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 45
+      },
+      "errors": [
+       {
+        "error_type": "partial_pushup"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 83
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[mistake | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to complete the push-up by only rising one to two inches from the floor due to insufficient upper body strength.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide]\nLower the body with control until the chest approaches the floor.\n\n[consequence | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nNot achieving adequate range of motion limits chest stretch and development.\n\n[finding | re: partial_pushup | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe increased force in the down position of a push-up is due to the whole-body center of mass being located further from the point of contact with the floor, which results in greater torque.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nDescend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility.\n\n[finding | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a study of active females, 45% of participants passed the Trunk Stability Push-Up (TSPU) post-intervention, with many of those who failed only able to rise one to two inches from the floor.",
+   "metrics": [
+    {
+     "error": "partial_pushup",
+     "kind": "mistake",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.12236043873775837,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "finding",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.21860639383564218,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "consequence",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.1995772839600306,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "principle",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.18876076079584192,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nGreat to see a step forward since yesterday! Your overall score ticked up slightly from 74 to 75, and you matched your count of 7 solid, completed reps. The same stubborn issue—cutting your range of motion short—is still hanging around, appearing on your aborted attempts (reps 5, 7, and 9) where fatigue set in and you could only push an inch or two off the floor. You're fighting through the set, but those mid-set dips are where the form breaks down. Let's fix that so every rep counts.\n\n### Error Breakdown\n\n*   **What it is:** Stopping short and cutting the movement off early, getting stuck just an inch or two above the floor on attempts 5, 7, and 9 instead of finishing the press.\n*   **Why it matters:** When you cut the depth and range of movement short, your chest misses out on the proper stretch and development it needs for growth. Because the bottom position of a push-up demands the most force—since your whole-body center of mass is furthest from your hands—short-changing that bottom part cheats your muscles out of the hard work that builds real strength.\n*   **How to fix it:** \n    *   *(a) Cue:* Think about actively pushing the floor away from you while keeping your chest proud all the way to the bottom.\n    *   *(b) Setup change:* Shorten your working sets by a rep or two, or switch to incline push-ups on a sturdy bench to keep your upper body strong enough to finish every single rep cleanly.\n    *   *(c) Drill:* Practice kneeling push-ups or reduce your volume so you never hit the point of muscular failure where you get pinned an inch off the ground.\n    *   *(d) Self-check:* Glance at your phone video or check the mirror to ensure your elbows bend to about a 90-degree angle and your chest gets close to the floor on every single try.\n\n### Next Session Plan\n\n*   **Drop the volume slightly:** Cut your working set down to 6 clean reps to avoid hitting that wall where attempts 5, 7, and 9 stalled out. Quality over grinding out half-reps.\n*   **Elevate if needed:** If fatigue catches up to you again, elevate your hands on a stable surface for the final few reps so you can maintain a full range of motion without getting stuck.",
+    "### Progress Tracking\n\nSolid effort today. You hit 7 correct reps out of 10 total attempts, nudging your overall score up slightly to 75 compared to 74 in your last session. That old issue with cutting your depth short—which tripped you up last time—showed up again today, but specifically when fatigue set in, causing you to stall out and abort attempts 5, 7, and 9 right near the bottom. \n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting your reps short near the bottom, stalling out after pushing just an inch or two off the floor instead of pressing all the way back up to the top.\n*   **Why it matters:** When you don't take your chest toward the floor, your chest muscles miss out on the deep stretch they need for maximum growth and development. If you skim on that range of motion, you get less muscle building for the exact same amount of effort.\n*   **How to fix it:** \n    (a) **Cue:** Think about driving the floor away hard as soon as your elbows hit roughly a 90-degree bend or your chest gets close to the deck. \n    (b) **Setup:** Lower the load by shifting to an incline push-up on a sturdy bench or elevated bar so you can comfortably hit the full depth without stalling. \n    (c) **Drill:** Practice a set of knees-down push-ups focusing strictly on getting your chest all the way down and locked out at the top. \n    (d) **Self-check:** Glance in a mirror or set your phone up from the side to verify that your elbows reach about a 90-degree bend before you press back up.\n*   **Rep detail note:** This wasn't an issue at the start of your set—reps 1 through 4 were clean. The breakdowns happened exclusively on your aborted attempts (5, 7, and 9) when upper-body fatigue caught up to you. Recognizing this pattern means you can pull the plug before form degrades.\n\n***\n\n### Next Session Plan\n\n*   **Drop the volume slightly before failure:** Since your depth started failing on the middle-to-late attempts, stop your sets one or two reps *before* your form breaks down so every rep you log is high quality.\n*   **Regulate your depth:** Use an elevated surface like a box or bench for your sets today if needed, ensuring you can hit full range of motion on every single rep without stalling near the floor.",
+    "### Progress Tracking\n\nGreat job showing up again. Compared to your last session on October 2nd, your overall score ticked up slightly from 74 to 75, and you matched your count with 7 fully completed reps. That said, your old habit—shortchanging your range of motion—is still hanging around, showing up as aborted attempts on reps 5, 7, and 9 where you couldn't press all the way back up. \n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting your reps short—specifically on attempts 5, 7, and 9, where fatigue sets in and you stall out after rising just an inch or two off the floor, failing to finish the push.\n*   **Why it matters:** When you don't push through a full range of motion, your chest muscles miss out on the deep stretch they need to trigger maximum muscle growth and development. Stopping short robs you of the full muscular benefit you're working for, leaving potential strength gains on the table.\n*   **How to fix it:** \n    (a) **Cue:** Think about driving the floor away from you and pressing straight up until your elbows lock out completely on every single rep.\n    (b) **Setup change:** If your upper body runs out of gas near the bottom of the movement, elevate your hands on a sturdy bench or plyo box to shorten the distance while still letting you hit full elbow extension.\n    (c) **Drill:** Practice knee push-ups or eccentric-only push-ups (lowering yourself to the floor slowly over three seconds, then dropping to your knees to reset) to build up the upper-body strength required to clear the bottom portion of the lift.\n    (d) **Self-check:** Keep an eye on your phone video or a mirror and watch your elbows: make sure they bend to roughly a 90-degree angle at the bottom and straighten fully at the top before you call the rep done.\n\n***\n\n### Next Session Plan\n\n*   **Drop the elevation if needed:** If you start stalling out on your regular floor push-ups like you did on attempts 5, 7, and 9, elevate your hands slightly right away so you can maintain a clean, complete range of motion without aborting reps.\n*   **Cap your sets:** Stop your working sets one rep *before* your form breaks down and you find yourself stuck near the floor, keeping the quality high."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGood effort out there today. Your overall score ticked up slightly from 74 to 75, and you matched your previous performance by nailing 7 correct reps. You still carried over one familiar issue from yesterday—partial reps—which popped up on your three aborted attempts (reps 5, 7, and 9). The good news is that your clean reps are solid; now we just need to keep that range of motion honest when fatigue sets in.\n\n---\n\n### Error Breakdown: Partial Reps\n\n*   **What it is:** You're cutting the movement short and pushing back up before your chest gets close enough to the floor, specifically happening on those aborted attempts later in the set when fatigue starts creeping in.\n*   **Why it matters:** When you shorten the range of motion, your chest and triceps don't go through a full stretch and contraction, meaning you miss out on the muscle-building stimulus you're working for. It rops you of a trustworthy rep count and lets you bypass the hardest part of the lift, which holds back your pushing strength as the weight gets more challenging.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about actively pulling your chest down to the floor, driving your entire torso down as a single solid unit before pressing away.\n    *   (b) *Setup:* Slow down your tempo on the descent—take an extra second to lower yourself so you control the depth instead of rushing the turnaround.\n    *   (c) *Drill:* Drop to an incline push-up on a sturdy bench or box for your final sets if you find your chest stalling out halfway down, which lets you hit full depth without your form breaking completely.\n    *   (d) *Self-check:* Set your phone up side-on to record a set and watch whether your chest clearly reaches the bottom position on every single rep, or notice if your elbows are staying high and rigid early.\n\n---\n\n### Next Session Plan\n1. **Pace your descent:** Don't let your speed increase as you get tired; control the way down on every rep to ensure you hit full depth.\n2. **Cut the set when form drops:** On your next workout, if you feel yourself cutting reps short like you did on attempts 5, 7, and 9, stop the set right there rather than fighting through incomplete movement.",
+    "### Progress Tracking\n\nSolid effort today. You landed an overall score of 75, a slight tick up from 74 in your last session on October 2nd. Your correct rep count held steady at 7, and you kept the exact same number of incorrect reps (3). The familiar issue of cutting your depth short showed up again on attempts 5, 7, and 9, causing those three to abort before you finished the movement. You kept the core clean, though—no new errors crept in, and you punched out all 7 completed reps with solid execution. \n\n***\n\n### Error Breakdown: Partial Push-up\n\n* **What it is, in plain words:** You are cutting your descent short on the later half of the set instead of taking your chest all the way down to the floor. \n* **Why it matters:** When you shorten your range of motion, your chest and triceps miss out on the full stretch and workload they need to grow stronger. It leaves reps on the table that you can't truly trust, and it usually means fatigue is starting to take over your technique as you get deeper into the set.\n* **How to fix it:**\n  * (a) Cue: Think about actively pulling your chest down to an imaginary target an inch off the floor on every single descent.\n  * (b) Setup change: Take a brief, one-second pause at the top of each rep to reset your tension before you drop back down.\n  * (c) Drill: Drop to your knees for the final few reps when fatigue hits, letting you finish out the full range of motion without cutting corners.\n  * (d) Self-check: Have a training partner watch your side profile or prop your phone up to check that your chest consistently hits the bottom marker on every rep, especially when you start getting tired.\n\n***\n\n### Next Session Plan\n\n1. **Protect your depth early:** Focus on hitting that full bottom position right from rep 1 so it sets the standard for the whole set.\n2. **Cut the set short before form breaks:** Since your depth started failing on attempts 5, 7, and 9, try stopping your working sets one rep before fatigue forces you to cut the range short. \n3. **Use a pause:** Keep that intentional pause at the top of your push-ups to stay tight and organized throughout the workout.",
+    "### Progress Tracking\nGood effort today. You hit 7 clean, completed reps and scored a 75 overall, a slight nudge up from 74 in your last session. You also kept the exact same number of correct reps (7) as yesterday. The catch is that your error count stayed locked at 3—specifically on attempts 5, 7, and 9, where you cut the movement short and aborted before finishing the rep. That old habit of incomplete depth (\"partial_pushup\") is sticking around, so let's clear it out.\n\n### Error Breakdown\n\n* **What it is, in plain words:** You are cutting your depth short on attempts 5, 7, and 9, pushing back up before your chest gets down to the floor.\n* **Why it matters:** Short-changing your range of motion means your chest, triceps, and shoulders don't go through a full stretch and contraction, leaving you with less muscle growth and strength gains for the same amount of effort. Worse, it tends to creep in as fatigue sets in during the later part of your set, meaning you're bailing out early just when the muscle is supposed to be doing the hardest work.\n* **How to fix it:**\n  - (a) Cue: Think about actively pulling your chest down to lightly touch the floor on every single descent.\n  - (b) Setup change: Narrow your focus to tempo—slow down the way down so you actually hit the bottom position before reversing.\n  - (c) Drill: Drop to an incline push-up on a sturdy bench or box for your next session to groove the full range of motion without failing halfway down.\n  - (d) Self-check: Have a partner watch your side profile or film your set on your phone to confirm your chest actually reaches the bottom position before you push back up.\n\n### Next Session Plan\n1. **Pace your reps:** Don't rush the descent, especially on the back half of the set where you started cutting them short today.\n2. **Use a depth target:** If hitting the floor is too tough by rep 5, place a small, soft target (like an ab mat or yoga block) under your chest so you have a physical marker to aim for every time. \n3. **Cut the set earlier if needed:** If fatigue causes you to abort or cut depth by rep 5 again, finish the set cleanly there instead of grinding out half-reps."
+   ]
+  },
+  {
+   "label": "Push-up — mixed",
+   "exercise_id": "push-up",
+   "payload": {
+    "session_id": "PU-20261003-003",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 71,
+     "previous_correct_reps": 5,
+     "previous_incorrect_reps": 5,
+     "previous_common_errors": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 4,
+     "incorrect_reps": 6,
+     "overall_score": 65
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 61
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 46
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       },
+       {
+        "error_type": "partial_pushup"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 58
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 44
+      },
+      "errors": [
+       {
+        "error_type": "partial_pushup"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 55
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 40
+      },
+      "errors": [
+       {
+        "error_type": "hip_sag_or_pike"
+       },
+       {
+        "error_type": "partial_pushup"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: hip_sag_or_pike | source: www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels]\nFailing to activate the deep core muscles required to stabilize the spine and pelvis during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to maintain a neutral lumbar spine position during a push-up results in anterior pelvic tilt and trunk lag, indicating impaired trunk stability.\n\n[mistake | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to complete the push-up by only rising one to two inches from the floor due to insufficient upper body strength.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAllowing the lower back to sag or arch during a push-up increases mechanical stress on the vertebral discs.\n\n[mistake | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nAnterior pelvic tilt and trunk lag are common errors where the trunk fails to lift as a single unit during the push-up.\n\n[mistake | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAs fatigue sets in during a push-up, the lower back may arch or sag, causing the kinetic chain checkpoints to migrate out of alignment.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nImproving awareness of lumbar spine position and thoracic spine mobility can help improve trunk stability during a push-up.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide]\nLower the body with control until the chest approaches the floor.\n\n[consequence | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nNot achieving adequate range of motion limits chest stretch and development.\n\n[finding | re: partial_pushup | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe increased force in the down position of a push-up is due to the whole-body center of mass being located further from the point of contact with the floor, which results in greater torque.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nDescend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMore than 60% (n=65/108) of active females failed the Trunk Stability Push Up (TSPU) compared to less than 10% (n=10/101) of active males.\n\n[finding | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a study of active females, 45% of participants passed the Trunk Stability Push-Up (TSPU) post-intervention, with many of those who failed only able to rise one to two inches from the floor.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a pilot study of active females, a six-week multiplanar trunk stability intervention resulted in 9 of 20 participants (45%) improving their Trunk Stability Push Up (TSPU) score to ≥2.",
+   "metrics": [
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "mistake",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.07353249411381724,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "finding",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.23760149030667121,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "consequence",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.1141966445211533,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "hip_sag_or_pike",
+     "kind": "principle",
+     "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+     "best": 0.13662133842301072,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "mistake",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.12236043873775837,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "finding",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.21860639383564218,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "consequence",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.1995772839600306,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_pushup",
+     "kind": "principle",
+     "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+     "best": 0.18876076079584192,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nYou landed 4 correct reps out of 10 total entries today, giving you an overall score of 65. Compared to your last session on October 2nd, your correct rep count dropped by one (from 5 to 4), your incorrect count ticked up (from 5 to 6), and your overall score dipped slightly from 71. The good news: both of your recurring faults—letting your hips sag or pike and cutting your range of motion short—showed up again, meaning you haven't cleared them yet, but your first two reps today were clean, solid movement. \n\n---\n\n### Lower back sagging or hips piking\n- **What it is:** Your hips and lower back give way, causing your midsection to dip toward the floor or pike upward instead of your entire upper and lower body moving as a single, rigid plank.\n- **Why it matters:** When your midsection sags, your lower back soaks up extra mechanical stress on the vertebral discs. That's the nagging ache in your spine that creeps up mid-set, and it strips away the core stability you need to press heavy loads safely.\n- **How to fix it:** \n  - (a) **Cue:** Squeeze your glutes hard and brace your stomach as if someone is about to poke you in the ribs before you even start descending.\n  - (b) **Setup change:** Elevate your hands on a sturdy bench or box to lessen the load on your core until you can hold a flat plank for the entire set.\n  - (c) **Drill:** Practice a standard floor plank holding your body totally rigid for 20 to 30 seconds to build the deep core bracing you are losing as fatigue sets in.\n  - (d) **Self-check:** Set your phone up to record from the side—your shoulders, hips, and ankles should move together in a straight line without your hips lagging behind.\n\n---\n\n### Partial push-up (not going deep enough)\n- **What it is:** You cut the bottom of the movement short—seen clearly in your aborted attempts 5, 8, and 10, where you only managed to push an inch or two off the bottom or failed to press back up at all.\n- **Why it matters:** Stopping short robs your chest of the deep stretch it needs for optimal muscle development. You miss out on the full range of motion, meaning less muscle growth for the exact same effort.\n- **How to fix it:** \n  - (a) **Cue:** Imagine pulling your chest down actively toward the floor until your elbows hit roughly a 90-degree bend or your chest nearly touches.\n  - (b) **Setup change:** Slow down your descent and pause for a split second just above the floor before pressing back up to eliminate momentum.\n  - (c) **Drill:** Drop to your knees for a lighter regression to ensure you can hit the bottom position cleanly without stalling out.\n  - (d) **Self-check:** Watch for your elbows to bend to about 90 degrees on every single rep before you reverse direction.\n\n---\n\n### Next Session Plan\n1. **Drop the volume slightly or scale early:** Since your faults and aborted attempts clustered heavily in the back half of the set as fatigue set in, stop your working sets a rep or two *before* your form breaks down.\n2. **Prioritize core bracing:** Spend two minutes practicing a static plank before you start your push-ups to wake up the deep core muscles that kept letting your lower back sag today.",
+    "### Progress Tracking\n\nYour overall score slipped a bit from 71 to 65, and your correct rep count dropped from 5 down to 4 out of 10 total attempts (which included 3 aborted tries). Both of the errors from your last session—letting your hips sag and cutting your depth short—are still following you, and they showed up heavily as fatigue settled in toward the second half of your set. \n\n***\n\n### Hips Sagging or Piking\n\n*   **What it is:** Your midsection gives way and your lower back arches or sags toward the floor instead of your whole body moving as a single, rigid plank.\n*   **Why it matters:** When your core switches off and your lower back dips, extra mechanical stress dumps directly into your vertebral discs. That’s the dull ache in your lower back that lingers after a set, and it costs you the solid body tension needed to press heavy loads safely.\n*   **How to fix it:** \n    *   *Cue:* Squeeze your glutes hard and brace your stomach as if someone is about to poke you in the ribs before you even start moving.\n    *   *Setup:* Keep your spine neutral and focus on moving your chest and hips up at the exact same time so your trunk never lags behind.\n    *   *Drill:* Drop your knees to the floor for a regressed push-up to rebuild your midsection strength, or pause for a second in a high plank to check your alignment before lowering.\n    *   *Self-check:* Record your set on your phone and look to see if your hips drop first when you start getting tired.\n*   **Rep Detail:** This fault started creeping in on rep 3, showed up on aborted attempt 5, and returned on reps 6, 9, and 10 as fatigue took over.\n\n***\n\n### Partial Push-Up Range of Motion\n\n*   **What it is:** You are cutting the movement short, pushing back up before your chest gets close to the floor.\n*   **Why it matters:** If you don't lower yourself fully, you miss out on the deep stretch across your chest. That means less muscle growth for the exact same amount of effort, and it leaves your strength incomplete at the hardest part of the lift.\n*   **How to fix it:** \n    *   *Cue:* Lower yourself under control until your chest nearly touches the floor or your elbows hit about a 90-degree bend.\n    *   *Setup:* Slow down your descent so you aren't rushing the bottom portion where the hardest leverage lives.\n    *   *Drill:* Practice incline push-ups with your hands on a sturdy elevated surface like a bench to make full depth manageable.\n    *   *Self-check:* Have a gym partner watch from the side to confirm your chest gets close to the floor on every single rep.\n*   **Rep Detail:** This error clustered entirely in your aborted attempts (attempts 5, 8, and 10), where you couldn't drive yourself back up out of the bottom.\n\n***\n\n### Next Session Plan\n\n1. **Cut the set short before form breaks:** When you feel your lower back start to arch or your hips begin to sag—typically around rep 3 or 6 based on today—stop the set immediately rather than grinding out sloppy reps.\n2. **Elevate your hands if needed:** If you find yourself cutting your depth short on attempts 8 through 10, elevate your hands on an incline to ensure you can hit full depth with a rigid core.",
+    "### Progress Tracking\n\nYour overall score dipped slightly to 65 today compared to 71 in your last session, and your correct rep count dropped from 5 down to 4 out of your 10 total attempts (which included 3 aborted tries where you had to cut the movement short). Both of your familiar form faults—letting your hips sag and cutting your range of motion short—showed up again today, meaning neither of them has cleared out just yet. \n\n---\n\n### Hips Sagging or Piking\n\n* **What it is:** Your midsection gives way and your lower back arches or sags toward the floor as you push, meaning your hips and chest stop moving as a single solid piece. This crept in mostly during your later reps and aborted attempts as fatigue set in.\n* **Why it matters:** When your trunk lags and your lower back dips, it piles extra mechanical stress directly onto your vertebral discs. That sets you up for a dull ache or sharp pinch in your lower back right in the middle of a set, robbing your core of the stability it needs to keep your power output high.\n* **How to fix it:**\n  * **Cue:** Think about bracing your stomach as if someone is about to poke you in the gut, and tuck your tailbone slightly under to lock your pelvis in place.\n  * **Setup:** Drop your knees to the floor for your sets if your hips start sagging toward the end of your workout, keeping that plank line unbroken from knees to shoulders.\n  * **Drill:** Practice holding a standard front elbow plank on the floor for 20 to 30 seconds at a time to build up the deep core endurance required to keep your spine flat.\n  * **Self-check:** Set your phone up to record a video from the side—your shoulders, hips, and ankles should move up and down together as one rigid board.\n\n---\n\n### Partial Range of Motion\n\n* **What it is:** You are cutting the push-up short by failing to lower your body all the way down, or in the case of your aborted attempts (like reps 5, 8, and 10), stalling out just an inch or two above the floor when your upper body strength gives out.\n* **Why it matters:** If you skip the bottom portion of the movement, you cheat your chest out of the deep stretch it needs to trigger maximum muscle development. You end up doing all the hard work at the top where leverage is easier, leaving your growth and strength gains sitting on the table.\n* **How to fix it:**\n  * **Cue:** Imagine actively pulling your chest down toward the floor on the way down, aiming to bend your elbows to about a 90-degree angle.\n  * **Setup:** Elevate your hands on a sturdy bench or box if you find yourself stalling out an inch or two off the floor on later reps—a higher starting point lets you hit full depth cleanly.\n  * **Drill:** Drop into an incline push-up against a wall or counter height where you can comfortably control the entire descent until your chest nearly touches.\n  * **Self-check:** Glance in a mirror or check your side-view video to confirm your elbows hit that 90-degree bend before you press back up.\n\n---\n\n### Next Session Plan\n\n1. **Prioritize quality over volume:** Stop your sets one or two reps *before* your hips start sagging and your form breaks down. It is far better to finish a clean set of 3 than grind out ugly reps 5 through 10.\n2. **Elevate your hands if needed:** If you start stalling out just an inch off the floor like you did on reps 5, 8, and 10, shift your hands to an elevated surface immediately to protect your range of motion.\n3. **Build your core baseline:** Add two rounds of 30-second front planks at the end of your workout to specifically target the trunk stability that let you down on your later reps today."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nYour overall score dipped slightly from 71 to 65, and you landed 4 clean reps out of 10 total attempts today, compared to 5 out of 10 in your last session. The good news is you are still battling the exact same two faults—sagging or piking your hips and cutting your depth short—which means your movement patterns are predictable and entirely fixable. Let's clean them up so your numbers go back up next time.\n\n---\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your hips are sagging down toward the floor or piking up toward the ceiling as you push, instead of keeping your whole body locked in a straight line from head to heels.\n*   **Why it matters:** Your lower back and midsection take the strain instead of your chest and shoulders sharing the load evenly. That translates to an aching lower back by the time you hit the middle of your set, and it drains your core strength so you cannot press as many clean reps.\n*   **How to fix it:**\n    *   (a) Cue to think about: Squeeze your glutes and brace your stomach as if someone is about to poke you in the gut.\n    *   (b) Setup change: Narrow your stance slightly or squeeze your thighs together to lock your lower half in place before you even start moving.\n    *   (c) Drill or lighter regression: Drop your knees to the floor for a few sets to rebuild core tension without your hips giving out.\n    *   (d) Self-check: Glance at a mirror sideways or set your phone up to record—if your belt line drops before your chest does, you've spotted the sag.\n\n*   **What it is, in plain words:** You are cutting the movement short and pushing back up before your chest gets close enough to the floor.\n*   **Why it matters:** Your chest and triceps never go through their full range of motion, meaning you get less muscle growth for the exact same amount of effort and build a false sense of how strong your push-ups actually are.\n*   **How to fix it:**\n    *   (a) Cue to think about: Pull your chest down to an imaginary target an inch off the floor on every single descent.\n    *   (b) Setup change: Slow your tempo down on the way down so you actually hit the bottom position before reversing direction.\n    *   (c) Drill or lighter regression: Elevate your hands on a sturdy bench or box so you can hit full depth comfortably without failing halfway.\n    *   (d) Self-check: Notice whether your elbows break past a 90-degree bend at the bottom—if they stay flared high and wide, you haven't gone deep enough.\n\n---\n\n### Next Session Plan\n\n1.  **Prioritise clean reps over total volume:** Aim for sets of 3 to 4 reps where your hips do not sag and your chest touches down, rather than grinding out sloppy attempts.\n2.  **Rest longer between sets:** Give yourself a full 90 seconds to catch your breath so your core fatigue doesn't cause your hips to cave in early.\n3.  **Film your second set:** Check the video before your third set to see if your depth is shrinking or your hips are lifting.",
+    "### Progress Tracking\nLet's look at how today stacked up against your last session. Your overall score slipped slightly from 71 to 65, and your clean rep count dropped from 5 down to 4 out of 10 total attempts (which included 3 aborted attempts). \n\nThe good news? You are dealing with the exact same two faults as last time—`hip_sag_or_pike` and `partial_pushup`—meaning we know the exact targets to hit. Fatigue clearly caught up with you in the second half of the set, as all of your errors clustered in reps 3 through 10. Let's lock those down so your next session looks much sharper.\n\n---\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your hips are dipping toward the floor or hiking up toward the ceiling (which shows up on reps 3, 5, 6, 9, and 10), turning your straight body line into a banana shape.\n*   **Why it matters:** Your lower back and midsection take the strain instead of your core bracing the weight, which costs you total-body tension and invites a dull ache in your lower back right when you need your strength most.\n*   **How to fix it:** \n    *   (a) Cue: Think about squeezing your glutes hard and pulling your belly button toward your spine as one solid unit before you even start moving.\n    *   (b) Setup change: Narrow your stance slightly or drop your working volume so you aren't trying to grind out reps with a tired core.\n    *   (c) Drill: Drop to an incline push-up with your hands on a sturdy bench to take the pressure off your midsection while you rebuild your plank strength.\n    *   (d) Self-check: If you glance at your phone video or a mirror, your shoulders, hips, and ankles should move together like a plank of wood without any sag in the middle.\n\n*   **What it is, in plain words:** You're cutting the movement short (seen on aborted attempts 5, 8, and 10, plus rep 5), meaning your chest doesn't get close enough to the floor before you push back up.\n*   **Why it matters:** You cheat your chest and triceps out of the full range of motion they need to grow stronger, leaving you with easy reps that don't build the actual muscle you're after.\n*   **How to fix it:**\n    *   (a) Cue: Pick a target spot on the floor right between your thumbs and aim your chest directly at it.\n    *   (b) Setup change: Slow down your descent—take a full two seconds to lower yourself so you control the bottom position rather than rushing back up.\n    *   (c) Drill: Pause for a full one-second dead-stop at the bottom with your chest hovering just above the floor before pressing up.\n    *   (d) Self-check: Feel for your chest touching or nearly brushing the floor on every single descent before you reverse direction.\n\n---\n\n### Next Session Plan\n\n1. **Cut the set short before form breaks:** You started leaking form around rep 3 today. Next time, stop your set one rep *before* your hips start sagging or your depth gets shallow—quality over junk volume.\n2. **Prioritize a rigid plank:** Spend an extra five seconds setting up your core and squeezing your glutes before your very first rep to establish that straight-line tension.\n3. **Slow down the tempo:** Count a clear two-second descent on every rep to ensure you hit full depth without having to bail out early.",
+    "### Progress Tracking\n\nYour overall score dipped slightly to 65 today compared to 71 in your last session, and you landed 4 correct reps out of 10 total attempts (which includes 3 aborted tries). That is a slight step back from your 5 correct reps last time. The good news is you are still fighting through the set, but fatigue in the later half is clearly catching up to you—especially on attempts 8 through 10, where form broke down early and forced you to bail. \n\n---\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your hips are sagging toward the floor or hiking up toward the ceiling instead of keeping your whole body locked in a straight line. This showed up on rep 3, rep 6, rep 9, and mixed in with your aborted attempts on rep 5 and rep 10.\n*   **Why it matters:** When your midsection gives way, your lower back has to absorb the stress instead of your core holding everything stable. That costs you strength and leaves your lower back feeling strained and cranky by the end of a set, while robbing your chest and arms of the solid platform they need to push effectively.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about squeezing your glutes hard and pulling your belly button in toward your spine as if you are bracing for a punch.\n    *   (b) *Setup:* Narrow your stance slightly if your feet are too wide, or shorten your set length—stop at 6 reps before fatigue breaks your form.\n    *   (c) *Drill:* Practice the plank hold on the floor or with your hands elevated on a bench to build the core endurance you need to lock your hips in place.\n    *   (d) *Self-check:* Look at a side-profile video of your set to see if your hips drop or pike the moment you start pushing back up.\n\n*   **What it is, in plain words:** You are cutting your range of motion short and pushing back up before your chest gets close to the floor. This happened on attempt 8, and also showed up alongside your hip sagging on aborted attempts 5 and 10 as fatigue set in.\n*   **Why it matters:** Halting your descent halfway means your chest and triceps never go through their full working range, which gives you less muscle growth for the effort and leaves you with reps you cannot genuinely trust.\n*   **How to fix it:** \n    *   (a) *Cue:* Pick a target spot on the floor right between your hands and aim to tap your chest or chin to that exact level on every single rep.\n    *   (b) *Setup:* Elevate your hands slightly on a sturdy box or bench for your working sets to make the full range of motion achievable without your form collapsing.\n    *   (c) *Drill:* Drop to an incline push-up on a higher surface where you can comfortably touch your chest to the target every time without cutting corners.\n    *   (d) *Self-check:* Feel for your chest making light contact with the floor—or a marker you set below you—before you press back up.\n\n---\n\n### Next Session Plan\n\n1. **Cut the reps short:** Next time, stop your sets a rep or two *before* your hips start sagging and your depth starts shrinking (aim for clean sets of 3 or 4 high-quality reps rather than grinding out ugly ones).\n2. **Elevate if needed:** If full floor push-ups cause your form to break down past rep 4, use an elevated surface for your hands so you can own the full depth and keep your core rock-solid from start to finish."
+   ]
+  },
+  {
+   "label": "Push-up — clean",
+   "exercise_id": "push-up",
+   "payload": {
+    "session_id": "PU-20261003-004",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 75,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 10,
+     "incorrect_reps": 0,
+     "overall_score": 88
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[principle | re: general principles | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe difference in resistance patterns between push-up variations is influenced by differing moment arms between the support surface contact point (knees or feet) and the hands.\n\n[principle | re: general principles | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.",
+   "metrics": [
+    {
+     "error": "general principles",
+     "kind": "principle",
+     "query": "Push-up correct technique and biomechanics",
+     "best": 0.1872440576553287,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nFantastic session today! You completely turned things around since yesterday. Your overall score jumped from 75 up to 88, and you nailed all 10 reps cleanly with zero errors. Even better, you successfully cleared both of the recurring issues from your last workout—your hips stayed locked in place and you hit full depth on every single rep. That is the kind of consistency we love to see.\n\n### Next Session Plan\n\n* **Hold the standard:** Keep your core just as tight and your movement just as full next time you step up to the floor. Do not let fatigue rush your reps.\n* **Lock in your setup:** Take a deliberate breath and brace your midsection before you even start rep one, making sure your plank position looks solid right out of the gate.",
+    "### Progress Tracking\n\nFantastic session today. You nailed all 10 reps cleanly with zero errors, bumping your overall score up to 88 compared to 75 yesterday. Even better, you completely cleared both faults from your last workout—the hips staying solid means your midsection control is locking in, and every single rep went through the full range of motion. \n\n### Next Session Plan\n\n1. **Hold the standard:** Keep your setup identical next time—same body tension, same full-depth press.\n2. **Lock in the win:** Let this clean session be your new baseline. When the weight or reps go up next time, do not let your form slip to chase extra numbers.",
+    "### Progress Tracking\nHuge step forward today! You completely wiped out the hip sag and partial range issues that held you back in your last session on October 2nd. Your overall score jumped from 75 up to 88, and you nailed all 10 reps cleanly with zero errors flagged. \n\n### Next Session Plan\n1. **Hold the line:** You just hit a completely clean set. Lock in the feeling of keeping your body completely rigid from head to toe for your next workout.\n2. **Keep the same load and setup:** Don't change a thing about your hand placement or stance—just replicate the exact execution you brought to the floor today."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nMassive improvements since yesterday! You bumped your overall score up from 75 to 88, and more importantly, you nailed all 10 reps cleanly with zero errors. That means you completely wiped out both major issues from your last session—your hips stayed locked in place and you hit full depth on every single rep instead of cutting them short. That is a huge win.\n\n### Next Session Plan\n\n1. **Lock in the standard:** Hold this exact same form and pacing for your next session. Do not rush to add reps or speed up until locking out all 10 clean reps feels automatic.\n2. **Focus on quality over volume:** If you decide to push for more reps next time, stop the exact moment your hips start to drop or your elbows flare wide. Keep your standards high.",
+    "### Progress Tracking\n\nGreat work on this session—you completely turned things around since yesterday. Your overall score jumped from 75 to 88, and you nailed all 10 reps cleanly without a single error. Most importantly, you completely wiped out the hip sagging and partial depth issues that were dragging down your score in your previous session. \n\n### Next Session Plan\n\n1. **Hold the standard:** Keep your body locked in a tight, straight line from your shoulders to your ankles on every single rep, exactly as you did today.\n2. **Lock in your depth:** Maintain the full chest-to-floor range of motion that earned you all 10 clean reps this time around. \n3. **Maintain your setup:** Take the exact same strong, stable stance at the start of your next workout to keep those old form leaks from creeping back in.",
+    "### Progress Tracking\n\nGreat work on this session—you completely turned things around since yesterday. You brought your overall score up from 75 to 88, and hit 10 clean, completed reps without a single incorrect rep or aborted attempt dragging you down. Even better, you completely cleared out both previous issues: your hips stayed locked in place (no more sagging or piking), and you hit full depth on every single rep instead of cutting them short. \n\n### Next Session Plan\n\n1. **Lock in the standard:** Your form was rock solid today, so your primary goal for the next workout is simply to repeat this exact performance without letting your standards slip as fatigue sets in.\n2. **Keep the same pacing:** Whatever tempo and setup you used today worked—don't rush your reps or try to muscle through changes. Keep your core braced and your movement identical next time out."
+   ]
+  }
+ ]
+}

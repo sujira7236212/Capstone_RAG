@@ -1,0 +1,1136 @@
+{
+ "report": "compare_result_v14_lunge.md",
+ "mock": "mock_data/mock_sessions_lunge.json",
+ "collection": "kb_gemini_curated_v6",
+ "raw_query": false,
+ "llm": "gemini-3.5-flash-lite",
+ "temperature": 0.7,
+ "samples": 3,
+ "system_prompt_sha1": "bd4b464157381df74fed3805f0b36ca8b8177437",
+ "retrieval": {
+  "TAG_MODE": "prefer",
+  "KIND_POOL": "split",
+  "QUERIES": "profile",
+  "HYBRID": false,
+  "RERANK": false
+ },
+ "sessions": [
+  {
+   "label": "Lunge — shallow_lunge",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-001",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 70,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "shallow_lunge"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 71
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 52
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 50
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 47
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge"
+       }
+      ]
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 45
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 83
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[mistake | re: shallow_lunge | source: basics_of_strength_and_conditioning_manual]\nFailing to lower the hips until the front thigh is parallel to the floor.\n\n[principle | re: shallow_lunge | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nTo achieve proper depth during a lunge, descend until the trail knee is just prior to touching the ground.\n\n[mistake | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovice lifters may perform backward lunges with shallower knee flexion compared to experienced lifters.\n\n[principle | re: shallow_lunge | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[finding | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring backward barbell lunges, novices achieved a shallower peak knee flexion with a minimal sagittal angle of -99.01 ± 10.02 degrees compared to -108.44 ± 8.33 degrees in experienced lifters.\n\n[finding | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nDuring a forward lunge, a shallower front knee flexion angle of 80° results in a statistically significantly higher knee extensor moment (0.980 Nm/BW) compared to 90° (0.717 Nm/BW) and 100° (0.362 Nm/BW).\n\n[consequence | re: shallow_lunge | source: Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK]\nFailing to sufficiently activate the m. gluteus maximus reduces the generation of posterior shear forces at the tibia, which otherwise potentially contribute to a reduced likelihood of knee injuries.",
+   "metrics": [
+    {
+     "error": "shallow_lunge",
+     "kind": "mistake",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.13532986990690876,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "finding",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.2260629861279687,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "consequence",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.3157588667036424,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "principle",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.1852058922753359,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nYour overall score held steady at 71 (up slightly from 70 in your last session on October 2), and you matched your previous count of 6 correct reps. However, your old habit of cutting the movement short is still hanging around: the shallow lunge error popped up again today, exactly as it did last time. The catch today is that it didn't just happen on completed reps—it caused four separate attempts (attempts 3, 5, 7, and 9) to abort entirely before you even finished the descent. \n\n---\n\n### Error Breakdown: Shallow Lunge\n\n* **What it is:** Stopping your descent halfway instead of dropping your hips until your front thigh is parallel to the floor and your rear knee hovers just above the ground.\n* **Why it matters:** Cutting your depth short at around an 80-degree front knee angle forces your quads to soak up a significantly higher load—nearly double the muscular demand compared to hitting a proper 90 to 100-degree angle. That extra spike in force reduces how effectively your glutes join in to protect your joints, leaving your knees to absorb stress they shouldn't have to handle alone and causing fatigue to set in fast enough to make you bail out of the rep entirely.\n* **How to fix it:**\n  * *(a) Cue:* Think about dropping straight down toward the floor with your back knee rather than lunging forward.\n  * *(b) Setup:* Slow your tempo down on the way down so you have time to control the depth instead of rushing the turnaround.\n  * *(c) Drill:* Practise bodyweight split squats with a light target (like a small mat or yoga block) placed just beneath your rear knee so you have a physical marker to aim for every single time.\n  * *(d) Self-check:* Glance in a mirror from the side and confirm your front knee is bent to roughly 90 to 100 degrees and your rear knee nearly kisses the floor at the bottom.\n\n---\n\n### Next Session Plan\n\n1. **Slow down the descent:** Take an extra beat on the way down for every rep to make sure you're hitting your depth rather than rushing and cutting the movement short.\n2. **Target your depth:** Use a yoga block or low pad behind you on your warm-up sets to guarantee your rear knee gets low enough before you press back up.\n3. **Cut the set short if you stall:** If fatigue sets in and you feel your depth start to shallow out like it did on attempts 3, 5, 7, and 9, rack the weight or finish the set right there rather than fighting through aborted reps.",
+    "### Progress Tracking\n\nYour overall score ticked up slightly from 70 to 71, and you matched your previous count of 6 clean reps. However, your error from the last session—shortchanging your depth—is still hanging around. Notice that the mistakes today happened exclusively on your aborted attempts (attempts 3, 5, 7, and 9), where you cut the movement short instead of finishing the descent. \n\n***\n\n### Error Breakdown: Cutting the Lunge Short\n\n*   **What it is:** You're not dropping your hips far enough down on those aborted attempts, stopping well before your front thigh gets close to parallel with the floor.\n*   **Why it matters:** Stopping short changes how the work is distributed. When your front knee only bends to 80 degrees instead of sinking deeper into that 90 to 100-degree sweet spot, the load spikes sharply on your quads. Meanwhile, your glutes miss out on the activation needed to help stabilize your knee joint safely. That means extra fatigue in the front of your thighs and a higher risk of knee strain as you push heavier weights.\n*   **How to fix it:**\n    *   *(a) Cue:* Think about dropping your back knee straight down toward the floor on every single rep, rather than stepping forward and just dipping slightly.\n    *   *(b) Setup change:* Slow your tempo down on the way down, giving yourself a deliberate, controlled descent so you don't rush the bottom of the movement.\n    *   *(c) Drill:* Practice bodyweight split squats holding onto a stable rack or wall, pausing at the bottom for a one-count just above the floor to build comfort in the deep position.\n    *   *(d) Self-check:* Glance in a mirror from the side and confirm your front knee is bent to roughly a right angle and your back knee is hovering just inches off the ground before you drive back up.\n\n***\n\n### Next Session Plan\n\n1. **Prioritize depth over speed:** On your next workout, commit to hitting full range of motion from rep one, and if you feel yourself cutting the descent short like on attempts 3, 5, 7, and 9, stop the set right there.\n2. **Slow down the negative:** Take an extra beat on the way down to ensure you actually reach that 90 to 100-degree knee bend before pushing back up.",
+    "### Progress Tracking\n\nYour overall score held steady at 71 (up slightly from 70 last time), and you matched your previous count of 6 correct reps. The nagging issue from your last session—cutting your depth short—showed up again today, appearing in all 4 of your aborted attempts (reps 3, 5, 7, and 9). You are nailing the reps you actually finish, but fatigue is causing you to bail early on the others.\n\n***\n\n### Error Breakdown\n\n*   **What it is:** Cutting your lunges short before your front thigh and back knee get low enough. On attempts 3, 5, 7, and 9, you stopped your descent prematurely instead of riding the movement all the way down.\n*   **Why it matters:** Stopping high shifts an extra-heavy load onto your quads (the muscles on the front of your thighs) while robbing your glutes of the work they need to be doing. When your glutes don't fire properly to help drive you back up, you miss out on building lower-body strength evenly, and your knee joint takes on unnecessary stress.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about dropping your back knee straight down toward the floor like an elevator, rather than stepping forward and pitching your weight out.\n    *   (b) *Setup:* Aim for your front knee to bend to roughly 90 to 100 degrees, and lower your back knee until it is just a hair's breadth off the ground before you push back up.\n    *   (c) *Drill:* Drop the load entirely and slow your tempo down—take a full three seconds on the way down to train your body to trust the bottom position.\n    *   (d) *Self-check:* Glance sideways in a mirror or set your phone up to record; your front thigh should be parallel to the floor at the very bottom of every rep that counts.\n\n***\n\n### Next Session Plan\n\n1.  **Drop the weight or slow down:** Since your depth errors happened on the later aborted attempts, fatigue is creeping in and cutting your range of motion short. Give yourself a full two minutes between sets to recover, or trim a little weight so you can hit full depth on every single rep without bailing.\n2.  **Hunt for depth early:** Commit to your lowest position right from rep one. If you feel your back knee stopping high, abort the set voluntarily and reset your stance rather than grinding out a half-rep."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nYou held steady overall compared to your last session: your correct rep count stayed at 6, and your overall score ticked up slightly from 70 to 71. However, you still struggled with 4 incorrect reps—specifically, attempts 3, 5, 7, and 9 were all aborted because you didn't go deep enough into the lunge. That’s the exact same issue holding you back from your previous workout, so fixing this depth drop is our main target.\n\n***\n\n### Error Breakdown: Shallow Lunge\n\n* **What it is:** You're cutting your movement short and coming back up before your back knee gets close to the floor, turning a full lunge into a half-step. Notice how this specifically cropped up on your later attempts (attempts 3, 5, 7, and 9), showing that fatigue is making you cheat the bottom of the movement.\n* **Why it matters:** When you don't drop your hips all the way down, your front quads and glutes miss out on the full stretch and workload they're supposed to handle. That costs you muscle growth for the effort you're putting in, and as the weight goes up, it leaves you with an untrustworthy rep standard where you can't be sure you actually hit depth.\n* **How to fix it:** \n  *(a) Cue:* Think about driving your back knee straight down toward the floor on every step rather than lunging forward.\n  *(b) Setup change:* Shorten your working set by stopping two reps before fatigue makes your depth collapse, or slow down your tempo on the descent to control the bottom position.\n  *(c) Drill:* Try bodyweight reverse lunges holding onto a stable surface for balance to get comfortable with the bottom position without worrying about losing your footing.\n  *(d) Self-check:* Glance in a mirror from the side and confirm your back knee hovers just an inch or two above the ground before you push back up.\n\n***\n\n### Next Session Plan\n1. **Manage your set length:** Drop your reps per set by two to prevent the fatigue that caused your depth to collapse on attempts 3, 5, 7, and 9. \n2. **Prioritize the bottom position:** Focus entirely on kissing your back knee down to the floor on every single rep before you drive back up.",
+    "### Progress Tracking\n\nGreat to see your overall score nudge up slightly from 70 to 71 compared to yesterday's session. You matched your previous count of 6 correct reps, but you still ran into trouble with 4 incorrect reps—specifically, the exact same issue with depth that dogged you last time. The good news is your clean reps look solid; the challenge now is keeping that standard from the first step to the last.\n\n---\n\n### Error Breakdown\n\n*   **What it is:** You are cutting your lunges short, meaning you aren't dropping your hips down far enough toward the floor before you drive back up. This showed up as depth faults on your aborted attempts—specifically on attempts 3, 5, 7, and 9 where you turned back early instead of finishing the descent.\n*   **Why it matters:** When you don't sink into the full range of motion, your quads and glutes miss out on the deep stretch and heavy load they need to grow stronger. Instead of working the muscle through its complete path, you cheat yourself out of the strength gains you're showing up for, and as fatigue sets in later in the set, your body looks for a shortcut to avoid the hard work at the bottom.\n*   **How to fix it:** \n    *   (a) Cue: Think about kissing your back knee gently to the floor on every single step.\n    *   (b) Setup: Take a slightly more deliberate tempo on the way down, pausing for a split second at the bottom to ensure you hit your depth before exploding back up.\n    *   (c) Drill: Practice bodyweight reverse lunges to a target—like a yoga block or a small rolled-up mat placed right under where your back knee should hover—so you have physical feedback for the bottom position.\n    *   (d) Self-check: Watch your side-angle phone video and check that your trailing thigh is nearly perpendicular to the ground and your front shin is vertical at the lowest point.\n\n---\n\n### Next Session Plan\n\n1.  **Drop the fatigue cliff:** Since your depth failures (attempts 3, 5, 7, and 9) happen as fatigue creeps in, try stopping your sets one rep *before* your form starts to break down. Quality over junk volume.\n2.  **Pace your descent:** Count a strict two seconds on the way down for every single rep today to make depth non-negotiable.",
+    "### Progress Tracking\nYou held your correct rep count steady at 6, and your overall score ticked up slightly from 70 to 71. Your old nemesis—cutting your depth short—showed up again in this session, appearing on 4 separate attempts. The good news is you didn't pick up any brand-new faults, but those 4 shallow attempts all ended in aborts where you turned back before hitting the bottom of the movement. Let's fix that depth so you can finish what you start.\n\n---\n\n### Error Breakdown\n\n* **What it is, in plain words:** You are cutting your lunges short, stopping your descent halfway down instead of dropping your back knee down toward the floor on attempts 3, 5, 7, and 9.\n* **Why it matters:** When you chop off the bottom of the movement, your front quad and glutes miss out on the full stretch and load they are supposed to handle. That costs you muscle growth and leaves strength gains on the table, meaning you're working hard without getting the full return on investment for your effort.\n* **How to fix it:** \n  (a) Cue: Think about kissing your back knee gently to the floor on every single step.\n  (b) Setup change: Take a tiny fraction of a second longer on your descent so you don't rush the bottom and cut it short.\n  (c) Drill: Practice a split squat with your back foot elevated on a low plate or bench to lock in your bottom position before moving back to walking lunges.\n  (d) Self-check: Watch your phone video sideways and check that your back thigh gets close to vertical and your front thigh roughly parallels the floor at the bottom.\n\n---\n\n### Next Session Plan\n1. **Pace your reps:** Slow your tempo down slightly on the way down, especially as fatigue sets in later in the set, to stop yourself from aborting early.\n2. **Commit to the depth:** Treat every single rep as a full-range attempt—if you feel yourself cutting it short like on attempts 3, 5, 7, and 9, rack the weight or stop the set rather than rushing through half-reps."
+   ]
+  },
+  {
+   "label": "Lunge — excessive_front_knee_flexion",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-002",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 74,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "excessive_front_knee_flexion"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 77
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 64
+      },
+      "errors": [
+       {
+        "error_type": "excessive_front_knee_flexion"
+       }
+      ]
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 61
+      },
+      "errors": [
+       {
+        "error_type": "excessive_front_knee_flexion"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "excessive_front_knee_flexion"
+       }
+      ]
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 58
+      },
+      "errors": [
+       {
+        "error_type": "excessive_front_knee_flexion"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nAllowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.\n\n[principle | re: excessive_front_knee_flexion | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive knee flexion (sinking too deep) during the lunge increases the joint reaction forces and extensor moments on the front knee.\n\n[consequence | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nIncreased knee flexion angle during the lunge increases quadriceps force, which is a main contributing factor to greater patellar tendon stress.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nInexperienced exercisers often exhibit excessive knee flexion during lunges.\n\n[consequence | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAn increased knee flexion angle during a forward lunge causes forward movement of the upper body and trunk segment, generating a large reaction force on the ground surface contacted by the front foot.\n\n[principle | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nKeeping the front knee behind the toes during a lunge limits knee flexion to a safer range of approximately 110 degrees compared to letting it translate forward.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nPeak anterior-posterior knee joint reaction forces during the upward phase of a lunge increase from 3.545 N/BW at 80 degrees of knee flexion to 4.521 N/BW at 100 degrees.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring forward barbell lunges, novices showed a larger sagittal knee range of motion of 110.82 ± 13.36 degrees compared to 98.55 ± 9.16 degrees in experienced lifters.",
+   "metrics": [
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "mistake",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.08753351270350895,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "finding",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.18725831812419536,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "consequence",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.14786374464490293,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "principle",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.1249014660774026,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nYou held steady on your clean reps today, matching your previous session with 6 correct reps out of 10. Your overall score ticked up slightly from 74 to 77, but that old habit—letting your front knee travel too far forward—is still showing up on reps 2, 5, 7, and 10. That recurring fault means it's time to tweak your setup so you stop leaking power toward the end of your reps.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** On reps 2, 5, 7, and 10, your front knee drifts way past your toes and you sink too deep into the bottom of the lunge instead of holding a strong, stacked position.\n*   **Why it matters:** Sinking too deep forces your quads to work overtime and dumps extra stress straight onto your patellar tendon—that's the sharp ache right at the front of your knee that flares up during lunges and squats. It also tips your torso forward, throwing off your balance and costing you the leg drive you need to stand back up cleanly.\n*   **How to fix it:**\n    *   *Cue:* Keep your front shin vertical and push your hips straight down toward the floor rather than driving forward.\n    *   *Setup:* Shorten your stride slightly so your front knee naturally stays stacked directly above your ankle at the bottom, aiming for a knee bend of roughly 90 to 100 degrees instead of letting it cave forward.\n    *   *Drill:* Pause for a full two seconds at the bottom of a lighter set to check your front shin angle before pushing back up.\n    *   *Self-check:* Set up your phone to record a side-view video and check whether your front knee stays behind your toes at the lowest point of the lunge.\n\n### Next Session Plan\n1. Drop your usual weight by 10-15% for your first working set today so you can focus entirely on keeping that front knee stacked vertically.\n2. Add a deliberate two-second pause at the bottom of every rep to lock in your depth before driving back up.\n3. Review a quick side-profile video of your set on your phone to confirm your shin stays upright before adding weight back on.",
+    "### Progress Tracking\nYou held steady on your clean rep count today with 6 correct reps, exactly matching your last session on October 2nd. Your overall score ticked up slightly from 74 to 77, and that lingering issue with excessive front knee bend is still following you from last time. You are keeping a solid baseline, but we need to iron out those stray reps where your form slips.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** On reps 2, 5, 7, and 10, your front knee drifted too far forward over your toes, and you sank a bit too deep into the bottom of the lunge. \n*   **Why it matters:** Sinking too far forward piles extra stress on your quadriceps and cranks up the tension right on your patellar tendon—that's the tendon just below your kneecap. When that happens, your upper body tends to lurch forward, which places a heavy, awkward load on your front knee joint just as you try to push back up.\n*   **How to fix it:** \n    *   *Cue:* Think about dropping your back knee straight down toward the floor rather than driving your front knee forward.\n    *   *Setup:* Shorten your stride just an inch or two so your front shin stays more vertical and your front knee stops short of traveling past your toes.\n    *   *Drill:* Practice bodyweight lunges in front of a chair or box placed right in front of your lead knee to act as a physical stop if it drifts forward.\n    *   *Self-Check:* Glance down or catch yourself in a side-profile mirror—at the bottom of the lunge, your front knee should stay roughly in line with your ankle rather than pushing way out past your toes.\n\n### Next Session Plan\n1. **Pace your reps:** Notice how your form broke down on reps 2, 5, 7, and 10? Reset your stance fully between every single rep instead of rushing through them.\n2. **Watch your depth:** Control the descent on every rep so you stop when your front knee is safely flexed to about 90 to 100 degrees instead of bottoming out.",
+    "### Progress Tracking\nYou held steady on your clean reps today, hitting 6 correct out of 10 total just like your last session yesterday. Your overall score ticked up slightly from 74 to 77, which is a nice sign of better quality on your good reps. The same old habit—letting your front knee travel too far forward—is still showing up, meaning we haven't shaken it completely yet. Let's look at what's happening and clear it out for good next time.\n\n---\n\n### Error Breakdown: Letting your front knee drift too far forward\n\n* **What it is, in plain words:** As you step down into the lunge, your front knee slides way past your toes instead of staying stacked above your ankle.\n* **Why it matters:** This puts a massive spike in force right through your quadriceps and increases the mechanical stress on your patellar tendon. For you, that means your front knee has to soak up a lot more load, leaving you with an achy joint after your workout instead of just tired muscles, and it forces your upper body to pitch forward out of position.\n* **How to fix it:** \n  * (a) Cue: Think about dropping your *back* knee straight down toward the floor rather than lunging forward into the front leg.\n  * (b) Setup change: Shorten your stride slightly so your front shin stays vertical and your knee naturally stays behind your toes.\n  * (c) Drill: Drop the load entirely and practise bodyweight split squats, pausing at the bottom to check your shin angle before pushing back up.\n  * (d) Self-check: Set your phone up to film from the side—when you hit the bottom of the lunge, your front shin should be pointing straight up, not leaning forward over your toes.\n\n---\n\n### Next Session Plan\n\n1. **Check your stride length:** Start your warm-up sets with a slightly shorter step so your front shin stays upright and out of the danger zone.\n2. **Focus on the back leg:** Keep your mental cue locked on dropping the rear knee straight down to the floor on every single rep to take the forward lunge momentum off your front knee.\n3. **Drop the weight if form slips:** If that knee starts drifting forward again as you fatigue—just like it did on reps 2, 5, 7, and 10 today—stop the set right there or drop the load so you can finish strong without the breakdown."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nGood work on this session—you moved your overall score up from 74 to 77, and kept your clean, correct rep count steady at 6 out of 10. The old issue with excessive front knee bend carried over from your last workout, showing up on reps 2, 5, 7, and 10. Notice how these mistakes cluster toward the later part of your set as fatigue sets in. You are nailing the first half, but as you tire, your form starts to slip. \n\n***\n\n### Error Breakdown\n\n* **What it is:** Your front knee is driving too far forward past your toes as you step down into the lunge, pushing the joint too deep instead of dropping your hips straight down.\n* **Why it matters:** This puts a massive, unwanted load straight onto your knee joint and quads while robbing your glutes and hamstrings of the work they are supposed to be doing. You will feel this as a sharp pinch or heavy ache right at the front of your knee during the movement and later tonight, and it costs you leg power and clean reps as the weight gets heavier.\n* **How to fix it:** \n  (a) Think about driving your back knee straight down toward the floor rather than pushing your front knee forward. \n  (b) Take a slightly longer stride on your setup so your front shin stays more upright and vertical when you hit the bottom of the movement. \n  (c) Practice bodyweight reverse lunges using a mirror or doorway to keep your front shin locked in place. \n  (d) Check your phone video to ensure your front shin stays vertical and your knee never drifts past your toes at the lowest point.\n\n***\n\n### Next Session Plan\n\n* **Stop the set a rep earlier:** Since your form starts breaking down on reps 2, 5, 7, and 10 as fatigue catches up, cut your working sets short before the breakdown happens so you only build muscle with clean reps.\n* **Focus on the reverse lunge:** Practice stepping backward instead of forward for your lunges in your next session—it naturally keeps your front shin upright and stops your knee from drifting forward.",
+    "### Progress Tracking\nGood effort out there today. You hit 6 correct reps out of 10 total, landing you with an overall score of 77. Compared to your last session on October 2nd, you ticked your score up slightly from 74 and held your correct rep count steady at 6. \n\nThe familiar issue from last time—pushing your front knee too far forward—showed up again on reps 2, 5, 7, and 10. Notice that these mistakes didn't happen right out of the gate; they crept in as fatigue set in during the middle and end of your set. \n\n***\n\n### Error Breakdown\n\n* **What it is, in plain words:** As you drop down into the lunge, your front knee drifts way out past your toes instead of staying stacked directly above your ankle.\n* **Why it matters:** Your quads and knees take on a massive, unnecessary spike in load while your glutes check out of the movement. That means you get less muscle growth where you actually want it, and it leaves your front knee feeling achy and overworked by the time you finish your set.\n* **How to fix it:** \n  (a) Think about stepping slightly longer and dropping straight down toward the floor rather than driving forward.\n  (b) Take a slightly wider step in your setup so your front shin stays vertical when you reach the bottom.\n  (c) Practice bodyweight split squats with your front foot placed a few inches away from a wall; if your knee touches the wall on the way down, your stance is too close or you are drifting forward.\n  (d) Watch a video of your set and check if your front heel stays planted and your shin stays upright at the bottom of every rep.\n\n***\n\n### Next Session Plan\n* **Pace yourself when fatigue hits:** Since your knee drift only showed up on the later reps (2, 5, 7, and 10), focus extra hard on keeping your front shin vertical when your legs start burning toward the end of the set. \n* **Pause at the bottom:** Add a strict one-second pause at the bottom of your next lunge session to force yourself into a stable, upright shin position before driving back up.",
+    "### Progress Tracking\n\nGreat job on this session—you moved your overall score up slightly from 74 to 77. You hit 6 correct reps, matching your exact count from your previous workout, and you successfully kept your total rep count at 10 without any aborted attempts. The recurring issue from last time, excessive front knee flexion, showed up again on reps 2, 5, 7, and 10, meaning this drift tends to creep in as fatigue sets in later in the set. \n\n### Error Breakdown\n\n* **What it is, in plain words:** On reps 2, 5, 7, and 10, your front knee drifts too far forward past your toes as you step down into the lunge.\n* **Why it matters:** This pushes extra stress straight onto your kneecap and knee joint instead of letting your quads and glutes share the work. That means you'll likely feel a sharp ache right at the front of your knee during the movement, you'll miss out on solid muscle growth in your legs, and you risk joint strain as you start adding heavier weights.\n* **How to fix it:** \n  (a) Think about planting your front foot firmly and driving your hips straight down toward the floor rather than pushing forward.\n  (b) Take a slightly longer stride forward when you step out so your shin stays mostly upright.\n  (c) Practice bodyweight reverse lunges where stepping backward naturally keeps your front shin vertical.\n  (d) Set up your phone from the side to check if your front shin stays vertical or if your knee shoots past your toes at the bottom.\n\n### Next Session Plan\n\n* **Watch the fatigue drift:** Since your knee drift happened exclusively on the later reps (2, 5, 7, and 10), focus extra hard on your form when you start getting tired, or drop the rep count per set slightly to keep every single rep clean.\n* **Prioritize the reverse lunge:** Try starting your next session with reverse lunges to groove the upright shin pattern before moving back to forward lunges."
+   ]
+  },
+  {
+   "label": "Lunge — forward_trunk_lean",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-003",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 73,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "forward_trunk_lean"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 76
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 63
+      },
+      "errors": [
+       {
+        "error_type": "forward_trunk_lean"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "forward_trunk_lean"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 59
+      },
+      "errors": [
+       {
+        "error_type": "forward_trunk_lean"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 56
+      },
+      "errors": [
+       {
+        "error_type": "forward_trunk_lean"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[consequence | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nLeaning the trunk forward (flexion) during a lunge shifts the body's center of mass forward, reducing the knee extension moment and decreasing patellar tendon stress.\n\n[mistake | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive anterior movement of the upper torso increases the load exerted on the knee joint of the front leg.\n\n[consequence | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nLeaning too far forward during the eccentric phase of the exercise can increase the shear force at the knee joint, increasing the risk of injury or pain.\n\n[mistake | re: forward_trunk_lean | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovices may exhibit compensatory trunk lean during lunges due to core instability and reduced eccentric contraction ability of the gluteus maximus.\n\n[principle | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nTo control the load exerted on the front knee joint during a forward lunge, limit the anterior movement of the upper torso and the lower leg.\n\n[mistake | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nTo compensate for balance and strength challenges, the torso can lean forward during the downward phase, even if the lower body is performing the correct technique.\n\n[principle | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nTrunk position can be manipulated during the lunge to alter patellar tendon stress.\n\n[finding | re: forward_trunk_lean | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nPositioning the trunk in a forward-inclined position during a lunge elicited a significantly higher activation of the lumbar erector spinae (40 ± 29% MVIC) compared to the straight-trunk condition (20 ± 15% MVIC, ES = 0.92).\n\n[finding | re: forward_trunk_lean | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nThe head, arms, and trunk consist of approximately 55% of body mass, which explains why trunk position has a significant influence on lower extremity joint moments during the lunge.",
+   "metrics": [
+    {
+     "error": "forward_trunk_lean",
+     "kind": "mistake",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.15043823117753485,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "finding",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.2007209897900808,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "consequence",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.14444627099588758,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "principle",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.15511805743681373,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nYou held your ground well since yesterday: your overall score ticked up slightly from 73 to 76, and you matched your previous count of 6 correct reps out of 10. That persistent thorn from your last session—leaning your torso too far forward—is still hanging around, showing up on reps 3, 6, 8, and 10 as fatigue set in during the second half of the set. \n\n***\n\n### Error Breakdown\n\n* **What it is:** You are letting your chest and upper torso pitch forward over your front leg as you step down into the lunge. \n* **Why it matters:** Because your upper body makes up about 55% of your total body weight, tipping it forward dumps extra shear stress straight onto your front knee joint and forces your lower back muscles to work twice as hard to keep you upright (double the muscle activation compared to keeping a straight torso). That translates to a sharp ache at the front of the knee and lower back fatigue that cuts your set short before your legs are actually done.\n* **How to fix it:** \n  (a) **Cue:** Imagine a tall string pulling the crown of your head straight up to the ceiling as you drop down. \n  (b) **Setup change:** Slow down your descent and shorten your step slightly so you don't have to reach so far forward to catch your balance. \n  (c) **Drill:** Drop the weight completely and do bodyweight reverse lunges, which naturally force your torso to stay upright. \n  (d) **Self-check:** Glance in the mirror sideways or film your set; your chest should stay stacked directly over your hips rather than spilling past your front knee.\n\n***\n\n### Next Session Plan\n\n1. **Drop the load:** Strip some weight off the bar or dumbbells for your next session to lock in your torso position before adding resistance back on.\n2. **Cut the reps short:** Stop your sets at the first sign of your chest tipping forward—on today's evidence, that means capping sets at 2 clean reps to avoid reinforcing the forward lean as fatigue sets in.\n3. **Check your core bracing:** Take an extra breath to brace your abs hard before every single step to give your spine the anchor it needs to stay upright.",
+    "### Progress Tracking\n\nYou moved your overall score up from 73 to 76 today, and you held steady with 6 fully correct reps out of 10 total. That persistent issue from yesterday—leaning your torso too far forward—showed up again on reps 3, 6, 8, and 10, meaning it tends to creep in as you get deeper into the set and fatigue sets in. You kept it completely out of your early reps, which is a great sign of control that we just need to stretch out to cover the whole set.\n\n### Error Breakdown: Forward Trunk Lean\n\n* **What it is, in plain words:** As you drop down into the lunge, your upper body collapses forward from the hips instead of staying upright, making you fold over your front leg.\n* **Why it matters:** Since your head, arms, and trunk make up roughly 55% of your body mass, tipping all that weight forward spikes the shear forces and stress right at your front knee joint. It also forces your lower back muscles to pick up a huge load—roughly doubling their electrical activation compared to keeping your torso upright—which will leave your lower back feeling fried and sore long before your legs get a proper workout.\n* **How to fix it:** \n  * (a) Think about stamping your chest proudly against an imaginary wall in front of you as you lower yourself.\n  * (b) Slow your tempo down slightly on the way down so you have time to catch your balance and keep your torso stacked before you drive back up.\n  * (c) If balance and core stability are letting you down here, try doing bodyweight lunges holding a light plate or dumbbell tight against your chest as a counterweight to help pull your torso upright.\n  * (d) Glance at a mirror sideways or record a quick phone video: if your shoulder is drifting forward past your front knee at the bottom, your chest dropped too soon.\n\n### Next Session Plan\n\n1. **Watch the fatigue fade:** On your next lunge workout, pay extra attention to reps 6 through 10—that is where your torso starts to cave forward. If you feel your chest dropping, take a micro-pause at the top to reset your posture before starting the next rep.\n2. **Keep the chest proud:** Focus on keeping your torso upright from the very first step to the last, using your core to anchor your upper body so your legs do the actual work.",
+    "### Progress Tracking\n\nYour overall score ticked up slightly from 73 to 76, and you matched your previous session's output with 6 clean, correct reps out of 10. The same old habit—leaning your torso too far forward—followed you from last time, showing up on reps 3, 6, 8, and 10. Since those errors clustered in the second half of the set, it looks like fatigue is setting in and your core is letting your upper body fold forward as you tire. \n\n***\n\n### Error Breakdown\n\n* **What it is:** You are letting your chest and upper body cave forward toward your front knee as you step down into the lunge, rather than keeping your torso upright.\n* **Why it matters:** Because your head, arms, and trunk make up roughly 55% of your total body weight, tipping them forward shifts the load straight onto your front knee joint and lower back instead of distributing it through your legs. That extra shearing force at the knee joint and the heavy spike in demand on your lower back—driving up your spinal muscle activation to around 40 ± 29% of your maximum effort compared to just 20 ± 15% when you stay upright—will leave your lower back feeling fried and achy, while robbing your glutes of the work they are supposed to be doing.\n* **How to fix it:** \n  (a) Think about \"tall chest and proud sternum\" as you lower yourself down, pretending there is a flashlight on your chest pointing straight ahead at the wall.\n  (b) Slow down your descent and shorten your step slightly so you don't overreach, which naturally makes it easier to keep your balance and stay vertical.\n  (c) Try bodyweight lunges in front of a mirror with a light dowel or broomstick held across your upper back to instantly catch yourself when you start tipping forward.\n  (d) Watch your phone video back: if the angle of your torso matches the angle of your front shin at the bottom, you've folded too far forward; your torso should stay stacked vertically over your hips.\n\n***\n\n### Next Session Plan\n\n1. **Drop the fatigue threshold:** Stop your set a rep or two *before* your form starts to break down. Since your trunk lean showed up on reps 3, 6, 8, and 10, cut your sets to 7 or 8 clean reps next time so you build strength in the correct position instead of practicing the fault while tired.\n2. **Slow down the drop:** Focus on a controlled, deliberate descent on every single rep to give your core and glutes time to brace and keep your torso upright."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGood effort out there today. Your overall score ticked up slightly from 73 to 76, and you matched your previous count of 6 correct reps. The good news is you kept the total error count down to 4, exactly where it was last time, and those slips only showed up in the later part of your set—specifically on reps 3, 6, 8, and 10 as fatigue started to creep in. \n\n***\n\n### Error Breakdown: Forward Trunk Lean\n\n* **What it is:** Your chest is collapsing forward over your front thigh as you descend into the lunge, rather than staying upright.\n* **Why it matters:** This shifts the work away from your glutes and quads and dumps the load onto your lower back. That steals the muscle growth you came for and leaves you with a sore lower back by the end of your session, plus it caps how heavy you can safely go as you get stronger.\n* **How to fix it:** \n  * (a) Think about stamping your front foot straight down and driving your chest proudly up toward the ceiling as you lower yourself.\n  * (b) Slow down your descent and shorten your step slightly if you need to, making sure you drop straight down rather than pitching forward.\n  * (c) Practice bodyweight split squats with a light plate held tight against your chest to force your torso to stay upright.\n  * (d) Keep an eye on your reflection in the mirror—if you see your torso tipping toward the floor as you hit the bottom, you've gone too far forward.\n\n***\n\n### Next Session Plan\n1. **Pace your reps:** Since your form slips on the later reps (3, 6, 8, and 10), focus on keeping your chest tall right from the first rep, and stop the set a rep early if your torso starts to cave.\n2. **Control the bottom:** Slow down the lowering phase of every single rep to build better body awareness and keep your spine upright.",
+    "### Progress Tracking\n\nSolid effort today on your lunges. You pushed your overall score up slightly to 76 (from 73 last session), and your correct rep count held steady at 6 out of 10. The old habit of leaning your torso forward carried over from your last workout, showing up on reps 3, 6, 8, and 10—notice how it crept in as fatigue set in during the second half of the set. Let's iron that out so you can lock in clean reps from start to finish.\n\n***\n\n### Error Breakdown: Forward Trunk Lean\n\n*   **What it is, in plain words:** Your chest is collapsing forward over your front thigh as you drop down, rather than staying tall and stacked over your hips.\n*   **Why it matters:** This shifts the load away from your glutes and quads and dumps unnecessary stress straight into your lower back. It costs you power out of the bottom of the movement and leaves your lower back feeling stiff or fatigued long before your legs are actually done.\n*   **How to fix it:** \n    *   *(a) Cue:* Think about driving your chest proudly up toward the ceiling the moment you start stepping down.\n    *   *(b) Setup change:* Shorten your step just a fraction so your torso naturally stays more upright over your center of gravity.\n    *   *(c) Drill:* Try bodyweight reverse lunges holding a light plate or dumbbell tight against your chest—the front-loaded weight acts as a counterweight to force your torso to stay upright.\n    *   *(d) Self-check:* Glance sideways in the mirror; your torso angle should stay roughly parallel to your shin angle throughout the entire drop.\n\n***\n\n### Next Session Plan\n\n1. **Combat fatigue-related form drift:** Since your torso lean only happened on the later reps (3, 6, 8, and 10), make a rule to reset your posture fully between every single rep instead of rushing through the set.\n2. **Keep the chest tall:** Focus your attention entirely on keeping your chest proud on the descent, especially as your legs start burning toward the end of the set.",
+    "### Progress Tracking\nGood effort out there today. You completed all 10 reps, and your overall score ticked up slightly from 73 to 76. You held onto 6 clean reps—the exact same number as last time. The old habit of leaning too far forward with your torso is still hanging around, popping up on reps 3, 6, 8, and 10, meaning it tends to creep in as fatigue sets in later in the set. Let's iron that out so you can lock in a fully clean set next time.\n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your chest and torso are collapsing forward toward your front knee as you step down, instead of staying upright.\n*   **Why it matters:** When your torso tips forward, the work shifts away from your glutes and quads and dumps extra stress straight onto your lower back. That's the nagging ache you feel in your spine when fatigue hits, and it costs you leg strength while risking lower back strain as you go heavier.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about keeping your shirt logo proudly facing the wall straight ahead of you on every single step.\n    *   (b) *Setup change:* Slow your descent down and shorten your stride just slightly so your hips have room to drop straight down rather than drifting forward.\n    *   (c) *Drill:* Practice bodyweight split squats with your hands placed behind your head to force your torso to stay tall.\n    *   (d) *Self-check:* Glance in the side mirror—if you see your shoulders drifting past your front knee at the bottom, you've tipped too far.\n\n***\n\n### Next Session Plan\n\n1. **Watch the fatigue drift:** Keep a close eye on your form during the second half of your sets (reps 6 through 10), which is where your torso starts to cave forward. \n2. **Shorten the stride:** Take a slightly more compact step forward so your center of gravity stays balanced between your feet, making it much easier to keep your chest tall.\n3. **Rest up:** Take a full 90 seconds to two minutes of rest between working sets so your core and legs are fresh enough to keep your posture strict from the first rep to the last."
+   ]
+  },
+  {
+   "label": "Lunge — straight_back_leg",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-004",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 72,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "straight_back_leg",
+      "shallow_lunge"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 76
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 62
+      },
+      "errors": [
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 58
+      },
+      "errors": [
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 57
+      },
+      "errors": [
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: straight_back_leg | source: KritzCroninHume2009BodyweightlungeSCJ]\nPerforming the lunge with spinal flexion or excessive spinal extension.\n\n[principle | re: straight_back_leg | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nLower the rear knee toward the ground during the descent of the lunge.\n\n[mistake | re: straight_back_leg | source: basics_of_strength_and_conditioning_manual]\nAllowing the front knee to go forward past the toes during the lunge.\n\n[consequence | re: straight_back_leg | source: ptq-4.4.9-the-undervalued-lunge]\nTurning the lead foot or lead knee inward during a forward lunge increases the torque stress of the knee joint of the front leg, which can exacerbate previous knee injuries and lead to increased knee pain.\n\n[finding | re: straight_back_leg | source: KritzCroninHume2009BodyweightlungeSCJ]\nThe forward lunge involves calcaneal eversion, talar plantar flexion and adduction, tibial internal rotation, knee flexion, extension, and abduction, and hip flexion, extension, and adduction.\n\n[mistake | re: straight_back_leg | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nAllowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.\n\n[consequence | re: straight_back_leg | source: ptq-4.4.9-the-undervalued-lunge]\nRotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint, which can limit performance, exacerbate pre-existing injuries, and potentially cause pain.\n\n[finding | re: straight_back_leg | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nForward lean of the trunk during the forward lunge results in greater recruitment of the hamstrings.",
+   "metrics": [
+    {
+     "error": "straight_back_leg",
+     "kind": "mistake",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.07126695767247171,
+     "kept": 3,
+     "tagged": false,
+     "tag_exclusive": false
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "finding",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.12878271259952256,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "consequence",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.1239338329971279,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "principle",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.10956847667693459,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nYou scored an overall 76 today, up from 72 in your previous session on October 2nd. Your correct rep count held steady at 6, and you dropped from 4 incorrect reps down to 4 incorrect reps (though note that your total volume shifted, and you completely cleared the shallow lunge fault from last time). You still hit the straight back leg error on reps 3, 5, 8, and 10, so let's lock that in for your next session.\n\n### Error Breakdown: Straight Back Leg\n\n*   **What it is:** Letting your back leg lock out or stay stiff instead of actively dropping your rear knee straight down toward the floor as you descend.\n*   **Why it matters:** When your back leg stays straight and your torso leans forward, your hamstrings take an excessive amount of recruitment instead of sharing the load evenly, which costs you balanced leg drive and builds up fatigue prematurely in the back of your thigh.\n*   **How it is fixed:** \n    *   (a) *Cue:* Think about dropping your back knee straight down to kiss the floor like you're kneeling in place, rather than stepping forward.\n    *   (b) *Setup change:* Shorten your stride slightly so your torso can stay upright and your back knee has a clear vertical path to drop.\n    *   (c) *Drill:* Practice bodyweight split squats pausing at the bottom for two seconds to feel the weight distribute evenly between both legs.\n    *   (d) *Self-check:* Glance in a side mirror and confirm your rear shin is pointing straight down toward the ground at the bottom of the dip rather than angling backward.\n\n### Next Session Plan\n1. **Pace your reps:** Notice how your errors happened on reps 3, 5, 8, and 10—likely as fatigue crept in. Take a deliberate extra breath between reps to keep your form dialed in from start to finish.\n2. **Focus on the rear knee:** Prioritize dropping that back knee straight down on every single rep to permanently retire the straight-back-leg habit.",
+    "### Progress Tracking\nGood work on pushing your overall score up to 76 today compared to 72 in your last session. You matched your previous count of 6 correct reps, but you dropped your incorrect count from 4 down to 4 as well—though notice that your clean reps stayed steady, the faults you did have clustered toward the back half of the set (reps 3, 5, 8, and 10). On the bright side, you completely cleared the shallow lunge issue from your previous session, leaving just one recurring fault to dial in.\n\n### Error Breakdown\n\n* **What it is, in plain words:** Letting your back leg straighten out or failing to drop your rear knee down toward the floor as you step into the movement.\n* **Why it matters:** This puts extra rotational twisting stress straight onto your knee joints, which can flare up old aches, trigger new joint pain, and cap your strength long before your legs are actually fatigued.\n* **How to fix it:**\n  - (a) Cue to think about: Focus on dropping straight down toward the floor rather than driving forward.\n  - (b) Setup change: Take a slightly more measured stride so your back knee has a clear, unobstructed path straight down under your hips.\n  - (c) Drill or regression: Practice bodyweight split squats holding onto a rack or wall for balance, pausing for a full two seconds at the bottom with your rear knee hovering just above the floor.\n  - (d) Self-check: Glance in the mirror sideways or film your set to confirm your back knee is bending directly downward rather than trailing out straight behind you.\n\n### Next Session Plan\n* Keep your stride length consistent on every rep, and actively hunt for that straight up-and-down drop of your rear knee.\n* Pay special attention to fatigue on the back half of your set (reps 8 through 10)—that is where your form started leaking today, so cut the set short or take an extra breath before those reps if you feel your back leg locking out.",
+    "### Progress Tracking\n\nGreat job on pushing your overall score up to 76 today compared to 72 in your last session. You matched your previous count of 6 correct reps, but you also successfully dropped one of your old problem areas—your shallow reps are completely gone. You still hit 4 incorrect reps today, and all of them came down to the exact same issue with your back leg. \n\n***\n\n### Error Breakdown: straight_back_leg\n\n* **What it is, in plain words:** As you lower yourself into reps 3, 5, 8, and 10, your back leg isn't bending properly toward the floor, leaving that leg too straight instead of dropping straight down.\n* **Why it matters:** This breakdown forces extra twisting stress onto your knee joint, which can flare up old injuries and cause new aches that limit how hard you can push your workout.\n* **How to fix it:** \n  *(a) Cue:* Think about dropping your back knee straight down toward the floor like an elevator, rather than shifting forward into your front foot.\n  *(b) Setup:* Slow down your descent and take a slightly shorter step if you need to, so your back knee has a clear path to drop straight down.\n  *(c) Drill:* Try bodyweight split squats holding onto a wall or rack for balance, focusing entirely on sinking your back knee toward the floor without moving your feet.\n  *(d) Self-check:* Watch yourself in a side-profile mirror and check that your back knee gets close to the floor on every single descent instead of staying rigid.\n\n***\n\n### Next Session Plan\n\n1. **Prioritise the back leg drop:** Keep your focus locked on lowering your back knee straight down on every rep to clear out those remaining errors.\n2. **Watch for fatigue slipping in:** Notice that your back leg started cheating on reps 8 and 10—when fatigue hits, take a slightly longer break between sets to keep your form sharp."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGreat to see your overall score tick up from 72 to 76, and you matched your previous count of 6 correct reps out of 10 total attempts. Even better news: you completely cleared the shallow lunge error that was holding you back last time. You've only got one fault left to iron out now. \n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** On reps 3, 5, 8, and 10, your back leg is staying too straight instead of bending and dropping your back knee down toward the floor as you step out.\n*   **Why it matters:** When your back leg stays locked out, your hips and front quad have to shoulder extra strain while your glutes on the back leg switch off, meaning you miss out on full muscle growth in your lower body and start fatiguing much faster than you should.\n*   **How to fix it:** \n    *   (a) Cue to think about: Drop your back knee straight down to the floor, like you're trying to kiss it to the ground, rather than lunging forward.\n    *   (b) Setup change: Shorten your stride length slightly so your torso stays more upright and your back knee has room to drop vertically.\n    *   (c) Drill or regression: Try a stationary split squat with a light dumbbell or bodyweight to get used to dropping straight down before adding dynamic stepping back in.\n    *   (d) Self-check: Glance in a mirror sideways or record a quick video—your back shin should be nearly parallel to the floor at the bottom of the movement, not angled straight back.\n*   **Use the rep detail:** This fault is creeping in later in the set (hitting you on reps 3, 5, 8, and 10), which usually means fatigue is making you lazy with the back leg as you tire out.\n\n***\n\n### Next Session Plan\n1. **Pace your reps:** Take a brief breath between reps so fatigue doesn't sneak up and cause your back leg to lock out on the second half of your sets.\n2. **Focus on the drop:** Keep the mental cue of dropping your back knee straight down front and center on every single rep to lock in the clean pattern you started today.",
+    "### Progress Tracking\nGood effort out there today. Your overall score ticked up from 72 to 76, and you matched your previous count of 6 correct reps out of 10 total attempts. Even better news: you completely cleared out the shallow lunge error that showed up in your last session. You just have one lingering habit to iron out now.\n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your back leg is staying too straight instead of dropping down toward the floor as you step into the lunge. You are locking out or keeping tension in that rear knee instead of letting it bend naturally.\n*   **Why it matters:** When your back leg stays stiff, your front quad ends up absorbing an unfair share of the workload while your glutes and rear leg muscles miss out on the stimulus they should be getting. That cuts down the overall muscle growth you are earning for the effort, leaves you feeling unevenly sore later, and robs your lower body of stable power as you push back up.\n*   **How to fix it:** \n    *   *(a) Cue to think about:* Drop your back knee straight down toward the floor like you are trying to kiss it to the ground, rather than pushing your hips forward.\n    *   *(b) Setup change:* Shorten your stride just a fraction if you need to, and use a slower, controlled tempo on the way down so you have time to let that back knee bend.\n    *   *(c) Drill or regression:* Try holding onto a sturdy rack or doorframe for balance and practice bodyweight split squats where you focus entirely on dropping the back knee.\n    *   *(d) Self-check:* Glance at your phone video or a mirror sideways-on—your back thigh should point straight down toward the floor at the bottom of the movement, not angle backward.\n    *   *Note on rep detail:* This error popped up on reps 3, 5, 8, and 10, meaning fatigue is creeping in as the set goes on and your form starts leaking toward the end.\n\n***\n\n### Next Session Plan\n1. **Pace your reps:** Since the back leg error only hits on the later reps (3, 5, 8, and 10), take a brief breath between reps once you start feeling fatigued so you don't rush and let your form slip.\n2. **Focus on the drop:** Make every descent about dropping that back knee straight down to the floor right from rep one.",
+    "### Progress Tracking\nGreat job pushing your overall score up from 72 to 76 since yesterday, and nice work matching your clean rep count at 6 correct out of 10. Even better news: you completely cleared out the shallow lunge fault that tripped you up last time. You've still got one stubborn habit hanging around from yesterday—keeping your back leg too straight—which showed up on reps 3, 5, 8, and 10 as fatigue started creeping in toward the end of the set. \n\n---\n\n### Error Breakdown\n\n* **What it is:** You're locking out or failing to bend your back knee as you drop down, turning the lunge more into a split squat with a rigid rear leg instead of letting both knees drop toward the floor together.\n* **Why it matters:** When your back leg stays stiff, your front quad and hip take an overloaded beating while your glutes and rear leg miss out on the work they are supposed to be sharing. That means uneven muscle growth, and as the weight goes up, it puts unnecessary shear stress through your lower back and front knee—leaving you aching in places you shouldn't be long before the set is actually finished.\n* **How to fix it:** \n  (a) Think about \"dropping straight down\" rather than stepping forward, imagining you are lowering your back knee directly to kiss the floor.\n  (b) Shorten your stride length slightly in your setup so your back knee naturally has room to bend straight down under your hips instead of dragging behind you.\n  (c) Try doing bodyweight reverse lunges holding onto a stable surface or doorframe for balance, slowing your tempo down to a 3-second descent to force both legs to bend evenly.\n  (d) Check your phone video from the side: your back shin should be roughly parallel to your torso and pointing down toward the floor at the bottom, not slanted out straight behind you. Since this error only crept in on reps 3, 5, 8, and 10, your form breaks down as you tire—so cut your set two reps shorter next time to stop before the fatigue sets in.\n\n---\n\n### Next Session Plan\n1. **Manage your set length:** Stop your lunge sets two reps earlier than you did today to keep fatigue from creeping in and stiffening up your back leg on those later reps.\n2. **Focus on the rear drop:** Keep your stride slightly shorter in your setup so you can drive your back knee straight down toward the floor on every single rep."
+   ]
+  },
+  {
+   "label": "Lunge — mixed",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-005",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 69,
+     "previous_correct_reps": 4,
+     "previous_incorrect_reps": 6,
+     "previous_common_errors": [
+      "forward_trunk_lean",
+      "straight_back_leg"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 4,
+     "incorrect_reps": 6,
+     "overall_score": 67
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "forward_trunk_lean"
+       },
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 46
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge"
+       }
+      ]
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 62
+      },
+      "errors": [
+       {
+        "error_type": "excessive_front_knee_flexion"
+       }
+      ]
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 57
+      },
+      "errors": [
+       {
+        "error_type": "forward_trunk_lean"
+       },
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     },
+     {
+      "rep_no": 8,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 43
+      },
+      "errors": [
+       {
+        "error_type": "shallow_lunge"
+       },
+       {
+        "error_type": "forward_trunk_lean"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 83
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 59
+      },
+      "errors": [
+       {
+        "error_type": "straight_back_leg"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: straight_back_leg | source: KritzCroninHume2009BodyweightlungeSCJ]\nPerforming the lunge with spinal flexion or excessive spinal extension.\n\n[mistake | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nAllowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.\n\n[principle | re: straight_back_leg | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nLower the rear knee toward the ground during the descent of the lunge.\n\n[mistake | re: straight_back_leg | source: basics_of_strength_and_conditioning_manual]\nAllowing the front knee to go forward past the toes during the lunge.\n\n[mistake | re: straight_back_leg | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nAllowing excessive anterior knee translation where the knee exceeds the toes during lunges.\n\n[consequence | re: straight_back_leg | source: ptq-4.4.9-the-undervalued-lunge]\nTurning the lead foot or lead knee inward during a forward lunge increases the torque stress of the knee joint of the front leg, which can exacerbate previous knee injuries and lead to increased knee pain.\n\n[principle | re: excessive_front_knee_flexion | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive knee flexion (sinking too deep) during the lunge increases the joint reaction forces and extensor moments on the front knee.\n\n[finding | re: straight_back_leg | source: KritzCroninHume2009BodyweightlungeSCJ]\nThe forward lunge involves calcaneal eversion, talar plantar flexion and adduction, tibial internal rotation, knee flexion, extension, and abduction, and hip flexion, extension, and adduction.\n\n[mistake | re: shallow_lunge | source: basics_of_strength_and_conditioning_manual]\nFailing to lower the hips until the front thigh is parallel to the floor.\n\n[consequence | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nLeaning the trunk forward (flexion) during a lunge shifts the body's center of mass forward, reducing the knee extension moment and decreasing patellar tendon stress.\n\n[consequence | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nIncreased knee flexion angle during the lunge increases quadriceps force, which is a main contributing factor to greater patellar tendon stress.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nInexperienced exercisers often exhibit excessive knee flexion during lunges.\n\n[mistake | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive anterior movement of the upper torso increases the load exerted on the knee joint of the front leg.\n\n[consequence | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nLeaning too far forward during the eccentric phase of the exercise can increase the shear force at the knee joint, increasing the risk of injury or pain.\n\n[consequence | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAn increased knee flexion angle during a forward lunge causes forward movement of the upper body and trunk segment, generating a large reaction force on the ground surface contacted by the front foot.\n\n[mistake | re: forward_trunk_lean | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovices may exhibit compensatory trunk lean during lunges due to core instability and reduced eccentric contraction ability of the gluteus maximus.\n\n[principle | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nTo control the load exerted on the front knee joint during a forward lunge, limit the anterior movement of the upper torso and the lower leg.\n\n[mistake | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nTo compensate for balance and strength challenges, the torso can lean forward during the downward phase, even if the lower body is performing the correct technique.\n\n[consequence | re: straight_back_leg | source: ptq-4.4.9-the-undervalued-lunge]\nRotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint, which can limit performance, exacerbate pre-existing injuries, and potentially cause pain.\n\n[principle | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nTrunk position can be manipulated during the lunge to alter patellar tendon stress.\n\n[principle | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nKeeping the front knee behind the toes during a lunge limits knee flexion to a safer range of approximately 110 degrees compared to letting it translate forward.\n\n[finding | re: straight_back_leg | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nForward lean of the trunk during the forward lunge results in greater recruitment of the hamstrings.\n\n[principle | re: shallow_lunge | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nTo achieve proper depth during a lunge, descend until the trail knee is just prior to touching the ground.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nPeak anterior-posterior knee joint reaction forces during the upward phase of a lunge increase from 3.545 N/BW at 80 degrees of knee flexion to 4.521 N/BW at 100 degrees.\n\n[finding | re: forward_trunk_lean | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nPositioning the trunk in a forward-inclined position during a lunge elicited a significantly higher activation of the lumbar erector spinae (40 ± 29% MVIC) compared to the straight-trunk condition (20 ± 15% MVIC, ES = 0.92).\n\n[mistake | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovice lifters may perform backward lunges with shallower knee flexion compared to experienced lifters.\n\n[principle | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nThe knee flexion angle of the front leg in the downward phase should be carefully managed to prevent injuries to the knee joints during forward lunge training.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring forward barbell lunges, novices showed a larger sagittal knee range of motion of 110.82 ± 13.36 degrees compared to 98.55 ± 9.16 degrees in experienced lifters.\n\n[finding | re: forward_trunk_lean | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nThe head, arms, and trunk consist of approximately 55% of body mass, which explains why trunk position has a significant influence on lower extremity joint moments during the lunge.\n\n[finding | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring backward barbell lunges, novices achieved a shallower peak knee flexion with a minimal sagittal angle of -99.01 ± 10.02 degrees compared to -108.44 ± 8.33 degrees in experienced lifters.\n\n[finding | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nDuring a forward lunge, a shallower front knee flexion angle of 80° results in a statistically significantly higher knee extensor moment (0.980 Nm/BW) compared to 90° (0.717 Nm/BW) and 100° (0.362 Nm/BW).\n\n[consequence | re: shallow_lunge | source: Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK]\nFailing to sufficiently activate the m. gluteus maximus reduces the generation of posterior shear forces at the tibia, which otherwise potentially contribute to a reduced likelihood of knee injuries.",
+   "metrics": [
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "mistake",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.08753351270350895,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "finding",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.18725831812419536,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "consequence",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.14786374464490293,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "excessive_front_knee_flexion",
+     "kind": "principle",
+     "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+     "best": 0.1249014660774026,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "mistake",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.15043823117753485,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "finding",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.2007209897900808,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "consequence",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.14444627099588758,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "forward_trunk_lean",
+     "kind": "principle",
+     "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+     "best": 0.15511805743681373,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "mistake",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.13532986990690876,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "finding",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.2260629861279687,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "consequence",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.3157588667036424,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "shallow_lunge",
+     "kind": "principle",
+     "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+     "best": 0.1852058922753359,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "mistake",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.07126695767247171,
+     "kept": 3,
+     "tagged": false,
+     "tag_exclusive": false
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "finding",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.12878271259952256,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "consequence",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.1239338329971279,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    },
+    {
+     "error": "straight_back_leg",
+     "kind": "principle",
+     "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+     "best": 0.10956847667693459,
+     "kept": 1,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nYou matched your previous outing on correct reps, hitting 4 clean ones out of 10 total attempts, and your overall score dipped slightly from 69 to 67. The good news is you completely cleared out the continuous leaning habit from your last session on several reps, but a couple of old errors crept back in alongside a couple of new ones. Let's look at what happened so you can clean the whole set up next time.\n\n### Error Breakdown\n\n*   **Forward Trunk Lean (seen on reps 2, 7, and attempt 8)**\n    *   *What it is:* Your torso is pitching forward toward your front thigh as you drop down into the lunge, rather than staying upright.\n    *   *Why it matters:* Since your upper body makes up about 55% of your total body weight, letting it tip forward shifts your center of mass and ramps up the shear force at your front knee joint. That extra strain raises your injury risk and leaves your lower back working overtime—you'll feel that as tightness or aching in your lower spine instead of putting the work into your glutes and quads.\n    *   *How to fix it:* \n        (a) Cue yourself to \"keep your chest proud and \"float\" your ribs straight up toward the ceiling\" as you step out.\n        (b) Setup change: slow down your tempo on the way down so you have time to catch your balance before your torso starts to cave forward.\n        (c) Drill: practice bodyweight split squats with your hands resting across your chest to build better core stability and upright posture without added load.\n        (d) Self-check: glance in the side mirror; your torso should stay stacked directly over your hips rather than spilling forward over your front knee.\n    *   *Note:* This fault clustered on your later reps (7 and 8), appearing when fatigue set in and your core started to give out—consider cutting your sets a couple of reps earlier before your form breaks down.\n\n*   **Straight Back Leg (seen on reps 2, 7, and 10)**\n    *   *What it is:* You are letting your rear leg stay locked or rigid instead of bending your back knee down toward the floor as you descend.\n    *   *Why it matters:* When your rear leg fails to drop, your mechanics get distorted, causing your front foot or knee to twist inward. That twisting torque places excessive stress right across your front knee joint, which can lead to nagging joint pain and force you to cut your workouts short.\n    *   *How to fix it:* \n        (a) Cue yourself to \"drop your back knee straight down to kiss the floor\" on every step.\n        (b) Setup change: shorten your stride slightly so your rear leg has room to drop vertically rather than dragging behind you.\n        (c) Drill: drop down into a stationary split squat holding a light dumbbell to get used to the feeling of driving the back knee straight down.\n        (d) Self-check: feel where your weight lands—if your front heel is lifting or your front knee is wobbling inward, your back leg isn't doing its share of the work.\n\n*   **Shallow Lunge (seen on attempts 4 and 8)**\n    *   *What it is:* You cut your depth short and came back up early on these attempts without dropping your hips properly.\n    *   *Why it matters:* Hitting full depth is what engages your glutes to generate the stability that protects your joints; cutting the movement short cheats you out of muscle growth and robs your legs of the strength you're building.\n    *   *How to fix it:* \n        (a) Cue yourself to \"sink your hips until your back knee is just a hair off the floor.\"\n        (b) Setup change: drop the load slightly so you aren't fighting just to survive the bottom of the rep.\n        (c) Drill: pause for a strict two-second count at the bottom of a bodyweight lunge to force yourself to own the depth.\n        (d) Self-check: watch your side profile on a phone video to ensure your back knee gets low enough before you push back up.\n    *   *Note:* Both of these errors happened on aborted attempts where you didn't even complete the rep—when depth starts to feel impossible, it's a clear sign to lower the weight or stop the set.\n\n*   **Excessive Front Knee Flexion (seen on rep 5)**\n    *   *What it is:* You sank way too deep on this single rep, letting your front knee drift too far forward past your toes and overbending the joint.\n    *   *Why it matters:* Sinking past your normal range increases the joint reaction forces and ramps up the pull on your quadriceps tendon. That translates to sharp pressure right under your kneecap that you'll feel as a nagging ache during or after your workout.\n    *   *How to fix it:* \n        (a) Cue yourself to \"push your weight back into your front heel\" rather than letting your knee drift forward.\n        (b) Setup change: take a slightly longer step forward so your front shin stays more vertical at the bottom.\n        (c) Drill: set up facing a wall or bench a few inches from your front knee to act as a physical blocker against forward knee drift.\n        (d) Self-check: look down at the bottom of your rep—your front knee should stay stacked directly over your ankle, not shooting out past your toes.\n\n### Next Session Plan\n\n1. **Prioritize posture from rep one:** Focus entirely on keeping your chest upright. As soon as you feel your torso start to pitch forward on reps like 7 and 8, rack the weight—don't fight through the lean.\n2. **Shorten your set length:** Since fatigue caused your form to unravel midway through, drop your target rep count per set by 2 reps next time to guarantee every single rep is clean.\n3. **Control your depth:** Treat every single attempt with a deliberate pause at the bottom, ensuring your back knee drops down properly without cutting reps short or sinking past your comfort zone.",
+    "### Progress Tracking\nYou landed 4 correct reps out of 10 attempts today, exactly matching your correct rep count from your previous session on October 2. Your overall score dipped slightly from 69 to 67. On the bright side, you carried over the same solid baseline of clean reps on your stronger efforts, but fatigue and form breakdowns crept in as the set wore on. \n\nYour old habits—forward trunk lean and failing to keep your back leg properly positioned—showed up again on reps 2, 7, 8, and 10. You also picked up two new issues today: a shallow abort on attempt 4 and a brief depth lapse on attempt 5 where your front knee drifted too far forward. Let's lock those details down so you can trust every rep next time.\n\n---\n\n### Error Breakdown\n\n#### Forward trunk lean\n*   **What it is:** Your chest and upper body cave forward toward your front knee as you descend, rather than staying upright.\n*   **Why it matters:** Because your upper body makes up about 55% of your total body mass, leaning forward shifts your center of gravity and places extra shear force across your front knee joint. This can trigger sharp knee pain and lower back fatigue mid-set, while robbing your glutes of the work they are supposed to be doing.\n*   **How to fix it:** \n    *   *Cue:* Think about keeping your chest proud and \"shining your logo\" straight ahead against the wall in front of you on every descent.\n    *   *Setup:* Slow down your tempo on the way down and take a slightly shorter step forward so your torso has less distance to collapse over.\n    *   *Drill:* Practice bodyweight split squats with a light PVC pipe or broomstick held vertically against your spine (touching the back of your head, upper back, and tailbone) to groove an upright torso.\n    *   *Self-check:* Glance in the side mirror—your shoulder seam should stay stacked directly over your hip throughout the entire lower phase.\n\n#### Straight back leg\n*   **What it is:** Your rear leg fails to drop straight down toward the floor, or your back knee and foot rotate outward instead of tracking properly.\n*   **Why it matters:** Twisting your back leg or letting it drift sideways sends high torque stress straight through your knee joints. That's the nagging joint ache that flares up a day or two later and caps your strength long before your leg muscles are actually fatigued.\n*   **How to fix it:** \n    *   *Cue:* Drive your back knee straight down toward the floor like an elevator, rather than sliding or stepping backward off-balance.\n    *   *Setup:* Widen your stance width by an inch or two if you feel wobbly; a narrow tightrope stance invites your back hip and knee to twist out of alignment.\n    *   *Drill:* Drop the load entirely and do stationary split squats focusing purely on a vertical drop of the back knee.\n    *   *Self-check:* Look down at your back foot at the bottom of the lunge—your heel should stay lifted and your toes should point straight ahead, not flare to the side.\n\n#### Shallow lunge\n*   **What it is:** You cut attempt 4 short and aborted the movement before getting anywhere near the bottom.\n*   **Why it matters:** Cutting your range of motion short cheats your glutes and quads out of the full stretch they need for strength and muscle growth, leaving your training half-finished.\n*   **How to fix it:** \n    *   *Cue:* Lower your hips until your rear knee is just an inch or two above the floor before pushing back up.\n    *   *Setup:* Lighten the weight on the bar or dumbbells so you aren't fighting a load that forces you to truncate your depth out of self-preservation.\n    *   *Drill:* Place a small, soft target (like an ab mat or folded towel) right beneath where your back knee should touch so you have a physical cue for full depth.\n    *   *Self-check:* Feel for your front thigh roughly parallel to the floor at the bottom position.\n\n#### Excessive front knee flexion\n*   **What it is:** Your front knee drifts forward past your toes on rep 5, sinking you too deep into a cramped angle.\n*   **Why it matters:** Sinking too far forward spikes the forces acting right on your patellar tendon. That causes localized knee discomfort right below the kneecap that makes subsequent reps feel grinding and heavy.\n*   **How to fix it:** \n    *   *Cue:* Keep your front shin relatively vertical and drive your weight backward through your front heel as you descend.\n    *   *Setup:* Take a slightly longer stride forward so your front knee stays stacked directly above your ankle instead of sliding out over your toes.\n    *   *Drill:* Practice lunging facing a blank wall with your toes a few inches away—if your knee bumps the wall, your step is too short or your shin is drifting too far forward.\n    *   *Self-check:* Look down at the bottom of the rep; your front knee should stay behind an imaginary vertical line running up from your toes.\n\n---\n\n### Next Session Plan\n1.  **Cut the volume slightly if form breaks down:** Your errors heavily cluster in the second half of the set (reps 7 through 10). Stop your set two reps *before* your chest starts dropping and your back leg starts twisting.\n2.  **Anchor your setup:** Take a deliberate second before you move to widen your stance slightly and set your chest proud so you don't leak energy on the very first step.\n3.  **Drop the load for quality:** If you're using added weight, drop it by 10% next session to build back clean execution across all reps before climbing back up.",
+    "### Progress Tracking\nYou knocked out 4 correct reps out of 10 total attempts today, matching your 4 correct reps from yesterday. Your overall score dipped slightly from 69 to 67. The good news is you completely cleared out some of the old habits on several clean reps (reps 1, 3, 6, and 9 were solid), but a few recurring issues and a couple of new ones showed up as fatigue set in during the middle and end of the set.\n\n---\n\n### 1. Forward Trunk Lean\n* **What it is:** You are letting your chest and upper body cave forward toward your front knee instead of keeping your torso upright as you drop down.\n* **Why it matters:** When your upper body collapses forward, it shifts extra load straight onto your front knee and ramps up the sheer force across the joint. That extra stress can turn into nagging knee pain or discomfort by the time you finish your working sets.\n* **How to fix it:**\n  * **Cue:** Imagine a tall string pulling the crown of your head straight up to the ceiling as you descend.\n  * **Setup:** Slow down your descent and shorten your stride slightly so your core can easily keep your torso stacked over your hips.\n  * **Drill:** Practice bodyweight lunges with your hands crossed over your chest, pausing for a two-count at the bottom to check that your ribs aren't spilling forward over your thigh.\n  * **Self-Check:** Glance in a side mirror or record your set—if your shoulders finish ahead of your hips at the bottom, you're leaning too far. This popped up on reps 2, 7, and the aborted attempt 8, so watch for it as you get tired.\n\n---\n\n### 2. Straight Back Leg\n* **What it is:** You are leaving your rear leg rigid or locking out the back knee instead of actively dropping that back knee straight down toward the floor.\n* **Why it matters:** Stiffening or twisting the back leg puts awkward torque stress right through your knee joint. Over time, that unnecessary twist can irritate pre-existing aches and limit how much power you can drive out of the bottom of the lunge.\n* **How to fix it:**\n  * **Cue:** Drive your back knee straight down toward the floor like an elevator dropping on a cable.\n  * **Setup:** Take a slightly wider stance from heel to toe so your hips have room to sink vertically rather than drifting backward.\n  * **Drill:** Try split squats with your rear foot elevated on a low bench to force your back knee to bend and take the guesswork out of the leg angle.\n  * **Self-Check:** Feel for an active stretch in the front of your back hip; if your back leg feels locked out or your heel starts flaring sideways, the leg has gone straight. This error showed up on reps 2, 7, and 10, mostly creeping in during the second half of your workout.\n\n---\n\n### 3. Shallow Lunge\n* **What it is:** You cut the movement short and came back up early on attempt 4 and attempt 8 without getting your hips down to depth.\n* **Why it matters:** Cutting your range of motion short cheats your glutes out of doing their proper job. Without that full glute engagement, you lose the natural braking force that helps protect your knees from heavy impact.\n* **How to fix it:**\n  * **Cue:** Think about kissing your back knee gently to the floor on every single rep.\n  * **Setup:** Lighten the load or take a deliberate pause at the bottom of the movement to anchor your depth before driving back up.\n  * **Drill:** Place a small, soft target (like an ab mat or folded towel) right beneath your rear knee so you have a physical marker to touch on every rep.\n  * **Self-Check:** Look for your front thigh to hit parallel to the floor before you reverse direction. Since both instances of this fault happened on aborted attempts (reps 4 and 8), recognize when your legs are fatiguing and either take a longer break between sets or wrap up the set before you start cutting reps short.\n\n---\n\n### 4. Excessive Front Knee Flexion\n* **What it is:** You let your front knee drift way forward past your toes, sinking way too deep into the front of the knee on rep 5.\n* **Why it matters:** Sinking too far forward spikes the force on your quadriceps and cranks up the stress on your patellar tendon. That extra load generates a heavy reaction force through your front foot, which usually shows up as sharp pressure right at the front of the knee cap.\n* **How to fix it:**\n  * **Cue:** Keep your front shin vertical and stack your front knee directly over your ankle.\n  * **Setup:** Step out slightly further on your initial stride so your front shin stays upright instead of angling forward as you drop.\n  * **Drill:** Practice lunging facing a wall a few inches away from your front toes—if your knee bumps the wall, your stance is too cramped.\n  * **Self-Check:** Look down at your front foot during the bottom of the rep; if your knee is so far forward that you can't see your toes, you've over-bent the joint. This happened specifically on rep 5, so keep an eye on your stride length right after you start your set.\n\n---\n\n### Next Session Plan\n1. **Prioritise a tall torso:** Focus entirely on keeping your chest proud and your head high, especially on reps 7 through 10 where fatigue usually causes you to fold forward.\n2. **Use a depth target:** Drop your back knee all the way down to a light touch on the floor to eliminate shallow reps and force your glutes to do the work.\n3. **Call the set earlier:** If you feel your form breaking down and an attempt starting to abort (like reps 4 and 8), rack the weight or finish the set there rather than fighting through sloppy mechanics."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nLet's look at how today stacked up against your last session. You matched your clean rep count at 4 correct reps, but your overall score dipped slightly from 69 to 67, and you still had 6 incorrect reps (including 2 aborted attempts). The good news is you are holding onto your baseline, but those persistent old habits are creeping back in alongside a couple of new ones. \n\n***\n\n### Error Breakdown\n\n*   **Forward trunk lean**\n    *   What it is, in plain words: Your torso is folding forward at the hips as you drop down, rather than staying tall and upright.\n    *   Why it matters: Your lower back and hips end up doing the heavy lifting instead of your front thigh and glutes, which steals the focus away from the muscle growth you are after and puts unnecessary strain on your lower back.\n    *   How to fix it: \n        (a) Cue: Keep your chest proudly puffed out toward the wall in front of you as you descend. \n        (b) Setup change: Slow down your tempo on the way down so you have time to control your posture before you change direction. \n        (c) Drill or regression: Drop the weight entirely and practice bodyweight reverse lunges, pausing at the bottom to check your posture. \n        (d) Self-check: Glance in the side mirror and make sure your torso stays vertical rather than tipping toward the floor.\n    *   Use the rep detail: This showed up on reps 2, 7, and the aborted attempt on rep 8—notice how it tends to pop up as fatigue sets in later in the set.\n\n*   **Straight back leg**\n    *   What it is, in plain words: Your rear leg stays locked out or nearly straight instead of bending to let your back knee drop cleanly toward the floor.\n    *   Why it matters: Your front leg has to shoulder almost all the work while your back leg just tags along, robbing you of total leg strength and leaving you with an uneven workout.\n    *   How to fix it: \n        (a) Cue: Think about dropping your back knee straight down to the floor like an elevator, rather than lunging forward. \n        (b) Setup change: Shorten your stride slightly so your back leg can naturally bend without straining. \n        (c) Drill or regression: Try a split squat where your back foot is elevated or planted firmly, forcing you to bend that rear knee. \n        (d) Self-check: Watch your phone video to see if your back knee is hovering just above the ground or if it's staying high and locked out.\n    *   Use the rep detail: This was a frequent flyer, hitting you on reps 2, 7, and 10, showing it is a deeply ingrained habit when you get tired.\n\n*   **Shallow lunge**\n    *   What it is, in plain words: You are cutting the movement short and coming back up before your hips drop to the right depth.\n    *   Why it matters: You cheat yourself out of the full stretch on your leg muscles, which means less strength built and fewer reps you can actually trust to count.\n    *   How to fix it: \n        (a) Cue: Drive your hips straight down until your front thigh is roughly parallel to the floor. \n        (b) Setup change: Lighten the load so you aren't fighting to save the rep halfway through. \n        (c) Drill or regression: Place a soft target or mat under your back knee so you have a physical marker to touch every single rep. \n        (d) Self-check: Feel for that deep stretch in your front hip and thigh at the bottom before you push back up.\n    *   Use the rep detail: This caused you to abort reps 4 and 8 entirely—stop your sets a rep earlier before your range of motion starts collapsing.\n\n*   **Excessive front knee flexion**\n    *   What it is, in plain words: Your front knee is drifting way too far forward past your toes as you descend.\n    *   Why it matters: Your knee joint takes the brunt of the pressure instead of your thigh and glutes soaking up the load, which can lead to a nagging ache right around the kneecap.\n    *   How to fix it: \n        (a) Cue: Keep your front shin relatively vertical and drive through your mid-foot and heel to stand back up. \n        (b) Setup change: Take a slightly longer stride forward so your front knee stays stacked directly over your ankle. \n        (c) Drill or regression: Set up facing a wall a few inches away to physically block your knee from drifting forward. \n        (d) Self-check: Look down mid-rep—if you can't see your front toes because your knee is hiding them, your stance is too far forward.\n    *   Use the rep detail: This hit you cleanly on rep 5, likely as you tried to push through the middle of the set.\n\n***\n\n### Next Session Plan\n1. **Drop the load and focus on depth and posture:** Lower the weight for your next session so you can hit full depth (like on rep 5 and 8) without your torso folding forward or your back leg locking out.\n2. **Watch your fatigue window:** Since errors like trunk lean and straight back legs clustered toward the middle and end of your set (reps 7, 8, 10), cut your set off one rep *before* your form breaks down.",
+    "### Progress Tracking\nLet’s look at how today’s lunge session stacked up against your last workout on October 2nd. You matched your correct rep count at 4 clean reps, but your overall score dipped slightly from 69 to 67, and you still racked up 6 incorrect reps (including two aborted attempts). \n\nThe good news? You didn't pick up any brand-new faults today—the issues you hit are the exact same ones from your last session. Now we just need to get them to stay gone.\n\n***\n\n### Error Breakdown\n\n*   **What it is:** Your chest is dropping forward toward your front thigh as you step down, instead of staying upright. This happened on reps 2, 7, and the aborted attempt 8.\n*   **Why it matters:** Your lower back and the front of your hips have to take over the work your glutes and core should be doing. That means you'll feel more strain in your lower back instead of working your legs, costing you stability and leaking the power you need to stand back up.\n*   **How to fix it:** \n    *   *(a) Cue:* Keep your chest proud and imagine shining a flashlight straight ahead off your breastbone through the entire movement.\n    *   *(b) Setup:* Slow down your tempo on the way down so you have time to control your posture before you change direction.\n    *   *(c) Drill:* Try bodyweight split squats holding a light plate or medicine ball right against your chest to act as a counterweight and keep your torso honest.\n    *   *(d) Self-check:* Glance in a mirror sideways—if your shoulders are ending up ahead of your front knee, you're leaning too far.\n\n*   **What it is:** Your rear leg is staying rigid and straight rather than bending to drop your back knee down toward the floor. This showed up on reps 2, 7, and 10.\n*   **Why it matters:** When your back leg locks out, you lose your balance and rob your legs of the smooth, even load sharing you want. You'll feel unstable and wobbly, and it robs you of the full strength and muscle growth you're trying to build in both legs.\n*   **How to fix it:** \n    *   *(a) Cue:* Drop straight down toward the floor with your back knee rather than lunging forward.\n    *   *(b) Setup:* Shorten your stride slightly if your back leg feels too far away to bend comfortably.\n    *   *(c) Drill:* Drop to a static split squat with your rear foot elevated on a low pad to force that back knee to bend.\n    *   *(d) Self-check:* Watch a video of your set—your back knee should point straight down to the floor at the bottom of the rep, not trail out straight behind you.\n\n*   **What it is:** You cut your movement short and came back up before getting low enough, which happened on the aborted attempt 4 and aborted attempt 8.\n*   **Why it matters:** Shortchanging your depth means you aren't taking your muscles through their full working range, which cuts your strength gains short and wastes your effort on half-reps.\n*   **How to fix it:** \n    *   *(a) Cue:* Think about kissing your back knee gently to the floor on every single rep.\n    *   *(b) Setup:* Drop the load or stick to bodyweight until you can hit full depth consistently without cutting reps short.\n    *   *(c) Drill:* Place a small, soft target (like an ab mat) right beneath where your back knee should touch so you have a physical marker for full depth.\n    *   *(d) Self-check:* Feel for the bottom of the rep—your front thigh should roughly parallel the floor before you drive back up.\n\n*   **What it is:** Your front knee is traveling too far forward past your toes as you descend, which happened on rep 5.\n*   **Why it matters:** Your knee joint and the muscles right above it soak up all the extra stress instead of sharing the load with your glutes and hips. That creates sharp joint discomfort in the front of the knee and caps what you can lift long before your leg muscles are actually tired.\n*   **How to fix it:** \n    *   *(a) Cue:* Drive your weight back into your front heel and push your hips straight down.\n    *   *(b) Setup:* Take a slightly longer stride forward so your front shin stays more vertical.\n    *   *(c) Drill:* Lunge facing a wall about six inches away from your toes; if your knee bumps the wall on the way down, your stance is too short.\n    *   *(d) Self-check:* Look down at the bottom of your rep—if you can't see your front toes because your knee has drifted too far over them, reset your stance.\n\n***\n\n### Next Session Plan\n1. **Drop the weight and slow down:** Take the load down for your next session and focus on a controlled, deliberate three-second descent to fix the trunk lean and depth issues.\n2. **Target your depth first:** If you feel an rep getting shallow or aborted, stop the set right there rather than fighting through sloppy mechanics.\n3. **Check your stride length:** Take an extra second before you start moving to ensure your stance gives your back knee room to bend and keeps your front shin vertical.",
+    "### Progress Tracking\nLet’s look at how today stacked up against your last session on October 2nd. Your correct rep count stayed locked at 4, and your overall score dipped slightly from 69 to 67. You put in 10 total efforts today, which includes 8 completed reps and 2 aborted attempts (reps 4 and 8). The good news is that you’re holding onto your clean reps, but those recurring form slips are pulling your score down. Your old habits of leaning your chest forward and keeping your back leg too stiff showed up again today, and a couple of new gremlins—cutting your depth short and letting your front knee drift too far forward—crept in as well. \n\n***\n\n### Error Breakdown\n\n*   **Forward trunk lean** (Happened on completed reps 2 and 7, and aborted attempt 8)\n    *   *What it is:* Your chest is collapsing forward toward the floor as you drop down, instead of staying tall and upright.\n    *   *Why it matters:* Your lower back and hips have to pick up the slack instead of your glutes and quads doing the heavy lifting. That means you'll feel extra strain right across your lower back by the time you finish the set, and you're leaving muscle growth on the table for the legs you actually want to work.\n    *   *How to fix it:* \n        (a) Cue: Think about keeping your chest proud and shining a flashlight straight forward on the wall in front of you the entire time. \n        (b) Setup: Slow down your tempo on the way down so you have time to control your posture, and take a split-second pause at the bottom to lock in your torso angle. \n        (c) Drill: Practice bodyweight split squats with your hands behind your head to force your torso to stay upright without any extra weight pulling you forward. \n        (d) Self-check: Glance in the side mirror—your upper body should move straight up and down, not hinge forward like you're bowing.\n\n*   **Straight back leg** (Happened on completed reps 2, 7, and 10)\n    *   *What it is:* You're locking or keeping your rear knee straight instead of letting it bend naturally to lower your body straight down toward the ground.\n    *   *Why it matters:* Your back leg stops contributing to the lift, forcing your front leg to shoulder all the work. That cuts your total power output and leaves your rear glutes and quads completely untrained, plus it throws off your balance.\n    *   *How to fix it:* \n        (a) Cue: Drive your rear knee straight down toward the floor like you're trying to gently kiss the turf with it. \n        (b) Setup: Shorten your stride just slightly if you need to, so your back leg has the freedom to bend straight down rather than trailing far behind you. \n        (c) Drill: Drop the load entirely and do slow reverse lunges, focusing purely on dropping the back knee directly under your hips. \n        (d) Self-check: Feel your back hip and thigh working—if only your front leg feels tired at the end of the set, your back leg checked out.\n\n*   **Shallow lunge** (Happened on aborted attempts 4 and 8)\n    *   *What it is:* You cut the movement short and pushed back up before you reached the bottom of the lunge.\n    *   *Why it matters:* You're cutting your range of motion short, which means your muscles never get fully stretched under load. You miss out on the best part of the movement for strength gains, and those attempts don't even count as completed reps.\n    *   *How to fix it:* \n        (a) Cue: Commit to the full descent before you even start stepping, telling yourself to reach the bottom depth every single time. \n        (b) Setup: Lighten the load so you aren't fighting weight that makes you panic and bail out early. \n        (c) Drill: Place a light pad or yoga mat right where your back knee should tap, giving yourself a physical target to aim for on every rep. \n        (d) Self-check: Watch a video of your set—your front thigh should come roughly parallel to the floor before you drive back up.\n\n*   **Excessive front knee flexion** (Happened on completed rep 5)\n    *   *What it is:* Your front knee is drifting way out past your toes as you lunge forward.\n    *   *Why it matters:* Your knee joint takes a massive surge of unnecessary stress instead of letting the muscles around it absorb the force. You'll likely feel a sharp, nagging ache right at the front of your kneecap during or after the workout, and it robs your quads of a clean contraction.\n    *   *How to fix it:* \n        (a) Cue: Keep your front shin vertical and imagine driving your weight backward through your front heel. \n        (b) Setup: Take a slightly longer step forward so your front knee stays stacked directly above your ankle instead of sliding past it. \n        (c) Drill: Practice stepping into a wall-facing lunge where your front knee is restricted from drifting forward by the wall. \n        (d) Self-check: Look down at the bottom of your rep—your front knee shouldn't hide your toes from your view.\n\n***\n\n### Next Session Plan\n1. **Drop the weight:** Back off the load slightly for your next session so you can control your balance and hit full depth without your chest collapsing or your knee sliding forward.\n2. **Slow down the early reps:** Pay extra attention to reps 1 through 5. Your form started breaking down early in the set today, so establish a smooth, deliberate tempo from the very first step.\n3. **Use a target for depth:** Set up near a mirror or use a low target for your back knee so you stop bailing out early and commit to a full range of motion."
+   ]
+  },
+  {
+   "label": "Lunge — clean",
+   "exercise_id": "lunge",
+   "payload": {
+    "session_id": "LU-20261003-006",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 75,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "forward_trunk_lean",
+      "shallow_lunge"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 10,
+     "incorrect_reps": 0,
+     "overall_score": 88
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[principle | re: general principles | source: KritzCroninHume2009BodyweightlungeSCJ]\nDuring a forward lunge, the knee of the front and back leg should be aligned with the hip and ankle during flexion and extension.\n\n[principle | re: general principles | source: ptq-4.4.9-the-undervalued-lunge]\nLearning to lunge correctly can strengthen the lower body musculature, improve core stability and balance, enhance hip flexibility, and increase functionality.",
+   "metrics": [
+    {
+     "error": "general principles",
+     "kind": "principle",
+     "query": "Lunge correct technique and biomechanics",
+     "best": 0.1499036729220894,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nGreat work on this session. You scored an 88 overall, up from 75 in your previous workout. More importantly, you nailed all 10 reps cleanly with zero errors—a massive jump from the 6 correct reps and 4 mistakes you logged last time out. Even better, both of your old bugbears—tipping your torso forward and cutting your depth short—are completely gone from your reps today. \n\n### Next Session Plan\n\n1. **Lock in your setup:** Keep doing whatever you did today to start your sets with such a solid, upright posture. \n2. **Hold the standard:** Your next workout is all about repeating this clean performance. Don't rush or add weight until you can replicate this exact 10-rep, error-free round.",
+    "### Progress Tracking\n\nGreat work on this session—you completely turned things around since yesterday. You bumped your overall score up from 75 to 88, and hit all 10 reps cleanly with zero errors. More importantly, those old issues with leaning your torso forward and cutting your depth short are gone. \n\n### Next Session Plan\n\n* **Hold the line:** Your form is dialed in, so your main goal next time is simply to lock in this exact standard of movement across every single rep.\n* **Keep your balance:** Focus on maintaining that steady alignment from your front knee down to your ankle so you can keep building solid lower-body strength and core stability.",
+    "### Progress Tracking\n\nGreat work on this session. Compared to your last workout on October 2nd, you made a massive jump: your overall score went up from 75 to 88, and you hit all 10 reps correctly without a single error. \n\nMore importantly, you completely cleared out the forward trunk lean and shallow depth issues that were holding you back last time. You locked in your form and kept your movement crisp from the first rep to the last.\n\n### Next Session Plan\n\n1. **Hold the standard:** Your mechanics looked dialed in today, so keep your setup, depth, and posture exactly where they were for this session.\n2. **Control the pace:** Keep using the same steady rhythm so every rep feels as solid as the ones you just put up."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nHuge improvement since yesterday! Your overall score jumped from 75 to 88, and you nailed all 10 reps cleanly with zero errors. Even better, you completely wiped out the forward trunk lean and shallow lunge issues that were showing up in your last session. That’s a massive win—your form held strong from the first rep to the last.\n\n### Next Session Plan\n1. **Hold the standard:** Keep your setup and tempo exactly where they were today. You found the sweet spot for balance and depth, so trust that groove on your next workout.\n2. **Lock in the rhythm:** Do not rush the transition between steps; keeping that steady pace is what kept your form clean all the way through rep 10.",
+    "### Progress Tracking\nHuge win today! Your overall score jumped from 75 to 88, and you nailed all 10 reps cleanly with zero errors. Even better news: both of the stubborn issues from yesterday—your forward trunk lean and shallow depth—have completely disappeared. You stayed upright, hit your positions, and earned every single one of those reps. \n\n### Next Session Plan\n1. **Hold the standard:** Keep your setup and posture exactly where they were today. Do not try to rush or add load until this clean movement pattern feels completely automatic.\n2. **Lock in your pacing:** Take a consistent breath at the top of each rep to keep your torso tall and your balance steady from the first step to the last.",
+    "### Progress Tracking\n\nGreat work on this session. You pulled off a clean sweep: all 10 reps were completed correctly with zero errors recorded. \n\nCompared to your last workout on October 2nd, you made massive strides. Your overall score jumped from 75 to 88, your correct reps went up from 6 to 10, and you completely wiped out your incorrect reps. Even better, you completely cleared both of the recurring issues from your last session—the forward trunk lean and the shallow lunge depth are gone. \n\n### Next Session Plan\n\n1. **Hold the standard:** Your form looked dialed in today. Focus entirely on replicating this exact posture and depth during your next warm-ups and working sets.\n2. **Keep the tempo honest:** Don't rush through the transitions. Maintain the same controlled descent and steady drive that kept your form clean today."
+   ]
+  }
+ ]
+}

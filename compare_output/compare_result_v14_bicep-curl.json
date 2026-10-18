@@ -1,0 +1,712 @@
+{
+ "report": "compare_result_v14_bicep-curl.md",
+ "mock": "mock_data/mock_sessions_bicep-curl.json",
+ "collection": "kb_gemini_curated_v6",
+ "raw_query": false,
+ "llm": "gemini-3.5-flash-lite",
+ "temperature": 0.7,
+ "samples": 3,
+ "system_prompt_sha1": "bd4b464157381df74fed3805f0b36ca8b8177437",
+ "retrieval": {
+  "TAG_MODE": "prefer",
+  "KIND_POOL": "split",
+  "QUERIES": "profile",
+  "HYBRID": false,
+  "RERANK": false
+ },
+ "sessions": [
+  {
+   "label": "Bicep Curl — elbow_flare",
+   "exercise_id": "bicep-curl",
+   "payload": {
+    "session_id": "BC-20261003-001",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 74,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "elbow_flare"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 77
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 92
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 63
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 61
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 59
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 56
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: elbow_flare | source: www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl]\nMoving the elbows forward during the upward phase of the standard curl.\n\n[consequence | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nIntroducing excessive shoulder flexion under fatigue makes the bicep curl movement unstable and inconsistent.\n\n[consequence | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing the upper arms to move reduces biceps activation during the curl.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nExtending the shoulder joint during the initial phase of the curl, causing the elbows to drift behind the body as a compensatory adjustment to overcome inertia.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing excessive movement at the shoulder joint during the curl, which shifts work away from the target muscles.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position, avoiding excessive shoulder elevation or shoulder flexion-extension during the bicep curl.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nUnder fatigue, shoulder flexion increased by approximately 20 degrees at around 20% of the bicep curl cycle.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMore pronounced movement is captured on the shoulder joint during the fatigue stage of a bicep curl compared to the standard stage.",
+   "metrics": [
+    {
+     "error": "elbow_flare",
+     "kind": "mistake",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.0871162958671724,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "finding",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.20881786451552686,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "consequence",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.1042221374908916,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "principle",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.11072724397614697,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nSolid effort today. Your overall score ticked up to 77 from 74 in your last session, and you matched your previous count with 6 clean reps out of 10. The same persistent issue—letting your elbows drift—showed up again, hanging around in your later reps (reps 3, 6, 8, and 10) as fatigue set in. \n\n***\n\n### Error Breakdown\n\n* **What it is:** Your elbows are creeping forward and swinging out of position as you curl the weight up, rather than staying locked by your sides.\n* **Why it matters:** When your shoulders start moving and your elbows drift, the work shifts away from your biceps and onto your front shoulders, making the whole movement unstable. Data shows your shoulder joint starts wandering by roughly 20 degrees early in the lift when fatigue kicks in. That means less actual muscle growth for the exact same amount of effort.\n* **How to fix it:**\n  * *(a) Cue:* Imagine your elbows are pinned to a wall or sliding up and down inside an imaginary vertical track.\n  * *(b) Setup:* Lighten the weight slightly or stop your set two reps earlier before form starts to crack under fatigue.\n  * *(c) Drill:* Try seated bicep curls with your back firmly against a pad to physically block your shoulders from creeping forward.\n  * *(d) Self-Check:* Watch yourself in the mirror and make sure your upper arm bone stays pointing straight down to the floor from the first inch of the lift to the last.\n\n***\n\n### Next Session Plan\n\n1. **Drop the weight slightly:** Give yourself enough breathing room to complete all 10 reps with zero elbow movement, especially when you hit the fatigue zone in the second half of the set.\n2. **Cut sets short:** If you feel your elbows start to shoot forward—like they did on reps 3, 6, 8, and 10—rack the weight right then instead of fighting through sloppy form.",
+    "### Progress Tracking\n\nSolid effort today. Your overall score ticked up slightly from 74 to 77, and your clean rep count held steady at 6 out of 10. The same old issue—elbows drifting—showed up again on reps 3, 6, 8, and 10, meaning it's still sneaking in as fatigue sets in later in the set. You're keeping your form dialed in at the start, but you'll need to lock down that second half of the set to push past this plateau.\n\n***\n\n### Error Breakdown\n\n*   **What it is:** Your elbows are creeping forward or swinging behind your torso as you lift, instead of staying pinned by your sides. \n*   **Why it matters:** When your upper arms start moving around, your shoulders jump in to help lift the weight, which takes the tension off your biceps. That means less muscle growth for the exact effort you're putting in, and as fatigue builds up—pushing your shoulder to drift forward by roughly 20 degrees near the bottom of the movement—your form gets unstable and harder to trust.\n*   **How to fix it:** \n    *   (a) Imagine your elbows are pinned to your ribs by invisible hinges as you curl.\n    *   (b) Drop the weight slightly or slow down your tempo so you aren't relying on momentum from your shoulders to kickstart the lift.\n    *   (c) Try doing seated bicep curls with your back against a pad or bench to physically block your upper arms from swinging.\n    *   (d) Check your phone video to see if your elbows stay glued in place from the first rep to the last, or if they start creeping forward as you get tired.\n\n***\n\n### Next Session Plan\n\n*   **Keep your elbows locked:** Focus on pinning your upper arms to your sides for the first two reps of every set, setting the anchor point before fatigue kicks in.\n*   **Target the fatigue zone:** Since your elbow drift happened on the later reps (3, 6, 8, and 10), drop your rep count per set down to 5 clean ones for now, or lighten the load slightly to ensure those final reps stay strict.",
+    "### Progress Tracking\nGood effort out there today. Compared to your last session on October 2, your overall score ticked up slightly from 74 to 77. Your correct rep count stayed locked at 6 out of 10, and you kept the exact same incorrect rep count of 4. That persistent elbow flare from your last workout showed up again today, but notice *when* it happened: you nailed the first two reps clean, and the errors only crept in on reps 3, 6, 8, and 10 as fatigue set in. That tells us your strength is there, but your form starts leaking the moment your muscles get tired.\n\n### Error Breakdown\n\n* **What it is:** Your elbows are creeping forward or swinging backward instead of staying pinned by your sides as you curl the weight up. \n* **Why it matters:** When your upper arms start roaming, your shoulders take over the heavy lifting and the movement becomes unstable. That means your biceps get less of the actual work you came for—robbing you of muscle growth for the exact same amount of effort—and data shows your shoulders tend to drift by about 20 degrees right around 20% into the curl as fatigue kicks in.\n* **How to fix it:** \n  (a) Focus on gluing your upper arms to your ribs, imagining they are pinned in place by a vice. \n  (b) Back off the weight slightly or slow down your tempo on the way up so you aren't relying on momentum to get past the hardest part of the curl. \n  (c) Try a seated bicep curl or brace your back against a wall to physically block your elbows from traveling. \n  (d) Watch your form in the mirror or record a quick video on your phone to check if your elbows start launching forward as you get tired near the end of the set.\n\n### Next Session Plan\n* **Stop earlier or drop the weight:** Since your elbow flare is purely a fatigue issue hitting you on the later reps (3, 6, 8, and 10), either cut your set short when your form starts breaking down or drop the weight slightly so you can finish all reps clean.\n* **Pin your elbows:** Spend your warm-up sets focusing entirely on keeping your upper arms glued to your sides before you touch your working weight."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGood effort out there today! You matched your previous session with 6 correct reps, and your overall score ticked up slightly from 74 to 77. That said, you still ran into the exact same issue as last time: your elbows drifting out to the sides on reps 3, 6, 8, and 10. Notice how those errors popped up in the second half of the set? That's classic fatigue creeping in, causing your form to leak as the weight starts feeling heavy.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** As you curl the weight up, your elbows creep forward and drift away from your torso instead of staying locked by your sides.\n*   **Why it matters:** When your elbows wander, your front shoulders and upper back end up hijacking the movement to help lift the weight. This takes the load off your biceps—the exact muscle you came to grow—meaning you get less arm development for the same amount of effort, while your shoulder joints take on stress they shouldn't be handling.\n*   **How to fix it:** \n    *   *(a) Cue:* Imagine you have a pair of rolled-up towels squeezed tightly under your armpits, and keep them pinned there from start to finish.\n    *   *(b) Setup change:* Drop the weight slightly on your next set so you can keep strict control over your upper arm position without grinding.\n    *   *(c) Drill:* Try performing your curls with your back and glutes pressed flat against a wall; if your elbows drift forward, they'll bump the wall immediately.\n    *   *(d) Self-check:* Glance in the mirror or record a side-profile video—your upper arms should remain completely vertical and glued to your ribs the entire time.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Give yourself a bit more room to breathe so you can maintain strict elbow control all the way through the final reps.\n2. **Watch the back half of the set:** Since your form started breaking down around rep 3 and 6, focus extra hard on keeping your upper arms pinned when fatigue hits.\n3. **Use the wall check:** Spend your warm-up sets doing a few reps against a wall to lock in that elbow position before you touch your working weight.",
+    "### Progress Tracking\nGood effort out there today. You hit 6 correct reps out of 10 total, keeping your correct rep count steady compared to yesterday. Your overall score ticked up slightly from 74 to 77. The good news is you completely cleared any other issues from your previous session, leaving just one recurring habit to clean up. \n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your elbows are drifting forward and away from your sides as you lift the weight, turning the curl into a partial front raise. This showed up on reps 3, 6, 8, and 10—notably creeping in as fatigue set in during the second half of the set.\n*   **Why it matters:** When your elbows wander forward, your shoulders and front delts step in to help lift the weight, stealing the tension away from your biceps. That means less muscle growth for the exact effort you are putting in, leaving your biceps underworked while your front shoulders take a beating.\n*   **How to fix it:** \n    *   (a) *Cue:* Pin your upper arms against your ribs like you are holding a pair of towels under your armpits, and keep those elbows locked straight down at your sides the entire time.\n    *   (b) *Setup:* Drop the weight slightly on your next session so you can control the movement without needing body English or elbow drift to finish the rep.\n    *   (c) *Drill:* Try doing your curls with your back and glutes pressed flat against a wall to physically block your elbows from creeping forward.\n    *   (d) *Self-check:* Watch yourself in the mirror from the side; if your elbows travel forward instead of pointing straight down to the floor, you've spotted the drift.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Start your next session with a load you can manage strictly for all 10 reps without letting your elbows wander.\n2. **Back against the wall:** Use a wall setup for your first couple of working sets to groove the strict elbow position.\n3. **Stop before form breaks:** If you feel your elbows starting to flare on the later reps like reps 8 and 10, cut the set short right there rather than fighting through sloppy form.",
+    "### Progress Tracking\nGood job showing up and putting in the work. Your overall score ticked up slightly from 74 in your last session to 77 today. You matched your previous output on clean reps with 6 correct completions, but you still ran into trouble with 4 incorrect reps. The good news is that your main issue from last time—elbow flare—is still your primary hurdle, but you are successfully keeping your form locked in for the majority of the set before fatigue starts creeping in.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** As you fatigue, your elbows start creeping forward and drifting away from your sides instead of staying pinned at your ribs as you curl the weight up. This happened on reps 3, 6, 8, and 10—right when your muscles started getting tired toward the middle and end of the set.\n*   **Why it matters:** When your elbows wander forward, your front shoulders and upper chest jump in to help lift the weight, taking the workload away from your biceps. That means less actual muscle growth for the exact same effort, and it leaves your shoulders feeling taxed instead of your arms. \n*   **How to fix it:** \n    *   *Cue:* Keep your elbows glued to your ribs as if they are pinned in place by a couple of imaginary clamps.\n    *   *Setup:* Drop the weight slightly for your next session so you can control the movement without needing to recruit your shoulders to finish the curl.\n    *   *Drill:* Try curling with your back lightly pressed against a wall to physically block your elbows from drifting forward.\n    *   *Self-check:* Watch a video of your set or glance in a side-profile mirror; if your upper arm moves forward as you lift, your elbows are flaring.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Give yourself a bit more breathing room on the load so you can finish all 10 reps without your elbows drifting.\n2. **Watch the back half of the set:** Since your elbow flare is showing up on later reps (like 8 and 10), focus extra hard on keeping your upper arms locked still when you start getting tired. \n3. **Use the wall drill:** Do one warm-up set with your back against a wall to reset the feeling of keeping your elbows pinned where they belong."
+   ]
+  },
+  {
+   "label": "Bicep Curl — partial_curl",
+   "exercise_id": "bicep-curl",
+   "payload": {
+    "session_id": "BC-20261003-002",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 73,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "partial_curl"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 76
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 64
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 62
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 60
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 48
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[mistake | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPerforming partial repetitions at shorter muscle lengths rather than allowing the muscle to fully stretch.\n\n[principle | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nA complete repetition of a bicep curl requires moving the weight from a position of full elbow extension to a position of full flexion, and returning back to the initial position of full extension.\n\n[mistake | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nLifters frequently start the bicep curl from a slightly flexed elbow position of around 20 degrees instead of starting from full elbow extension.\n\n[principle | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nThe bicep curl should ideally begin from a position of full elbow extension to ensure a complete range of motion.\n\n[consequence | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nFailing to pause at full extension and full flexion increases the risk of sustaining an injury.\n\n[mistake | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion, where the muscle contracts only at short muscle lengths and avoids the initial stretched position.\n\n[finding | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPartial repetitions at shorter-muscle lengths are not as hypertrophic as partial repetitions at longer-muscle lengths.\n\n[consequence | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion results in inferior muscle hypertrophy compared to training with a full range of motion or at longer muscle lengths.\n\n[finding | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nPrevious studies have reported a strategy of starting the bicep curl movement with an elbow joint angle ranging from 15 degrees to 48 degrees.",
+   "metrics": [
+    {
+     "error": "partial_curl",
+     "kind": "mistake",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.13249628730062601,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "finding",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.20733115694913695,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "consequence",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.18345935246106104,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "principle",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.14628557678630105,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\nGood work on the score bump—you moved up from 73 to 76 overall. Your clean rep count stayed steady at 6, and you matched your previous count of 4 incorrect reps. The same old habit—cutting your reps short—is still hanging around from last time, particularly creeping in as fatigue sets in during the back half of your set. \n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting your reps short instead of finishing the movement. On reps 4, 6, 8, and the aborted attempt 9, you are either failing to straighten your arms all the way at the bottom or stopping your lift before the top, working only in the middle of the range.\n*   **Why it matters:** Skipping the stretched bottom position means your biceps miss out on the mechanical tension they need to grow, leaving you with inferior muscle gains for the effort you are putting in. Plus, rushing through the full travel of the movement without pausing at full extension and full flexion ramps up your risk of picking up an injury.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about driving your knuckles all the way down to your thighs to completely straighten your arms before you even think about the next pull.\n    *   (b) *Setup change:* Drop the weight slightly on your next session so you aren't forced to truncate the movement just to finish the set.\n    *   (c) *Drill:* Try a set of pauses where you stop for a full second with your arms locked out straight at the bottom and another second at the top contraction.\n    *   (d) *Self-check:* Watch yourself in the side mirror and make sure your elbow is completely straight at the bottom of every single rep—no soft bends allowed.\n*   *Note on rep detail:* Notice how your clean reps are all at the beginning (1 through 3, 5, 7) while the errors cluster heavily in the second half of the set, culminating in the aborted attempt on rep 9. You are losing your range of motion the second fatigue starts talking to you.\n\n### Next Session Plan\n1. **Drop the load slightly:** Take a tiny step back on the weight so you can actually manage a full, clean range of motion without your form breaking down halfway through the set.\n2. **Watch the back half:** Guard against fatigue on reps 6 through 10. If you feel your arms staying slightly bent at the bottom, rack the weight rather than grinding out short reps.\n3. **Pausers over speed:** Add a one-second pause at both the fully straight bottom and the squeezed top to force yourself out of the habit of short-changing the range of motion.",
+    "### Progress Tracking\nGood effort out there today. Your overall score ticked up to 76 (compared to 73 last time), and your clean rep count held steady at 6. That said, that old habit is still hanging around: `partial_curl` popped up again on reps 4, 6, and 8, and it was also the exact reason your attempt at rep 9 got cut short before you could finish it. Let's get that range of motion locked in so you're getting every ounce of growth out of your sets.\n\n***\n\n### Error Breakdown\n\n*   **What it is:** You're cutting the movement short at both ends—either starting the curl with your arms slightly bent instead of fully straight, or stopping the rep before your arms are completely locked out at the bottom, keeping all the work trapped in the top half.\n*   **Why it matters:** Skipping the fully stretched position means you miss out on the best part of the lift for building size, leaving you with inferior muscle growth for the exact same amount of sweat. Plus, skipping those end ranges entirely ramps up your risk of picking up an injury over time.\n*   **How to fix it:** \n    *   *(a) Cue:* Think about touching an imaginary target at the very bottom by completely straightening your arm before every single rep.\n    *   *(b) Setup change:* Drop the weight slightly if you need to, and deliberately slow down your descent so you aren't rushing the bottom half of the movement.\n    *   *(c) Drill:* Try a set of dead-stop curls from a seated position where your arms hang completely straight against a bench before every pull, making cheating impossible.\n    *   *(d) Self-check:* Glance in the mirror sideways on your next set—your elbow should straighten out fully at the bottom of every rep, and your upper arm should stay completely still without drifting forward. Note how these errors clustered in the second half of your set (reps 4, 6, 8, and the aborted rep 9) as fatigue set in, meaning you're losing your range of motion when things get heavy.\n\n***\n\n### Next Session Plan\n\n1.  **Prioritize full extension:** Dedicate your warm-up sets to intentionally pausing with your arms fully straight at the bottom before initiating the curl.\n2.  **Fight fatigue early:** When you hit reps 4 and 5, consciously fight the urge to shorten your range of motion; if you can't keep the full sweep, rack the weight rather than grinding out half-reps.",
+    "### Progress Tracking\nYou hit 6 correct reps out of 10 total attempts today, bringing your overall score to 76. Compared to your previous session on October 2, that's a small step up from a score of 73, and you matched your count of 6 clean reps. The frustrating part is that the exact same issue—cutting your reps short—followed you from last time and showed up on reps 4, 6, 8, and the aborted attempt 9. We still need to lock in that full range of motion so those later reps don't start leaking quality when fatigue sets in.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting your bicep curls short by stopping the bottom of the movement early and staying in the middle zone instead of letting your arms straighten all the way out. This creeped up exclusively in the back half of your set on reps 4, 6, 8, and the aborted attempt 9 as the weight started feeling heavy.\n*   **Why it matters:** When you skip the stretched position at the bottom, your biceps miss out on the mechanical tension they need to grow, leaving you with inferior muscle gains for the exact same amount of effort. Skipping that full bottom stretch also raises your risk of sustaining an injury as the load goes up.\n*   **How to fix it:** \n    *   (a) *Cue:* Focus on reaching your arms completely straight at the bottom of every single rep before you even think about curling back up.\n    *   (b) *Setup:* Drop the weight slightly on your next session so you aren't forced to truncate the movement just to finish the set.\n    *   (c) *Drill:* Pause for a full one-second count with your arms completely straight at the bottom of each rep to force your body to abandon the habit of cutting them short.\n    *   (d) *Self-check:* Watch a video of your set from the side and check whether your elbows lock out completely straight at the bottom of your reps, or if they are hovering at a bent angle.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Give yourself a bit more breathing room on the load so you can actually control the bottom stretch without needing to cut reps short when fatigue hits in the second half of the set.\n2. **Pause at full extension:** Force a one-second pause with your arms completely straight at the bottom of every rep to break the habit of starting your curls from a half-bent position."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nGreat job on pushing your overall score up from 73 to 76 since yesterday. You matched your previous count with 6 correct reps, and your early reps (1 through 3, 5, 7, and 10) looked strong and locked in. That said, your old habit of cutting the movement short is still hanging around: `partial_curl` showed up again today on reps 4, 6, 8, and caused you to completely abort attempt 9. Let's tackle that so you can bank a clean set next time.\n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting the movement short before your hands reach the top, and on attempt 9 you didn't even make it far enough to count a rep. This usually happens when fatigue sets in on the second half of your set.\n*   **Why it matters:** When you chop off the top of the curl, your biceps miss out on the peak contraction where they have to work the hardest, meaning less muscle growth for the exact same effort. You'll feel like you did a full set, but your biceps are getting cheated out of the stimulus they need to grow, and you're left guessing which reps actually count.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about bringing your knuckles all the way up toward your shoulders before you turn the weight back down.\n    *   (b) *Setup:* Drop the weight slightly for your next session so you have enough in the tank to finish every rep cleanly without cutting corners when fatigue kicks in.\n    *   (c) *Drill:* Try a lighter set where you pause for a full second at the very top of every single rep to force your muscles to own that top position.\n    *   (d) *Self-check:* Watch your phone video or check the mirror to ensure your forearms reach past vertical so the weight is fully curled at the top.\n\n***\n\n### Next Session Plan\n\n1. **Drop the load slightly:** Take a tiny bit of weight off the bar or dumbbells so you can fight through the fatigue on those later reps without cutting them short.\n2. **Watch the finish line:** Keep your focus locked on hitting that full range of motion right up to your shoulders, especially on reps 6 through 10 where your form started to slip today.",
+    "### Progress Tracking\n\nGreat to see some solid movement since yesterday. Your overall score ticked up from 73 to 76, and your clean rep count stayed steady at 6. You also brought your incorrect reps down from 4 to 4, but let's look closer at how that shook out: that recurring issue with cutting your range of motion short—which followed you over from yesterday's session—showed up again today on reps 4, 6, 8, and finally forced you to abort attempt 9 entirely as fatigue set in. \n\n***\n\n### Error Breakdown\n\n* **What it is, in plain words:** You are cutting the curl short before reaching the top, and by the time you hit rep 9, you couldn't even finish the movement.\n* **Why it matters:** When you cut the curl short, your biceps miss out on the final squeeze where the muscle shortens completely, meaning less actual muscle growth for the exact same amount of sweat and effort. As fatigue builds toward the end of the set, you cheat the top half because the weight feels too heavy to finish cleanly, which costs you the most productive inches of the lift.\n* **How to fix it:** \n  (a) **Cue:** Think about pulling your knuckles all the way up toward your shoulders before you even think about letting the weight back down.\n  (b) **Setup change:** Drop the weight slightly for your next session so you can actually hit full range without the fatigue making you bail halfway up.\n  (c) **Drill:** Practice a two-second pause at the absolute top of the movement on a lighter set to force your brain to acknowledge where the top actually is.\n  (d) **Self-check:** Glance in the mirror and make sure your forearms touch or pass parallel to the floor, coming right up toward your collarbones on every single working rep.\n\n***\n\n### Next Session Plan\n\n1. **Drop the weight slightly:** Start your next bicep curl session with a load you can comfortably control for all reps without cutting the top short.\n2. **Watch the fatigue wall:** Keep an eye on reps 6 through 8—that is where your form starts slipping, so brace yourself mentally to fight for the full range right when it starts getting heavy.",
+    "### Progress Tracking\n\nGreat job on pushing your overall score up from 73 to 76 since yesterday. You matched your previous score for clean reps, hitting 6 correct reps today, and your recurring hurdle from last session—partial curls—showed up slightly less often, dropping from 4 down to 3 completed reps plus one aborted attempt. However, fatigue clearly caught up with you in the back half of the set, where those partial reps started creeping in.\n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** You are cutting the movement short instead of curling the weight all the way up to the top. This happened on reps 4, 6, 8, and your attempt on rep 9, which cut out entirely before reaching the top.\n*   **Why it matters:** When you shorten the range of motion, your biceps miss out on the peak contraction at the top where they have to work the hardest. That means you are cutting your muscle growth short for the exact same amount of effort, and as you get tired, you start leaning on momentum or cheating the top half of the lift rather than making the muscle do the actual work.\n*   **How to fix it:** \n    *   (a) *Cue:* Think about driving your knuckles all the way up toward your shoulders until your forearms touch your biceps before you reverse the motion.\n    *   (b) *Setup change:* Drop the weight slightly for your next session so you can actually hit the full range without your muscles failing halfway through the curl.\n    *   (c) *Drill:* Try a set of strict wall curls—stand with your back and glutes pressed against a wall so you cannot swing the weight, forcing you to curl through the complete range.\n    *   (d) *Self-check:* Watch your phone video or check the mirror to confirm that at the top of every rep, your hands are at shoulder height and your forearms are vertical.\n\n***\n\n### Next Session Plan\n\n1. **Drop the load slightly:** Take a tiny step down in weight so you can secure a full range of motion on every single rep without cutting them short when fatigue sets in.\n2. **Watch the back half:** When you hit reps 6 through 9, stay extra focused on locking in your form instead of letting your shoulders take over or cutting the top short."
+   ]
+  },
+  {
+   "label": "Bicep Curl — mixed",
+   "exercise_id": "bicep-curl",
+   "payload": {
+    "session_id": "BC-20261003-003",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 70,
+     "previous_correct_reps": 5,
+     "previous_incorrect_reps": 5,
+     "previous_common_errors": [
+      "elbow_flare",
+      "partial_curl"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 5,
+     "incorrect_reps": 5,
+     "overall_score": 71
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 62
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 61
+      },
+      "errors": [
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "abort",
+      "similarity_scores_percent": {
+       "overall": 44
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       },
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 58
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       },
+       {
+        "error_type": "partial_curl"
+       }
+      ]
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 84
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 57
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 83
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[mistake | re: elbow_flare | source: www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl]\nMoving the elbows forward during the upward phase of the standard curl.\n\n[consequence | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nIntroducing excessive shoulder flexion under fatigue makes the bicep curl movement unstable and inconsistent.\n\n[consequence | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing the upper arms to move reduces biceps activation during the curl.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nExtending the shoulder joint during the initial phase of the curl, causing the elbows to drift behind the body as a compensatory adjustment to overcome inertia.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.\n\n[mistake | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPerforming partial repetitions at shorter muscle lengths rather than allowing the muscle to fully stretch.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing excessive movement at the shoulder joint during the curl, which shifts work away from the target muscles.\n\n[principle | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nA complete repetition of a bicep curl requires moving the weight from a position of full elbow extension to a position of full flexion, and returning back to the initial position of full extension.\n\n[mistake | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nLifters frequently start the bicep curl from a slightly flexed elbow position of around 20 degrees instead of starting from full elbow extension.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position, avoiding excessive shoulder elevation or shoulder flexion-extension during the bicep curl.\n\n[principle | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nThe bicep curl should ideally begin from a position of full elbow extension to ensure a complete range of motion.\n\n[consequence | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nFailing to pause at full extension and full flexion increases the risk of sustaining an injury.\n\n[mistake | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion, where the muscle contracts only at short muscle lengths and avoids the initial stretched position.\n\n[finding | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPartial repetitions at shorter-muscle lengths are not as hypertrophic as partial repetitions at longer-muscle lengths.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nUnder fatigue, shoulder flexion increased by approximately 20 degrees at around 20% of the bicep curl cycle.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMore pronounced movement is captured on the shoulder joint during the fatigue stage of a bicep curl compared to the standard stage.\n\n[consequence | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion results in inferior muscle hypertrophy compared to training with a full range of motion or at longer muscle lengths.\n\n[finding | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nPrevious studies have reported a strategy of starting the bicep curl movement with an elbow joint angle ranging from 15 degrees to 48 degrees.",
+   "metrics": [
+    {
+     "error": "elbow_flare",
+     "kind": "mistake",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.0871162958671724,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "finding",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.20881786451552686,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "consequence",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.1042221374908916,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "principle",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.11072724397614697,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "mistake",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.13249628730062601,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "finding",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.20733115694913695,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "consequence",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.18345935246106104,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "partial_curl",
+     "kind": "principle",
+     "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+     "best": 0.14628557678630105,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nYour overall score ticked up slightly from 70 to 71 compared to yesterday's session, and you matched your count with 5 correct reps out of 10 total entries. Both of your old habits—letting your elbows drift and cutting your range of motion short—showed up again today, so those are still the main bottlenecks holding your score back.\n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your elbows are creeping forward or swinging backward instead of staying pinned by your sides as you curl the weight up. This happened on reps 2, 7, and 9, and also triggered an early abort on attempt 6.\n*   **Why it matters:** When your upper arms start moving, the front of your shoulder takes over some of the work, which unloads your biceps and makes the movement unstable. That means you get less actual muscle growth for the exact same effort, and your form starts to break down into an inconsistent swing as fatigue sets in.\n*   **How to fix it:** \n    *   *(a) Cue:* Imagine you have a rolled-up towel tucked under each armpit and you cannot let it drop.\n    *   *(b) Setup:* Drop the weight slightly so you aren't fighting to overcome heavy inertia with momentum right out of the bottom.\n    *   *(c) Drill:* Try performing your curls seated with your back firmly against a pad or bench to completely lock your upper arms in place.\n    *   *(d) Self-check:* Watch yourself in the mirror from the side; if your elbows travel forward or backward during the lift, you know you are cheating the movement.\n\n*   **What it is, in plain words:** You are cutting the movement short at either end—either failing to start with your arms fully straight or stopping before you reach a full squeeze at the top. This showed up on rep 4, popped up alongside your elbow movement on rep 7, and caused attempt 6 to abort entirely.\n*   **Why it matters:** By skipping the fully straightened position at the bottom, you miss out on training the muscle where it gets stretched the most. That leaves you with inferior muscle growth compared to taking every rep through a complete path of motion.\n*   **How to fix it:** \n    *   *(a) Cue:* Pause for a split second at the very bottom of every rep with your arms completely straight before you start the next one.\n    *   *(b) Setup:* Slow your tempo down on the way back down so you deliberately reach full arm extension before initiating the next curl.\n    *   *(c) Drill:* Practice light overhead stretches or dead-hangs to get comfortable feeling what a fully lengthened arm position feels like.\n    *   *(d) Self-check:* Look down at your arm at the bottom of the rep—your elbow should be locked out straight before the weight starts moving back up.\n\n***\n\n### Next Session Plan\n\n1.  **Lower the weight slightly:** Drop the load by a small increment for your next session so you can control your upper arm position without needing to swing or cut reps short.\n2.  **Focus on full extension:** Make a conscious rule to pause for a brief second at the bottom of every rep with your arms fully straight before curling again.\n3.  **Check your fatigue point:** Notice when your elbows start drifting forward—which tended to happen later in the set today—and choose to finish the set cleanly right before that breakdown begins.",
+    "### Progress Tracking\nYou finished today with 5 correct reps out of 10 total attempts (including 1 aborted attempt on rep 6), earning an overall score of 71. Compared to your last session on October 2, your score ticked up slightly from 70, and your correct rep count stayed steady at 5. Both of your old habits—letting your elbows drift and cutting your range of motion short—showed up again today, so those are still the main things holding back your progress.\n\n***\n\n### Error Breakdown\n\n*   **What it is, in plain words:** Your elbows are creeping forward or swinging backward instead of staying locked in place by your sides as you curl the weight up. This crept in during the second half of your set, especially showing up on reps 2, 6, 7, and 9 as fatigue set in.\n*   **Why it matters:** When your upper arms start moving and swinging, your shoulders take over part of the work that your biceps are supposed to be doing, leading to less muscle growth for the exact same amount of effort. That instability makes the lift sloppy, and when the weight gets heavy, it drains your power before your arms ever get a proper workout.\n*   **How to fix it:** \n    *   *Cue:* Imagine your upper arms are pinned to your ribs by a pair of imaginary clamps.\n    *   *Setup change:* Drop the weight slightly so you can control the lift without needing to use momentum from your shoulders.\n    *   *Drill:* Stand with your back and upper arms lightly pressed against a flat wall to physically block your elbows from drifting forward.\n    *   *Self-check:* Watch yourself in a side-profile mirror; if your elbows travel forward or swing back when you initiate the curl, the weight is too heavy or fatigue has beaten you.\n\n*   **What it is, in plain words:** You aren't finishing the movement—either you're cutting the bottom short by starting with a slightly bent elbow instead of a full hang, or you're stopping short at the top. This popped up on reps 4, 6, and 7.\n*   **Why it matters:** Sticking to partial movements means you miss out on the fully stretched position where the bicep builds the most muscle, leaving you with inferior muscle growth for the time and sweat you put in. It cheats you out of the gains you actually came to the gym for.\n*   **How to fix it:** \n    *   *Cue:* Squeeze your triceps at the very bottom to ensure your arms are completely straight before every single rep.\n    *   *Setup change:* Pause for a split second at both full arm extension and full contraction at the top of every rep to eliminate bouncing.\n    *   *Drill:* Perform lighter single-arm cable curls focusing intensely on fully straightening your arm at the bottom before pulling.\n    *   *Self-check:* Check a phone video of your set to confirm your arms lock out straight at the bottom of every rep instead of hanging partially bent.\n\n***\n\n### Next Session Plan\n1. **Reduce the weight slightly:** Drop down to a load that lets you keep your upper arms completely glued to your sides for all 10 reps without relying on momentum.\n2. **Prioritize the full stretch:** Make it a rule to pause with your arms completely straight at the bottom of every rep before you start pulling.\n3. **Cut the set off when form breaks:** Since your errors cluster in the second half of the set (reps 6 through 9), consider stopping your sets a rep or two earlier once your elbows start to drift, rather than fighting through sloppy reps.",
+    "### Progress Tracking\nYou matched yesterday's correct rep count with 5 clean reps today, and your overall score ticked up slightly from 70 to 71. Both of your old habits—letting your elbows drift and cutting reps short—showed up again, appearing together on rep 7 and on your aborted attempt 6. The good news is you are still nailing half your reps cleanly, but fatigue is clearly making the form break down in the second half of your set.\n\n### Error Breakdown\n\n*   **Elbow Flare**\n    *   **What it is:** Letting your elbows swing forward or drift behind your body as you lift the weight instead of pinning them by your sides. You can see this creeping in on the later reps—like attempt 6 and reps 7 and 9—as fatigue sets in.\n    *   **Why it matters:** When your upper arms move around, your shoulders take over part of the lift, which robs your biceps of the work they are supposed to be doing. You end up with a less effective workout and an unstable movement pattern that makes it harder to build arm size.\n    *   **How to fix it:** \n        (a) Cue: \"Elbows glued to your ribs like they're in a cast.\" \n        (b) Setup: Drop the weight slightly if you need to, so your upper arms don't have to compensate to get the weight moving. \n        (c) Drill: Try seated curls with your back against a bench to physically block your elbows from swinging backward. \n        (d) Self-check: Watch your phone video to see if your elbows stay locked in place or creep forward during the lift.\n*   **Partial Curl**\n    *   **What it is:** Shortchanging the movement by either starting with your elbows already slightly bent or stopping short of a full lockout at the bottom. This showed up on rep 4, combined with elbow flare on attempt 6 and rep 7, and caused attempt 6 to abort entirely.\n    *   **Why it matters:** Skipping the bottom stretch means you miss out on the muscle-building benefits that come from working through a full range of motion. Over time, you get less muscle growth for the exact same amount of effort.\n    *   **How to fix it:** \n        (a) Cue: \"Full extension at the bottom, complete squeeze at the top.\" \n        (b) Setup: Take a deliberate one-second pause with your arms fully straight before starting every single rep. \n        (c) Drill: Practice lighter sets focusing strictly on the bottom half of the movement where you tend to cut it short. \n        (d) Self-check: Check the mirror to make sure your arms straighten out completely between every rep.\n\n### Next Session Plan\n*   **Cap your set length:** Stop your sets one rep *before* your form starts to unravel (around rep 5 or 6 based on today), rather than grinding out messy reps that bring in your shoulders and cut your range short.\n*   **Focus on the bottom stretch:** Force yourself to pause for a split second with your arms fully straight at the bottom of every rep before you start pulling."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nYou held steady on your overall score, moving from 70 up slightly to 71, and you matched your previous performance with 5 correct reps out of 10 total entries (which includes 9 completed reps and 1 aborted attempt on attempt 6). The same two issues—elbow flare and cutting reps short—are still hanging around from your last session. Let's clean them up so those numbers finally start moving in the right direction.\n\n### Error Breakdown\n\n*   **Elbow Flare** (seen on attempts 2, 6, 7, and 9)\n    *   **What it is:** Your elbows are drifting forward and away from your sides as you lift the weight, turning the curl into a partial front raise.\n    *   **Why it matters:** Your front shoulders take over the heavy lifting instead of keeping the load squarely on your biceps. That means less actual muscle growth where you want it, and it usually creeps in toward the end of a set when fatigue kicks in and you start hunting for help from other muscles.\n    *   **How to fix it:** \n        (a) Cue: \"Glue your elbows to your ribs like they're pinned in place.\" \n        (b) Setup change: Drop the weight slightly so your upper arms don't need to drift forward to compensate for heavy fatigue. \n        (c) Drill: Perform your curls with your back lightly touching a wall to keep your upper arms from creeping forward. \n        (d) Self-check: Watch your phone video and check if your elbows stay locked by your waist or if they swing forward as the weight goes up.\n*   **Partial Curl** (seen on attempts 4, 6, and 7)\n    *   **What it is:** You're cutting the movement short before getting a full stretch at the bottom or a complete squeeze at the top.\n    *   **Why it matters:** You miss out on the peak contraction and full range of motion, which shortchanges your biceps on every rushed rep and leaves gains on the table.\n    *   **How to fix it:** \n        (a) Cue: \"Pause for a split second at the very top and fully lock your arms out straight at the bottom.\" \n        (b) Setup change: Slow your tempo down to a strict two-second lift and two-second lower, and stop attempt 6 the moment form starts to break down instead of fighting through a botched rep. \n        (c) Drill: Practice lighter bottom-half partial holds followed by a full range rep to recalibrate what the bottom feels like. \n        (d) Self-check: Look in the mirror to ensure your arms are completely straight at the bottom of every single rep.\n\n### Next Session Plan\n\n1.  **Drop the load slightly:** Give your joints and form a break so you can keep your elbows locked to your ribs without needing to cheat.\n2.  **Strict pacing:** Slow down your reps and force a full extension at the bottom of every single one instead of rushing through fatigue.\n3.  **Call it early:** If your form starts slipping mid-set (like it did on attempt 6), rack the weight rather than grinding through ugly, partial reps.",
+    "### Progress Tracking\n\nYou held steady on your overall score, moving from 70 up slightly to 71, and you matched your previous performance with 5 correct reps out of 10 total entries. However, you still had 5 incorrect reps (including an aborted attempt 6), and the exact same two errors—elbow flare and cutting your curls short—followed you over from your last session. Let's get those locked down so your numbers actually start climbing.\n\n***\n\n### Error Breakdown\n\n*   **Elbow flare** (Happened on reps 2, 7, 9, and the aborted attempt 6)\n    *   *What it is:* Your elbows are drifting forward or sliding away from your sides as you curl the weight up, rather than staying locked dead-still by your ribs.\n    *   *Why it matters:* Your front shoulders and momentum take over the lift instead of making your biceps do the actual work. That means less muscle growth for the exact same effort, and it usually creeps in toward the end of your set when fatigue sets in.\n    *   *How to fix it:* \n        (a) Cue: Imagine your elbows are pinned to your sides by a pair of invisible clamps. \n        (b) Setup: Drop the weight slightly on your next session so you can control the movement without needing body english. \n        (c) Drill: Try doing your curls with your back lightly touching a wall to physically block your elbows from creeping forward. \n        (d) Self-check: Watch your phone video—if your upper arms travel forward instead of pointing straight down to the floor, your elbows are wandering.\n    \n*   **Partial curl** (Happened on reps 4, 7, and the aborted attempt 6)\n    *   *What it is:* You are cutting the movement short before your arms are fully extended at the bottom or fully contracted at the top. \n    *   *Why it matters:* You miss out on the full stretch and contraction of the muscle, cheating yourself out of strength gains and leaving overall bicep development on the table.\n    *   *How to fix it:* \n        (a) Cue: Pause for a split second at the very bottom with your arms straight, and squeeze hard at the very top. \n        (b) Setup: Slow down your lifting tempo—take a full two seconds to lower the weight all the way down on every rep. \n        (c) Drill: Do a set with much lighter dumbbells, focusing purely on touching full extension at the bottom and a hard peak contraction at the top. \n        (d) Self-check: Look in the mirror—if your arms aren't completely straight at the bottom of the arc, you're cutting reps short.\n\n***\n\n### Next Session Plan\n\n1. **Drop the weight slightly:** Give yourself enough room to keep your elbows glued to your ribs and hit full range of motion without grinding.\n2. **Slow down the descent:** Control the weight all the way to the bottom on every single rep to stop cutting them short.\n3. **Cut the set short if form breaks:** If your elbows start flaring out by rep 6 like they did today, rack the weights, take a breather, and finish strong on the next set with clean form.",
+    "### Progress Tracking\n\nYour overall score ticked up slightly from 70 to 71, and you matched your previous count with 5 correct reps out of 10 total entries (which includes 9 completed reps and 1 aborted attempt on rep 6). Both of your recurring form breakdowns—elbow flare and partial curls—carried over from your last session and showed up again in the second half of this set, particularly as fatigue set in. \n\n***\n\n### Error Breakdown\n\n*   **Elbow flare**\n    *   **What it is:** Your elbows are drifting forward or sliding away from your sides as you lift the weight, turning a strict arm curl into a half-press.\n    *   **Why it matters:** When your elbows drift forward, your front shoulders take over a chunk of the work that your biceps are supposed to be handling. That means less actual muscle growth in your arms for the effort you are putting in, and it usually sets in right when you get tired.\n    *   **How to fix it:** \n        (a) Cue: Think about pinning your elbows to your ribcage like they are locked in place by a belt. \n        (b) Setup: Drop the load slightly so you can control the movement without needing body English to get the weight up. \n        (c) Drill: Try doing your curls with your back lightly touching a wall to keep your upper arms from creeping forward. \n        (d) Self-check: Watch your phone video—if your elbows travel forward away from your torso, you've spotted the drift.\n    *   *Note on rep detail:* This crept into your reps 2, 6 (aborted), 7, and 9 as fatigue built up.\n\n*   **Partial curl**\n    *   **What it is:** You are cutting the movement short before reaching the top contraction, or dropping the weight down before fully straightening your arm at the bottom.\n    *   **Why it matters:** Short-changing your range of motion means you miss out on the peak squeeze at the top and the full stretch at the bottom, which costs you strength gains and leaves you with less muscle growth for the effort.\n    *   **How to fix it:** \n        (a) Cue: Squeeze hard at the very top and touch the weight all the way down to a full arm extension on every single rep. \n        (b) Setup: Slow down your tempo—take a full two seconds to lower the weight so you stop rushing the bottom of the rep. \n        (c) Drill: Practice lighter pause curls where you hold the top position for a full second before lowering. \n        (d) Self-check: Check your profile view in the mirror to make sure your arms are completely straight at the bottom and fully flexed at the top.\n    *   *Note on rep detail:* This showed up on reps 4, 6 (aborted), and 7, clustering right in the middle of the set where your form started to break down.\n\n***\n\n### Next Session Plan\n\n1.  **Drop the weight slightly:** Give yourself a bit more breathing room on the load so you can actually control your elbows and finish the full range of motion without grinding.\n2.  **Focus on the second half of the set:** Since your form starts to fray around rep 6, be extra strict with your setup and arm position once you cross that halfway mark."
+   ]
+  },
+  {
+   "label": "Bicep Curl — clean",
+   "exercise_id": "bicep-curl",
+   "payload": {
+    "session_id": "BC-20261003-004",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 76,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "elbow_flare",
+      "partial_curl"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 10,
+     "incorrect_reps": 0,
+     "overall_score": 89
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 92
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 91
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 87
+      },
+      "errors": []
+     }
+    ]
+   },
+   "context": "[principle | re: general principles | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nStrict technique on a barbell biceps curl involves maintaining a more upright posture with minimal hip and leg drive to direct maximum stimulation to the target muscle group.\n\n[principle | re: general principles | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.",
+   "metrics": [
+    {
+     "error": "general principles",
+     "kind": "principle",
+     "query": "Bicep Curl correct technique and biomechanics",
+     "best": 0.15001317560908212,
+     "kept": 2,
+     "tagged": false,
+     "tag_exclusive": false
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nFantastic session today. You completely wiped out the elbow flare and partial curls that were tripping you up yesterday. Your correct rep count jumped from 6 up to a clean sweep of all 10 completed reps, and your overall score pushed up from 76 to 89. You kept your form locked in from start to finish.\n\n### Next Session Plan\n\n* **Hold the line:** Keep using the exact same strict posture and elbow position that earned you this clean set today.\n* **Build confidence:** Once this weight feels entirely routine for all 10 reps with zero form drift, you'll know you're ready to step the load up slightly.",
+    "### Progress Tracking\nHuge step up from yesterday. You went from 6 correct reps up to a clean sweep of 10 solid, completed reps today, pushing your overall score from 76 to 89. Even better news: both of your recurring issues from last session—letting your elbows flare and cutting your curls short—are completely gone. You locked in your form and executed every single rep cleanly from start to finish. \n\n### Next Session Plan\n* **Hold the standard:** Keep the exact same posture and full range of motion you used today as your baseline for your next workout.\n* **Keep the weight honest:** Since your form stayed pristine all the way through rep 10, stick with this load for your next session before thinking about moving up.",
+    "### Progress Tracking\n\nFantastic work on this session. You scored an 89 overall, which is a solid jump up from your 76 yesterday. Even better, you completely wiped out both of the issues holding you back last time—your elbow flare and partial curls are gone. You walked up to the bar today and nailed all 10 reps cleanly from start to finish without a single error flagged. That is a massive win for your form consistency.\n\n### Next Session Plan\n\n* **Hold the line:** Keep your exact current setup, stance, and weight for your next workout to lock in this cleaner movement pattern.\n* **Prioritize strict form early:** As fatigue tries to creep in on your later sets next time, consciously pin your upper arms at your sides just like you did today to keep the work squarely on your biceps."
+   ],
+   "no_rag": [
+    "### Progress Tracking\n\nGreat job on this session—you made a massive jump from yesterday! Your overall score climbed from 76 to 89, and you nailed all 10 reps cleanly with zero errors. Even better, you completely wiped out the elbow flare and short reps that were dragging down your score in your previous workout. \n\n---\n\n### Next Session Plan\n\n1. **Lock in the standard:** You just proved you can execute all 10 reps with strict form. Your only goal for the next workout is to repeat this exact performance without letting your elbows drift or cutting your range of motion short.\n2. **Keep the tempo steady:** Focus on a controlled lift and a smooth descent on every single rep to make sure those biceps are doing 100% of the work.",
+    "### Progress Tracking\nHuge step up from yesterday. Your overall score jumped from 76 to 89, and you nailed all 10 reps cleanly without a single error. Even better, you completely cleared out both your old elbow flare and partial curl habits from the previous session. Excellent focus on keeping your form locked in.\n\n### Next Session Plan\n1. **Hold the standard:** Keep your elbows pinned tight to your ribs and take every single rep through the full range of motion, just like you did today.\n2. **Watch the fatigue curve:** Notice how your similarity scores dipped slightly from 92% down to 87% by the final reps as you got tired—keep your core braced extra hard on those last few reps next time to keep form bulletproof all the way through.",
+    "### Progress Tracking\n\nGreat work on this session—you made a massive jump from yesterday. Your overall score climbed from 76 to 89, and you nailed all 10 reps cleanly without a single error. Even better, you completely wiped out the elbow flare and partial curls that were tripping you up in your last session. \n\n### Next Session Plan\n\n1. **Lock in the standard:** Your form looked solid across all 10 reps today, so keep your setup, tempo, and weight exactly where they are for your next workout.\n2. **Focus on mind-muscle connection:** Since your mechanics are dialed in, use your next session to squeeze hard at the top of every single rep to maximize your arm growth."
+   ]
+  }
+ ]
+}
