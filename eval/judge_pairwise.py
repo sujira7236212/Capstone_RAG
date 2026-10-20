@@ -24,6 +24,14 @@ model and the exact texts in their shown order.
 
     python eval/judge_pairwise.py compare_output/g1_R0.json compare_output/g1_R4.json \\
         --names R0 R4 --out compare_output/g1_pairwise_R0_vs_R4.md
+
+Judge: default cerebras:gpt-oss-120b (needs CEREBRAS_API_KEY in .env). Check cost first with
+--estimate (no API call). Use a separate --out per judge so each cache file holds one judge.
+
+    python eval/judge_pairwise.py compare_output/compare_result_per_fault_v13.json \\
+        compare_output/compare_result_per_fault_v13.json --side-a rag --side-b no_rag \\
+        --names RAG noRAG --max-samples 1 --session "Squat — Knee valgus" \\
+        --out compare_output/pairwise_smoke_cerebras.md
 """
 import argparse
 import hashlib
@@ -43,10 +51,21 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(ROOT, ".env"))
 
-# A different model from the generator (test_rag_compare.LLM_MODEL = gemini-3.5-flash-lite),
-# so the judge is not grading its own phrasing. Only a Gemini key is configured, so it is
-# the same family - see the G1 entry in compare_output/ablation_log.md.
-JUDGE_MODEL = "gemini-3.8-flash"
+# Judge = "<provider>:<model>". Default is a NON-Gemini family (OpenAI gpt-oss via Cerebras'
+# free tier), because the generator (test_rag_compare.LLM_MODEL = gemini-3.5-flash-lite) and the
+# curator are both Gemini: a same-family judge tends to prefer its own family's phrasing.
+# A bare model name with no "provider:" prefix means Gemini (kept so older caches still match),
+# e.g. --judge gemini-3.8-flash reproduces the original G1 setup.
+JUDGE_MODEL = "cerebras:gpt-oss-120b"
+
+# OpenAI-compatible chat-completions endpoints. Switching judge = switching this key, nothing
+# else. min_interval is seconds between calls (free-tier RPM); 429s are retried on top of it.
+PROVIDERS = {
+    "cerebras": {"base_url": "https://api.cerebras.ai/v1", "key_env": "CEREBRAS_API_KEY", "min_interval": 13},
+    "groq": {"base_url": "https://api.groq.com/openai/v1", "key_env": "GROQ_API_KEY", "min_interval": 30},  # 8K TPM / ~4K per pair
+    "mistral": {"base_url": "https://api.mistral.ai/v1", "key_env": "MISTRAL_API_KEY", "min_interval": 2},
+    "ollama": {"base_url": "http://localhost:11434/v1", "key_env": None, "min_interval": 0},  # local smoke tests
+}
 # Bump when JUDGE_PROMPT changes: cached judgments from an older prompt are not reused.
 JUDGE_PROMPT_VERSION = 1
 CRITERIA = ("accuracy", "comprehensiveness", "professionalism", "feasibility")
@@ -184,15 +203,107 @@ def build_prompt(payload, first, second, notes):
                                reference=REFERENCE_BLOCK.format(notes=notes) if notes else "")
 
 
-def judge(client, model, payload, first, second, notes):
+def parse_judge(spec):
+    """'cerebras:gpt-oss-120b' -> ('cerebras', 'gpt-oss-120b'); bare name -> ('gemini', name)."""
+    if ":" not in spec:
+        return "gemini", spec
+    provider, model = spec.split(":", 1)
+    if provider not in PROVIDERS:
+        raise SystemExit(f"unknown judge provider {provider!r} - one of: gemini, {', '.join(PROVIDERS)}")
+    return provider, model
+
+
+def judge_id(spec, reasoning_effort):
+    """What identifies a judge in the cache key and the report. Effort changes the judge, so it
+    is part of the id for reasoning models; bare Gemini names stay unchanged for old caches."""
+    provider, model = parse_judge(spec)
+    if provider != "gemini" and reasoning_effort and "gpt-oss" in model:
+        return f"{spec}@{reasoning_effort}"
+    return spec
+
+
+class OpenAICompatClient:
+    """Minimal chat-completions client over urllib (no extra dependency), with call pacing."""
+
+    def __init__(self, provider, model, reasoning_effort=None, min_interval=None):
+        cfg = PROVIDERS[provider]
+        self.url = cfg["base_url"].rstrip("/") + "/chat/completions"
+        self.key = os.environ.get(cfg["key_env"]) if cfg["key_env"] else "none"
+        if not self.key:
+            raise SystemExit(f"{cfg['key_env']} is not set - add it to .env")
+        self.model = model
+        self.reasoning_effort = reasoning_effort if "gpt-oss" in model else None
+        self.min_interval = cfg["min_interval"] if min_interval is None else min_interval
+        self.json_mode = True  # dropped automatically if the endpoint rejects response_format
+        self._last = 0.0
+
+    def complete(self, prompt):
+        import urllib.error
+        import urllib.request
+        wait = self.min_interval - (time.time() - self._last)
+        if wait > 0:
+            time.sleep(wait)
+        body = {"model": self.model, "temperature": 0, "seed": 0,
+                "messages": [{"role": "user", "content": prompt}]}
+        if self.json_mode:
+            body["response_format"] = {"type": "json_object"}
+        if self.reasoning_effort:
+            body["reasoning_effort"] = self.reasoning_effort
+        req = urllib.request.Request(self.url, data=json.dumps(body).encode("utf-8"), method="POST",
+                                     headers={"Content-Type": "application/json",
+                                              "Authorization": f"Bearer {self.key}",
+                                              "User-Agent": "rag-system-eval/1.0"})
+        self._last = time.time()
+        try:
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "replace")[:300]
+            if e.code == 400 and self.json_mode and "response_format" in detail:
+                self.json_mode = False
+                print("    endpoint rejected response_format - continuing without JSON mode")
+                return self.complete(prompt)
+            raise RuntimeError(f"HTTP {e.code}: {detail}") from None
+        usage = data.get("usage") or {}
+        self.tokens = usage.get("total_tokens", 0)
+        return data["choices"][0]["message"]["content"]
+
+
+def extract_json(text):
+    """The JSON object in a reply, tolerating ```json fences or text around it."""
+    text = (text or "").strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        start, end = text.find("{"), text.rfind("}")
+        if start == -1 or end <= start:
+            raise
+        return json.loads(text[start:end + 1])
+
+
+def make_client(spec, reasoning_effort, min_interval):
+    provider, model = parse_judge(spec)
+    if provider == "gemini":
+        from google import genai
+        return genai.Client()
+    return OpenAICompatClient(provider, model, reasoning_effort, min_interval)
+
+
+def call_judge(client, model, prompt):
+    if isinstance(client, OpenAICompatClient):
+        return extract_json(client.complete(prompt))
     from google.genai import types
+    resp = client.models.generate_content(
+        model=model, contents=prompt,
+        config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"))
+    return json.loads(resp.text)
+
+
+def judge(client, model, payload, first, second, notes):
     prompt = build_prompt(payload, first, second, notes)
     for attempt in range(5):
         try:
-            resp = client.models.generate_content(
-                model=model, contents=prompt,
-                config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"))
-            data = json.loads(resp.text)
+            data = call_judge(client, model, prompt)
             for c in CRITERIA + ("overall",):
                 if str(data[c]["winner"]) not in ("1", "2", "tie"):
                     raise ValueError(f"bad winner for {c}: {data[c]['winner']!r}")
@@ -203,7 +314,8 @@ def judge(client, model, payload, first, second, notes):
                         raise ValueError(f"bad score {pos}/{c}")
             return data
         except Exception as e:  # rate limit, malformed JSON, missing field -> retry
-            wait = 45 if ("429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)) else 5
+            limited = any(s in str(e) for s in ("429", "RESOURCE_EXHAUSTED", "rate limit", "quota"))
+            wait = 65 if limited else 5
             print(f"    judge retry {attempt + 1}/5 in {wait}s: {str(e)[:120]}")
             time.sleep(wait)
     raise RuntimeError("judge failed 5 times on one pair")
@@ -247,7 +359,7 @@ def render(rows, skipped, args, run_a, run_b):
     na, nb = args.names
     out = [f"# Pairwise judge — {na} vs {nb}", "",
            f"A = **{na}** `{args.a}` ({args.side_a}) · B = **{nb}** `{args.b}` ({args.side_b}) · "
-           f"judge `{args.judge}` prompt v{JUDGE_PROMPT_VERSION} @ temperature 0 · seed {args.seed} · "
+           f"judge `{judge_id(args.judge, args.reasoning_effort)}` prompt v{JUDGE_PROMPT_VERSION} @ temperature 0 · seed {args.seed} · "
            f"reference notes: **{args.reference}**",
            f"generator A `{run_a['llm']}` @ {run_a['temperature']}, retrieval {run_a['retrieval']} · "
            f"generator B `{run_b['llm']}` @ {run_b['temperature']}, retrieval {run_b['retrieval']}", ""]
@@ -306,7 +418,15 @@ def main():
     ap.add_argument("--names", nargs=2, default=("A", "B"), help="display names for A and B")
     ap.add_argument("--side-a", default="rag", help="rag | no_rag (default rag)")
     ap.add_argument("--side-b", default="rag", help="rag | no_rag (default rag)")
-    ap.add_argument("--judge", default=JUDGE_MODEL)
+    ap.add_argument("--judge", default=JUDGE_MODEL,
+                    help=f"provider:model, provider one of {', '.join(PROVIDERS)}; a bare name = Gemini "
+                         f"(default {JUDGE_MODEL})")
+    ap.add_argument("--reasoning-effort", default="medium", choices=["low", "medium", "high"],
+                    help="gpt-oss models only; part of the cache key (default medium)")
+    ap.add_argument("--min-interval", type=float,
+                    help="seconds between judge calls (default: the provider's free-tier pacing)")
+    ap.add_argument("--estimate", action="store_true",
+                    help="print how many calls/tokens the uncached pairs need, then exit (no API call)")
     ap.add_argument("--reference", choices=["none", "union"], default="none",
                     help="none: judge sees session + answers only (SportsGPT-style); union: also both runs' "
                          "context entries, shuffled and unlabelled, to check facts against (default none)")
@@ -333,18 +453,37 @@ def main():
             cache = json.load(f).get("judgments", {})
 
     client = None
+    jid = judge_id(args.judge, args.reasoning_effort)
+    _, model = parse_judge(args.judge)
+
+    if args.estimate:
+        todo = []
+        for label, i, ta, tb, a_first, same, payload, notes in pairs:
+            first, second = (ta, tb) if a_first else (tb, ta)
+            if cache_key(jid, payload, first, second, notes) not in cache:
+                todo.append(build_prompt(payload, first, second, notes))
+        chars = sum(len(p) for p in todo)
+        # ~4 chars per token for English; ~1,500 output+reasoning tokens per call at medium effort
+        tok_in, tok_out = chars / 4, 1500 * len(todo)
+        print(f"judge {jid}: {len(pairs)} pairs, {len(pairs) - len(todo)} cached, {len(todo)} to call")
+        print(f"approx tokens: input {tok_in:,.0f} + output/reasoning {tok_out:,.0f} = {tok_in + tok_out:,.0f}")
+        provider, _ = parse_judge(args.judge)
+        if provider in PROVIDERS:
+            gap = PROVIDERS[provider]["min_interval"] if args.min_interval is None else args.min_interval
+            print(f"approx time at {gap}s between calls: {len(todo) * (gap + 5) / 60:.0f} min")
+        return
+
     rows = []
     for n, (label, i, ta, tb, a_first, same, payload, notes) in enumerate(pairs, 1):
         first, second = (ta, tb) if a_first else (tb, ta)
-        key = cache_key(args.judge, payload, first, second, notes)
+        key = cache_key(jid, payload, first, second, notes)
         if key not in cache:
             if client is None:
-                from google import genai
-                client = genai.Client()
+                client = make_client(args.judge, args.reasoning_effort, args.min_interval)
             print(f"[{n}/{len(pairs)}] judging {label} #{i}")
-            cache[key] = judge(client, args.judge, payload, first, second, notes)
+            cache[key] = judge(client, model, payload, first, second, notes)
             with open(cache_path, "w", encoding="utf-8") as f:
-                json.dump({"judge": args.judge, "judge_prompt_version": JUDGE_PROMPT_VERSION,
+                json.dump({"judge": jid, "judge_prompt_version": JUDGE_PROMPT_VERSION,
                            "judgments": cache}, f, ensure_ascii=False, indent=1)
         rows.append({"label": label, "sample": i, "a_first": a_first, "same_context": same,
                      "judgment": cache[key], "result": unblind(cache[key], a_first)})
