@@ -1,0 +1,330 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "To gradually increase patellofemoral joint loading during rehabilitation, progress forward lunges from minimal knee flexion (0°–30°) to moderate knee flexion (0°–60°), then to long step deep knee flexion (0°–100°) on an elevated 10-cm platform, and finally to long step deep knee flexion at ground level.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Strengthening both hip musculature (such as gluteal muscles) and thigh musculature (such as quadriceps) helps control femoral movement and patellar tracking to enhance patellofemoral joint stability.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 16 healthy adults (8 men aged 28.9 ± 7.9 years and 8 women aged 30.6 ± 9.8 years), lead knee patellofemoral loads were higher with a short step during deep knee flexion (50°–100°) compared to a long step.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lead knee patellofemoral loads were greater with a long step at the beginning of landing (10°–30° knee angle) and at the end of pushoff (10°–40° knee angle).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellofemoral joint loads were greater during ground-level lunges than on a 10-cm platform during lunge descent (50°–100° knee angle) and lunge ascent (40°–70° knee angle).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellofemoral joint loads generally increase as knee flexion increases and decrease as knee flexion decreases.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "High patellofemoral joint forces and stress elevate subchondral bone stress, which can trigger patellofemoral pain syndrome because subchondral bone is rich in pain receptors.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "High patellofemoral joint force and stress can cause cartilage degeneration and diminish the capacity of cartilage to distribute forces.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "High patellofemoral joint force can result in patellofemoral pain syndrome originating from soft tissues such as synovial plicae, infrapatellar fat pad, retinacula, joint capsule, and patellofemoral ligaments.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 1/13]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Study",
+    "core_principles": [
+      {
+        "text": "Maintain between 0° and 20° of forward trunk tilt relative to vertical at the lowest position of the lunge descent.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Perform a forward lunge with a long step to keep the lead shank approximately vertical at the lowest position, maintaining the knee directly over the ankle joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Most individuals skilled in lunge exercises achieve between 0° and 20° of forward trunk tilt relative to vertical at the lowest position of the lunge descent.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "In the study sample, mean step length for a forward lunge with a long step was 90.3 (4.9) cm for men and 81.3 (5.8) cm for women.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trunk position at the lowest position of the lunge affects hip muscle activity as well as patellofemoral force and stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Altering forward trunk position during the lowest point of a lunge changes hip muscle activation patterns and increases patellofemoral force and stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 2/13]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Flex the front knee to approximately 100 degrees during the lunge descent.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "Allow the trail knee to bend until it lightly makes contact with the ground at the bottom of the lunge.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Maintain a controlled cadence, taking approximately 2 seconds for the descent and 2 seconds for the ascent.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 3/13]",
+    "applies_to_fault": [
+      "shallow_lunge",
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Step length alters patellofemoral joint loading across different degrees of knee flexion during a lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "For 10° to 30° knee angles during lunge descent and 10° to 40° knee angles during lunge ascent, patellofemoral force and stress were significantly greater with a long step.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At 50° to 70° and 100° knee angles during lunge descent, and 60° to 100° during lunge ascent, patellofemoral joint force and stress were significantly greater with a short step.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using a short step during deeper lunge knee flexion angles increases patellofemoral compressive force and stress on the patellofemoral joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using a long step during shallow lunge knee flexion angles increases patellofemoral compressive force and stress on the patellofemoral joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 4/13]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Joint Loading Analysis",
+    "core_principles": [],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "During lunge ascent at a 90° knee flexion angle, short-step lunges produce significantly higher patellofemoral joint force (1300 N) and joint stress (3.03 MPa) compared to long-step lunges (763 N and 1.78 MPa).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During lunge descent at 90° knee flexion, lunging onto a 10-cm platform reduces patellofemoral joint force (633 N) and stress (1.48 MPa) compared to ground-level lunging (797 N and 1.86 MPa).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 5/13]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Performing shallow or mini lunges at low knee angles (0° to 40°) keeps patellofemoral joint loading low, making them appropriate for early knee rehabilitation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To minimize patellofemoral joint force and stress at deeper knee bend angles, a long-step forward lunge is preferred over a short-step forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Progressing lunge depth from lower knee angles (0° to 50°) to higher knee angles (60° to 100°) on a 10-cm platform before transitioning to ground level allows for controlled loading of the patellofemoral joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Taking too short of a step during forward lunges increases compressive force and stress on the patellofemoral joint at deeper knee angles.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Patellofemoral joint compressive force and stress progressively increase as knee angle increases up to approximately 80° to 90° of knee flexion.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "At higher knee angles between 70° and 90°, performing a bodyweight forward lunge with a short step results in significantly greater patellofemoral joint force and stress compared to a long step.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lunging at ground level produces significantly greater patellofemoral compressive force and stress at moderate to high knee angles compared to lunging up to a 10-cm platform.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For any given knee angle, patellofemoral joint force and stress are slightly greater during the ascent phase than during the descent phase of the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Deep knee flexion during a lunge increases compressive force and stress acting on the patellofemoral joint.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Taking a short step during deep forward lunges shifts excessive compressive stress onto the patellofemoral joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 6/13]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Using a longer step length during the forward lunge keeps the shank relatively vertical and prevents the lead knee from translating beyond the toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Avoiding lead knee translation beyond the toes during the forward lunge reduces compressive loads on the patellofemoral joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a forward lunge with a short step causes the lead knee to translate anteriorly past the toes as the knee flexes.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Patellofemoral joint force and stress values were 2 to 3 times greater in forward lunges with a 12 RM external load compared to bodyweight lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During a forward lunge with a short step, the lead knee began translating beyond the distal toes at approximately 60 degrees knee angle and reached 7.1 plus or minus 3.5 cm beyond the toes at maximum knee flexion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At higher knee angles, estimated quadriceps forces were 20 percent to 30 percent greater during a short-step forward lunge compared to a long-step lunge, whereas hamstring forces were 25 percent to 35 percent greater with a long step.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellofemoral joint stress begins to plateau or decrease between 80 degrees and 100 degrees of knee flexion because patellofemoral force plateaus while patellar contact area increases nearly linearly.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Mean peak patellofemoral joint force and stress for the bodyweight forward lunge were measured at 1300 N and 3.19 MPa, respectively.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Anterior lead knee translation beyond the toes during a short-step forward lunge increases quadriceps force and patellofemoral joint compressive force and stress, which may exacerbate symptoms in patients with patellofemoral pain syndrome.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 7/13]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Loading Guidance",
+    "core_principles": [
+      {
+        "text": "To manage and gradually progress patellofemoral joint force and stress during a forward lunge, initiate exercise with minimal knee flexion before progressing to deeper knee flexion and level surface execution.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Forward lunge rehab progressions to manage patellofemoral joint loading should advance from 0°–30° knee flexion, to 0°–60° knee flexion, then to 0°–100° knee flexion with a long step onto a 10-cm platform, and finally to 0°–100° knee flexion with a long step at ground level.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Patellofemoral joint loading during the lunge exercise changes as a function of step length, step height, and knee angle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf [part 9/13]",
+    "applies_to_fault": []
+  }
+]

@@ -1,0 +1,249 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-Up",
+    "focus_area": "Upper Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain the anatomical curves of the spine and a straight body alignment from the shoulder joint to the knees or ankles throughout the movement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Place the hands straight under the shoulders so the shoulder joint is directly over the wrist joint with the middle finger under the acromioclavicular joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lower the body toward the floor until achieving 90 degrees of elbow flexion, bringing the chest as close to the ground as possible before pushing up.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing incorrect and damaging inclinations of the torso during the push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Elevating the hands above the feet displays the lowest mean value of vertical force and a low rate of force development (RFD).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The standard push-up position displays the highest rate of force development (RFD) and the highest activation of the triceps brachii muscle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to maintain a correct upright posture during push-ups creates damaging inclinations of the torso, placing stress on the spine.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf [part 1/9]",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Shoulder",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Performing push-ups from the knees instead of the toes reduces stress on the glenohumeral joint while maintaining similar muscle activation levels.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing an unstable surface under the upper extremities is required to effectively increase muscle activation during push-up variations.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the serratus anterior to fatigue or weaken during push-ups alters normal scapular motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Knee push-ups produce almost the same electromyographic activity in most muscle groups as standard push-ups on toes.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The push-up plus caused an average anterior deltoid activation of 103% MVC and a peak activation of 185% MVC during maximum force application.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Isometric plank support on the elbows and soles with the body parallel to the ground resulted in a 54% activation increase in the quadratus lumborum muscle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Pectoralis major activation remains unaffected by support surface stability during push-ups.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Weakness or fatigue in the serratus anterior decreases upward scapular rotation, causing the peak of the scapula to shift forward and upward, which increases shoulder injury risk.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf [part 2/9]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Full Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Place the hands directly under the glenohumeral joint with the palms parallel when setting up a standard push-up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain straight alignment between the shoulder, ischium, and lateral malleolus throughout the push-up.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Lower the body during the push-up until the elbows reach an inclination of 90 degrees.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "The study evaluated 11 healthy participants with an average age of 22.5 ± 2.4 years, height of 177.7 ± 5.2 cm, weight of 75.9 ± 6.1 kg, and BMI under 25.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf [part 4/9]",
+    "applies_to_fault": [
+      "hip_sag_or_pike"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Maintain full body alignment throughout the push-up movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lower the pelvis and torso simultaneously when performing a knee push-up.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Elevating the hands 30 cm above the feet significantly reduces vertical force on both upper extremities compared to standard, wide, diamond, knee, and feet-elevated push-up positions (p<0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing the hands in a close diamond position results in lower vertical force on the left upper extremity compared to standard and wide positions, but higher vertical force than elevating the hands (p<0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rate of Force Development (RFD) in the left upper extremity is significantly higher during standard push-ups compared to close-hand diamond push-ups (p<0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rate of Force Development (RFD) in the right upper extremity is significantly lower in the hands-elevated push-up position compared to the feet-elevated push-up position (p<0.05).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf [part 5/9]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Triceps",
+    "content_type": "Muscle Activation",
+    "core_principles": [
+      {
+        "text": "Push-up position variations that maximize triceps brachii activation can be utilized specifically to target and strengthen the triceps brachii muscle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-up variations that produce a lower rate of force development and slower muscle activation are not recommended when the primary goal is improving rapid dynamic strength.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Right-handed participants applied a higher percentage of average relative force on the left upper extremity across all tested push-up positions.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maximum activation of the triceps brachii muscle was statistically significantly higher (p<0.05) during push-ups in position 1 and position 3 compared to position 5.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The mean activation value of the triceps brachii muscle reached its lowest value in position 5 compared to the other tested positions (p<0.05).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-ups performed in position 3 resulted in a smaller shift of the center of pressure (COP) along both the longitudinal X and lateral Y axes despite having a smaller support base than other positions.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf [part 6/9]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Muscle Activation & Biomechanics",
+    "core_principles": [
+      {
+        "text": "Maintain a straight trunk with active control and stabilization throughout the push-up to minimize unnecessary mechanical strain on the lumbar spine.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Maximum torque during push-up resistance represents more than 50% of the maximum force of the triceps brachii muscle, and can exceed 70% with adjustments in hand position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Push-ups elicit significant activation of the serratus anterior muscle compared to other shoulder exercises.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trapezius muscle activation during push-ups does not reach high essential muscular activity levels.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Activation levels of the biceps brachii and pectoralis major muscles do not significantly change with alterations in body position, extremity position, or support surface stability.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf [part 7/9]",
+    "applies_to_fault": []
+  }
+]

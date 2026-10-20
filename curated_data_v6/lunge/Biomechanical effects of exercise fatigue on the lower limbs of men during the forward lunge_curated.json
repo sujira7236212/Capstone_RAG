@@ -1,0 +1,323 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Joint Mechanics",
+    "core_principles": [
+      {
+        "text": "Perform forward lunges to develop functional postural balance and strengthen the quadriceps and hamstrings.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Trainers should emphasize conditioning the quadriceps muscle group to help maintain joint stability when lunging under fatigue.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 15 healthy young men, exercise fatigue during forward lunges significantly increased peak joint angles and joint range of motion in the sagittal and horizontal planes of the hip and knee joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Following a fatigue protocol, peak vertical ground reaction force and peak contact force during forward lunges were significantly smaller.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "During forward lunges post-fatigue protocol, quadriceps muscles exhibited increased fatigue and reduced muscle force output.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Exercise fatigue during forward lunges makes the hip, knee, and ankle joints less stable in both the sagittal and horizontal planes.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 1/14]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Equal co-activation of the quadriceps and hamstring complexes during the lunge helps enhance knee joint stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The quadriceps, hamstrings, and gastrocnemius muscles collectively stabilize the knee joint by preventing external joint rotation.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Continuing to perform lunges under severe muscular fatigue alters lower limb movement patterns and reduces dynamic joint stabilization.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During muscle fatigue, quadriceps contraction force and activation time decrease, triggering a simultaneous increase in hamstring muscle activity to compensate.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "A fatigue-induced reduction in muscular force output compromises the muscles ability to act as dynamic joint dampers, increasing mechanical strain and injury risk at the knee and ankle joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Repetitive knee flexion under fatiguing conditions accelerates muscular exhaustion and elevates the incidence of joint degeneration in the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 2/14]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep the torso upright and perpendicular to the horizontal at all times during the lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Lower the body until the non-dominant back knee is close to the ground without allowing it to touch.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Set step length relative to individual anthropometrics, such as 70% of measured leg length.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 4/14]",
+    "applies_to_fault": [
+      "forward_trunk_lean",
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In the sagittal plane, knee range of motion increased by 5.75 degrees and maximum knee angle increased from 120.45 degrees to 124.44 degrees post-fatigue (p = 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In the horizontal plane, maximum knee joint angle increased by 11.99 degrees and knee range of motion increased by 10.32 degrees after fatigue (p <= 0.001).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Post-fatigue peak sagittal plane hip joint moment increased by 0.39 Nm/kg (p < 0.001), while peak sagittal knee joint moment decreased by 0.24 Nm/kg (p = 0.004).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The initial contact peak vertical ground reaction force (vGRF) during the lunge decreased significantly by 0.49 N/kg post-fatigue (p = 0.014).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Post-fatigue maximum hip angle increased by 4.38 degrees in the sagittal plane (p = 0.007) and by 3.35 degrees in the horizontal plane (p = 0.017).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 6/14]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Keep the front knee behind the toes to minimize stretching force on the patellar tendon.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Maintain trunk stability and an upright posture to prevent abnormal center-of-mass shifts and excessive lower limb joint loading.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the front knee to translate forward past the toes during the lunge increases stress on the knee joint.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Leaning the trunk forward excessively due to fatigue alters hip flexion and increases lower-body joint stress.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Peak knee joint stress, quadriceps force, knee moment, and knee flexion are significantly higher when the knee is brought in front of the toes during the lunge.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Keeping the front knee behind the toes reduces stretching force on the patellar tendon during a lunge.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Following fatigue, the ankle maximum joint angle fell by almost 7.49 degrees and the minimal angle increased by 7.74 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A 10-degree increase in ankle plantar flexion increases injury risk owing to calf muscle fatigue and foot overuse, and may produce fatigue and injury to the Achilles tendon and anterior heel ligaments.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak vertical ground reaction force falls after fatigue, with peak contact reducing down to around 0.49 N/kg.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Translating the front knee in front of the toes increases peak knee joint stress, quadriceps force, and knee moment.",
+        "applies_to_fault": [
+          "excessive_front_knee_flexion"
+        ]
+      },
+      {
+        "text": "Excessive forward trunk lean alters the body's center of mass, significantly increasing subsequent loading on the lower limb joints.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Excessive ankle plantar flexion increases the risk of injury owing to calf muscle fatigue, foot overuse, and strain on the Achilles tendon and anterior heel ligaments.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 8/14]",
+    "applies_to_fault": [
+      "excessive_front_knee_flexion",
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Executing the front lunge with proper form increases exercise safety, helps prevent knee injuries, and builds postural muscle strength.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the torso forward during a lunge increases hip flexion and places an elevated load on the hip joint.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "An increase in moment at the hip joint during a lunge is directly linked to an increased hip flexion angle brought on by forward body lean.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "The quadriceps, hamstrings, and gastrocnemius muscles make up 98% of the cross-sectional area of knee muscular tissue.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "OpenSim calculations show that the quadriceps muscle experiences the highest maximum force increase of 19.78 N/kg during the forward lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Following a fatigue protocol, the maximum muscle force of the biceps femoris decreased by 12.76 N/kg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Fatigue causes the hip and knee joints to display greater range of motion in the sagittal plane and an increased tendency toward forward body leaning.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the upper body forward increases the hip flexion angle, which elevates the moment torque transferred to the hip joint.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 9/14]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Injury Prevention",
+    "core_principles": [
+      {
+        "text": "Strengthen the hip and knee muscle groups to maintain effective joint motion control and prevent instability when fatigued.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifters exhibit a tendency toward forward leaning as fatigue develops during the exercise.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The quadriceps muscles are the most affected muscle group after fatigue.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Fatigue leads to increased ankle plantar flexion muscle activity and postural instability, raising the risk of injury.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf [part 10/14]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  }
+]

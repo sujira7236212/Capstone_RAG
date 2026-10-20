@@ -201,7 +201,7 @@ def load_batch(path: str, name: str, project_root: str) -> set:
     with open(path, encoding="utf-8") as f:
         files = json.load(f)["batches"][name]["files"]
     out = {os.path.normcase(os.path.abspath(os.path.join(project_root, p))) for p in files}
-    missing = [p for p in files if not os.path.exists(os.path.join(project_root, p))]
+    missing = [p for p in files if not os.path.exists(locate_source(project_root, p))]
     if missing:
         raise SystemExit(f"[BATCH] {len(missing)} file(s) in batch '{name}' do not exist: {missing}")
     return out
@@ -596,6 +596,35 @@ def load_urls_main_content(urls):
 # ---------------------------------------------------------
 # 3. Process All Files in 'data' Folder
 # ---------------------------------------------------------
+PICKED_DIR = "picked"
+# data/checked/ holds sources whose prefilter review is done but that are not curated yet
+# (keep or drop). The folder is transparent: data/checked/<exercise>/x.pdf keeps the id
+# data/<exercise>/x.pdf, so prefilter, batches, outputs and the split key stay the same.
+CHECKED_DIR = "checked"
+
+
+def logical_rel(rel_path: str) -> str:
+    """Path under data/ with a leading checked/ removed ('.' for data/ itself)."""
+    parts = rel_path.split(os.sep)
+    if parts[0] == CHECKED_DIR:
+        return os.sep.join(parts[1:]) or "."
+    return rel_path
+
+
+def locate_source(project_root: str, path: str) -> str:
+    """Where an id 'data/<exercise>/...' lives on disk now: as is, or under data/checked/.
+    data/picked/ is deliberately not searched - those sources are already curated."""
+    direct = os.path.join(project_root, path)
+    if os.path.exists(direct):
+        return direct
+    parts = path.replace("\\", "/").split("/")
+    if parts[0] == "data":
+        checked = os.path.join(project_root, "data", CHECKED_DIR, *parts[1:])
+        if os.path.exists(checked):
+            return checked
+    return direct
+
+
 def _routed_output_path(output_base_folder: str, exercise_id: str, stem: str) -> str:
     """Where a general/ source's items routed to an exercise are written. ingest.py reads
     exercise_id from the first folder level, and the general__ prefix keeps the origin visible."""
@@ -625,22 +654,31 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
     skip_paths, skip_urls = skip_paths or {}, skip_urls or {}
 
     for root, dirs, files in os.walk(base_folder):
+        # data/picked/ holds sources already curated, moved out of data/<exercise>/ after
+        # the fact (their KB id is still the old data/<exercise>/... path). Walking it
+        # would treat "picked" as an exercise and curate them a second time.
+        if os.path.abspath(root) == os.path.abspath(base_folder):
+            dirs[:] = [d for d in dirs if d != PICKED_DIR]
         for file in files:
             # Skip files that are already curated JSONs to avoid infinite loops
             if file.endswith('_curated.json'):
                 continue
                 
             file_path = os.path.join(root, file)
-            if only and only.replace("\\", "/") not in file_path.replace(os.sep, "/"):
+            # rel_path / source_path drop a leading checked/ (see CHECKED_DIR); file_path
+            # is only used to read the file.
+            rel_path = logical_rel(os.path.relpath(root, base_folder))
+            source_path = os.path.normpath(os.path.join(base_folder, rel_path, file))
+            source_key = os.path.normcase(os.path.abspath(source_path))
+            if only and only.replace("\\", "/") not in source_path.replace(os.sep, "/"):
                 continue
-            if batch is not None and os.path.normcase(os.path.abspath(file_path)) not in batch:
+            if batch is not None and source_key not in batch:
                 continue
-            if os.path.normcase(os.path.abspath(file_path)) in skip_paths:
-                print(f"[PREFILTER DROP] {file_path} - {skip_paths[os.path.normcase(os.path.abspath(file_path))]}")
+            if source_key in skip_paths:
+                print(f"[PREFILTER DROP] {file_path} - {skip_paths[source_key]}")
                 continue
 
             # Determine output path early to skip if already processed
-            rel_path = os.path.relpath(root, base_folder)
             folder_exercise_id = 'general' if rel_path == '.' else rel_path.split(os.sep)[0]
             output_dir = os.path.join(output_base_folder, rel_path)
             filename_without_ext = os.path.splitext(file)[0]
@@ -703,14 +741,14 @@ def process_data_directory(base_folder: str, output_base_folder: str, excluded_b
             if file == 'urls.txt':
                 for i, doc in enumerate(docs):
                     url_source = doc.metadata.get('source', f'URL #{i+1}')
-                    accepted, excluded = curate_text_block(doc.page_content, f"{file_path} ({url_source})", folder_exercise_id)
+                    accepted, excluded = curate_text_block(doc.page_content, f"{source_path} ({url_source})", folder_exercise_id)
                     curated_results.extend(accepted)
                     excluded_results.extend(excluded)
             else:
                 # Combine all pages of the document into one text block; curate_text_block
                 # will window it internally if it's too long for a single curation pass.
                 full_text = "\n\n".join([doc.page_content for doc in docs])
-                accepted, excluded = curate_text_block(full_text, file_path, folder_exercise_id)
+                accepted, excluded = curate_text_block(full_text, source_path, folder_exercise_id)
                 curated_results.extend(accepted)
                 excluded_results.extend(excluded)
 

@@ -1,0 +1,126 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Chest",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Start in a high plank with hands slightly wider than shoulder width, fingers spread, abs braced, and glutes squeezed to form a straight line from head to heel.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Lower under control until the chest reaches a consistent depth close to the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Press back to straight arms without allowing the hips to sag, rise first, or twist.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Keep the neck neutral by looking a short distance ahead of the hands.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a moderate elbow angle relative to the torso rather than aggressively flaring them.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing partial repetitions where the chest does not lower close to the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Allowing the hips to sag toward the floor or rise before the upper body.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Continuing repetitions after resting in a broken plank position.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Bouncing repetitions off the bottom position.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a large prospective study of active adult men, greater baseline push-up capacity was associated with lower subsequent cardiovascular event risk.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Research comparing push-up and bench press training found similar gains in muscle thickness and strength when the exercises were performed with comparable effort and suitable loading.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to brace the abdominals and glutes during push-ups allows the lower back to extend into excessive arching.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\BOXROX_PushUpBenchmarks.txt [part 2/3]",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Upper Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain consistent depth and body position across all repetitions without allowing form to break down.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Use push-up handles or securely placed dumbbells to adopt a neutral wrist position if wrist discomfort occurs.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "If experiencing front shoulder pain, temporarily reduce range of motion, use an incline, check elbow path, or reduce pressing volume.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Pair pressing exercises with pulling movements like rows and chin-ups to ensure good scapular motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Starting a timed push-up set too quickly rather than pacing conservatively.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing depth or body position to break down under fatigue during high-repetition tests.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Starting a timed push-up test too fast causes the chest and triceps to fatigue faster than they can recover, making later repetitions dramatically harder.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\BOXROX_PushUpBenchmarks.txt [part 3/3]",
+    "applies_to_fault": []
+  }
+]

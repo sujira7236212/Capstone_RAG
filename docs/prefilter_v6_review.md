@@ -119,3 +119,39 @@ T2 ไม่ได้จับไว้เพราะไบต์ต่าง�
 ## 6. ข้อความสำหรับรายงาน
 
 ก่อน curate มีขั้นคัดเอกสารทั้งไฟล์โดย LLM (Claude) จาก 102 หน่วย (PDF 85, URL 17) ตัดออก 27 หน่วย ด้วยเกณฑ์ว่าไม่มีเนื้อหาเกี่ยวกับท่าทางของ 4 ท่าที่ใช้กับกฎข้อใดข้อหนึ่งได้ (ไม่แน่ใจให้เก็บ) เหตุผลหลักคือวัดแค่การทำงานของกล้ามเนื้อหรือผลของโปรแกรม (n) ศึกษาตัวแปรที่ไม่ใช่กฎของระบบ (n) และเป็นงานวิธีวัดหรือผลทางคลินิก (n) — เติมตัวเลขหลัง user ตรวจเสร็จ · แยกอีก 4 ไฟล์เรื่องวิธีสอน/feedback ไว้ใช้ออกแบบ prompt ไม่เข้า KB (user ตัดสิน)
+
+## 7. เอกสารใหม่รอบ 2026-10-19 (ให้ user ตรวจ)
+
+user หาเอกสารเพิ่ม (ไฟล์ลงวันที่ 2026-10-18) · เกณฑ์และวิธีอ่านเหมือน §1 และ §3.1 · เพิ่ม 5 entry ใน `prefilter_v6.json` (รวม 107) · ไม่ได้เรียก API ที่เสียเงิน
+
+| ไฟล์ | ผล | เหตุผลสั้น ๆ |
+|---|---|---|
+| `push-up/Biomechanical evaluation of the push-up … various starting points.pdf` (Topalidou 2012) | **keep (ไม่แน่ใจ)** | ส่วนใหญ่เป็น EMG/แรงตามตำแหน่งมือ แต่บทนำนิยามท่ามาตรฐาน (ลำตัวตรงไหล่ถึงเข่า ลงจนศอก ~90° อกลงใกล้พื้นที่สุด) และวัดการเอียงของลำตัว → principle ของ `partial_pushup` และ `hip_sag_or_pike` · ไม่มี mistake/consequence · ~7 window |
+| `push-up/urls.txt` → BOXROX "3 push-up benchmarks …" (URL ใหม่) | **keep (ไม่แน่ใจ)** | ส่วน "strict rep standard": ไม่นับครั้งที่ลงไม่สุด, อกลงใกล้พื้น, สะโพกไม่ตก/ไม่โด่ง, เมื่อล้าต้องเกร็งท้อง/ก้นไม่ให้หลังล่างแอ่น → ระดับ **mistake** ของ `partial_pushup` / `hip_sag_or_pike` ซึ่งเป็นช่องที่ขาด · แหล่งเป็นนิตยสาร ไม่ใช่องค์กรวิชาชีพ · ~2 window · **curate ตรง ๆ ไม่ได้** ดูหมายเหตุด้านล่าง |
+| `lunge/Knee joint biomechanics … tibial angles … finite element` (Gao 2026) | drop | ตัวแปรคือมุมหน้าแข้ง (เข่าเคลื่อนไปหน้า) ไม่ใช่กฎ · FE จากคนเดียว · เรียก 60° ว่า "ลึก" และ 90° ว่า "ตื้น" แต่สรุปว่า "ลันจ์ลึก + ถือน้ำหนัก" กดหมอนรองเข่าจากเงื่อนไข 90° → item จะขัดกันเองและอ่านเหมือนเตือนไม่ให้ลงถึง 90° (ขัด `shallow_lunge` แบบเดียวกับ u082) |
+| `lunge/Biomechanical Analyses of Bodyweight Unilateral … ` (Chapman 2018) | drop | เป็น **PREVIEW** ของวิทยานิพนธ์ ProQuest จบที่หน้า 8 กลางบททบทวน ไม่มีผล/อภิปราย · เรื่องหลักคือ joint moment ข้ามท่า · ท่าทางมีแค่ประโยคนิยามจุดต่ำสุดของลันจ์ (เข่าหลังเกือบแตะพื้น/เข่าหน้า ~90°) ซึ่งแหล่งที่ keep มีแล้ว |
+| `push-up/Kinetic analysis of push-up exercises … systematic review` (Dhahbi 2018) | drop | %BW, แรงสูงสุด, moment ศอก, แรงกระแทกของ 46 แบบ (ความกว้าง/การหมุนมือ, ความสูง, เข่า, ความเร็ว, plyometric) · กลุ่ม "depth/ROM" หมายถึงตำแหน่งมือ ไม่ใช่ความลึก · ท่าที่ถูกเป็น protocol ในตาราง · ประโยคที่ตรงกฎมีแค่ ~2 ประโยค (หลังล่างคงท่า, แรงมากขึ้นเมื่อศอกงอ ซึ่ง u071 มีแล้ว) แลกกับ 41 หน้า (~19 window) |
+
+**ไม่ใช่เอกสารใหม่ (ไม่ใส่ใน prefilter):** — 2 ไฟล์ที่ซ้ำ user ให้ลบแล้ว (2026-10-19)
+- `lunge/Effects_of_Loading_Positions_…_Tra.pdf` — **ไบต์เหมือนกันทุกไบต์** กับฉบับที่ curate แล้วในรอบ 2a (ตอนนี้อยู่ `data/picked/lunge/`)
+- `lunge/Altered Knee and Ankle Kinematics During Squatting … Lunge …` — Dill 2014 เป็นสำเนาที่ 3 ของบทความเดียวกับ `squat/Altered_Knee_and_Ankle_Kinemat.pdf` (u081, ฉบับที่ 2 user ลบไปแล้วใน §4) · เป็นงานสควอท คำว่า lunge เป็นแค่ชื่อการทดสอบข้อเท้า
+- `push-up/push-up weakness pectoralis triceps … - Google Scholar.html` (+ โฟลเดอร์ `_files`) — หน้าผลค้นหา ไม่ใช่เอกสาร · ส่วนใหญ่เรื่องสะบัก/การฟื้นฟูนักกีฬาขว้าง (ไม่ใช่กฎ) · รายการที่อาจตามต่อ: Bell 2018 "Muscular Fatigue Influences Motor Synergies During Push-ups" (ถ้าพูดถึงการเสียท่าแพลงก์เมื่อล้า จะเข้า `hip_sag_or_pike`) · curator ไม่อ่าน `.html` จึงไม่กระทบการรัน
+
+**หมายเหตุ URL BOXROX — ติด 2 เรื่องถ้าจะ curate:**
+1. `trafilatura.fetch_url` (ที่ curator ใช้) ได้หน้าว่าง เว็บต้องการ User-Agent แบบเบราว์เซอร์ (ดึงด้วย curl + UA ได้ 11k ตัวอักษร)
+2. `push-up/urls.txt` มีผล curate แล้ว (`curated_data_v6/push-up/urls_curated_detailed.json`) curator จึงข้ามทั้งไฟล์
+→ ทางที่ไม่ต้องแก้ curator: บันทึกเนื้อหาบทความเป็น `.txt` ใน `data/push-up/` (curator อ่าน `.txt` ด้วย TextLoader) แล้วใส่ไฟล์นั้นใน batch รอบถัดไป
+
+**ผลต่อ data gap:** ทั้ง 2 ตัวที่ keep เป็นของ push-up · BOXROX เป็นแหล่งเดียวในรอบนี้ที่น่าจะให้ `partial_pushup` ระดับ mistake · ไม่มีเอกสารใหม่ที่ช่วย `straight_back_leg` หรือ `shallow_lunge`
+
+### 7.1 รอบที่ 2 วันเดียวกัน (2026-10-19)
+
+เพิ่ม 2 entry (รวม 109) · ทั้งคู่เป็น lunge และ **keep** · ไม่ช่วยกฎที่ขาด (ขาหลังมีแค่ protocol "เข่าหลังเกือบแตะพื้น")
+
+| ไฟล์ | ผล | เหตุผลสั้น ๆ |
+|---|---|---|
+| `lunge/Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf` (Escamilla 2022, JAB) | **keep** | ก้าวสั้น → เข่าหน้าเลยปลายเท้าตั้งแต่ ~60° → แรง/ความเค้นที่ข้อต่อสะบ้าสูงขึ้นช่วงงอลึก · ผู้เขียนสรุปว่าเข่าเลยปลายเท้า "อาจเป็นอันตรายและควรเลี่ยง" → ตรง card `excessive_front_knee_flexion` (ก้าวสั้น + แรงที่เข่า) · ระวัง: ลำดับฟื้นฟู PFPS เริ่มจาก "mini lunge" 0–40° อาจถูกติด `shallow_lunge` (บริบทฟื้นฟู และจบที่ลงเต็ม) · ไม่ใช่ฉบับเดียวกับ Escamilla2022 IJSPT ใน `front_knee_too_deep/` |
+| `lunge/Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf` (Gao 2023) | **keep** | เมื่อล้า เข่าหน้างอมากขึ้นและเคลื่อนไปหน้า ลำตัวโยก/โน้มไปหน้าเพราะคุมลำตัวยาก → ระดับ **สาเหตุ** ของ `excessive_front_knee_flexion` และ `forward_trunk_lean` · เรื่องลำตัวอ้างจากงานอื่น (ไม่ได้วัดเอง) · ภาษาอังกฤษผิดบางจุด |
+| `lunge/THE UNDERVALUED LUNGE.pdf` | ซ้ำ → **ลบแล้ว** | ไบต์เหมือน `ptq-4.4.9-the-undervalued-lunge.pdf` ที่ curate แล้ว |
+
+**ย้ายไฟล์ที่ตรวจแล้วไป `data/checked/` (user ขอ):** ทุกไฟล์ที่มี entry ใน prefilter แต่ยังไม่ curate + `push-up/urls.txt` (เหลือแค่ URL BOXROX) + หน้า Google Scholar · ดูโครงโฟลเดอร์ใน [t3_curation_status.md §0](t3_curation_status.md)

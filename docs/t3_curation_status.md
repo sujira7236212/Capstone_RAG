@@ -5,7 +5,9 @@
 
 ## 0. เริ่มต่อจากตรงนี้
 
-1. ทำ §8.1 ต่อจากข้อ 7 (prompt → generate) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อ/ย้ายไฟล์ใน `data/` เพราะ path คือ id)
+1. ทำ §8.1 ต่อจากข้อ 7 (prompt → generate) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อไฟล์ใน `data/` เพราะ path คือ id)
+   · **2026-10-19 (user ขอ):** ย้ายไฟล์ที่ curate แล้ว (ทุกไฟล์ใน batch `trial`/`round1`/`round2a`, 36 หน่วย) ไป `data/picked/<ท่า>/…` โครงโฟลเดอร์เดิม · **id ยังเป็น path เดิม** `data/<ท่า>/…` (อยู่ใน `source` ของ curated JSON, KB v6, `split_v6.json`, `prefilter_v6.json`, `curation_batches_v6.json` — ไม่ได้แก้) · ไฟล์จริง = `data/picked/` + id ที่ตัด `data/` ออก · batch เก่ารันซ้ำไม่ได้แล้ว (curator หยุดเพราะหาไฟล์ไม่เจอ ไม่ curate ซ้ำ) · curator ข้าม `data/picked/` เสมอ · `push-up/urls.txt` แยก: 6 URL ที่ curate แล้วอยู่ `data/picked/push-up/urls.txt`, URL ใหม่ (BOXROX) อยู่ที่เดิม · เอกสารใหม่รอบนี้: [`prefilter_v6_review.md` §7](prefilter_v6_review.md)
+   · **โครง `data/` (2026-10-19):** `data/<ท่า>/` = ไฟล์ใหม่ที่ยังไม่ตรวจ · `data/checked/<ท่า>/` = ตรวจ prefilter แล้วแต่ยังไม่ curate (keep รอ batch + drop) · `data/picked/<ท่า>/` = curate แล้ว · **id ของทุกไฟล์คือ `data/<ท่า>/…` เสมอ** ไม่ว่าไฟล์จะอยู่โฟลเดอร์ไหน · curator: `checked/` โปร่งใส (อ่านไฟล์จากนั้นแต่ใช้ id เดิมทั้ง skip-list, batch, ที่เก็บผล, `source`) · `picked/` ข้ามเสมอ · ตรวจไฟล์ใหม่เสร็จ → เพิ่ม entry ใน `prefilter_v6.json` แล้วย้ายไป `checked/` · curate เสร็จ → ย้ายจาก `checked/` ไป `picked/`
 2. ~~รันรอบ 2a~~ เสร็จแล้ว
 3. หลังรันทุกรอบ: `python data_pipeline/tag_coverage.py curated_data_v6` → ดูกฎที่ยังต่ำกว่าเกณฑ์ (§4) · เช็ค log หา `FOLDER MISMATCH` (§6.1)
 4. ครบทุกรอบแล้ว: commit `curated_data_v6/` + `data_pipeline/curation_usage_v6.jsonl` → T5 ingest → E5 split → mock 12 กฎ + clean → generate
@@ -126,6 +128,24 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 - **straight_back_leg:** เอกสารพูดถึงขาหลัง 51 item แต่เป็นเรื่องแรงหรือภาระของขาหลัง ไม่มีเอกสารไหนบรรยาย "ขาหลังเหยียดตรง" ว่าเป็นท่าผิด → curator ไม่ติด tag ตาม card ซึ่งถูกต้อง · ใน `data/` ไม่มีเอกสารเหลือที่น่าจะเติมได้ (`lunge/front_knee_too_shallow/` และ `push-up/elbow_depth/` เป็นโฟลเดอร์ว่าง) → **data gap**
 - **partial_pushup / shallow_lunge:** ได้เพิ่มเล็กน้อย ยังขาด mistake/consequence → data gap เหมือนกัน เว้นแต่ user จะหาเอกสารใหม่ (ต้องผ่าน prefilter ก่อน)
 - รายการ §8.2 (22 ไฟล์) เลือกมาเพื่อ coverage ทั่วไป ไม่ได้เล็ง 3 กฎนี้ · ถ้ารันก็ไม่น่าช่วย 3 กฎนี้มาก
+
+### 5.2 รอบ 3 ✅ รันแล้ว 2026-10-19 (user สั่ง · 39 call · $0.67)
+
+เอกสารที่ user หามาใหม่และผ่าน prefilter ([`prefilter_v6_review.md` §7–7.1](prefilter_v6_review.md)) · batch `round3` · usage log แถว 407–445 · FOLDER MISMATCH 0 · `finish_reason` STOP ทุกครั้ง
+
+> ⚠️ **`model_version` = `gemini-3.6-flash` ทุก call** (รอบ trial/1/2a = `gemini-3.5-flash`) · โค้ดยังขอชื่อ `gemini-3.5-flash` เหมือนเดิม แต่ฝั่ง Google ส่งรุ่น 3.6 มาให้ → ตาม §8.3 นับเป็น "เปลี่ยน curator" · **user ยืนยัน 2026-10-20:** Google เลิกให้บริการ 3.5 แล้ว รุ่นต่ำสุดที่เรียกได้คือ `gemini-3.6-flash` → ทางเลือกเดิม (ค) "ระบุรุ่น 3.5 ตายตัวแล้ว curate รอบ 3 ใหม่" ทำไม่ได้ · **ยังรอ user ตัดสิน:** (ก) เก็บไว้และเขียนลงรายงาน (ข) curate รอบเก่าใหม่ทั้งหมดด้วย 3.6 (~$8.4 ตามค่ารอบเดิม)
+
+| ไฟล์ (id) | accept | tag ที่ได้ |
+|---|---|---|
+| `lunge/Biomechanical effects of exercise fatigue …` (Gao 2023) | 7/14 | forward_trunk_lean 9 · excessive_front_knee_flexion 5 · straight_back_leg principle 1 (จาก protocol) |
+| `lunge/Patellofemoral Joint Loading … Step Length …` (Escamilla 2022 JAB) | 8/13 | forward_trunk_lean 4 · excessive 2 · shallow_lunge principle 1 ("งอเข่าหน้า ~100°") · straight_back_leg principle 1 (จาก protocol) |
+| `push-up/Biomechanical evaluation … starting points` (Topalidou 2012) | 6/9 | hip_sag_or_pike 4 · partial_pushup principle 1 |
+| `push-up/BOXROX_PushUpBenchmarks.txt` | 2/3 | hip_sag_or_pike 5 · partial_pushup mistake 1 + principle 1 |
+
+coverage ที่เปลี่ยน (ก่อน → หลัง, mistake/consequence/principle/finding): hip_sag_or_pike 10/8/20/3 → 13/10/24/3 · partial_pushup 2/1/5/2 → 3/1/7/2 · shallow_lunge 3/1/9/7 → 3/1/10/7 · excessive 8/11/9/19 → 9/13/10/22 · forward_trunk_lean 17/18/20/15 → 20/21/23/19 · straight_back_leg 0/0/4/0 → 0/0/6/0 (principle ผ่านเกณฑ์แล้ว)
+- ยังต่ำกว่าเกณฑ์: `partial_pushup`, `shallow_lunge`, `straight_back_leg` — ขาด mistake และ consequence ทั้งสามกฎ
+- ต้องตามดู: Escamilla "แรงที่ข้อต่อสะบ้าเพิ่มขึ้นตามมุมเข่าจนถึง ~80–90°" ติด tag `excessive_front_knee_flexion` → generator อาจเอาไปบอกว่าลงถึง 90° ไม่ดี (แบบเดียวกับ §6.2) · ข้อค้นพบหลักเรื่อง "ก้าวสั้น → เข่าเลยปลายเท้า" ไม่ได้ติด tag
+- ไฟล์ต้นฉบับย้ายจาก `data/checked/` ไป `data/picked/` แล้ว · **ยังไม่ ingest** (ทำตาม §8.3: `kb_gemini_curated_v6b` + `make_split.py --round v6b`)
 
 ## 6. สิ่งที่เจอและต้องตามดู
 

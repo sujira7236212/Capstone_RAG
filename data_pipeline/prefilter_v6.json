@@ -834,6 +834,71 @@
    "read": "full page (rule-named subfolder)",
    "reviewer": "claude",
    "date": "2026-10-02"
+  },
+  {
+   "path": "data/lunge/Biomechanical Analyses of Bodyweight Unilateral Lower Limb Exercise Tasks - Comparison of Common Squatting and Lunging Movements.pdf",
+   "decision": "drop",
+   "reason": "ProQuest PREVIEW of a 2018 MSc thesis (Chapman): the file stops on thesis page 8, inside the literature review - no methods, results or discussion. The topic is net joint moments compared across single-leg squat, split squat, forward/backward lunge; the only form content is one review sentence defining the lunge bottom (back knee near the floor and/or front knee about 90 degrees), already covered by kept sources.",
+   "read": "full text (19 PDF pages, preview only)",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "path": "data/lunge/Knee joint biomechanics during lunges at different tibial angles and external loads  a musculoskeletal analysis with finite element insights.pdf",
+   "decision": "drop",
+   "reason": "Gao 2026: the variable is the front tibia angle (60 vs 90 degrees, i.e. how far the knee travels forward) and a 98 N load; outcome is knee moments, stiffness and finite-element meniscus stress from one subject's model. Tibial angle is not one of the rules. The paper labels 60 degrees 'deeper' and 90 degrees 'shallow', yet its conclusion says 'deep, loaded lunges' stress the meniscus from the 90-degree condition - curated items would carry that contradiction and read as advice against lunging to 90 degrees (shallow_lunge), the same risk that dropped u082.",
+   "read": "abstract, methods (procedure), discussion, limitations, conclusion",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "path": "data/push-up/Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf",
+   "decision": "keep",
+   "reason": "Topalidou 2012: mainly EMG and vertical force across hand positions, but the introduction states the standard push-up from the literature (body straight from shoulder to knee, lower to about 90 degrees of elbow flexion, chest as close to the ground as possible) and the study measures trunk inclination, concluding that a correct body position prevents damaging trunk inclination. Principle-level content for partial_pushup and hip_sag_or_pike; no mistake or consequence. Unsure - kept. Text extraction is noisy (hyphens come out as 'T') and the paper swaps concentric/eccentric in one sentence.",
+   "read": "abstract, introduction, method, results/discussion keyword skim",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "path": "data/push-up/Kinetic analysis of push-up exercises  a systematic review with practical recommendations.pdf",
+   "decision": "drop",
+   "reason": "Dhahbi 2018 systematic review: % body weight supported, peak force, elbow moments and impact forces for 46 push-up variants (hand width/rotation/height, knees, speed, plyometric, suspension). The 'depth/ROM' group means hand placement, not push-up depth. Form statements are study protocols in tables (curator must not use those); the only rule-related lines are one sentence that proper push-ups keep a standard lumbar posture and that load is higher with elbows flexed than extended, which the kept u071 already covers. 41 pages for about 2 usable sentences.",
+   "read": "abstract, results, discussion, conclusion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "url": "https://www.boxrox.com/3-push-up-benchmarks-every-man-30-should-be-able-to-complete/",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "BOXROX article on push-up test benchmarks. Mostly programming, but its 'strict rep standard' says not to count partial repetitions, lower until the chest is close to the floor, keep a straight line without hips sagging or rising, and that the abs and glutes must stop the lower back extending as fatigue rises - mistake-level content for partial_pushup and hip_sag_or_pike, the two thin push-up rules. Lower-authority source (magazine). Not curatable as is: trafilatura.fetch_url returns nothing (site needs a browser User-Agent), and push-up/urls.txt already has curated output so the curator skips the list.",
+   "read": "full article (fetched with a browser User-Agent)",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "path": "data/lunge/Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf",
+   "decision": "keep",
+   "reason": "Gao 2023 (Front Physiol): forward-lunge kinematics/kinetics before vs after a fatigue protocol. The discussion gives causes: after fatigue the front knee flexes further and travels forward (citing knee-past-toes loading), and the trunk sways/leans forward as it becomes hard to hold - cause-level content for excessive_front_knee_flexion and forward_trunk_lean. Trunk statements are argued from cited studies (trunk was not measured) and the English is rough in places ('lungs', 'bow steps'). Back-leg content is protocol only.",
+   "read": "abstract, discussion, conclusion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "path": "data/lunge/Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf",
+   "decision": "keep",
+   "reason": "Escamilla 2022 (J Appl Biomech; not the IJSPT forward/side lunge paper already in front_knee_too_deep/): a short step makes the lead knee travel past the toes from about 60 degrees of knee flexion and gives higher patellofemoral force/stress at deep knee angles; authors say knee translation past the toes may be harmful and should be avoided. Matches the excessive_front_knee_flexion card ('a step that is too short ... forces the front knee to fold sharply'; extra knee load). Caution: its PFPS rehab progression starts with 'mini' lunges (0-40 degrees) - rehab context, ends at full depth, but the curator could tag it shallow_lunge.",
+   "read": "abstract, introduction, discussion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-19"
+  },
+  {
+   "path": "data/push-up/BOXROX_PushUpBenchmarks.txt",
+   "decision": "keep",
+   "reason": "Main text of https://www.boxrox.com/3-push-up-benchmarks-every-man-30-should-be-able-to-complete/ (kept 2026-10-19, see the URL entry), saved with the curator's trafilatura settings because trafilatura.fetch_url gets an empty page from this site and push-up/urls.txt already has curated output.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-19"
   }
  ]
 }

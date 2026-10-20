@@ -52,6 +52,15 @@
     "data/bicep-curl/The interplay between muscle length, range of motion, and exercise selection a review.pdf",
     "data/bicep-curl/The Effect of Varying Weightload Intensities on Biceps Curl Techn.pdf"
    ]
+  },
+  "round3": {
+   "note": "2026-10-19 (user approved): the four keeps from the prefilter review of newly found sources (docs/prefilter_v6_review.md 7, 7.1) - chosen by the prefilter, not from eval results. They live under data/checked/; the curator maps them back to their data/<exercise>/ id. BOXROX is the article text saved as .txt (the curator cannot fetch that site).",
+   "files": [
+    "data/push-up/Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf",
+    "data/push-up/BOXROX_PushUpBenchmarks.txt",
+    "data/lunge/Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf",
+    "data/lunge/Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf"
+   ]
   }
  }
 }
