@@ -1,0 +1,188 @@
+{
+ "report": "compare_result_v14_bicep-curl.md",
+ "mock": "mock_data/mock_sessions_bicep-curl.json",
+ "collection": "kb_gemini_curated_v6",
+ "raw_query": false,
+ "llm": "gemini-3.5-flash-lite",
+ "temperature": 0.7,
+ "samples": 3,
+ "system_prompt_sha1": "bd4b464157381df74fed3805f0b36ca8b8177437",
+ "retrieval": {
+  "TAG_MODE": "prefer",
+  "KIND_POOL": "split",
+  "QUERIES": "profile",
+  "HYBRID": false,
+  "RERANK": false
+ },
+ "source": "compare_output/compare_result_v14_bicep-curl.json | Bicep Curl — elbow_flare | sample 1",
+ "sessions": [
+  {
+   "label": "Bicep Curl — elbow_flare",
+   "exercise_id": "bicep-curl",
+   "payload": {
+    "session_id": "BC-20261003-001",
+    "exercise_id": "bicep-curl",
+    "name": "Bicep Curl",
+    "date": "2026-10-03",
+    "historical_comparison": {
+     "previous_session_date": "2026-10-02",
+     "previous_overall_score": 74,
+     "previous_correct_reps": 6,
+     "previous_incorrect_reps": 4,
+     "previous_common_errors": [
+      "elbow_flare"
+     ]
+    },
+    "summary": {
+     "total_reps": 10,
+     "correct_reps": 6,
+     "incorrect_reps": 4,
+     "overall_score": 77
+    },
+    "reps_detail": [
+     {
+      "rep_no": 1,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 92
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 2,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 90
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 3,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 63
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 4,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 89
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 5,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 88
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 6,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 61
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 7,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 86
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 8,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 59
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     },
+     {
+      "rep_no": 9,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 85
+      },
+      "errors": []
+     },
+     {
+      "rep_no": 10,
+      "status": "completed",
+      "similarity_scores_percent": {
+       "overall": 56
+      },
+      "errors": [
+       {
+        "error_type": "elbow_flare"
+       }
+      ]
+     }
+    ]
+   },
+   "context": "[mistake | re: elbow_flare | source: www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl]\nMoving the elbows forward during the upward phase of the standard curl.\n\n[consequence | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nIntroducing excessive shoulder flexion under fatigue makes the bicep curl movement unstable and inconsistent.\n\n[consequence | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing the upper arms to move reduces biceps activation during the curl.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nExtending the shoulder joint during the initial phase of the curl, causing the elbows to drift behind the body as a compensatory adjustment to overcome inertia.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing excessive movement at the shoulder joint during the curl, which shifts work away from the target muscles.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position, avoiding excessive shoulder elevation or shoulder flexion-extension during the bicep curl.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nUnder fatigue, shoulder flexion increased by approximately 20 degrees at around 20% of the bicep curl cycle.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMore pronounced movement is captured on the shoulder joint during the fatigue stage of a bicep curl compared to the standard stage.",
+   "metrics": [
+    {
+     "error": "elbow_flare",
+     "kind": "mistake",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.0871162958671724,
+     "kept": 3,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "finding",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.20881786451552686,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "consequence",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.1042221374908916,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    },
+    {
+     "error": "elbow_flare",
+     "kind": "principle",
+     "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+     "best": 0.11072724397614697,
+     "kept": 2,
+     "tagged": true,
+     "tag_exclusive": true
+    }
+   ],
+   "rag": [
+    "### Progress Tracking\n\nSolid effort today. Your overall score ticked up to 77 from 74 in your last session, and you matched your previous count with 6 clean reps out of 10. The same persistent issue—letting your elbows drift—showed up again, hanging around in your later reps (reps 3, 6, 8, and 10) as fatigue set in. \n\n***\n\n### Error Breakdown\n\n* **What it is:** Your elbows are creeping forward and swinging out of position as you curl the weight up, rather than staying locked by your sides.\n* **Why it matters:** When your shoulders start moving and your elbows drift, the work shifts away from your biceps and onto your front shoulders, making the whole movement unstable. Data shows your shoulder joint starts wandering by roughly 20 degrees early in the lift when fatigue kicks in. That means less actual muscle growth for the exact same amount of effort.\n* **How to fix it:**\n  * *(a) Cue:* Imagine your elbows are pinned to a wall or sliding up and down inside an imaginary vertical track.\n  * *(b) Setup:* Lighten the weight slightly or stop your set two reps earlier before form starts to crack under fatigue.\n  * *(c) Drill:* Try seated bicep curls with your back firmly against a pad to physically block your shoulders from creeping forward.\n  * *(d) Self-Check:* Watch yourself in the mirror and make sure your upper arm bone stays pointing straight down to the floor from the first inch of the lift to the last.\n\n***\n\n### Next Session Plan\n\n1. **Drop the weight slightly:** Give yourself enough breathing room to complete all 10 reps with zero elbow movement, especially when you hit the fatigue zone in the second half of the set.\n2. **Cut sets short:** If you feel your elbows start to shoot forward—like they did on reps 3, 6, 8, and 10—rack the weight right then instead of fighting through sloppy form."
+   ],
+   "no_rag": [
+    "### Progress Tracking\nGood effort out there today! You matched your previous session with 6 correct reps, and your overall score ticked up slightly from 74 to 77. That said, you still ran into the exact same issue as last time: your elbows drifting out to the sides on reps 3, 6, 8, and 10. Notice how those errors popped up in the second half of the set? That's classic fatigue creeping in, causing your form to leak as the weight starts feeling heavy.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** As you curl the weight up, your elbows creep forward and drift away from your torso instead of staying locked by your sides.\n*   **Why it matters:** When your elbows wander, your front shoulders and upper back end up hijacking the movement to help lift the weight. This takes the load off your biceps—the exact muscle you came to grow—meaning you get less arm development for the same amount of effort, while your shoulder joints take on stress they shouldn't be handling.\n*   **How to fix it:** \n    *   *(a) Cue:* Imagine you have a pair of rolled-up towels squeezed tightly under your armpits, and keep them pinned there from start to finish.\n    *   *(b) Setup change:* Drop the weight slightly on your next set so you can keep strict control over your upper arm position without grinding.\n    *   *(c) Drill:* Try performing your curls with your back and glutes pressed flat against a wall; if your elbows drift forward, they'll bump the wall immediately.\n    *   *(d) Self-check:* Glance in the mirror or record a side-profile video—your upper arms should remain completely vertical and glued to your ribs the entire time.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Give yourself a bit more room to breathe so you can maintain strict elbow control all the way through the final reps.\n2. **Watch the back half of the set:** Since your form started breaking down around rep 3 and 6, focus extra hard on keeping your upper arms pinned when fatigue hits.\n3. **Use the wall check:** Spend your warm-up sets doing a few reps against a wall to lock in that elbow position before you touch your working weight."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "response_1": "no_rag",
+ "response_2": "rag",
+ "order_rule": "random.Random('0|Bicep Curl — elbow_flare|1').random() < 0.5 -> RAG first (judge_pairwise seed 0)",
+ "source": "compare_output/compare_result_v14_bicep-curl.json | Bicep Curl — elbow_flare | sample 1",
+ "reference_notes": "none"
+}

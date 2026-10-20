@@ -1,0 +1,125 @@
+{
+ "session": {
+  "session_id": "BC-20261003-001",
+  "exercise_id": "bicep-curl",
+  "name": "Bicep Curl",
+  "date": "2026-10-03",
+  "historical_comparison": {
+   "previous_session_date": "2026-10-02",
+   "previous_overall_score": 74,
+   "previous_correct_reps": 6,
+   "previous_incorrect_reps": 4,
+   "previous_common_errors": [
+    "elbow_flare"
+   ]
+  },
+  "summary": {
+   "total_reps": 10,
+   "correct_reps": 6,
+   "incorrect_reps": 4,
+   "overall_score": 77
+  },
+  "reps_detail": [
+   {
+    "rep_no": 1,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 92
+    },
+    "errors": []
+   },
+   {
+    "rep_no": 2,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 90
+    },
+    "errors": []
+   },
+   {
+    "rep_no": 3,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 63
+    },
+    "errors": [
+     {
+      "error_type": "elbow_flare"
+     }
+    ]
+   },
+   {
+    "rep_no": 4,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 89
+    },
+    "errors": []
+   },
+   {
+    "rep_no": 5,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 88
+    },
+    "errors": []
+   },
+   {
+    "rep_no": 6,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 61
+    },
+    "errors": [
+     {
+      "error_type": "elbow_flare"
+     }
+    ]
+   },
+   {
+    "rep_no": 7,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 86
+    },
+    "errors": []
+   },
+   {
+    "rep_no": 8,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 59
+    },
+    "errors": [
+     {
+      "error_type": "elbow_flare"
+     }
+    ]
+   },
+   {
+    "rep_no": 9,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 85
+    },
+    "errors": []
+   },
+   {
+    "rep_no": 10,
+    "status": "completed",
+    "similarity_scores_percent": {
+     "overall": 56
+    },
+    "errors": [
+     {
+      "error_type": "elbow_flare"
+     }
+    ]
+   }
+  ]
+ },
+ "response_1": "### Progress Tracking\nGood effort out there today! You matched your previous session with 6 correct reps, and your overall score ticked up slightly from 74 to 77. That said, you still ran into the exact same issue as last time: your elbows drifting out to the sides on reps 3, 6, 8, and 10. Notice how those errors popped up in the second half of the set? That's classic fatigue creeping in, causing your form to leak as the weight starts feeling heavy.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** As you curl the weight up, your elbows creep forward and drift away from your torso instead of staying locked by your sides.\n*   **Why it matters:** When your elbows wander, your front shoulders and upper back end up hijacking the movement to help lift the weight. This takes the load off your biceps—the exact muscle you came to grow—meaning you get less arm development for the same amount of effort, while your shoulder joints take on stress they shouldn't be handling.\n*   **How to fix it:** \n    *   *(a) Cue:* Imagine you have a pair of rolled-up towels squeezed tightly under your armpits, and keep them pinned there from start to finish.\n    *   *(b) Setup change:* Drop the weight slightly on your next set so you can keep strict control over your upper arm position without grinding.\n    *   *(c) Drill:* Try performing your curls with your back and glutes pressed flat against a wall; if your elbows drift forward, they'll bump the wall immediately.\n    *   *(d) Self-check:* Glance in the mirror or record a side-profile video—your upper arms should remain completely vertical and glued to your ribs the entire time.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Give yourself a bit more room to breathe so you can maintain strict elbow control all the way through the final reps.\n2. **Watch the back half of the set:** Since your form started breaking down around rep 3 and 6, focus extra hard on keeping your upper arms pinned when fatigue hits.\n3. **Use the wall check:** Spend your warm-up sets doing a few reps against a wall to lock in that elbow position before you touch your working weight.",
+ "response_2": "### Progress Tracking\n\nSolid effort today. Your overall score ticked up to 77 from 74 in your last session, and you matched your previous count with 6 clean reps out of 10. The same persistent issue—letting your elbows drift—showed up again, hanging around in your later reps (reps 3, 6, 8, and 10) as fatigue set in. \n\n***\n\n### Error Breakdown\n\n* **What it is:** Your elbows are creeping forward and swinging out of position as you curl the weight up, rather than staying locked by your sides.\n* **Why it matters:** When your shoulders start moving and your elbows drift, the work shifts away from your biceps and onto your front shoulders, making the whole movement unstable. Data shows your shoulder joint starts wandering by roughly 20 degrees early in the lift when fatigue kicks in. That means less actual muscle growth for the exact same amount of effort.\n* **How to fix it:**\n  * *(a) Cue:* Imagine your elbows are pinned to a wall or sliding up and down inside an imaginary vertical track.\n  * *(b) Setup:* Lighten the weight slightly or stop your set two reps earlier before form starts to crack under fatigue.\n  * *(c) Drill:* Try seated bicep curls with your back firmly against a pad to physically block your shoulders from creeping forward.\n  * *(d) Self-Check:* Watch yourself in the mirror and make sure your upper arm bone stays pointing straight down to the floor from the first inch of the lift to the last.\n\n***\n\n### Next Session Plan\n\n1. **Drop the weight slightly:** Give yourself enough breathing room to complete all 10 reps with zero elbow movement, especially when you hit the fatigue zone in the second half of the set.\n2. **Cut sets short:** If you feel your elbows start to shoot forward—like they did on reps 3, 6, 8, and 10—rack the weight right then instead of fighting through sloppy form.",
+ "judge_prompt_version": 1,
+ "judge_prompt": "You are a senior strength and conditioning coach reviewing written feedback that an AI\ncoach produced for one gym session. The reader of the feedback is an everyday gym-goer, not a\nclinician or a researcher. Two feedback reports were written for the SAME session data. Compare them.\n\nSession data (JSON) - the reps, errors and scores both reports were given:\n{\n  \"session_id\": \"BC-20261003-001\",\n  \"exercise_id\": \"bicep-curl\",\n  \"name\": \"Bicep Curl\",\n  \"date\": \"2026-10-03\",\n  \"historical_comparison\": {\n    \"previous_session_date\": \"2026-10-02\",\n    \"previous_overall_score\": 74,\n    \"previous_correct_reps\": 6,\n    \"previous_incorrect_reps\": 4,\n    \"previous_common_errors\": [\n      \"elbow_flare\"\n    ]\n  },\n  \"summary\": {\n    \"total_reps\": 10,\n    \"correct_reps\": 6,\n    \"incorrect_reps\": 4,\n    \"overall_score\": 77\n  },\n  \"reps_detail\": [\n    {\n      \"rep_no\": 1,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 92\n      },\n      \"errors\": []\n    },\n    {\n      \"rep_no\": 2,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 90\n      },\n      \"errors\": []\n    },\n    {\n      \"rep_no\": 3,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 63\n      },\n      \"errors\": [\n        {\n          \"error_type\": \"elbow_flare\"\n        }\n      ]\n    },\n    {\n      \"rep_no\": 4,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 89\n      },\n      \"errors\": []\n    },\n    {\n      \"rep_no\": 5,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 88\n      },\n      \"errors\": []\n    },\n    {\n      \"rep_no\": 6,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 61\n      },\n      \"errors\": [\n        {\n          \"error_type\": \"elbow_flare\"\n        }\n      ]\n    },\n    {\n      \"rep_no\": 7,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 86\n      },\n      \"errors\": []\n    },\n    {\n      \"rep_no\": 8,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 59\n      },\n      \"errors\": [\n        {\n          \"error_type\": \"elbow_flare\"\n        }\n      ]\n    },\n    {\n      \"rep_no\": 9,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 85\n      },\n      \"errors\": []\n    },\n    {\n      \"rep_no\": 10,\n      \"status\": \"completed\",\n      \"similarity_scores_percent\": {\n        \"overall\": 56\n      },\n      \"errors\": [\n        {\n          \"error_type\": \"elbow_flare\"\n        }\n      ]\n    }\n  ]\n}\n\n<response_1>\n### Progress Tracking\nGood effort out there today! You matched your previous session with 6 correct reps, and your overall score ticked up slightly from 74 to 77. That said, you still ran into the exact same issue as last time: your elbows drifting out to the sides on reps 3, 6, 8, and 10. Notice how those errors popped up in the second half of the set? That's classic fatigue creeping in, causing your form to leak as the weight starts feeling heavy.\n\n### Error Breakdown\n\n*   **What it is, in plain words:** As you curl the weight up, your elbows creep forward and drift away from your torso instead of staying locked by your sides.\n*   **Why it matters:** When your elbows wander, your front shoulders and upper back end up hijacking the movement to help lift the weight. This takes the load off your biceps—the exact muscle you came to grow—meaning you get less arm development for the same amount of effort, while your shoulder joints take on stress they shouldn't be handling.\n*   **How to fix it:** \n    *   *(a) Cue:* Imagine you have a pair of rolled-up towels squeezed tightly under your armpits, and keep them pinned there from start to finish.\n    *   *(b) Setup change:* Drop the weight slightly on your next set so you can keep strict control over your upper arm position without grinding.\n    *   *(c) Drill:* Try performing your curls with your back and glutes pressed flat against a wall; if your elbows drift forward, they'll bump the wall immediately.\n    *   *(d) Self-check:* Glance in the mirror or record a side-profile video—your upper arms should remain completely vertical and glued to your ribs the entire time.\n\n### Next Session Plan\n1. **Drop the weight slightly:** Give yourself a bit more room to breathe so you can maintain strict elbow control all the way through the final reps.\n2. **Watch the back half of the set:** Since your form started breaking down around rep 3 and 6, focus extra hard on keeping your upper arms pinned when fatigue hits.\n3. **Use the wall check:** Spend your warm-up sets doing a few reps against a wall to lock in that elbow position before you touch your working weight.\n</response_1>\n\n<response_2>\n### Progress Tracking\n\nSolid effort today. Your overall score ticked up to 77 from 74 in your last session, and you matched your previous count with 6 clean reps out of 10. The same persistent issue—letting your elbows drift—showed up again, hanging around in your later reps (reps 3, 6, 8, and 10) as fatigue set in. \n\n***\n\n### Error Breakdown\n\n* **What it is:** Your elbows are creeping forward and swinging out of position as you curl the weight up, rather than staying locked by your sides.\n* **Why it matters:** When your shoulders start moving and your elbows drift, the work shifts away from your biceps and onto your front shoulders, making the whole movement unstable. Data shows your shoulder joint starts wandering by roughly 20 degrees early in the lift when fatigue kicks in. That means less actual muscle growth for the exact same amount of effort.\n* **How to fix it:**\n  * *(a) Cue:* Imagine your elbows are pinned to a wall or sliding up and down inside an imaginary vertical track.\n  * *(b) Setup:* Lighten the weight slightly or stop your set two reps earlier before form starts to crack under fatigue.\n  * *(c) Drill:* Try seated bicep curls with your back firmly against a pad to physically block your shoulders from creeping forward.\n  * *(d) Self-Check:* Watch yourself in the mirror and make sure your upper arm bone stays pointing straight down to the floor from the first inch of the lift to the last.\n\n***\n\n### Next Session Plan\n\n1. **Drop the weight slightly:** Give yourself enough breathing room to complete all 10 reps with zero elbow movement, especially when you hit the fatigue zone in the second half of the set.\n2. **Cut sets short:** If you feel your elbows start to shoot forward—like they did on reps 3, 6, 8, and 10—rack the weight right then instead of fighting through sloppy form.\n</response_2>\n\nCompare the two on each criterion:\n- accuracy - interpretation correctness: each fault is described correctly for this exercise; rep\n  numbers, rep counts, scores and error names match the session data; the stated causes and\n  consequences are biomechanically correct; no advice that would make the fault worse; no number\n  or fact that looks invented or wrong.\n- comprehensiveness - inference depth: every fault in this session is covered; it explains why\n  the fault happens and why it matters to this lifter, not only what it is; it uses the rep detail\n  (which reps, which phase) and the comparison with the previous session.\n- professionalism - expert-level specificity: it reads like an experienced coach who knows this\n  particular fault - causes, cues and drills specific to it - rather than generic advice that\n  would fit any fault or any exercise.\n- feasibility - actionability of quantitative details: the lifter could act on it in the next\n  session - concrete cues, setup changes that name a variable, drills or regressions with sets,\n  reps, tempo, load or a range target, and a way to check it worked. Vague advice (\"focus on your\n  form\") and advice the reader cannot understand are not actionable.\n\nRules:\n- The order of the two responses is random. Do not favour a position.\n- Do not favour the longer response. Length counts only where it adds correct, usable content;\n  padding and repetition count against it.\n- If the session has no errors, the better response credits the clean session and plans how to\n  hold the standard; inventing a fault to fix is an accuracy error.\n- Use \"tie\" only when you genuinely cannot separate them on that criterion.\n- \"overall\": which report you would rather hand to this lifter.\n- Also score each response 1-5 on each criterion (1 poor, 3 adequate, 5 excellent).\n\nReturn JSON only:\n{\"accuracy\": {\"winner\": \"1\" | \"2\" | \"tie\", \"reason\": \"<max 25 words>\"},\n  \"comprehensiveness\": {...same...}, \"professionalism\": {...same...}, \"feasibility\": {...same...},\n  \"overall\": {\"winner\": \"1\" | \"2\" | \"tie\", \"reason\": \"<max 25 words>\"},\n  \"scores\": {\"1\": {\"accuracy\": <1-5>, \"comprehensiveness\": <1-5>, \"professionalism\": <1-5>, \"feasibility\": <1-5>},\n             \"2\": {...same...}}}"
+}
