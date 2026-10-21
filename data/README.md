@@ -12,13 +12,18 @@
 | โฟลเดอร์ | สถานะ | curator ทำอะไรกับมัน |
 |---|---|---|
 | `data/<ท่า>/…` | **ใหม่** ยังไม่ได้ตรวจ prefilter | อ่านและ curate ตามปกติ |
-| `data/checked/<ท่า>/…` | **checked** ตรวจ prefilter แล้ว (มี entry ใน `prefilter_v6.json`) แต่ยังไม่ได้ curate | อ่านได้ **แต่ใช้ id เดิม** `data/<ท่า>/…` (ดู §2) |
-| `data/picked/<ท่า>/…` | **picked** curate แล้ว ผลอยู่ใน `curated_data_v6/` | **ไม่อ่านเลย** ข้ามทั้งโฟลเดอร์ |
+| `data/checked/<ท่า>/…` | **checked** ตรวจแล้ว (มี entry ใน `prefilter_v6.json`) แต่ยังไม่ curate เพราะยังไม่แน่ใจว่าเกี่ยวข้องจริง หรือไม่คุ้มที่จะ curate | อ่านได้ **แต่ใช้ id เดิม** `data/<ท่า>/…` (ดู §2) |
+| `data/picked/<ท่า>/…` | **picked** ตัดสินใจแล้วว่าเกี่ยวและคุ้ม และ curate แล้ว ผลอยู่ใน `curated_data_v6/` | **ไม่อ่านเลย** ข้ามทั้งโฟลเดอร์ |
 
-- **checked** มีทั้งไฟล์ที่ผล prefilter เป็น `keep` (รอเข้า batch รอบถัดไป) และ `drop` (ตัดทิ้ง ไม่ curate)
-  ไฟล์ `drop` ยังอยู่ที่นี่เพื่อให้ตามไปดูเหตุผลใน `prefilter_v6.json` ได้ curator ข้ามให้เองเพราะอยู่ใน skip-list
+- **checked** เป็นที่พักไฟล์ที่ตรวจแล้วแต่ยังไม่ได้เลือก **ไม่ใช่คิวรอ curate** มี 2 แบบตามผล prefilter
+  - `drop` — ตรวจแล้วไม่มีเนื้อหาเรื่องท่าที่ใช้กับกฎไหนได้ curator ข้ามเพราะอยู่ใน skip-list
+    เก็บไฟล์ไว้เพื่อให้ตามไปดูเหตุผลใน `prefilter_v6.json` ได้
+  - `keep` — prefilter ไม่ได้ตัดทิ้ง (กติกา prefilter คือ "ไม่แน่ใจ = keep") แต่ยังไม่แน่ใจว่าเกี่ยวพอ
+    หรือคุ้มค่า API ที่จะ curate `keep` ตรงนี้จึงแปลว่า "ยังไม่ตัดทิ้ง" ไม่ได้แปลว่า "จะ curate"
 - **picked** คือไฟล์ที่ถูก "เลือก" เข้า KB แล้ว curator ข้ามโฟลเดอร์นี้เพราะถ้าเดินเข้าไป
   จะเข้าใจว่า `picked` เป็นชื่อท่า แล้ว curate ซ้ำ
+- **ต้องรัน curator ด้วย `--batch` เสมอ** curator อ่าน `checked/` ได้ ถ้ารันโดยไม่มี `--batch`
+  มันจะ curate ไฟล์ `keep` ใน `checked/` ทุกไฟล์ รวมทั้งไฟล์ที่ยังไม่ได้ตัดสินใจ
 
 ## 2. id ของไฟล์คือ `data/<ท่า>/…` เสมอ
 
@@ -37,8 +42,11 @@ KB อ้างถึงเอกสารด้วย path ตอนที่�
 
 1. วางไฟล์ไว้ที่ `data/<ท่า>/` หรือ `data/<ท่า>/<กฎ>/` (ดู §4)
 2. ตรวจ prefilter → เพิ่ม entry ใน `data_pipeline/prefilter_v6.json` (keep หรือ drop) + บันทึกใน `prefilter_v6_review.md`
-3. ย้ายไฟล์ไป `data/checked/` โดยคงโครงโฟลเดอร์เดิม
-4. ใส่ไฟล์ `keep` ลง batch ใน `curation_batches_v6.json` แล้วรัน curator (คำสั่งใน `t3_curation_status.md` §2)
+3. ย้ายไฟล์ไป `data/checked/` โดยคงโครงโฟลเดอร์เดิม (ทั้ง `keep` และ `drop`)
+4. เลือกจากไฟล์ `keep` ใน `checked/` เฉพาะที่ตัดสินใจแล้วว่าเกี่ยวและคุ้ม
+   (เลือกจาก `tag_coverage.py` ไม่ใช่จากผล eval ตาม `t3_curation_status.md` §1)
+   ใส่ลง batch ใน `curation_batches_v6.json` แล้วรัน curator ด้วย `--batch` (คำสั่งใน `t3_curation_status.md` §2)
+   ไฟล์ที่ยังไม่แน่ใจปล่อยไว้ใน `checked/` ได้เรื่อยๆ
 5. curate เสร็จ → ย้ายจาก `data/checked/` ไป `data/picked/` โดยคงโครงเดิม
 6. ingest + `python eval/make_split.py --round <รอบ>` ตาม `t3_curation_status.md` §8.3
 
@@ -71,6 +79,9 @@ data/
 | picked | 8 | 15 | 6 | 10 | 1 | 40 |
 | checked | 13 | 18 | 11 | 10 | 5 | 57 |
 | ใหม่ (`data/<ท่า>/`) | – | 2 | 2 | – | 2 | 6 |
+
+ใน `checked/`: `drop` 34 · `keep` 22 (นับจาก `prefilter_v6.json` เฉพาะไฟล์ ไม่รวม URL)
+ไฟล์ "ใหม่" ทั้ง 6 มี entry ใน `prefilter_v6.json` แล้ว (`drop` 4 · `keep` 2) แต่ยังไม่ได้ย้ายไป `checked/`
 
 ## 6. ที่ยังไม่อยู่ใน git
 
