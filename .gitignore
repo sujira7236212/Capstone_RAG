@@ -13,11 +13,9 @@ __pycache__/
 .vscode/
 
 # --- large or regenerable data ---
-# data/ (45 MB) and excluded_from_kb/ (36 MB) are the third-party research PDFs the KB
-# was built from. They are static, would need Git LFS, and carry their own licensing.
-# The curated extraction of them (curated_data/, curated_data_v5/) IS committed, so the
-# KB stays reproducible from the repo without shipping the papers.
-data/
+# data/ (the KB's source documents) IS committed; see data/README.md for its layout.
+# excluded_from_kb/ (36 MB) holds the third-party PDFs dropped from older KB versions;
+# they are static and carry their own licensing.
 excluded_from_kb/
 # Byte-identical (or same-paper) copies pulled out of data/ so the curator does not
 # curate the same paper twice; kept only so the rule-named filing is not lost.
