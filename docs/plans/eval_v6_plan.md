@@ -8,7 +8,7 @@
 0. **E1 เสร็จ — ผู้เชี่ยวชาญอนุมัติ card ครบ 12 ใบ (บันทึก 2026-10-02, card_version 1, ไม่ใส่ชื่อผู้อนุมัติตามที่ user ขอ)**
    - `eval/rule_cards.json` มี 12 card และ anchor 173 ประโยค (relevant 6 · wrong_fault 5–6 · irrelevant 3 ต่อ card) ข้อความภาษาอังกฤษคือสิ่งที่ judge ได้เห็น ภาษาไทยเป็นคำแปลสำหรับผู้เชี่ยวชาญ
    - `python eval/check_rule_cards.py` ตรวจโครงสร้าง ตรวจว่า card ครอบคลุมกฎตามสเปก และตรวจ n-gram กับ KB v5 ผลตอนนี้: ผ่าน · 0 hit ที่ ≥5 คำ (ร่างแรกมี 24 hit ใน 23 anchor ส่วนใหญ่เป็นวลีทั่วไปอย่าง "at the bottom of the" เขียนใหม่ทั้งหมดแล้ว)
-   - `python eval/render_rule_cards.py` สร้าง `docs/rule_cards_review.md` เป็นเอกสารที่ส่งให้ผู้เชี่ยวชาญอนุมัติ
+   - `python eval/render_rule_cards.py` สร้าง `docs/rules/rule_cards_review.md` เป็นเอกสารที่ส่งให้ผู้เชี่ยวชาญอนุมัติ
    - มีคำถามถึงผู้เชี่ยวชาญ 6 ข้อ ที่สำคัญคือ `squat.back_posture` oq1/oq2 (นับลำตัวโน้ม และ butt wink ไหม) ซึ่งมีผลต่อ `query` ของ T1 ด้วย
    - หลังอนุมัติ: ใส่ชื่อผู้อนุมัติและวันที่ใน `approval` แล้ว commit ก่อน T3
    - **2026-10-01:** `squat.back_posture` oq1 = นับลำตัวโน้ม · oq2 = นับ butt wink (บันทึกใน `answer` ของ open question, ไม่ต้องเพิ่ม `card_version` เพราะ card ยังไม่เคยอนุมัติ)
@@ -67,7 +67,7 @@
 ### E1 — rule card + anchor → ผู้เชี่ยวชาญอนุมัติ
 - ไฟล์ `eval/rule_cards.json` ต่อกฎมีฟิลด์:
   - `concept_id` (คงที่ตลอด), `card_version`, `exercise_id`, `rule_names` (ชื่อกฎของระบบ 1 ที่ map มาหา concept นี้)
-  - `measures`: ระบบ 1 วัดอะไรและ threshold เท่าไหร่ (ยกมาจาก `docs/system1/RULES_AND_FSM_CONDENSED.md`)
+  - `measures`: ระบบ 1 วัดอะไรและ threshold เท่าไหร่ (ยกมาจาก `docs/rules/system1/RULES_AND_FSM_CONDENSED.md`)
   - `definition`, `includes`, `excludes` (บอกว่าอาการอื่นตัวไหนที่คล้ายแต่ไม่ใช่ เช่น `back_straight` คือลำตัวโน้ม ไม่ใช่หลังงอ, valgus ไม่ใช่ varus)
   - `relevant_info`: ลักษณะ / สาเหตุ / ผลเสีย / วิธีแก้ / หลักท่าที่ถูกซึ่งแก้อาการนี้ได้โดยตรง
   - `anchors`: ประโยคตัวอย่าง `relevant` ≥5, `wrong_fault` ≥5 (อย่างน้อย 2 ประโยคต้องมาจากกฎพี่น้องในท่าเดียวกัน), `irrelevant` ≥3

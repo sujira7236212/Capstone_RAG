@@ -4,7 +4,7 @@ rows of a pgvector collection (what retrieval reads today).
 
 18 v5 items were tagged "partial_squat" / "knee_valgus" / "partial range_of_motion", which
 the retrieval tag filter (LIKE '%|<code>|%') never matches - ablation step R0
-(docs/rag_v2_ablation_plan.md). Only tag metadata changes: applies_to_fault, fault_tags
+(docs/plans/rag_v2_ablation_plan.md). Only tag metadata changes: applies_to_fault, fault_tags
 and window_applies_to_fault. The text is untouched, so the embedding is kept as is.
 
 The row id DOES change. ingest.py derives it from md5(collection :: text + str(metadata))

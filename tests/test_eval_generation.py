@@ -1,11 +1,11 @@
 """Guards for the two ways this metric has already been measured wrong by hand.
 
-    python eval/test_eval_generation.py
+    python tests/test_eval_generation.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "eval"))
 
 import eval_generation as eg
 

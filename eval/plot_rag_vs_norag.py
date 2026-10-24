@@ -2,9 +2,9 @@
 
 Everything is recomputed from the reports that already exist - no LLM call:
 
-    compare_output/compare_result_v14_<exercise>.json   number sources, leaked keys
-    compare_output/compare_result_v14_<exercise>.md     jargon + copying (eval_generation.py)
-    compare_output/compare_result_v9.md / _v10.md       copying history
+    compare_output/baseline_v14/compare_result_v14_<exercise>.json   number sources, leaked keys
+    compare_output/baseline_v14/compare_result_v14_<exercise>.md     jargon + copying (eval_generation.py)
+    compare_output/history/compare_result_v9.md / _v10.md       copying history
 
 and writes three 16:9 PNGs (3840x2160) to docs/figures/rag_vs_norag/:
 
@@ -90,7 +90,7 @@ def _payload_numbers(payload):
 def load_sessions():
     sessions = []
     for ex in EXERCISES:
-        with open(os.path.join(ROOT, "compare_output", f"compare_result_v14_{ex}.json"), encoding="utf-8") as f:
+        with open(os.path.join(ROOT, "compare_output", "baseline_v14", f"compare_result_v14_{ex}.json"), encoding="utf-8") as f:
             for s in json.load(f)["sessions"]:
                 sessions.append(dict(s, exercise=ex))
     return sessions
@@ -133,12 +133,12 @@ def generation_scores():
     v14 = []
     for ex in EXERCISES:
         names = eg.session_error_names(os.path.join(ROOT, "mock_data", f"mock_sessions_{ex}.json"))
-        v14 += eg.score_report(os.path.join(ROOT, "compare_output", f"compare_result_v14_{ex}.md"),
+        v14 += eg.score_report(os.path.join(ROOT, "compare_output", "baseline_v14", f"compare_result_v14_{ex}.md"),
                                spec, markers, window, min_span, names)
     legacy = eg.session_error_names(os.path.join(ROOT, "mock_data", "mock_sessions.json"))
     history = {}
     for ver in ("v9", "v10"):
-        history[ver] = eg.score_report(os.path.join(ROOT, "compare_output", f"compare_result_{ver}.md"),
+        history[ver] = eg.score_report(os.path.join(ROOT, "compare_output", "history", f"compare_result_{ver}.md"),
                                        spec, markers, window, min_span, legacy)
     history["v14"] = v14
 

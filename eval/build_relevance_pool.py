@@ -219,7 +219,7 @@ def main():
     ap.add_argument("--golden", default="eval/golden_chunks.json")
     ap.add_argument("--collection", default=embedding_config.default_collection())
     ap.add_argument("--out", default="eval/relevance_pool.json")
-    ap.add_argument("--spotcheck", default="compare_output/relevance_pool_spotcheck.md")
+    ap.add_argument("--spotcheck", default="compare_output/retrieval/relevance_pool_spotcheck.md")
     ap.add_argument("--judge", default=JUDGE_MODEL)
     ap.add_argument("--fault", action="append", help="exercise/code, repeatable; default all golden faults")
     args = ap.parse_args()

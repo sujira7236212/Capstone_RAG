@@ -1,6 +1,6 @@
 """Count tagged items per rule and item kind in a curated folder, straight from the JSON
 (no ingest, no API). Used between T3 curation rounds to decide which rules still need
-sources (docs/rule_change_v6_plan.md T3); the decision must come from these counts, never
+sources (docs/plans/rule_change_v6_plan.md T3); the decision must come from these counts, never
 from eval results.
 
     python data_pipeline/tag_coverage.py [curated_data_v6] [--min 5]

@@ -1,7 +1,7 @@
 """Slide figures for the query-expansion A/B (raw error_type name vs error_taxonomy.py query).
 
-Reads the numbers straight from compare_output/kb_coverage_v4_rules_raw_vs_expanded.md
-(kb_coverage.py on kb_local_curated_v4, MiniLM, 2026-09-11) so the figures cannot drift
+Reads the numbers straight from compare_output/retrieval/kb_coverage_v4_rules_raw_vs_expanded.md
+(tools/kb_coverage.py on kb_local_curated_v4, MiniLM, 2026-09-11) so the figures cannot drift
 from the report, and writes three 16:9 PNGs (3840x2160) to docs/figures/query_expansion/:
 
     py_1_distance_mistake.png  best distance per fault, kind = mistake (dumbbell)
@@ -22,11 +22,11 @@ import re
 import plotly.graph_objects as go
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REPORT = os.path.join(ROOT, "compare_output", "kb_coverage_v4_rules_raw_vs_expanded.md")
+REPORT = os.path.join(ROOT, "compare_output", "retrieval", "kb_coverage_v4_rules_raw_vs_expanded.md")
 OUT_DIR = os.path.join(ROOT, "docs", "figures", "query_expansion")
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
-THRESHOLD = 0.40  # kb_coverage.py "usable" cut-off at the time
+THRESHOLD = 0.40  # tools/kb_coverage.py "usable" cut-off at the time
 X_MAX = 0.80
 FOOTNOTE = ("ทดลอง 11 ก.ย. 2026 บน KB v4 + embedding MiniLM · อาการ 10 ข้อชุดเดิมของระบบ 1 · "
             "คำค้นที่ขยายเขียนโดยผู้พัฒนาซึ่งเห็นเนื้อหา KB")

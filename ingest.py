@@ -107,7 +107,7 @@ def load_documents_from_folder(base_folder):
                                 if not text:
                                     continue
                                 # Embed the bare item. A "[exercise | kind | source]" prefix
-                                # was tried (docs/kb_quality_assessment.md 5.3) and measured
+                                # was tried (docs/kb/kb_quality_assessment.md 5.3) and measured
                                 # on kb_local_curated_v4: it only shifts the distance scale
                                 # - a plain query lands ~0.1-0.2 further from everything, a
                                 # prefixed query lands within 0.40 of every chunk of that
@@ -362,7 +362,7 @@ def main():
             print(f"Adding batch {i//batch_size + 1} of {total_batches} (size: {len(batch)})...")
 
         # Paid tier still has a per-minute cap (hit RESOURCE_EXHAUSTED at batch 14/24
-        # with zero delay - see docs/kb_quality_assessment.md section 10), just a much
+        # with zero delay - see docs/kb/kb_quality_assessment.md section 10), just a much
         # higher one than free tier. Retry that one batch with backoff instead of
         # aborting the whole run over a transient 429.
         max_retries = 4

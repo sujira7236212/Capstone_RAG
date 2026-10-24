@@ -116,12 +116,12 @@ finding ที่ใกล้ที่สุดของทั้ง 3 fault อ
 
 ## 6. สถานะหลังแก้ (2026-09-11) → `kb_local_curated_v4`
 
-ทำแล้ว: ข้อ 4 ลำดับ 4 (ถอด 4+1 ไฟล์นอกเรื่อง), ข้อ 5.1 (บีบ `is_relevant`), 5.2 (trafilatura), 5.4 (`applies_to_fault`), และ `kb_coverage.py` ทำหน้าที่ 5.5 แบบ proxy
+ทำแล้ว: ข้อ 4 ลำดับ 4 (ถอด 4+1 ไฟล์นอกเรื่อง), ข้อ 5.1 (บีบ `is_relevant`), 5.2 (trafilatura), 5.4 (`applies_to_fault`), และ `tools/kb_coverage.py` ทำหน้าที่ 5.5 แบบ proxy
 ข้อ 5.3 (embed header) **ทดลองแล้วถอดออก** — เลื่อนสเกล distance ทั้งกระดานจน threshold v6 ใช้ไม่ได้ และซ้ำกับ filter `exercise_id`/`item_kind`
 
 **สิ่งที่พบเพิ่ม:** 4 ลิงก์ NASM (squat-form, squat-misconceptions, lunge, progressions) ตายตั้งแต่ก่อน scrape รอบ v3 — JSON เดิม "10 windows / ~80 items" ต่อลิงก์คือ*หน้า index ของ blog* ที่ถูก curate ไป นี่คือที่มาจริงของข้อ 3.4 ไม่ใช่แค่ sidebar แก้ด้วย Wayback Machine snapshot ปี 2020–21
 
-**ผล (จาก `python kb_coverage.py --collection kb_local_curated_v3 --collection kb_local_curated_v4`):**
+**ผล (จาก `python tools/kb_coverage.py --collection kb_local_curated_v3 --collection kb_local_curated_v4`):**
 
 | ท่า | fault | v3 mistake | v3 finding | v4 mistake | v4 finding |
 |---|---|---|---|---|---|
@@ -145,7 +145,7 @@ finding ที่ใกล้ที่สุดของทั้ง 3 fault อ
 
 ## 7. Golden set + ผลวัด gate จริง (2026-09-11) — ปิดข้อ 5.5
 
-ไฟล์: `eval/golden_chunks.json` (ต่อ fault ทั้ง 10: `must_hit` / `must_not_hit` เป็น substring ของ chunk จริงใน v4) และ `eval/eval_retrieval.py` ซึ่งเรียก `retrieve_kb_blocks()` ของ `test_rag_compare.py` ตรง ๆ — วัด **สิ่งที่ gate ปล่อยเข้า context** ไม่ใช่ pool ≤0.40 แบบ `kb_coverage.py`
+ไฟล์: `eval/golden_chunks.json` (ต่อ fault ทั้ง 10: `must_hit` / `must_not_hit` เป็น substring ของ chunk จริงใน v4) และ `eval/eval_retrieval.py` ซึ่งเรียก `retrieve_kb_blocks()` ของ `test_rag_compare.py` ตรง ๆ — วัด **สิ่งที่ gate ปล่อยเข้า context** ไม่ใช่ pool ≤0.40 แบบ `tools/kb_coverage.py`
 
 ```
 python eval/eval_retrieval.py                                   # baseline gate v6 บน v4
@@ -153,7 +153,7 @@ python eval/eval_retrieval.py --margin 0.10 --cap mistake=0.40  # ลอง gate
 python eval/eval_retrieval.py --collection kb_local_curated_v4 --collection kb_local_curated_v5
 ```
 
-**Baseline (gate v6, kb_local_curated_v4)** — รายงานเต็ม `compare_output/golden_baseline_v6gate_v4.md`
+**Baseline (gate v6, kb_local_curated_v4)** — รายงานเต็ม `compare_output/retrieval/golden_baseline_v6gate_v4.md`
 
 | mode | fault ที่มี mistake ถูก ≥1 | chunk ใน context | good | bad | neutral | precision |
 |---|---|---|---|---|---|---|
@@ -176,7 +176,7 @@ python eval/eval_retrieval.py --collection kb_local_curated_v4 --collection kb_l
 
 ### 7.1 Step 1(a) — เขียน query bicep-curl `partial range of motion` ใหม่ (2026-09-11)
 
-เปลี่ยนใน `error_taxonomy.py` บรรทัดเดียว (ไม่แตะ gate / KB) — รายงานเต็ม `compare_output/golden_step1a_query_v4.md`
+เปลี่ยนใน `error_taxonomy.py` บรรทัดเดียว (ไม่แตะ gate / KB) — รายงานเต็ม `compare_output/retrieval/golden_step1a_query_v4.md`
 
 | query | mistake top-3 | finding kept |
 |---|---|---|
@@ -206,7 +206,7 @@ Sweep `RELATIVE_MARGIN` × `ABS_DISTANCE_CAP` บน golden set (single mode, mi
 
 ค่าที่เขียนลง `test_rag_compare.py`: `RELATIVE_MARGIN = 0.06`, `ABS_DISTANCE_CAP = 0.40 ทุก kind`, `MAX_PER_KIND["principle"] = 2`, และค้น `principle` ด้วย fault query ต่อ error (เดิมค้นเฉพาะ session ที่ไม่มี error)
 
-**ผล** — รายงานเต็ม `compare_output/golden_step1c_gate_v4.md` (golden เพิ่ม pattern ฝั่ง principle แล้ว)
+**ผล** — รายงานเต็ม `compare_output/retrieval/golden_step1c_gate_v4.md` (golden เพิ่ม pattern ฝั่ง principle แล้ว)
 
 | mode | hit | chunk | good | bad | neutral | precision | (หลัง 1a) | (baseline v6) |
 |---|---|---|---|---|---|---|---|---|
@@ -231,7 +231,7 @@ principle ต่อ error: 9/10 fault ได้ principle ถูก ≥ 1 ("Keep
 
 ### 7.3 Step 1(b) — prompt v7 + รัน LLM รอบแรกบน gate v7 (2026-09-11)
 
-รายงาน: `compare_output/ab_v7.md` (RAG + no-RAG, 4 session, gemini-3.5-flash-lite @0.7) เทียบกับ `ab_taxonomy.md` (gate v6 + prompt เดิม)
+รายงาน: `compare_output/history/ab_v7.md` (RAG + no-RAG, 4 session, gemini-3.5-flash-lite @0.7) เทียบกับ `ab_taxonomy.md` (gate v6 + prompt เดิม)
 
 เปลี่ยนใน `SYSTEM_PROMPT` 2 จุด: (1) เพิ่ม *Relevance rule* — `re:` คือ error ที่ entry ถูกดึงมาให้ ไม่ใช่การรับรอง; ให้เมิน entry ที่เป็น fault อื่น / variant อื่น / protocol detail / ทำตามแล้วยิ่งผิด (2) `you MUST cite` → cite เฉพาะ entry ที่ผ่าน relevance rule + ใช้ `principle` สำหรับขั้นตอนแก้
 
@@ -254,12 +254,12 @@ principle ต่อ error: 9/10 fault ได้ principle ถูก ≥ 1 ("Keep
 ### 7.4 OCR degree fix บน v4 + curated_data (2026-09-12)
 
 ทำแล้ว (ก่อน v5 ตามที่ตกลง — v4 คือไม้บรรทัดของทุก eval จนกว่า v5 จะมา):
-- `data_pipeline/curator.py` — `normalize_ocr_degrees()` ใช้กับทุก item ที่ curator คืน (v5 จะไม่ผลิต "1208" ซ้ำ) — ทดสอบ `python data_pipeline/test_normalize_ocr_degrees.py` (10/10 รวม false-positive "denoted as SE-SE")
+- `data_pipeline/curator.py` — `normalize_ocr_degrees()` ใช้กับทุก item ที่ curator คืน (v5 จะไม่ผลิต "1208" ซ้ำ) — ทดสอบ `python tests/test_normalize_ocr_degrees.py` (10/10 รวม false-positive "denoted as SE-SE")
 - `data_pipeline/fix_ocr_degrees.py` — one-off: แก้ `curated_data/**/*.json` (8 item) และ patch แถวจริงใน `kb_local_curated_v4` (8 แถว: text + metadata.text + **re-embed**) backup ที่ `data_pipeline/backups/`; รอบแรกไม่มีแถวไหนเป็น artefact จริงนอกจาก 8 ตัวนี้ ("denoted as SE-SE" ที่นับเป็นตัวที่ 9 ใน §7.3 ไม่ใช่ OCR)
 
 **ยืนยัน:**
-- `eval_retrieval.py` หลัง patch: single 9/10 · bad 9 · precision 0.70, session 5/6 · bad 6 · 0.74 — เท่า §7.2 ทุกช่อง (`compare_output/golden_step1b_ocrfix_v4.md`); distance ขยับตัวเดียวคือ push-up ROM finding 0.264 → 0.238 เพราะข้อความสั้นลงหลังตัด "(noted as 900 in text)"
-- รัน squat session ใหม่ (RAG only): output cite "Flexing at the spine before **120 degrees** of hip flexion" — "1208" หายจาก LLM output (`compare_output/ab_v7_squat_ocrfix.md`)
+- `eval_retrieval.py` หลัง patch: single 9/10 · bad 9 · precision 0.70, session 5/6 · bad 6 · 0.74 — เท่า §7.2 ทุกช่อง (`compare_output/retrieval/golden_step1b_ocrfix_v4.md`); distance ขยับตัวเดียวคือ push-up ROM finding 0.264 → 0.238 เพราะข้อความสั้นลงหลังตัด "(noted as 900 in text)"
+- รัน squat session ใหม่ (RAG only): output cite "Flexing at the spine before **120 degrees** of hip flexion" — "1208" หายจาก LLM output (`compare_output/history/ab_v7_squat_ocrfix.md`)
 
 **สรุป Step 1 ทั้งหมด (v6 → v7) เทียบ baseline:**
 
@@ -276,13 +276,13 @@ principle ต่อ error: 9/10 fault ได้ principle ถูก ≥ 1 ("Keep
 
 ---
 
-## 8. สิ่งที่ตกหล่นจาก `docs/session_notes_2026-09-12.md` (ย้ายเข้ามารวมที่นี่ 2026-09-14)
+## 8. สิ่งที่ตกหล่นจาก `docs/progress/session_notes_2026-09-12.md` (ย้ายเข้ามารวมที่นี่ 2026-09-14)
 
 session notes วันที่ 12 ก.ย. มีของที่ไม่เคยลงเอกสารนี้ 3 เรื่อง — นี่คือสาเหตุหลักที่เอกสารนี้ "ไม่ up to date" ก่อนจะแก้วันนี้
 
 ### 8.1 prompt v8 "practical" — รันแล้ว ยังไม่ผ่านเกณฑ์ ยังไม่ตัดสิน
 
-`compare_output/prompt_v8_practical.md` และ `prompt_v8_practical_compare.md` (12 ก.ย. 00:52/01:02) เพิ่ม *Relevance rule* ชัดเจนขึ้นกว่า v7 (ให้เมิน entry ที่เป็น "a study protocol or setup detail with no consequence attached" หรือ "would push the user further into the error") และปรับโทนเป็น "โค้ชในยิม" มากขึ้น (bullet คำแนะนำ 4 หัวข้อ: what/why/how to fix/rep detail)
+`compare_output/history/prompt_v8_practical.md` และ `prompt_v8_practical_compare.md` (12 ก.ย. 00:52/01:02) เพิ่ม *Relevance rule* ชัดเจนขึ้นกว่า v7 (ให้เมิน entry ที่เป็น "a study protocol or setup detail with no consequence attached" หรือ "would push the user further into the error") และปรับโทนเป็น "โค้ชในยิม" มากขึ้น (bullet คำแนะนำ 4 หัวข้อ: what/why/how to fix/rep detail)
 
 รันแล้ว 1 รอบ (RAG + no-RAG, 4 session, บน `kb_local_curated_v4`, gate v7 เดิม) แต่**ยังไม่ได้ตั้งเกณฑ์ผ่าน/ไม่ผ่านหรือเทียบกับ v7 อย่างเป็นระบบ** — ต่างจาก v6→v7 ที่มีตาราง before/after ชัดเจน (§7.3) รอบนี้มีแค่ raw output ให้อ่านเอง ยังสรุปเป็นตัวเลขไม่ได้เพราะ temperature 0.7 ทำให้แต่ละรอบไม่เหมือนกัน (ประเด็นเดียวกับที่ §4④ ของ session notes บอกไว้)
 
@@ -349,13 +349,13 @@ User สั่งลบทั้ง 3 แหล่งหลังอ่านค
 
 ### 10.1 โครงสร้างที่เปลี่ยน
 
-เพิ่ม `embedding_config.py` เป็นจุดสลับเดียวของทั้งระบบ (`DEFAULT_MODE`, `get_embeddings()`, `get_connection()`, `default_collection()`) แทนที่การสร้าง `HuggingFaceEmbeddings`/`GoogleGenerativeAIEmbeddings` ซ้ำ ๆ ใน `ingest.py`, `kb_coverage.py`, `eval/eval_retrieval.py`, `test_rag_compare.py` — ตั้งค่าเดียวที่ไฟล์นี้ (`DEFAULT_MODE = "gemini"`, override ชั่วคราวด้วย `EMBEDDING_MODE=local`) มีผลกับทุกสคริปต์พร้อมกัน `kb_local_curated_v4` (MiniLM) ยังอยู่ครบใน `vectordb_local` ไม่ได้ลบ ใช้เป็น fallback/baseline เทียบผลได้เสมอ
+เพิ่ม `embedding_config.py` เป็นจุดสลับเดียวของทั้งระบบ (`DEFAULT_MODE`, `get_embeddings()`, `get_connection()`, `default_collection()`) แทนที่การสร้าง `HuggingFaceEmbeddings`/`GoogleGenerativeAIEmbeddings` ซ้ำ ๆ ใน `ingest.py`, `tools/kb_coverage.py`, `eval/eval_retrieval.py`, `test_rag_compare.py` — ตั้งค่าเดียวที่ไฟล์นี้ (`DEFAULT_MODE = "gemini"`, override ชั่วคราวด้วย `EMBEDDING_MODE=local`) มีผลกับทุกสคริปต์พร้อมกัน `kb_local_curated_v4` (MiniLM) ยังอยู่ครบใน `vectordb_local` ไม่ได้ลบ ใช้เป็น fallback/baseline เทียบผลได้เสมอ
 
 `ingest.py` มี bug จุดหนึ่งที่เจอระหว่างรันจริง: batch ที่ส่งให้ Gemini embed คงไว้ที่ 30 + sleep 60 วินาทีทุก batch แบบ free-tier เดิม (คอมเมนต์เดิมเขียนว่า "respect Gemini Free Tier API rate limits" แบบ hardcode ไม่เช็ค tier จริง) ทำให้ 2,432 chunks ต้องใช้เวลา ≥80 นาทีเปล่า ๆ — แก้เป็น batch 100 ไม่ sleep เป็นค่า default, ใส่ flag `--free-tier` ไว้สำหรับคนที่ยังใช้ free tier จริง ๆ ผลคือรันจริงเจอ `429 RESOURCE_EXHAUSTED` ที่ batch 14/24 (paid tier ก็มี quota ต่อนาทีเหมือนกัน แค่สูงกว่า free tier มาก) เพิ่ม retry-with-backoff (20s × attempt, สูงสุด 4 ครั้ง) แทนการ abort ทั้งรัน แล้ว resume ต่อได้เพราะ `ingest.py` มี dedup ด้วย content-hash ID อยู่แล้ว — ไม่ต้อง re-embed ของที่ทำสำเร็จไปแล้ว
 
 ### 10.2 ผลการ ingest
 
-`python ingest.py --mode gemini --collection kb_gemini_curated_v4` → **2,432 chunks, 241 sources** เท่ากับ `kb_local_curated_v4` เป๊ะ (ข้อมูลต้นทางไม่เปลี่ยน แค่เปลี่ยน embedding) ยืนยันด้วย `kb_coverage.py`:
+`python ingest.py --mode gemini --collection kb_gemini_curated_v4` → **2,432 chunks, 241 sources** เท่ากับ `kb_local_curated_v4` เป๊ะ (ข้อมูลต้นทางไม่เปลี่ยน แค่เปลี่ยน embedding) ยืนยันด้วย `tools/kb_coverage.py`:
 
 | exercise | kb_gemini_curated_v4 (principle / mistake / finding) |
 |---|---|
@@ -366,7 +366,7 @@ User สั่งลบทั้ง 3 แหล่งหลังอ่านค
 
 ### 10.3 สเกล distance เปลี่ยนไปทั้งกระดาน — cap 0.40 ใช้ไม่ได้ผลอีกต่อไป
 
-รัน `kb_coverage.py --collection kb_gemini_curated_v4` (ไม่มี gate ใด ๆ นอกจาก cap ≤0.40, pool 40): **แทบทุก fault ได้ 40/40 "usable" ทั้ง raw และ expanded query** — best distance อยู่ในช่วง 0.02–0.4 ทั้งกระดาน เทียบกับ MiniLM ที่กระจายกว้างกว่ามาก (0.057–0.601 ในตัวอย่าง §5 ของ session notes) `gemini-embedding-2` ดันทุกอย่างในคลังเดียวกันให้อยู่ใกล้กันมากกว่า MiniLM มาก — ผลคือ `ABS_DISTANCE_CAP = 0.40` ที่เคยเป็นตัวกรองสำรอง **ไม่ discriminate อะไรเลย** ภายใต้ Gemini (เกือบทุกอย่างผ่าน) เหลือแค่ `RELATIVE_MARGIN` ที่เป็นตัวกรองจริงตัวเดียว — สอดคล้องกับที่ §7.2 เคยพบใน MiniLM ว่า cap หมดความหมายเมื่อ margin แคบพอ แต่ครั้งนี้ cap หมดความหมาย**ตั้งแต่ต้น** ไม่ใช่เพราะ margin แคบ
+รัน `tools/kb_coverage.py --collection kb_gemini_curated_v4` (ไม่มี gate ใด ๆ นอกจาก cap ≤0.40, pool 40): **แทบทุก fault ได้ 40/40 "usable" ทั้ง raw และ expanded query** — best distance อยู่ในช่วง 0.02–0.4 ทั้งกระดาน เทียบกับ MiniLM ที่กระจายกว้างกว่ามาก (0.057–0.601 ในตัวอย่าง §5 ของ session notes) `gemini-embedding-2` ดันทุกอย่างในคลังเดียวกันให้อยู่ใกล้กันมากกว่า MiniLM มาก — ผลคือ `ABS_DISTANCE_CAP = 0.40` ที่เคยเป็นตัวกรองสำรอง **ไม่ discriminate อะไรเลย** ภายใต้ Gemini (เกือบทุกอย่างผ่าน) เหลือแค่ `RELATIVE_MARGIN` ที่เป็นตัวกรองจริงตัวเดียว — สอดคล้องกับที่ §7.2 เคยพบใน MiniLM ว่า cap หมดความหมายเมื่อ margin แคบพอ แต่ครั้งนี้ cap หมดความหมาย**ตั้งแต่ต้น** ไม่ใช่เพราะ margin แคบ
 
 ข้อดีที่มาพร้อมกัน: expanded query ดีกว่า raw อย่างชัดเจนเหมือน MiniLM (เช่น bicep-curl elbow flare raw 0.401 เกือบพ้น cap vs expanded 0.037) — แปลว่าเหตุผลที่ต้องมี `error_taxonomy.py` (§8.2/§8.3) ยังคงอยู่เหมือนเดิม ไม่ใช่ปัญหาเฉพาะ MiniLM
 
@@ -393,7 +393,7 @@ User สั่งลบทั้ง 3 แหล่งหลังอ่านค
 | session | MiniLM v7 | 5/6 | 27 | 20 | 6 | 1 | 0.74 |
 | session | **Gemini** | 4/6 | 38 | 12 | **5** | 21 | 0.32 |
 
-รายงานเต็ม: `compare_output/golden_gemini_v1_margin03.md`
+รายงานเต็ม: `compare_output/retrieval/golden_gemini_v1_margin03.md`
 
 **อ่านผลตรง ๆ — precision ตัวเลขดูแย่ลงแต่ bad (ตัวเลขที่สำคัญกว่าเพราะคือความเสี่ยง hallucination) ดีขึ้นมาก:** bad หายไปเกือบหมด (single 9→2, -78%) แต่ precision หล่นจาก 0.70 เหลือ 0.37 เพราะ **neutral พุ่งขึ้นมาก** (single 5→37) ไม่ใช่เพราะ bad เพิ่ม — Gemini คืน chunk ที่ "ไม่ผิดฟอร์ม แต่ก็ไม่ตรงกับ pattern ที่ golden set ตั้งไว้" มากกว่า MiniLM มาก โดยเฉพาะช่อง finding/principle ที่หลายอันมี kept=2, good=0, neutral=2 ทั้งคู่ (ดูตัวอย่างดิบใน §10.3 ผลรัน eval baseline) นี่อาจเป็นเพราะ (ก) golden set (`eval/golden_chunks.json`) เขียน substring pattern ไว้ตาม chunk ที่ MiniLM เคยดึงมา ยังไม่ได้เพิ่ม pattern ให้ครอบคลุม paraphrase ที่ Gemini ดึงมาแทน หรือ (ข) Gemini เลือก chunk ที่ต่างจาก MiniLM จริง ๆ แม้จะไม่ผิด — **ยังตัดสินไม่ได้จากตัวเลขอย่างเดียว ต้องเปิด `--show-kept` อ่านเนื้อหาจริงของ neutral ก่อนสรุป**
 
@@ -467,12 +467,12 @@ User สั่งลบทั้ง 3 แหล่งหลังอ่านค
 
 ## 12. Generation-side metric เข้า `eval/` (2026-09-22)
 
-ก่อนหน้านี้ฝั่ง retrieval วัดซ้ำได้ด้วยคำสั่งเดียว (`eval/eval_retrieval.py`) แต่ฝั่ง generation วัดด้วยสคริปต์ชั่วคราวใน scratchpad — เถียงกันด้วยตัวเลขเดิมซ้ำไม่ได้ ย้ายเข้ามาเป็น `eval/eval_generation.py` + `eval/jargon_terms.json` + `eval/test_eval_generation.py`
+ก่อนหน้านี้ฝั่ง retrieval วัดซ้ำได้ด้วยคำสั่งเดียว (`eval/eval_retrieval.py`) แต่ฝั่ง generation วัดด้วยสคริปต์ชั่วคราวใน scratchpad — เถียงกันด้วยตัวเลขเดิมซ้ำไม่ได้ ย้ายเข้ามาเป็น `eval/eval_generation.py` + `eval/jargon_terms.json` + `tests/test_eval_generation.py`
 
 ```
-python eval/eval_generation.py compare_output/compare_result_v10.md
-python eval/eval_generation.py compare_output/compare_result_v{9,10}.md --show-hits --out compare_output/generation_v9_vs_v10.md
-python eval/test_eval_generation.py
+python eval/eval_generation.py compare_output/history/compare_result_v10.md
+python eval/eval_generation.py compare_output/history/compare_result_v{9,10}.md --show-hits --out compare_output/history/generation_v9_vs_v10.md
+python tests/test_eval_generation.py
 ```
 
 วัดจากรายงานที่มีอยู่แล้ว ไม่เรียก LLM ซ้ำ (deterministic 100%) สองตัวเลข:
@@ -482,7 +482,7 @@ python eval/test_eval_generation.py
 
 **ฝั่ง WITHOUT RAG ถูกให้คะแนนด้วยโดยตั้งใจ** — ไม่เคยเห็น context เลย ตัวเลข n-gram ของมันจึงเป็น *chance floor* ของรายงานนั้น (ความยาวที่ข้อความสองชิ้นเรื่องสควอทบังเอิญตรงกัน) ค่า RAG ที่ใกล้ floor = ไม่ลอก ค่าที่สูงกว่า floor มาก = ลอก
 
-### 12.1 Baseline v9 vs v10 (รายงานเต็ม `compare_output/generation_v9_vs_v10.md`)
+### 12.1 Baseline v9 vs v10 (รายงานเต็ม `compare_output/history/generation_v9_vs_v10.md`)
 
 | report | side | unglossed jargon | longest n-gram | spans ≥6 |
 |---|---|---|---|---|

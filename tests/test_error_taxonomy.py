@@ -3,10 +3,12 @@
 on-screen cues - the upstream sends the rule name, so there is no alias list).
 Plain asserts so it runs without pytest:
 
-    python test_error_taxonomy.py
+    python tests/test_error_taxonomy.py
 """
+import os
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from error_taxonomy import ERROR_TAXONOMY, LEGACY_CODES, resolve
 
 CASES = [

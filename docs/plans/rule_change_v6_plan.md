@@ -1,6 +1,6 @@
 # แผนรับกฎใหม่ของระบบ 1 → KB v6
 
-> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — T3 รอบ 1 เสร็จ ถัดไปรอบ 2a (รอ user) · รายละเอียดอยู่ที่ [`t3_curation_status.md`](t3_curation_status.md)**
+> ไฟล์สำหรับเปิดทำต่อใน session ใหม่ · อัปเดตล่าสุด 2026-10-02 · สถานะ: **กำลังทำ — T3 รอบ 1 เสร็จ ถัดไปรอบ 2a (รอ user) · รายละเอียดอยู่ที่ [`t3_curation_status.md`](../progress/t3_curation_status.md)**
 > T1 ✅ (user ยืนยัน Q-spec 2026-10-02) · T2 ✅ · T3a ✅ · T4 ✅ · T3 / T5 ยังไม่เริ่ม · **งานอยู่บน branch `rule-change-v6`** (`main` ยังเป็น taxonomy เดิมที่ตรงกับ KB v5)
 > แผนนี้**มาก่อน**ขั้นที่ค้างอยู่ใน [`rag_v2_ablation_plan.md`](rag_v2_ablation_plan.md) (G1/C1/K1/P) เพราะรหัส fault เปลี่ยน ตัวเลข R4 เดิมจึงเทียบกับ KB ใหม่ไม่ได้
 > **เป้าหมายตอนนี้ (2026-10-01):** ไปให้ถึงขั้นที่ Gemini ให้ feedback บน KB v6 ก่อน eval หนัก (E3/E4/E6/E7 และ G1) เลื่อนไปทำหลังจากนั้น
@@ -13,7 +13,7 @@
 2. **T1 เสร็จ — user ยืนยัน key และ Q-spec ทั้ง 12 ตัว (2026-10-02)** key = ชื่อกฎ 2026-09-28 · ชื่อ 2026-09-25 อยู่ใน `LEGACY_CODES` · `query` เขียนจาก card (Claude ร่าง user แก้ `partial_pushup` แล้วยืนยัน)
    · ลบ `rule_th`, `display_th`, `aliases` ออกแล้ว เพราะระบบ 1 ส่ง `error_type` = key ตรงตัวเสมอ (ไม่ส่ง cue หรือชื่อไทย) · `resolve()` ยังใช้อยู่ (จับ key, `_`/ช่องว่าง, `LEGACY_CODES`)
    · ผู้เชี่ยวชาญอนุมัติ card ครบ 12 ใบ (card_version 1) · `approval` ไม่ใส่ชื่อตามที่ user ขอ
-   · `python test_error_taxonomy.py` 23/23 · `python data_pipeline/test_normalize_fault_tags.py` 10/10
+   · `python tests/test_error_taxonomy.py` 23/23 · `python tests/test_normalize_fault_tags.py` 10/10
    · `python eval/check_rule_cards.py --queries` ผ่าน: query ซ้ำกับ KB v5 และ anchor ไม่ถึง 5 คำ
 3. **ถัดไป — ตามลำดับ ห้ามสลับ:**
    1. ~~user ยืนยัน Q-spec~~ ✅ 2026-10-02
@@ -28,7 +28,7 @@
 ## 1. ที่มา
 
 ระบบ 1 เปลี่ยนชุดกฎ จาก 10 fault (snapshot 2026-09-11, `error_type_taxonomy.md` §5) เป็น **12 กฎ** ตามสเปก
-[`docs/system1/RULES_AND_FSM_CONDENSED.md`](system1/RULES_AND_FSM_CONDENSED.md) (sync จากโค้ดของระบบ 1 เมื่อ 2026-09-25)
+[`docs/rules/system1/RULES_AND_FSM_CONDENSED.md`](../rules/system1/RULES_AND_FSM_CONDENSED.md) (sync จากโค้ดของระบบ 1 เมื่อ 2026-09-25)
 พร้อมกันนั้นมีข้อมูลใหม่ใน `data/` ซึ่งแยกโฟลเดอร์ย่อยตามชื่อกฎ (`data/squat/knee_valgus/…`) และมี `data/general/`
 
 ### 1.1 กฎเก่า → กฎใหม่ (จำนวน item ที่ติด tag ใน `curated_data_v5`)
@@ -69,18 +69,18 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 - `query` = **Q-spec** ทั้ง 12 ตัวเขียนใหม่จาก `definition`/`includes` ของ card (ไม่ใช้ anchor ไม่เปิด KB) เป็นประโยคบรรยายเชิงบวกเท่านั้น
   (embedding อ่าน "ไม่ใช่ X" ไม่ออก และจะดึง X มาแทน) · query เดิมของ `full_rom` ที่จูนให้ตรงกับสำนวน curator ถูกแทนที่แล้ว
 - `rounded_back`: ครอบคลุมหลังค่อม (รวม butt wink) หลังแอ่น และลำตัวโน้มไปหน้า เรียงตามลำดับที่ Ton กำหนด
-- ทดสอบ: `python test_error_taxonomy.py` (24/24) · `python data_pipeline/test_normalize_fault_tags.py` (10/10)
+- ทดสอบ: `python tests/test_error_taxonomy.py` (24/24) · `python tests/test_normalize_fault_tags.py` (10/10)
   · `python eval/check_rule_cards.py --queries` (flag ใหม่: key ตรงกับสเปก, query ซ้ำกับ KB v5 และ anchor < 5 คำ)
 
 ### T2 — จัดการ `data/` ✅ เสร็จ
 - ย้ายไป `data_duplicates/` (คงโครงโฟลเดอร์, อยู่ใน `.gitignore`): Coratella2023, Boyd2017, Marchetti2018, Rusin2018 (MD5 ตรงกับไฟล์ที่ root)
   และ Pedrosa2026 (เปเปอร์เดียวกับ "The interplay between muscle length…" ซึ่งเก็บไว้)
 - "Varying Weightload…" user ลบเองแล้ว · "Core Muscle Activity…" ×2 และ "Biomechanics of the Push-up" ×2 **เก็บไว้ทั้งคู่** (user ตัดสิน)
-- สเปกของระบบ 1 ย้ายจาก `data/rule and rep count/` ไปที่ `docs/system1/`
+- สเปกของระบบ 1 ย้ายจาก `data/rule and rep count/` ไปที่ `docs/rules/system1/`
 - โฟลเดอร์ว่าง `data/lunge/front_knee_too_shallow/`, `data/push-up/elbow_depth/` ปล่อยไว้ (ไม่มีผล)
 
 ### T3a — Claude คัดเอกสารที่ไม่เกี่ยวออก ทั้งไฟล์ ✅ 2026-10-02
-- **ผล:** 102 หน่วย · keep 71 · drop 31 (27 + feedback_and_cueing 4 ไว้ทำ prompt) (ตรวจ drop ซ้ำทั้งไฟล์ตามที่ user ขอ: u077 กลับเป็น keep · user ลบไฟล์ซ้ำ 2 ไฟล์ออกจาก `data/`) → `data_pipeline/prefilter_v6.json` + [`prefilter_v6_review.md`](prefilter_v6_review.md) (drop, keep ที่ไม่แน่ใจ 10) · user ตรวจแล้ว
+- **ผล:** 102 หน่วย · keep 71 · drop 31 (27 + feedback_and_cueing 4 ไว้ทำ prompt) (ตรวจ drop ซ้ำทั้งไฟล์ตามที่ user ขอ: u077 กลับเป็น keep · user ลบไฟล์ซ้ำ 2 ไฟล์ออกจาก `data/`) → `data_pipeline/prefilter_v6.json` + [`prefilter_v6_review.md`](../kb/prefilter_v6_review.md) (drop, keep ที่ไม่แน่ใจ 10) · user ตรวจแล้ว
 - **หน่วยที่ตัดคือทั้งไฟล์** (หรือทั้ง URL ใน `urls.txt`) ไม่ตัดเนื้อหาบางส่วนในไฟล์ (user ตัดสิน 2026-10-01)
 - เกณฑ์ตัด: ไฟล์ไม่มีเนื้อหาเกี่ยวกับท่าทางของ 4 ท่าที่ใช้กับกฎข้อใดข้อหนึ่งใน 12 ข้อได้เลย (ลักษณะอาการ สาเหตุ ผลเสีย วิธีแก้ หรือท่าที่ถูก)
   · **ไม่แน่ใจให้เก็บไว้** เพราะ curator คัดเนื้อหาที่ไม่เกี่ยวราย window อยู่แล้ว ขั้นนี้มีไว้ตัดไฟล์ที่ไม่เกี่ยวชัด ๆ เพื่อลดค่า API และ noise เท่านั้น
@@ -94,7 +94,7 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
   2. ดึงข้อความตัวอย่างลง scratchpad (ไม่เข้า repo, ไม่เรียก API): PDF ใช้ pypdf → จำนวนหน้า, bookmark, ชื่อเรื่อง, abstract, 2 หน้าแรก · PDF สแกนใช้ Read tool ดูภาพหน้า · URL ใช้ trafilatura แบบเดียวกับ `load_urls_main_content()`
   3. ตัดสินทีละหน่วย อ่านเพิ่มเฉพาะเมื่อไม่พอ · ก้ำกึ่ง: ท่าดัดแปลง keep ถ้ากลไกใช้กับท่ามาตรฐานได้ · กลุ่มคนเฉพาะ (เช่น ACL) keep ถ้ามี kinematics ที่ใช้กับกฎได้ · งาน hypertrophy/EMG keep ถ้าพูดถึง ROM/ตำแหน่งข้อต่อ/เทคนิค drop ถ้าวัดแค่ผลโปรแกรม · ตำรา keep ทั้งเล่มถ้ามีบทที่เกี่ยว · URL ดึงไม่ได้ keep + บันทึก "fetch failed"
   4. ต่อหน่วยบันทึก `path`/`url`, `decision` (keep/drop/pending), `reason`, `read` (อ่านส่วนไหน), `reviewer`, `date` · **ไม่บันทึกว่าเกี่ยวกับกฎไหน** (กันกลายเป็น hint ให้ curator ขัดกับ T4 ข้อ 4)
-  5. `docs/prefilter_v6_review.md` ให้ user ตรวจ: ตาราง drop + keep ที่ไม่แน่ใจ ต่อท่า + จำนวนสรุป
+  5. `docs/kb/prefilter_v6_review.md` ให้ user ตรวจ: ตาราง drop + keep ที่ไม่แน่ใจ ต่อท่า + จำนวนสรุป
   6. สคริปต์ตรวจว่าทุกหน่วยอยู่ครั้งเดียวพอดี และ decision ถูกค่า
   7. user ตรวจ drop → commit → T4 (`--skip-list`) · **T3 เริ่มไม่ได้ถ้ายังมี `pending`**
   - ห้าม: ลบ/ย้ายไฟล์ใน `data/` · เปิด `curated_data_v5/` หรือ log คัดออกของ v5 · แก้ `query`/card · เรียก Gemini/API ที่เสียเงิน
@@ -102,7 +102,7 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 
 ### T4 — แก้ curator (`data_pipeline/curator.py`) ✅ 2026-10-02
 - **ทำแล้ว:** `--skip-list` (`load_skip_list`, ไม่รันถ้ามี pending) · `general/` เห็น 12 กฎจัดกลุ่มตามท่า + กติกาให้ระบุท่าเฉพาะเมื่อเอ่ยชื่อตรง ๆ · `route_general_window()` จัดท่าราย item → `curated_data_v6/<ท่า>/general__<stem>_curated.json` · ไม่ใช้ `is_exercise_mismatch()` กับ general · ข้อ 5 **ทำด้วย** (user ตกลง 2026-10-02): `excludes` ของ card เป็นบรรทัด "do not tag when" ใต้ทุกกฎ · prompt ของโฟลเดอร์ท่าเหมือน v5 ทุกคำยกเว้นบรรทัด excludes
-- ทดสอบ: `python data_pipeline/test_route_general.py` (route ท่าเดียว/2 ท่า/ไม่มี tag แต่ map ได้/map ไม่ได้/leg curl, skip list, fault block) · skip list จับไฟล์จริงใน `data/` ได้ 31/31
+- ทดสอบ: `python tests/test_route_general.py` (route ท่าเดียว/2 ท่า/ไม่มี tag แต่ map ได้/map ไม่ได้/leg curl, skip list, fault block) · skip list จับไฟล์จริงใน `data/` ได้ 31/31
 - ขนาด T3 (ประเมิน 2026-10-02): 71 หน่วย ≈ 700 window (squat 211 · lunge 202 · bicep-curl 158 · push-up 50 · general 79) · ~2.9 ล้านตัวอักษร
 1. **`--skip-list data_pipeline/prefilter_v6.json`**: ข้ามไฟล์และ URL ที่ `decision == "drop"` และ log ไว้ (ไม่สร้าง marker ปลอมใน `excluded_from_kb_v6/`)
 2. **`general/` ให้ curator เลือกท่าและ tag เองจากเนื้อหา ไม่อิงโฟลเดอร์**
@@ -135,12 +135,12 @@ v5 มีทั้งหมด 1,897 item · ไม่มี tag 1,314 item (squ
 
 ### T5 — ingest + eval ใหม่ ⏸
 - `python ingest.py --data-folder ./curated_data_v6 --collection kb_gemini_curated_v6`
-  · ถ้ากลับมา curate เพิ่มหลัง ingest ไปแล้ว → ingest ลง collection ใหม่ `kb_gemini_curated_v6b` และล็อก split เดิม (ดู [`t3_curation_status.md`](t3_curation_status.md) §8)
+  · ถ้ากลับมา curate เพิ่มหลัง ingest ไปแล้ว → ingest ลง collection ใหม่ `kb_gemini_curated_v6b` และล็อก split เดิม (ดู [`t3_curation_status.md`](../progress/t3_curation_status.md) §8)
 - `mock_data/mock_sessions_per_fault.json` → 12 session (1 ต่อกฎ, ชื่อกฎ 2026-09-28) + clean session · ไฟล์ปัจจุบันยังมี 9 รหัสเก่า
 - ~~เขียน `must_hit` ใน `eval/golden_chunks.json` ใหม่~~ ยกเลิก (2026-09-28): eval v6 ทำตาม [`eval_v6_plan.md`](eval_v6_plan.md) E5 → E3 → E4
   (แยก dev/test ก่อน แล้วสร้าง pool ที่ judge หลายค่ายตัดสินจาก rule card)
-- รัน R4 default บน v6 = **baseline ใหม่** (E6 · รายงานบน dev, `--final` ครั้งเดียว) → จดลง `compare_output/ablation_log.md` แล้วอัปเดต §0/§4 ของ `rag_v2_ablation_plan.md`
-- `python kb_coverage.py` บน v6: coverage ต่อกฎ 12 ตัว
+- รัน R4 default บน v6 = **baseline ใหม่** (E6 · รายงานบน dev, `--final` ครั้งเดียว) → จดลง `compare_output/ablation/ablation_log.md` แล้วอัปเดต §0/§4 ของ `rag_v2_ablation_plan.md`
+- `python tools/kb_coverage.py` บน v6: coverage ต่อกฎ 12 ตัว
 
 ### (ภายหลัง) P-rule-card — ใส่ rule card จากสเปกเข้า prompt เป็น checkpoint generation แยก
 

@@ -2,7 +2,7 @@
 
 **สถานะ:** §1–§4 คือประวัติ (2026-09-08) — ชุด code 10 ตัวใน §3 เป็นชุดที่**เดา**ขึ้นก่อนเห็นกฎจริง
 **2026-09-11:** ได้ inventory กฎจริงของระบบ 1 แล้ว → `error_taxonomy.py` และ `mock_sessions.json` ถูกจัดใหม่ตาม **§5** (ชุด §3 ถูกแทนที่ทั้งหมด)
-**2026-09-27:** ระบบ 1 เปลี่ยนชุดกฎ (สเปก [`docs/system1/RULES_AND_FSM_CONDENSED.md`](system1/RULES_AND_FSM_CONDENSED.md) sync 2026-09-25) → `error_taxonomy.py` ใช้ **§7** (12 กฎ — **ร่าง รอ user ยืนยันกฎและชื่ออาการ** ดู [`rule_change_v6_plan.md`](rule_change_v6_plan.md)) · §5–§6 กลายเป็นประวัติ · mock/eval ยังใช้รหัส §5 อยู่จนถึงขั้น T5
+**2026-09-27:** ระบบ 1 เปลี่ยนชุดกฎ (สเปก [`docs/rules/system1/RULES_AND_FSM_CONDENSED.md`](system1/RULES_AND_FSM_CONDENSED.md) sync 2026-09-25) → `error_taxonomy.py` ใช้ **§7** (12 กฎ — **ร่าง รอ user ยืนยันกฎและชื่ออาการ** ดู [`rule_change_v6_plan.md`](../plans/rule_change_v6_plan.md)) · §5–§6 กลายเป็นประวัติ · mock/eval ยังใช้รหัส §5 อยู่จนถึงขั้น T5
 
 ---
 
@@ -65,9 +65,9 @@ error_type (code จากทีม 1)  ──► ERROR_TAXONOMY  ──► { re
 
 - ถ้าทีม 1 ส่ง code ที่รู้จัก → ใช้ `retrieval_query` ที่เรา curate ไว้ (คุณภาพคงที่ ทดสอบซ้ำได้)
 - ถ้าส่ง code ที่ไม่รู้จัก → fallback ไปใช้ string ดิบ + log ไว้ให้เติม taxonomy ทีหลัง
-- ได้ผลพลอยได้: มีที่เดียวสำหรับเก็บชื่อภาษาไทยที่จะแสดงผู้ใช้ และ mapping ไปยัง `focus_area` / ข้อห้ามด้านสุขภาพ (ดู `docs/future_user_health_profile.md`)
+- ได้ผลพลอยได้: มีที่เดียวสำหรับเก็บชื่อภาษาไทยที่จะแสดงผู้ใช้ และ mapping ไปยัง `focus_area` / ข้อห้ามด้านสุขภาพ (ดู `docs/plans/future_user_health_profile.md`)
 
-**สถานะ:** ทำแล้วใน [`error_taxonomy.py`](../error_taxonomy.py) (root ของโปรเจกต์ ไม่ใช่ `data_pipeline/` เพราะใช้ตอน query ไม่ใช่ตอนเตรียมข้อมูล)
+**สถานะ:** ทำแล้วใน [`error_taxonomy.py`](../../error_taxonomy.py) (root ของโปรเจกต์ ไม่ใช่ `data_pipeline/` เพราะใช้ตอน query ไม่ใช่ตอนเตรียมข้อมูล)
 `retrieve_kb_context()` เรียก `resolve(error_type, exercise_id)` ทุกครั้ง และ log error code ที่ยังไม่มีใน taxonomy ออกมาให้เห็น
 
 ---
@@ -98,9 +98,9 @@ error_type (code จากทีม 1)  ──► ERROR_TAXONOMY  ──► { re
 
 `curated_data/*.json` และ metadata `applies_to_fault` ใน `kb_local_curated_v4` ยังแท็กด้วย code ชุด §3 — 4 ตัวที่ความหมายตรงกับกฎจริงถูกแมปไว้: `keep back straight→butt wink`, `knees behind toes→knee valgus`, `back not straight→excessive forward trunk lean`, `not full extension→bicep-curl/partial range of motion` อีก 6 ตัว (heels lifting, using momentum, swinging torso, neck craning, push-up elbows flaring, front knee past toes) **ไม่มีกฎจริงรองรับ** ถูกตัดออก — tag ของกฎใหม่ 6 ข้อ (knee valgus, partial squat, hip sag, push-up ROM, lunge back knee, bicep elbow flare) จึง**ยังไม่มีใน KB** ถ้าจะใช้ tag เป็นช่องค้นต้อง re-curate
 
-### 5.3 วัดจริง: ชื่ออาการดิบ vs query ที่ขยาย (`python kb_coverage.py` บน `kb_local_curated_v4`)
+### 5.3 วัดจริง: ชื่ออาการดิบ vs query ที่ขยาย (`python tools/kb_coverage.py` บน `kb_local_curated_v4`)
 
-ผลเต็ม: `compare_output/kb_coverage_v4_rules_raw_vs_expanded.md` — usable = chunk ที่ distance ≤ 0.40, ในวงเล็บคือ best distance
+ผลเต็ม: `compare_output/retrieval/kb_coverage_v4_rules_raw_vs_expanded.md` — usable = chunk ที่ distance ≤ 0.40, ในวงเล็บคือ best distance
 
 | exercise | fault | raw mistake | raw finding | expanded mistake | expanded finding |
 |---|---|---|---|---|---|
@@ -123,8 +123,8 @@ error_type (code จากทีม 1)  ──► ERROR_TAXONOMY  ──► { re
 
 ### 5.4 ผลผ่าน pipeline จริง (`test_rag_compare.py`, KB v4, temperature 0.7)
 
-- `compare_output/ab_raw_fault.md` — `--raw-query` (ชื่ออาการดิบ, ข้าม taxonomy)
-- `compare_output/ab_taxonomy.md` — เส้นทาง production (query ขยาย) — **ผลแรกบน KB v4**
+- `compare_output/history/ab_raw_fault.md` — `--raw-query` (ชื่ออาการดิบ, ข้าม taxonomy)
+- `compare_output/history/ab_taxonomy.md` — เส้นทาง production (query ขยาย) — **ผลแรกบน KB v4**
 
 | exercise | error_type | raw: mistake best / kept | taxonomy: mistake best / kept | สิ่งที่เข้า context จริง |
 |---|---|---|---|---|
@@ -140,7 +140,7 @@ error_type (code จากทีม 1)  ──► ERROR_TAXONOMY  ──► { re
 ### 5.5 ไฟล์ที่เปลี่ยนรอบนี้
 - `mock_data/mock_sessions.json` — error string ทั้งหมดเปลี่ยนเป็นชุด §5.1 (จำนวน rep/score เท่าเดิม); ชุดเดิมเก็บไว้ที่ `mock_data/mock_sessions_legacy_errors.json`
 - `test_rag_compare.py` — รับ `--mock / --raw-query / --collection / --out / --skip-no-rag` และพิมพ์ตาราง retrieval metrics ต่อ exercise ในรายงาน
-- `kb_coverage.py` — `--query-mode raw|expanded|both`
+- `tools/kb_coverage.py` — `--query-mode raw|expanded|both`
 
 ---
 
@@ -200,7 +200,7 @@ python eval/eval_generation.py compare_output/compare_result_per_fault.md --mock
 
 ## 7. ชุดกฎ 2026-09-25 (12 กฎ) — แทนที่ §5
 
-ที่มา: สเปก `docs/system1/RULES_AND_FSM_CONDENSED.md` ของทีมระบบ 1 (หัวข้อ "Form rules") · key = rule name ที่ rep summary บันทึกไว้ · `aliases` ตัวแรก = cue ที่แสดงบนจอ (upstream อาจส่ง cue มาแทน) · `resolve()` ถือว่า `_` กับช่องว่างเป็นตัวเดียวกัน
+ที่มา: สเปก `docs/rules/system1/RULES_AND_FSM_CONDENSED.md` ของทีมระบบ 1 (หัวข้อ "Form rules") · key = rule name ที่ rep summary บันทึกไว้ · `aliases` ตัวแรก = cue ที่แสดงบนจอ (upstream อาจส่ง cue มาแทน) · `resolve()` ถือว่า `_` กับช่องว่างเป็นตัวเดียวกัน
 
 | ท่า | rule (code) | วัดอะไร · เกณฑ์ | cue | รหัส §5 เดิม |
 |---|---|---|---|---|
@@ -220,4 +220,4 @@ python eval/eval_generation.py compare_output/compare_result_per_fault.md --mock
 - **`query`** ที่ความหมายไม่เปลี่ยนใช้ถ้อยคำเดิมที่วัดไว้แล้ว (§5.3 และหมายเหตุของ `full_rom`) · เขียนใหม่เฉพาะ `back_straight`, `body_alignment`, `elbow_away` และเขียนขึ้นใหม่สำหรับ `knee_varus`, `front_knee_too_deep` (รูปแบบเดียวกับ curator mistake)
 - **`LEGACY_CODES`** เปลี่ยนเป็นแยกตามท่า (เพราะ `partial range of motion` ของ §5 ชี้ไปคนละกฎใน push-up กับ bicep-curl) · มีรหัส §5 และรหัสยุค v4 · **ไม่มี `butt wink`** → session เก่าที่ส่ง "Butt wink" จะตกไปที่ fallback และถูก log
 - ผลต่อ KB: `curated_data_v5` / `kb_gemini_curated_v5` ยังติด tag ของ §5 → ต้อง re-tag ด้วย LLM (ขั้น T3 ในแผน) เพราะ `butt wink` map ไปที่ `back_straight` ไม่ได้ และ `knee_varus` / `front_knee_too_deep` ไม่เคยถูกถามตอน curate
-- ทดสอบ: `python test_error_taxonomy.py`, `python data_pipeline/test_normalize_fault_tags.py`
+- ทดสอบ: `python tests/test_error_taxonomy.py`, `python tests/test_normalize_fault_tags.py`

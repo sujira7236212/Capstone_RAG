@@ -54,7 +54,7 @@ user_health_profile
 
 ## 5. เชื่อมกับสิ่งที่มีอยู่แล้ว
 
-- ต่อยอดจาก `error_type` taxonomy (`docs/error_type_taxonomy.md`): แต่ละ fault ควรมี `likely_physical_causes[]`
+- ต่อยอดจาก `error_type` taxonomy (`docs/rules/error_type_taxonomy.md`): แต่ละ fault ควรมี `likely_physical_causes[]`
   เช่น `heels_lifting` → `["limited_ankle_dorsiflexion"]` ทำให้ระบบเชื่อม "อาการที่ตรวจพบ" กับ "ประวัติ" ได้แบบ deterministic ไม่ต้องพึ่ง LLM เดา
 - `historical_comparison` ที่มีอยู่คือประวัติ **ผลการทำท่า** ส่วนนี้คือประวัติ **ตัวผู้ใช้** — คนละแกน ควรเก็บคนละตาราง แต่ join ด้วย `user_id` เดียวกัน
 

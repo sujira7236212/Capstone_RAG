@@ -2,7 +2,7 @@
 
 > อัปเดต 2026-10-03 · branch `rule-change-v6`
 > เขียนให้คนที่ไม่เคยรู้จักระบบนี้อ่านได้ตั้งแต่ต้น: เริ่มจากว่าระบบทำอะไร (§0–§3) → ทำไมต้องทำ v6 (§4) → แต่ละขั้นทำงานอย่างไรและผลเป็นอย่างไร (§5–§6) → ผลการตรวจทั้งหมด (§7) → KB ตอนนี้มีอะไรและขาดอะไร (§8) → สิ่งที่ยังค้าง (§9–§11)
-> ที่มา: [`rule_change_v6_plan.md`](rule_change_v6_plan.md), [`eval_v6_plan.md`](eval_v6_plan.md), [`t3_curation_status.md`](t3_curation_status.md), โค้ด และ git log · ตัวเลขที่ระบุว่า "นับตอนเขียน" คำนวณจากไฟล์ที่มีอยู่ ไม่มีการเรียก API
+> ที่มา: [`rule_change_v6_plan.md`](../plans/rule_change_v6_plan.md), [`eval_v6_plan.md`](../plans/eval_v6_plan.md), [`t3_curation_status.md`](t3_curation_status.md), โค้ด และ git log · ตัวเลขที่ระบุว่า "นับตอนเขียน" คำนวณจากไฟล์ที่มีอยู่ ไม่มีการเรียก API
 
 ---
 
@@ -30,7 +30,7 @@
 | **กฎ (rule) / `error_type`** | ท่าผิดที่ระบบ 1 ตรวจได้ เช่น `partial_squat` · ระบบ 1 ส่งมาเป็น **key** ภาษาอังกฤษตัวเล็กคั่นด้วย `_` เสมอ |
 | **KB (Knowledge Base)** | "ตำรา" ของระบบ = ฐานข้อมูลประโยคความรู้ที่สกัดจากเอกสาร · รุ่นปัจจุบัน **KB v6** (collection `kb_gemini_curated_v6`) |
 | **curate** | ขั้นที่ให้ LLM อ่านเอกสารต้นฉบับแล้วสกัดเป็นประโยคความรู้สั้น ๆ พร้อมติดป้าย (§5.5) |
-| **curator** | สคริปต์ที่ทำขั้น curate: [`data_pipeline/curator.py`](../data_pipeline/curator.py) ใช้ `gemini-3.5-flash` |
+| **curator** | สคริปต์ที่ทำขั้น curate: [`data_pipeline/curator.py`](../../data_pipeline/curator.py) ใช้ `gemini-3.5-flash` |
 | **window** | ช่วงข้อความยาว ~6,000 ตัวอักษรที่ตัดจากเอกสาร 1 ช่วง = ส่งให้ LLM 1 ครั้ง |
 | **item / chunk** | ประโยคความรู้ 1 ประโยคที่ curator สกัดได้ = 1 แถวในฐานข้อมูล |
 | **kind** | ประเภทของ item มี 4 แบบ: `mistake` (ท่าผิด) · `consequence` (ผลเสีย) · `principle` (หลักท่าที่ถูก/วิธีทำ) · `finding` (ผลวิจัยที่มีตัวเลข) |
@@ -71,18 +71,18 @@
 ไฟล์หลัก
 | ไฟล์ | หน้าที่ |
 |---|---|
-| [`error_taxonomy.py`](../error_taxonomy.py) | รายชื่อกฎ 12 ข้อ + query ของแต่ละกฎ + ชื่อเก่าที่ยังรับได้ (`LEGACY_CODES`) |
-| [`eval/rule_cards.json`](../eval/rule_cards.json) | rule card 12 ใบ |
-| [`data_pipeline/curator.py`](../data_pipeline/curator.py) | ขั้น curate |
-| [`ingest.py`](../ingest.py) | ขั้น ingest |
-| [`test_rag_compare.py`](../test_rag_compare.py) | ช่วง B ทั้งหมด (ค้น + เขียน feedback ทั้งฝั่ง RAG และ no-RAG) แล้วเขียนรายงาน |
+| [`error_taxonomy.py`](../../error_taxonomy.py) | รายชื่อกฎ 12 ข้อ + query ของแต่ละกฎ + ชื่อเก่าที่ยังรับได้ (`LEGACY_CODES`) |
+| [`eval/rule_cards.json`](../../eval/rule_cards.json) | rule card 12 ใบ |
+| [`data_pipeline/curator.py`](../../data_pipeline/curator.py) | ขั้น curate |
+| [`ingest.py`](../../ingest.py) | ขั้น ingest |
+| [`test_rag_compare.py`](../../test_rag_compare.py) | ช่วง B ทั้งหมด (ค้น + เขียน feedback ทั้งฝั่ง RAG และ no-RAG) แล้วเขียนรายงาน |
 | `mock_data/mock_sessions_<ท่า>.json` | session จำลอง |
 
 ---
 
 ## 3. ระบบ 1 ส่งอะไรมาให้เรา
 
-### 3.1 ระบบ 1 ทำงานอย่างไร (สรุปจาก [`system1/RULES_AND_FSM_CONDENSED.md`](system1/RULES_AND_FSM_CONDENSED.md))
+### 3.1 ระบบ 1 ทำงานอย่างไร (สรุปจาก [`system1/RULES_AND_FSM_CONDENSED.md`](../rules/system1/RULES_AND_FSM_CONDENSED.md))
 
 1. กล้องจับท่า → MediaPipe หาตำแหน่งข้อต่อ 33 จุดแบบ 3 มิติ → คำนวณมุมข้อต่อ (เข่า ศอก ลำตัวเอียง ฯลฯ)
 2. **ตัวนับ rep (FSM)** ดูมุมหลักของท่า (เช่น squat ใช้มุมเข่า) แล้วเปลี่ยนสถานะ: `IDLE` → `CONCENTRIC` (ลง) → `INFLECTION` (จุดต่ำสุด) → `ECCENTRIC` (ขึ้น) → `IDLE`
@@ -174,7 +174,7 @@
  (ยังไม่ทำ) วัดผลด้วย judge หลายค่าย · ปรับ prompt ทีละข้อ · curate เพิ่ม (v6b)
 ```
 
-ชื่อขั้น `T…` มาจากแผน [`rule_change_v6_plan.md`](rule_change_v6_plan.md) และ `E…` มาจากแผนวัดผล [`eval_v6_plan.md`](eval_v6_plan.md)
+ชื่อขั้น `T…` มาจากแผน [`rule_change_v6_plan.md`](../plans/rule_change_v6_plan.md) และ `E…` มาจากแผนวัดผล [`eval_v6_plan.md`](../plans/eval_v6_plan.md)
 
 ---
 
@@ -245,11 +245,11 @@
 | `check_rule_cards.py`: โครงสร้าง card + ครอบคลุมกฎตามสเปก | ผ่าน (12 card · 173 anchor · 12 กฎ) |
 | anchor ซ้ำกับ KB v5 ตั้งแต่ 5 คำติดกัน | ร่างแรก 24 จุดใน 23 anchor → เขียนใหม่ → **0** |
 | query ซ้ำกับ KB v5 หรือ anchor ตั้งแต่ 5 คำ (`--queries`) | **0** |
-| `test_error_taxonomy.py` / `test_normalize_fault_tags.py` | 23/23 · 10/10 |
+| `tests/test_error_taxonomy.py` / `tests/test_normalize_fault_tags.py` | 23/23 · 10/10 |
 
 ### 5.3 จัดการไฟล์ซ้ำ (T2)
 
-เทียบ MD5 ของไฟล์ เจอไฟล์ซ้ำ 4 ไฟล์ + 1 ไฟล์ที่เป็นเปเปอร์เดียวกันคนละชื่อ → ย้ายไป `data_duplicates/` (ไม่ลบ) · ระหว่างคัดไฟล์ user ลบไฟล์ซ้ำเพิ่มอีก 2 ไฟล์ · สเปกระบบ 1 ย้ายออกจาก `data/` ไปที่ `docs/system1/`
+เทียบ MD5 ของไฟล์ เจอไฟล์ซ้ำ 4 ไฟล์ + 1 ไฟล์ที่เป็นเปเปอร์เดียวกันคนละชื่อ → ย้ายไป `data_duplicates/` (ไม่ลบ) · ระหว่างคัดไฟล์ user ลบไฟล์ซ้ำเพิ่มอีก 2 ไฟล์ · สเปกระบบ 1 ย้ายออกจาก `data/` ไปที่ `docs/rules/system1/`
 
 ### 5.4 คัดเอกสารที่ไม่เกี่ยวออกทั้งไฟล์ (T3a)
 
@@ -260,7 +260,7 @@
 2. ดึงข้อความตัวอย่างโดยไม่เรียก API: PDF ใช้ `pypdf` (จำนวนหน้า bookmark ชื่อเรื่อง abstract 2 หน้าแรก) · PDF สแกนดูภาพหน้า · URL ใช้ `trafilatura`
 3. Claude ตัดสินทีละหน่วย: **ตัด** ถ้าไม่มีเนื้อหาเรื่องท่าทางที่ใช้กับกฎข้อใดได้เลย (เช่น วัดแค่ EMG ตาม %1RM, ผลทางคลินิก, งานวิธีวัด) · **ไม่แน่ใจ = เก็บ**
 4. บันทึกเหตุผลและส่วนที่อ่าน ต่อหน่วย · **ไม่บันทึกว่าเกี่ยวกับกฎไหน** (กันกลายเป็นคำใบ้ให้ curator)
-5. user ตรวจรายการตัดและรายการที่ไม่แน่ใจใน [`prefilter_v6_review.md`](prefilter_v6_review.md)
+5. user ตรวจรายการตัดและรายการที่ไม่แน่ใจใน [`prefilter_v6_review.md`](../kb/prefilter_v6_review.md)
 
 **ผล**
 | ท่า | หน่วย | เก็บ | ตัด |
@@ -431,7 +431,7 @@ LLM อ่านทีละ item แล้วเทียบกับคำอ�
 | window ที่ถูกย้ายออกเพราะ "ท่าไม่ตรงโฟลเดอร์" | รอบ 1: split squat ถูกตัด 8 window เพราะ LLM เรียกว่า "Bulgarian Split Squat" → เพิ่มชื่อเรียกให้นับเป็น lunge แล้วกู้คืนครบ 8 · รอบ 2a: 0 |
 | สุ่มอ่าน item ที่แยกมาจาก `general/` (มี 75 ชิ้น สุ่ม 24 + สแกนครบ) | จัดท่าถูก **24/24** · ป้ายข้ามท่า **0/75** · ป้ายผิด 2–3 ชิ้น (ศีรษะ/สายตาติด `rounded_back` ทั้งที่ card ไม่นับ) |
 | ป้ายของกฎพี่น้อง | valgus+varus 36 item, shallow+excessive 6 item — เป็นเรื่องที่ใช้ได้ทั้งคู่ ไม่พบการติดสลับ |
-| `test_route_general.py` · skip list จับไฟล์จริง | ผ่าน · 31/31 |
+| `tests/test_route_general.py` · skip list จับไฟล์จริง | ผ่าน · 31/31 |
 
 **เรื่องที่เจอและตามดู** (ไม่ได้แก้ผล curator)
 - `forward_trunk_lean` มี item ที่บอกว่าลำตัวโน้มไปหน้ามีข้อดี (ช่วยกล้ามสะโพก) — ตรงตาม card แต่ LLM ที่เขียน feedback อาจดึงไปพูดว่า "โน้มตัวดี"
@@ -525,7 +525,7 @@ Squatting too shallow, where ...
 
 ### 6.6 B6 บันทึกรายงาน — baseline v14 เต็ม 4 ท่า
 
-`compare_output/compare_result_v14_<ท่า>.md/.json` เก็บค่าที่ตั้ง ตัวเลขการค้น context ที่ส่งจริง และคำตอบ RAG / no-RAG วางคู่กัน · 20 session × 3 คำตอบ × 2 ฝั่ง = **120 คำตอบ**
+`compare_output/baseline_v14/compare_result_v14_<ท่า>.md/.json` เก็บค่าที่ตั้ง ตัวเลขการค้น context ที่ส่งจริง และคำตอบ RAG / no-RAG วางคู่กัน · 20 session × 3 คำตอบ × 2 ฝั่ง = **120 คำตอบ**
 
 > ตัวเลขด้านล่างนับตอนเขียนจากไฟล์รายงาน ไม่มีการเรียก API · **ยังไม่ใช่ผลวัดตามแผน E6** (ยังไม่แยก dev/test และยังไม่มี judge)
 
@@ -569,7 +569,7 @@ Squatting too shallow, where ...
 | prompt v14 smoke | key หลุด · ตัวเลข/abort | 0/8 · 8/8 |
 | baseline v14 | leak ข้ามท่า · ศัพท์ไม่แปล · ลอก context · key หลุด | 0/201 · 9 vs 4 · ≤ 10 คำ · 6/120 |
 
-**เทสต์ทั้งหมดรันซ้ำวันที่ 2026-10-03 ผ่านทุกตัว:** `test_error_taxonomy.py` 23/23 · `test_normalize_fault_tags.py` 10/10 · `test_route_general.py` · `eval/test_make_split.py` · `eval/test_eval_generation.py` · `check_rule_cards.py --queries` · `build_mock_sessions.py --check` · `make_split.py --check`
+**เทสต์ทั้งหมดรันซ้ำวันที่ 2026-10-03 ผ่านทุกตัว:** `tests/test_error_taxonomy.py` 23/23 · `tests/test_normalize_fault_tags.py` 10/10 · `tests/test_route_general.py` · `tests/test_make_split.py` · `tests/test_eval_generation.py` · `check_rule_cards.py --queries` · `build_mock_sessions.py --check` · `make_split.py --check`
 
 ### 7.1 แผนวัดคุณภาพคำตอบด้วย blind pairwise (ยังไม่เคยรันเต็ม — ยังไม่มีตัวเลข)
 
@@ -580,7 +580,7 @@ Squatting too shallow, where ...
 **เครื่องมือ:** `eval/judge_pairwise.py` (เสร็จแล้ว smoke ผ่าน) · เทียบ RAG กับ no-RAG จากไฟล์ baseline ไฟล์เดียวได้ด้วย `--side-a rag --side-b no_rag`
 
 ```bash
-python eval/judge_pairwise.py compare_output/compare_result_v14_squat.json compare_output/compare_result_v14_squat.json \
+python eval/judge_pairwise.py compare_output/baseline_v14/compare_result_v14_squat.json compare_output/baseline_v14/compare_result_v14_squat.json \
   --side-a rag --side-b no_rag --names RAG noRAG --reference none --out compare_output/pairwise_v14_squat.md
 ```
 
@@ -654,7 +654,7 @@ python eval/judge_pairwise.py compare_output/compare_result_v14_squat.json compa
 | เรื่อง | สถานะ | รออะไร |
 |---|---|---|
 | ~~commit ผล baseline v14 และเอกสารนี้~~ | ✅ commit แล้ว 2026-10-18 | — |
-| `kb_coverage.py` บน v6 | ยังไม่พบบันทึกว่ารัน | — |
+| `tools/kb_coverage.py` บน v6 | ยังไม่พบบันทึกว่ารัน | — |
 | Q-hyde (คำค้นแบบที่ LLM แต่ง statement สมมติจาก card) | ยังไม่ทำ | API key ค่ายที่ไม่ใช่ Gemini |
 | วัดผลเต็ม: สร้าง pool (E3) → judge 3 ค่าย (E4) → baseline บน dev + test (E6) → เทียบคำค้น (E7) | ยังไม่ทำ | API key ของ judge · ประเมินค่า API ก่อนรัน |
 | data gap 3 กฎ | บันทึกแล้ว | user หาเอกสารใหม่ (ต้องผ่านการคัดไฟล์) |
@@ -807,5 +807,5 @@ python data_pipeline/tag_coverage.py curated_data_v6      # นับป้า�
 python eval/make_split.py --check                         # ตรวจการแบ่ง dev/test
 python ingest.py --data-folder ./curated_data_v6 --collection kb_gemini_curated_v6
 python mock_data/build_mock_sessions.py --check           # ตรวจ mock
-python eval/eval_generation.py compare_output/compare_result_v14_squat.md
+python eval/eval_generation.py compare_output/baseline_v14/compare_result_v14_squat.md
 ```

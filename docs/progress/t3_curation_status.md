@@ -1,13 +1,13 @@
 # T3 — สถานะการ curate KB v6 (handoff)
 
-> อัปเดต 2026-10-03 · branch `rule-change-v6` · แผนหลัก [`rule_change_v6_plan.md`](rule_change_v6_plan.md) · เปิดไฟล์นี้ก่อนเมื่อทำ T3 ต่อใน session ใหม่
+> อัปเดต 2026-10-03 · branch `rule-change-v6` · แผนหลัก [`rule_change_v6_plan.md`](../plans/rule_change_v6_plan.md) · เปิดไฟล์นี้ก่อนเมื่อทำ T3 ต่อใน session ใหม่
 > **สถานะ:** trial ✅ · รอบ 1 ✅ · รอบ 2a ✅ · **user เลือกหยุดที่ 2a ตาม §8.1** (2026-10-03, data gap ค่อยแก้ทีหลัง) · §8.1 ข้อ 1–3 ✅ (commit `f6fdf0b`) · ข้อ 5 E5 ✅ ทำก่อน ingest (`eval/split_v6.json`, split ตามเอกสารจึงไม่ขึ้นกับ ingest) · ข้อ 4 ingest ✅ `kb_gemini_curated_v6` 1,845 row (= item ทั้งหมด) · ข้อ 6 mock ✅ 4 ไฟล์ `mock_data/mock_sessions_<ท่า>.json` 20 session (`build_mock_sessions.py`) · **ข้อ 7 กำลังทำ:** prompt v14 ผ่าน smoke แล้ว (`state_occurred` ยังไม่ส่งให้ LLM จนกว่าจะคุยกับระบบ 1 · คำถามอยู่ §8.1 ข้อ 7) → ถัดไปรัน baseline เต็ม 4 ท่า · DB อยู่ใน Docker `pgvector-db` localhost:5432
 
 ## 0. เริ่มต่อจากตรงนี้
 
 1. ทำ §8.1 ต่อจากข้อ 7 (prompt → generate) · E5 เสร็จแล้ว: วิธีแบ่งดู `eval/make_split.py` และ eval_v6_plan E5 · ตอนเพิ่มเอกสาร (§8.3) ใช้ `python eval/make_split.py --round v6b` (ห้ามเปลี่ยนชื่อไฟล์ใน `data/` เพราะ path คือ id)
-   · **2026-10-19 (user ขอ):** ย้ายไฟล์ที่ curate แล้ว (ทุกไฟล์ใน batch `trial`/`round1`/`round2a`, 36 หน่วย) ไป `data/picked/<ท่า>/…` โครงโฟลเดอร์เดิม · **id ยังเป็น path เดิม** `data/<ท่า>/…` (อยู่ใน `source` ของ curated JSON, KB v6, `split_v6.json`, `prefilter_v6.json`, `curation_batches_v6.json` — ไม่ได้แก้) · ไฟล์จริง = `data/picked/` + id ที่ตัด `data/` ออก · batch เก่ารันซ้ำไม่ได้แล้ว (curator หยุดเพราะหาไฟล์ไม่เจอ ไม่ curate ซ้ำ) · curator ข้าม `data/picked/` เสมอ · `push-up/urls.txt` แยก: 6 URL ที่ curate แล้วอยู่ `data/picked/push-up/urls.txt`, URL ใหม่ (BOXROX) อยู่ที่เดิม · เอกสารใหม่รอบนี้: [`prefilter_v6_review.md` §7](prefilter_v6_review.md)
-   · **โครง `data/` (2026-10-19):** `data/<ท่า>/` = ไฟล์ใหม่ที่ยังไม่ตรวจ · `data/checked/<ท่า>/` = ตรวจ prefilter แล้วแต่ยังไม่ curate เพราะยังไม่แน่ใจว่าเกี่ยวจริงหรือคุ้มที่จะ curate (drop + keep ที่ยังไม่ได้เลือกเข้า batch, ไม่ใช่คิวรอ curate · รัน curator ด้วย `--batch` เสมอ) · ดู [`data/README.md`](../data/README.md) · `data/picked/<ท่า>/` = curate แล้ว · **id ของทุกไฟล์คือ `data/<ท่า>/…` เสมอ** ไม่ว่าไฟล์จะอยู่โฟลเดอร์ไหน · curator: `checked/` โปร่งใส (อ่านไฟล์จากนั้นแต่ใช้ id เดิมทั้ง skip-list, batch, ที่เก็บผล, `source`) · `picked/` ข้ามเสมอ · ตรวจไฟล์ใหม่เสร็จ → เพิ่ม entry ใน `prefilter_v6.json` แล้วย้ายไป `checked/` · curate เสร็จ → ย้ายจาก `checked/` ไป `picked/`
+   · **2026-10-19 (user ขอ):** ย้ายไฟล์ที่ curate แล้ว (ทุกไฟล์ใน batch `trial`/`round1`/`round2a`, 36 หน่วย) ไป `data/picked/<ท่า>/…` โครงโฟลเดอร์เดิม · **id ยังเป็น path เดิม** `data/<ท่า>/…` (อยู่ใน `source` ของ curated JSON, KB v6, `split_v6.json`, `prefilter_v6.json`, `curation_batches_v6.json` — ไม่ได้แก้) · ไฟล์จริง = `data/picked/` + id ที่ตัด `data/` ออก · batch เก่ารันซ้ำไม่ได้แล้ว (curator หยุดเพราะหาไฟล์ไม่เจอ ไม่ curate ซ้ำ) · curator ข้าม `data/picked/` เสมอ · `push-up/urls.txt` แยก: 6 URL ที่ curate แล้วอยู่ `data/picked/push-up/urls.txt`, URL ใหม่ (BOXROX) อยู่ที่เดิม · เอกสารใหม่รอบนี้: [`prefilter_v6_review.md` §7](../kb/prefilter_v6_review.md)
+   · **โครง `data/` (2026-10-19):** `data/<ท่า>/` = ไฟล์ใหม่ที่ยังไม่ตรวจ · `data/checked/<ท่า>/` = ตรวจ prefilter แล้วแต่ยังไม่ curate เพราะยังไม่แน่ใจว่าเกี่ยวจริงหรือคุ้มที่จะ curate (drop + keep ที่ยังไม่ได้เลือกเข้า batch, ไม่ใช่คิวรอ curate · รัน curator ด้วย `--batch` เสมอ) · ดู [`data/README.md`](../../data/README.md) · `data/picked/<ท่า>/` = curate แล้ว · **id ของทุกไฟล์คือ `data/<ท่า>/…` เสมอ** ไม่ว่าไฟล์จะอยู่โฟลเดอร์ไหน · curator: `checked/` โปร่งใส (อ่านไฟล์จากนั้นแต่ใช้ id เดิมทั้ง skip-list, batch, ที่เก็บผล, `source`) · `picked/` ข้ามเสมอ · ตรวจไฟล์ใหม่เสร็จ → เพิ่ม entry ใน `prefilter_v6.json` แล้วย้ายไป `checked/` · curate เสร็จ → ย้ายจาก `checked/` ไป `picked/`
 2. ~~รันรอบ 2a~~ เสร็จแล้ว
 3. หลังรันทุกรอบ: `python data_pipeline/tag_coverage.py curated_data_v6` → ดูกฎที่ยังต่ำกว่าเกณฑ์ (§4) · เช็ค log หา `FOLDER MISMATCH` (§6.1)
 4. ครบทุกรอบแล้ว: commit `curated_data_v6/` + `data_pipeline/curation_usage_v6.jsonl` → T5 ingest → E5 split → mock 12 กฎ + clean → generate
@@ -41,7 +41,7 @@ cd data_pipeline && python rescue_false_mismatches.py --curated ../curated_data_
 | ขั้น | ผล | commit |
 |---|---|---|
 | T1 Q-spec + card | user ยืนยัน query ทั้ง 12 · ผู้เชี่ยวชาญอนุมัติ card 12 ใบ (ไม่ใส่ชื่อ) · ลบ `rule_th`/`display_th`/`aliases` | `cc4f55b` |
-| T3a prefilter | 102 หน่วย (PDF 85 · URL 17) → keep 71 · drop 31 (27 ไม่เกี่ยว + `feedback_and_cueing` 4 ไฟล์ = ใช้ทำ prompt P5 อย่างเดียว) · [`prefilter_v6_review.md`](prefilter_v6_review.md) | `35f749a` |
+| T3a prefilter | 102 หน่วย (PDF 85 · URL 17) → keep 71 · drop 31 (27 ไม่เกี่ยว + `feedback_and_cueing` 4 ไฟล์ = ใช้ทำ prompt P5 อย่างเดียว) · [`prefilter_v6_review.md`](../kb/prefilter_v6_review.md) | `35f749a` |
 | T4 curator | `--skip-list` · `general/` เห็น 12 กฎ + route ราย item · card `excludes` เป็น "do not tag when" · ไม่ใช้ mismatch กับ general | `3a98ac9` |
 | usage log / batch | `--usage-log` (input/cached/output/reasoning/model_version/finish_reason) · `--only` · `--batch` | `928264c` `8471ba7` `cada83c` |
 | alias split squat | `splitsquat` → lunge · rescue มี `--curated/--excluded` · `tag_coverage.py` | `fc4a096` |
@@ -131,7 +131,7 @@ item ต่อท่า: squat 801 (245 ไม่มี tag) · lunge 405 (309) 
 
 ### 5.2 รอบ 3 ✅ รันแล้ว 2026-10-19 (user สั่ง · 39 call · $0.67)
 
-เอกสารที่ user หามาใหม่และผ่าน prefilter ([`prefilter_v6_review.md` §7–7.1](prefilter_v6_review.md)) · batch `round3` · usage log แถว 407–445 · FOLDER MISMATCH 0 · `finish_reason` STOP ทุกครั้ง
+เอกสารที่ user หามาใหม่และผ่าน prefilter ([`prefilter_v6_review.md` §7–7.1](../kb/prefilter_v6_review.md)) · batch `round3` · usage log แถว 407–445 · FOLDER MISMATCH 0 · `finish_reason` STOP ทุกครั้ง
 
 > ⚠️ **`model_version` = `gemini-3.6-flash` ทุก call** (รอบ trial/1/2a = `gemini-3.5-flash`) · โค้ดยังขอชื่อ `gemini-3.5-flash` เหมือนเดิม แต่ฝั่ง Google ส่งรุ่น 3.6 มาให้ → ตาม §8.3 นับเป็น "เปลี่ยน curator" · **user ยืนยัน 2026-10-20:** Google เลิกให้บริการ 3.5 แล้ว รุ่นต่ำสุดที่เรียกได้คือ `gemini-3.6-flash` → ทางเลือกเดิม (ค) "ระบุรุ่น 3.5 ตายตัวแล้ว curate รอบ 3 ใหม่" ทำไม่ได้ · **ยังรอ user ตัดสิน:** (ก) เก็บไว้และเขียนลงรายงาน (ข) curate รอบเก่าใหม่ทั้งหมดด้วย 3.6 (~$8.4 ตามค่ารอบเดิม)
 
@@ -172,7 +172,7 @@ coverage ที่เปลี่ยน (ก่อน → หลัง, mistake/
 | `data_pipeline/curation_batches_v6.json` | รายการไฟล์แต่ละรอบ (`trial`, `round1`, `round2a`) |
 | `data_pipeline/curation_usage_v6.jsonl` | token ต่อครั้ง (แถว 300–406 = รอบ 2a) |
 | `data_pipeline/tag_coverage.py` | นับ tag ต่อกฎ |
-| `data_pipeline/test_route_general.py` | เทสต์ route/skip/batch/fault block |
+| `tests/test_route_general.py` | เทสต์ route/skip/batch/fault block |
 | `curated_data_v6/<ท่า>/…` | ผล curate (ไฟล์ `general__*.json` = item ที่ route มาจาก `general/`) |
 | `excluded_from_kb_v6/` | window ที่ mismatch (ตอนนี้ว่าง) |
 | `eval/rule_cards.json` | card 12 ใบ (curator ใช้ `excludes`) |
@@ -191,7 +191,7 @@ coverage ที่เปลี่ยน (ก่อน → หลัง, mistake/
 7. ปรับ prompt ขั้นต่ำให้ generator รับ key ใหม่ 12 ตัว → generate · P-rule-card / P5 เป็นขั้นแยกทีหลัง
    · ตอนอ่าน feedback ดู §6.2 (lunge ที่บอกว่าลำตัวโน้มไปหน้าดี)
    - **prompt v14** (2026-10-03, `e6b2a9a`) แก้แค่การอ่าน format: `error_type` = key (บรรยายเป็นภาษาคน ห้ามพิมพ์ key, ตัวแรก = priority สูงสุด) · `abort` (นับใน total/incorrect, เรียก "attempt N") · default collection เป็น v6 (`embedding_config.py`) · **ไม่**แตะ `consequence` (P1), P2–P6, rule card, ทาง A §6.7
-   - **`state_occurred` ยังไม่ส่งให้ LLM** (user 2026-10-03): `HELD_BACK_FIELDS` ใน `test_rag_compare.py` ตัดออกจาก payload · ไฟล์ mock เก็บไว้เหมือนเดิม · เหตุผล: smoke 2 รอบที่อธิบาย state ใน prompt (`compare_output/smoke_v14.md`, `smoke_v14b.md`) ยังอ่าน CONCENTRIC เป็น "ขึ้น" 3–4/8 คำตอบ, ผูกกฎแบบ rep กับช่วง 4/8, คำ concentric/eccentric หลุด 2–3/8 และความหมายจริงยังไม่ยืนยันกับระบบ 1 · smoke รอบ 3 ไม่ส่ง state (`smoke_v14c.md`): key หลุด 0/8 · ตัวเลข/abort ถูก 8/8
+   - **`state_occurred` ยังไม่ส่งให้ LLM** (user 2026-10-03): `HELD_BACK_FIELDS` ใน `test_rag_compare.py` ตัดออกจาก payload · ไฟล์ mock เก็บไว้เหมือนเดิม · เหตุผล: smoke 2 รอบที่อธิบาย state ใน prompt (`compare_output/baseline_v14/smoke_v14.md`, `smoke_v14b.md`) ยังอ่าน CONCENTRIC เป็น "ขึ้น" 3–4/8 คำตอบ, ผูกกฎแบบ rep กับช่วง 4/8, คำ concentric/eccentric หลุด 2–3/8 และความหมายจริงยังไม่ยืนยันกับระบบ 1 · smoke รอบ 3 ไม่ส่ง state (`smoke_v14c.md`): key หลุด 0/8 · ตัวเลข/abort ถูก 8/8
    - เอา state กลับมา = checkpoint generation แยก เทียบกับ baseline v14
    - **คำถามที่ต้องคุยกับระบบ 1** (รูปแบบ JSON ที่ mock อยู่):
      1. `state_occurred` ของกฎแบบ frame = state ของ frame แรกที่ผิดหรือไม่ · กฎแบบ rep (ตรวจตอนจบ attempt) ส่ง state อะไร หรือไม่ส่ง

@@ -1,12 +1,12 @@
 """Build the KB v6 mock sessions: one file per exercise, mock_data/mock_sessions_<exercise>.json
-(docs/t3_curation_status.md section 8.1 step 6). The app makes the user pick one exercise
+(docs/progress/t3_curation_status.md section 8.1 step 6). The app makes the user pick one exercise
 first, so each file holds that exercise only: one session per rule (that fault alone), one
 mixed session (several faults in one set, to test priority) and one clean session.
 
 Session format = what system 1 sends (user, 2026-10-02/03):
 - error_type is the rule key in error_taxonomy.py, never a display name; the same keys go in
   historical_comparison.previous_common_errors.
-- state_occurred is the FSM state (docs/system1/RULES_AND_FSM_CONDENSED.md): CONCENTRIC,
+- state_occurred is the FSM state (docs/rules/system1/RULES_AND_FSM_CONDENSED.md): CONCENTRIC,
   INFLECTION or ECCENTRIC. NOTE the spec names CONCENTRIC "going down" (the counting angle
   falling), which is the eccentric muscle phase in squat, lunge and push-up - the prompt has
   to explain the states, not this file.

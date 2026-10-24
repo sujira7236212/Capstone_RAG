@@ -8,11 +8,11 @@ upstream system sends.
 
 The fault set below is the upstream system's rule set as of 2026-09-28: 12 rules over
 4 exercises, keyed by the rule name its rep summary records (`partial_squat`,
-`knee_valgus`, ...). Source of truth: docs/system1/RULES_AND_FSM_CONDENSED.md from the
+`knee_valgus`, ...). Source of truth: docs/rules/system1/RULES_AND_FSM_CONDENSED.md from the
 upstream team (the "Form rules" section - metric, threshold, cue). The 2026-09-28 sync
 renamed 10 of the 12 rules of 2026-09-25 (`knee_depth` -> `partial_squat`, ...) without
 changing what they measure; those names are in LEGACY_CODES. The 2026-09-25 set itself
-replaced the 10-fault snapshot of 2026-09-11 (docs/error_type_taxonomy.md section 5).
+replaced the 10-fault snapshot of 2026-09-11 (docs/rules/error_type_taxonomy.md section 5).
 Old codes that still describe one of these rules live in LEGACY_CODES, because
 curated_data/ (v4) and curated_data_v5/ still carry them in `applies_to_fault` and older
 mock sessions still send them.
@@ -29,7 +29,7 @@ The upstream sends `error_type` as the rule name itself, never the on-screen cue
 Thai label (confirmed 2026-10-02), so there is no alias list. resolve() still ignores
 the difference between "_" and " " ("knee valgus" finds knee_valgus).
 
-How each `query` was written (Q-spec, docs/eval_v6_plan.md E2): from the definition,
+How each `query` was written (Q-spec, docs/plans/eval_v6_plan.md E2): from the definition,
 includes and excludes of the rule's card in eval/rule_cards.json, never from the KB and
 never from the card's anchors. Each must share fewer than 5 consecutive words with KB
 v5 and with the anchors (eval/check_rule_cards.py --queries). Form: one descriptive
@@ -48,7 +48,7 @@ card's job, not the query's.
 #   query       - fault-name phrasing sent to the vector store, and the description the
 #                 curator shows the LLM when it tags items (data_pipeline/curator.py)
 #   focus_area  - joint/region, for future health-profile cross-referencing
-#                 (see docs/future_user_health_profile.md)
+#                 (see docs/plans/future_user_health_profile.md)
 #   source      - "expert" (defined by the PT consultant) or "web" (fitness-literature
 #                 term - no fixed clinical name, so the query must be descriptive)
 ERROR_TAXONOMY = {
@@ -121,7 +121,7 @@ ERROR_TAXONOMY = {
         },
         "partial_curl": {
             # The 2026-09-11 query was reworded to the curator's own phrasing after an eval
-            # on v5 (leakage, docs/eval_v6_plan.md section 1); this one is written from the
+            # on v5 (leakage, docs/plans/eval_v6_plan.md section 1); this one is written from the
             # card. It still avoids the word "elbow", which pulled elbow_flare chunks.
             "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions)",
             "focus_area": "elbow",

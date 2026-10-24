@@ -305,8 +305,8 @@ no-RAG บอกแค่ผลที่ตามมา RAG บอกกลไ�
 | ablation | การทดลองเปลี่ยนทีละอย่าง เพื่อดูว่าแต่ละอย่างมีผลแค่ไหน |
 
 ### ไฟล์อ้างอิง
-- แผนและสถานะล่าสุด: `docs/rag_v2_ablation_plan.md`
-- ผลการทดลองทุกขั้น: `compare_output/ablation_log.md`
-- ประวัติ KB: `docs/kb_quality_assessment.md` §9–12
-- ผลเปรียบเทียบคำตอบ: `compare_output/compare_result_v9.md`, `compare_result_v10.md`, `compare_result_per_fault_v12.md`, `compare_result_per_fault_v13.md`
-- ผลวัดการแปลศัพท์: `compare_output/generation_v9_vs_v10.md`
+- แผนและสถานะล่าสุด: `docs/plans/rag_v2_ablation_plan.md`
+- ผลการทดลองทุกขั้น: `compare_output/ablation/ablation_log.md`
+- ประวัติ KB: `docs/kb/kb_quality_assessment.md` §9–12
+- ผลเปรียบเทียบคำตอบ: `compare_output/history/compare_result_v9.md`, `compare_result_v10.md`, `compare_result_per_fault_v12.md`, `compare_result_per_fault_v13.md`
+- ผลวัดการแปลศัพท์: `compare_output/history/generation_v9_vs_v10.md`

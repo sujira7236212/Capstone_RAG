@@ -22,16 +22,16 @@ pure sampling noise + judge noise, which is the yardstick for the main number.
 Resumable: every judgment is cached in the output JSON, keyed by prompt version, judge
 model and the exact texts in their shown order.
 
-    python eval/judge_pairwise.py compare_output/g1_R0.json compare_output/g1_R4.json \\
-        --names R0 R4 --out compare_output/g1_pairwise_R0_vs_R4.md
+    python eval/judge_pairwise.py compare_output/ablation/g1_R0.json compare_output/ablation/g1_R4.json \\
+        --names R0 R4 --out compare_output/ablation/g1_pairwise_R0_vs_R4.md
 
 Judge: default cerebras:gpt-oss-120b (needs CEREBRAS_API_KEY in .env). Check cost first with
 --estimate (no API call). Use a separate --out per judge so each cache file holds one judge.
 
-    python eval/judge_pairwise.py compare_output/compare_result_per_fault_v13.json \\
-        compare_output/compare_result_per_fault_v13.json --side-a rag --side-b no_rag \\
+    python eval/judge_pairwise.py compare_output/history/compare_result_per_fault_v13.json \\
+        compare_output/history/compare_result_per_fault_v13.json --side-a rag --side-b no_rag \\
         --names RAG noRAG --max-samples 1 --session "Squat — Knee valgus" \\
-        --out compare_output/pairwise_smoke_cerebras.md
+        --out compare_output/history/pairwise_smoke_cerebras.md
 """
 import argparse
 import hashlib

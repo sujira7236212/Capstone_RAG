@@ -1,4 +1,4 @@
-"""Split the KB's source documents into dev and test (docs/eval_v6_plan.md E5).
+"""Split the KB's source documents into dev and test (docs/plans/eval_v6_plan.md E5).
 
 The unit is a source document (a PDF under data/, or one URL from a urls.txt), never a
 chunk: every chunk of a document lands on the same side, so test chunks are never
@@ -16,7 +16,7 @@ left elbow_flare at 3% test: a few documents hold most of a rule's items, so the
 has to be judged on all labels at once. Tags are curator output, not eval labels or
 results, so choosing the split from them leaks nothing.
 
-Adding documents later (docs/t3_curation_status.md section 8.3): documents already in the
+Adding documents later (docs/progress/t3_curation_status.md section 8.3): documents already in the
 split file are locked and keep their side; only new ones are assigned, starting from the
 locked counts, so each rule moves back towards RATIO_TEST. Curate the new documents
 first (the tags are the input), and never rename or move a file under data/ - its path
@@ -222,7 +222,7 @@ def main():
         return
 
     data = data or {
-        "description": "Dev/test split of KB v6 source documents (docs/eval_v6_plan.md E5), "
+        "description": "Dev/test split of KB v6 source documents (docs/plans/eval_v6_plan.md E5), "
                        "made by eval/make_split.py. Locked: a document keeps its side in "
                        "every later round. Score test only with --final.",
         "ratio_test": RATIO_TEST,

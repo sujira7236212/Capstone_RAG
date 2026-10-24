@@ -30,12 +30,12 @@
 ## ข้อควรรู้ก่อนอ่านตัวเลข
 
 1. **เทียบข้ามช่วงไม่ได้:** ตัวเลขช่วง MiniLM (8–12 ก.ย.) กับช่วง Gemini (14 ก.ย. เป็นต้นไป) ใช้ระยะคนละสเกล และชุดเฉลยถูกแก้ระหว่างทาง ให้เทียบภายในช่วงเดียวกันเท่านั้น
-2. **ตัวเลขทั้งหมดเป็นของ taxonomy 10 อาการเดิม:** ระบบ 1 เปลี่ยนเป็น 12 กฎแล้ว (แผน `docs/rule_change_v6_plan.md`) ตัวเลขในรายงานนี้จึงใช้เป็น baseline ของ KB v6 ตรง ๆ ไม่ได้ ต้องวัดใหม่
+2. **ตัวเลขทั้งหมดเป็นของ taxonomy 10 อาการเดิม:** ระบบ 1 เปลี่ยนเป็น 12 กฎแล้ว (แผน `docs/plans/rule_change_v6_plan.md`) ตัวเลขในรายงานนี้จึงใช้เป็น baseline ของ KB v6 ตรง ๆ ไม่ได้ ต้องวัดใหม่
 3. **ฝั่ง retrieval วัดครบ ฝั่งคำตอบยังวัดน้อย:** มีแค่ metric ด้านลบ (ศัพท์ยาก, การลอก) ยังไม่มีตัวเลขว่าคำตอบ "ดีกว่า" (G1 ยังไม่ได้รัน)
 
 ---
 
-## 1. KB coverage (`kb_coverage.py`)
+## 1. KB coverage (`tools/kb_coverage.py`)
 
 **วัดอะไร:** จำนวน chunk ที่อยู่ในระยะใช้งานได้ (cosine distance ≤ 0.40) ต่อ 1 อาการ แยก `mistake` กับ `finding`
 **ใช้เมื่อ:** ช่วง MiniLM (KB v3 → v4) · ใช้กับ Gemini ไม่ได้แล้ว เพราะ Gemini ดันทุกอย่างให้อยู่ในระยะ ≤ 0.40 เกือบหมด (แทบทุกอาการได้ 40/40)
@@ -57,7 +57,7 @@
 
 **อ่านผล:** v4 สะอาดขึ้น (2,519 → 2,432 chunks) แต่ push-up ยังแทบไม่มี mistake และ bicep-curl ไม่มี finding ที่ใช้กับอาการผิดได้เลย
 
-ที่มา: `docs/kb_quality_assessment.md` §2, §6
+ที่มา: `docs/kb/kb_quality_assessment.md` §2, §6
 
 ---
 
@@ -145,7 +145,7 @@ bad ลดลง 78% (9 → 2) แต่ precision ตกเพราะ neutral
 
 precision ของ R4 ตก 0.61 → 0.48 (good 36 → 30, neutral 22 → 33) เพราะ chunk ใหม่ใช้ถ้อยคำไม่ตรง `must_hit` เช่น "Maintain a neutral low back position with a slight lordosis" แทน "…neutral, lordotic lumbar position…" ต้องเพิ่มถ้อยคำในชุดเฉลยก่อนจะใช้ตัวเลขนี้ต่อ
 
-ที่มา: `docs/kb_quality_assessment.md` §7, §9.1, §10, §11 · `compare_output/golden_*.md` · `compare_output/ablation_log.md`
+ที่มา: `docs/kb/kb_quality_assessment.md` §7, §9.1, §10, §11 · `compare_output/retrieval/golden_*.md` · `compare_output/ablation/ablation_log.md`
 
 ---
 
@@ -223,7 +223,7 @@ precision ของ R4 ตก 0.61 → 0.48 (good 36 → 30, neutral 22 → 33) 
 
 **ข้อจำกัด:** near-dup รวมได้แค่ประโยคที่ถ้อยคำใกล้กันมาก paraphrase จึงนับเป็นหลาย fact recall ที่ได้จึงต่ำกว่าความจริง แต่ยังเทียบระหว่างขั้นได้ เพราะตัวหารเท่ากันทุกขั้น
 
-ที่มา: `compare_output/ablation_log.md` · `compare_output/ablation_{B0,R0,R1,R2,R4,R5}_retrieval.md`
+ที่มา: `compare_output/ablation/ablation_log.md` · `compare_output/ablation/ablation_{B0,R0,R1,R2,R4,R5}_retrieval.md`
 
 ---
 
@@ -271,13 +271,13 @@ precision ของ R4 ตก 0.61 → 0.48 (good 36 → 30, neutral 22 → 33) 
 
 **หมายเหตุ:** ตอนนับด้วยมือ v9 ได้ 18 คำ ส่วนสคริปต์นับได้ 17 ต่างกันที่รายการศัพท์ ไม่ใช่ที่ตัว parser
 
-ที่มา: `compare_output/generation_v9_vs_v10.md` · `docs/kb_quality_assessment.md` §12
+ที่มา: `compare_output/history/generation_v9_vs_v10.md` · `docs/kb/kb_quality_assessment.md` §12
 
 ---
 
 ## 5. Generation: LLM judge แบบ blind pairwise (`eval/judge_pairwise.py`)
 
-**สถานะ: เครื่องมือเสร็จ ยังไม่มีตัวเลข** (Checkpoint G1 รออนุมัติค่า API: generation 110 ครั้ง + judge 110 ครั้ง) · `compare_output/g1_R0.md` มีแค่ส่วนหัว ยังไม่มีคำตอบ
+**สถานะ: เครื่องมือเสร็จ ยังไม่มีตัวเลข** (Checkpoint G1 รออนุมัติค่า API: generation 110 ครั้ง + judge 110 ครั้ง) · `compare_output/ablation/g1_R0.md` มีแค่ส่วนหัว ยังไม่มีคำตอบ
 
 | metric ที่จะวัด | ความหมาย |
 |---|---|
@@ -314,7 +314,7 @@ precision ของ R4 ตก 0.61 → 0.48 (good 36 → 30, neutral 22 → 33) 
 
 คำตอบแค่ 1 รอบต่อ session ที่ temperature 0.7 ใช้ได้เป็นตัวอย่างประกอบเท่านั้น สรุปเป็นสถิติไม่ได้
 
-ที่มา: `docs/kb_quality_assessment.md` §7.3–7.4 · `docs/progress_report_2026-09-14_to_26.md` §6
+ที่มา: `docs/kb/kb_quality_assessment.md` §7.3–7.4 · `docs/progress/progress_report_2026-09-14_to_26.md` §6
 
 ---
 

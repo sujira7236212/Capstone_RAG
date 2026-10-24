@@ -21,7 +21,7 @@ excluded_from_kb/
 # curate the same paper twice; kept only so the rule-named filing is not lost.
 data_duplicates/
 
-# Raw dump from check_chunks.py (~550 KB), regenerable.
+# Raw dump from tools/legacy/check_chunks.py (~550 KB), regenerable.
 chunk_results.txt
 
 # --- caches ---

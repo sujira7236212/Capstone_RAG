@@ -1,6 +1,6 @@
 # ผลทดสอบ feedback: RAG vs no-RAG (baseline v14) — เนื้อหาสำหรับสไลด์
 
-> 2026-10-03 · branch `rule-change-v6` · ข้อมูลจาก `compare_output/compare_result_v14_<ท่า>.json/.md`
+> 2026-10-03 · branch `rule-change-v6` · ข้อมูลจาก `compare_output/baseline_v14/compare_result_v14_<ท่า>.json/.md`
 > รูปทั้งหมดสร้างด้วย `python eval/plot_rag_vs_norag.py` → `docs/figures/rag_vs_norag/` (3840×2160, 16:9)
 > ตัวเลขทุกตัวนับจากไฟล์ผล ไม่มีการเรียก API ใหม่ และ **ยังไม่มี judge** ตัดสินว่าฝั่งไหน "ดีกว่า"
 

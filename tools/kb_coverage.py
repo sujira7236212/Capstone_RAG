@@ -1,6 +1,6 @@
 """Measure how well a KB collection covers the faults the pose checker can raise.
 
-Reproduces the section-2 table of docs/kb_quality_assessment.md so it can be re-run
+Reproduces the section-2 table of docs/kb/kb_quality_assessment.md so it can be re-run
 every time the KB changes, instead of being an ad-hoc one-off. For every fault in
 error_taxonomy.py it reports, per item_kind, how many chunks sit within USABLE_DISTANCE
 and the best distance found - the two numbers that decide whether the feedback model
@@ -14,8 +14,8 @@ Comparing the two answers "does the taxonomy layer actually buy anything for thi
 fault?" without spending a single LLM call.
 
 Usage:
-    python kb_coverage.py                              # default: kb_gemini_curated_v4, raw+expanded
-    python kb_coverage.py --query-mode expanded
+    python tools/kb_coverage.py                              # default: kb_gemini_curated_v4, raw+expanded
+    python tools/kb_coverage.py --query-mode expanded
 
 Note: --collection only compares collections in the same database as
 embedding_config.get_connection() - local and Gemini collections sit in separate
@@ -24,11 +24,13 @@ Prefix `EMBEDDING_MODE=local` to point this whole script at the local database i
 """
 import argparse
 import os
+import sys
 from collections import Counter
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from error_taxonomy import all_faults
 import embedding_config
 

@@ -1,16 +1,16 @@
-"""Cases for the T4 curator changes (docs/rule_change_v6_plan.md T4): routing general/
+"""Cases for the T4 curator changes (docs/plans/rule_change_v6_plan.md T4): routing general/
 items to an exercise, mapping exercise_type, the T3a skip list, and the fault-code
 block (all 12 rules for general/, card excludes as "do not tag when"). Plain asserts so
 it runs without pytest or an API key:
 
-    python data_pipeline/test_route_general.py
+    python tests/test_route_general.py
 """
 import json
 import os
 import sys
 import tempfile
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data_pipeline"))
 from curator import (_fault_code_block, _prompt_context, exercise_for_type, load_skip_list,
                      route_general_window)
 

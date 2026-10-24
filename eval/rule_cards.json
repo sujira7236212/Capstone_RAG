@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_spec": "docs/system1/RULES_AND_FSM_CONDENSED.md (synced from system-1 code 2026-09-28)",
+  "source_spec": "docs/rules/system1/RULES_AND_FSM_CONDENSED.md (synced from system-1 code 2026-09-28)",
   "notes": [
-    "The answer key for eval v6 (docs/eval_v6_plan.md E1). Written from the system-1 spec and general coaching knowledge only - no KB content was read while writing it.",
+    "The answer key for eval v6 (docs/plans/eval_v6_plan.md E1). Written from the system-1 spec and general coaching knowledge only - no KB content was read while writing it.",
     "English text is what the LLM judge sees (the KB is English). Thai is for the expert who approves the card; en and th must say the same thing.",
     "concept_id never changes. rule_names[0] is the current system-1 rule name; the rest are earlier names of the same rule. A rename only edits rule_names (no re-approval); a change of meaning bumps card_version and needs re-approval of that card.",
     "Anchor labels: relevant = the sentence helps a user fix THIS fault; wrong_fault = it describes a different form fault (another rule, or a fault the system has no rule for); irrelevant = no form fault at all.",

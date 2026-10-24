@@ -6,7 +6,7 @@ first because it is what the expert reads; the English under it is what the LLM 
 will see, so the two must agree.
 
 Usage:
-    python eval/render_rule_cards.py                       # -> docs/rule_cards_review.md
+    python eval/render_rule_cards.py                       # -> docs/rules/rule_cards_review.md
     python eval/render_rule_cards.py --out some/file.md
 """
 import argparse

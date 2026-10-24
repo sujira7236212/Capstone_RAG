@@ -15,7 +15,7 @@ They exist because an external judge rated the v9 no-RAG side the better coachin
 "it sounds clinical" was not something two people could argue about with numbers. Splitting
 the symptom in two settled it: v9 was not choosing hard words, it was copying Context
 sentences intact. The fix went into the prompt (v10), and these numbers are how the fix was
-confirmed - see docs/kb_quality_assessment.md and the SYSTEM_PROMPT v10 comment.
+confirmed - see docs/kb/kb_quality_assessment.md and the SYSTEM_PROMPT v10 comment.
 
 The WITHOUT RAG side is scored too, on purpose. It never saw the Context, so its shared
 n-gram is the chance floor for this report - the length two independent texts about squats
@@ -23,9 +23,9 @@ hit by coincidence. A RAG n-gram near that floor means no copying; one far above
 copying, whatever the absolute number looks like.
 
 Usage:
-    python eval/eval_generation.py compare_output/compare_result_v10.md
-    python eval/eval_generation.py compare_output/compare_result_v9.md --show-hits
-    python eval/eval_generation.py compare_output/compare_result_v{9,10}.md --out eval_gen.md
+    python eval/eval_generation.py compare_output/history/compare_result_v10.md
+    python eval/eval_generation.py compare_output/history/compare_result_v9.md --show-hits
+    python eval/eval_generation.py compare_output/history/compare_result_v{9,10}.md --out eval_gen.md
 """
 import argparse
 import json

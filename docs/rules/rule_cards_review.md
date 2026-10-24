@@ -1,7 +1,7 @@
 # Rule card สำหรับอนุมัติ — เฉลยของการประเมิน RAG v6
 
 <!-- สร้างจาก eval/rule_cards.json ด้วย python eval/render_rule_cards.py ห้ามแก้ไฟล์นี้ด้วยมือ -->
-ข้อมูลกฎนำมาจาก `docs/system1/RULES_AND_FSM_CONDENSED.md (synced from system-1 code 2026-09-28)`
+ข้อมูลกฎนำมาจาก `docs/rules/system1/RULES_AND_FSM_CONDENSED.md (synced from system-1 code 2026-09-28)`
 
 ## สิ่งที่ขอให้ผู้เชี่ยวชาญตรวจ
 

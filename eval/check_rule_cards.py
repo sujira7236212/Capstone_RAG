@@ -1,4 +1,4 @@
-"""Check eval/rule_cards.json - the eval v6 answer key (docs/eval_v6_plan.md E1).
+"""Check eval/rule_cards.json - the eval v6 answer key (docs/plans/eval_v6_plan.md E1).
 
 Two kinds of check, both deterministic, no LLM call:
 

@@ -21,7 +21,7 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 | R5 | `--hybrid` (BM25 ใน Python, BM25_K 12, BM25_WEIGHT 0.03) | 10/10 · 0.46 · **1** | 0.16 (0.21) / 0.26 — **65**/411 (−1 vs R4) | 64 / **8** / 81 | 0.79 | 0 · 10 · 71 · 17 · 248 | **revert** |
 | R6 | `--rerank` (bge-reranker-v2-m3, gate sigmoid ≥ 0.5) | — | — | — | — | — | **เลื่อน** (เครื่องไม่พอ ยังไม่ได้วัด) |
 
-รายงานเต็ม: B0 `compare_output/ablation_B0_retrieval.md` · R0 `compare_output/ablation_R0_retrieval.md` · R1 `compare_output/ablation_R1_retrieval.md` · R2 `compare_output/ablation_R2_retrieval.md` · R4 `compare_output/ablation_R4_retrieval.md` · R5 `compare_output/ablation_R5_retrieval.md`
+รายงานเต็ม: B0 `compare_output/ablation/ablation_B0_retrieval.md` · R0 `compare_output/ablation/ablation_R0_retrieval.md` · R1 `compare_output/ablation/ablation_R1_retrieval.md` · R2 `compare_output/ablation/ablation_R2_retrieval.md` · R4 `compare_output/ablation/ablation_R4_retrieval.md` · R5 `compare_output/ablation/ablation_R5_retrieval.md`
 
 ## บันทึก
 
@@ -36,7 +36,7 @@ collection `kb_gemini_curated_v5` · budget 9 chunk/fault (sum `MAX_PER_KIND`)
 - **tag_spelling 14** — แก้ได้ด้วย R0 โดยไม่เปลี่ยนวิธีค้น (partial squat 10, bicep partial ROM 4)
 - recall ถูกจำกัดด้วย budget: knee valgus มี 116 facts แต่ context รับได้ 9 (ceiling 0.08) — ใช้ ceiling คู่กันเสมอ
 - **ข้อจำกัด**: near-dup (Jaccard 0.72) รวมได้แค่ประโยคที่ถ้อยคำใกล้กันมาก paraphrase ที่ใช้คำต่างกันจึงนับเป็นหลาย fact (knee valgus 118 relevant → 116 facts) → recall ต่ำกว่าความจริง แต่เทียบระหว่างขั้นได้เพราะตัวหารเท่ากันทุกขั้น
-- ctx wrong_fault 6 ตัวตาม judge (golden นับ bad 1) — ต้องให้คนตรวจตาม `compare_output/relevance_pool_spotcheck.md`
+- ctx wrong_fault 6 ตัวตาม judge (golden นับ bad 1) — ต้องให้คนตรวจตาม `compare_output/retrieval/relevance_pool_spotcheck.md`
 
 ### R0 — normalize fault_tags (2026-09-25) → เก็บ
 **เปลี่ยน:** tag ที่สะกดผิด 3 แบบบน 18 item ของ v5 (`partial_squat` 13, `knee_valgus` 2, `partial range_of_motion` 4) → code ตาม taxonomy

@@ -1,8 +1,8 @@
-"""Cases for eval/make_split.py (docs/eval_v6_plan.md E5): document ids, groups, a
+"""Cases for eval/make_split.py (docs/plans/eval_v6_plan.md E5): document ids, groups, a
 deterministic stratified assignment, and locking - a later round must never move a
 document that already has a side. Plain asserts so it runs without pytest:
 
-    python eval/test_make_split.py
+    python tests/test_make_split.py
 """
 import collections
 import json
@@ -10,7 +10,7 @@ import os
 import sys
 import tempfile
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "eval"))
 from make_split import assign, collect_units, doc_id, split_of  # noqa: E402
 
 failed = 0

@@ -1,7 +1,7 @@
 # บันทึกการคุย 2026-09-12 — Progress update, flow, การวัดผล และข้อสงสัยเรื่อง taxonomy
 
 **สถานะ ณ วันเขียน:** KB `kb_local_curated_v4` (2,432 รายการ) · gate v7 · prompt v8 "practical" · eval single 9/10 · bad 9 · precision 0.70
-**เอกสารที่อ้างถึง:** `docs/kb_quality_assessment.md`, `docs/error_type_taxonomy.md`, `compare_output/*.md`
+**เอกสารที่อ้างถึง:** `docs/kb/kb_quality_assessment.md`, `docs/rules/error_type_taxonomy.md`, `compare_output/*.md`
 
 ---
 
@@ -14,9 +14,9 @@
 | Ingest | `ingest.py` | 1 item = 1 Document + metadata `exercise_id / item_kind / source / text` → pgvector (Docker `pgvector/pgvector:pg16`) embed ด้วย `all-MiniLM-L6-v2` local |
 | Mapping layer | `error_taxonomy.py` | `(exercise_id, code)` → `query / aliases / rule_th / display_th / focus_area`; `resolve()` fallback + log code ที่ไม่รู้จัก; `LEGACY_CODES` |
 | Pipeline หลัก | `test_rag_compare.py` | retrieval gate + `SYSTEM_PROMPT` + `gemini-3.5-flash-lite @0.7`; flags `--mock --raw-query --collection --out --skip-no-rag`; รายงานมี config + metrics + context จริง + output |
-| วัดผล | `kb_coverage.py` | "KB มีของสำหรับ fault นี้ไหม" — นับ chunk ≤ 0.40 ต่อ fault, raw/expanded, เทียบหลาย collection |
+| วัดผล | `tools/kb_coverage.py` | "KB มีของสำหรับ fault นี้ไหม" — นับ chunk ≤ 0.40 ต่อ fault, raw/expanded, เทียบหลาย collection |
 | | `eval/eval_retrieval.py` + `eval/golden_chunks.json` | ไม้บรรทัดหลัก — ให้คะแนน chunk ที่ gate ปล่อยเข้า context เป็น good/bad/neutral; single/session mode; override `--margin --cap --max-per-kind --collection` |
-| Utility | `fix_ocr_degrees.py`, `test_normalize_ocr_degrees.py`, `migrate_exclude_mismatches.py`, `rescue_false_mismatches.py` | one-off patch / migration (backup ใน `data_pipeline/backups/`) |
+| Utility | `fix_ocr_degrees.py`, `tests/test_normalize_ocr_degrees.py`, `migrate_exclude_mismatches.py`, `rescue_false_mismatches.py` | one-off patch / migration (backup ใน `data_pipeline/backups/`) |
 | Mock | `mock_data/mock_sessions.json` | 4 session (squat, lunge, push-up ไม่มี error, bicep) ใช้ code ชุดกฎจริง 10 ตัว |
 
 KB collection: `kb_local_curated` (JSON blob) → v2 (2,837) → v3 (2,519) → **v4 (2,432)**
@@ -75,7 +75,7 @@ A2 curate ──► A3 KB ──► B2 query ──► B3 ค้น+คัด �
 | # | เครื่องมือ | คำถามที่ตอบ | วัดขั้น | ผลสำคัญ |
 |---|---|---|---|---|
 | ① | `kb_quality_assessment` | คลังมีของพอไหม / สะอาดไหม | A2/A3 | push-up ครอบคลุม fault ตัวเองไม่ได้, bicep finding = 0, มีของนอกเรื่องปน → KB v4 |
-| ② | `kb_coverage.py` | ค้นด้วยคำนี้เจออะไร | B2 | raw vs expanded; **ตัวนับ usable หลอกได้** (query 2 คำห่างทุก chunk เท่า ๆ กัน) ต้องดูเนื้อหาด้วย |
+| ② | `tools/kb_coverage.py` | ค้นด้วยคำนี้เจออะไร | B2 | raw vs expanded; **ตัวนับ usable หลอกได้** (query 2 คำห่างทุก chunk เท่า ๆ กัน) ต้องดูเนื้อหาด้วย |
 | ③ | `eval_retrieval.py` + golden set | สิ่งที่เข้า context ถูก/ผิดกี่ตัว | B3/B4 | **ไม้บรรทัดหลัก** — แยกได้ว่าแต่ละตัวเลขดีขึ้นเพราะอะไร |
 | ④ | รายงาน A/B `ab_*.md` | LLM พูดผิดอะไรบ้าง | B5 | ประโยคผิด 4 → 0 ยืนยัน + 1 hedge; principle grounded 3/3; วัดเป็นตัวเลขไม่ได้เพราะ temp 0.7 |
 
@@ -127,7 +127,7 @@ bad 9 ที่เหลือ: lunge back-knee ×5 (KB ไม่มีของ
 - `butt wink` `display_th` "หลังค่อม / หลังแอ่น" — butt wink คือ flexion อย่างเดียว ถ้ากฎ "มุมของหลัง" จับทั้งสองทิศ query ครอบคลุมครึ่งเดียว
 - กฎ web 7/10 ข้อ ตัวเลขใน query (เช่น "90 degrees") เราใส่เอง ไม่รู้ threshold จริง
 
-**สิ่งที่จะทำให้มั่นใจได้ (เรียงตามต้นทุน):** (1) ขอ `form_rules.py` อ่านทีละกฎเทียบ query (2) ให้ PT ดูตาราง §5.1 ใน `docs/error_type_taxonomy.md` (3) ถาม string ที่ส่งจริง (4) แก้ golden set ให้สอดคล้อง
+**สิ่งที่จะทำให้มั่นใจได้ (เรียงตามต้นทุน):** (1) ขอ `form_rules.py` อ่านทีละกฎเทียบ query (2) ให้ PT ดูตาราง §5.1 ใน `docs/rules/error_type_taxonomy.md` (3) ถาม string ที่ส่งจริง (4) แก้ golden set ให้สอดคล้อง
 
 ---
 
@@ -191,4 +191,4 @@ bad 9 ที่เหลือ: lunge back-knee ×5 (KB ไม่มีของ
 
 **Generation (ตั้งใจยังไม่แตะ)** — temp 0.7, ไม่มี post-generation validation, ไม่มี reranker/hybrid, embedding ยัง MiniLM; prompt v8 รันรอบเดียวยังไม่มีเกณฑ์ผ่าน/ไม่ลง docs
 
-**เฟสถัดไป** — health profile (`docs/future_user_health_profile.md`)
+**เฟสถัดไป** — health profile (`docs/plans/future_user_health_profile.md`)

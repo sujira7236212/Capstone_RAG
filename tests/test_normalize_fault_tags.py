@@ -1,13 +1,13 @@
 """Cases for curator.normalize_fault_tags(): the three spellings found in
-kb_gemini_curated_v5 (compare_output/ablation_log.md R0) plus the cases it must leave
+kb_gemini_curated_v5 (compare_output/ablation/ablation_log.md R0) plus the cases it must leave
 alone. Plain asserts so it runs without pytest:
 
-    python data_pipeline/test_normalize_fault_tags.py
+    python tests/test_normalize_fault_tags.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data_pipeline"))
 from curator import normalize_fault_tags
 
 CASES = [

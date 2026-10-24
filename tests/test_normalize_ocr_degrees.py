@@ -1,13 +1,13 @@
 """Cases for curator.normalize_ocr_degrees(), one per artefact shape found in
-kb_local_curated_v4 (docs/kb_quality_assessment.md 7.3) plus the false positive that
+kb_local_curated_v4 (docs/kb/kb_quality_assessment.md 7.3) plus the false positive that
 the first draft of the fix would have mangled. Plain asserts so it runs without pytest:
 
-    python data_pipeline/test_normalize_ocr_degrees.py
+    python tests/test_normalize_ocr_degrees.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data_pipeline"))
 from curator import normalize_ocr_degrees
 
 CASES = [
