@@ -96,7 +96,10 @@ NEAR_DUP_JACCARD = 0.72
 # TAG_BONUS = one RELATIVE_MARGIN width: a tagged chunk competes as if it were one margin
 # closer, i.e. it survives the gate whenever it is within 2x margin of an untagged best.
 # Set before the R1 run, not tuned on it.
-TAG_MODE = "prefer"
+# Default strict as of 2026-10-25 (user decision, docs/reports/eval_v6b_context_2026-10-24.md): on v6b
+# it differs from prefer only where a fault has no tagged chunk of a kind (straight_back_leg
+# finding). Baseline v14 ran under prefer; pass --tag-mode prefer to reproduce it.
+TAG_MODE = "strict"
 TAG_BONUS = 0.03
 
 # How the kinds share the context budget - see retrieve_kb_blocks().
@@ -926,6 +929,9 @@ DEFAULT_COLLECTION = embedding_config.default_collection()
 # v6 (2026-10-03) is DEFAULT_COLLECTION now: KB v6 under the 12-rule taxonomy
 # (docs/progress/t3_curation_status.md). The gate numbers above are still the v4 sweep, not yet
 # measured on v6 (eval_v6_plan E6).
+#
+# v6b (2026-10-25) is DEFAULT_COLLECTION now: v6 + curation rounds 3 and 4
+# (docs/kb/tag_coverage_v6b_2026-10-24.md). v6 is kept unchanged as the reference.
 
 
 GENERATION_ERROR = "Error occurred during generation"

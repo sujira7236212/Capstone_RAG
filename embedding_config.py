@@ -1,34 +1,36 @@
 """Single source of truth for which embedding backend the pipeline uses.
 
-Every script that talks to pgvector (ingest.py, kb_coverage.py, eval/eval_retrieval.py,
+Every script that talks to pgvector (ingest.py, tools/kb_coverage.py, eval/eval_retrieval.py,
 test_rag_compare.py) used to instantiate HuggingFaceEmbeddings("all-MiniLM-L6-v2") or
 GoogleGenerativeAIEmbeddings("gemini-embedding-2") separately, so moving the whole
 pipeline between backends meant editing four files in lockstep. This module collapses
 that to one flag.
 
-DEFAULT_MODE = "gemini" as of 2026-09-14 (docs/kb_quality_assessment.md section 10):
+DEFAULT_MODE = "gemini" as of 2026-09-14 (docs/kb/kb_quality_assessment.md section 10):
 we're on the paid Gemini tier now, so there's no reason to keep querying the smaller
 local MiniLM model. "local" is kept only as a fallback/comparison path - kb_local_curated_v4
 and its MiniLM-tuned gate thresholds stay in the local database untouched.
 """
 import os
 
-# Override per-invocation with `EMBEDDING_MODE=local python kb_coverage.py` etc. -
+# Override per-invocation with `EMBEDDING_MODE=local python tools/kb_coverage.py` etc. -
 # useful for A/B-ing against the MiniLM fallback without editing this file.
 DEFAULT_MODE = os.environ.get("EMBEDDING_MODE", "gemini")  # "gemini" | "local"
 
-# gemini -> v6 as of 2026-10-03 (docs/t3_curation_status.md 8.1): v5 carries the old
-# taxonomy codes and must not be evaluated any more. Later rounds go to their own
-# collection (kb_gemini_curated_v6b) passed with --collection, not by moving this default.
+# gemini -> v6 as of 2026-10-03 (docs/progress/t3_curation_status.md 8.1): v5 carries the old
+# taxonomy codes and must not be evaluated any more.
+# gemini -> v6b as of 2026-10-25 (user decision): v6 + curation rounds 3 and 4. v6 stays
+# frozen as the reference for baseline v14 and step 5; pass --collection kb_gemini_curated_v6
+# to reproduce those. ingest.py also defaults here, so a new round must name its own collection.
 COLLECTION_NAMES = {
-    "gemini": "kb_gemini_curated_v6",
+    "gemini": "kb_gemini_curated_v6b",
     "local": "kb_local_curated_v4",
 }
 
 # gemini-embedding-2 uses a much larger vector space than MiniLM's 384 dims, so cosine
 # distances land on a different scale entirely - gate thresholds tuned for one backend
 # (test_rag_compare.py RELATIVE_MARGIN / ABS_DISTANCE_CAP) are meaningless for the
-# other. See docs/kb_quality_assessment.md section 10 for the Gemini-side re-sweep.
+# other. See docs/kb/kb_quality_assessment.md section 10 for the Gemini-side re-sweep.
 
 
 def get_embeddings(mode=DEFAULT_MODE):

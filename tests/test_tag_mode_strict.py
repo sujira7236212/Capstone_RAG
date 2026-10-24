@@ -292,10 +292,12 @@ def test_cli_accepts_strict():
         sys.argv = ["test_rag_compare.py", "--tag-mode", "strict"]
         assert trc.parse_args().tag_mode == "strict"
         sys.argv = ["test_rag_compare.py"]
-        assert trc.parse_args().tag_mode == "prefer"  # default unchanged
+        assert trc.parse_args().tag_mode == "strict"  # default since 2026-10-25
+        sys.argv = ["test_rag_compare.py", "--tag-mode", "prefer"]
+        assert trc.parse_args().tag_mode == "prefer"
     finally:
         sys.argv = old
-    assert trc.TAG_MODE == "prefer"
+    assert trc.TAG_MODE == "strict"
     src = open(os.path.join(ROOT, "eval", "eval_retrieval.py"), encoding="utf-8").read()
     assert 'choices=["prefer", "strict", "union"]' in src
 
