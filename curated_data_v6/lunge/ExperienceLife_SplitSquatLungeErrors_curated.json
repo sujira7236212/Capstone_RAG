@@ -1,0 +1,68 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Setting up in a half-kneeling position helps identify the proper stance length for your body before starting a set.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep feet hip-width to shoulder-width apart rather than placing one foot directly in front of the other.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep most of your body weight on the front foot and just enough on the rear leg to assist with balance.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Stepping too far forward or backward creates an excessively long stance where the rear knee does not bend enough.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Stepping one foot directly in front of the other creates a narrow, narrow-line stance like walking a tightrope.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing too much weight in the back foot reduces focus on the lead leg.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Proper stance length allows both knees to bend to or close to 90 degrees pain-free.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A weight distribution cue of 80 percent of body weight on the front foot and 20 percent on the back foot targets the front leg while preserving balance.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "An excessively long stance increases pressure on the back knee because it does not bend as much, which over time can cause knee pain and discomfort.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Placing one foot directly in front of the other creates an unstable base that causes the lifter to wobble.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing too much weight in the back foot can irritate the back knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\ExperienceLife_SplitSquatLungeErrors.txt",
+    "applies_to_fault": [
+      "straight_back_leg"
+    ]
+  }
+]

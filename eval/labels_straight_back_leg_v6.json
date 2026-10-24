@@ -1,0 +1,129 @@
+{
+  "card": "lunge.straight_back_leg",
+  "collection": "kb_gemini_curated_v6",
+  "context_from": "compare_output/baseline_v14/compare_result_v14_lunge.json (TAG_MODE prefer)",
+  "status": "PROPOSED by Claude from eval/rule_cards.json includes/excludes - pending user review",
+  "labels_allowed": [
+    "relevant",
+    "wrong_fault",
+    "irrelevant",
+    "contradicts_rule"
+  ],
+  "chunks": [
+    {
+      "kind": "principle",
+      "text": "Lower the rear knee toward the ground during the descent of the lunge.",
+      "source": "Bezerra2021_TrunkPosition_LungeActivation_IJES",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "relevant",
+      "belongs_to": null,
+      "reason": "Matches fixes/correct_form: back knee lowered toward the floor. Tagged |straight_back_leg|.",
+      "debatable": false
+    },
+    {
+      "kind": "mistake",
+      "text": "Performing the lunge with spinal flexion or excessive spinal extension.",
+      "source": "KritzCroninHume2009BodyweightlungeSCJ",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "irrelevant",
+      "belongs_to": null,
+      "reason": "Spine rounding/arching: no lunge rule; forward_trunk_lean card excludes rounding/arching without a forward lean.",
+      "debatable": false
+    },
+    {
+      "kind": "mistake",
+      "text": "Allowing the front knee to go forward past the toes during the lunge.",
+      "source": "basics_of_strength_and_conditioning_manual",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "irrelevant",
+      "belongs_to": "excessive_front_knee_flexion?",
+      "reason": "Front-knee travel past the toes. No rule measures it; excessive_front_knee_flexion includes it only when tied to over-bending (open question oq1). Text does not tie it.",
+      "debatable": true
+    },
+    {
+      "kind": "mistake",
+      "text": "Allowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.",
+      "source": "Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS",
+      "sessions": [
+        "LU-004"
+      ],
+      "label": "irrelevant",
+      "belongs_to": "excessive_front_knee_flexion?",
+      "reason": "Same as previous (front-knee travel, oq1).",
+      "debatable": true
+    },
+    {
+      "kind": "mistake",
+      "text": "Allowing excessive anterior knee translation where the knee exceeds the toes during lunges.",
+      "source": "Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience",
+      "sessions": [
+        "LU-005"
+      ],
+      "label": "irrelevant",
+      "belongs_to": "excessive_front_knee_flexion?",
+      "reason": "Same as previous (front-knee travel, oq1).",
+      "debatable": true
+    },
+    {
+      "kind": "consequence",
+      "text": "Turning the lead foot or lead knee inward during a forward lunge increases the torque stress of the knee joint of the front leg, which can exacerbate previous knee injuries and lead to increased knee pain.",
+      "source": "ptq-4.4.9-the-undervalued-lunge",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "irrelevant",
+      "belongs_to": null,
+      "reason": "Front knee caving/turning in: excluded by every lunge card, no rule. Likely source of the 'knee twisting' explanation.",
+      "debatable": false
+    },
+    {
+      "kind": "finding",
+      "text": "The forward lunge involves calcaneal eversion, talar plantar flexion and adduction, tibial internal rotation, knee flexion, extension, and abduction, and hip flexion, extension, and adduction.",
+      "source": "KritzCroninHume2009BodyweightlungeSCJ",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "irrelevant",
+      "belongs_to": null,
+      "reason": "Generic joint kinematics of the lunge, says nothing about the rear knee staying straight.",
+      "debatable": false
+    },
+    {
+      "kind": "consequence",
+      "text": "Rotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint, which can limit performance, exacerbate pre-existing injuries, and potentially cause pain.",
+      "source": "ptq-4.4.9-the-undervalued-lunge",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "wrong_fault",
+      "belongs_to": "(back-knee rotation, no rule)",
+      "reason": "About the back knee but rotation, not straightness; card excludes rear foot position on its own. relevance_pool (old code 'insufficient back knee flexion') also labels it wrong_fault. Likely source of the 'knee twisting' explanation.",
+      "debatable": false
+    },
+    {
+      "kind": "finding",
+      "text": "Forward lean of the trunk during the forward lunge results in greater recruitment of the hamstrings.",
+      "source": "Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise",
+      "sessions": [
+        "LU-004",
+        "LU-005"
+      ],
+      "label": "wrong_fault",
+      "belongs_to": "forward_trunk_lean",
+      "reason": "Trunk lean research - forward_trunk_lean includes it.",
+      "debatable": false
+    }
+  ]
+}

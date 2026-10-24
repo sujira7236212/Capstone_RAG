@@ -1,0 +1,111 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Full Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Descend into a push-up until your elbows reach an angle of 90 degrees or less, or until your chest touches the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "If you cannot descend to an elbow angle of at least 90 degrees, perform push-ups on your knees or with your hands on an elevated platform until strength improves.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Point your hands slightly outward away from your body so your elbows remain close to your torso and stay in alignment with your shoulders.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Maintain a straight body line from the back of your feet to the tip of your head throughout the exercise.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Perform planks on a regular basis to build the core stability required to hold proper alignment during push-ups.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Keep your neck in a neutral position aligned with your spine by focusing your eyes on a spot about a foot in front of you.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Slowing down the repetition speed keeps muscles under tension longer to promote muscle hypertrophy.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Performing a short-range push-up by lowering down only far enough to partially bend the elbows.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Pointing the hands inward during the movement, which causes the elbows to flare outward away from the torso.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the back and hips to sag toward the floor during the exercise.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Twisting the neck or letting the head drop down while descending.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Full range of motion in a push-up requires descending until the elbows reach an angle of 90 degrees or less.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Progression to harder push-up variations is recommended once a lifter can easily complete 20 standard push-ups.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Plyometric clap push-ups activate the pectoralis and triceps muscles to a greater degree than standard push-ups.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to descend to an elbow angle of 90 degrees or less greatly reduces the exercise benefits.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Pointing hands inward and flaring elbows outward places bad alignment on the shoulders and elbows, increasing the risk of shoulder or elbow injury.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the back and hips to sag breaks straight body alignment and reduces push-up effectiveness.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Twisting the neck or letting it drop places greater stress on the spine and can lead to a neck strain.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Cathe_PushUpMistakes.txt",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  }
+]

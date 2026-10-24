@@ -2,8 +2,8 @@
 
 โฟลเดอร์นี้เก็บเอกสารต้นฉบับ (PDF งานวิจัย, ไฟล์ข้อความ, รายการ URL) ที่ใช้สร้าง KB
 `data_pipeline/curator.py` อ่านไฟล์ที่นี่แล้วเขียนผลลง `curated_data_v6/` และ `excluded_from_kb_v6/`
-รายละเอียดแต่ละรอบ curate อยู่ใน [`docs/t3_curation_status.md`](../docs/t3_curation_status.md) §0
-และผลตรวจรายไฟล์อยู่ใน [`docs/prefilter_v6_review.md`](../docs/prefilter_v6_review.md)
+รายละเอียดแต่ละรอบ curate อยู่ใน [`docs/progress/t3_curation_status.md`](../docs/progress/t3_curation_status.md) §0
+และผลตรวจรายไฟล์อยู่ใน [`docs/kb/prefilter_v6_review.md`](../docs/kb/prefilter_v6_review.md)
 
 ## 1. สถานะของไฟล์ดูจากโฟลเดอร์
 
@@ -72,16 +72,19 @@ data/
   URL ที่ตรวจแล้วแต่ยังไม่ curate อยู่ใน `checked/<ท่า>/urls.txt`
 - git ไม่เก็บโฟลเดอร์ว่าง โฟลเดอร์กฎที่ยังไม่มีไฟล์ใน `data/<ท่า>/` จึงไม่มีใน repo สร้างเองได้เมื่อจะวางไฟล์
 
-## 5. จำนวนไฟล์ (2026-10-21, นับ `.pdf` + `.txt`)
+## 5. จำนวนไฟล์ (2026-10-24, นับ `.pdf` + `.txt`)
 
 | | bicep-curl | lunge | push-up | squat | general | รวม |
 |---|---|---|---|---|---|---|
 | picked | 8 | 15 | 6 | 10 | 1 | 40 |
-| checked | 13 | 18 | 11 | 10 | 5 | 57 |
-| ใหม่ (`data/<ท่า>/`) | – | 2 | 2 | – | 2 | 6 |
+| checked | 13 | 24 | 14 | 10 | 5 | 66 |
+| ใหม่ (`data/<ท่า>/`) | – | 5 | 5 | – | 2 | 12 |
 
-ใน `checked/`: `drop` 34 · `keep` 22 (นับจาก `prefilter_v6.json` เฉพาะไฟล์ ไม่รวม URL)
-ไฟล์ "ใหม่" ทั้ง 6 มี entry ใน `prefilter_v6.json` แล้ว (`drop` 4 · `keep` 2) แต่ยังไม่ได้ย้ายไป `checked/`
+ใน `checked/`: `drop` 34 · `keep` 30 (นับจาก `prefilter_v6.json` เฉพาะไฟล์ ไม่รวม URL · ตัวเลขในตารางนับ `urls.txt` ด้วย) · batch `round4` รอ curate 9 ไฟล์: lunge 6 (Gao 2022, Riemann 2012, `Common Mistakes … Ladera Ranch`, `BOXROX_WalkingLungeMistakes.txt`, `ExperienceLife_SplitSquatLungeErrors.txt`, `EliteFTS_EasyLungeRegression.txt`) · push-up 3 (`Attika_PushUpErrors.txt`, `AthleanX_PushUpRangeOfMotion.txt`, `Cathe_PushUpMistakes.txt`)
+`.txt` 6 ไฟล์นี้คือเนื้อหาบทความเว็บที่บันทึกไว้ (elitefts มาจาก Wayback เพราะหน้าสดเป็น 404) เพราะ `urls.txt` ของท่านั้น curate แล้ว curator จึงข้ามทั้ง list · URL ต้นทางอยู่ใน `checked/<ท่า>/urls.txt` (`prefilter_v6_review.md` §11)
+ไฟล์ "ใหม่" ทั้ง 12 มี entry ใน `prefilter_v6.json` แล้ว (`drop` 10 · `keep` 2 คือ Hammami และ Krause Neto ใน `general/`) แต่ยังไม่ได้ย้ายไป `checked/`
+(2026-10-24: `lunge/Using the bodyweight lunge to screen …` ไบต์เหมือน Kritz 2009 ใน `picked/` ถูกลบแล้ว ดู `prefilter_v6_review.md` §10)
+(2026-10-21: ไฟล์ lunge อีก 4 ไฟล์ที่ไบต์เหมือนไฟล์ใน `checked/`/`picked/` ถูกลบแล้ว ดู `prefilter_v6_review.md` §9)
 
 ## 6. ที่ยังไม่อยู่ใน git
 

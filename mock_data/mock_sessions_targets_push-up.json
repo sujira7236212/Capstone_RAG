@@ -1,0 +1,648 @@
+[
+  {
+    "session_id": "PU-20261003-101",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "report_label": "Push-up — partial_pushup late",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 78,
+      "previous_correct_reps": 8,
+      "previous_incorrect_reps": 2,
+      "previous_common_errors": [
+        "hip_sag_or_pike"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 77
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 91
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 53
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 46
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "PU-20261003-102",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "report_label": "Push-up — partial_pushup most",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 64,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "partial_pushup"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 3,
+      "incorrect_reps": 7,
+      "overall_score": 60
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 50
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 51
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 48
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 84
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 47
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 45
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "PU-20261003-103",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "report_label": "Push-up — partial_pushup improving",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 63,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "partial_pushup",
+        "hip_sag_or_pike"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 8,
+      "incorrect_reps": 2,
+      "overall_score": 81
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "PU-20261003-104",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "report_label": "Push-up — partial_pushup early",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 74,
+      "previous_correct_reps": 6,
+      "previous_incorrect_reps": 4,
+      "previous_common_errors": [
+        "hip_sag_or_pike"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 77
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 50
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "PU-20261003-105",
+    "exercise_id": "push-up",
+    "name": "Push-up",
+    "report_label": "Push-up — partial_pushup every",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 60,
+      "previous_correct_reps": 2,
+      "previous_incorrect_reps": 8,
+      "previous_common_errors": [
+        "partial_pushup"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 0,
+      "incorrect_reps": 10,
+      "overall_score": 47
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 48
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 50
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 47
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 46
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 47
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 45
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 44
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 43
+        },
+        "errors": [
+          {
+            "error_type": "partial_pushup",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  }
+]

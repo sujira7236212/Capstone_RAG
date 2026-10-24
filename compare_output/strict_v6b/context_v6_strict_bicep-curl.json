@@ -1,0 +1,710 @@
+{
+  "derived_from": "compare_result_v14_bicep-curl.json",
+  "method": "offline: prefer context minus strict-skipped kinds",
+  "mock": "mock_data/mock_sessions_bicep-curl.json",
+  "collection": "kb_gemini_curated_v6",
+  "retrieval": {
+    "TAG_MODE": "strict",
+    "KIND_POOL": "split",
+    "QUERIES": "profile",
+    "HYBRID": false,
+    "RERANK": false
+  },
+  "note": "rag/no_rag answers not carried over - they were generated from the prefer context",
+  "sessions": [
+    {
+      "label": "Bicep Curl — elbow_flare",
+      "exercise_id": "bicep-curl",
+      "payload": {
+        "session_id": "BC-20261003-001",
+        "exercise_id": "bicep-curl",
+        "name": "Bicep Curl",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 74,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "elbow_flare"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 77
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 92
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 63
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 61
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 59
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 56
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: elbow_flare | source: www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl]\nMoving the elbows forward during the upward phase of the standard curl.\n\n[consequence | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nIntroducing excessive shoulder flexion under fatigue makes the bicep curl movement unstable and inconsistent.\n\n[consequence | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing the upper arms to move reduces biceps activation during the curl.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nExtending the shoulder joint during the initial phase of the curl, causing the elbows to drift behind the body as a compensatory adjustment to overcome inertia.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing excessive movement at the shoulder joint during the curl, which shifts work away from the target muscles.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position, avoiding excessive shoulder elevation or shoulder flexion-extension during the bicep curl.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nUnder fatigue, shoulder flexion increased by approximately 20 degrees at around 20% of the bicep curl cycle.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMore pronounced movement is captured on the shoulder joint during the fatigue stage of a bicep curl compared to the standard stage.",
+      "metrics": [
+        {
+          "error": "elbow_flare",
+          "kind": "mistake",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.0871162958671724,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "elbow_flare",
+          "kind": "finding",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.20881786451552686,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "elbow_flare",
+          "kind": "consequence",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.1042221374908916,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "elbow_flare",
+          "kind": "principle",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.11072724397614697,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "e2d7883e6690ac3989ae16112a2a94937f1b0643",
+      "prefer_context_sha1": "e2d7883e6690ac3989ae16112a2a94937f1b0643",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Bicep Curl — partial_curl",
+      "exercise_id": "bicep-curl",
+      "payload": {
+        "session_id": "BC-20261003-002",
+        "exercise_id": "bicep-curl",
+        "name": "Bicep Curl",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 73,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "partial_curl"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 76
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 64
+            },
+            "errors": [
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 62
+            },
+            "errors": [
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 48
+            },
+            "errors": [
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[mistake | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPerforming partial repetitions at shorter muscle lengths rather than allowing the muscle to fully stretch.\n\n[principle | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nA complete repetition of a bicep curl requires moving the weight from a position of full elbow extension to a position of full flexion, and returning back to the initial position of full extension.\n\n[mistake | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nLifters frequently start the bicep curl from a slightly flexed elbow position of around 20 degrees instead of starting from full elbow extension.\n\n[principle | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nThe bicep curl should ideally begin from a position of full elbow extension to ensure a complete range of motion.\n\n[consequence | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nFailing to pause at full extension and full flexion increases the risk of sustaining an injury.\n\n[mistake | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion, where the muscle contracts only at short muscle lengths and avoids the initial stretched position.\n\n[finding | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPartial repetitions at shorter-muscle lengths are not as hypertrophic as partial repetitions at longer-muscle lengths.\n\n[consequence | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion results in inferior muscle hypertrophy compared to training with a full range of motion or at longer muscle lengths.\n\n[finding | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nPrevious studies have reported a strategy of starting the bicep curl movement with an elbow joint angle ranging from 15 degrees to 48 degrees.",
+      "metrics": [
+        {
+          "error": "partial_curl",
+          "kind": "mistake",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.13249628730062601,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "finding",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.20733115694913695,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "consequence",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.18345935246106104,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "principle",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.14628557678630105,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "c3ac6614e70fb2ef7dd11e14102db6652c38b58c",
+      "prefer_context_sha1": "c3ac6614e70fb2ef7dd11e14102db6652c38b58c",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Bicep Curl — mixed",
+      "exercise_id": "bicep-curl",
+      "payload": {
+        "session_id": "BC-20261003-003",
+        "exercise_id": "bicep-curl",
+        "name": "Bicep Curl",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 70,
+          "previous_correct_reps": 5,
+          "previous_incorrect_reps": 5,
+          "previous_common_errors": [
+            "elbow_flare",
+            "partial_curl"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 5,
+          "incorrect_reps": 5,
+          "overall_score": 71
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 62
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              }
+            ]
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 61
+            },
+            "errors": [
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 44
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              },
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              },
+              {
+                "error_type": "partial_curl"
+              }
+            ]
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 57
+            },
+            "errors": [
+              {
+                "error_type": "elbow_flare"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 83
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[mistake | re: elbow_flare | source: www.acefitness.org/resources/everyone/exercise-library/44/seated-biceps-curl]\nMoving the elbows forward during the upward phase of the standard curl.\n\n[consequence | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nIntroducing excessive shoulder flexion under fatigue makes the bicep curl movement unstable and inconsistent.\n\n[consequence | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing the upper arms to move reduces biceps activation during the curl.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nExtending the shoulder joint during the initial phase of the curl, causing the elbows to drift behind the body as a compensatory adjustment to overcome inertia.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.\n\n[mistake | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPerforming partial repetitions at shorter muscle lengths rather than allowing the muscle to fully stretch.\n\n[mistake | re: elbow_flare | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nAllowing excessive movement at the shoulder joint during the curl, which shifts work away from the target muscles.\n\n[principle | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nA complete repetition of a bicep curl requires moving the weight from a position of full elbow extension to a position of full flexion, and returning back to the initial position of full extension.\n\n[mistake | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nLifters frequently start the bicep curl from a slightly flexed elbow position of around 20 degrees instead of starting from full elbow extension.\n\n[principle | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position, avoiding excessive shoulder elevation or shoulder flexion-extension during the bicep curl.\n\n[principle | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nThe bicep curl should ideally begin from a position of full elbow extension to ensure a complete range of motion.\n\n[consequence | re: partial_curl | source: The Effect of Varying Weightload Intensities on Biceps Curl Techn]\nFailing to pause at full extension and full flexion increases the risk of sustaining an injury.\n\n[mistake | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion, where the muscle contracts only at short muscle lengths and avoids the initial stretched position.\n\n[finding | re: partial_curl | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nPartial repetitions at shorter-muscle lengths are not as hypertrophic as partial repetitions at longer-muscle lengths.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nUnder fatigue, shoulder flexion increased by approximately 20 degrees at around 20% of the bicep curl cycle.\n\n[finding | re: elbow_flare | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMore pronounced movement is captured on the shoulder joint during the fatigue stage of a bicep curl compared to the standard stage.\n\n[consequence | re: partial_curl | source: The interplay between muscle length, range of motion, and exercise selection a review]\nTraining exclusively at the final range of motion results in inferior muscle hypertrophy compared to training with a full range of motion or at longer muscle lengths.\n\n[finding | re: partial_curl | source: Oliveira2009_ShoulderPosition_BicepsEMG_JSSM]\nPrevious studies have reported a strategy of starting the bicep curl movement with an elbow joint angle ranging from 15 degrees to 48 degrees.",
+      "metrics": [
+        {
+          "error": "elbow_flare",
+          "kind": "mistake",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.0871162958671724,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "elbow_flare",
+          "kind": "finding",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.20881786451552686,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "elbow_flare",
+          "kind": "consequence",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.1042221374908916,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "elbow_flare",
+          "kind": "principle",
+          "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body (+why/fix)",
+          "best": 0.11072724397614697,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "mistake",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.13249628730062601,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "finding",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.20733115694913695,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "consequence",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.18345935246106104,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_curl",
+          "kind": "principle",
+          "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions) (+why/fix)",
+          "best": 0.14628557678630105,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "eaa9436ff4224770b89a636ce9cb5effc9fa3197",
+      "prefer_context_sha1": "eaa9436ff4224770b89a636ce9cb5effc9fa3197",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Bicep Curl — clean",
+      "exercise_id": "bicep-curl",
+      "payload": {
+        "session_id": "BC-20261003-004",
+        "exercise_id": "bicep-curl",
+        "name": "Bicep Curl",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 76,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "elbow_flare",
+            "partial_curl"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 10,
+          "incorrect_reps": 0,
+          "overall_score": 89
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 92
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[principle | re: general principles | source: Optimizing Resistance Training Technique to Maximize Muscle Hypertrophy A Narrative Review]\nStrict technique on a barbell biceps curl involves maintaining a more upright posture with minimal hip and leg drive to direct maximum stimulation to the target muscle group.\n\n[principle | re: general principles | source: Analysis of Fatigue-Induced Compensatory Movements in Bicep Curls Gaining Insights for the Deployment of Wearable Sensors]\nMaintain a stable shoulder position during the bicep curl to prevent excessive shoulder flexion, which causes the elbows to swing forward.",
+      "metrics": [
+        {
+          "error": "general principles",
+          "kind": "principle",
+          "query": "Bicep Curl correct technique and biomechanics",
+          "best": 0.15001317560908212,
+          "kept": 2,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "c0401eea7c7bfb7f51fa0990c22f0a27d18a7fa3",
+      "prefer_context_sha1": "c0401eea7c7bfb7f51fa0990c22f0a27d18a7fa3",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    }
+  ]
+}

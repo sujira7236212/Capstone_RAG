@@ -1,0 +1,143 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Common Mistakes",
+    "core_principles": [
+      {
+        "text": "Proper lunge depth occurs when the back knee gently touches or comes very close to the ground under control.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "Standardize the range of motion across all repetitions from the start to the end of a set to reliably track progress.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Step long enough to feel a stretch in the glutes, adductors, and quads while keeping the front foot stable.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lunge only as far as allows secure footing and balance so force production is not compromised.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Take about 2 seconds to descend all the way down in control to expose muscles to eccentric stress and stabilize both legs.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep the upper body upright and still, especially toward the bottom of the lunge, by bracing the core.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Resetting by bringing the feet together after every lunge helps regain balance and allows carrying heavier loads with good technique.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Use straps, grips, chalk, or switch to a barbell lunge if hand grip strength becomes the limiting factor instead of the target leg muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Choose a weight that permits performing more than around 10 but less than around 35 lunges in one set without taking breaks.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Cutting depth by failing to perform a full range of motion and not going all the way down.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "Failing to standardize range of motion across reps, making progress tracking inaccurate.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking too short of a step during walking lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Overstepping during walking lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Descending in an uncontrolled manner during the eccentric portion of the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tilting the upper body forward at the bottom of the lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Take about 2 seconds to descend all the way down in control during the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Choose a weight that allows performing more than around 10 but less than around 35 lunges in one set without taking breaks for optimal hypertrophy stimulus.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Cutting depth reduces muscle growth and motor unit recruitment because muscles grow more when stretched through a full range of motion.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "Taking steps that are too short can cause discomfort in the knee and fails to recruit all target muscles.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking steps that are too long causes instability and reduces the amount of force you can produce.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "An uncontrolled descent can damage the knees, increase injury risk under heavy loads, and reduce muscle growth by bypassing eccentric tension.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tilting forward shifts the workload off the intended target musculature and onto the back and hamstrings.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\BOXROX_WalkingLungeMistakes.txt [part 2/3]",
+    "applies_to_fault": [
+      "forward_trunk_lean",
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Muscle Activation",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Adjust technique and loading so that the target muscles, including the glutes, hamstrings, and adductors, are properly engaged and serve as the limiting factor during lunges.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to feel or work the target muscles, such as the glutes, hamstrings, and adductors, during the exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\BOXROX_WalkingLungeMistakes.txt [part 3/3]",
+    "applies_to_fault": []
+  }
+]

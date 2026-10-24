@@ -18,7 +18,7 @@ load_dotenv()
 # ---------------------------------------------------------------------------
 # Retrieval configuration (v8 / Gemini). v6 recalibrated these by reading the 4 mock
 # sessions; v7 set them from eval/golden_chunks.json + eval/eval_retrieval.py against
-# kb_local_curated_v4 (MiniLM) - full story in docs/kb_quality_assessment.md section 7.
+# kb_local_curated_v4 (MiniLM) - full story in docs/kb/kb_quality_assessment.md section 7.
 # v8 (2026-09-14) re-sweeps RELATIVE_MARGIN against kb_gemini_curated_v4, now that
 # embedding_config.DEFAULT_MODE is "gemini" - section 10. CANDIDATE_K, MAX_PER_KIND and
 # NEAR_DUP_JACCARD below are carried over from the MiniLM tuning unverified under
@@ -49,21 +49,21 @@ MAX_PER_KIND = {"mistake": 3, "finding": 2, "principle": 2, "consequence": 2}
 
 # Hard backstop per kind: beyond this the closest chunk is not about the fault at all,
 # and the honest result is an empty column rather than the nearest neighbour. 0.40 is
-# the same "usable" bar kb_coverage.py reports against, so the two tools agree on what
+# the same "usable" bar tools/kb_coverage.py reports against, so the two tools agree on what
 # counts as coverage. Kept at 0.40 under Gemini too, but it is currently non-binding:
 # gemini-embedding-2's best-hit distances run ~0.02-0.19 on this KB (see RELATIVE_MARGIN
 # below), so best + RELATIVE_MARGIN never approaches 0.40 in practice. It stays as a
 # backstop for a fault with no real match in the KB at all, same role it played under
-# MiniLM (docs/kb_quality_assessment.md section 7.2).
+# MiniLM (docs/kb/kb_quality_assessment.md section 7.2).
 ABS_DISTANCE_CAP = {"mistake": 0.40, "finding": 0.40, "principle": 0.40, "consequence": 0.40}
 
 # Relative gate, applied per kind: keep only hits within this margin of the best hit
 # for that kind. Absolute thresholds do not transfer across exercises, but the *gap*
 # between a real match and the next-best noise is consistent.
 #
-# 0.03, re-swept for Gemini (2026-09-14, docs/kb_quality_assessment.md section 10).
+# 0.03, re-swept for Gemini (2026-09-14, docs/kb/kb_quality_assessment.md section 10).
 # gemini-embedding-2's cosine distances cluster far tighter than MiniLM's - the raw
-# <=0.40 pool kb_coverage.py reports is saturated at 40/40 for nearly every fault, so
+# <=0.40 pool tools/kb_coverage.py reports is saturated at 40/40 for nearly every fault, so
 # ABS_DISTANCE_CAP above stopped discriminating anything and RELATIVE_MARGIN became the
 # only real filter. On the golden set (single mode, kb_gemini_curated_v4): 0.10/0.08 ->
 # bad 6 / good 26, 0.05 -> bad 6 / good 25, 0.04 -> bad 4 / good 24, 0.03 -> bad 2 /
@@ -84,6 +84,15 @@ NEAR_DUP_JACCARD = 0.72
 #            "") unchanged. Most v5 chunks are untagged (the curator tags only items it could
 #            pin to one fault), so under `prefer` a fault with a single tagged chunk of a kind
 #            hid every untagged chunk of that kind (ablation B0: miss reason tag_filter).
+#   strict - prefer, minus the fallback: a kind with no chunk tagged for the fault stays
+#            EMPTY instead of searching every chunk of the exercise. A kind that has tagged
+#            chunks behaves exactly as under prefer. The fallback pool is the whole exercise,
+#            so for a fault the curator tagged thinly it returned other faults' chunks, and the
+#            context header still labelled them "re: <fault>" (docs/reports/eval_report_2026-10-20.md
+#            section 3.8b: LU-004 straight_back_leg, 8 chunks of which 1 was about the fault).
+#            Only applies when the error resolved to a fault code; with no code (unmapped
+#            error, --raw-query, flawless session) there is no tag to be strict about and the
+#            search is the same as prefer.
 # TAG_BONUS = one RELATIVE_MARGIN width: a tagged chunk competes as if it were one margin
 # closer, i.e. it survives the gate whenever it is within 2x margin of an untagged best.
 # Set before the R1 run, not tuned on it.
@@ -219,6 +228,8 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trac
     searches always run and are merged, ranked by distance adjusted with TAG_BONUS (see
     TAG_MODE); the gate below then runs on the adjusted distance, while `kept` still
     carries the raw one so context order and metrics stay on the embedding's scale.
+    Under "strict" an empty tagged pool (with a `code`) returns nothing instead of falling
+    back to the untagged search.
     Returns (kept, tagged): `tagged` = the tag-filtered search had hits, i.e. `code`'s tag
     influenced this kind's result.
 
@@ -236,6 +247,8 @@ def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trac
             filter={**base_filter, "fault_tags": {"$like": f"%|{code}|%"}},
         )
         tagged = bool(hits)
+        if TAG_MODE == "strict" and not tagged:
+            return [], False
     if TAG_MODE == "union" and code:
         hits = _union_by_tag(hits, vectorstore.similarity_search_with_score(
             query, k=CANDIDATE_K, filter=base_filter), code)
@@ -296,7 +309,9 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
 
     Eligibility per kind is the same as _search() under TAG_MODE "prefer": a kind with any
     chunk tagged for `code` contributes only its tagged chunks, any other kind all of its
-    chunks. That is pushed into ONE query as an $or of per-kind filters, so the kinds then
+    chunks (TAG_MODE "strict": any other kind none, and its MAX_PER_KIND leaves the budget
+    with it, so the kinds that do have tagged chunks get exactly the budget they get under
+    prefer). That is pushed into ONE query as an $or of per-kind filters, so the kinds then
     compete for one margin (from the overall best hit) and one budget (sum of MAX_PER_KIND
     over `kinds`). The query is embedded once and reused for every probe.
 
@@ -304,10 +319,11 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
     the kinds whose tag filter had hits, best_by_kind = closest eligible chunk per kind (the
     per-kind `best` metric, comparable with split mode's).
     """
-    if TAG_MODE != "prefer" or QUERIES != "fault" or HYBRID:
-        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer', QUERIES 'fault', no HYBRID only")
+    if TAG_MODE not in ("prefer", "strict") or QUERIES != "fault" or HYBRID:
+        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer'/'strict', QUERIES 'fault', "
+                         "no HYBRID only")
     vec = vectorstore.embeddings.embed_query(query)
-    kind_filters, tagged_kinds, best_by_kind = [], set(), {}
+    kind_filters, tagged_kinds, best_by_kind, eligible = [], set(), {}, []
     for kind in kinds:
         kf = {"item_kind": {"$eq": kind}}
         if code:
@@ -318,16 +334,22 @@ def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=No
                 tagged_kinds.add(kind)
                 kf = tf
         if kind not in tagged_kinds:
+            if TAG_MODE == "strict" and code:
+                best_by_kind[kind] = None
+                continue
             probe = vectorstore.similarity_search_with_score_by_vector(
                 vec, k=1, filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, kf]})
         best_by_kind[kind] = probe[0][1] if probe else None
         kind_filters.append(kf)
+        eligible.append(kind)
+    if not kind_filters:
+        return [], tagged_kinds, best_by_kind
     hits = vectorstore.similarity_search_with_score_by_vector(
-        vec, k=CANDIDATE_K * len(kinds),
+        vec, k=CANDIDATE_K * len(eligible),
         filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, {"$or": kind_filters}]})
     if not hits:
         return [], tagged_kinds, best_by_kind
-    budget = sum(MAX_PER_KIND[k] for k in kinds)
+    budget = sum(MAX_PER_KIND[k] for k in eligible)
     best = hits[0][1]
     kept = []
     for doc, score in hits:
@@ -353,7 +375,8 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
     """QUERIES "profile": the per-kind gate of _search() fed by several queries.
 
     `vecs` = [query embedding]. Each query runs its own top-CANDIDATE_K search over the same
-    eligible pool (fault_tags "prefer": tagged chunks only if the kind has any). Raw distances
+    eligible pool (fault_tags "prefer": tagged chunks only if the kind has any; "strict":
+    tagged chunks only, nothing if the kind has none). Raw distances
     are not comparable across queries - the taxonomy query is phrased like the chunks and
     sits far closer than a template - so every candidate is scored by its distance above
     THAT query's best hit, taking the smallest over the queries it came back for. The gate
@@ -373,6 +396,8 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
             vecs[0], k=1, filter={**base_filter, "fault_tags": {"$like": f"%|{code}|%"}}):
         filt = {**base_filter, "fault_tags": {"$like": f"%|{code}|%"}}
     tagged = filt is not base_filter
+    if TAG_MODE == "strict" and code and not tagged:
+        return [], False, None
     merged = {}
     for vec in vecs:
         hits = vectorstore.similarity_search_with_score_by_vector(vec, k=CANDIDATE_K, filter=filt)
@@ -422,7 +447,7 @@ def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None,
 def _search_hybrid(vectorstore, texts, vecs, exercise_id, kind, already_kept, code=None, trace=None):
     """HYBRID: _search_multi() over kb_bm25's in-memory corpus, with BM25 as a second signal.
 
-    Same eligible pool (fault_tags "prefer" per kind), same vector candidates (top-CANDIDATE_K
+    Same eligible pool (fault_tags "prefer"/"strict" per kind), same vector candidates (top-CANDIDATE_K
     per query, exact cosine distance), same margin test on the vector distance above each
     query's best. Added: each query's top-BM25_K keyword hits join the candidates, and the
     order that fills the quota is (distance above best) - BM25_WEIGHT * normalised BM25,
@@ -438,6 +463,8 @@ def _search_hybrid(vectorstore, texts, vecs, exercise_id, kind, already_kept, co
         tagged_idx = [i for i in idx if f"|{code}|" in (corp.docs[i].metadata.get("fault_tags") or "")]
         if tagged_idx:
             idx, tagged = tagged_idx, True
+        elif TAG_MODE == "strict":
+            return [], False, None
     if not idx:
         return [], False, None
     idx = np.array(idx)
@@ -527,6 +554,7 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                     "error": label, "kind": kind, "query": query, "best": best_by_kind[kind],
                     "kept": sum(1 for _, _, k in kept if k == kind),
                     "tagged": kind in tagged_kinds, "tag_exclusive": kind in tagged_kinds,
+                    "strict_skip": TAG_MODE == "strict" and bool(code) and kind not in tagged_kinds,
                 })
             for doc, score, kind in kept:
                 blocks.append((score, doc, kind, label))
@@ -551,6 +579,7 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                     "query": query + (f" (+{'/'.join(list(QUERY_PROFILE)[1:])})" if QUERIES == "profile" else "")
                              + (" [hybrid]" if HYBRID else "") + (" [rerank]" if RERANK else ""),
                     "best": best, "kept": len(kept), "tagged": tagged, "tag_exclusive": tagged,
+                    "strict_skip": TAG_MODE == "strict" and not tagged,
                 })
                 for doc, score in kept:
                     blocks.append((score, doc, kind, label))
@@ -569,15 +598,18 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
             # `tag_exclusive`: the tag filter shut the untagged chunks out of this kind's
             # search altogether (prefer mode with tagged hits) - eval_retrieval.py's
             # tag_filter miss reason only exists then.
+            # `strict_skip`: TAG_MODE "strict" left this kind empty because no chunk of it is
+            # tagged for `code` - the pool the gate saw is empty, so `best` is None.
             tag_exclusive = tagged and TAG_MODE != "union"
+            strict_skip = TAG_MODE == "strict" and bool(code) and not tagged
             probe_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
             if tag_exclusive:
                 probe_filter["fault_tags"] = {"$like": f"%|{code}|%"}
-            pool = vectorstore.similarity_search_with_score(query, k=1, filter=probe_filter)
+            pool = [] if strict_skip else vectorstore.similarity_search_with_score(query, k=1, filter=probe_filter)
             metrics.append({
                 "error": label, "kind": kind, "query": query,
                 "best": pool[0][1] if pool else None, "kept": len(kept), "tagged": tagged,
-                "tag_exclusive": tag_exclusive,
+                "tag_exclusive": tag_exclusive, "strict_skip": strict_skip,
             })
             for doc, score in kept:
                 blocks.append((score, doc, kind, label))
@@ -640,6 +672,7 @@ def metrics_table(metrics):
     see _search()'s `tagged` return value. v4 collections never show `*`: every chunk's
     fault_tags is "", so the tag pass always comes back empty and falls back to plain search.
     Under TAG_MODE "union" `*` only means the tag boosted some chunk; `best` is the plain pool's.
+    `strict —` = TAG_MODE "strict" skipped the kind: no chunk of it is tagged for the fault.
     """
     by_error = {}
     for m in metrics:
@@ -654,6 +687,8 @@ def metrics_table(metrics):
             m = row.get(kind)
             if not m:
                 cells.append("—")
+            elif m.get("strict_skip"):
+                cells.append("strict —")
             else:
                 best = f"{m['best']:.3f}" if m["best"] is not None else "—"
                 flag = "*" if m.get("tagged") else ""
@@ -666,7 +701,7 @@ def metrics_table(metrics):
 # __main__ purely to print into the report, which is a quiet way for the documented
 # prompt to drift away from the prompt actually sent.
 #
-# v10 (2026-09-19). An external judge read compare_output/compare_result_v9.md and rated
+# v10 (2026-09-19). An external judge read compare_output/history/compare_result_v9.md and rated
 # the no-RAG side the better coaching, because the RAG side came back clinical
 # ("lordotic lumbar position", "knee extension moment", "plantar flexors"). Diffing the
 # v9 output against the retrieved context shows why: the model was not picking clinical
@@ -705,7 +740,7 @@ def metrics_table(metrics):
 # left it: naming a term the model must translate is not the same as handing it the
 # translation, and generating that gloss is the capability under test.
 #
-# v14 (2026-10-03, docs/t3_curation_status.md 8.1 step 7). Input format only - the session
+# v14 (2026-10-03, docs/progress/t3_curation_status.md 8.1 step 7). Input format only - the session
 # JSON system 1 sends changed under KB v6 (mock_data/build_mock_sessions.py), and v13 read
 # three of its fields wrong:
 #   1. `state_occurred` is now the FSM state, and it is NOT sent to the model in v14 - see
@@ -713,11 +748,11 @@ def metrics_table(metrics):
 #      closing: the way DOWN in squat, lunge and push-up, the way UP in a curl), and rep-scope
 #      rules are checked once at the end of the attempt, so for 8 of the 12 rules the state
 #      only marks where the attempt ended. Two smoke runs explained both in the prompt
-#      (compare_output/smoke_v14.md, smoke_v14b.md): CONCENTRIC still came out as "pressing
+#      (compare_output/baseline_v14/smoke_v14.md, smoke_v14b.md): CONCENTRIC still came out as "pressing
 #      back up" in 3-4 of 8 answers, rep-scope faults were still tied to a phase in 4, the
 #      words concentric/eccentric/inflection leaked in 2-3, and listing the frame-rule keys
 #      in the prompt made 2 answers print keys. What system 1 actually records is not
-#      confirmed either, so the field waits for that conversation (docs/t3_curation_status.md
+#      confirmed either, so the field waits for that conversation (docs/progress/t3_curation_status.md
 #      8.1) and comes back as its own checkpoint against this baseline.
 #   2. `status: "abort"` is new: an attempt the FSM did not count, which the summary still
 #      counts (total_reps = every entry, an abort with a fault is an incorrect rep).
@@ -726,7 +761,7 @@ def metrics_table(metrics):
 #      words. The first key on a rep is the highest-priority fault.
 # Deliberately NOT in v14, each its own generation checkpoint against this baseline: the
 # `consequence` gap in "How to read the Context" (P1), P2-P6, the rule card per key
-# (P-rule-card), and option A of docs/t3_curation_status.md 6.7.
+# (P-rule-card), and option A of docs/progress/t3_curation_status.md 6.7.
 SYSTEM_PROMPT = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
 Your job is to turn the user's session data and the Knowledge Base context into feedback they can
 understand and act on in their very next workout. The reader is not a clinician or a researcher:
@@ -872,14 +907,14 @@ LLM_MODEL = "gemini-3.5-flash-lite"
 LLM_TEMPERATURE = 0.7
 DEFAULT_COLLECTION = embedding_config.default_collection()
 
-# v4 = KB rebuilt after docs/kb_quality_assessment.md: 4 off-topic sources removed,
+# v4 = KB rebuilt after docs/kb/kb_quality_assessment.md: 4 off-topic sources removed,
 # 17 new form/biomechanics papers curated under the tightened is_relevant, chunks
 # tagged with applies_to_fault. Kept separate from v3 so the two can be compared with
 # the same query code. As of 2026-09-14, kb_gemini_curated_v4 carried the same
 # curated_data content re-embedded with Gemini (embedding_config.DEFAULT_MODE) -
 # kb_local_curated_v4 (MiniLM) stays available as a fallback/comparison collection.
 #
-# v5 (2026-09-18, docs/kb_quality_assessment.md section 11) is now DEFAULT_COLLECTION:
+# v5 (2026-09-18, docs/kb/kb_quality_assessment.md section 11) is now DEFAULT_COLLECTION:
 # curated_data_v5 re-ingested, golden set updated with v5 phrasing, and curator.py's
 # fault-tagging bug (variant-specific/hypertrophy statements tagged onto the generic
 # fault code) fixed and patched into the existing data. Golden set: 10/10 hit,
@@ -889,7 +924,7 @@ DEFAULT_COLLECTION = embedding_config.default_collection()
 # result above says they still work well.
 #
 # v6 (2026-10-03) is DEFAULT_COLLECTION now: KB v6 under the 12-rule taxonomy
-# (docs/t3_curation_status.md). The gate numbers above are still the v4 sweep, not yet
+# (docs/progress/t3_curation_status.md). The gate numbers above are still the v4 sweep, not yet
 # measured on v6 (eval_v6_plan E6).
 
 
@@ -920,7 +955,7 @@ def model_payload(session_data):
 
 
 def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAULT_COLLECTION,
-                              raw_query=False, samples=1):
+                              raw_query=False, samples=1, generate=True):
     """Returns (feedback_texts, context_used, metrics) so the caller can log exactly what
     the model was given - v5 returned only the text, which is why verifying a suspected
     hallucination meant re-running the whole script with an ad-hoc print statement.
@@ -928,16 +963,10 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
     `samples`: how many answers to generate from the same context (checkpoint G1 - at
     temperature 0.7 one answer per session cannot tell a retrieval change from sampling
     noise). Retrieval runs once; `feedback_texts` is a list of `samples` strings. A failed
-    call yields a string starting with GENERATION_ERROR in its slot, not an exception."""
-    llm = ChatGoogleGenerativeAI(model=LLM_MODEL, temperature=LLM_TEMPERATURE, max_retries=1)
+    call yields a string starting with GENERATION_ERROR in its slot, not an exception.
 
-    system_prompt = SYSTEM_PROMPT
-
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", system_prompt),
-        ("human", "Here is the exercise session data:\n{input}\n\nPlease evaluate my performance and tell me what to work on."),
-    ])
-
+    `generate=False` (--context-only): retrieval only, no LLM call - returns ([], context,
+    metrics). The only paid call left is the query embedding."""
     metrics = []
     if use_rag:
         connection = embedding_config.get_connection()
@@ -964,6 +993,18 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
         )
     else:
         context = "No external context provided."
+
+    if not generate:
+        return [], context, metrics
+
+    llm = ChatGoogleGenerativeAI(model=LLM_MODEL, temperature=LLM_TEMPERATURE, max_retries=1)
+
+    system_prompt = SYSTEM_PROMPT
+
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", system_prompt),
+        ("human", "Here is the exercise session data:\n{input}\n\nPlease evaluate my performance and tell me what to work on."),
+    ])
 
     rag_chain = (
         {"context": lambda x: context, "input": RunnablePassthrough()}
@@ -1014,7 +1055,7 @@ def parse_args():
                     help="report filename inside compare_output/")
     ap.add_argument("--skip-no-rag", action="store_true",
                     help="only run the RAG side (halves the LLM calls when the interest is retrieval)")
-    ap.add_argument("--tag-mode", choices=["prefer", "union"], default=TAG_MODE,
+    ap.add_argument("--tag-mode", choices=["prefer", "strict", "union"], default=TAG_MODE,
                     help=f"how fault_tags combine with semantic search, see TAG_MODE (default: {TAG_MODE})")
     ap.add_argument("--kind-pool", choices=["split", "single"], default=KIND_POOL,
                     help=f"per-kind quotas or one shared budget, see KIND_POOL (default: {KIND_POOL})")
@@ -1028,9 +1069,15 @@ def parse_args():
                     help="answers generated per session and side from the same context (default 1); "
                          "every answer also goes to the JSON written next to the report, which "
                          "eval/judge_pairwise.py reads")
+    ap.add_argument("--context-only", action="store_true",
+                    help="retrieve and write the context + metrics for every session, generate no "
+                         "answers (no LLM call on either side; implies --skip-no-rag, samples 0)")
     args = ap.parse_args()
     if args.samples < 1:
         ap.error("--samples must be >= 1")
+    if args.context_only:
+        args.skip_no_rag = True
+        args.samples = 0
     return args
 
 
@@ -1057,6 +1104,7 @@ if __name__ == "__main__":
 | collection | `{args.collection}` |
 | LLM | `{LLM_MODEL}` @ temperature {LLM_TEMPERATURE} |
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
+| generation | {"**off** — `--context-only`: context and metrics only, no LLM call" if args.context_only else "on"} |
 | samples per session | {args.samples} |
 | retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES}, HYBRID={HYBRID}{f" (BM25_K={BM25_K}, BM25_WEIGHT={BM25_WEIGHT})" if HYBRID else ""}, RERANK={RERANK}{f" (min {RERANK_MIN})" if RERANK else ""} |
 
@@ -1074,15 +1122,15 @@ and were actually placed in the context.
         return f"### {side}\n" if args.samples == 1 else f"### {side} (sample {i}/{args.samples})\n"
 
     import hashlib
-    os.makedirs("compare_output", exist_ok=True)
     out_path = os.path.join("compare_output", args.out)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)  # --out may name a subfolder, e.g. baseline_v14/x.md
     # Machine-readable twin of the report: every sample, plus the context and the exact
     # payload the model saw, so eval/judge_pairwise.py never has to parse the markdown back.
     json_path = os.path.splitext(out_path)[0] + ".json"
     run = {
         "report": args.out, "mock": args.mock, "collection": args.collection,
         "raw_query": args.raw_query, "llm": LLM_MODEL, "temperature": LLM_TEMPERATURE,
-        "samples": args.samples,
+        "samples": args.samples, "context_only": args.context_only,
         "system_prompt_sha1": hashlib.sha1(SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
         "retrieval": {"TAG_MODE": TAG_MODE, "KIND_POOL": KIND_POOL, "QUERIES": QUERIES,
                       "HYBRID": HYBRID, "RERANK": RERANK},
@@ -1105,7 +1153,7 @@ and were actually placed in the context.
 
             rag_outputs, rag_context, metrics = generate_feedback_compare(
                 mock, use_rag=True, collection_name=args.collection, raw_query=args.raw_query,
-                samples=args.samples,
+                samples=args.samples, generate=not args.context_only,
             )
             f.write("### Retrieval metrics\n")
             f.write(metrics_table(metrics) + "\n\n")

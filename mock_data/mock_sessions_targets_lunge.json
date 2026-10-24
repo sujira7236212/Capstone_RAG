@@ -1,0 +1,1294 @@
+[
+  {
+    "session_id": "LU-20261003-101",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — shallow_lunge late",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 78,
+      "previous_correct_reps": 8,
+      "previous_incorrect_reps": 2,
+      "previous_common_errors": [
+        "forward_trunk_lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 77
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 91
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 53
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 46
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-102",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — shallow_lunge most",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 64,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "shallow_lunge"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 3,
+      "incorrect_reps": 7,
+      "overall_score": 60
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 50
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 51
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 48
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 84
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 47
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 45
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-103",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — shallow_lunge improving",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 63,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "shallow_lunge",
+        "forward_trunk_lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 8,
+      "incorrect_reps": 2,
+      "overall_score": 81
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-104",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — shallow_lunge early",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 74,
+      "previous_correct_reps": 6,
+      "previous_incorrect_reps": 4,
+      "previous_common_errors": [
+        "forward_trunk_lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 77
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 50
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-105",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — shallow_lunge every",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 60,
+      "previous_correct_reps": 2,
+      "previous_incorrect_reps": 8,
+      "previous_common_errors": [
+        "shallow_lunge"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 0,
+      "incorrect_reps": 10,
+      "overall_score": 47
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 48
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 50
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 47
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 49
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 46
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 47
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 45
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 44
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "abort",
+        "similarity_scores_percent": {
+          "overall": 43
+        },
+        "errors": [
+          {
+            "error_type": "shallow_lunge",
+            "state_occurred": "CONCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-106",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — straight_back_leg late",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 78,
+      "previous_correct_reps": 8,
+      "previous_incorrect_reps": 2,
+      "previous_common_errors": [
+        "forward_trunk_lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 80
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 91
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 61
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 57
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-107",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — straight_back_leg most",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 64,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "straight_back_leg"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 3,
+      "incorrect_reps": 7,
+      "overall_score": 65
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 60
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 58
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 59
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 56
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 57
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 84
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 55
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 53
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-108",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — straight_back_leg improving",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 63,
+      "previous_correct_reps": 3,
+      "previous_incorrect_reps": 7,
+      "previous_common_errors": [
+        "straight_back_leg",
+        "forward_trunk_lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 8,
+      "incorrect_reps": 2,
+      "overall_score": 83
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 90
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 62
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 60
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 86
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-109",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — straight_back_leg early",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 74,
+      "previous_correct_reps": 6,
+      "previous_incorrect_reps": 4,
+      "previous_common_errors": [
+        "forward_trunk_lean"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 7,
+      "incorrect_reps": 3,
+      "overall_score": 79
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 58
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 60
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 62
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 85
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 87
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 89
+        },
+        "errors": []
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 88
+        },
+        "errors": []
+      }
+    ]
+  },
+  {
+    "session_id": "LU-20261003-110",
+    "exercise_id": "lunge",
+    "name": "Lunge",
+    "report_label": "Lunge — straight_back_leg every",
+    "date": "2026-10-03",
+    "historical_comparison": {
+      "previous_session_date": "2026-10-02",
+      "previous_overall_score": 60,
+      "previous_correct_reps": 2,
+      "previous_incorrect_reps": 8,
+      "previous_common_errors": [
+        "straight_back_leg"
+      ]
+    },
+    "summary": {
+      "total_reps": 10,
+      "correct_reps": 0,
+      "incorrect_reps": 10,
+      "overall_score": 55
+    },
+    "reps_detail": [
+      {
+        "rep_no": 1,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 57
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 2,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 56
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 3,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 58
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 4,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 55
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 5,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 57
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 6,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 54
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 7,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 55
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 8,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 53
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 9,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 52
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      },
+      {
+        "rep_no": 10,
+        "status": "completed",
+        "similarity_scores_percent": {
+          "overall": 51
+        },
+        "errors": [
+          {
+            "error_type": "straight_back_leg",
+            "state_occurred": "ECCENTRIC"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+ "description": "Reviewed tag removals applied by data_pipeline/manual_untag_v6.py before ingesting kb_gemini_curated_v6b. Proposed by Claude against eval/rule_cards.json, approved by the user 2026-10-24 (A1, A2). A3 (ATHLEAN-X '~60%, 100 down to 40' finding) and A4 (Gao 2022 'leaning forward increases knee shear' consequence) were left tagged.",
+ "decisions": [
+  {
+   "id": "A1",
+   "file": "curated_data_v6/lunge/Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions_curated.json",
+   "kind": "consequence",
+   "text": "Maintaining an extended, upright trunk during an anterior lunge significantly increases the net joint moment impulse and biomechanical load on the knee joint.",
+   "code": "forward_trunk_lean",
+   "reason": "Describes the effect of the correct form (upright trunk), not a consequence of leaning forward; as a forward_trunk_lean consequence it reads in the wrong direction.",
+   "date": "2026-10-24"
+  },
+  {
+   "id": "A2",
+   "file": "curated_data_v6/push-up/AthleanX_PushUpRangeOfMotion_curated.json",
+   "kind": "finding",
+   "text": "Enforcing strict full range of motion with chest-to-floor contact and full lockout reduces total rep capacity by approximately 60% compared to performing partial-range reps.",
+   "code": "partial_pushup",
+   "reason": "Bundles the top lockout, which the partial_pushup card excludes (the rule only checks the bottom); near-duplicate of the window-1 finding that stays tagged.",
+   "date": "2026-10-24"
+  }
+ ]
+}

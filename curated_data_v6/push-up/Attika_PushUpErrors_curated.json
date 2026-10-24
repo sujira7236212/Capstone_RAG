@@ -1,0 +1,112 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Full Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Engage the glutes, squeeze the quads, and draw the ribs down toward the pelvis before starting to maintain a neutral spine and proper pelvic alignment.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "If unable to maintain a straight body line, modify the movement by dropping to the knees while keeping the hips aligned with the shoulders and the core tight.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Perform a full range of motion by lowering until the chest nearly touches the floor, ensuring the chest leads the way down rather than the belly or chin.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "If strength is the limiting factor, elevate hands on a box or bench to practice the full range of motion without compromising technique.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Aim for a 45-degree angle between the torso and elbows, forming an arrow shape with the arms during the descent.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Retract the shoulder blades slightly and keep them down and back throughout the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifting the hips into the air during the lowering phase due to an anterior pelvic tilt and core disengagement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Allowing the hips to sag toward the floor due to an inactive or fatigued core.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Performing partial reps by only bending the elbows slightly and stopping far above the ground.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Flaring the elbows out excessively into a T-shape away from the body.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tucking the elbows too tightly against the ribs during the push-up.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the shoulders to creep up toward the ears or drop before the hips due to insufficient scapular control.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Lifting the hips into an anterior pelvic tilt breaks the straight line of the body and results in a lack of abdominal engagement.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Allowing the hips to sag puts undue pressure on the lower back and reduces overall exercise effectiveness.",
+        "applies_to_fault": [
+          "hip_sag_or_pike"
+        ]
+      },
+      {
+        "text": "Stopping far above the ground in a partial push-up prevents the chest muscles from working to their full potential.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Flaring the elbows into a T-shape places unnecessary stress on the shoulders and increases the risk of injury.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Tucking the elbows too tightly against the ribs reduces chest muscle engagement and shifts the load primarily to the triceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lacking scapular control during the push-up places the neck and upper trapezius muscles into overdrive.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\Attika_PushUpErrors.txt",
+    "applies_to_fault": [
+      "hip_sag_or_pike",
+      "partial_pushup"
+    ]
+  }
+]

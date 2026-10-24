@@ -1,6 +1,6 @@
 """Score the retrieval gate against eval/golden_chunks.json.
 
-kb_coverage.py answers "is there anything in the KB for this fault?" by counting the
+tools/kb_coverage.py answers "is there anything in the KB for this fault?" by counting the
 top-40 pool within 0.40. This script answers the question that actually decides the
 feedback quality: of the chunks the gate in test_rag_compare.py PUTS INTO THE CONTEXT
 under a fault's label, how many describe that fault (good), how many describe a
@@ -197,6 +197,9 @@ def render(rows, collection, show_kept):
 #   tag_filter   - chunk has no tag for this fault, and the tagged pool was non-empty for its
 #                  kind, so the untagged search that would have seen it never ran (TAG_MODE
 #                  "prefer" only - under "union" the untagged search always runs).
+#   tag_strict   - chunk has no tag for this fault, and its kind had no tagged chunk at all,
+#                  so TAG_MODE "strict" left the kind empty instead of falling back (column
+#                  shown under "strict" only).
 #   rank         - chunk was eligible for its kind's search but not in the top CANDIDATE_K
 #                  (KIND_POOL "single": not in the top CANDIDATE_K * kinds of the shared search).
 #   margin       - in the top CANDIDATE_K but past best + RELATIVE_MARGIN (RERANK: cross-encoder
@@ -206,7 +209,13 @@ def render(rows, collection, show_kept):
 #   dup          - near-dup of a chunk kept for another fault (session mode only; rare here).
 # ---------------------------------------------------------------------------
 
-MISS_REASONS = ("tag_spelling", "tag_filter", "rank", "margin", "quota", "dup")
+MISS_REASONS = ("tag_spelling", "tag_filter", "tag_strict", "rank", "margin", "quota", "dup")
+
+
+def _miss_reasons():
+    """MISS_REASONS as reported: the tag_strict column only exists under TAG_MODE "strict",
+    so prefer/union reports keep the columns they had before strict was added."""
+    return MISS_REASONS if trc.TAG_MODE == "strict" else tuple(r for r in MISS_REASONS if r != "tag_strict")
 
 
 def _cluster(texts):
@@ -221,21 +230,24 @@ def _cluster(texts):
     return clusters
 
 
-def _miss_reason(members, chunk_meta, trace_by_text, tagged_by_kind, code):
+def _miss_reason(members, chunk_meta, trace_by_text, tagged_by_kind, code, strict_by_kind=None):
     traced = [trace_by_text[t] for t in members if t in trace_by_text]
     if traced:
         return min(traced, key=lambda e: e["score"])["reason"]
     reasons = []
+    strict_by_kind = strict_by_kind or {}
     for t in members:
         m = chunk_meta[t]
-        if tagged_by_kind.get(m["kind"]) and f"|{code}|" not in (m["fault_tags"] or ""):
+        if strict_by_kind.get(m["kind"]) and f"|{code}|" not in (m["fault_tags"] or ""):
+            reasons.append("tag_strict")
+        elif tagged_by_kind.get(m["kind"]) and f"|{code}|" not in (m["fault_tags"] or ""):
             spelled = code in {x.strip().replace("_", " ").lower()
                                for x in (m["fault_tags"] or "").split("|") if x.strip()}
             reasons.append("tag_spelling" if spelled else "tag_filter")
         else:
             reasons.append("rank")
     # The most fixable reason first: a spelling fix recovers it with no retrieval change.
-    for r in ("tag_spelling", "rank", "tag_filter"):
+    for r in ("tag_spelling", "rank", "tag_filter", "tag_strict"):
         if r in reasons:
             return r
     return "rank"
@@ -271,6 +283,7 @@ def evaluate_recall(vs, golden_faults, pool):
             if e["text"] not in trace_by_text or e["score"] < trace_by_text[e["text"]]["score"]:
                 trace_by_text[e["text"]] = e
         tagged_by_kind = {m["kind"]: m["tag_exclusive"] for m in metrics if m["error"] == g["code"]}
+        strict_by_kind = {m["kind"]: m.get("strict_skip", False) for m in metrics if m["error"] == g["code"]}
 
         clusters = _cluster([c["text"] for c in f["chunks"] if c["label"] == "relevant"])
         covered, missed = 0, []
@@ -278,7 +291,8 @@ def evaluate_recall(vs, golden_faults, pool):
             if any(t in context or trc._is_near_duplicate(t, context) for t in members):
                 covered += 1
             else:
-                missed.append((_miss_reason(members, chunk_meta, trace_by_text, tagged_by_kind, g["code"]),
+                missed.append((_miss_reason(members, chunk_meta, trace_by_text, tagged_by_kind, g["code"],
+                                            strict_by_kind),
                                members))
         out.append({
             "exercise_id": g["exercise_id"], "code": g["code"],
@@ -292,6 +306,7 @@ def evaluate_recall(vs, golden_faults, pool):
 
 
 def render_recall(rows, collection, show_missed):
+    reasons = _miss_reasons()
     out = [f"\n### {collection} — recall vs relevance pool (single mode)\n",
            "`facts` = relevant chunks in the pool after near-dup clustering · `recall` = facts with a chunk "
            "(or near-dup) in the context · ctx columns = judge labels of the chunks actually kept.",
@@ -300,13 +315,13 @@ def render_recall(rows, collection, show_missed):
            "Compare recall against it, and compare steps only at the same budget.",
            "",
            "| exercise | fault | candidates | facts | covered | recall | ceiling | kept | ctx relevant | ctx wrong_fault "
-           "| ctx irrelevant | ctx unlabeled | " + " | ".join(f"miss: {r}" for r in MISS_REASONS) + " |",
-           "|---|---|---|---|---|---|---|---|---|---|---|---|" + "---|" * len(MISS_REASONS)]
+           "| ctx irrelevant | ctx unlabeled | " + " | ".join(f"miss: {r}" for r in reasons) + " |",
+           "|---|---|---|---|---|---|---|---|---|---|---|---|" + "---|" * len(reasons)]
     budget = sum(trc.MAX_PER_KIND.values())
     for r in rows:
         rec = r["covered"] / r["facts"] if r["facts"] else 0.0
         ceil = min(r["facts"], budget) / r["facts"] if r["facts"] else 0.0
-        miss = [sum(1 for reason, _ in r["missed"] if reason == m) for m in MISS_REASONS]
+        miss = [sum(1 for reason, _ in r["missed"] if reason == m) for m in reasons]
         c = r["ctx"]
         out.append(f"| {r['exercise_id']} | {r['code']} | {r['candidates']} | {r['facts']} | {r['covered']} | "
                    f"{rec:.2f} | {ceil:.2f} | {r['kept']} | {c['relevant']} | {c['wrong_fault']} | {c['irrelevant']} | "
@@ -319,7 +334,7 @@ def render_recall(rows, collection, show_missed):
     scored = [r for r in rows if r["facts"]]
     macro = sum(r["covered"] / r["facts"] for r in scored) / max(1, len(scored))
     ceil_micro = sum(min(r["facts"], budget) for r in rows) / facts if facts else 0.0
-    totals = {m: sum(1 for r in rows for reason, _ in r["missed"] if reason == m) for m in MISS_REASONS}
+    totals = {m: sum(1 for r in rows for reason, _ in r["missed"] if reason == m) for m in reasons}
     if facts and kept:
         out.append(f"\n**recall summary ({collection})** — facts covered {covered}/{facts} · "
                    f"recall micro **{covered / facts:.2f}** (ceiling {ceil_micro:.2f}) / macro **{macro:.2f}** · "
@@ -357,7 +372,7 @@ def main():
     ap.add_argument("--margin", type=float, help="override RELATIVE_MARGIN")
     ap.add_argument("--cap", help="override ABS_DISTANCE_CAP, e.g. mistake=0.40,finding=0.38")
     ap.add_argument("--max-per-kind", help="override MAX_PER_KIND, e.g. mistake=3,finding=2")
-    ap.add_argument("--tag-mode", choices=["prefer", "union"], help="override TAG_MODE")
+    ap.add_argument("--tag-mode", choices=["prefer", "strict", "union"], help="override TAG_MODE")
     ap.add_argument("--kind-pool", choices=["split", "single"], help="override KIND_POOL")
     ap.add_argument("--queries", choices=["fault", "profile"], help="override QUERIES")
     ap.add_argument("--hybrid", action=argparse.BooleanOptionalAction, help="override HYBRID")

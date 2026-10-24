@@ -1,0 +1,1236 @@
+{
+  "derived_from": "compare_result_v14_lunge.json",
+  "method": "offline: prefer context minus strict-skipped kinds",
+  "mock": "mock_data/mock_sessions_lunge.json",
+  "collection": "kb_gemini_curated_v6",
+  "retrieval": {
+    "TAG_MODE": "strict",
+    "KIND_POOL": "split",
+    "QUERIES": "profile",
+    "HYBRID": false,
+    "RERANK": false
+  },
+  "note": "rag/no_rag answers not carried over - they were generated from the prefer context",
+  "sessions": [
+    {
+      "label": "Lunge — shallow_lunge",
+      "exercise_id": "lunge",
+      "payload": {
+        "session_id": "LU-20261003-001",
+        "exercise_id": "lunge",
+        "name": "Lunge",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 70,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "shallow_lunge"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 71
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 52
+            },
+            "errors": [
+              {
+                "error_type": "shallow_lunge"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 50
+            },
+            "errors": [
+              {
+                "error_type": "shallow_lunge"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 47
+            },
+            "errors": [
+              {
+                "error_type": "shallow_lunge"
+              }
+            ]
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 45
+            },
+            "errors": [
+              {
+                "error_type": "shallow_lunge"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 83
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[mistake | re: shallow_lunge | source: basics_of_strength_and_conditioning_manual]\nFailing to lower the hips until the front thigh is parallel to the floor.\n\n[principle | re: shallow_lunge | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nTo achieve proper depth during a lunge, descend until the trail knee is just prior to touching the ground.\n\n[mistake | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovice lifters may perform backward lunges with shallower knee flexion compared to experienced lifters.\n\n[principle | re: shallow_lunge | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[finding | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring backward barbell lunges, novices achieved a shallower peak knee flexion with a minimal sagittal angle of -99.01 ± 10.02 degrees compared to -108.44 ± 8.33 degrees in experienced lifters.\n\n[finding | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nDuring a forward lunge, a shallower front knee flexion angle of 80° results in a statistically significantly higher knee extensor moment (0.980 Nm/BW) compared to 90° (0.717 Nm/BW) and 100° (0.362 Nm/BW).\n\n[consequence | re: shallow_lunge | source: Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK]\nFailing to sufficiently activate the m. gluteus maximus reduces the generation of posterior shear forces at the tibia, which otherwise potentially contribute to a reduced likelihood of knee injuries.",
+      "metrics": [
+        {
+          "error": "shallow_lunge",
+          "kind": "mistake",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.13532986990690876,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "finding",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.2260629861279687,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "consequence",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.3157588667036424,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "principle",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.1852058922753359,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "37a224d187de3e28082d604dfd598e73753f603d",
+      "prefer_context_sha1": "37a224d187de3e28082d604dfd598e73753f603d",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Lunge — excessive_front_knee_flexion",
+      "exercise_id": "lunge",
+      "payload": {
+        "session_id": "LU-20261003-002",
+        "exercise_id": "lunge",
+        "name": "Lunge",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 74,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "excessive_front_knee_flexion"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 77
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 64
+            },
+            "errors": [
+              {
+                "error_type": "excessive_front_knee_flexion"
+              }
+            ]
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 61
+            },
+            "errors": [
+              {
+                "error_type": "excessive_front_knee_flexion"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "excessive_front_knee_flexion"
+              }
+            ]
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "excessive_front_knee_flexion"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nAllowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.\n\n[principle | re: excessive_front_knee_flexion | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive knee flexion (sinking too deep) during the lunge increases the joint reaction forces and extensor moments on the front knee.\n\n[consequence | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nIncreased knee flexion angle during the lunge increases quadriceps force, which is a main contributing factor to greater patellar tendon stress.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nInexperienced exercisers often exhibit excessive knee flexion during lunges.\n\n[consequence | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAn increased knee flexion angle during a forward lunge causes forward movement of the upper body and trunk segment, generating a large reaction force on the ground surface contacted by the front foot.\n\n[principle | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nKeeping the front knee behind the toes during a lunge limits knee flexion to a safer range of approximately 110 degrees compared to letting it translate forward.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nPeak anterior-posterior knee joint reaction forces during the upward phase of a lunge increase from 3.545 N/BW at 80 degrees of knee flexion to 4.521 N/BW at 100 degrees.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring forward barbell lunges, novices showed a larger sagittal knee range of motion of 110.82 ± 13.36 degrees compared to 98.55 ± 9.16 degrees in experienced lifters.",
+      "metrics": [
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "mistake",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.08753351270350895,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "finding",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.18725831812419536,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "consequence",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.14786374464490293,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "principle",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.1249014660774026,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "d8d7611c52553348878446516a789239b4f2adc1",
+      "prefer_context_sha1": "d8d7611c52553348878446516a789239b4f2adc1",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Lunge — forward_trunk_lean",
+      "exercise_id": "lunge",
+      "payload": {
+        "session_id": "LU-20261003-003",
+        "exercise_id": "lunge",
+        "name": "Lunge",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 73,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "forward_trunk_lean"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 76
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 63
+            },
+            "errors": [
+              {
+                "error_type": "forward_trunk_lean"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "forward_trunk_lean"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 59
+            },
+            "errors": [
+              {
+                "error_type": "forward_trunk_lean"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 56
+            },
+            "errors": [
+              {
+                "error_type": "forward_trunk_lean"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[consequence | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nLeaning the trunk forward (flexion) during a lunge shifts the body's center of mass forward, reducing the knee extension moment and decreasing patellar tendon stress.\n\n[mistake | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive anterior movement of the upper torso increases the load exerted on the knee joint of the front leg.\n\n[consequence | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nLeaning too far forward during the eccentric phase of the exercise can increase the shear force at the knee joint, increasing the risk of injury or pain.\n\n[mistake | re: forward_trunk_lean | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovices may exhibit compensatory trunk lean during lunges due to core instability and reduced eccentric contraction ability of the gluteus maximus.\n\n[principle | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nTo control the load exerted on the front knee joint during a forward lunge, limit the anterior movement of the upper torso and the lower leg.\n\n[mistake | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nTo compensate for balance and strength challenges, the torso can lean forward during the downward phase, even if the lower body is performing the correct technique.\n\n[principle | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nTrunk position can be manipulated during the lunge to alter patellar tendon stress.\n\n[finding | re: forward_trunk_lean | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nPositioning the trunk in a forward-inclined position during a lunge elicited a significantly higher activation of the lumbar erector spinae (40 ± 29% MVIC) compared to the straight-trunk condition (20 ± 15% MVIC, ES = 0.92).\n\n[finding | re: forward_trunk_lean | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nThe head, arms, and trunk consist of approximately 55% of body mass, which explains why trunk position has a significant influence on lower extremity joint moments during the lunge.",
+      "metrics": [
+        {
+          "error": "forward_trunk_lean",
+          "kind": "mistake",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.15043823117753485,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "finding",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.2007209897900808,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "consequence",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.14444627099588758,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "principle",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.15511805743681373,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "3f2450fc6e40924b83431a57c6be2d8793f54ddc",
+      "prefer_context_sha1": "3f2450fc6e40924b83431a57c6be2d8793f54ddc",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Lunge — straight_back_leg",
+      "exercise_id": "lunge",
+      "payload": {
+        "session_id": "LU-20261003-004",
+        "exercise_id": "lunge",
+        "name": "Lunge",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 72,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "straight_back_leg",
+            "shallow_lunge"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 76
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 62
+            },
+            "errors": [
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 57
+            },
+            "errors": [
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[principle | re: straight_back_leg | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nLower the rear knee toward the ground during the descent of the lunge.",
+      "metrics": [
+        {
+          "error": "straight_back_leg",
+          "kind": "mistake",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": null,
+          "kept": 0,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": true
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "finding",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": null,
+          "kept": 0,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": true
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "consequence",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": null,
+          "kept": 0,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": true
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "principle",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": 0.10956847667693459,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "435c1a60fe1dd66c4223582ee217cf4dcb4184ac",
+      "prefer_context_sha1": "d71e66b2d97fb36aeabbe35ac9680ebc337e64bb",
+      "changed": true,
+      "strict_skipped": [
+        "straight_back_leg/consequence",
+        "straight_back_leg/finding",
+        "straight_back_leg/mistake"
+      ],
+      "removed_blocks": [
+        {
+          "kind": "mistake",
+          "label": "straight_back_leg",
+          "source": "KritzCroninHume2009BodyweightlungeSCJ",
+          "text": "Performing the lunge with spinal flexion or excessive spinal extension."
+        },
+        {
+          "kind": "mistake",
+          "label": "straight_back_leg",
+          "source": "basics_of_strength_and_conditioning_manual",
+          "text": "Allowing the front knee to go forward past the toes during the lunge."
+        },
+        {
+          "kind": "consequence",
+          "label": "straight_back_leg",
+          "source": "ptq-4.4.9-the-undervalued-lunge",
+          "text": "Turning the lead foot or lead knee inward during a forward lunge increases the torque stress of the knee joint of the front leg, which can exacerbate previous knee injuries and lead to increased knee pain."
+        },
+        {
+          "kind": "finding",
+          "label": "straight_back_leg",
+          "source": "KritzCroninHume2009BodyweightlungeSCJ",
+          "text": "The forward lunge involves calcaneal eversion, talar plantar flexion and adduction, tibial internal rotation, knee flexion, extension, and abduction, and hip flexion, extension, and adduction."
+        },
+        {
+          "kind": "mistake",
+          "label": "straight_back_leg",
+          "source": "Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS",
+          "text": "Allowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge."
+        },
+        {
+          "kind": "consequence",
+          "label": "straight_back_leg",
+          "source": "ptq-4.4.9-the-undervalued-lunge",
+          "text": "Rotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint, which can limit performance, exacerbate pre-existing injuries, and potentially cause pain."
+        },
+        {
+          "kind": "finding",
+          "label": "straight_back_leg",
+          "source": "Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise",
+          "text": "Forward lean of the trunk during the forward lunge results in greater recruitment of the hamstrings."
+        }
+      ],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Lunge — mixed",
+      "exercise_id": "lunge",
+      "payload": {
+        "session_id": "LU-20261003-005",
+        "exercise_id": "lunge",
+        "name": "Lunge",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 69,
+          "previous_correct_reps": 4,
+          "previous_incorrect_reps": 6,
+          "previous_common_errors": [
+            "forward_trunk_lean",
+            "straight_back_leg"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 4,
+          "incorrect_reps": 6,
+          "overall_score": 67
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "forward_trunk_lean"
+              },
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 46
+            },
+            "errors": [
+              {
+                "error_type": "shallow_lunge"
+              }
+            ]
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 62
+            },
+            "errors": [
+              {
+                "error_type": "excessive_front_knee_flexion"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 57
+            },
+            "errors": [
+              {
+                "error_type": "forward_trunk_lean"
+              },
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          },
+          {
+            "rep_no": 8,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 43
+            },
+            "errors": [
+              {
+                "error_type": "shallow_lunge"
+              },
+              {
+                "error_type": "forward_trunk_lean"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 83
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 59
+            },
+            "errors": [
+              {
+                "error_type": "straight_back_leg"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nAllowing the front knee to translate forward in front of the toes during the descending phase of a forward step lunge.\n\n[principle | re: straight_back_leg | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nLower the rear knee toward the ground during the descent of the lunge.\n\n[principle | re: excessive_front_knee_flexion | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nDuring the lunge, the front knee should be flexed to approximately 90 to 100 degrees as the rear knee is lowered toward the ground.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive knee flexion (sinking too deep) during the lunge increases the joint reaction forces and extensor moments on the front knee.\n\n[mistake | re: shallow_lunge | source: basics_of_strength_and_conditioning_manual]\nFailing to lower the hips until the front thigh is parallel to the floor.\n\n[consequence | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nLeaning the trunk forward (flexion) during a lunge shifts the body's center of mass forward, reducing the knee extension moment and decreasing patellar tendon stress.\n\n[consequence | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nIncreased knee flexion angle during the lunge increases quadriceps force, which is a main contributing factor to greater patellar tendon stress.\n\n[mistake | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nInexperienced exercisers often exhibit excessive knee flexion during lunges.\n\n[mistake | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAllowing excessive anterior movement of the upper torso increases the load exerted on the knee joint of the front leg.\n\n[consequence | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nLeaning too far forward during the eccentric phase of the exercise can increase the shear force at the knee joint, increasing the risk of injury or pain.\n\n[consequence | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nAn increased knee flexion angle during a forward lunge causes forward movement of the upper body and trunk segment, generating a large reaction force on the ground surface contacted by the front foot.\n\n[mistake | re: forward_trunk_lean | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovices may exhibit compensatory trunk lean during lunges due to core instability and reduced eccentric contraction ability of the gluteus maximus.\n\n[principle | re: forward_trunk_lean | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nTo control the load exerted on the front knee joint during a forward lunge, limit the anterior movement of the upper torso and the lower leg.\n\n[mistake | re: forward_trunk_lean | source: ptq-4.4.9-the-undervalued-lunge]\nTo compensate for balance and strength challenges, the torso can lean forward during the downward phase, even if the lower body is performing the correct technique.\n\n[principle | re: forward_trunk_lean | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nTrunk position can be manipulated during the lunge to alter patellar tendon stress.\n\n[principle | re: excessive_front_knee_flexion | source: Zellmer2019_KneePastToes_PatellarTendon_Lunge_JSHS]\nKeeping the front knee behind the toes during a lunge limits knee flexion to a safer range of approximately 110 degrees compared to letting it translate forward.\n\n[principle | re: shallow_lunge | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nTo achieve proper depth during a lunge, descend until the trail knee is just prior to touching the ground.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nPeak anterior-posterior knee joint reaction forces during the upward phase of a lunge increase from 3.545 N/BW at 80 degrees of knee flexion to 4.521 N/BW at 100 degrees.\n\n[finding | re: forward_trunk_lean | source: Bezerra2021_TrunkPosition_LungeActivation_IJES]\nPositioning the trunk in a forward-inclined position during a lunge elicited a significantly higher activation of the lumbar erector spinae (40 ± 29% MVIC) compared to the straight-trunk condition (20 ± 15% MVIC, ES = 0.92).\n\n[mistake | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nNovice lifters may perform backward lunges with shallower knee flexion compared to experienced lifters.\n\n[principle | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nThe knee flexion angle of the front leg in the downward phase should be carefully managed to prevent injuries to the knee joints during forward lunge training.\n\n[finding | re: excessive_front_knee_flexion | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring forward barbell lunges, novices showed a larger sagittal knee range of motion of 110.82 ± 13.36 degrees compared to 98.55 ± 9.16 degrees in experienced lifters.\n\n[finding | re: forward_trunk_lean | source: Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise]\nThe head, arms, and trunk consist of approximately 55% of body mass, which explains why trunk position has a significant influence on lower extremity joint moments during the lunge.\n\n[finding | re: shallow_lunge | source: Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience]\nDuring backward barbell lunges, novices achieved a shallower peak knee flexion with a minimal sagittal angle of -99.01 ± 10.02 degrees compared to -108.44 ± 8.33 degrees in experienced lifters.\n\n[finding | re: shallow_lunge | source: Effects of Targeted Knee Flexion Angle on the Biomechanical Factors of Upward and Downward Phases during Forward Lunge]\nDuring a forward lunge, a shallower front knee flexion angle of 80° results in a statistically significantly higher knee extensor moment (0.980 Nm/BW) compared to 90° (0.717 Nm/BW) and 100° (0.362 Nm/BW).\n\n[consequence | re: shallow_lunge | source: Jaeggi2024_SplitSquat_RearLegMuscleForces_JFMK]\nFailing to sufficiently activate the m. gluteus maximus reduces the generation of posterior shear forces at the tibia, which otherwise potentially contribute to a reduced likelihood of knee injuries.",
+      "metrics": [
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "mistake",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.08753351270350895,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "finding",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.18725831812419536,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "consequence",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.14786374464490293,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "excessive_front_knee_flexion",
+          "kind": "principle",
+          "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load (+why/fix)",
+          "best": 0.1249014660774026,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "mistake",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.15043823117753485,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "finding",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.2007209897900808,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "consequence",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.14444627099588758,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "forward_trunk_lean",
+          "kind": "principle",
+          "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright (+why/fix)",
+          "best": 0.15511805743681373,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "mistake",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.13532986990690876,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "finding",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.2260629861279687,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "consequence",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.3157588667036424,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "shallow_lunge",
+          "kind": "principle",
+          "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel (+why/fix)",
+          "best": 0.1852058922753359,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "mistake",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": null,
+          "kept": 0,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": true
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "finding",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": null,
+          "kept": 0,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": true
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "consequence",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": null,
+          "kept": 0,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": true
+        },
+        {
+          "error": "straight_back_leg",
+          "kind": "principle",
+          "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg (+why/fix)",
+          "best": 0.10956847667693459,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "0a1c0516258d08f9301bbafb4007af25dc8b7c57",
+      "prefer_context_sha1": "63abb446a45c00f102a6034778aa4aa92d3551cc",
+      "changed": true,
+      "strict_skipped": [
+        "straight_back_leg/consequence",
+        "straight_back_leg/finding",
+        "straight_back_leg/mistake"
+      ],
+      "removed_blocks": [
+        {
+          "kind": "mistake",
+          "label": "straight_back_leg",
+          "source": "KritzCroninHume2009BodyweightlungeSCJ",
+          "text": "Performing the lunge with spinal flexion or excessive spinal extension."
+        },
+        {
+          "kind": "mistake",
+          "label": "straight_back_leg",
+          "source": "basics_of_strength_and_conditioning_manual",
+          "text": "Allowing the front knee to go forward past the toes during the lunge."
+        },
+        {
+          "kind": "mistake",
+          "label": "straight_back_leg",
+          "source": "Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience",
+          "text": "Allowing excessive anterior knee translation where the knee exceeds the toes during lunges."
+        },
+        {
+          "kind": "consequence",
+          "label": "straight_back_leg",
+          "source": "ptq-4.4.9-the-undervalued-lunge",
+          "text": "Turning the lead foot or lead knee inward during a forward lunge increases the torque stress of the knee joint of the front leg, which can exacerbate previous knee injuries and lead to increased knee pain."
+        },
+        {
+          "kind": "finding",
+          "label": "straight_back_leg",
+          "source": "KritzCroninHume2009BodyweightlungeSCJ",
+          "text": "The forward lunge involves calcaneal eversion, talar plantar flexion and adduction, tibial internal rotation, knee flexion, extension, and abduction, and hip flexion, extension, and adduction."
+        },
+        {
+          "kind": "consequence",
+          "label": "straight_back_leg",
+          "source": "ptq-4.4.9-the-undervalued-lunge",
+          "text": "Rotating the back knee or foot outward during a forward lunge increases torque stress in the knee joint, which can limit performance, exacerbate pre-existing injuries, and potentially cause pain."
+        },
+        {
+          "kind": "finding",
+          "label": "straight_back_leg",
+          "source": "Trunk and Shank Position Influences Patellofemoral Joint Stress in the Lead and Trail Limbs During the Forward Lunge Exercise",
+          "text": "Forward lean of the trunk during the forward lunge results in greater recruitment of the hamstrings."
+        }
+      ],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Lunge — clean",
+      "exercise_id": "lunge",
+      "payload": {
+        "session_id": "LU-20261003-006",
+        "exercise_id": "lunge",
+        "name": "Lunge",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 75,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "forward_trunk_lean",
+            "shallow_lunge"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 10,
+          "incorrect_reps": 0,
+          "overall_score": 88
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[principle | re: general principles | source: KritzCroninHume2009BodyweightlungeSCJ]\nDuring a forward lunge, the knee of the front and back leg should be aligned with the hip and ankle during flexion and extension.\n\n[principle | re: general principles | source: ptq-4.4.9-the-undervalued-lunge]\nLearning to lunge correctly can strengthen the lower body musculature, improve core stability and balance, enhance hip flexibility, and increase functionality.",
+      "metrics": [
+        {
+          "error": "general principles",
+          "kind": "principle",
+          "query": "Lunge correct technique and biomechanics",
+          "best": 0.1499036729220894,
+          "kept": 2,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "67b3e4cec2f6269ce14efa00a8806d06e4cfdb9a",
+      "prefer_context_sha1": "67b3e4cec2f6269ce14efa00a8806d06e4cfdb9a",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hips",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Kinematically, the anterior lunge involves greater motion at the knee than at the ankle or hip, but kinetically it is a hip-extensor-dominant exercise.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing external resistance during an anterior lunge increases kinetic demands and mechanical work at the hip and ankle with minimal impact on knee contributions.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 16 recreationally active young adults (8 men, 8 women) performing anterior lunges under external loads of 0%, 12.5%, 25%, and 50% of body mass, mechanical work and kinetic demands increased linearly at the hip and ankle as external load increased, while having minimal effect on knee contributions.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 1/11]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Maintain an erect torso, perpendicular to the horizontal, throughout the entire lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Complete each repetition by stepping forward, lowering the body as much as comfortably possible, and immediately pushing backward through the front limb to return to a full-standing position.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Flexing the trunk forward during an anterior lunge rather than keeping the torso erect.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "The hip joint makes the greatest relative kinematic and kinetic contribution to the anterior lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Completing anterior lunges with a flexed-trunk position increases ankle and hip-extensor net joint moment impulses, whereas using an extended-trunk position significantly increases knee net joint moment impulse.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Flexing the trunk forward during an anterior lunge increases the mechanical load on the ankle and hip-extensor muscles.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Maintaining an extended, upright trunk during an anterior lunge significantly increases the net joint moment impulse and biomechanical load on the knee joint.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 2/11]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Core",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain an erect torso perpendicular to the horizontal throughout the entire lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Control the lowering phase of each repetition over a duration of approximately 2 seconds.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 3/11]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanical Findings",
+    "core_principles": [
+      {
+        "text": "Adding external weight during an anterior lunge does not significantly alter peak flexion angles at the ankle, knee, or hip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing external load during an anterior lunge increases mechanical work and joint moment impulses predominantly at the hip and ankle rather than the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "Peak knee flexion during the anterior lunge ranged from 92.4 degrees to 96.4 degrees across weight conditions (0% to 50% added weight) and was significantly greater than peak hip flexion (81.8 degrees to 84.3 degrees) and ankle dorsiflexion (10.9 degrees to 12.3 degrees).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Net joint moment impulse at the hip demonstrated a significantly greater linear increase with added weight than at the ankle and knee during the anterior lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "As external weight increased during the anterior lunge, mechanical work increased linearly at the ankle and hip, but showed no significant increase at the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 6/11]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "The anterior lunge is predominantly a hip-extensor-dominant exercise, requiring greater joint moments and mechanical work from the hip than from the knee or ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Adding external load during an anterior lunge increases kinetic demand primarily at the hip, and secondarily at the ankle, with minimal change in knee kinetics.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifters tend to cut lunge depth short when handling heavier external loads, failing to lower their center of mass to full depth.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During bodyweight anterior lunges, relative joint contributions to total support impulse were 62% for the hip, 21% for the ankle, and 17% for the knee.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Eccentric work was greater than concentric work at the knee (P = .001, d = 0.98), whereas eccentric work was less than concentric work at the hip (P < .001, d = 1.3).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Participants reduced peak vertical total-body center-of-mass displacement by 2 cm under a 50% external load condition compared with the 0% and 12.5% conditions (P = .001, d = 1.26).",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      },
+      {
+        "text": "The knee reaches a larger peak flexion angle during the anterior lunge than the hip or ankle.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 7/11]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip, Knee, and Ankle Mechanics",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Maintain an upright, vertical trunk position during the anterior lunge to avoid shifting the total body center of mass forward and altering joint loading.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Flexing the trunk forward or holding external weights in an anterior position during an anterior lunge shifts the total body center of mass forward.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Increasing external dumbbell load from 0% to 50% of body mass during anterior lunges increases net joint moment impulse and mechanical work contributions at the hip and ankle, while the knee contribution remains largely unchanged.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At the lowest point of the eccentric phase of an anterior lunge, the gluteus maximus and vasti muscles are elongated, whereas the rectus femoris and biarticular hamstrings experience little change in muscle length because both the knee and hip are flexed.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning the trunk forward during an anterior lunge shifts the total body center of mass anteriorly, which increases the kinetic load and mechanical work imposed on the hip and ankle joints.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 8/11]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Hip / Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "A lifter's available hip, knee, and ankle range of motion and soft tissue limitations should be evaluated to determine if the anterior lunge is an appropriate exercise.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Practitioners should monitor lunge depth and provide cues when using heavier external loads to ensure the lifter maintains a full range of motion.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Lifters tend to compromise depth and cut range of motion short as external loading increases during the lunge.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "During the anterior lunge, flexion relative to normal available joint range of motion is approximately 69% at the hip, 70% at the knee, and 60% at the ankle.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The anterior lunge is a hip-extensor-dominant movement kinetically; as external loads increase, mechanical work increases for the hip and ankle but does not change for the knee.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Adding external weight to the lunge does not increase knee mechanical work, limiting its effectiveness for progressive loading of the quadriceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Hip-extension impairments limit external load progression and restrict resultant activation of the knee extensors during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf [part 10/11]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ]
+  }
+]

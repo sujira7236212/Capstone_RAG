@@ -1,0 +1,121 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Common Mistakes",
+    "core_principles": [
+      {
+        "text": "Focus on lowering your body while keeping your front knee aligned over your ankle with your shin remaining nearly vertical.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Step forward far enough so both knees form approximately 90-degree angles at the bottom of the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep your chest lifted, shoulders relaxed, and spine in a neutral position throughout the exercise.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Tighten your abdominal muscles as though preparing for a gentle impact before beginning each repetition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Press firmly through the heel of your front foot to rise back to standing.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lower your body slowly, pause briefly at the bottom, and return to the starting position with smooth, controlled movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep your head in a neutral position by looking straight ahead throughout the repetition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Warm up prior to lunges with several minutes of light cardio and dynamic stretches such as leg swings, walking knee raises, or bodyweight squats.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep your feet approximately hip-width apart throughout the exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the front knee to extend well past the toes during the lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Taking a step that is too short or too long, disrupting balance and form.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Leaning the torso too far forward while lowering into a lunge.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Performing lunges without proper core activation.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Relying heavily on the back leg to push back up to the starting position.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rushing through repetitions rather than executing controlled movements.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Looking down at your feet while performing lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing one foot directly in front of the other as if walking on a tightrope.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Allowing the front knee to extend well past the toes places unnecessary stress on the knee joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Leaning the torso too far forward shifts the workload away from the legs and places unnecessary strain on the lower back.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Lacking proper core activation increases the risk of losing balance and compensating with poor posture.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Relying heavily on the back leg to return to standing reduces the workload on the front leg glutes and quadriceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rushing through repetitions reduces muscle engagement and increases the likelihood of losing balance.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Looking down during lunges causes the neck and shoulders to round forward, reducing proper body alignment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Placing feet directly in line with each other makes balancing much more difficult during the lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Common Mistakes to Avoid When Performing a Lunge in Ladera Ranch.pdf",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  }
+]

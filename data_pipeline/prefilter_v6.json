@@ -1,6 +1,6 @@
 {
- "description": "T3a whole-file prefilter for curating KB v6 (docs/rule_change_v6_plan.md T3a). drop = no content on the form of the four exercises usable for any of the 12 rules; unsure = keep. pending = not assessed, waiting for the user. The curator skips drop (T4 --skip-list); T3 must not start while any entry is pending.",
- "criteria_ref": "docs/rule_change_v6_plan.md#t3a",
+ "description": "T3a whole-file prefilter for curating KB v6 (docs/plans/rule_change_v6_plan.md T3a). drop = no content on the form of the four exercises usable for any of the 12 rules; unsure = keep. pending = not assessed, waiting for the user. The curator skips drop (T4 --skip-list); T3 must not start while any entry is pending.",
+ "criteria_ref": "docs/plans/rule_change_v6_plan.md#t3a",
  "entries": [
   {
    "path": "data/bicep-curl/A Comparison of Muscle Unit Activation during Biceps Curl Exercise at 40, 60, 80 and 100% of 1 Repetition Maximum_197 Board #38 May 30 9 30 AM - 11 00 AM.pdf",
@@ -899,6 +899,246 @@
    "read": "full article",
    "reviewer": "claude",
    "date": "2026-10-19"
+  },
+  {
+   "path": "data/lunge/Escamilla2025_ForwardLunge_StepLength_JFMK.pdf",
+   "decision": "drop",
+   "reason": "Escamilla 2025 (JFMK): lead-leg EMG of forward lunges with a long vs short step and with vs without a stride; no kinematics or joint loads beyond knee angle. Form appears only as protocol (long step keeps the tibia vertical, trunk tilt 10-20 degrees not controlled) and one introduction sentence citing that a short step puts the knee 8-10 cm past the toes - already in the curated Escamilla 2022 JAB paper with the patellofemoral-load consequence. The practical advice is an EMG progression (start with short-step lunges in rehab, progress to long-step), which reads as endorsing the short step behind excessive_front_knee_flexion.",
+   "read": "abstract, introduction, methods, discussion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-20"
+  },
+  {
+   "path": "data/lunge/Neto2020_GluteusMaximusActivation_SR_JSSM.pdf",
+   "decision": "drop",
+   "reason": "Krause Neto 2020 systematic review ranking gluteus maximus EMG across hip-extension exercises (step-ups, hip thrusts, deadlifts, squats). Lunges are one table row (in-line vs traditional lunge, similar EMG). The only form content is squat depth vs GMax EMG, which the review calls contradictory (one cited study: partial squat gave higher GMax activation than full) - squat content in a lunge folder would be excluded as a folder mismatch, and the partial-squat line would argue against partial_squat feedback.",
+   "read": "abstract, introduction, discussion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-20"
+  },
+  {
+   "path": "data/push-up/partial_pushup/MartinezCava2019_BenchPressROM_LoadVelocity_JSSM.pdf",
+   "decision": "drop",
+   "reason": "Bench press, not the push-up (the word push-up never appears): load-velocity profile, 1RM and sticking region at full, 2/3 and 1/3 ROM on a Smith machine. Partial ROM gives a higher 1RM and skips the sticking region; nothing on push-up depth, faults or their effects. Windows would be classified 'Bench Press' and excluded as a folder mismatch, unless the LLM tags partial_pushup from the folder's rule list, which would put bench-press findings into the push-up pool.",
+   "read": "abstract, introduction, methods, discussion, conclusion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-20"
+  },
+  {
+   "path": "data/push-up/partial_pushup/Mendonca2021_PartialVsFullROM_BenchPress_PLoSOne.pdf",
+   "decision": "drop",
+   "reason": "Paralympic powerlifting bench press (no push-up mention): partial ROM at 130% 1RM vs full ROM at 90% 1RM - fatigue, isometric force, EMG, muscle thickness. Full ROM gave more pectoralis EMG, but the authors conclude that partial ROM enables higher workloads with lower loss of muscle function - read as a push-up item this argues for partial reps, the opposite of partial_pushup feedback (same risk that dropped u082). Bench-press windows would also hit the folder-mismatch check.",
+   "read": "abstract, introduction, discussion, conclusion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-20"
+  },
+  {
+   "path": "data/general/range_of_motion/Hammami2025_FullVsHalfSquat_JFMK.pdf",
+   "decision": "keep",
+   "reason": "Hammami 2025 (JFMK): 8-week full vs half back-squat training in youth tennis players, volume-matched, only depth differs. Back squat only, so it can be filed under squat. Partial_squat content: full squats gave larger velocity and body-fat gains; the discussion cites lower knee/spine stress and less pain with full than half/quarter squats and says reaching optimal depth matters for activation and injury risk (consequence/principle). Cautions: the paper calls a 90-degree knee flexion squat a 'half squat' (the rule's coached target is 90 degrees), says hypertrophy was equal, and suggests half squats may suit beginners as 'safer' - the curator may pull these as items. Training prescription (sets, %1RM) is protocol.",
+   "read": "abstract, introduction, methods, discussion, conclusion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-20"
+  },
+  {
+   "path": "data/general/range_of_motion/KrauseNeto2025_GluteusMaximusHypertrophy_SR_FrontPhysiol.pdf",
+   "decision": "keep",
+   "reason": "Krause Neto 2025 (Front Physiol) meta-analysis of gluteus maximus hypertrophy. Mostly hip thrust, leg press, kneeling hip extension and pooled effect sizes; lunges only as part of a multi-joint group. The squat part is partial_squat consequence content: squat ROM matters for GMax growth, parallel or full-depth back squats grow the GMax while squats to about 90 degrees of knee flexion did not change it, and 'squatting till parallel should be enough'. Mixed exercises, so leave it in general/ for per-item routing rather than filing it under squat. Same 90-degree 'half squat' naming caution as Hammami 2025. Unsure - kept.",
+   "read": "abstract, results (squat studies), discussion + keyword sentence scan of the full text",
+   "reviewer": "claude",
+   "date": "2026-10-20"
+  },
+  {
+   "path": "data/lunge/Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf",
+   "decision": "keep",
+   "reason": "Gao 2022 (Bioengineering): forward lunge in 14 novice men with dumbbell, barbell and weighted vest at 25% and 50% BW (OpenSim joint angles, moments, COP). Load type is not a rule, and most form content is already in the curated Gao 2025 paper from the same group (novices lean forward -> knee shear; Farrokhi trunk lean -> more hip extensor work; dumbbells for beginners). New to the KB: one discussion sentence that small knee flexion points to quadriceps weakness and limited ankle dorsiflexion (cited) - the only shallow_lunge cause found so far; the KB has no shallow_lunge cause item. Cautions: it cites Escamilla as advising caution with a LONG-step lunge to reduce patellar force (the curated Escamilla papers say the short step is the problem) - opposite of the excessive_front_knee_flexion card; equipment advice (vest for knee pain) is off-rule; trunk upright / knee behind toes / rear knee near the floor are protocol. Four pages carry a duplicate 'FOR PEER REVIEW' text layer, so some windows repeat text. Unsure - kept.",
+   "read": "full text (abstract, introduction, methods, discussion, conclusion) + compared with the curated Gao 2025 paper + shallow_lunge items in curated_data_v6",
+   "reviewer": "claude",
+   "date": "2026-10-21"
+  },
+  {
+   "path": "data/lunge/IsTheRearFootElevatedSplitSquatUnilateralAM-HELME.pdf",
+   "decision": "drop",
+   "reason": "Helme 2020 (JSCR accepted manuscript): rear foot elevated split squat 5RM, two force plates - the lead foot gives about 84% of vertical force and the rear foot only about the leg's own mass, so the authors class the RFESS as unilateral. Nothing on faults, causes or fixes. Form appears only as the technique protocol (front heel down, neutral posture, rear hip about 180 degrees, rear knee down to lead-ankle height) and a note that depth was not standardised. Bar displacement fell slightly as load rose, but every rep met the depth minimum, so it does not describe shallow lunging. The rear-leg content is force share, not the bent/straight rear knee behind straight_back_leg; rear-leg forces are already covered by the curated Arakawa 2025 and Jaeggi 2024.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-21"
+  },
+  {
+   "path": "data/lunge/Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf",
+   "decision": "keep",
+   "reason": "Riemann 2012 (J Athl Train): anterior lunge at 0/12.5/25/50% body mass, joint angles, moment impulse and work. Mostly hip-vs-knee-vs-ankle kinetics, which is not a rule. One usable passage for shallow_lunge: under the 50% load participants did not lower as far (centre of mass 2 cm higher), and the authors advise practitioners to monitor lunge depth and cue clients under heavier loads so they work through the full range of motion - a cause (heavy load) plus a fix (depth cue). Caveat: peak knee flexion did not change significantly (96 -> 92 degrees of flexion, about 84-88 degrees interior), so no condition was a shallow lunge by the rule's 105-degree bar. Trunk content (flexed trunk shifts load to hip and ankle, upright trunk to the knee) is cited from Farrokhi, already in the KB; erect torso and step length are protocol. Nothing on the rear knee.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/lunge/Common Mistakes to Avoid When Performing a Lunge in Ladera Ranch.pdf",
+   "decision": "keep",
+   "reason": "Local fitness-business web article (no author, no references, keyword-stuffed with 'lunge in Ladera Ranch'), 3 pages, about one window. Mistake list: knee far past the toes stresses the knee (excessive_front_knee_flexion oq1, but not tied to over-bending), a step that is too short forces the knee forward (oq2), forward torso lean shifts work off the legs and strains the lower back with an upright-chest fix (forward_trunk_lean mistake + consequence + fix, already well covered), core bracing, pushing off the back leg, rushing, looking down, warm-up, tightrope foot placement (not rules). 'Step far enough that both knees form about 90 degrees at the bottom' is a principle for shallow_lunge and straight_back_leg, both already past the principle threshold. No shallow-lunge or straight-rear-leg mistake or consequence. Unsure - kept because it is cheap.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/lunge/Hip-Muscle Activation during the Lunge, Single-Leg Squat, and Step-Up-and-Over Exercises.pdf",
+   "decision": "drop",
+   "reason": "Boudreau 2009 (J Sport Rehabil): hip-muscle EMG across step-up-and-over, lunge and single-leg squat to build a rehab progression (SUO -> lunge -> SLSQ). Lunge form is protocol only (step 100% of leg length). The one depth sentence is about the single-leg squat (60 vs 90 degrees) explaining EMG differences from other studies. No faults, causes, consequences or fixes.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/lunge/IMPROVED MUSCLE ACTIVATION IN PERFORMING A BODY WEIGHT LUNGE COMPARED TO THE TRADITIONAL BACK SQUAT.pdf",
+   "decision": "drop",
+   "reason": "Dwelly et al. (4-page conference paper, n = 8 female athletes): EMG of bodyweight lunge vs back squat to 90/60/30 degrees of knee flexion. The lunge is a single condition with no depth or form variation; lunge form is only 'knees flexed to 90 degrees'. The squat-depth result (90-degree squat activates quadriceps and hamstrings more than 60/30) is partial_squat consequence, but in the lunge folder those windows would be cut as folder mismatch, and partial_squat already passes. Muscle activity only.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/push-up/COMPARATIVE ANALYSIS OF ELBOW JOINT LOADING IN PUSH-UP AND BENCH-PRESS.pdf",
+   "decision": "drop",
+   "reason": "Chou 2011 (Biomed Eng Appl Basis Commun): elbow joint forces and EMG, push-up vs bench press. Peak elbow flexion 93 degrees in both (protocol). The authors explain that peak elbow force occurs between 90 degrees and the bottom, and conclude that bench press gives more activation with less elbow load - as push-up items this reads as 'going deep loads the elbow' and would contradict partial_pushup (the u082 pattern). Nothing on body line.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/push-up/Force transmission through the wrist during performance of push-ups on a hyperextended and a neutral wrist.pdf",
+   "decision": "drop",
+   "reason": "Polovinets 2017 (J Hand Ther): ground reaction force direction through the wrist in push-ups on a hyperextended wrist vs a neutral (fist) wrist, n = 14. Wrist/hand position is excluded by both push-up cards (hand placement). No depth or body-line content; injury mentions are wrist, shoulder and elbow loading.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/push-up/Optimal activation ratio of the scapular muscles in closed kinetic chain shoulder exercises A systematic review.pdf",
+   "decision": "drop",
+   "reason": "Mendez-Rebolledo 2021 (J Back Musculoskelet Rehabil) systematic review: upper trapezius vs lower/middle trapezius and serratus anterior EMG ratios across push-up, push-up plus, plank, pull-up variants. Scapular muscles are excluded by the push-up cards. Trap: its 'Half Push Up' is an incline push-up (trunk at 45 degrees, hands on a 30 cm box), not a partial-range push-up, and the review rates it 'optimal' - if curated it could be tagged partial_pushup and read as recommending half push-ups. Knee push-ups appear only as EMG variants, not as regressions for a fault.",
+   "read": "full text minus references",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://www.boxrox.com/10-most-common-walking-lunge-mistakes-and-how-to-fix-them/",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "BOXROX summary of Mike Israetel (Renaissance Periodization) on walking-lunge mistakes. 'Cutting depth' (not going all the way down) is named the most common mistake, with a consequence (muscles grow more when stretched through a long range, more motor units recruited) and a fix (go down until the knee touches or nearly touches the ground, under control) - shallow_lunge mistake + consequence + fix, the consequence slot the KB lacks. Also: steps too short cause knee discomfort (excessive_front_knee_flexion oq2), tilting forward at the bottom shifts work to back and hamstrings, fix upright and braced (forward_trunk_lean). Grip, load choice, resetting between steps are off-rule. Magazine retelling of a coach's video. Not fetchable by the curator as is: trafilatura.fetch_url gets a page with no extractable article (site needs a browser User-Agent; fetched with one: 6285 chars).",
+   "read": "full article (fetched with a browser User-Agent)",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://classpass.com/blog/proper-lunge-form-mistakes/",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "ClassPass blog quoting two personal trainers (one NASM master trainer). Usable: stepping too far back means no proper 90-degree bend and the back knee absorbs the pressure (straight_back_leg cause, step too long); too much forward bending of the upper body (forward_trunk_lean); front knee past the ankle (oq1); proper form = lower the back knee until both knees are about 90 degrees. CONFLICT: it suggests 'a forward lunge without the back leg bending' as an easier regression, which contradicts straight_back_leg - after curating, find that item and untag or delete it. Bad-knee/bad-ankle advice, traveling lunges, tempo schemes, and a quote of the Dwelly EMG study are off-rule. Unsure - kept.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://experiencelife.lifetime.life/article/watch-out-for-these-common-split-squat-and-lunge-errors/",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "Experience Life (Life Time) list of split-squat and lunge errors. 'Stance too long': the back knee does not bend as much, which puts a lot of pressure on it and over time causes knee pain - straight_back_leg cause (step too long, listed on the card) + consequence, the first mistake/consequence source for that rule. Fix: set up from half-kneeling to find a stance that lets both knees bend to about 90 degrees pain-free. Also tightrope stance and too much weight on the back foot (off-rule). The card's consequence is load shifting to the front knee; this one is load on the back knee, still a consequence of the rear knee not bending. Short (about 1,800 chars, one window).",
+   "read": "full article (main content as extracted by trafilatura)",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://attikafitness.com/blog/5-common-push-up-errors",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "Attika Fitness (gym blog), 5 push-up mistakes. partial_pushup: 'half reps = half results', bending the elbows only a little and stopping far above the ground means the chest isn't working to its potential; fix = fewer reps, focus on depth, hands on a box or bench; principle = chest nearly touches the floor (mistake + consequence + fix + principle). hip_sag_or_pike: hips lifting (pike) from a disengaged core, hips sagging from a tired core putting pressure on the lower back; fix = brace, plank basics, knee push-ups. Elbow flare and shoulder shrugging are off-rule.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://learn.athleanx.com/articles/pushups-are-killing-your-gains",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "ATHLEAN-X, Jeff Cavaliere (MSPT, CSCS). Whole article is partial_pushup: chasing rep counts and speed shortens the range by an inch or two at the bottom (cause + mistake), which significantly reduces the effectiveness and limits the work of the upper body (consequence); fix = chest touches the floor without disengaging, slow cadence, end the set when rep speed drops; strict reps cut the count by about 60%. Caveats: the top-lockout half of the advice is excluded by the card (rule only checks the bottom); pull-up and squat analogies; program-marketing text at the end.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "http://cathe.com/6-push-up-mistakes-that-are-limiting-your-gains",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "Cathe Friedman blog, 6 push-up mistakes. partial_pushup: 'short range' push-ups with only partly bent elbows are cheating and greatly reduce the benefits; go down to an elbow angle of 90 degrees or less, chest to the floor if comfortable; if you cannot, use knee or hands-elevated push-ups (mistake + consequence + fix + principle). hip_sag_or_pike: back and hips sag from a weak core; fix = planks; straight line from feet to head. Caveat: the speed section suggests 'going half-way down and holding' as an isometric variation - that item may read as endorsing half reps; untag after curating. Hand position, neck, variations are off-rule.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://www.fitnessandpower.com/training/bodybuilding-misc/proper-push-up-form",
+   "list": "data/push-up/urls.txt",
+   "decision": "keep",
+   "reason": "Fitness and Power long form guide (no author). hip_sag_or_pike: sagging hips are the most common fault, caused by a weak core and insufficient quad activation; reduce core work, shorten the range and load the lumbar spine; five-point alignment. partial_pushup: partial range is ego- or fatigue-driven; fix = fewer full reps, stop the set when depth is lost; upper chest to within millimetres of the floor. Caveats, several against the cards or other sources: 'err toward hips higher, piking is relatively safe' (the rule flags both); 'contract the quads, not the glutes' (card fix says squeeze the glutes); it calls feet-elevated push-ups 'incline' (the card's incline regression is hands elevated) so a beginner could be pointed to the harder variation; elbows at 10-20 degrees is an outlier claim. Unsure - kept. Not fetchable by the curator as is: trafilatura.fetch_url gets a page with no extractable article (site needs a browser User-Agent; fetched with one: 12981 chars).",
+   "read": "full article (fetched with a browser User-Agent)",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/lunge/BOXROX_WalkingLungeMistakes.txt",
+   "decision": "keep",
+   "reason": "Main text of https://www.boxrox.com/10-most-common-walking-lunge-mistakes-and-how-to-fix-them/ (kept 2026-10-24, see the URL entry), saved with the curator's trafilatura settings (fetched with a browser User-Agent - trafilatura.fetch_url gets no article from this site) because data/lunge/urls.txt already has curated output, so the curator would skip the list. Removed: a 'Read more' link and two closing promo lines.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/lunge/ExperienceLife_SplitSquatLungeErrors.txt",
+   "decision": "keep",
+   "reason": "Main text of https://experiencelife.lifetime.life/article/watch-out-for-these-common-split-squat-and-lunge-errors/ (kept 2026-10-24, see the URL entry), saved with the curator's trafilatura settings because data/lunge/urls.txt already has curated output, so the curator would skip the list.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/push-up/Attika_PushUpErrors.txt",
+   "decision": "keep",
+   "reason": "Main text of https://attikafitness.com/blog/5-common-push-up-errors (kept 2026-10-24, see the URL entry), saved with the curator's trafilatura settings because data/push-up/urls.txt already has curated output, so the curator would skip the list.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/push-up/AthleanX_PushUpRangeOfMotion.txt",
+   "decision": "keep",
+   "reason": "Main text of https://learn.athleanx.com/articles/pushups-are-killing-your-gains (kept 2026-10-24, see the URL entry), saved with the curator's trafilatura settings because data/push-up/urls.txt already has curated output, so the curator would skip the list. Removed: three program-selector lines.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/push-up/Cathe_PushUpMistakes.txt",
+   "decision": "keep",
+   "reason": "Main text of http://cathe.com/6-push-up-mistakes-that-are-limiting-your-gains (kept 2026-10-24, see the URL entry), saved with the curator's trafilatura settings because data/push-up/urls.txt already has curated output, so the curator would skip the list. Removed: the 'Related Articles' link list.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "url": "https://www.elitefts.com/education/an-easy-lunge-regression/",
+   "list": "data/lunge/urls.txt",
+   "decision": "keep",
+   "reason": "elitefts article (Brian LeRiche, NSCA CSCS, 2019). The live URL now redirects to a 404 (both the old /blogs/motivation/ address and /education/); text read in full from the Wayback Machine capture of 2020-10-30. Usable: a straightened back leg while lowering (straight_back_leg mistake) -> the athlete projects forward and gets the typical lunge knee pain (consequence); fix: reach the 90-degree knee angle and drop straight down instead of projecting forward (fix / correct form); the sternum as reference, 'elevator not escalator' (principle, also forward_trunk_lean). Caution: the 'exaggerated plantarflexed foot against the wall' cue is about the rear foot - the card excludes rear foot position on its own, so it should not be tagged straight_back_leg unless tied to the knee bend. Short, about one window.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
+  },
+  {
+   "path": "data/lunge/EliteFTS_EasyLungeRegression.txt",
+   "decision": "keep",
+   "reason": "Main text of https://www.elitefts.com/education/an-easy-lunge-regression/ (kept 2026-10-24, see the URL entry), saved from the Wayback Machine capture because the live page is a 404 and data/lunge/urls.txt already has curated output, so the curator would skip the list. Nav, footer and the author bio (contains an email address) removed.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-10-24"
   }
  ]
 }

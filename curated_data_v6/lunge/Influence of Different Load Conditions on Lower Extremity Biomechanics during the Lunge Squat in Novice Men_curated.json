@@ -1,0 +1,396 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee and Hip",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Dumbbells are recommended for beginners performing lunges to improve stability, as they produce a smaller range of center of pressure displacement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "A low-weighted vest is recommended when performing lunges for individuals experiencing knee pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Barbells produce a greater range of motion at the knee joint during lunges compared to dumbbells and are suggested for more experienced lifters.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In a study of 14 male fitness novices using OpenSim, hip joint moments were the largest among lower extremity joints during the lunge squat and increased more significantly under weight-bearing conditions with dumbbells than with barbells or weighted vests.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 1/16]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Maintain body stability and proper joint coordination throughout the movement to distribute load effectively across the lower body.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Leaning the torso forward during the lunge, which commonly occurs in novice lifters due to muscle imbalance and poor body coordination.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Performing a forward lunge with a forward-leaning trunk significantly increases hip joint extensor impulse, hip EMG activity, and patellofemoral joint stress compared to an upright trunk lunge.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Quadriceps and hamstring activity are significantly higher in the lunge-step exercise than in the deep squat.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing the dominant leg's tibia angle relative to the ground results in a smaller range of motion in the anterior knee and a larger range of motion in the posterior knee and hip.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "As the tibial angle increases, the flexion moment of the anterior knee and hip decreases, whereas increasing stride length increases the flexion moment of the anterior hip joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Leaning forward during the lunge increases the shear force at the knee joint, raising the risk of joint injury.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 2/16]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Keep the torso upright and perpendicular to the ground throughout the movement without swaying the body or arms.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      },
+      {
+        "text": "Lower the trailing knee close to the ground without letting it touch the floor.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Keep the lead lower leg perpendicular to the ground so the lead knee does not travel past the toes.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 5/16]",
+    "applies_to_fault": [
+      "forward_trunk_lean",
+      "straight_back_leg"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Joint Kinematics",
+    "content_type": "Biomechanical Study",
+    "core_principles": [],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "At 25% body weight load, knee sagittal range of motion was 108.98 ± 7.33° for vest loading, 103.58 ± 6.19° for barbell loading, and 105.42 ± 3.56° for dumbbell loading.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing barbell load from 25% to 50% body weight significantly increased knee sagittal range of motion from 103.58 ± 6.19° to 114.73 ± 4.21°.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Peak knee flexion angle during lunges reached between 122.00° and 125.81° across vest, barbell, and dumbbell conditions at both 25% and 50% body weight loads.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Hip sagittal range of motion across all load types (vest, barbell, dumbbell) and intensities (25% and 50% body weight) ranged from 81.23° to 90.04°.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 6/16]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Joint Loading",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Dumbbell loading in lunges produces relatively little overall variation in joint moments across the hip, knee, and ankle when increasing external weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Weighted vest lunges exhibit the least variation in hip joint range of motion compared to barbell and dumbbell lunge variations.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [
+      {
+        "text": "In lunges, increasing external load from 25% to 50% body weight significantly increased peak hip flexion moment, with dumbbell loading showing the largest increase of 0.40 Nm/kg (from 1.90 to 2.30 Nm/kg) and weighted vest loading showing the smallest increase of 0.16 Nm/kg (from 1.96 to 2.12 Nm/kg).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Barbell lunges produced the largest increase in peak knee flexion moment when load was increased from 25% to 50% body weight, rising by 0.13 Nm/kg (from 1.46 to 1.59 Nm/kg), whereas weighted vest lunges increased by only 0.03 Nm/kg (from 1.41 to 1.44 Nm/kg).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At a load of 25% body weight during lunges, the peak hip flexion moment was smallest with barbell loading at 1.87 Nm/kg, followed by dumbbell loading at 1.90 Nm/kg, and largest with weighted vest loading at 1.96 Nm/kg.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing load from 25% to 50% body weight with a weighted vest during lunges increased the peak ankle moment by 0.19 Nm/kg (from 0.79 to 0.98 Nm/kg), whereas barbell and dumbbell loading both increased peak ankle moment by 0.11 Nm/kg.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 8/16]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanical Analysis",
+    "core_principles": [
+      {
+        "text": "Keeping the knee behind the toes during a lunge minimizes stress on the knee joint.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the knee to translate forward in front of the toes during a lunge increases knee flexion, ankle dorsiflexion, and joint stress.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Increasing load intensity across vest, barbell, and dumbbell conditions increased knee joint range of motion by an average of 5.06 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Barbell loading produced the largest increase in knee range of motion at 11.15 degrees.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At 50% body weight, ankle joint moments were significantly higher with a weighted vest (0.98 Nm/kg) than with dumbbells (0.81 Nm/kg, p = 0.023).",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Dumbbells produced the smallest center of pressure (COP) offset range at both 25% and 50% body weight loading.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Translating the knee in front of the toes during a lunge increases peak knee joint stress, quadriceps muscle strength demand, and knee moment.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 9/16]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Keeping the front knee behind the toes during a lunge minimizes stress on the patellar tendon.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing the front knee to translate forward in front of the toes during a lunge.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Peak knee joint stress, quadriceps muscle strength, knee moment, knee flexion, and ankle dorsiflexion were greater when the knee was panned in front of the toes during the lunge (Escamilla et al.).",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Translating the front knee in front of the toes increases peak knee joint stress and forces on the patellar tendon.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 10/16]",
+    "applies_to_fault": []
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanics",
+    "core_principles": [
+      {
+        "text": "Beginners should consider using dumbbells rather than barbells during lunges, as dumbbells lower the center of gravity to improve stability and yield a smaller, less variable knee range of motion.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Experienced lifters seeking greater knee range of motion and joint loading can use barbells, though the high shoulder-centered center of gravity places higher demands on physical stability.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The forward lunge is a hip-dominant movement where increasing external loading places the greatest increase in demand on the hip moment and the least on the knee joint moment.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Exhibiting small knee flexion during a lunge indicates underlying issues such as quadriceps weakness or a limited ankle dorsiflexion range.",
+        "applies_to_fault": [
+          "shallow_lunge"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Increasing external load from 25% to 50% body weight increased the average joint moment by 0.259 Nm/kg at the hip, 0.139 Nm/kg at the ankle, and 0.087 Nm/kg at the knee.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Significant differences in knee joint range of motion were observed between barbell and dumbbell loading at 50% body weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Significant differences in ankle joint range of motion and peak flexed angle were found between weighted vest and barbell loading at 25% body weight during the transition from plantarflexion to dorsiflexion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Weakness in hip and knee muscles causes the lower leg and foot muscles to compensate by taking on additional load to maintain standing balance.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 11/16]",
+    "applies_to_fault": [
+      "shallow_lunge"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Lower Body",
+    "content_type": "Biomechanical Loading and Technique",
+    "core_principles": [
+      {
+        "text": "Choose a light-weight weighted vest rather than dumbbells or barbells to minimize load on the knee joint during lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Select heavy-weight dumbbells if the goal of the lunge is to increase loading and muscle recruitment at the hip and knee joints.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Select the external weight carrier (barbell, dumbbell, or vest) according to the specific physical qualities and joint loading goals of the exerciser.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Allowing excessive torso inclination during a lunge creates excessive separation between the center of mass and center of pressure.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Decreasing the anterior limb tibia-ground angle increases the range of motion of the front knee and increases the hip flexion moment.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "At 25% body weight, the barbell produced the smallest joint moment at the hip, while the weighted vest produced the smallest joint moment at the knee joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Lateral center of pressure displacement range increased with load by an average of 4.78 mm/m with a weighted vest and 3.49 mm/m with dumbbells.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Increasing load from 25% to 50% body weight resulted in a larger anterior-posterior center of pressure offset of 2.453 mm.s/m overall, increasing by 3.08 mm.s/m for the vest and 1.65 mm.s/m for dumbbells.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Excessive torso inclination during lunges increases center of mass and center of pressure separation, requiring greater active postural control and energy to counteract increased joint moments and risking loss of balance.",
+        "applies_to_fault": [
+          "forward_trunk_lean"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 12/16]",
+    "applies_to_fault": [
+      "forward_trunk_lean"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Loading Guidance",
+    "core_principles": [
+      {
+        "text": "Dumbbells are suitable for male beginners performing the lunge exercise because of high stability and low impact on the knee joint.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "To strengthen the hip and knee muscles during lunges, high-weight dumbbells can be selected.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Barbells can be chosen as the main lunge exercise equipment for individuals with accumulated experience.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "For individuals experiencing knee joint pain, a lunge exercise with a small-weighted vest may be optimal for rehabilitation and injury avoidance.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [],
+    "specific_findings": [],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf [part 13/16]",
+    "applies_to_fault": []
+  }
+]

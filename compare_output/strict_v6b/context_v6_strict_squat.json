@@ -1,0 +1,1110 @@
+{
+  "derived_from": "compare_result_v14_squat.json",
+  "method": "offline: prefer context minus strict-skipped kinds",
+  "mock": "mock_data/mock_sessions_squat.json",
+  "collection": "kb_gemini_curated_v6",
+  "retrieval": {
+    "TAG_MODE": "strict",
+    "KIND_POOL": "split",
+    "QUERIES": "profile",
+    "HYBRID": false,
+    "RERANK": false
+  },
+  "note": "rag/no_rag answers not carried over - they were generated from the prefer context",
+  "sessions": [
+    {
+      "label": "Squat — partial_squat",
+      "exercise_id": "squat",
+      "payload": {
+        "session_id": "SQ-20261003-001",
+        "exercise_id": "squat",
+        "name": "Squat",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 72,
+          "previous_correct_reps": 5,
+          "previous_incorrect_reps": 5,
+          "previous_common_errors": [
+            "partial_squat",
+            "rounded_back"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 5,
+          "incorrect_reps": 5,
+          "overall_score": 72
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 64
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 61
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 45
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 55
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: partial_squat | source: TheBackSquatAProposedAssessment]\nSquatting too shallow, where the athlete does not achieve a depth where the tops of the thighs are at least parallel to the ground.\n\n[mistake | re: partial_squat | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nLimiting squat depth (stopping early in a partial squat) due to restricted ankle dorsiflexion or hip mobility.\n\n[consequence | re: partial_squat | source: TheBackSquatAProposedAssessment]\nWithout squatting to the proper depth, the hamstrings and gluteus muscular complex may not be adequately challenged.\n\n[principle | re: partial_squat | source: TheBackSquatAProposedAssessment]\nThe descent phase of the squat begins as the hips, knees, and ankles flex, and should continue until the top of the thigh is at least parallel with the ground and the hip joint is at least level with or slightly below the knee joint.\n\n[finding | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nIn a standard squat, the knees are bent at around a 90-degree angle with thighs parallel to the ground.\n\n[principle | re: partial_squat | source: www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat]\nThe appropriate squat depth is the deepest position a client can achieve while maintaining a neutral spine, foot stability, proper joint alignment, and movement control.\n\n[consequence | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nPerforming a partial squat instead of a deep squat may subject the knee joint to higher compressive forces.\n\n[finding | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nScientific research does not substantiate any increased risk of knee injury from performing deep squats.",
+      "metrics": [
+        {
+          "error": "partial_squat",
+          "kind": "mistake",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.06223142517992242,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "finding",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.1849308124143355,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "consequence",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.16042596101760864,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "principle",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.1740939720925061,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "006105966d5ca85effec01840091d6fa3d4c8ace",
+      "prefer_context_sha1": "006105966d5ca85effec01840091d6fa3d4c8ace",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Squat — knee_valgus",
+      "exercise_id": "squat",
+      "payload": {
+        "session_id": "SQ-20261003-002",
+        "exercise_id": "squat",
+        "name": "Squat",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 74,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "knee_valgus"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 76
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 62
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              }
+            ]
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 57
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 56
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward (medial knee displacement or knee valgus) during a squat.\n\n[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward, known as dynamic knee valgus or medial knee displacement, during the descent or ascent of a squat.\n\n[principle | re: knee_valgus | source: TheBackSquatAProposedAssessment]\nDuring the squat, the lateral aspect of the knee should not cross the vertical plane of the medial malleolus to avoid medial displacement.\n\n[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward (medial knee displacement or dynamic knee valgus) during squatting movements.\n\n[consequence | re: knee_valgus | source: basics_of_strength_and_conditioning_manual]\nAllowing the knees to come together (valgus knee position) increases the strain on the ligaments and muscles surrounding the knee.\n\n[finding | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nVisual knee valgus is clinically defined during a double-legged squat screening when the midpoint of the patella passes medial to the great toe in 3 out of 5 trials.\n\n[principle | re: knee_valgus | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nProper coaching cues, such as 'knees out', and the use of resistance bands can assist in reinforcing correct knee alignment.\n\n[consequence | re: knee_valgus | source: blog.nasm.org/newletter/squat-form]\nOver-pronation of the foot can lead to dynamic knee valgus during the squat.\n\n[finding | re: knee_valgus | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nKnee joint genu valgus during squats is associated with reduced height of the lateral meniscus, decreased hip abductor performance (gluteus maximus and medius), increased femoral anteversion, internal rotation of the tibia, and decreased ankle inversion muscles (tibialis anterior and posterior).",
+      "metrics": [
+        {
+          "error": "knee_valgus",
+          "kind": "mistake",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.045361700377550385,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_valgus",
+          "kind": "finding",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.12993987738010926,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_valgus",
+          "kind": "consequence",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.11495659783094148,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_valgus",
+          "kind": "principle",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.09464284053870209,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "a52b819271cb3d117cba37e279a6c17e7af5d38c",
+      "prefer_context_sha1": "a52b819271cb3d117cba37e279a6c17e7af5d38c",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Squat — knee_varus",
+      "exercise_id": "squat",
+      "payload": {
+        "session_id": "SQ-20261003-003",
+        "exercise_id": "squat",
+        "name": "Squat",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 75,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "knee_varus"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 77
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 63
+            },
+            "errors": [
+              {
+                "error_type": "knee_varus"
+              }
+            ]
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 61
+            },
+            "errors": [
+              {
+                "error_type": "knee_varus"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "knee_varus"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 59
+            },
+            "errors": [
+              {
+                "error_type": "knee_varus"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: knee_varus | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nAllowing the knees to align outside the hips (knee varus) during the squat.\n\n[principle | re: knee_varus | source: Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR]\nThe knees should track over the toes throughout the squat motion without knee displacement either medially or laterally.\n\n[mistake | re: knee_varus | source: Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR]\nExcessive mediolateral movement of the knees (medial or lateral knee displacement) is a common deficit during the squat.\n\n[mistake | re: knee_varus | source: Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR]\nAllowing the knees to displace medially or laterally during the squat motion.\n\n[consequence | re: knee_varus | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nFaulty alignment patterns, such as mediolateral rotation of the hip and knee alignment inside or outside the hip during the squat, induce increases in the compressive and shear forces at the ankle, knee, and hip joints.\n\n[finding | re: knee_varus | source: Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR]\nNovice squatters showed a higher knee deviation (ΔD*) compared to experienced squatters, who performed squats in all positions with a ΔD* closer to 0 except in the wide stance with 0° foot angle (WS-0°) position.\n\n[consequence | re: knee_varus | source: Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR]\nA tendency towards varus limb alignment during the squat causes greater stretching of the lateral collateral ligament (LCL) than the medial collateral ligament (MCL).\n\n[principle | re: knee_varus | source: TheBackSquatAProposedAssessment]\nThe knees should track over the toes throughout the squat motion, maintaining a neutral frontal plane knee position without medial or lateral displacement.\n\n[finding | re: knee_varus | source: Lorenzetti2018_HowToSquat_StanceFootAngle_BMCSSMR]\nNovice squatters without additional weight tend towards a more varus alignment, while experienced squatters showed a lower mediolateral movement.",
+      "metrics": [
+        {
+          "error": "knee_varus",
+          "kind": "mistake",
+          "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much (+why/fix)",
+          "best": 0.05826109995013906,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_varus",
+          "kind": "finding",
+          "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much (+why/fix)",
+          "best": 0.15345523218677104,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_varus",
+          "kind": "consequence",
+          "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much (+why/fix)",
+          "best": 0.14537549018859863,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_varus",
+          "kind": "principle",
+          "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much (+why/fix)",
+          "best": 0.08943981998440809,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "944a25be200eb4db7107a40fb373166c4e69a8e4",
+      "prefer_context_sha1": "944a25be200eb4db7107a40fb373166c4e69a8e4",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Squat — rounded_back",
+      "exercise_id": "squat",
+      "payload": {
+        "session_id": "SQ-20261003-004",
+        "exercise_id": "squat",
+        "name": "Squat",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 73,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "rounded_back",
+            "partial_squat"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 76
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 92
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 63
+            },
+            "errors": [
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 55
+            },
+            "errors": [
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: rounded_back | source: blog.nasm.org/newletter/squat-form]\nLosing lumbar lordosis or failing to maintain a neutral low back position during the squat.\n\n[principle | re: rounded_back | source: blog.nasm.org/newletter/squat-form]\nMaintaining an upright chest and thoracic position with the scapula retracted is important to attain a correct lumbo-pelvic position during the squat.\n\n[consequence | re: rounded_back | source: TheBackSquatAProposedAssessment]\nAllowing the hips to rise too quickly and increasing trunk flexion during the ascent represents an incorrect back squat that can be a dangerous strategy to the lower back during squatting with progressive external resistance.\n\n[finding | re: rounded_back | source: TheBackSquatAProposedAssessment]\nFlexing at the spine before 120 degrees of hip flexion when squatting may indicate restriction in the posterior fibers of the iliotibial band or a lack of lumbar control.\n\n[consequence | re: rounded_back | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nFailing to maintain correct positioning during the squat can increase joint strain and potential injury to the low back and knees.\n\n[finding | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nA flat lumbar spine during squats is associated with a thinner anterior vertebral wedge, long paraspinal muscles, and/or a long iliopsoas.\n\n[mistake | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nAllowing excessive lumbar lordosis (hyperextension) or excessive lumbar flexion during the squat.\n\n[mistake | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nRounding the back, bending forward, raising the heels, or looking down during the ascent phase are common errors that compromise squat effectiveness.\n\n[principle | re: rounded_back | source: basics_of_strength_and_conditioning_manual]\nNever flex the spine or round forward during a squat.",
+      "metrics": [
+        {
+          "error": "rounded_back",
+          "kind": "mistake",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.049241951243526816,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "finding",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.11864398495626005,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "consequence",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.10862296172242158,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "principle",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.1005203604077799,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "f7333cbfdfe7f1703c7f99bde8f9cb02ec237841",
+      "prefer_context_sha1": "f7333cbfdfe7f1703c7f99bde8f9cb02ec237841",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Squat — mixed",
+      "exercise_id": "squat",
+      "payload": {
+        "session_id": "SQ-20261003-005",
+        "exercise_id": "squat",
+        "name": "Squat",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 70,
+          "previous_correct_reps": 4,
+          "previous_incorrect_reps": 6,
+          "previous_common_errors": [
+            "knee_valgus",
+            "rounded_back"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 4,
+          "incorrect_reps": 6,
+          "overall_score": 67
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 62
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              }
+            ]
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 55
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              },
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 57
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              },
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 83
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 42
+            },
+            "errors": [
+              {
+                "error_type": "partial_squat"
+              },
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 54
+            },
+            "errors": [
+              {
+                "error_type": "knee_valgus"
+              },
+              {
+                "error_type": "rounded_back"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward (medial knee displacement or knee valgus) during a squat.\n\n[mistake | re: rounded_back | source: blog.nasm.org/newletter/squat-form]\nLosing lumbar lordosis or failing to maintain a neutral low back position during the squat.\n\n[mistake | re: partial_squat | source: TheBackSquatAProposedAssessment]\nSquatting too shallow, where the athlete does not achieve a depth where the tops of the thighs are at least parallel to the ground.\n\n[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward, known as dynamic knee valgus or medial knee displacement, during the descent or ascent of a squat.\n\n[principle | re: knee_valgus | source: TheBackSquatAProposedAssessment]\nDuring the squat, the lateral aspect of the knee should not cross the vertical plane of the medial malleolus to avoid medial displacement.\n\n[mistake | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nAllowing the knees to cave inward (medial knee displacement or dynamic knee valgus) during squatting movements.\n\n[principle | re: rounded_back | source: blog.nasm.org/newletter/squat-form]\nMaintaining an upright chest and thoracic position with the scapula retracted is important to attain a correct lumbo-pelvic position during the squat.\n\n[consequence | re: rounded_back | source: TheBackSquatAProposedAssessment]\nAllowing the hips to rise too quickly and increasing trunk flexion during the ascent represents an incorrect back squat that can be a dangerous strategy to the lower back during squatting with progressive external resistance.\n\n[consequence | re: knee_valgus | source: basics_of_strength_and_conditioning_manual]\nAllowing the knees to come together (valgus knee position) increases the strain on the ligaments and muscles surrounding the knee.\n\n[finding | re: rounded_back | source: TheBackSquatAProposedAssessment]\nFlexing at the spine before 120 degrees of hip flexion when squatting may indicate restriction in the posterior fibers of the iliotibial band or a lack of lumbar control.\n\n[consequence | re: rounded_back | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nFailing to maintain correct positioning during the squat can increase joint strain and potential injury to the low back and knees.\n\n[finding | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nA flat lumbar spine during squats is associated with a thinner anterior vertebral wedge, long paraspinal muscles, and/or a long iliopsoas.\n\n[finding | re: knee_valgus | source: Bell2013_KneeValgusReducedAfterExercise_Squat_JAthlTrain]\nVisual knee valgus is clinically defined during a double-legged squat screening when the midpoint of the patella passes medial to the great toe in 3 out of 5 trials.\n\n[principle | re: knee_valgus | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nProper coaching cues, such as 'knees out', and the use of resistance bands can assist in reinforcing correct knee alignment.\n\n[consequence | re: knee_valgus | source: blog.nasm.org/newletter/squat-form]\nOver-pronation of the foot can lead to dynamic knee valgus during the squat.\n\n[finding | re: knee_valgus | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nKnee joint genu valgus during squats is associated with reduced height of the lateral meniscus, decreased hip abductor performance (gluteus maximus and medius), increased femoral anteversion, internal rotation of the tibia, and decreased ankle inversion muscles (tibialis anterior and posterior).\n\n[mistake | re: partial_squat | source: Kim2015_HipAnkleROM_SquatDepth_JHumKinet]\nLimiting squat depth (stopping early in a partial squat) due to restricted ankle dorsiflexion or hip mobility.\n\n[mistake | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nAllowing excessive lumbar lordosis (hyperextension) or excessive lumbar flexion during the squat.\n\n[mistake | re: rounded_back | source: Papadakis2024_BackSquatErrors_NeutralSpineKneeAlignment_JFMK]\nRounding the back, bending forward, raising the heels, or looking down during the ascent phase are common errors that compromise squat effectiveness.\n\n[consequence | re: partial_squat | source: TheBackSquatAProposedAssessment]\nWithout squatting to the proper depth, the hamstrings and gluteus muscular complex may not be adequately challenged.\n\n[principle | re: rounded_back | source: basics_of_strength_and_conditioning_manual]\nNever flex the spine or round forward during a squat.\n\n[principle | re: partial_squat | source: TheBackSquatAProposedAssessment]\nThe descent phase of the squat begins as the hips, knees, and ankles flex, and should continue until the top of the thigh is at least parallel with the ground and the hip joint is at least level with or slightly below the knee joint.\n\n[finding | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nIn a standard squat, the knees are bent at around a 90-degree angle with thighs parallel to the ground.\n\n[principle | re: partial_squat | source: www.nasm.org/resource-center/blog/training/biomechanics-of-the-squat]\nThe appropriate squat depth is the deepest position a client can achieve while maintaining a neutral spine, foot stability, proper joint alignment, and movement control.\n\n[consequence | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nPerforming a partial squat instead of a deep squat may subject the knee joint to higher compressive forces.\n\n[finding | re: partial_squat | source: www.healthline.com/health/fitness/deep-squat]\nScientific research does not substantiate any increased risk of knee injury from performing deep squats.",
+      "metrics": [
+        {
+          "error": "knee_valgus",
+          "kind": "mistake",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.045361700377550385,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_valgus",
+          "kind": "finding",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.12993987738010926,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_valgus",
+          "kind": "consequence",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.11495659783094148,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "knee_valgus",
+          "kind": "principle",
+          "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement) (+why/fix)",
+          "best": 0.09464284053870209,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "mistake",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.06223142517992242,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "finding",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.1849308124143355,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "consequence",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.16042596101760864,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_squat",
+          "kind": "principle",
+          "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend (+why/fix)",
+          "best": 0.1740939720925061,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "mistake",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.049241951243526816,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "finding",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.11864398495626005,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "consequence",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.10862296172242158,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "rounded_back",
+          "kind": "principle",
+          "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward (+why/fix)",
+          "best": 0.1005203604077799,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "9ac36f063a37b1614b99b76384be781bf5c25335",
+      "prefer_context_sha1": "9ac36f063a37b1614b99b76384be781bf5c25335",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Squat — clean",
+      "exercise_id": "squat",
+      "payload": {
+        "session_id": "SQ-20261003-006",
+        "exercise_id": "squat",
+        "name": "Squat",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 76,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "partial_squat",
+            "knee_valgus"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 10,
+          "incorrect_reps": 0,
+          "overall_score": 89
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 92
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[principle | re: general principles | source: TheBackSquatAProposedAssessment]\nDuring the squat, the lateral aspect of the knee should not cross the vertical plane of the medial malleolus to avoid medial displacement.\n\n[principle | re: general principles | source: blog.nasm.org/newletter/squat-form]\nMaintaining an upright chest and thoracic position with the scapula retracted is important to attain a correct lumbo-pelvic position during the squat.",
+      "metrics": [
+        {
+          "error": "general principles",
+          "kind": "principle",
+          "query": "Squat correct technique and biomechanics",
+          "best": 0.1529169769833535,
+          "kept": 2,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "8985e24d1b00e108d8690622fa4610eb0ea0003a",
+      "prefer_context_sha1": "8985e24d1b00e108d8690622fa4610eb0ea0003a",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    }
+  ]
+}

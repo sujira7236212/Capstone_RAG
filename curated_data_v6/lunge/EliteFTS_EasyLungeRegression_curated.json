@@ -1,0 +1,49 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Lunge",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Regress athletes to teach proper lunge mechanics before progressing them to weighted walking lunges.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Utilize a wall to achieve an exaggerated plantarflexed rear foot, which helps achieve a 90-degree angle at the back knee and allows the hips to drop straight down.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Use the sternum as a reference point to maintain an elevator-like straight up-and-down movement during the lunge descent rather than an escalator-like diagonal movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Keeping the back leg straight while attempting to lower the body during a lunge pushes the body forward.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      },
+      {
+        "text": "Allowing the sternum to move forward or backward during the descent indicates movement compensation.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Projecting the body forward during a lunge due to a straight rear leg increases force on the knee joint and causes knee pain.",
+        "applies_to_fault": [
+          "straight_back_leg"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\lunge\\EliteFTS_EasyLungeRegression.txt",
+    "applies_to_fault": [
+      "straight_back_leg"
+    ]
+  }
+]

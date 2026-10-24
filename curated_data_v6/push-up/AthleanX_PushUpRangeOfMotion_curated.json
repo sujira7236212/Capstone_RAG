@@ -1,0 +1,103 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Range of Motion",
+    "content_type": "Correct Form / Common Mistakes",
+    "core_principles": [
+      {
+        "text": "Set up for the push-up in a strict plank position forming a straight line from the head down, with the core tight, hands wider than shoulder-width apart, and feet shoulder-width apart.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Bring the chest to touch the floor at the bottom of the movement without completely disengaging muscle tension.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Press all the way back up to full lockout of the elbows at the top of the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Perform push-up reps with a slow, controlled cadence while keeping the core and glutes engaged throughout the set.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Shortening the range of motion at the bottom of the movement by stopping an inch or two above the floor.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Shortening the range of motion at the top of the movement by failing to come to full elbow lockout.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Prioritizing fast rep speed and higher rep targets over completing full range of motion reps.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Enforcing strict full range of motion with chest-to-floor contact and full lockout reduces total rep capacity by approximately 60% compared to performing partial-range reps.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\AthleanX_PushUpRangeOfMotion.txt [part 2/3]",
+    "applies_to_fault": [
+      "partial_pushup"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Push-up",
+    "focus_area": "Chest",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Lower your chest all the way to the floor on every repetition without disengaging your body at the bottom.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      },
+      {
+        "text": "Prioritize repetition quality and movement intensity over chasing higher rep counts.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Failing to complete the full range of motion at the bottom of the repetition to inflate rep numbers.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Switching to a full range of motion where the chest reaches the ground can reduce push-up repetition performance by approximately 60%, dropping rep output from 100 down to 40.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Failing to lower the chest completely to the floor reduces the total work required of the upper body, limiting potential strength and muscle development.",
+        "applies_to_fault": [
+          "partial_pushup"
+        ]
+      }
+    ],
+    "source": "C:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\push-up\\AthleanX_PushUpRangeOfMotion.txt [part 3/3]",
+    "applies_to_fault": [
+      "partial_pushup"
+    ]
+  }
+]

@@ -1,5 +1,5 @@
 {
- "description": "Dev/test split of KB v6 source documents (docs/eval_v6_plan.md E5), made by eval/make_split.py. Locked: a document keeps its side in every later round. Score test only with --final.",
+ "description": "Dev/test split of KB v6 source documents (docs/plans/eval_v6_plan.md E5), made by eval/make_split.py. Locked: a document keeps its side in every later round. Score test only with --final.",
  "ratio_test": 0.3,
  "groups": [
   [
@@ -14,6 +14,13 @@
    "curated": "curated_data_v6",
    "date": "2026-10-03",
    "documents_added": 46
+  },
+  {
+   "name": "v6b",
+   "seed": 20261003,
+   "curated": "curated_data_v6",
+   "date": "2026-10-24",
+   "documents_added": 13
   }
  ],
  "documents": {
@@ -109,9 +116,25 @@
    "split": "dev",
    "assigned_in": "v6"
   },
+  "lunge/BOXROX_WalkingLungeMistakes.txt": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "lunge/Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
   "lunge/Biomechanical difference in forward and lateral lunges and its changes in knee joint moment and functional measurement.pdf": {
    "split": "dev",
    "assigned_in": "v6"
+  },
+  "lunge/Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "lunge/Common Mistakes to Avoid When Performing a Lunge in Ladera Ranch.pdf": {
+   "split": "dev",
+   "assigned_in": "v6b"
   },
   "lunge/Effects of Loading Positions on Lower Limb Biomechanics During Lunge Squat in Men with Different Training Experience.pdf": {
    "split": "dev",
@@ -121,9 +144,25 @@
    "split": "dev",
    "assigned_in": "v6"
   },
+  "lunge/EliteFTS_EasyLungeRegression.txt": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "lunge/ExperienceLife_SplitSquatLungeErrors.txt": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "lunge/Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf": {
+   "split": "test",
+   "assigned_in": "v6b"
+  },
   "lunge/KritzCroninHume2009BodyweightlungeSCJ.pdf": {
    "split": "test",
    "assigned_in": "v6"
+  },
+  "lunge/Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf": {
+   "split": "test",
+   "assigned_in": "v6b"
   },
   "lunge/Schellenberg2017_SplitSquat_StepLengthTibialAngle_BMCSSMR.pdf": {
    "split": "dev",
@@ -156,6 +195,26 @@
   "lunge/torso_upright/Bezerra2021_TrunkPosition_LungeActivation_IJES.pdf": {
    "split": "dev",
    "assigned_in": "v6"
+  },
+  "push-up/AthleanX_PushUpRangeOfMotion.txt": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "push-up/Attika_PushUpErrors.txt": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "push-up/BOXROX_PushUpBenchmarks.txt": {
+   "split": "test",
+   "assigned_in": "v6b"
+  },
+  "push-up/Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf": {
+   "split": "dev",
+   "assigned_in": "v6b"
+  },
+  "push-up/Cathe_PushUpMistakes.txt": {
+   "split": "test",
+   "assigned_in": "v6b"
   },
   "push-up/The_Biomechanics_of_the_Push_up.pdf": {
    "split": "test",

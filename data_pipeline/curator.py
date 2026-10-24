@@ -20,6 +20,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 # does. Splitting long text into windows this size before curation keeps each call's
 # compression ratio reasonable so specific findings don't get flattened away.
 CURATION_CHUNK_SIZE = 6000
+CURATOR_MODEL = os.environ.get("CURATOR_MODEL", "gemini-3.6-flash")
 CURATION_CHUNK_OVERLAP = 300
 
 # Load environment variables (e.g., GOOGLE_API_KEY)
@@ -53,7 +54,7 @@ class KnowledgeItem(BaseModel):
 class ExtractedKnowledge(BaseModel):
     # Deliberately narrow. The earlier "anything sports-science" definition let through
     # cardiovascular-risk epidemiology, blood-lipid biochemistry and haemophilia papers
-    # whose only link to the exercise was its name (docs/kb_quality_assessment.md 3.1/3.4).
+    # whose only link to the exercise was its name (docs/kb/kb_quality_assessment.md 3.1/3.4).
     # Those chunks diluted retrieval and seeded off-topic statistics into the feedback.
     # The feedback system only ever asks "what went wrong with the form and why does it
     # matter", so that is the bar for relevance.
@@ -233,9 +234,9 @@ def load_skip_list(path: str, project_root: str) -> tuple:
 # the number ("1208" for 120°, "90 8" for 90°) or as the raw glyph name "/C176". The LLM
 # notices and annotates it - "1208 (120 degrees)", "90 degrees (noted as 900 in text)" -
 # but the annotation ends up in the chunk, and the feedback model then quotes "1208" to
-# the user as if it were a number (compare_output/ab_v7.md, squat). Applied to every list
+# the user as if it were a number (compare_output/history/ab_v7.md, squat). Applied to every list
 # item the curator returns; the rules are the exact shapes seen in kb_local_curated_v4
-# (docs/kb_quality_assessment.md 7.3), nothing more speculative than that.
+# (docs/kb/kb_quality_assessment.md 7.3), nothing more speculative than that.
 _OCR_DEGREE_RULES = (
     # "(noted as 900 in text)", "(text states '90 8')", "(noted as 135 /C176)" -> dropped;
     # requires the opening paren so "denoted as SE-SE" is left alone.
@@ -264,7 +265,7 @@ def normalize_fault_tags(tags, folder_exercise_id: str) -> list:
     The prompt says "use verbatim", but gemini still returned "partial_squat",
     "knee_valgus" and "partial range_of_motion" on 18 v5 items. Retrieval's tag filter is
     an exact LIKE '%|<code>|%', so those items were invisible under their own fault
-    (eval tag_spelling miss, compare_output/ablation_log.md B0). Underscore, case and
+    (eval tag_spelling miss, compare_output/ablation/ablation_log.md B0). Underscore, case and
     whitespace differences only; a tag that matches no known code is left as it is, and
     a variant that collapses onto a code already in the list is dropped.
     """
@@ -408,8 +409,10 @@ def summarize_usage(path: str) -> str:
 
 
 def curate_knowledge(raw_text: str, folder_exercise_id: str = "general", label: str = "") -> Optional[dict]:
-    # Using gemini-3.5-flash
-    llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", temperature=0.1)
+    # gemini-3.5-flash through round 2a; it was retired before round 3, and round 3 already ran
+    # on gemini-3.6-flash (usage log model_version). Pinned here so the log and the code agree;
+    # CURATOR_MODEL overrides it (docs/progress/t3_curation_status.md 1: never change it mid-round).
+    llm = ChatGoogleGenerativeAI(model=CURATOR_MODEL, temperature=0.1)
     # include_raw keeps the AIMessage so its usage_metadata can be logged.
     structured_llm = llm.with_structured_output(ExtractedKnowledge, include_raw=True)
 
@@ -568,7 +571,7 @@ def load_urls_main_content(urls):
     Replaces AsyncHtmlLoader + Html2TextTransformer, which flattened the WHOLE page -
     navbar, "related articles" sidebar, footer, newsletter widgets. On the NASM blog that
     dragged GLP-1, cardio-zone and osteoporosis copy into the squat/lunge KB
-    (docs/kb_quality_assessment.md 3.4). trafilatura keeps the article and drops the
+    (docs/kb/kb_quality_assessment.md 3.4). trafilatura keeps the article and drops the
     chrome; a page it cannot extract is skipped with a warning rather than scraped whole.
     """
     import trafilatura

@@ -54,12 +54,26 @@
    ]
   },
   "round3": {
-   "note": "2026-10-19 (user approved): the four keeps from the prefilter review of newly found sources (docs/prefilter_v6_review.md 7, 7.1) - chosen by the prefilter, not from eval results. They live under data/checked/; the curator maps them back to their data/<exercise>/ id. BOXROX is the article text saved as .txt (the curator cannot fetch that site).",
+   "note": "2026-10-19 (user approved): the four keeps from the prefilter review of newly found sources (docs/kb/prefilter_v6_review.md 7, 7.1) - chosen by the prefilter, not from eval results. They live under data/checked/; the curator maps them back to their data/<exercise>/ id. BOXROX is the article text saved as .txt (the curator cannot fetch that site).",
    "files": [
     "data/push-up/Biomechanical evaluation of the push-up exercise of the upper extremities from various starting points.pdf",
     "data/push-up/BOXROX_PushUpBenchmarks.txt",
     "data/lunge/Patellofemoral Joint Loading in Forward Lunge With Step Length and Height Variations.pdf",
     "data/lunge/Biomechanical effects of exercise fatigue on the lower limbs of men during the forward lunge.pdf"
+   ]
+  },
+  "round4": {
+   "note": "2026-10-21 (user approved): Gao 2022, the one remaining keep that may add a shallow_lunge cause (small knee flexion -> quadriceps weakness / limited ankle dorsiflexion); chosen from the keep review against the three thin rules (docs/kb/prefilter_v6_review.md 9, 9.1), not from eval results. After curating, find the item that cites Escamilla as cautioning against a LONG step and untag or delete it (it contradicts excessive_front_knee_flexion). 2026-10-24 (user approved): added Riemann 2012 (heavy load -> shallower lunge, cue depth: a shallow_lunge cause + fix; the depth loss is only 2 cm and every condition stays deeper than 90 degrees) and the Ladera Ranch common-mistakes article (cheap, about one window; forward_trunk_lean plus a 'both knees about 90 degrees' principle), from docs/kb/prefilter_v6_review.md 10. 2026-10-24 (user approved): added five common-mistakes web articles saved as .txt (docs/kb/prefilter_v6_review.md 11) - BOXROX walking lunge (shallow_lunge mistake + consequence), Experience Life (straight_back_leg cause + consequence), Attika / ATHLEAN-X / Cathe (partial_pushup mistake + consequence). ClassPass and Fitness and Power are kept but left out (same content, plus passages that contradict the cards). 2026-10-24 (user approved step 3 of the strict/v6b plan): added the elitefts 'easy lunge regression' article saved as .txt from the Wayback capture (straight_back_leg mistake + consequence + fix; docs/kb/prefilter_v6_review.md 11). After curating: do not tag the elitefts rear-foot plantarflexion cue straight_back_leg on its own; untag the Cathe 'go half-way down and hold' item and the ATHLEAN-X top-lockout items if they get partial_pushup.",
+   "files": [
+    "data/lunge/Influence of Different Load Conditions on Lower Extremity Biomechanics during the Lunge Squat in Novice Men.pdf",
+    "data/lunge/Biomechanical Analysis of the Anterior Lunge During 4 External-Load Conditions.pdf",
+    "data/lunge/Common Mistakes to Avoid When Performing a Lunge in Ladera Ranch.pdf",
+    "data/lunge/BOXROX_WalkingLungeMistakes.txt",
+    "data/lunge/ExperienceLife_SplitSquatLungeErrors.txt",
+    "data/push-up/Attika_PushUpErrors.txt",
+    "data/push-up/AthleanX_PushUpRangeOfMotion.txt",
+    "data/push-up/Cathe_PushUpMistakes.txt",
+    "data/lunge/EliteFTS_EasyLungeRegression.txt"
    ]
   }
  }

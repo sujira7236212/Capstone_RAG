@@ -1,0 +1,710 @@
+{
+  "derived_from": "compare_result_v14_push-up.json",
+  "method": "offline: prefer context minus strict-skipped kinds",
+  "mock": "mock_data/mock_sessions_push-up.json",
+  "collection": "kb_gemini_curated_v6",
+  "retrieval": {
+    "TAG_MODE": "strict",
+    "KIND_POOL": "split",
+    "QUERIES": "profile",
+    "HYBRID": false,
+    "RERANK": false
+  },
+  "note": "rag/no_rag answers not carried over - they were generated from the prefer context",
+  "sessions": [
+    {
+      "label": "Push-up — hip_sag_or_pike",
+      "exercise_id": "push-up",
+      "payload": {
+        "session_id": "PU-20261003-001",
+        "exercise_id": "push-up",
+        "name": "Push-up",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 73,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "hip_sag_or_pike"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 6,
+          "incorrect_reps": 4,
+          "overall_score": 76
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 63
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 60
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 56
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: hip_sag_or_pike | source: www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels]\nFailing to activate the deep core muscles required to stabilize the spine and pelvis during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to maintain a neutral lumbar spine position during a push-up results in anterior pelvic tilt and trunk lag, indicating impaired trunk stability.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAllowing the lower back to sag or arch during a push-up increases mechanical stress on the vertebral discs.\n\n[mistake | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nAnterior pelvic tilt and trunk lag are common errors where the trunk fails to lift as a single unit during the push-up.\n\n[mistake | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAs fatigue sets in during a push-up, the lower back may arch or sag, causing the kinetic chain checkpoints to migrate out of alignment.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nImproving awareness of lumbar spine position and thoracic spine mobility can help improve trunk stability during a push-up.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMore than 60% (n=65/108) of active females failed the Trunk Stability Push Up (TSPU) compared to less than 10% (n=10/101) of active males.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a pilot study of active females, a six-week multiplanar trunk stability intervention resulted in 9 of 20 participants (45%) improving their Trunk Stability Push Up (TSPU) score to ≥2.",
+      "metrics": [
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "mistake",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.07353249411381724,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "finding",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.23760149030667121,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "consequence",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.1141966445211533,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "principle",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.13662133842301072,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "adf2f99fdb4ad737e8be091d26f88f3d1ca4e5e9",
+      "prefer_context_sha1": "adf2f99fdb4ad737e8be091d26f88f3d1ca4e5e9",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Push-up — partial_pushup",
+      "exercise_id": "push-up",
+      "payload": {
+        "session_id": "PU-20261003-002",
+        "exercise_id": "push-up",
+        "name": "Push-up",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 74,
+          "previous_correct_reps": 7,
+          "previous_incorrect_reps": 3,
+          "previous_common_errors": [
+            "partial_pushup"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 7,
+          "incorrect_reps": 3,
+          "overall_score": 75
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 50
+            },
+            "errors": [
+              {
+                "error_type": "partial_pushup"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 85
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 48
+            },
+            "errors": [
+              {
+                "error_type": "partial_pushup"
+              }
+            ]
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 45
+            },
+            "errors": [
+              {
+                "error_type": "partial_pushup"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 83
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[mistake | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to complete the push-up by only rising one to two inches from the floor due to insufficient upper body strength.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide]\nLower the body with control until the chest approaches the floor.\n\n[consequence | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nNot achieving adequate range of motion limits chest stretch and development.\n\n[finding | re: partial_pushup | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe increased force in the down position of a push-up is due to the whole-body center of mass being located further from the point of contact with the floor, which results in greater torque.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nDescend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility.\n\n[finding | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a study of active females, 45% of participants passed the Trunk Stability Push-Up (TSPU) post-intervention, with many of those who failed only able to rise one to two inches from the floor.",
+      "metrics": [
+        {
+          "error": "partial_pushup",
+          "kind": "mistake",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.12236043873775837,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "finding",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.21860639383564218,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "consequence",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.1995772839600306,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "principle",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.18876076079584192,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "cd7c878cc86b66049188b1d4581818fa7863cc1f",
+      "prefer_context_sha1": "cd7c878cc86b66049188b1d4581818fa7863cc1f",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Push-up — mixed",
+      "exercise_id": "push-up",
+      "payload": {
+        "session_id": "PU-20261003-003",
+        "exercise_id": "push-up",
+        "name": "Push-up",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 71,
+          "previous_correct_reps": 5,
+          "previous_incorrect_reps": 5,
+          "previous_common_errors": [
+            "hip_sag_or_pike",
+            "partial_pushup"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 4,
+          "incorrect_reps": 6,
+          "overall_score": 65
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 61
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 46
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              },
+              {
+                "error_type": "partial_pushup"
+              }
+            ]
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 58
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 84
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 44
+            },
+            "errors": [
+              {
+                "error_type": "partial_pushup"
+              }
+            ]
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 55
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              }
+            ]
+          },
+          {
+            "rep_no": 10,
+            "status": "abort",
+            "similarity_scores_percent": {
+              "overall": 40
+            },
+            "errors": [
+              {
+                "error_type": "hip_sag_or_pike"
+              },
+              {
+                "error_type": "partial_pushup"
+              }
+            ]
+          }
+        ]
+      },
+      "context": "[mistake | re: hip_sag_or_pike | source: www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels]\nFailing to activate the deep core muscles required to stabilize the spine and pelvis during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to maintain a neutral lumbar spine position during a push-up results in anterior pelvic tilt and trunk lag, indicating impaired trunk stability.\n\n[mistake | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nFailing to complete the push-up by only rising one to two inches from the floor due to insufficient upper body strength.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.\n\n[consequence | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAllowing the lower back to sag or arch during a push-up increases mechanical stress on the vertebral discs.\n\n[mistake | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nAnterior pelvic tilt and trunk lag are common errors where the trunk fails to lift as a single unit during the push-up.\n\n[mistake | re: hip_sag_or_pike | source: blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement]\nAs fatigue sets in during a push-up, the lower back may arch or sag, causing the kinetic chain checkpoints to migrate out of alignment.\n\n[principle | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nImproving awareness of lumbar spine position and thoracic spine mobility can help improve trunk stability during a push-up.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/blog/training/proper-push-up-form-and-technique-a-complete-guide]\nLower the body with control until the chest approaches the floor.\n\n[consequence | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nNot achieving adequate range of motion limits chest stretch and development.\n\n[finding | re: partial_pushup | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe increased force in the down position of a push-up is due to the whole-body center of mass being located further from the point of contact with the floor, which results in greater torque.\n\n[principle | re: partial_pushup | source: www.nasm.org/resource-center/exercise-library/push-up]\nDescend until your chest nearly touches the floor or your elbows bend to approximately 90 degrees, whichever comes first based on mobility.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMore than 60% (n=65/108) of active females failed the Trunk Stability Push Up (TSPU) compared to less than 10% (n=10/101) of active males.\n\n[finding | re: partial_pushup | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a study of active females, 45% of participants passed the Trunk Stability Push-Up (TSPU) post-intervention, with many of those who failed only able to rise one to two inches from the floor.\n\n[finding | re: hip_sag_or_pike | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nIn a pilot study of active females, a six-week multiplanar trunk stability intervention resulted in 9 of 20 participants (45%) improving their Trunk Stability Push Up (TSPU) score to ≥2.",
+      "metrics": [
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "mistake",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.07353249411381724,
+          "kept": 3,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "finding",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.23760149030667121,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "consequence",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.1141966445211533,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "hip_sag_or_pike",
+          "kind": "principle",
+          "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling (+why/fix)",
+          "best": 0.13662133842301072,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "mistake",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.12236043873775837,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "finding",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.21860639383564218,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "consequence",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.1995772839600306,
+          "kept": 1,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        },
+        {
+          "error": "partial_pushup",
+          "kind": "principle",
+          "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor (+why/fix)",
+          "best": 0.18876076079584192,
+          "kept": 2,
+          "tagged": true,
+          "tag_exclusive": true,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "e5f0e8000847b5161e46ac9dc30a593c2fdb1923",
+      "prefer_context_sha1": "e5f0e8000847b5161e46ac9dc30a593c2fdb1923",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    },
+    {
+      "label": "Push-up — clean",
+      "exercise_id": "push-up",
+      "payload": {
+        "session_id": "PU-20261003-004",
+        "exercise_id": "push-up",
+        "name": "Push-up",
+        "date": "2026-10-03",
+        "historical_comparison": {
+          "previous_session_date": "2026-10-02",
+          "previous_overall_score": 75,
+          "previous_correct_reps": 6,
+          "previous_incorrect_reps": 4,
+          "previous_common_errors": [
+            "hip_sag_or_pike",
+            "partial_pushup"
+          ]
+        },
+        "summary": {
+          "total_reps": 10,
+          "correct_reps": 10,
+          "incorrect_reps": 0,
+          "overall_score": 88
+        },
+        "reps_detail": [
+          {
+            "rep_no": 1,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 91
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 2,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 3,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 4,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 90
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 5,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 6,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 89
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 7,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 8,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 88
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 9,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 86
+            },
+            "errors": []
+          },
+          {
+            "rep_no": 10,
+            "status": "completed",
+            "similarity_scores_percent": {
+              "overall": 87
+            },
+            "errors": []
+          }
+        ]
+      },
+      "context": "[principle | re: general principles | source: The_Effect_of_Position_on_the_Percentage_of_Body.992962]\nThe difference in resistance patterns between push-up variations is influenced by differing moment arms between the support surface contact point (knees or feet) and the hands.\n\n[principle | re: general principles | source: SchwartzkopfPhifer2021_TrunkStabilityPushUp_IJSPT]\nMaintaining a neutral lumbar spine position and control is necessary to prevent anterior pelvic tilt and trunk lag during the push-up.",
+      "metrics": [
+        {
+          "error": "general principles",
+          "kind": "principle",
+          "query": "Push-up correct technique and biomechanics",
+          "best": 0.1872440576553287,
+          "kept": 2,
+          "tagged": false,
+          "tag_exclusive": false,
+          "strict_skip": false
+        }
+      ],
+      "context_sha1": "e9782d1df0324e2f654979337e0297e483b4128a",
+      "prefer_context_sha1": "e9782d1df0324e2f654979337e0297e483b4128a",
+      "changed": false,
+      "strict_skipped": [],
+      "removed_blocks": [],
+      "estimate_only_for": []
+    }
+  ]
+}
