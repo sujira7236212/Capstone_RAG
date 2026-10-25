@@ -19,9 +19,13 @@ LLM_TEMPERATURE = 0.7
 GENERATION_ERROR = "Error occurred during generation"
 
 
-def build_chain(context, model, temperature=LLM_TEMPERATURE, max_retries=1, timeout=None):
+def build_chain(context, model, temperature=LLM_TEMPERATURE, max_retries=1, timeout=None,
+                thinking_level=None):
+    """`max_retries` is the client's total number of attempts (1 = no retry). `thinking_level`
+    ("minimal"/"low"/"medium"/"high", Gemini 3+): None keeps the model's own default, which
+    is what every eval run so far used."""
     llm = ChatGoogleGenerativeAI(model=model, temperature=temperature, max_retries=max_retries,
-                                 timeout=timeout)
+                                 timeout=timeout, thinking_level=thinking_level)
     prompt = ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", HUMAN_TEMPLATE)])
     return (
         {"context": lambda x: context, "input": RunnablePassthrough()}
