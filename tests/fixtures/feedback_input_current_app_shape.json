@@ -1,0 +1,70 @@
+{
+  "profile": {
+    "display_name": "Test User",
+    "age": 24,
+    "gender": "female",
+    "weight_kg": 58,
+    "height_cm": 162,
+    "medical_history": "none"
+  },
+  "exercise": {
+    "id": "push-up",
+    "name": "Push-up",
+    "rules": [
+      { "name": "hip_sag_or_pike", "priority": 1, "scope": "frame", "threshold": { "hip_angle_min": 160 } },
+      { "name": "partial_pushup", "priority": 2, "scope": "rep", "threshold": { "elbow_target": 90 } },
+      { "name": "elbow_flare", "priority": 3, "scope": "frame", "threshold": { "flare_max": 60 } }
+    ]
+  },
+  "workout": {
+    "target_reps": 4,
+    "target_sets": 2,
+    "rest_seconds": 60,
+    "earlier_sets": []
+  },
+  "set": {
+    "set_no": 1,
+    "kind": "initial",
+    "ended_by": "target_reached",
+    "totals": { "attempts": 4, "completed_reps": 3, "correct_reps": 1, "abandoned_attempts": 1 },
+    "similarity": { "overall": 71, "head_neck": 80, "back_core": 62, "hips_pelvis": 58, "knees": 77, "ankles_feet": 79 },
+    "feedback": null,
+    "attempts": [
+      {
+        "schema_version": 1, "attempt_no": 1, "outcome": "correct", "rep_number": 1,
+        "frame_start": 0, "frame_end": 40, "state_durations_s": { "eccentric": 0.8, "concentric": 0.7 },
+        "violations": [], "rep_stats": {},
+        "similarity": { "overall": 82, "head_neck": 85, "back_core": 80, "hips_pelvis": 78, "knees": 84, "ankles_feet": 83 }
+      },
+      {
+        "schema_version": 1, "attempt_no": 2, "outcome": "incorrect", "rep_number": 2,
+        "frame_start": 41, "frame_end": 85, "state_durations_s": { "eccentric": 0.9, "concentric": 0.8 },
+        "violations": [
+          { "rule": "elbow_flare", "message": "Tuck your elbows", "priority": 3, "scope": "frame", "state": "eccentric", "value": null, "threshold": { "flare_max": 60 } },
+          { "rule": "hip_sag_or_pike", "message": "Keep your hips in line", "priority": 1, "scope": "frame", "state": "concentric", "value": 151, "threshold": { "hip_angle_min": 160 } }
+        ],
+        "rep_stats": {},
+        "similarity": { "overall": 64, "head_neck": 75, "back_core": 50, "hips_pelvis": 44, "knees": 70, "ankles_feet": 72 }
+      },
+      {
+        "schema_version": 1, "attempt_no": 3, "outcome": "incorrect", "rep_number": 3,
+        "frame_start": 86, "frame_end": 130, "state_durations_s": { "eccentric": 0.7, "concentric": 0.6 },
+        "violations": [
+          { "rule": "partial_pushup", "message": "Go lower", "priority": 2, "scope": "rep", "state": "concentric", "value": 112, "threshold": { "elbow_target": 90 } }
+        ],
+        "rep_stats": { "partial_pushup": 112 },
+        "similarity": { "overall": 67, "head_neck": 79, "back_core": 60, "hips_pelvis": 61, "knees": 76, "ankles_feet": 78 }
+      },
+      {
+        "schema_version": 1, "attempt_no": 4, "outcome": "abandoned", "rep_number": null,
+        "frame_start": 131, "frame_end": 150, "state_durations_s": { "eccentric": 0.5 },
+        "violations": [
+          { "rule": "partial_pushup", "message": "Go lower", "priority": 2, "scope": "rep", "state": "eccentric", "value": 131, "threshold": { "elbow_target": 90 } }
+        ],
+        "rep_stats": { "partial_pushup": 131 },
+        "similarity": null
+      }
+    ]
+  },
+  "history": []
+}

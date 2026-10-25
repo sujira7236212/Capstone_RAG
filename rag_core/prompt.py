@@ -219,6 +219,12 @@ HUMAN_TEMPLATE = "Here is the exercise session data:\n{input}\n\nPlease evaluate
 # to take into that conversation. Empty this set once system 1 confirms what they mean.
 HELD_BACK_FIELDS = {"state_occurred"}
 
+# Session-level fields the model is not shown yet. `health_notes` is the app profile's medical
+# history (app_input.py): v14 has no rules for it (do not diagnose, do not advise against it,
+# when to refer), and sending it to the LLM provider waits for the consent wording (D6 in
+# docs/plans/app_integration_plan.md). Prompt v15 takes it out of this set.
+HELD_BACK_SESSION_FIELDS = {"health_notes"}
+
 
 def model_payload(session_data):
     """The session JSON exactly as the model sees it.
@@ -227,8 +233,10 @@ def model_payload(session_data):
     runs three Squat sessions, so the exercise name alone no longer identifies one). It is
     bookkeeping, not session data - sending it would tell the model which fault to expect,
     and would label the clean session "clean session" before it has read a single rep.
-    HELD_BACK_FIELDS are dropped from every error of every rep."""
-    payload = {k: v for k, v in session_data.items() if k != "report_label"}
+    HELD_BACK_SESSION_FIELDS are dropped from the session, HELD_BACK_FIELDS from every error
+    of every rep."""
+    payload = {k: v for k, v in session_data.items()
+               if k != "report_label" and k not in HELD_BACK_SESSION_FIELDS}
     if "reps_detail" in payload:
         payload["reps_detail"] = [
             {**rep, "errors": [{k: v for k, v in e.items() if k not in HELD_BACK_FIELDS}
