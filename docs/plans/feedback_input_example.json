@@ -1,0 +1,111 @@
+{
+  "profile": {
+    "medical_history": "Left knee ACL reconstruction in 2024, no pain now"
+  },
+  "exercise": {
+    "id": "squat",
+    "name": "Squat"
+  },
+  "workout": {
+    "target_reps": 5,
+    "target_sets": 3,
+    "earlier_sets": [
+      {
+        "set_no": 1,
+        "kind": "initial",
+        "totals": { "attempts": 5, "completed_reps": 5, "correct_reps": 1, "abandoned_attempts": 0 },
+        "similarity": {
+          "mean_score": 58.3,
+          "body_parts": { "torso": 42.0, "right_leg": 65.9, "left_leg": 67.2 }
+        }
+      }
+    ]
+  },
+  "set": {
+    "set_no": 1,
+    "kind": "repair",
+    "totals": { "attempts": 5, "completed_reps": 4, "correct_reps": 2, "abandoned_attempts": 1 },
+    "similarity": {
+      "mean_score": 63.4,
+      "body_parts": { "torso": 53.3, "right_leg": 68.8, "left_leg": 70.7 }
+    },
+    "attempts": [
+      {
+        "attempt_no": 1,
+        "outcome": "correct",
+        "violations": [],
+        "similarity": {
+          "score": 71.8,
+          "body_parts": { "torso": 64.2, "right_leg": 76.5, "left_leg": 78.1 }
+        }
+      },
+      {
+        "attempt_no": 2,
+        "outcome": "incorrect",
+        "violations": [
+          { "rule": "knee_valgus", "priority": 2 }
+        ],
+        "similarity": {
+          "score": 55.6,
+          "body_parts": { "torso": 51.3, "right_leg": 57.9, "left_leg": 60.2 }
+        }
+      },
+      {
+        "attempt_no": 3,
+        "outcome": "correct",
+        "violations": [],
+        "similarity": {
+          "score": 73.4,
+          "body_parts": { "torso": 66.0, "right_leg": 77.2, "left_leg": 79.4 }
+        }
+      },
+      {
+        "attempt_no": 4,
+        "outcome": "incorrect",
+        "violations": [
+          { "rule": "partial_squat", "priority": 1 },
+          { "rule": "rounded_back", "priority": 3 }
+        ],
+        "similarity": {
+          "score": 52.9,
+          "body_parts": { "torso": 31.8, "right_leg": 63.4, "left_leg": 65.0 }
+        }
+      },
+      {
+        "attempt_no": 5,
+        "outcome": "abandoned",
+        "violations": [
+          { "rule": "partial_squat", "priority": 1 }
+        ],
+        "similarity": null
+      }
+    ]
+  },
+  "history": [
+    {
+      "started_at": "2026-10-22T09:15:00+07:00",
+      "target_reps": 5,
+      "target_sets": 3,
+      "sets": [
+        {
+          "set_no": 1,
+          "kind": "initial",
+          "totals": { "attempts": 5, "completed_reps": 5, "correct_reps": 1, "abandoned_attempts": 0 },
+          "similarity": {
+            "mean_score": 55.2,
+            "body_parts": { "torso": 36.4, "right_leg": 62.1, "left_leg": 63.0 }
+          }
+        },
+        {
+          "set_no": 1,
+          "kind": "repair",
+          "totals": { "attempts": 5, "completed_reps": 4, "correct_reps": 2, "abandoned_attempts": 1 },
+          "similarity": {
+            "mean_score": 60.1,
+            "body_parts": { "torso": 45.0, "right_leg": 66.3, "left_leg": 67.8 }
+          }
+        }
+      ]
+    }
+  ]
+}
