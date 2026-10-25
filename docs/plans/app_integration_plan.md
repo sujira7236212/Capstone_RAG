@@ -1,6 +1,7 @@
 # แผน integrate RAG feedback เข้า MU-Capstone-Application
 
-**สถานะ:** แผน · ยังไม่เริ่ม · เขียนเมื่อ 2026-10-25
+**สถานะ:** กำลังทำ · เขียนเมื่อ 2026-10-25 · ความคืบหน้าดู §8
+**branch:** RAG_SYSTEM `app-integration` (แตกจาก `rule-change-v6`) · แอป `integrate-rag-system` (user ยืนยันว่าใช้ branch ได้)
 **ที่มา:** ตรวจ `~/Documents/MU-Capstone-Application` (README, CLAUDE.md, CONTEXT.md, `docs/HANDOVER.md` §3, ADR-0007, `docs/DEPLOY.md`, `lib/analysis/`, `lib/save-and-analyse.ts`, `lib/set.ts`, migration `knowledge_base`) เทียบกับ pipeline ใน repo นี้ (`test_rag_compare.py`, `ingest.py`, `embedding_config.py`, `error_taxonomy.py`, `mock_data/build_mock_sessions.py`)
 **แทนที่:** `docs/integration_plan.md` ที่ [`future_user_health_profile.md`](future_user_health_profile.md) อ้างถึง (ไฟล์นั้นไม่มีอยู่จริง)
 
@@ -214,15 +215,17 @@ export async function writeFeedback(input: FeedbackInput): Promise<FeedbackOutpu
 
 ## 8. checklist
 
-- [ ] ตัดสิน D1–D6 (D1, D3, D4 ต้องคุยกับ Vern · D6 ถามทีม/อาจารย์)
-- [ ] A1 แยก `rag_core/` + diff context เหมือนเดิม
-- [ ] A2 adapter + fixture จริงทุกท่า + unit test
+**ที่ตัดสินแล้ว (user, 2026-10-25):** D1 = A · D3 = ความหมายของแอป · D5 = `gemini-3.6-flash` ผ่าน env ไปก่อน · similarity ใช้รูปแบบ `feedback_input_example.json` แต่ไม่แก้ type ในแอป (service รับทั้งสองแบบ) · integrate ด้วย prompt v14 ก่อน แล้วค่อยทำ v15 · D2, D4, D6 เลื่อนไปก่อน (D6 ต้องเสร็จก่อนมีผู้ใช้จริง) · ห้ามเรียก API ที่เสียเงินโดยไม่ถามก่อน
+
+- [ ] ตัดสิน D2, D4, D6
+- [x] A1 แยก `rag_core/` (`af3d262`) · context v6b strict lunge/push-up ตรงกับ `compare_output/strict_v6b/` ทุก byte · eval_retrieval ก่อน/หลังตรงกัน 574 บรรทัด · prompt sha1 เดิม
+- [~] A2 adapter `rag_core/app_input.py` + test (`d31f371`) · ใช้ example + fixture รูปแบบปัจจุบันของแอป · **ยังขาด fixture จาก set จริงทุกท่า** (ทำตอน Phase C) · `medical_history` ถูกเก็บเป็น `health_notes` แต่ไม่ส่งให้ LLM จนกว่า v15 + D6
 - [ ] A3 prompt v15 + judge เทียบ v14
-- [ ] A4 เลือก LLM
-- [ ] A5 service + `/health` + `service/requirements.txt`
-- [ ] A6 / B4 ตาราง KB ใน Supabase + revoke + pgTAP
+- [~] A4 LLM: `gemini-3.6-flash` + `thinking_level=low` (ค่าเริ่มของโมเดลตอบ v14 ไม่ทันใน 34 s · low ตอบใน 22 s, ทดสอบจริง 1 ครั้ง) · ยังไม่ได้ผ่าน A3
+- [x] A5 service `service/` (`d5f26dc`) · `/health` ผ่านกับ v6b ใน Docker (2,197 แถว) · test แบบ mock 20+ กรณี
+- [ ] A6 / B4 ตาราง KB ใน Supabase + revoke + pgTAP · ข้อควรรู้: PGVector สร้างตาราง/collection เองตอนเปิด ต้องให้ migration สร้างก่อน และ role อ่านอย่างเดียวบน VM จะเปิดไม่ได้ถ้าไม่ปิดการสร้าง
 - [ ] B1 contract change (ถ้ามี) + ADR-0007
-- [ ] B2–B3 `feedback.ts`, `.env.example`, test
-- [ ] B5 เอกสารแอป + session log
-- [ ] C ทดสอบรวม (รวมกรณี service ล้ม)
+- [x] B2–B3 `feedback.ts` เป็น client (ไม่ตั้ง `FEEDBACK_URL` = ใช้ stub เดิม), `.env.example`, `feedback.test.ts` 6 กรณี · unit 92 ผ่าน, tsc, eslint ผ่าน · e2e ยัง skip ตามเดิม
+- [~] B5 HANDOVER §3 + `docs/sessions/2026-10-25.md` · ยังไม่แตะ ADR-0007, DEPLOY ขั้น 9, README
+- [ ] C ทดสอบรวม (รวมกรณี service ล้ม) · **มีค่าใช้จ่าย ต้องถาม user ก่อน**
 - [ ] D deploy VM
