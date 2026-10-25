@@ -182,13 +182,14 @@ class RetrievalConfig:
 DEFAULT_CONFIG = RetrievalConfig()
 
 
-def open_vectorstore(collection_name):
-    """The PGVector store every caller retrieves from: embedding_config's backend and DB."""
+def open_vectorstore(collection_name, connection=None, embeddings=None):
+    """The PGVector store every caller retrieves from: embedding_config's backend, and its DB
+    unless `connection` names another (the service reads the app's Supabase Postgres)."""
     from langchain_postgres.vectorstores import PGVector
     return PGVector(
-        embeddings=embedding_config.get_embeddings(),
+        embeddings=embeddings or embedding_config.get_embeddings(),
         collection_name=collection_name,
-        connection=embedding_config.get_connection(),
+        connection=connection or embedding_config.get_connection(),
         use_jsonb=True,
     )
 

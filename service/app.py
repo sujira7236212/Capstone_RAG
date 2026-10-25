@@ -9,7 +9,10 @@ Run it bound to localhost, never on a public interface:
     python -m service
 
 Configuration, all from the environment (the repo's .env is read too):
-    DATABASE_URL         Postgres that holds the KB's langchain tables
+    KB_DATABASE_URL      Postgres that holds the KB's langchain tables: the app's Supabase
+                         one, e.g. postgresql+psycopg://postgres:postgres@127.0.0.1:54322/postgres
+                         locally (filled by tools/copy_kb.py). Unset: DATABASE_URL, the
+                         database the eval scripts use
     GOOGLE_API_KEY       query embeddings (gemini-embedding-2) and the LLM
     KB_COLLECTION        default embedding_config.default_collection()
     FEEDBACK_LLM_MODEL   default gemini-3.6-flash (D5)
@@ -52,6 +55,7 @@ from rag_core.retrieval import DEFAULT_CONFIG, open_vectorstore, retrieve_kb_con
 log = logging.getLogger("feedback")
 
 KB_COLLECTION = os.environ.get("KB_COLLECTION") or embedding_config.default_collection()
+KB_DATABASE_URL = os.environ.get("KB_DATABASE_URL") or None  # None: embedding_config.get_connection()
 LLM_MODEL = os.environ.get("FEEDBACK_LLM_MODEL") or "gemini-3.6-flash"
 LLM_THINKING = os.environ.get("FEEDBACK_LLM_THINKING", "low") or None
 TIMEOUT_S = float(os.environ.get("FEEDBACK_TIMEOUT_S") or 45)
@@ -155,7 +159,7 @@ class Deps:
     def vectorstore(self):
         with self._lock:
             if self._vectorstore is None:
-                self._vectorstore = open_vectorstore(KB_COLLECTION)
+                self._vectorstore = open_vectorstore(KB_COLLECTION, connection=KB_DATABASE_URL)
             return self._vectorstore
 
     def chain(self, context, timeout):
@@ -163,7 +167,7 @@ class Deps:
 
     def count_rows(self):
         import sqlalchemy
-        engine = sqlalchemy.create_engine(embedding_config.get_connection())
+        engine = sqlalchemy.create_engine(KB_DATABASE_URL or embedding_config.get_connection())
         try:
             with engine.connect() as conn:
                 return conn.execute(sqlalchemy.text(

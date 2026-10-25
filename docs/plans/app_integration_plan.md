@@ -223,7 +223,7 @@ export async function writeFeedback(input: FeedbackInput): Promise<FeedbackOutpu
 - [ ] A3 prompt v15 + judge เทียบ v14
 - [~] A4 LLM: `gemini-3.6-flash` + `thinking_level=low` (ค่าเริ่มของโมเดลตอบ v14 ไม่ทันใน 34 s · low ตอบใน 22 s, ทดสอบจริง 1 ครั้ง) · ยังไม่ได้ผ่าน A3
 - [x] A5 service `service/` (`d5f26dc`) · `/health` ผ่านกับ v6b ใน Docker (2,197 แถว) · test แบบ mock 20+ กรณี
-- [ ] A6 / B4 ตาราง KB ใน Supabase + revoke + pgTAP · ข้อควรรู้: PGVector สร้างตาราง/collection เองตอนเปิด ต้องให้ migration สร้างก่อน และ role อ่านอย่างเดียวบน VM จะเปิดไม่ได้ถ้าไม่ปิดการสร้าง
+- [x] A6 / B4 KB เข้า Supabase local แล้ว · migration แอป `20261025143000_kb_langchain_tables` (ตาราง langchain 2 ตัว, RLS, revoke anon/authenticated, ไม่มี vector index เพื่อให้ค้นแบบ exact เหมือนตอน eval) + pgTAP 8 ข้อ · `tools/copy_kb.py` copy v6b 2,197 แถวพร้อม vector (md5 ตรงทุกแถว, ไม่เรียก API) · ค้นด้วย vector ที่มีในฐานบน mock 50 session ได้ผลเหมือนฐานเดิมทุกตัว · service อ่านผ่าน `KB_DATABASE_URL` · `db:reset` ล้างตาราง ต้องรัน copy ใหม่ · ยังไม่ได้รัน `supabase db advisors` (CLI ต่อ DB ไม่ได้บนเครื่องนี้) · ข้อควรรู้ Phase D: PGVector สั่ง `CREATE EXTENSION IF NOT EXISTS` ตอนเปิด role อ่านอย่างเดียวบน VM ต้องลองว่าผ่านไหม
 - [ ] B1 contract change (ถ้ามี) + ADR-0007
 - [x] B2–B3 `feedback.ts` เป็น client (ไม่ตั้ง `FEEDBACK_URL` = ใช้ stub เดิม), `.env.example`, `feedback.test.ts` 6 กรณี · unit 92 ผ่าน, tsc, eslint ผ่าน · e2e ยัง skip ตามเดิม
 - [~] B5 HANDOVER §3 + `docs/sessions/2026-10-25.md` · ยังไม่แตะ ADR-0007, DEPLOY ขั้น 9, README
