@@ -124,7 +124,7 @@ def load_documents_from_folder(base_folder):
                                         "applies_to_fault": tags,
                                         # PGVector's JSONB filter only supports scalar
                                         # comparisons via ->>'field' (see
-                                        # test_rag_compare.py _search): a list field can't
+                                        # rag_core/retrieval.py _search): a list field can't
                                         # be filtered with $in/$like. Store the same tags as
                                         # a delimited string so "fault_tags LIKE
                                         # '%|<code>|%'" is an exact-token containment test.

@@ -4,7 +4,7 @@ behaves exactly as under "prefer". Runs offline against an in-memory fake vector
 
     python tests/test_tag_mode_strict.py
 
-The heavy imports of test_rag_compare.py (dotenv, langchain) are stubbed only when they are
+The heavy imports of test_rag_compare.py and rag_core (dotenv, langchain) are stubbed only when they are
 not installed, so this runs both in the project venv and in a bare Python with numpy.
 """
 import contextlib
@@ -37,6 +37,9 @@ _stub_if_missing("langchain_core.output_parsers", StrOutputParser=_dummy)
 _stub_if_missing("langchain_core.documents", Document=_dummy)
 
 import test_rag_compare as trc  # noqa: E402
+from dataclasses import replace  # noqa: E402
+
+from rag_core import retrieval as rt  # noqa: E402
 
 EX = "lunge"
 KINDS = ("mistake", "finding", "consequence", "principle")
@@ -121,30 +124,22 @@ DOCS = [
 ]
 
 
-@contextlib.contextmanager
 def config(**kw):
-    old = {k: getattr(trc, k) for k in kw}
-    for k, v in kw.items():
-        setattr(trc, k, v)
-    try:
-        yield
-    finally:
-        for k, v in old.items():
-            setattr(trc, k, v)
+    return replace(rt.DEFAULT_CONFIG, **kw)
 
 
 @contextlib.contextmanager
 def fake_taxonomy():
-    old = trc.resolve
-    trc.resolve = lambda e, ex: {"known": e in ("back", "knee"), "code": e, "query": f"query for {e}"}
+    old = rt.resolve
+    rt.resolve = lambda e, ex: {"known": e in ("back", "knee"), "code": e, "query": f"query for {e}"}
     try:
         yield
     finally:
-        trc.resolve = old
+        rt.resolve = old
 
 
 def texts(blocks, label=None):
-    return [trc._chunk_text(doc) for _, doc, _, lab in blocks if label is None or lab == label]
+    return [rt._chunk_text(doc) for _, doc, _, lab in blocks if label is None or lab == label]
 
 
 def kinds_of(blocks, label):
@@ -154,19 +149,23 @@ def kinds_of(blocks, label):
 # Every retrieval path that applies fault_tags "prefer": _search, _search_multi,
 # _search_hybrid, _search_single.
 PATHS = {
-    "fault": dict(QUERIES="fault", HYBRID=False, KIND_POOL="split"),
-    "profile": dict(QUERIES="profile", HYBRID=False, KIND_POOL="split"),
-    "hybrid": dict(QUERIES="profile", HYBRID=True, KIND_POOL="split"),
-    "single": dict(QUERIES="fault", HYBRID=False, KIND_POOL="single"),
+    "fault": dict(queries="fault", hybrid=False, kind_pool="split"),
+    "profile": dict(queries="profile", hybrid=False, kind_pool="split"),
+    "hybrid": dict(queries="profile", hybrid=True, kind_pool="split"),
+    "single": dict(queries="fault", hybrid=False, kind_pool="single"),
 }
+
+
+STRICT_FAULT = config(tag_mode="strict", queries="fault", hybrid=False, kind_pool="split")
 
 
 def run(path, mode, errors, docs=DOCS):
     vs = FakeStore(docs)
     sys.modules["kb_bm25"] = types.SimpleNamespace(
         corpus=lambda name, ex: FakeCorpus([d for d in docs if d.metadata["exercise_id"] == ex]))
-    with config(TAG_MODE=mode, RERANK=False, **PATHS[path]), fake_taxonomy():
-        blocks, metrics = trc.retrieve_kb_blocks(vs, EX, "Lunge", errors)
+    with fake_taxonomy():
+        blocks, metrics = rt.retrieve_kb_blocks(vs, EX, "Lunge", errors,
+                                                cfg=config(tag_mode=mode, rerank=False, **PATHS[path]))
     return blocks, metrics, vs
 
 
@@ -190,8 +189,8 @@ def test_tagged_kinds_identical_to_prefer():
     for path in PATHS:
         prefer, pm, _ = run(path, "prefer", ["back"])
         strict, sm, _ = run(path, "strict", ["back"])
-        pre = [(round(s, 6), trc._chunk_text(d)) for s, d, k, _ in prefer if k == "principle"]
-        stc = [(round(s, 6), trc._chunk_text(d)) for s, d, k, _ in strict if k == "principle"]
+        pre = [(round(s, 6), rt._chunk_text(d)) for s, d, k, _ in prefer if k == "principle"]
+        stc = [(round(s, 6), rt._chunk_text(d)) for s, d, k, _ in strict if k == "principle"]
         assert pre == stc, (path, pre, stc)
         pr = next(m for m in pm if m["kind"] == "principle")
         sr = next(m for m in sm if m["kind"] == "principle")
@@ -204,8 +203,8 @@ def test_fully_tagged_fault_unchanged():
     for path in PATHS:
         prefer, pm, _ = run(path, "prefer", ["knee"])
         strict, sm, _ = run(path, "strict", ["knee"])
-        assert [(s, trc._chunk_text(d), k, l) for s, d, k, l in prefer] == \
-               [(s, trc._chunk_text(d), k, l) for s, d, k, l in strict], path
+        assert [(s, rt._chunk_text(d), k, l) for s, d, k, l in prefer] == \
+               [(s, rt._chunk_text(d), k, l) for s, d, k, l in strict], path
         assert not any(m["strict_skip"] for m in sm), path
 
 
@@ -229,16 +228,16 @@ def test_strict_never_runs_untagged_search_for_skipped_kind():
 def test_no_tagged_chunk_at_all_gives_no_match_context():
     docs = [d for d in DOCS if "|back|" not in d.metadata["fault_tags"]]
     vs = FakeStore(docs)
-    with config(TAG_MODE="strict", QUERIES="fault", HYBRID=False, KIND_POOL="split"), fake_taxonomy():
-        ctx, metrics = trc.retrieve_kb_context(vs, EX, "Lunge", ["back"])
-    assert ctx == trc.NO_MATCH_CONTEXT, ctx
+    with fake_taxonomy():
+        ctx, metrics = rt.retrieve_kb_context(vs, EX, "Lunge", ["back"], cfg=STRICT_FAULT)
+    assert ctx == rt.NO_MATCH_CONTEXT, ctx
     assert all(m["strict_skip"] for m in metrics)
 
 
 def test_context_header_only_for_tagged_chunks():
     vs = FakeStore(DOCS)
-    with config(TAG_MODE="strict", QUERIES="fault", HYBRID=False, KIND_POOL="split"), fake_taxonomy():
-        ctx, _ = trc.retrieve_kb_context(vs, EX, "Lunge", ["back"])
+    with fake_taxonomy():
+        ctx, _ = rt.retrieve_kb_context(vs, EX, "Lunge", ["back"], cfg=STRICT_FAULT)
     assert "[principle | re: back |" in ctx
     for kind in ("mistake", "finding", "consequence"):
         assert f"[{kind} | re: back |" not in ctx, ctx
@@ -271,13 +270,13 @@ def test_single_budget_excludes_skipped_kinds():
     strict, _, _ = run("single", "strict", ["back"], many)
     # KIND_POOL "single" shares one budget across kinds. Strict sums MAX_PER_KIND over the
     # kinds that are still searched, so a skipped kind's quota is not handed to the others.
-    assert len([b for b in strict if b[2] == "principle"]) == trc.MAX_PER_KIND["principle"], strict
+    assert len([b for b in strict if b[2] == "principle"]) == rt.MAX_PER_KIND["principle"], strict
     assert len([b for b in prefer if b[2] == "principle"]) == 6, prefer  # prefer: 9-slot shared budget
 
 
 def test_metrics_table_marks_strict_skip():
     _, metrics, _ = run("fault", "strict", ["back"])
-    table = trc.metrics_table(metrics)
+    table = rt.metrics_table(metrics)
     assert table.count("strict —") == 3, table
 
 
@@ -297,7 +296,7 @@ def test_cli_accepts_strict():
         assert trc.parse_args().tag_mode == "prefer"
     finally:
         sys.argv = old
-    assert trc.TAG_MODE == "strict"
+    assert rt.DEFAULT_CONFIG.tag_mode == "strict"
     src = open(os.path.join(ROOT, "eval", "eval_retrieval.py"), encoding="utf-8").read()
     assert 'choices=["prefer", "strict", "union"]' in src
 
@@ -330,10 +329,8 @@ def test_eval_retrieval_miss_reason_and_columns():
     assert er._miss_reason(["t"], meta, {}, {"mistake": False}, "back", {"mistake": True}) == "tag_strict"
     assert er._miss_reason(["t"], meta, {}, {"mistake": True}, "back") == "tag_filter"
     assert er._miss_reason(["t"], meta, {}, {"mistake": False}, "back") == "rank"
-    with config(TAG_MODE="prefer"):
-        assert "tag_strict" not in er._miss_reasons()
-    with config(TAG_MODE="strict"):
-        assert "tag_strict" in er._miss_reasons()
+    assert "tag_strict" not in er._miss_reasons(config(tag_mode="prefer"))
+    assert "tag_strict" in er._miss_reasons(config(tag_mode="strict"))
 
 
 if __name__ == "__main__":

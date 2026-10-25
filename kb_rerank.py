@@ -1,4 +1,4 @@
-"""Cross-encoder relevance scores for test_rag_compare.py's --rerank gate (ablation R6).
+"""Cross-encoder relevance scores for rag_core/retrieval.py's --rerank gate (ablation R6).
 
 BAAI/bge-reranker-v2-m3 (XLMRobertaForSequenceClassification) through transformers, run locally: free,
 deterministic, and independent of eval/build_relevance_pool.py's judge (gemini-3.8-flash) -

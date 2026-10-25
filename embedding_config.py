@@ -29,7 +29,7 @@ COLLECTION_NAMES = {
 
 # gemini-embedding-2 uses a much larger vector space than MiniLM's 384 dims, so cosine
 # distances land on a different scale entirely - gate thresholds tuned for one backend
-# (test_rag_compare.py RELATIVE_MARGIN / ABS_DISTANCE_CAP) are meaningless for the
+# (rag_core/retrieval.py RELATIVE_MARGIN / ABS_DISTANCE_CAP) are meaningless for the
 # other. See docs/kb/kb_quality_assessment.md section 10 for the Gemini-side re-sweep.
 
 

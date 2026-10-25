@@ -1,913 +1,24 @@
 import os
 import json
-import re
-from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import StrOutputParser
 import warnings
+from dataclasses import replace
 
-from error_taxonomy import resolve
+from dotenv import load_dotenv
+
 import embedding_config
+from rag_core.generate import GENERATION_ERROR, LLM_TEMPERATURE, build_chain, render_input
+from rag_core.prompt import SYSTEM_PROMPT, model_payload
+from rag_core.retrieval import DEFAULT_CONFIG, metrics_table, open_vectorstore, retrieve_kb_context
 
 warnings.filterwarnings("ignore")
 
 load_dotenv()
 
-# ---------------------------------------------------------------------------
-# Retrieval configuration (v8 / Gemini). v6 recalibrated these by reading the 4 mock
-# sessions; v7 set them from eval/golden_chunks.json + eval/eval_retrieval.py against
-# kb_local_curated_v4 (MiniLM) - full story in docs/kb/kb_quality_assessment.md section 7.
-# v8 (2026-09-14) re-sweeps RELATIVE_MARGIN against kb_gemini_curated_v4, now that
-# embedding_config.DEFAULT_MODE is "gemini" - section 10. CANDIDATE_K, MAX_PER_KIND and
-# NEAR_DUP_JACCARD below are carried over from the MiniLM tuning unverified under
-# Gemini; they weren't part of the v8 sweep.
-# Re-run `python eval/eval_retrieval.py` after touching any number below.
-# ---------------------------------------------------------------------------
-
-# Pool size fetched per (error, item_kind). Deliberately larger than the number of
-# chunks we intend to keep: this KB stores the same fact many times over in slightly
-# different wording (10 of the top 10 bicep-curl "momentum" hits are paraphrases of one
-# sentence), so a raw top-k is mostly redundancy. We over-fetch, then de-duplicate and
-# quota down. Raising this alone does NOT add information - it adds paraphrases.
-CANDIDATE_K = 12
-
-# Max chunks kept per (error, item_kind) after de-duplication. Kept per-kind rather
-# than as one blended budget because mistake-chunks outnumber and out-rank
-# finding-chunks for fault-shaped queries, and findings are where the citable numbers
-# live - a blended top-k returns 15 mistakes and 0 findings, leaving the model with
-# nothing concrete to cite (and therefore prone to inventing one).
-# `principle` 3 -> 2 with v7's per-error principle search: the third principle was
-# never a second correct one - on the golden set it was the chunk that contradicts the
-# fix ("A slight forward lean of the trunk distributes the load evenly" under trunk
-# lean, "Perform a partial lunge to 50 degrees" under shallow lunge). 3 -> 2 moved
-# principle bad 8 -> 5 and good 13 -> 12 across the 10 faults.
-# `consequence` (KB v5): same budget as `finding` - one clear harm-mechanism sentence is
-# enough for "why it matters" in the prompt, a second is usually a paraphrase of the first.
-MAX_PER_KIND = {"mistake": 3, "finding": 2, "principle": 2, "consequence": 2}
-
-# Hard backstop per kind: beyond this the closest chunk is not about the fault at all,
-# and the honest result is an empty column rather than the nearest neighbour. 0.40 is
-# the same "usable" bar tools/kb_coverage.py reports against, so the two tools agree on what
-# counts as coverage. Kept at 0.40 under Gemini too, but it is currently non-binding:
-# gemini-embedding-2's best-hit distances run ~0.02-0.19 on this KB (see RELATIVE_MARGIN
-# below), so best + RELATIVE_MARGIN never approaches 0.40 in practice. It stays as a
-# backstop for a fault with no real match in the KB at all, same role it played under
-# MiniLM (docs/kb/kb_quality_assessment.md section 7.2).
-ABS_DISTANCE_CAP = {"mistake": 0.40, "finding": 0.40, "principle": 0.40, "consequence": 0.40}
-
-# Relative gate, applied per kind: keep only hits within this margin of the best hit
-# for that kind. Absolute thresholds do not transfer across exercises, but the *gap*
-# between a real match and the next-best noise is consistent.
-#
-# 0.03, re-swept for Gemini (2026-09-14, docs/kb/kb_quality_assessment.md section 10).
-# gemini-embedding-2's cosine distances cluster far tighter than MiniLM's - the raw
-# <=0.40 pool tools/kb_coverage.py reports is saturated at 40/40 for nearly every fault, so
-# ABS_DISTANCE_CAP above stopped discriminating anything and RELATIVE_MARGIN became the
-# only real filter. On the golden set (single mode, kb_gemini_curated_v4): 0.10/0.08 ->
-# bad 6 / good 26, 0.05 -> bad 6 / good 25, 0.04 -> bad 4 / good 24, 0.03 -> bad 2 /
-# good 23, 0.015 -> bad 2 / good 20 (same bad, 3 fewer good), 0.01 -> bad 1 / good 19.
-# Picked 0.03: the point where tightening further stops trading away bad and starts
-# only trading away good. (The MiniLM value, 0.06, is unrelated - it's tuned to a
-# completely different distance scale and stays correct for kb_local_curated_v4.)
-RELATIVE_MARGIN = 0.03
-
-# Jaccard token overlap above which two kept chunks are treated as the same fact.
-NEAR_DUP_JACCARD = 0.72
-
-# How the fault_tags pre-pass (KB v5) combines with plain semantic search - see _search().
-#   prefer - tagged pool only whenever it has any hit for the kind, untagged search as a
-#            fallback when it is empty (behaviour through R0).
-#   union  - both pools, merged, gated on distance adjusted by TAG_BONUS: tagged with this
-#            fault -TAG_BONUS, tagged only with other faults +TAG_BONUS, untagged (fault_tags
-#            "") unchanged. Most v5 chunks are untagged (the curator tags only items it could
-#            pin to one fault), so under `prefer` a fault with a single tagged chunk of a kind
-#            hid every untagged chunk of that kind (ablation B0: miss reason tag_filter).
-#   strict - prefer, minus the fallback: a kind with no chunk tagged for the fault stays
-#            EMPTY instead of searching every chunk of the exercise. A kind that has tagged
-#            chunks behaves exactly as under prefer. The fallback pool is the whole exercise,
-#            so for a fault the curator tagged thinly it returned other faults' chunks, and the
-#            context header still labelled them "re: <fault>" (docs/reports/eval_report_2026-10-20.md
-#            section 3.8b: LU-004 straight_back_leg, 8 chunks of which 1 was about the fault).
-#            Only applies when the error resolved to a fault code; with no code (unmapped
-#            error, --raw-query, flawless session) there is no tag to be strict about and the
-#            search is the same as prefer.
-# TAG_BONUS = one RELATIVE_MARGIN width: a tagged chunk competes as if it were one margin
-# closer, i.e. it survives the gate whenever it is within 2x margin of an untagged best.
-# Set before the R1 run, not tuned on it.
-# Default strict as of 2026-10-25 (user decision, docs/reports/eval_v6b_context_2026-10-24.md): on v6b
-# it differs from prefer only where a fault has no tagged chunk of a kind (straight_back_leg
-# finding). Baseline v14 ran under prefer; pass --tag-mode prefer to reproduce it.
-TAG_MODE = "strict"
-TAG_BONUS = 0.03
-
-# How the kinds share the context budget - see retrieve_kb_blocks().
-#   split  - one search, one RELATIVE_MARGIN and one MAX_PER_KIND quota per kind (through R1).
-#   single - one search over every requested kind at once (k = CANDIDATE_K per kind, so the
-#            same number of candidates is looked at), one margin from the overall best hit,
-#            one budget = sum of MAX_PER_KIND over those kinds. Which chunks are ELIGIBLE is
-#            unchanged: each kind still applies the fault_tags "prefer" rule on its own (a kind
-#            with any chunk tagged for the fault searches only its tagged chunks). Ablation
-#            B0/R0: most missed facts were lost to a full per-kind quota (159) or to ranking
-#            below the top CANDIDATE_K of their own kind (146), not to the budget as a whole.
-KIND_POOL = "split"
-
-# Queries embedded per resolved fault - see _search_multi().
-#   fault   - the taxonomy query alone (through R2).
-#   profile - QUERY_PROFILE: the taxonomy query ("what") plus one template each for "why it
-#             matters" and "how to fix it". The taxonomy query is worded like a curator
-#             mistake on purpose (error_taxonomy.py docstring), which keeps mistake chunks
-#             closest; consequence/principle chunks answer the other two questions. Templates
-#             are generic, not per fault, and were fixed before the R4 run.
-# Default "profile" since ablation R4 (vs R0: recall 62 -> 66 facts, wrong_fault 6 = 6, golden
-# bad 1 -> 0, pool-precision 0.79 -> 0.80). `--queries fault` restores the R0 behaviour.
-QUERIES = "profile"
-
-# Lexical (BM25) signal next to the vector one - see _search_hybrid() and kb_bm25.py.
-# Per query, BM25_K keyword hits join the vector top-CANDIDATE_K as candidates. The margin
-# still runs on vector distance alone (relevance floor, until a reranker replaces it); BM25
-# only changes the ORDER in which margin-passing chunks claim the per-kind quota, by
-# BM25_WEIGHT * (bm25 / best bm25 for that query): the strongest keyword match gets one
-# RELATIVE_MARGIN width of head start, same reasoning as TAG_BONUS. Fixed before the R5 run.
-HYBRID = False
-BM25_K = CANDIDATE_K
-BM25_WEIGHT = 0.03
-
-# Cross-encoder reranking in place of RELATIVE_MARGIN - see _search_multi() and kb_rerank.py.
-# Candidates are unchanged (every query's vector top-CANDIDATE_K per kind); each is scored
-# against every query string, best score kept, and the gate becomes score >= RERANK_MIN
-# instead of "within RELATIVE_MARGIN of the best distance". Order within the per-kind quota
-# follows the score. RERANK_MIN = 0.5 on the sigmoid, i.e. logit 0: the model's own
-# relevant / not-relevant boundary, fixed before the R6 run rather than tuned on it.
-RERANK = False
-RERANK_MIN = 0.5
-QUERY_PROFILE = {
-    "what": "{q}",
-    "why": "Harmful consequences, injury risk and joint stress caused by: {q}",
-    "fix": "How to correct it, coaching cues and corrective exercises for: {q}",
-}
-
-NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
-
-
-def _tokens(text):
-    return set(re.findall(r"[a-z0-9]+", text.lower()))
-
-
-def _is_near_duplicate(text, kept_texts):
-    """True if `text` restates something already kept (token Jaccard >= NEAR_DUP_JACCARD).
-
-    Content-level de-duplication, unlike ingest.py's hash-based dedup which only catches
-    byte-identical content+metadata pairs - the same sentence extracted from two
-    different sources has different metadata and survives that check.
-    """
-    t = _tokens(text)
-    if not t:
-        return True
-    for other in kept_texts:
-        o = _tokens(other)
-        if not o:
-            continue
-        if len(t & o) / len(t | o) >= NEAR_DUP_JACCARD:
-            return True
-    return False
-
-
-def format_source(raw_source):
-    """Turn a curator `source` label into something citable in one line.
-
-    Raw values look like an absolute Windows path plus a window marker, e.g.
-    'C:/.../data/squat/TheBackSquat.pdf [part 3/22]', or for scraped pages
-    'C:/.../data/squat/urls.txt (https://blog.nasm.org/biomechanics-of-the-squat)'.
-    Neither is readable as-is. The label is no longer shown to the user (the prompt
-    forbids attributions in the feedback) but it stays in the context header so the
-    report reader can trace every fact in the output back to its chunk.
-    """
-    if not raw_source:
-        return "knowledge base"
-    url = re.search(r"https?://([^\s)]+)", raw_source)
-    if url:
-        # Some NASM articles only survive on the Wayback Machine; cite the original
-        # address, not the archive wrapper.
-        return re.sub(r"^web\.archive\.org/web/\d+/https?://", "", url.group(1)).rstrip("/")
-    base = re.sub(r"\s*\[part \d+/\d+\]\s*$", "", raw_source).strip()
-    base = base.replace("\\", "/").rsplit("/", 1)[-1]
-    return re.sub(r"\.(pdf|txt|json)$", "", base, flags=re.IGNORECASE)
-
-
-def _chunk_text(doc):
-    """ingest.py embeds the bare item text (no header - see ingest.py's item loop) and
-    also copies it into metadata["text"]. Read from metadata here rather than
-    page_content because RecursiveCharacterTextSplitter's pass 2 could in principle have
-    re-split a long item; metadata["text"] is always the untouched original string.
-    Falls back to page_content for any chunk that predates the metadata["text"] field."""
-    return doc.metadata.get("text") or doc.page_content
-
-
-def _search(vectorstore, query, exercise_id, kind, already_kept, code=None, trace=None):
-    """One vector search, with the kind filter pushed INTO the query.
-
-    v5 fetched top-k filtered only on exercise_id and dropped the wrong item_kind
-    afterwards in Python. Because `principle` chunks outnumber `mistake` chunks roughly
-    3:1 and rank highly for form-related wording, the top-k was routinely all-principle
-    and the post-filter emptied it - bicep-curl "Using momentum" returned zero chunks
-    while 12 verbatim-relevant mistake chunks sat in the KB unreachable.
-
-    `already_kept` is the running list of chunk texts kept for the WHOLE session, not
-    just this query: two different errors on the same session ("Using momentum" and
-    "Swinging torso") legitimately match the same KB sentences, and without a shared
-    de-duplication list the context ends up restating one fact five times.
-
-    `code`: the resolved fault code (error_taxonomy.resolve()'s "code"), used as a
-    tag-filter pre-pass (KB v5). curated_data_v5 tags each item's own
-    applies_to_fault, stored per chunk as "fault_tags" ("|code-a|code-b|" or "" - see
-    ingest.py); filtering on it first removes wrong-fault neighbours the embedding alone
-    cannot separate (the curator already made that judgement once, precisely, per item -
-    no reason to re-derive it from cosine distance). If the tagged pool is empty - either
-    `code` is None, or this is a kb_gemini_curated_v4 collection where every chunk's
-    fault_tags is "" because v4 never tagged per item - fall back to the untagged search,
-    which is exactly today's behaviour. That is TAG_MODE "prefer". Under "union" both
-    searches always run and are merged, ranked by distance adjusted with TAG_BONUS (see
-    TAG_MODE); the gate below then runs on the adjusted distance, while `kept` still
-    carries the raw one so context order and metrics stay on the embedding's scale.
-    Under "strict" an empty tagged pool (with a `code`) returns nothing instead of falling
-    back to the untagged search.
-    Returns (kept, tagged): `tagged` = the tag-filtered search had hits, i.e. `code`'s tag
-    influenced this kind's result.
-
-    `trace`: optional list; when given, every candidate in the pool is appended with the
-    gate's decision for it (kept / quota / margin / dup) so eval/eval_retrieval.py can say
-    WHY a relevant chunk never reached the context. Kept set is identical with or without
-    it - the loop below only stopped breaking early so later candidates get a reason too.
-    """
-    base_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
-    tagged = False
-    hits = []
-    if code:
-        hits = vectorstore.similarity_search_with_score(
-            query, k=CANDIDATE_K,
-            filter={**base_filter, "fault_tags": {"$like": f"%|{code}|%"}},
-        )
-        tagged = bool(hits)
-        if TAG_MODE == "strict" and not tagged:
-            return [], False
-    if TAG_MODE == "union" and code:
-        hits = _union_by_tag(hits, vectorstore.similarity_search_with_score(
-            query, k=CANDIDATE_K, filter=base_filter), code)
-    else:
-        if not hits:
-            hits = vectorstore.similarity_search_with_score(query, k=CANDIDATE_K, filter=base_filter)
-        hits = [(doc, score, score) for doc, score in hits]
-    if not hits:
-        return [], False
-    best = hits[0][2]
-    cutoff = min(ABS_DISTANCE_CAP[kind], best + RELATIVE_MARGIN)
-    kept = []
-    for doc, score, adj in hits:
-        text = _chunk_text(doc)
-        # Same decisions, same order as the original early-break loop: hits are sorted by
-        # (adjusted) distance, so once one is past the cutoff every later one is too.
-        if len(kept) >= MAX_PER_KIND[kind]:
-            reason = "quota"
-        elif adj > cutoff:
-            reason = "margin"
-        elif _is_near_duplicate(text, already_kept):
-            reason = "dup"
-        else:
-            reason = "kept"
-            kept.append((doc, score))
-            already_kept.append(text)
-        if trace is not None:
-            trace.append({"kind": kind, "text": text, "score": score, "adj": adj, "reason": reason,
-                          "tagged": tagged, "code": code})
-        elif reason in ("quota", "margin"):
-            break
-    return kept, tagged
-
-
-def _union_by_tag(tagged_hits, plain_hits, code):
-    """TAG_MODE "union": merge the tag-filtered and plain top-k into one list of
-    (doc, raw distance, adjusted distance) sorted by adjusted distance. A chunk in both
-    lists appears once. Adjustment by the chunk's own fault_tags, not by which list it
-    came from - a tagged chunk can rank in the plain top-k too."""
-    merged = {}
-    for doc, score in list(tagged_hits) + list(plain_hits):
-        key = doc.id or (_chunk_text(doc), doc.metadata.get("source"))
-        if key in merged:
-            continue
-        tags = doc.metadata.get("fault_tags") or ""
-        if f"|{code}|" in tags:
-            adj = score - TAG_BONUS
-        elif tags.strip("|"):
-            adj = score + TAG_BONUS
-        else:
-            adj = score
-        merged[key] = (doc, score, adj)
-    return sorted(merged.values(), key=lambda h: h[2])
-
-
-def _search_single(vectorstore, query, exercise_id, kinds, already_kept, code=None, trace=None):
-    """KIND_POOL "single": the gate of _search() run once over all `kinds` together.
-
-    Eligibility per kind is the same as _search() under TAG_MODE "prefer": a kind with any
-    chunk tagged for `code` contributes only its tagged chunks, any other kind all of its
-    chunks (TAG_MODE "strict": any other kind none, and its MAX_PER_KIND leaves the budget
-    with it, so the kinds that do have tagged chunks get exactly the budget they get under
-    prefer). That is pushed into ONE query as an $or of per-kind filters, so the kinds then
-    compete for one margin (from the overall best hit) and one budget (sum of MAX_PER_KIND
-    over `kinds`). The query is embedded once and reused for every probe.
-
-    Returns (kept, tagged_kinds, best_by_kind): kept = [(doc, score, kind)], tagged_kinds =
-    the kinds whose tag filter had hits, best_by_kind = closest eligible chunk per kind (the
-    per-kind `best` metric, comparable with split mode's).
-    """
-    if TAG_MODE not in ("prefer", "strict") or QUERIES != "fault" or HYBRID:
-        raise ValueError("KIND_POOL 'single' is implemented for TAG_MODE 'prefer'/'strict', QUERIES 'fault', "
-                         "no HYBRID only")
-    vec = vectorstore.embeddings.embed_query(query)
-    kind_filters, tagged_kinds, best_by_kind, eligible = [], set(), {}, []
-    for kind in kinds:
-        kf = {"item_kind": {"$eq": kind}}
-        if code:
-            tf = {"$and": [kf, {"fault_tags": {"$like": f"%|{code}|%"}}]}
-            probe = vectorstore.similarity_search_with_score_by_vector(
-                vec, k=1, filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, tf]})
-            if probe:
-                tagged_kinds.add(kind)
-                kf = tf
-        if kind not in tagged_kinds:
-            if TAG_MODE == "strict" and code:
-                best_by_kind[kind] = None
-                continue
-            probe = vectorstore.similarity_search_with_score_by_vector(
-                vec, k=1, filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, kf]})
-        best_by_kind[kind] = probe[0][1] if probe else None
-        kind_filters.append(kf)
-        eligible.append(kind)
-    if not kind_filters:
-        return [], tagged_kinds, best_by_kind
-    hits = vectorstore.similarity_search_with_score_by_vector(
-        vec, k=CANDIDATE_K * len(eligible),
-        filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, {"$or": kind_filters}]})
-    if not hits:
-        return [], tagged_kinds, best_by_kind
-    budget = sum(MAX_PER_KIND[k] for k in eligible)
-    best = hits[0][1]
-    kept = []
-    for doc, score in hits:
-        kind = doc.metadata.get("item_kind")
-        text = _chunk_text(doc)
-        if len(kept) >= budget:
-            reason = "quota"
-        elif score > min(ABS_DISTANCE_CAP[kind], best + RELATIVE_MARGIN):
-            reason = "margin"
-        elif _is_near_duplicate(text, already_kept):
-            reason = "dup"
-        else:
-            reason = "kept"
-            kept.append((doc, score, kind))
-            already_kept.append(text)
-        if trace is not None:
-            trace.append({"kind": kind, "text": text, "score": score, "reason": reason,
-                          "tagged": kind in tagged_kinds, "code": code})
-    return kept, tagged_kinds, best_by_kind
-
-
-def _search_multi(vectorstore, vecs, exercise_id, kind, already_kept, code=None, trace=None, texts=None):
-    """QUERIES "profile": the per-kind gate of _search() fed by several queries.
-
-    `vecs` = [query embedding]. Each query runs its own top-CANDIDATE_K search over the same
-    eligible pool (fault_tags "prefer": tagged chunks only if the kind has any; "strict":
-    tagged chunks only, nothing if the kind has none). Raw distances
-    are not comparable across queries - the taxonomy query is phrased like the chunks and
-    sits far closer than a template - so every candidate is scored by its distance above
-    THAT query's best hit, taking the smallest over the queries it came back for. The gate
-    then runs on that: within RELATIVE_MARGIN (i.e. inside the margin of at least one
-    query), MAX_PER_KIND quota, near-dup. With a single query this is exactly _search().
-    `kept` carries the raw distance of the query the chunk was closest to relative to its best.
-
-    RERANK: same candidates, but the margin test and the order are replaced by the
-    cross-encoder score of each chunk against `texts` (the query strings behind `vecs`),
-    best over the queries - see RERANK.
-
-    Returns (kept, tagged, best): best = smallest raw distance over the queries.
-    """
-    base_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
-    filt = base_filter
-    if code and vectorstore.similarity_search_with_score_by_vector(
-            vecs[0], k=1, filter={**base_filter, "fault_tags": {"$like": f"%|{code}|%"}}):
-        filt = {**base_filter, "fault_tags": {"$like": f"%|{code}|%"}}
-    tagged = filt is not base_filter
-    if TAG_MODE == "strict" and code and not tagged:
-        return [], False, None
-    merged = {}
-    for vec in vecs:
-        hits = vectorstore.similarity_search_with_score_by_vector(vec, k=CANDIDATE_K, filter=filt)
-        if not hits:
-            continue
-        q_best = hits[0][1]
-        for doc, score in hits:
-            rel = score - q_best
-            if score > ABS_DISTANCE_CAP[kind]:
-                rel = float("inf")
-            key = doc.id or (_chunk_text(doc), doc.metadata.get("source"))
-            if key not in merged or rel < merged[key][2]:
-                merged[key] = (doc, score, rel)
-    if not merged:
-        return [], False, None
-    best = min(score for _, score, _ in merged.values())
-    if RERANK:
-        # RERANK replaces the margin: gate on the cross-encoder's score (best over `texts`),
-        # order by it. ABS_DISTANCE_CAP stays as the backstop (rel is inf past it).
-        import kb_rerank
-        cands = list(merged.values())
-        rr = kb_rerank.max_scores(texts, [_chunk_text(doc) for doc, _, _ in cands])
-        ranked = sorted(((doc, score, rel, r) for (doc, score, rel), r in zip(cands, rr)),
-                        key=lambda h: (-h[3], h[1]))
-    else:
-        ranked = [(doc, score, rel, None) for doc, score, rel in sorted(merged.values(), key=lambda h: (h[2], h[1]))]
-    kept = []
-    for doc, score, rel, rr in ranked:
-        text = _chunk_text(doc)
-        if len(kept) >= MAX_PER_KIND[kind]:
-            reason = "quota"
-        elif (rr < RERANK_MIN or rel == float("inf")) if RERANK else rel > RELATIVE_MARGIN:
-            # under RERANK "margin" = below RERANK_MIN, i.e. the relevance gate either way
-            reason = "margin"
-        elif _is_near_duplicate(text, already_kept):
-            reason = "dup"
-        else:
-            reason = "kept"
-            kept.append((doc, score))
-            already_kept.append(text)
-        if trace is not None:
-            trace.append({"kind": kind, "text": text, "score": score, "rel": rel, "rerank": rr,
-                          "reason": reason, "tagged": tagged, "code": code})
-    return kept, tagged, best
-
-
-def _search_hybrid(vectorstore, texts, vecs, exercise_id, kind, already_kept, code=None, trace=None):
-    """HYBRID: _search_multi() over kb_bm25's in-memory corpus, with BM25 as a second signal.
-
-    Same eligible pool (fault_tags "prefer"/"strict" per kind), same vector candidates (top-CANDIDATE_K
-    per query, exact cosine distance), same margin test on the vector distance above each
-    query's best. Added: each query's top-BM25_K keyword hits join the candidates, and the
-    order that fills the quota is (distance above best) - BM25_WEIGHT * normalised BM25,
-    minimum over queries. With BM25_K = 0 and BM25_WEIGHT = 0 this is _search_multi().
-    Returns (kept, tagged, best) like _search_multi().
-    """
-    import numpy as np
-    import kb_bm25
-    corp = kb_bm25.corpus(vectorstore.collection_name, exercise_id)
-    idx = [i for i, d in enumerate(corp.docs) if d.metadata.get("item_kind") == kind]
-    tagged = False
-    if code:
-        tagged_idx = [i for i in idx if f"|{code}|" in (corp.docs[i].metadata.get("fault_tags") or "")]
-        if tagged_idx:
-            idx, tagged = tagged_idx, True
-        elif TAG_MODE == "strict":
-            return [], False, None
-    if not idx:
-        return [], False, None
-    idx = np.array(idx)
-    merged = {}  # corpus index -> [raw distance of the rel-argmin query, rel, order key, bm25]
-    best = None
-    for text, vec in zip(texts, vecs):
-        dist = corp.distances(vec, idx)
-        lex = corp.bm25(text, idx)
-        q_best, lex_max = float(dist.min()), float(lex.max())
-        best = q_best if best is None else min(best, q_best)
-        cand = set(np.argsort(dist, kind="stable")[:CANDIDATE_K].tolist())
-        if BM25_K and lex_max > 0:
-            cand |= {j for j in np.argsort(-lex, kind="stable")[:BM25_K].tolist() if lex[j] > 0}
-        for j in cand:
-            score = float(dist[j])
-            rel = score - q_best if score <= ABS_DISTANCE_CAP[kind] else float("inf")
-            key = rel - (BM25_WEIGHT * lex[j] / lex_max if lex_max > 0 else 0.0)
-            m = merged.setdefault(int(idx[j]), [score, rel, key, float(lex[j])])
-            if rel < m[1]:
-                m[0], m[1] = score, rel
-            m[2] = min(m[2], key)
-            m[3] = max(m[3], float(lex[j]))
-    kept = []
-    for i, (score, rel, key, lex) in sorted(merged.items(), key=lambda kv: (kv[1][2], kv[1][0])):
-        doc = corp.docs[i]
-        text = _chunk_text(doc)
-        if len(kept) >= MAX_PER_KIND[kind]:
-            reason = "quota"
-        elif rel > RELATIVE_MARGIN:
-            reason = "margin"
-        elif _is_near_duplicate(text, already_kept):
-            reason = "dup"
-        else:
-            reason = "kept"
-            kept.append((doc, score))
-            already_kept.append(text)
-        if trace is not None:
-            trace.append({"kind": kind, "text": text, "score": score, "rel": rel, "bm25": lex,
-                          "reason": reason, "tagged": tagged, "code": code})
-    return kept, tagged, best
-
-
-def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
-                       trace=None):
-    """Retrieve KB chunks relevant to the session's actual errors (or general principles
-    for a flawless session). Returns (blocks, metrics) where blocks is a list of
-    (distance, doc, kind, error_label) sorted by distance - the structured form of what
-    retrieve_kb_context renders as text. Split out so eval/eval_retrieval.py can score
-    exactly the chunks the gate passes without parsing the rendered context back.
-
-    Each error is resolved through error_taxonomy.py into a fault-name query before it is
-    embedded, and each (error, kind) pair is searched separately so mistake-chunks and
-    finding-chunks each get their own budget.
-
-    `raw_query=True` bypasses the taxonomy and embeds the error_type string exactly as
-    received. That is the A/B control for "does the taxonomy layer buy anything": the
-    upstream fault names are short labels ("Butt wink", "Elbow flare") and the question is
-    whether the descriptive query in error_taxonomy.py finds materially closer chunks.
-
-    `metrics` is one row per (error, kind): the query actually embedded, the best distance
-    in the candidate pool, and how many chunks survived the gate. Reported next to the LLM
-    output so the retrieval side can be compared across runs numerically - the generation
-    side at temperature 0.7 cannot be.
-
-    Every returned chunk carries its kind and a readable source label. The prompt no longer
-    asks the model to repeat the source to the user, but the label stays in the header so
-    the report reader can trace a fact in the output back to its chunk - v5 passed bare
-    sentences with no attribution at all, which made that check impossible.
-
-    `trace`: optional list passed through to _search() - see there. Each entry also gets
-    the error label it was retrieved for.
-    """
-    kept_texts = []
-    blocks = []
-    metrics = []
-    unknown_codes = []
-
-    def collect(query, kinds, label, code=None):
-        if KIND_POOL == "single":
-            kind_trace = [] if trace is not None else None
-            kept, tagged_kinds, best_by_kind = _search_single(
-                vectorstore, query, exercise_id, kinds, kept_texts, code=code, trace=kind_trace)
-            if trace is not None:
-                trace.extend({**t, "error": label} for t in kind_trace)
-            for kind in kinds:
-                metrics.append({
-                    "error": label, "kind": kind, "query": query, "best": best_by_kind[kind],
-                    "kept": sum(1 for _, _, k in kept if k == kind),
-                    "tagged": kind in tagged_kinds, "tag_exclusive": kind in tagged_kinds,
-                    "strict_skip": TAG_MODE == "strict" and bool(code) and kind not in tagged_kinds,
-                })
-            for doc, score, kind in kept:
-                blocks.append((score, doc, kind, label))
-            return
-        if (QUERIES == "profile" or HYBRID or RERANK) and code:
-            if HYBRID and RERANK:
-                raise ValueError("HYBRID and RERANK are not implemented together")
-            texts = [t.format(q=query) for t in QUERY_PROFILE.values()] if QUERIES == "profile" else [query]
-            vecs = [vectorstore.embeddings.embed_query(t) for t in texts]
-            for kind in kinds:
-                kind_trace = [] if trace is not None else None
-                if HYBRID:
-                    kept, tagged, best = _search_hybrid(vectorstore, texts, vecs, exercise_id, kind,
-                                                        kept_texts, code=code, trace=kind_trace)
-                else:
-                    kept, tagged, best = _search_multi(vectorstore, vecs, exercise_id, kind, kept_texts,
-                                                       code=code, trace=kind_trace, texts=texts)
-                if trace is not None:
-                    trace.extend({**t, "error": label} for t in kind_trace)
-                metrics.append({
-                    "error": label, "kind": kind,
-                    "query": query + (f" (+{'/'.join(list(QUERY_PROFILE)[1:])})" if QUERIES == "profile" else "")
-                             + (" [hybrid]" if HYBRID else "") + (" [rerank]" if RERANK else ""),
-                    "best": best, "kept": len(kept), "tagged": tagged, "tag_exclusive": tagged,
-                    "strict_skip": TAG_MODE == "strict" and not tagged,
-                })
-                for doc, score in kept:
-                    blocks.append((score, doc, kind, label))
-            return
-        for kind in kinds:
-            kind_trace = [] if trace is not None else None
-            kept, tagged = _search(vectorstore, query, exercise_id, kind, kept_texts, code=code,
-                                   trace=kind_trace)
-            if trace is not None:
-                trace.extend({**t, "error": label} for t in kind_trace)
-            # Best distance is measured on the raw pool, not on `kept`: a query whose
-            # closest chunk fails the cap still tells us how far off it was. Probe the
-            # SAME pool _search actually kept from (tagged if the tag-filter had hits,
-            # untagged otherwise) so `best` describes the pool the gate saw. Under union
-            # that is the whole unfiltered pool (raw distance, before TAG_BONUS).
-            # `tag_exclusive`: the tag filter shut the untagged chunks out of this kind's
-            # search altogether (prefer mode with tagged hits) - eval_retrieval.py's
-            # tag_filter miss reason only exists then.
-            # `strict_skip`: TAG_MODE "strict" left this kind empty because no chunk of it is
-            # tagged for `code` - the pool the gate saw is empty, so `best` is None.
-            tag_exclusive = tagged and TAG_MODE != "union"
-            strict_skip = TAG_MODE == "strict" and bool(code) and not tagged
-            probe_filter = {"exercise_id": exercise_id, "item_kind": {"$in": [kind]}}
-            if tag_exclusive:
-                probe_filter["fault_tags"] = {"$like": f"%|{code}|%"}
-            pool = [] if strict_skip else vectorstore.similarity_search_with_score(query, k=1, filter=probe_filter)
-            metrics.append({
-                "error": label, "kind": kind, "query": query,
-                "best": pool[0][1] if pool else None, "kept": len(kept), "tagged": tagged,
-                "tag_exclusive": tag_exclusive, "strict_skip": strict_skip,
-            })
-            for doc, score in kept:
-                blocks.append((score, doc, kind, label))
-
-    if error_types:
-        for error_type in sorted(error_types):
-            code = None
-            if raw_query:
-                query = error_type
-            else:
-                resolved = resolve(error_type, exercise_id)
-                if not resolved["known"]:
-                    unknown_codes.append(error_type)
-                else:
-                    code = resolved["code"]
-                query = resolved["query"]
-            # `principle` is searched with the same fault query, not a separate "how to
-            # fix" phrasing: the KB's principle items are the curator's positive
-            # restatement of the mistake ("Keep elbows tucked at the sides" 0.161 for the
-            # elbow-flare query), so the fault wording already lands on them. v6 only
-            # fetched principles for a flawless session, which left every "how to
-            # correct" paragraph ungrounded - identical to the no-RAG output.
-            # `code` is None under raw_query (the A/B control bypasses the taxonomy
-            # entirely, so there is no resolved code to tag-filter on either).
-            collect(query, ("mistake", "finding", "consequence", "principle"), error_type, code=code)
-    else:
-        collect(
-            f"{exercise_name} correct technique and biomechanics",
-            ("principle",),
-            "general principles",
-        )
-
-    if unknown_codes:
-        print(f"  [taxonomy] unmapped error_type(s), using raw text as query: {unknown_codes}")
-
-    blocks.sort(key=lambda b: b[0])
-    return blocks, metrics
-
-
-def retrieve_kb_context(vectorstore, exercise_id, exercise_name, error_types, raw_query=False):
-    """Render retrieve_kb_blocks() as the text the system prompt expects. Returns
-    (context_text, metrics); see retrieve_kb_blocks for the retrieval policy itself."""
-    blocks, metrics = retrieve_kb_blocks(
-        vectorstore, exercise_id, exercise_name, error_types, raw_query=raw_query)
-    if not blocks:
-        return NO_MATCH_CONTEXT, metrics
-
-    lines = []
-    for score, doc, kind, label in blocks:
-        src = format_source(doc.metadata.get("source", ""))
-        lines.append(f"[{kind} | re: {label} | source: {src}]\n{_chunk_text(doc)}")
-    return "\n\n".join(lines), metrics
-
-
-def metrics_table(metrics):
-    """Markdown table, one row per error: query sent + best/kept per kind.
-
-    A trailing `*` on a cell marks a tag-filtered hit (KB v5's fault_tags pre-pass found
-    something, so `best`/`kept` describe that narrower pool, not the plain semantic one) -
-    see _search()'s `tagged` return value. v4 collections never show `*`: every chunk's
-    fault_tags is "", so the tag pass always comes back empty and falls back to plain search.
-    Under TAG_MODE "union" `*` only means the tag boosted some chunk; `best` is the plain pool's.
-    `strict —` = TAG_MODE "strict" skipped the kind: no chunk of it is tagged for the fault.
-    """
-    by_error = {}
-    for m in metrics:
-        row = by_error.setdefault(m["error"], {"query": m["query"]})
-        row[m["kind"]] = m
-    kinds = ("mistake", "finding", "consequence", "principle")
-    lines = ["| error_type | query sent | " + " | ".join(f"{k} best / kept" for k in kinds) + " |",
-             "|---|---|" + "---|" * len(kinds)]
-    for error, row in by_error.items():
-        cells = []
-        for kind in kinds:
-            m = row.get(kind)
-            if not m:
-                cells.append("—")
-            elif m.get("strict_skip"):
-                cells.append("strict —")
-            else:
-                best = f"{m['best']:.3f}" if m["best"] is not None else "—"
-                flag = "*" if m.get("tagged") else ""
-                cells.append(f"{best} / {m['kept']}{flag}")
-        lines.append(f"| {error} | {row['query']} | " + " | ".join(cells) + " |")
-    return "\n".join(lines)
-
-
-# Single source of truth for the system prompt. v5 kept a second, hand-copied copy in
-# __main__ purely to print into the report, which is a quiet way for the documented
-# prompt to drift away from the prompt actually sent.
-#
-# v10 (2026-09-19). An external judge read compare_output/history/compare_result_v9.md and rated
-# the no-RAG side the better coaching, because the RAG side came back clinical
-# ("lordotic lumbar position", "knee extension moment", "plantar flexors"). Diffing the
-# v9 output against the retrieved context shows why: the model was not picking clinical
-# words, it was copying Context sentences intact. Three v9 bugs let it:
-#   1. The gloss requirement sat inside the "What it is" sub-bullet, while every leak
-#      happened in "Why it matters" and "How to fix it" - so it is now a top-level
-#      Translation rule over the whole answer, with the v5 KB's actual vocabulary named.
-#   2. The grounding rule repeated "verbatim" as the safety standard. It means numbers;
-#      the model generalised it to whole sentences. Now split into part 1 (facts fixed)
-#      and part 2 (wording never fixed, quoting to stay safe is itself a violation).
-#   3. "Use `principle` entries as the basis for the correction" let reciting a principle
-#      pass as a fix - the v9 lunge answer lost its drill and restated the cue as a setup
-#      change. The four fix items are now required to be distinct, with a named variable.
-# Also added: a no-error branch (v9's clean push-up session got mined for a narrow-grip
-# upsell out of a variation principle) and a rep-accuracy line (v9's bicep answer said
-# "the last three reps (8, 10)"). Kept from v9 unchanged: role, task list, tone, how to
-# read the Context, no-citations, and the relevance rule - all four exercises obeyed them.
-#
-# v11 (2026-09-23). The worked examples were teaching the answer, not the move. v10 chose
-# them from the faults the system actually grades, so the prompt handed BOTH arms of the
-# comparison the plain-English mechanism of three graded faults before either had read a
-# rep - "posterior pelvic tilt" -> "your tailbone tucks under and your lower back rounds"
-# is butt wink, explained. compare_result_per_fault_v11.md shows the no-RAG butt wink
-# answer using "tailbone", "tucks" and "rounds" without ever having seen the KB, which
-# makes the no-RAG column a floor for retrieval only, not for knowledge. Four sites moved
-# to movements the system never grades (wrist, neck, rest intervals):
-#   1. Translation rule examples: pelvic tilt / lordotic / knee extension moment -> ulnar
-#      deviation / neutral cervical position / wrist extension moment.
-#   2. Write-it-yourself Wrong/Right: the squat-spine pair -> a wrist-under-load pair.
-#   3. Grounding part 2's number: "2 to 3 cm short of contacting the ground" -> a
-#      120-second rest interval. That string is live in the lunge KB, and the v11 run
-#      copied 9 words of it - the demonstration of what not to do was being read as a
-#      template, so the worst copy in the report was one the prompt had supplied.
-#   4. The similar-names example named and glossed two graded lunge faults.
-# The term LIST (line "Terms that need this treatment include:") deliberately stays as v10
-# left it: naming a term the model must translate is not the same as handing it the
-# translation, and generating that gloss is the capability under test.
-#
-# v14 (2026-10-03, docs/progress/t3_curation_status.md 8.1 step 7). Input format only - the session
-# JSON system 1 sends changed under KB v6 (mock_data/build_mock_sessions.py), and v13 read
-# three of its fields wrong:
-#   1. `state_occurred` is now the FSM state, and it is NOT sent to the model in v14 - see
-#      HELD_BACK_FIELDS. The FSM names states after the counting angle (CONCENTRIC = angle
-#      closing: the way DOWN in squat, lunge and push-up, the way UP in a curl), and rep-scope
-#      rules are checked once at the end of the attempt, so for 8 of the 12 rules the state
-#      only marks where the attempt ended. Two smoke runs explained both in the prompt
-#      (compare_output/baseline_v14/smoke_v14.md, smoke_v14b.md): CONCENTRIC still came out as "pressing
-#      back up" in 3-4 of 8 answers, rep-scope faults were still tied to a phase in 4, the
-#      words concentric/eccentric/inflection leaked in 2-3, and listing the frame-rule keys
-#      in the prompt made 2 answers print keys. What system 1 actually records is not
-#      confirmed either, so the field waits for that conversation (docs/progress/t3_curation_status.md
-#      8.1) and comes back as its own checkpoint against this baseline.
-#   2. `status: "abort"` is new: an attempt the FSM did not count, which the summary still
-#      counts (total_reps = every entry, an abort with a fault is an incorrect rep).
-#   3. `error_type` is a rule key, not a display name, so "error names must match exactly"
-#      would print snake_case to the user. Keys now identify faults; the reader gets plain
-#      words. The first key on a rep is the highest-priority fault.
-# Deliberately NOT in v14, each its own generation checkpoint against this baseline: the
-# `consequence` gap in "How to read the Context" (P1), P2-P6, the rule card per key
-# (P-rule-card), and option A of docs/progress/t3_curation_status.md 6.7.
-SYSTEM_PROMPT = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
-Your job is to turn the user's session data and the Knowledge Base context into feedback they can
-understand and act on in their very next workout. The reader is not a clinician or a researcher:
-they want to know what went wrong, why it matters to them, and exactly what to do about it.
-Write the way a good coach talks on the gym floor, not the way a paper reads.
-
-You will receive a JSON structure containing:
-1. Current session details (a summary of the set, and every attempt in it with its errors).
-2. Historical comparison (data from their previous session).
-
-How to read the session data:
-- `error_type` is the system's internal key for a fault (lowercase words joined by
-  underscores). It identifies the fault: use it to tell which attempt has which fault, and to
-  compare with `previous_common_errors`, which uses the same keys. Never write a key to the
-  user - name the fault in plain words instead. When an attempt lists more than one error,
-  they are in the system's priority order: the first one is the most important.
-- `status`: "completed" is a counted rep. "abort" is an attempt that started the movement but
-  came back before reaching the point the system counts as a rep, so the system did not count
-  it. The summary still includes it: `total_reps` counts every entry, completed or aborted,
-  and an aborted attempt with a fault counts in `incorrect_reps`. Call an aborted entry an
-  attempt (e.g. "attempt 5"), not a rep, and if any entry aborted, do not tell the user they
-  completed all of them. When the fault on an aborted attempt is about range of motion (not
-  going deep enough, not going far enough), the abort is that fault itself: the attempt was
-  cut short.
-
-Your tasks:
-1. Progress Tracking: Compare their current performance with their previous session. Acknowledge
-   any improvements or regressions in their correct rep count, overall score, and which errors
-   disappeared or newly appeared.
-2. Error Breakdown: for each distinct error in the session, write these five as five separate
-   top-level bullets, in this order. Do not nest one inside another.
-   - What it is, in plain words: describe the fault the way you would point it out to someone
-     mid-set.
-   - Why it matters: which joint or muscle takes the extra load, and then - always - what that
-     means for this person. Finish the thought: what will they feel, where, and when; what does
-     it cost them in strength, in muscle actually worked, or in reps they can trust; what does
-     it risk as the load goes up. A statement of mechanics on its own is not an answer to "why
-     does this matter to me". One or two sentences. Base it on the `consequence` entries in the
-     Context when one passes the relevance rule below; if none does, keep it to general,
-     non-specific terms.
-   - How to fix it: a `principle` entry tells you what correct looks like - it is not itself
-     the fix, and restating it does not count as giving one. Write four distinct items:
-     (a) one cue to think about during the rep; (b) a setup change that names a variable they
-     can actually turn - stance width, depth, tempo, load, a pause, a range limit - repeating
-     the cue in other words is not a setup change; (c) a drill or lighter regression they can
-     practise, and if there honestly isn't one for this fault, say so rather than padding;
-     (d) a simple self-check so they know it worked - something they can see in a mirror, feel,
-     or notice on a phone video.
-   - Use the rep detail: if the error clusters in the aborted attempts or in the later
-     attempts of the set, say so and tailor the advice to it (e.g. stop the set a rep earlier,
-     drop the load, slow the descent). The data does not say in which part of the movement a
-     fault happened, so do not claim one.
-3. Next Session Plan: close with 2-3 short, prioritised things to do in their next workout.
-4. Tone: encouraging, direct, and specific. Short paragraphs and bullets. No filler, no lecture.
-
-Sessions with no errors: if the session records no errors, write the Progress Tracking section
-and a Next Session Plan about holding the standard they just hit. Do not go looking through the
-Context for something else to change, and do not suggest a different version of the exercise
-(a narrower grip, a different stance) as a way to have something to say. A clean session is the
-result, not a gap to fill.
-
-Stick to their numbers: rep numbers, rep counts, scores and which fault each attempt carries come
-from the session JSON and nothing else. They must match it exactly. If you say "the last three
-reps", list three.
-Keep the two sessions apart. The previous session's error list is history: if a name appears
-there but in none of this session's reps, that fault is GONE - credit them for clearing it, and
-never attach it to a rep they did today. Faults with similar names are still different faults
-(a wrist that folds back and a grip that is too wide are not the same error) - when you name the
-fault on a given rep, describe the fault whose key that rep actually carries in this session's data.
-
-How to read the Context: every entry starts with a header line of the form
-[<kind> | re: <which error it was retrieved for> | source: <source name>], followed by the
-entry text. `kind` is one of: mistake (a known incorrect form), finding (a concrete result
-from that source), principle (general correct-form guidance). The source name is for internal
-tracking only. Never quote the header line itself back to the user.
-
-No citations in the feedback: do not name any study, author, organisation, URL, document title,
-or "the knowledge base", and do not write "according to", "research shows", "as noted in", or
-any similar attribution. Use the facts from the Context as plain statements in your own words.
-The reader should see coaching, not a literature review.
-
-Translation rule - applies to every word you write, not just the "What it is" bullet. The
-Context is written by and for researchers; it is what you reason FROM, not a phrasebook to
-quote. The reader never sees it. Whenever an anatomical or biomechanical term appears in your
-answer - in "Why it matters" and "How to fix it" just as much as anywhere else - give its
-everyday meaning in the same sentence, or use the everyday meaning instead. Terms that need
-this treatment include: posterior pelvic tilt, lordotic / lumbar lordosis, lumbar flexion,
-knee extension moment, knee extensor musculature, hip extensors, plantar flexors, lead lower
-extremity, lower-extremity segments, biarticular, hypertrophy, brachii, muscular complex,
-kinematic, medial knee displacement, supinated, and anything else you would not say out loud
-to someone between sets. Examples of the move - these are worked in a movement you are NOT being
-asked about, on purpose: the point is the move, not the answer: "ulnar deviation" -> "your wrist
-bends over toward your little-finger side"; "maintain a neutral cervical position" -> "keep your
-head in line with your spine instead of craning it up"; "a higher wrist extension moment" ->
-"the back of your wrist and your forearm soak up more of the work, so the wrist starts aching
-before the muscle you are actually training is anywhere near done"; "plantar flexors" ->
-"calves"; "suboptimal hypertrophy" -> "less muscle growth for the same effort". You may use these bare, no explanation needed: quads, hamstrings, glutes, core, lats,
-biceps, triceps, calves, knee, hip, shoulder, lower back.
-
-Write it yourself: never reuse a sentence, a clause, or a distinctive phrase from the Context.
-Every fact you take from it has to be re-expressed in your own words before it reaches the
-reader. Copying a Context sentence because it is already accurate is the single most common way
-this feedback goes wrong - accuracy is not the standard, being useful to this reader is.
-  Wrong: "Permitting excessive wrist extension during the pressing phase increases load on the
-  radiocarpal joint and may produce discomfort that limits performance."
-  Right: "When your wrist folds back under the weight, the joint takes the load instead of your
-  palm stacking over your forearm - that's the ache that turns up a few sets in, and it caps
-  what you can lift long before the muscle you came to train is done."
-
-Relevance rule: the `re:` label says which error an entry was RETRIEVED for, not that it
-describes that error - retrieval is approximate and some entries are near misses. Before
-using an entry for an error, check that its text plainly describes that error (or, for a
-principle, the correct form that fixes it). Ignore an entry entirely - do not use it,
-mention it, or reframe it as related - if it describes a different fault or a different
-exercise variant, if it is a study protocol or setup detail with no consequence attached,
-or if following it would push the user further into the error being discussed. Using fewer
-entries accurately is better than using every entry.
-
-Grounding rule, part 1 - the facts are fixed. When an entry that passes the relevance rule
-contains a specific number, percentage, or joint angle that helps the user (a depth target, a
-reason the fault matters), state it - without attribution - as part of the explanation or the
-fix; those specifics are the most valuable thing you have. Do NOT state any specific number,
-percentage, joint angle, study finding, sample size, or date range that does not appear
-verbatim in the Context below - even if you recognize the fact or believe it to be true from
-your own general knowledge. Your own training knowledge must never substitute for the Context;
-if a fact is not in the Context, treat it as unavailable. If the Context has no specifics for
-a given error, fall back to general accepted coaching principles, described in general terms
-only with no invented numbers.
-
-Grounding rule, part 2 - the wording is never fixed. "Verbatim" above governs numbers and
-facts only. It says nothing about phrasing, and it is not permission to quote: reproducing a
-Context sentence in order to stay safe is itself a violation of the Translation rule. Keep the
-number exactly as given; build the sentence around it yourself. A "120-second inter-set recovery
-period" stays 120 seconds, but it reaches the reader as "give yourself a full two minutes between
-sets before you go again". Note that this example is deliberately not about any fault you are
-likely to be shown: do not carry its number, its wording, or its subject into your answer.
-
-Context from Knowledge Base:
-{context}"""
-
+# The retrieval gate, the system prompt and the chain live in rag_core/ (2026-10-25,
+# docs/plans/app_integration_plan.md A1) so the feedback service runs the same code. This file
+# is the batch runner: mock sessions in, a RAG vs no-RAG report out.
 
 LLM_MODEL = "gemini-3.5-flash-lite"
-LLM_TEMPERATURE = 0.7
 DEFAULT_COLLECTION = embedding_config.default_collection()
 
 # v4 = KB rebuilt after docs/kb/kb_quality_assessment.md: 4 off-topic sources removed,
@@ -934,34 +45,9 @@ DEFAULT_COLLECTION = embedding_config.default_collection()
 # (docs/kb/tag_coverage_v6b_2026-10-24.md). v6 is kept unchanged as the reference.
 
 
-GENERATION_ERROR = "Error occurred during generation"
-
-# Per-error fields the mock carries but the model is not shown yet (prompt v14 comment).
-# The mock files keep them: they are the best guess at system 1's format and the example
-# to take into that conversation. Empty this set once system 1 confirms what they mean.
-HELD_BACK_FIELDS = {"state_occurred"}
-
-
-def model_payload(session_data):
-    """The session JSON exactly as the model sees it.
-
-    `report_label` exists only to name the block in the report (mock_sessions_per_fault.json
-    runs three Squat sessions, so the exercise name alone no longer identifies one). It is
-    bookkeeping, not session data - sending it would tell the model which fault to expect,
-    and would label the clean session "clean session" before it has read a single rep.
-    HELD_BACK_FIELDS are dropped from every error of every rep."""
-    payload = {k: v for k, v in session_data.items() if k != "report_label"}
-    if "reps_detail" in payload:
-        payload["reps_detail"] = [
-            {**rep, "errors": [{k: v for k, v in e.items() if k not in HELD_BACK_FIELDS}
-                               for e in rep.get("errors", [])]}
-            for rep in payload["reps_detail"]
-        ]
-    return payload
-
 
 def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAULT_COLLECTION,
-                              raw_query=False, samples=1, generate=True):
+                              raw_query=False, samples=1, generate=True, cfg=DEFAULT_CONFIG):
     """Returns (feedback_texts, context_used, metrics) so the caller can log exactly what
     the model was given - v5 returned only the text, which is why verifying a suspected
     hallucination meant re-running the whole script with an ad-hoc print statement.
@@ -972,20 +58,12 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
     call yields a string starting with GENERATION_ERROR in its slot, not an exception.
 
     `generate=False` (--context-only): retrieval only, no LLM call - returns ([], context,
-    metrics). The only paid call left is the query embedding."""
+    metrics). The only paid call left is the query embedding.
+
+    `cfg`: the retrieval gate settings (rag_core.retrieval.RetrievalConfig)."""
     metrics = []
     if use_rag:
-        connection = embedding_config.get_connection()
-        from langchain_postgres.vectorstores import PGVector
-
-        embeddings = embedding_config.get_embeddings()
-        vectorstore = PGVector(
-            embeddings=embeddings,
-            collection_name=collection_name,
-            connection=connection,
-            use_jsonb=True,
-        )
-
+        vectorstore = open_vectorstore(collection_name)
         all_error_types = set()
         for rep in session_data.get("reps_detail", []):
             errors = rep.get("errors", [])
@@ -995,7 +73,7 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
         exercise_name = session_data.get("name") or session_data.get("exercise_id", "")
         context, metrics = retrieve_kb_context(
             vectorstore, session_data.get("exercise_id"), exercise_name, all_error_types,
-            raw_query=raw_query,
+            raw_query=raw_query, cfg=cfg,
         )
     else:
         context = "No external context provided."
@@ -1003,23 +81,8 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
     if not generate:
         return [], context, metrics
 
-    llm = ChatGoogleGenerativeAI(model=LLM_MODEL, temperature=LLM_TEMPERATURE, max_retries=1)
-
-    system_prompt = SYSTEM_PROMPT
-
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", system_prompt),
-        ("human", "Here is the exercise session data:\n{input}\n\nPlease evaluate my performance and tell me what to work on."),
-    ])
-
-    rag_chain = (
-        {"context": lambda x: context, "input": RunnablePassthrough()}
-        | prompt
-        | llm
-        | StrOutputParser()
-    )
-
-    payload = model_payload(session_data)
+    rag_chain = build_chain(context, LLM_MODEL)
+    payload = render_input(session_data)
 
     import time
 
@@ -1027,7 +90,7 @@ def generate_feedback_compare(session_data, use_rag=True, collection_name=DEFAUL
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                response = rag_chain.invoke(json.dumps(payload, indent=2))
+                response = rag_chain.invoke(payload)
                 print(f"Call successful, sleeping 15s to respect rate limits...")
                 time.sleep(15)
                 return response
@@ -1061,16 +124,17 @@ def parse_args():
                     help="report filename inside compare_output/")
     ap.add_argument("--skip-no-rag", action="store_true",
                     help="only run the RAG side (halves the LLM calls when the interest is retrieval)")
-    ap.add_argument("--tag-mode", choices=["prefer", "strict", "union"], default=TAG_MODE,
-                    help=f"how fault_tags combine with semantic search, see TAG_MODE (default: {TAG_MODE})")
-    ap.add_argument("--kind-pool", choices=["split", "single"], default=KIND_POOL,
-                    help=f"per-kind quotas or one shared budget, see KIND_POOL (default: {KIND_POOL})")
-    ap.add_argument("--queries", choices=["fault", "profile"], default=QUERIES,
-                    help=f"taxonomy query only, or what/why/fix per fault, see QUERIES (default: {QUERIES})")
-    ap.add_argument("--hybrid", action=argparse.BooleanOptionalAction, default=HYBRID,
-                    help=f"add BM25 next to vector search, see HYBRID (default: {HYBRID})")
-    ap.add_argument("--rerank", action=argparse.BooleanOptionalAction, default=RERANK,
-                    help=f"cross-encoder gate instead of RELATIVE_MARGIN, see RERANK (default: {RERANK})")
+    d = DEFAULT_CONFIG  # the gate's defaults; see rag_core/retrieval.py for each one
+    ap.add_argument("--tag-mode", choices=["prefer", "strict", "union"], default=d.tag_mode,
+                    help=f"how fault_tags combine with semantic search, see TAG_MODE (default: {d.tag_mode})")
+    ap.add_argument("--kind-pool", choices=["split", "single"], default=d.kind_pool,
+                    help=f"per-kind quotas or one shared budget, see KIND_POOL (default: {d.kind_pool})")
+    ap.add_argument("--queries", choices=["fault", "profile"], default=d.queries,
+                    help=f"taxonomy query only, or what/why/fix per fault, see QUERIES (default: {d.queries})")
+    ap.add_argument("--hybrid", action=argparse.BooleanOptionalAction, default=d.hybrid,
+                    help=f"add BM25 next to vector search, see HYBRID (default: {d.hybrid})")
+    ap.add_argument("--rerank", action=argparse.BooleanOptionalAction, default=d.rerank,
+                    help=f"cross-encoder gate instead of RELATIVE_MARGIN, see RERANK (default: {d.rerank})")
     ap.add_argument("--samples", type=int, default=1,
                     help="answers generated per session and side from the same context (default 1); "
                          "every answer also goes to the JSON written next to the report, which "
@@ -1089,11 +153,8 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    TAG_MODE = args.tag_mode
-    KIND_POOL = args.kind_pool
-    QUERIES = args.queries
-    HYBRID = args.hybrid
-    RERANK = args.rerank
+    cfg = replace(DEFAULT_CONFIG, tag_mode=args.tag_mode, kind_pool=args.kind_pool, queries=args.queries,
+                  hybrid=args.hybrid, rerank=args.rerank)
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT
@@ -1112,7 +173,7 @@ if __name__ == "__main__":
 | no-RAG side | {"skipped" if args.skip_no_rag else "run"} |
 | generation | {"**off** — `--context-only`: context and metrics only, no LLM call" if args.context_only else "on"} |
 | samples per session | {args.samples} |
-| retrieval gates | CANDIDATE_K={CANDIDATE_K}, MAX_PER_KIND={MAX_PER_KIND}, ABS_DISTANCE_CAP={ABS_DISTANCE_CAP}, RELATIVE_MARGIN={RELATIVE_MARGIN}, NEAR_DUP_JACCARD={NEAR_DUP_JACCARD}, TAG_MODE={TAG_MODE}{f", TAG_BONUS={TAG_BONUS}" if TAG_MODE == "union" else ""}, KIND_POOL={KIND_POOL}, QUERIES={QUERIES}, HYBRID={HYBRID}{f" (BM25_K={BM25_K}, BM25_WEIGHT={BM25_WEIGHT})" if HYBRID else ""}, RERANK={RERANK}{f" (min {RERANK_MIN})" if RERANK else ""} |
+| retrieval gates | {cfg.summary()} |
 
 Retrieval metrics per exercise: `best` = cosine distance of the closest chunk of that kind in the whole
 collection (before any gate), `kept` = chunks that passed the relative/absolute gates and de-duplication
@@ -1138,8 +199,8 @@ and were actually placed in the context.
         "raw_query": args.raw_query, "llm": LLM_MODEL, "temperature": LLM_TEMPERATURE,
         "samples": args.samples, "context_only": args.context_only,
         "system_prompt_sha1": hashlib.sha1(SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
-        "retrieval": {"TAG_MODE": TAG_MODE, "KIND_POOL": KIND_POOL, "QUERIES": QUERIES,
-                      "HYBRID": HYBRID, "RERANK": RERANK},
+        "retrieval": {"TAG_MODE": cfg.tag_mode, "KIND_POOL": cfg.kind_pool, "QUERIES": cfg.queries,
+                      "HYBRID": cfg.hybrid, "RERANK": cfg.rerank},
         "sessions": [],
     }
     with open(out_path, "w", encoding="utf-8") as f:
@@ -1159,7 +220,7 @@ and were actually placed in the context.
 
             rag_outputs, rag_context, metrics = generate_feedback_compare(
                 mock, use_rag=True, collection_name=args.collection, raw_query=args.raw_query,
-                samples=args.samples, generate=not args.context_only,
+                samples=args.samples, generate=not args.context_only, cfg=cfg,
             )
             f.write("### Retrieval metrics\n")
             f.write(metrics_table(metrics) + "\n\n")

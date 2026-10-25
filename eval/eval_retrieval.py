@@ -2,7 +2,7 @@
 
 tools/kb_coverage.py answers "is there anything in the KB for this fault?" by counting the
 top-40 pool within 0.40. This script answers the question that actually decides the
-feedback quality: of the chunks the gate in test_rag_compare.py PUTS INTO THE CONTEXT
+feedback quality: of the chunks the gate in rag_core/retrieval.py PUTS INTO THE CONTEXT
 under a fault's label, how many describe that fault (good), how many describe a
 different fault (bad - the model will cite them as if they explained this one), and
 how many are neutral filler.
@@ -33,8 +33,11 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(ROOT, ".env"))
 
-import test_rag_compare as trc
+from dataclasses import replace
+
+import embedding_config
 from error_taxonomy import resolve
+from rag_core import retrieval as rt
 
 # `consequence` (KB v5) is retrieved and put into the context like the other three, so it is
 # scored too. The golden-set summary line (hit / precision / bad) is still computed over
@@ -74,7 +77,7 @@ def _score_kind(kept_texts, golden, kind):
 def _blocks_by_label(blocks):
     out = {}
     for score, doc, kind, label in blocks:
-        out.setdefault(label, {}).setdefault(kind, []).append((score, trc._chunk_text(doc)))
+        out.setdefault(label, {}).setdefault(kind, []).append((score, rt._chunk_text(doc)))
     return out
 
 
@@ -85,14 +88,14 @@ def _best(metrics, label, kind):
     return None
 
 
-def evaluate(vs, golden_faults, mocks, modes):
+def evaluate(vs, golden_faults, mocks, modes, cfg):
     """Yield one result row per (mode, session/fault, kind)."""
     rows = []
     by_key = {(g["exercise_id"], g["code"]): g for g in golden_faults}
 
     if "single" in modes:
         for g in golden_faults:
-            blocks, metrics = trc.retrieve_kb_blocks(vs, g["exercise_id"], g["exercise_id"], [g["code"]])
+            blocks, metrics = rt.retrieve_kb_blocks(vs, g["exercise_id"], g["exercise_id"], [g["code"]], cfg=cfg)
             grouped = _blocks_by_label(blocks).get(g["code"], {})
             for kind in KINDS:
                 texts = [t for _, t in grouped.get(kind, [])]
@@ -111,7 +114,7 @@ def evaluate(vs, golden_faults, mocks, modes):
                              "kind": "-", "best": None, "kept": 0, "good": [], "bad": [], "neutral": [],
                              "must_total": 0, "must_found": [], "must_missing": []})
                 continue
-            blocks, metrics = trc.retrieve_kb_blocks(vs, ex, mock.get("name", ex), errors)
+            blocks, metrics = rt.retrieve_kb_blocks(vs, ex, mock.get("name", ex), errors, cfg=cfg)
             grouped = _blocks_by_label(blocks)
             for err in errors:
                 code = resolve(err, ex)["code"]
@@ -187,7 +190,7 @@ def render(rows, collection, show_kept):
 # Recall against eval/relevance_pool.json (single mode only).
 #
 # Unit of recall is a FACT, not a chunk: relevant chunks are clustered by the same
-# near-duplicate test the gate uses (trc._is_near_duplicate, Jaccard >= NEAR_DUP_JACCARD),
+# near-duplicate test the gate uses (rt._is_near_duplicate, Jaccard >= NEAR_DUP_JACCARD),
 # because the gate drops paraphrases on purpose - losing the 4th restatement of one sentence
 # is not a miss. A fact counts as covered when any kept chunk is that chunk or a near-dup.
 #
@@ -212,17 +215,17 @@ def render(rows, collection, show_kept):
 MISS_REASONS = ("tag_spelling", "tag_filter", "tag_strict", "rank", "margin", "quota", "dup")
 
 
-def _miss_reasons():
+def _miss_reasons(cfg):
     """MISS_REASONS as reported: the tag_strict column only exists under TAG_MODE "strict",
     so prefer/union reports keep the columns they had before strict was added."""
-    return MISS_REASONS if trc.TAG_MODE == "strict" else tuple(r for r in MISS_REASONS if r != "tag_strict")
+    return MISS_REASONS if cfg.tag_mode == "strict" else tuple(r for r in MISS_REASONS if r != "tag_strict")
 
 
 def _cluster(texts):
     clusters = []
     for t in texts:
         for c in clusters:
-            if trc._is_near_duplicate(t, c):
+            if rt._is_near_duplicate(t, c):
                 c.append(t)
                 break
         else:
@@ -253,7 +256,7 @@ def _miss_reason(members, chunk_meta, trace_by_text, tagged_by_kind, code, stric
     return "rank"
 
 
-def evaluate_recall(vs, golden_faults, pool):
+def evaluate_recall(vs, golden_faults, pool, cfg):
     by_key = {(f["exercise_id"], f["code"]): f for f in pool["faults"]}
     out = []
     for g in golden_faults:
@@ -262,9 +265,9 @@ def evaluate_recall(vs, golden_faults, pool):
             print(f"  [pool] no entry for {g['exercise_id']}/{g['code']} - recall skipped")
             continue
         trace = []
-        blocks, metrics = trc.retrieve_kb_blocks(vs, g["exercise_id"], g["exercise_id"], [g["code"]],
-                                                 trace=trace)
-        context = [trc._chunk_text(doc) for _, doc, _, label in blocks if label == g["code"]]
+        blocks, metrics = rt.retrieve_kb_blocks(vs, g["exercise_id"], g["exercise_id"], [g["code"]],
+                                                trace=trace, cfg=cfg)
+        context = [rt._chunk_text(doc) for _, doc, _, label in blocks if label == g["code"]]
         ctx_kinds = [kind for _, _, kind, label in blocks if label == g["code"]]
         label_of = {c["text"]: c["label"] for c in f["chunks"]}
         chunk_meta = {c["text"]: c for c in f["chunks"]}
@@ -273,7 +276,7 @@ def evaluate_recall(vs, golden_faults, pool):
             if t in label_of:
                 return label_of[t]
             for pt, lab in label_of.items():
-                if trc._is_near_duplicate(t, [pt]):
+                if rt._is_near_duplicate(t, [pt]):
                     return lab
             return "unlabeled"
 
@@ -288,7 +291,7 @@ def evaluate_recall(vs, golden_faults, pool):
         clusters = _cluster([c["text"] for c in f["chunks"] if c["label"] == "relevant"])
         covered, missed = 0, []
         for members in clusters:
-            if any(t in context or trc._is_near_duplicate(t, context) for t in members):
+            if any(t in context or rt._is_near_duplicate(t, context) for t in members):
                 covered += 1
             else:
                 missed.append((_miss_reason(members, chunk_meta, trace_by_text, tagged_by_kind, g["code"],
@@ -305,19 +308,19 @@ def evaluate_recall(vs, golden_faults, pool):
     return out
 
 
-def render_recall(rows, collection, show_missed):
-    reasons = _miss_reasons()
+def render_recall(rows, collection, show_missed, cfg):
+    reasons = _miss_reasons(cfg)
     out = [f"\n### {collection} — recall vs relevance pool (single mode)\n",
            "`facts` = relevant chunks in the pool after near-dup clustering · `recall` = facts with a chunk "
            "(or near-dup) in the context · ctx columns = judge labels of the chunks actually kept.",
            f"`ceiling` = best recall possible at the current context budget "
-           f"(sum(MAX_PER_KIND) = {sum(trc.MAX_PER_KIND.values())} chunks per fault): min(facts, budget) / facts. "
+           f"(sum(MAX_PER_KIND) = {sum(cfg.max_per_kind.values())} chunks per fault): min(facts, budget) / facts. "
            "Compare recall against it, and compare steps only at the same budget.",
            "",
            "| exercise | fault | candidates | facts | covered | recall | ceiling | kept | ctx relevant | ctx wrong_fault "
            "| ctx irrelevant | ctx unlabeled | " + " | ".join(f"miss: {r}" for r in reasons) + " |",
            "|---|---|---|---|---|---|---|---|---|---|---|---|" + "---|" * len(reasons)]
-    budget = sum(trc.MAX_PER_KIND.values())
+    budget = sum(cfg.max_per_kind.values())
     for r in rows:
         rec = r["covered"] / r["facts"] if r["facts"] else 0.0
         ceil = min(r["facts"], budget) / r["facts"] if r["facts"] else 0.0
@@ -365,7 +368,7 @@ def _parse_kv(s, cast):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--collection", action="append", help="repeatable; default trc.DEFAULT_COLLECTION")
+    ap.add_argument("--collection", action="append", help="repeatable; default embedding_config.default_collection()")
     ap.add_argument("--golden", default="eval/golden_chunks.json")
     ap.add_argument("--mock", default="mock_data/mock_sessions.json")
     ap.add_argument("--mode", choices=["single", "session", "both"], default="both")
@@ -386,22 +389,15 @@ def main():
     ap.add_argument("--out", help="also write the markdown report to this path")
     args = ap.parse_args()
 
-    if args.margin is not None:
-        trc.RELATIVE_MARGIN = args.margin
-    trc.ABS_DISTANCE_CAP = {**trc.ABS_DISTANCE_CAP, **_parse_kv(args.cap, float)}
-    trc.MAX_PER_KIND = {**trc.MAX_PER_KIND, **_parse_kv(args.max_per_kind, int)}
-    if args.tag_mode:
-        trc.TAG_MODE = args.tag_mode
-    if args.kind_pool:
-        trc.KIND_POOL = args.kind_pool
-    if args.queries:
-        trc.QUERIES = args.queries
-    if args.hybrid is not None:
-        trc.HYBRID = args.hybrid
-    if args.rerank is not None:
-        trc.RERANK = args.rerank
-    if args.rerank_min is not None:
-        trc.RERANK_MIN = args.rerank_min
+    d = rt.DEFAULT_CONFIG
+    overrides = {"abs_distance_cap": {**d.abs_distance_cap, **_parse_kv(args.cap, float)},
+                 "max_per_kind": {**d.max_per_kind, **_parse_kv(args.max_per_kind, int)}}
+    for name, value in (("relative_margin", args.margin), ("tag_mode", args.tag_mode),
+                        ("kind_pool", args.kind_pool), ("queries", args.queries), ("hybrid", args.hybrid),
+                        ("rerank", args.rerank), ("rerank_min", args.rerank_min)):
+        if value is not None:
+            overrides[name] = value
+    cfg = replace(d, **overrides)
 
     with open(args.golden, encoding="utf-8") as f:
         golden = json.load(f)["faults"]
@@ -416,22 +412,15 @@ def main():
                        f"collection {pool.get('collection')})")
     else:
         report_pool = "relevance pool: none (recall not computed)"
-    collections = args.collection or [trc.DEFAULT_COLLECTION]
+    collections = args.collection or [embedding_config.default_collection()]
 
-    import embedding_config
     from langchain_postgres.vectorstores import PGVector
     embeddings = embedding_config.get_embeddings()
 
     report = [
         "# Retrieval golden-set evaluation",
         "",
-        f"gates: CANDIDATE_K={trc.CANDIDATE_K}, MAX_PER_KIND={trc.MAX_PER_KIND}, "
-        f"ABS_DISTANCE_CAP={trc.ABS_DISTANCE_CAP}, RELATIVE_MARGIN={trc.RELATIVE_MARGIN}, "
-        f"NEAR_DUP_JACCARD={trc.NEAR_DUP_JACCARD}, TAG_MODE={trc.TAG_MODE}"
-        + (f", TAG_BONUS={trc.TAG_BONUS}" if trc.TAG_MODE == "union" else "")
-        + f", KIND_POOL={trc.KIND_POOL}, QUERIES={trc.QUERIES}, HYBRID={trc.HYBRID}"
-        + (f" (BM25_K={trc.BM25_K}, BM25_WEIGHT={trc.BM25_WEIGHT})" if trc.HYBRID else "")
-        + (f", RERANK=True (min {trc.RERANK_MIN})" if trc.RERANK else ""),
+        f"gates: {cfg.summary()}",
         f"golden: `{args.golden}` · mock: `{args.mock}`",
         report_pool,
         "",
@@ -442,10 +431,10 @@ def main():
     for coll in collections:
         vs = PGVector(embeddings=embeddings, collection_name=coll,
                       connection=embedding_config.get_connection(), use_jsonb=True)
-        rows = evaluate(vs, golden, mocks, modes)
+        rows = evaluate(vs, golden, mocks, modes, cfg)
         report.append(render(rows, coll, args.show_kept))
         if pool and "single" in modes:
-            report.append(render_recall(evaluate_recall(vs, golden, pool), coll, args.show_missed))
+            report.append(render_recall(evaluate_recall(vs, golden, pool, cfg), coll, args.show_missed, cfg))
 
     text = "\n".join(report)
     print(text)

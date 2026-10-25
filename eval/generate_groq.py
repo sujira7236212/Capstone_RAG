@@ -10,12 +10,12 @@ Arms (context source per exercise <ex>):
   v6_strict  - compare_output/strict_v6b/context_v6_strict_<ex>.json    (kb v6, strict, offline, step 2)
   v6b_strict - compare_output/strict_v6b/context_v6b_strict_<ex>.json   (kb v6b, strict, live --context-only)
 
-Retrieval depends only on exercise_id and the set of error_types (test_rag_compare.
+Retrieval depends only on exercise_id and the set of error_types (rag_core.retrieval.
 retrieve_kb_blocks), so a session's context is taken from the session in the source file with
 the same exercise and the same error set - exact, not an approximation. Arms whose contexts are
 byte-identical share one generation (`same_as`).
 
-The prompt is test_rag_compare's own: SYSTEM_PROMPT and the human template rendered through
+The prompt is rag_core.prompt's own: SYSTEM_PROMPT and HUMAN_TEMPLATE rendered through
 the same ChatPromptTemplate, payload = model_payload() (report_label and HELD_BACK_FIELDS
 dropped). Temperature = LLM_TEMPERATURE. Only the model differs from the real generator.
 
@@ -35,7 +35,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv  # noqa: E402
 from langchain_core.prompts import ChatPromptTemplate  # noqa: E402
 
-import test_rag_compare as trc  # noqa: E402
+from rag_core.generate import GENERATION_ERROR, LLM_TEMPERATURE  # noqa: E402
+from rag_core.prompt import HUMAN_TEMPLATE, SYSTEM_PROMPT, model_payload  # noqa: E402
 
 load_dotenv()
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
@@ -47,8 +48,7 @@ ARMS = {
     "v6_strict": "compare_output/strict_v6b/context_v6_strict_{ex}.json",
     "v6b_strict": "compare_output/strict_v6b/context_v6b_strict_{ex}.json",
 }
-HUMAN = "Here is the exercise session data:\n{input}\n\nPlease evaluate my performance and tell me what to work on."
-PROMPT = ChatPromptTemplate.from_messages([("system", trc.SYSTEM_PROMPT), ("human", HUMAN)])
+PROMPT = ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", HUMAN_TEMPLATE)])
 THINK = re.compile(r"<think>.*?</think>\s*", re.S)
 
 
@@ -67,14 +67,14 @@ def context_for(path, session):
 
 
 def messages(session, context):
-    payload = json.dumps(trc.model_payload(session), indent=2)
+    payload = json.dumps(model_payload(session), indent=2)
     role = {"system": "system", "human": "user"}
     return [{"role": role[m.type], "content": m.content}
             for m in PROMPT.format_messages(context=context, input=payload)]
 
 
 def complete(model, msgs, key):
-    body = {"model": model, "temperature": trc.LLM_TEMPERATURE, "messages": msgs}
+    body = {"model": model, "temperature": LLM_TEMPERATURE, "messages": msgs}
     for attempt in range(8):
         req = urllib.request.Request(GROQ_URL, data=json.dumps(body).encode("utf-8"), method="POST",
                                      headers={"Content-Type": "application/json",
@@ -110,8 +110,8 @@ def main():
     key = os.environ.get("GROQ_API_KEY") or sys.exit("GROQ_API_KEY is not set")
     arms = args.arms.split(",")
 
-    run = {"model": args.model, "temperature": trc.LLM_TEMPERATURE, "samples": args.samples,
-           "system_prompt_sha1": hashlib.sha1(trc.SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
+    run = {"model": args.model, "temperature": LLM_TEMPERATURE, "samples": args.samples,
+           "system_prompt_sha1": hashlib.sha1(SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
            "arms": {a: ARMS[a] for a in arms}, "sessions": []}
     if os.path.exists(args.out):
         with open(args.out, encoding="utf-8") as f:
@@ -139,7 +139,7 @@ def main():
     last = 0.0
     for s, ctx in plan:
         entry = {"session_id": s["session_id"], "label": s.get("report_label"),
-                 "exercise_id": s["exercise_id"], "payload": trc.model_payload(s), "arms": {}}
+                 "exercise_id": s["exercise_id"], "payload": model_payload(s), "arms": {}}
         run["sessions"].append(entry)
         by_ctx = {}
         for a in arms:
@@ -161,7 +161,7 @@ def main():
                 try:
                     text, usage, remaining = complete(args.model, messages(s, context), key)
                 except RuntimeError as e:
-                    text, usage, remaining = f"{trc.GENERATION_ERROR}: {e}", {}, None
+                    text, usage, remaining = f"{GENERATION_ERROR}: {e}", {}, None
                 answers.append(text)
                 print(f"  {s['session_id']} {a:<10} #{len(answers)} tokens {usage.get('total_tokens')} "
                       f"(remaining/min {remaining})", flush=True)

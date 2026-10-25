@@ -63,8 +63,8 @@ def derive(path, out_dir="compare_output/strict_v6b"):
         removed = [b for b in blocks if (b["label"], b["kind"]) in skip]
         new_ctx = render(kept) if (kept or not blocks) else None
         if new_ctx is None:
-            import test_rag_compare as trc  # only for NO_MATCH_CONTEXT
-            new_ctx = trc.NO_MATCH_CONTEXT
+            from rag_core.retrieval import NO_MATCH_CONTEXT
+            new_ctx = NO_MATCH_CONTEXT
         if not blocks:
             new_ctx = ctx
         errors = sorted({m["error"] for m in s["metrics"]})

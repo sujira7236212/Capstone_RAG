@@ -1,5 +1,5 @@
 """In-memory BM25 + exact cosine over one exercise's chunks, for the hybrid gate in
-test_rag_compare.py (--hybrid, ablation R5).
+rag_core/retrieval.py (--hybrid, ablation R5).
 
 Why in Python and not Postgres full-text: ts_rank has no IDF, so "squat" in a squat corpus
 weighs as much as "valgus" - it is keyword overlap, not BM25. One exercise is a few hundred
