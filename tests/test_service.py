@@ -15,6 +15,7 @@ os.environ.setdefault("GOOGLE_API_KEY", "test-key")
 
 from fastapi.testclient import TestClient  # noqa: E402
 
+from rag_core.generate import GroqError  # noqa: E402
 from service import app as svc  # noqa: E402
 
 failed = 0
@@ -128,6 +129,14 @@ setup([RuntimeError("429 RESOURCE_EXHAUSTED"), RuntimeError("429 RESOURCE_EXHAUS
 r = client.post("/feedback", json=EXAMPLE)
 check("429 twice: 503 plain text", (r.status_code, r.text),
       (503, "the language model is busy right now, try again in a minute"))
+
+chain = setup([GroqError("Groq HTTP 429: Rate limit reached", retry_after=0.01), "after the wait"])
+r = client.post("/feedback", json=EXAMPLE)
+check("groq 429 with retry-after: waited and answered", (r.status_code, len(chain.calls)), (200, 2))
+
+chain = setup([GroqError("Groq HTTP 429: Rate limit reached", retry_after=600), "unused"])
+r = client.post("/feedback", json=EXAMPLE)
+check("groq 429, wait past the budget: 503 at once", (r.status_code, len(chain.calls)), (503, 1))
 
 setup([TimeoutError("Read timed out")])
 r = client.post("/feedback", json=EXAMPLE)

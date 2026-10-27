@@ -13,11 +13,16 @@ Configuration, all from the environment (the repo's .env is read too):
                          one, e.g. postgresql+psycopg://postgres:postgres@127.0.0.1:54322/postgres
                          locally (filled by tools/copy_kb.py). Unset: DATABASE_URL, the
                          database the eval scripts use
-    GOOGLE_API_KEY       query embeddings (gemini-embedding-2) and the LLM
+    GOOGLE_API_KEY       query embeddings (gemini-embedding-2) and the Gemini LLM. Queries
+                         are served from .cache/query_vectors/ (tools/fill_query_cache.py),
+                         so with a full cache a request makes no embedding call
     KB_COLLECTION        default embedding_config.default_collection()
-    FEEDBACK_LLM_MODEL   default gemini-3.6-flash (D5)
-    FEEDBACK_LLM_THINKING  thinking_level, default low: at the model's own default, v14's
-                         long answer did not finish inside 34 s on the first live call
+    FEEDBACK_LLM_PROVIDER  gemini (default, D5) or groq: a free model while the integration
+                         is tried out (2026-10-27), needs GROQ_API_KEY
+    FEEDBACK_LLM_MODEL   default gemini-3.6-flash (D5), or qwen/qwen3.8-27b on groq (the model
+                         eval/generate_groq.py ran v14 on)
+    FEEDBACK_LLM_THINKING  Gemini's thinking_level, default low: at the model's own default,
+                         v14's long answer did not finish inside 34 s on the first live call
                          (2026-10-25); "" keeps the model's default
     FEEDBACK_TIMEOUT_S   budget for one request, default 45: the app gives up at 60
     FEEDBACK_PORT        default 8100
@@ -50,14 +55,20 @@ import embedding_config  # noqa: E402
 from rag_core.app_input import session_from_feedback_input  # noqa: E402
 from rag_core.generate import build_chain, render_input  # noqa: E402
 from rag_core.prompt import PROMPT_VERSION  # noqa: E402
+from rag_core.query_cache import CachedEmbeddings  # noqa: E402
 from rag_core.retrieval import DEFAULT_CONFIG, open_vectorstore, retrieve_kb_context  # noqa: E402
 
 log = logging.getLogger("feedback")
 
 KB_COLLECTION = os.environ.get("KB_COLLECTION") or embedding_config.default_collection()
 KB_DATABASE_URL = os.environ.get("KB_DATABASE_URL") or None  # None: embedding_config.get_connection()
-LLM_MODEL = os.environ.get("FEEDBACK_LLM_MODEL") or "gemini-3.6-flash"
-LLM_THINKING = os.environ.get("FEEDBACK_LLM_THINKING", "low") or None
+DEFAULT_MODELS = {"gemini": "gemini-3.6-flash", "groq": "qwen/qwen3.8-27b"}
+LLM_PROVIDER = os.environ.get("FEEDBACK_LLM_PROVIDER") or "gemini"
+if LLM_PROVIDER not in DEFAULT_MODELS:
+    raise SystemExit(f"FEEDBACK_LLM_PROVIDER={LLM_PROVIDER!r}, want one of {sorted(DEFAULT_MODELS)}")
+LLM_MODEL = os.environ.get("FEEDBACK_LLM_MODEL") or DEFAULT_MODELS[LLM_PROVIDER]
+LLM_THINKING = (os.environ.get("FEEDBACK_LLM_THINKING", "low") or None) if LLM_PROVIDER == "gemini" else None
+LLM_KEY_ENV = {"gemini": "GOOGLE_API_KEY", "groq": "GROQ_API_KEY"}[LLM_PROVIDER]
 TIMEOUT_S = float(os.environ.get("FEEDBACK_TIMEOUT_S") or 45)
 RATE_LIMIT_WAIT_S = 3  # one retry after a 429, only if the budget still has room for a call
 MIN_CALL_S = 10  # an LLM call given less than this would only time out
@@ -76,7 +87,7 @@ def _commit():
         return os.environ.get("FEEDBACK_COMMIT", "unknown")
 
 
-VERSION = {"prompt": PROMPT_VERSION, "collection": KB_COLLECTION, "llm": LLM_MODEL,
+VERSION = {"prompt": PROMPT_VERSION, "collection": KB_COLLECTION, "llm": f"{LLM_PROVIDER}:{LLM_MODEL}",
            "thinking": LLM_THINKING, "commit": _commit()}
 
 
@@ -159,11 +170,13 @@ class Deps:
     def vectorstore(self):
         with self._lock:
             if self._vectorstore is None:
-                self._vectorstore = open_vectorstore(KB_COLLECTION, connection=KB_DATABASE_URL)
+                self._vectorstore = open_vectorstore(KB_COLLECTION, connection=KB_DATABASE_URL,
+                                                     embeddings=CachedEmbeddings(embedding_config.get_embeddings()))
             return self._vectorstore
 
     def chain(self, context, timeout):
-        return build_chain(context, LLM_MODEL, timeout=timeout, max_retries=1, thinking_level=LLM_THINKING)
+        return build_chain(context, LLM_MODEL, timeout=timeout, max_retries=1, thinking_level=LLM_THINKING,
+                           provider=LLM_PROVIDER)
 
     def count_rows(self):
         import sqlalchemy
@@ -211,9 +224,11 @@ def _generate(context, session, deadline):
         try:
             return deps.chain(context, timeout=remaining).invoke(payload)
         except Exception as e:  # noqa: BLE001 - every provider error becomes one readable line
-            if _is_rate_limit(e) and attempt == 1 and deadline - time.monotonic() > MIN_CALL_S + RATE_LIMIT_WAIT_S:
-                log.warning("rate limited, retrying once in %ss", RATE_LIMIT_WAIT_S)
-                time.sleep(RATE_LIMIT_WAIT_S)
+            # Groq's 429 names its wait (rag_core.generate.GroqError.retry_after); Gemini's does not.
+            wait = getattr(e, "retry_after", None) or RATE_LIMIT_WAIT_S
+            if _is_rate_limit(e) and attempt == 1 and deadline - time.monotonic() > MIN_CALL_S + wait:
+                log.warning("rate limited, retrying once in %ss", wait)
+                time.sleep(wait)
                 continue
             log.error("generation failed: %s: %s", type(e).__name__, str(e)[:300])
             if _is_rate_limit(e):
@@ -255,6 +270,7 @@ def health():
         raise ServiceError(503, "the knowledge base database is not reachable")
     if not rows:
         raise ServiceError(503, f"the knowledge base collection {KB_COLLECTION} is empty or missing")
-    if not os.environ.get("GOOGLE_API_KEY"):
-        raise ServiceError(503, "GOOGLE_API_KEY is not set")
+    for key in sorted({"GOOGLE_API_KEY", LLM_KEY_ENV}):
+        if not os.environ.get(key):
+            raise ServiceError(503, f"{key} is not set")
     return {"ok": True, "rows": rows, "version": VERSION}

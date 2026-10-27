@@ -227,5 +227,5 @@ export async function writeFeedback(input: FeedbackInput): Promise<FeedbackOutpu
 - [ ] B1 contract change (ถ้ามี) + ADR-0007
 - [x] B2–B3 `feedback.ts` เป็น client (ไม่ตั้ง `FEEDBACK_URL` = ใช้ stub เดิม), `.env.example`, `feedback.test.ts` 6 กรณี · unit 92 ผ่าน, tsc, eslint ผ่าน · e2e ยัง skip ตามเดิม
 - [~] B5 HANDOVER §3 + `docs/sessions/2026-10-25.md` · ยังไม่แตะ ADR-0007, DEPLOY ขั้น 9, README
-- [ ] C ทดสอบรวม (รวมกรณี service ล้ม) · **มีค่าใช้จ่าย ต้องถาม user ก่อน**
+- [~] C ทดสอบรวม (รวมกรณี service ล้ม) · **มีค่าใช้จ่าย ต้องถาม user ก่อน** · 2026-10-27 (user): ช่วงทดลองใช้ LLM ฟรีของ Groq (`FEEDBACK_LLM_PROVIDER=groq`, `qwen/qwen3.8-27b`) ตอนใช้จริงกลับไป Gemini ทั้งหมด · query embedding 44 ตัวเก็บใน `.cache/query_vectors/` ด้วย `tools/fill_query_cache.py` (เรียก Gemini ครั้งเดียว user อนุมัติแล้ว) จากนั้นแต่ละ request ไม่เรียก Google · `writeFeedback()` ของแอปยิงเข้า service จริง (ตั้ง `GOOGLE_API_KEY` ปลอมไว้เพื่อพิสูจน์): set มีข้อผิด 3 ตัว 15.8 s เก็บได้ 26 chunk · set ไม่มีข้อผิด 2.9 s · ยังไม่ได้ทำ: set จริงผ่านกล้องทั้งเส้น, fixture จาก set จริง · เจอในคำตอบ: markdown แสดงดิบในแอป และ v14 พูดถึง bar กับลดน้ำหนัก 10% ซึ่งผิดกับท่า bodyweight (ไว้แก้ใน v15)
 - [ ] D deploy VM

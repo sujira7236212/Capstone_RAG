@@ -146,6 +146,10 @@ QUERY_PROFILE = {
 
 NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
 
+# The one query of a set with no fault: principles only. A constant so tools/fill_query_cache.py
+# embeds exactly the text retrieval sends.
+GENERAL_QUERY = "{name} correct technique and biomechanics"
+
 
 @dataclass(frozen=True)
 class RetrievalConfig:
@@ -685,7 +689,7 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
             collect(query, ("mistake", "finding", "consequence", "principle"), error_type, code=code)
     else:
         collect(
-            f"{exercise_name} correct technique and biomechanics",
+            GENERAL_QUERY.format(name=exercise_name),
             ("principle",),
             "general principles",
         )
