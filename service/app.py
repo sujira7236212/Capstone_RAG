@@ -52,9 +52,9 @@ from fastapi.responses import PlainTextResponse  # noqa: E402
 from pydantic import BaseModel, ConfigDict  # noqa: E402
 
 import embedding_config  # noqa: E402
-from rag_core.app_input import session_from_feedback_input  # noqa: E402
-from rag_core.generate import build_chain, render_input  # noqa: E402
-from rag_core.prompt import PROMPT_VERSION  # noqa: E402
+from rag_core.app_input import payload_from_feedback_input, rule_names  # noqa: E402
+from rag_core.generate import build_chain  # noqa: E402
+from rag_core.prompt import APP_PROMPT_VERSION, APP_SYSTEM_PROMPT  # noqa: E402
 from rag_core.query_cache import CachedEmbeddings  # noqa: E402
 from rag_core.retrieval import DEFAULT_CONFIG, open_vectorstore, retrieve_kb_context  # noqa: E402
 
@@ -87,7 +87,7 @@ def _commit():
         return os.environ.get("FEEDBACK_COMMIT", "unknown")
 
 
-VERSION = {"prompt": PROMPT_VERSION, "collection": KB_COLLECTION, "llm": f"{LLM_PROVIDER}:{LLM_MODEL}",
+VERSION = {"prompt": APP_PROMPT_VERSION, "collection": KB_COLLECTION, "llm": f"{LLM_PROVIDER}:{LLM_MODEL}",
            "thinking": LLM_THINKING, "commit": _commit()}
 
 
@@ -114,7 +114,6 @@ class Totals(_Open):
 class Violation(_Open):
     rule: str
     priority: int = 99
-    state: Optional[str] = None
 
 
 class Attempt(_Open):
@@ -135,6 +134,12 @@ class CurrentSet(SetSummary):
     attempts: list[Attempt]
 
 
+class Workout(_Open):
+    target_reps: Optional[int] = None
+    target_sets: Optional[int] = None
+    earlier_sets: list[SetSummary] = []
+
+
 class PastWorkout(_Open):
     started_at: str
     sets: list[SetSummary] = []
@@ -147,6 +152,7 @@ class Profile(_Open):
 class FeedbackInput(_Open):
     profile: Profile = Profile()
     exercise: Exercise
+    workout: Workout = Workout()
     set: CurrentSet
     history: list[PastWorkout] = []
 
@@ -176,7 +182,7 @@ class Deps:
 
     def chain(self, context, timeout):
         return build_chain(context, LLM_MODEL, timeout=timeout, max_retries=1, thinking_level=LLM_THINKING,
-                           provider=LLM_PROVIDER)
+                           provider=LLM_PROVIDER, system_prompt=APP_SYSTEM_PROMPT)
 
     def count_rows(self):
         import sqlalchemy
@@ -215,8 +221,8 @@ def _is_timeout(e):
     return "timeout" in text or "timed out" in text or "deadline" in text
 
 
-def _generate(context, session, deadline):
-    payload = render_input(session)
+def _generate(context, payload, deadline):
+    payload = json.dumps(payload, indent=2)
     for attempt in (1, 2):
         remaining = deadline - time.monotonic()
         if remaining < MIN_CALL_S:
@@ -244,19 +250,20 @@ def feedback(inp: FeedbackInput):
     # below do not stall other requests.
     started = time.monotonic()
     deadline = started + TIMEOUT_S
-    session = session_from_feedback_input(inp.model_dump())
-    errors = {e["error_type"] for r in session["reps_detail"] for e in r["errors"]}
+    payload = payload_from_feedback_input(inp.model_dump())
+    errors = rule_names(payload)
+    exercise = payload["exercise"]
     try:
-        context, metrics = retrieve_kb_context(deps.vectorstore(), session["exercise_id"], session["name"],
+        context, metrics = retrieve_kb_context(deps.vectorstore(), exercise["id"], exercise["name"],
                                                errors, cfg=DEFAULT_CONFIG)
     except Exception as e:  # noqa: BLE001
         log.error("retrieval failed: %s: %s", type(e).__name__, str(e)[:300])
         raise ServiceError(503, "the exercise knowledge base is not reachable, try again")
-    text = _generate(context, session, deadline)
+    text = _generate(context, payload, deadline)
     kept = {}
     for m in metrics:
         kept[m["error"]] = kept.get(m["error"], 0) + m["kept"]
-    log.info(json.dumps({"ms": round((time.monotonic() - started) * 1000), "exercise": session["exercise_id"],
+    log.info(json.dumps({"ms": round((time.monotonic() - started) * 1000), "exercise": exercise["id"],
                          "kind": inp.set.kind, "kept": kept, "chars": len(text), **VERSION}))
     return {"feedback": text, "version": VERSION}
 

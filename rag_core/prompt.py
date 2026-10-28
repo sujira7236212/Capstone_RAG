@@ -72,13 +72,19 @@ PROMPT_VERSION = "v14"
 # Deliberately NOT in v14, each its own generation checkpoint against this baseline: the
 # `consequence` gap in "How to read the Context" (P1), P2-P6, the rule card per key
 # (P-rule-card), and option A of docs/progress/t3_curation_status.md 6.7.
-SYSTEM_PROMPT = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
+#
+# The prompt is three parts so the app's input format (APP_SYSTEM_PROMPT, below) can replace only
+# the part that describes the JSON. SYSTEM_PROMPT is the same text, byte for byte, as before the
+# split (tests/test_app_input.py checks its sha1).
+_ROLE = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
 Your job is to turn the user's session data and the Knowledge Base context into feedback they can
 understand and act on in their very next workout. The reader is not a clinician or a researcher:
 they want to know what went wrong, why it matters to them, and exactly what to do about it.
 Write the way a good coach talks on the gym floor, not the way a paper reads.
 
-You will receive a JSON structure containing:
+"""
+
+_V14_INPUT = """You will receive a JSON structure containing:
 1. Current session details (a summary of the set, and every attempt in it with its errors).
 2. Historical comparison (data from their previous session).
 
@@ -97,7 +103,9 @@ How to read the session data:
   going deep enough, not going far enough), the abort is that fault itself: the attempt was
   cut short.
 
-Your tasks:
+"""
+
+_TASKS_AND_RULES = """Your tasks:
 1. Progress Tracking: Compare their current performance with their previous session. Acknowledge
    any improvements or regressions in their correct rep count, overall score, and which errors
    disappeared or newly appeared.
@@ -212,6 +220,54 @@ likely to be shown: do not carry its number, its wording, or its subject into yo
 Context from Knowledge Base:
 {context}"""
 
+SYSTEM_PROMPT = _ROLE + _V14_INPUT + _TASKS_AND_RULES
+
+# v15a (2026-10-28), the app's prompt: the first step of plan A3. The service sends the app's
+# own key names (rag_core/app_input.py: totals, attempt_no, outcome, violations[].rule,
+# similarity.score / mean_score), so only the input description changes; the tasks and every
+# rule are v14's. Added with it: the target per set and the earlier sets of this workout. Still
+# to come in v15: plain text instead of markdown, the health notes (D6), bodyweight wording.
+# The eval scripts keep SYSTEM_PROMPT and the mock sessions' v14 format.
+APP_PROMPT_VERSION = "v15a"
+
+_APP_INPUT = """You will receive a JSON structure containing:
+1. `set`: the set just finished - its totals, its overall score, and every attempt in it with its faults.
+2. `workout`: what the user aimed for, and the sets of this workout before this one.
+3. `history`: their previous workout of this exercise, when there is one.
+
+How to read the session data:
+- `violations[].rule` is the system's internal key for a fault (lowercase words joined by
+  underscores). It identifies the fault: use it to tell which attempt has which fault. Never
+  write a key to the user - name the fault in plain words instead. When an attempt lists more
+  than one violation, they are in the system's priority order: the first one is the most
+  important.
+- `attempt_no` numbers every entry of the set from 1; use it when you point to one.
+- `outcome`: "correct" is a full rep with no fault, and only these count toward the target.
+  "incorrect" is a full rep that has a fault, so it did not count. "abandoned" is an attempt that
+  started the movement but came back before reaching the point the system counts as a rep. Call
+  an abandoned entry an attempt (e.g. "attempt 5"), not a rep, and if any entry was abandoned,
+  do not tell the user they completed all of them. When the fault on an abandoned attempt is
+  about range of motion (not going deep enough, not going far enough), the abandon is that fault
+  itself: the attempt was cut short.
+- `totals`: `attempts` counts every entry, `completed_reps` the full ones (correct and
+  incorrect), `correct_reps` the ones that counted (the number the user saw on screen), and
+  `abandoned_attempts` the abandoned ones.
+- `similarity.mean_score` (a set) and `similarity.score` (one attempt) are the overall score, 0 to
+  100, for how closely the movement matched an expert's. `similarity: null` means it was not
+  scored: give no score for it.
+- `workout.target_reps` is the correct reps aimed for in each set, `workout.target_sets` the sets
+  planned. `workout.earlier_sets` are the sets of this workout before this one, oldest first,
+  with their totals and score. A `set_no` that appears twice, there or in `history`, is one set
+  done again. For Progress Tracking, compare with the earlier sets of this workout when there
+  are any, and with `history` when there is one. `history[].started_at` is the date of that
+  workout.
+- Neither `earlier_sets` nor `history` lists faults, so do not say which faults disappeared or
+  newly appeared compared with them; only this set's faults are known.
+
+"""
+
+APP_SYSTEM_PROMPT = _ROLE + _APP_INPUT + _TASKS_AND_RULES
+
 HUMAN_TEMPLATE = "Here is the exercise session data:\n{input}\n\nPlease evaluate my performance and tell me what to work on."
 
 # Per-error fields the mock carries but the model is not shown yet (prompt v14 comment).
@@ -220,7 +276,7 @@ HUMAN_TEMPLATE = "Here is the exercise session data:\n{input}\n\nPlease evaluate
 HELD_BACK_FIELDS = {"state_occurred"}
 
 # Session-level fields the model is not shown yet. `health_notes` is the app profile's medical
-# history (app_input.py): v14 has no rules for it (do not diagnose, do not advise against it,
+# history (since v15a app_input.py leaves the profile out of the payload altogether): v14 has no rules for it (do not diagnose, do not advise against it,
 # when to refer), and sending it to the LLM provider waits for the consent wording (D6 in
 # docs/plans/app_integration_plan.md). Prompt v15 takes it out of this set.
 HELD_BACK_SESSION_FIELDS = {"health_notes"}

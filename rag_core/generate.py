@@ -62,12 +62,12 @@ def _groq_complete(prompt_value, model, temperature, timeout):
 
 
 def build_chain(context, model, temperature=LLM_TEMPERATURE, max_retries=1, timeout=None,
-                thinking_level=None, provider="gemini"):
+                thinking_level=None, provider="gemini", system_prompt=SYSTEM_PROMPT):
     """`max_retries` is the client's total number of attempts (1 = no retry). `thinking_level`
     ("minimal"/"low"/"medium"/"high", Gemini 3+): None keeps the model's own default, which
     is what every eval run so far used. Groq takes neither: one attempt, the model's own
-    reasoning."""
-    prompt = ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", HUMAN_TEMPLATE)])
+    reasoning. `system_prompt`: v14's for the eval scripts, the service passes the app's."""
+    prompt = ChatPromptTemplate.from_messages([("system", system_prompt), ("human", HUMAN_TEMPLATE)])
     inputs = {"context": lambda x: context, "input": RunnablePassthrough()}
     if provider == "groq":
         return inputs | prompt | RunnableLambda(lambda pv: _groq_complete(pv, model, temperature, timeout))

@@ -94,11 +94,17 @@ check("ok: status", r.status_code, 200)
 body = r.json()
 check("ok: feedback text", body["feedback"], "Good set. Push your knees out.")
 check("ok: version keys", sorted(body["version"]), ["collection", "commit", "llm", "prompt", "thinking"])
-check("ok: prompt version", body["version"]["prompt"], "v14")
+check("ok: prompt version", body["version"]["prompt"], "v15a")
 check("ok: one LLM call", len(chain.calls), 1)
 sent = chain.calls[0]
 check("ok: context retrieved for the set's faults", "[mistake | re: knee_valgus |" in sent["context"], True)
-check("ok: payload is the adapted session", json.loads(sent["payload"])["summary"]["total_reps"], 5)
+check("ok: payload in the app's keys", json.loads(sent["payload"])["set"]["totals"]["attempts"], 5)
+captured = {}
+real_build_chain = svc.build_chain
+svc.build_chain = lambda context, model, **kw: captured.update(kw)
+svc.Deps().chain("ctx", timeout=5)
+svc.build_chain = real_build_chain
+check("ok: the chain gets the app prompt", captured.get("system_prompt") is svc.APP_SYSTEM_PROMPT, True)
 check("ok: medical history never sent", "ACL" in sent["payload"] or "health_notes" in sent["payload"], False)
 check("ok: timeout within budget", 0 < sent["timeout"] <= svc.TIMEOUT_S, True)
 
