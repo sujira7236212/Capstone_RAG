@@ -1,7 +1,7 @@
 # แผน integrate RAG feedback เข้า MU-Capstone-Application
 
 **สถานะ:** กำลังทำ · เขียนเมื่อ 2026-10-25 · ความคืบหน้าดู §8
-**branch:** RAG_SYSTEM `app-integration` (แตกจาก `rule-change-v6`) · แอป `integrate-rag-system` (user ยืนยันว่าใช้ branch ได้)
+**branch:** RAG_SYSTEM `main` (merge `app-integration` แบบ fast-forward 2026-10-30 · แอปผูกกับ `main` ตาม `docs/FEEDBACK_SETUP.md` ของแอป · `app-integration` push ให้ตรงกับ `main` จนกว่าเพื่อนจะย้ายครบ) · แอป `integrate-rag-system` (user ยืนยันว่าใช้ branch ได้)
 **ที่มา:** ตรวจ `~/Documents/MU-Capstone-Application` (README, CLAUDE.md, CONTEXT.md, `docs/HANDOVER.md` §3, ADR-0007, `docs/DEPLOY.md`, `lib/analysis/`, `lib/save-and-analyse.ts`, `lib/set.ts`, migration `knowledge_base`) เทียบกับ pipeline ใน repo นี้ (`test_rag_compare.py`, `ingest.py`, `embedding_config.py`, `error_taxonomy.py`, `mock_data/build_mock_sessions.py`)
 **แทนที่:** `docs/integration_plan.md` ที่ [`future_user_health_profile.md`](future_user_health_profile.md) อ้างถึง (ไฟล์นั้นไม่มีอยู่จริง)
 
