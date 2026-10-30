@@ -2,7 +2,7 @@
 
 | โฟลเดอร์ | เนื้อหา |
 |---|---|
-| [`plans/`](plans/) | แผนงาน: rule change v6 (แผนหลัก), eval v6, RAG v2 ablation, health profile ในอนาคต |
+| [`plans/`](plans/) | แผนงาน: rule change v6 (แผนหลัก), eval v6, RAG v2 ablation, health profile ในอนาคต, integrate เข้า MU-Capstone-Application (`app_integration_plan.md`) |
 | [`progress/`](progress/) | สถานะและ handoff (`t3_curation_status.md` = เปิดก่อนเมื่อทำต่อ), สรุป workflow, progress report, session notes |
 | [`reports/`](reports/) | ผล eval แต่ละครั้ง (ชื่อไฟล์มีวันที่) |
 | [`kb/`](kb/) | ข้อมูลใน KB: prefilter review, tag coverage, KB quality assessment |
