@@ -13,6 +13,7 @@
       {
         "set_no": 1,
         "kind": "initial",
+        "ended_by": "attempt_cap",
         "totals": { "attempts": 5, "completed_reps": 5, "correct_reps": 1, "abandoned_attempts": 0 },
         "similarity": {
           "mean_score": 58.3,
@@ -24,6 +25,7 @@
   "set": {
     "set_no": 1,
     "kind": "repair",
+    "ended_by": "user_ended",
     "totals": { "attempts": 5, "completed_reps": 4, "correct_reps": 2, "abandoned_attempts": 1 },
     "similarity": {
       "mean_score": 63.4,

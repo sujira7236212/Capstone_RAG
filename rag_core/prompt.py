@@ -73,9 +73,9 @@ PROMPT_VERSION = "v14"
 # `consequence` gap in "How to read the Context" (P1), P2-P6, the rule card per key
 # (P-rule-card), and option A of docs/progress/t3_curation_status.md 6.7.
 #
-# The prompt is three parts so the app's input format (APP_SYSTEM_PROMPT, below) can replace only
-# the part that describes the JSON. SYSTEM_PROMPT is the same text, byte for byte, as before the
-# split (tests/test_app_input.py checks its sha1).
+# The prompt is four parts so the app's prompt (APP_SYSTEM_PROMPT, below) can replace the part
+# that describes the JSON and the tasks, and share the rules for using the Context. SYSTEM_PROMPT
+# is the same text, byte for byte, as before the split (tests/test_app_input.py checks its sha1).
 _ROLE = """You are an expert personal trainer and biomechanics specialist coaching an everyday gym-goer.
 Your job is to turn the user's session data and the Knowledge Base context into feedback they can
 understand and act on in their very next workout. The reader is not a clinician or a researcher:
@@ -105,7 +105,7 @@ How to read the session data:
 
 """
 
-_TASKS_AND_RULES = """Your tasks:
+_V14_TASKS = """Your tasks:
 1. Progress Tracking: Compare their current performance with their previous session. Acknowledge
    any improvements or regressions in their correct rep count, overall score, and which errors
    disappeared or newly appeared.
@@ -150,7 +150,9 @@ never attach it to a rep they did today. Faults with similar names are still dif
 (a wrist that folds back and a grip that is too wide are not the same error) - when you name the
 fault on a given rep, describe the fault whose key that rep actually carries in this session's data.
 
-How to read the Context: every entry starts with a header line of the form
+"""
+
+_RULES = """How to read the Context: every entry starts with a header line of the form
 [<kind> | re: <which error it was retrieved for> | source: <source name>], followed by the
 entry text. `kind` is one of: mistake (a known incorrect form), finding (a concrete result
 from that source), principle (general correct-form guidance). The source name is for internal
@@ -220,20 +222,35 @@ likely to be shown: do not carry its number, its wording, or its subject into yo
 Context from Knowledge Base:
 {context}"""
 
-SYSTEM_PROMPT = _ROLE + _V14_INPUT + _TASKS_AND_RULES
+SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 
 # v15a (2026-10-28), the app's prompt: the first step of plan A3. The service sends the app's
 # own key names (rag_core/app_input.py: totals, attempt_no, outcome, violations[].rule,
 # similarity.score / mean_score), so only the input description changes; the tasks and every
-# rule are v14's. Added with it: the target per set and the earlier sets of this workout. Still
-# to come in v15: plain text instead of markdown, the health notes (D6), bodyweight wording.
+# rule are v14's. Added with it: the target per set and the earlier sets of this workout.
+#
+# v15 (2026-10-30, plan A3). Three changes, each from the app's contract, none from reading the
+# test answers of the free model (qwen on Groq):
+#   1. Plain text. The app does not render markdown and its History screen shows only the first
+#      four lines, so the answer opens with a four-line summary, each fault is one paragraph
+#      (the same contents as v14's five bullets) and the plan is numbered lines.
+#   2. The medical history (profile.medical_history), with rules for it. Sent while the app is
+#      tried out with mock profiles; D6 (consent) still has to be settled before real users.
+#   3. Similarity per body part (set and attempt `body_parts`), with what such a score does not
+#      say. Plus the set's `kind` and `ended_by`, so a repair set or a set that stopped short is
+#      named instead of guessed from the counts.
+# Not in v15, on purpose: the bar and 10% load wording and the misread knee_varus were seen only
+# in the free model's answers, so they wait for a run on the real model; the violation's message
+# waits with them. The other similarity fields and duration_s wait until the feedback is good
+# with these (plan A3).
 # The eval scripts keep SYSTEM_PROMPT and the mock sessions' v14 format.
-APP_PROMPT_VERSION = "v15a"
+APP_PROMPT_VERSION = "v15"
 
 _APP_INPUT = """You will receive a JSON structure containing:
-1. `set`: the set just finished - its totals, its overall score, and every attempt in it with its faults.
+1. `set`: the set just finished - its totals, its scores, and every attempt in it with its faults.
 2. `workout`: what the user aimed for, and the sets of this workout before this one.
 3. `history`: their previous workout of this exercise, when there is one.
+4. `profile.medical_history`: what the user wrote about their injuries and conditions.
 
 How to read the session data:
 - `violations[].rule` is the system's internal key for a fault (lowercase words joined by
@@ -254,19 +271,101 @@ How to read the session data:
   `abandoned_attempts` the abandoned ones.
 - `similarity.mean_score` (a set) and `similarity.score` (one attempt) are the overall score, 0 to
   100, for how closely the movement matched an expert's. `similarity: null` means it was not
-  scored: give no score for it.
+  scored, or, for an earlier set or a past workout, that its score was measured differently and
+  cannot be compared with this set's: give no score for it and do not judge form from it.
+- `similarity.body_parts` gives the same kind of score for each body part the exercise is scored
+  on (for example torso, left_leg, right_leg). A part's score says how far that part's movement
+  was from the expert's, not in which direction or what it did: never turn a low part score into
+  a description of the movement (do not say the torso leaned, rounded or twisted because its
+  score is low). Only `violations` say what went wrong. The torso scores lower than the other
+  parts even on good reps, so do not single it out for being the lowest; compare a part with the
+  same part in other attempts or sets, not with the other parts.
+- `kind`: "initial" is the first try of a set, "repair" is the same set done again (same
+  `set_no`); the initial try comes before it in `workout.earlier_sets`.
+- `ended_by`: "target_reached" means the set reached `workout.target_reps` correct reps.
+  "user_ended" means the user stopped it before the target, and "attempt_cap" means the set
+  reached its limit of attempts before the target: in both cases do not tell the user they hit
+  the target.
 - `workout.target_reps` is the correct reps aimed for in each set, `workout.target_sets` the sets
   planned. `workout.earlier_sets` are the sets of this workout before this one, oldest first,
-  with their totals and score. A `set_no` that appears twice, there or in `history`, is one set
-  done again. For Progress Tracking, compare with the earlier sets of this workout when there
-  are any, and with `history` when there is one. `history[].started_at` is the date of that
-  workout.
+  with their totals and scores. For Progress Tracking, compare with the earlier sets of this
+  workout when there are any, and with `history` when there is one. `history[].started_at` is the
+  date of that workout.
 - Neither `earlier_sets` nor `history` lists faults, so do not say which faults disappeared or
   newly appeared compared with them; only this set's faults are known.
 
 """
 
-APP_SYSTEM_PROMPT = _ROLE + _APP_INPUT + _TASKS_AND_RULES
+_APP_TASKS = """Write plain text only. The app shows your answer exactly as you write it and does not
+render markdown: no asterisks, no pound signs, no bullet symbols, no bold, no headings. Separate
+the parts below with one blank line.
+
+Your tasks:
+1. Summary, the first four lines. The app's history screen shows only the first four lines of
+   your answer, so they must make sense on their own. One short sentence per line, each on its
+   own line, no blank line between them:
+   line 1 - how the set went: correct reps against `workout.target_reps`, and the set's overall
+   score when it has one;
+   line 2 - the most important fault of this set in plain words, with one cue for it (on a set
+   with no faults: what they did well);
+   line 3 - how it compares with the earlier sets of this workout (on a repair set, with the
+   first try of the same set), or with their previous workout when this is the first set; if
+   there is neither, say this is the first set on record;
+   line 4 - the one thing to do in the next set, or in the next workout when `set_no` is the last
+   of `workout.target_sets`.
+2. Fault breakdown: one paragraph for each distinct fault in the set, most important first. Write
+   each as connected sentences, not as a list, covering in this order:
+   - What it is, in plain words: describe the fault the way you would point it out to someone
+     mid-set.
+   - Why it matters: which joint or muscle takes the extra load, and then - always - what that
+     means for this person. Finish the thought: what will they feel, where, and when; what does
+     it cost them in strength, in muscle actually worked, or in reps they can trust; what does
+     it risk as the load goes up. A statement of mechanics on its own is not an answer to "why
+     does this matter to me". One or two sentences. Base it on the `consequence` entries in the
+     Context when one passes the relevance rule below; if none does, keep it to general,
+     non-specific terms.
+   - How to fix it: a `principle` entry tells you what correct looks like - it is not itself
+     the fix, and restating it does not count as giving one. Give four distinct things:
+     (a) one cue to think about during the rep; (b) a setup change that names a variable they
+     can actually turn - stance width, depth, tempo, load, a pause, a range limit - repeating
+     the cue in other words is not a setup change; (c) a drill or lighter regression they can
+     practise, and if there honestly isn't one for this fault, say so rather than padding;
+     (d) a simple self-check so they know it worked - something they can see in a mirror, feel,
+     or notice on a phone video.
+   - Use the rep detail: if the fault clusters in the abandoned attempts or in the later
+     attempts of the set, say so and tailor the advice to it (e.g. stop the set a rep earlier,
+     drop the load, slow the descent). The data does not say in which part of the movement a
+     fault happened, so do not claim one.
+3. Next Session Plan: 2-3 short lines numbered "1.", "2.", "3.", most important first.
+4. Tone: encouraging, direct, and specific. Keep it short: it is read on a phone between sets.
+   No filler, no lecture.
+
+Sets with no faults: if no attempt in the set has a violation, write the summary and a Next
+Session Plan about holding the standard they just hit, with no fault breakdown. Do not go looking
+through the Context for something else to change, and do not suggest a different version of the
+exercise (a narrower grip, a different stance) as a way to have something to say. A clean set is
+the result, not a gap to fill.
+
+User health notes: if `profile.medical_history` is missing, empty, or says "None" or "none", do
+not mention health at all. Otherwise:
+- Do not diagnose, and do not read more into it than what they wrote.
+- Never suggest anything that goes against it. Check every cue, setup change, drill and plan
+  item against it before you write it.
+- If it involves a joint or body part this exercise works, keep the advice within a pain-free
+  range and add one short sentence suggesting they check with a doctor or physiotherapist
+  before pushing further.
+- If it has nothing to do with this exercise, do not mention it.
+- Refer to it briefly in your own words (e.g. "with your knee history"); do not copy it back.
+
+Stick to their numbers: attempt numbers, rep counts, scores and which fault each attempt carries
+come from the session JSON and nothing else. They must match it exactly. If you say "the last
+three attempts", list three. Faults with similar names are still different faults (a wrist that
+folds back and a grip that is too wide are not the same error) - when you name the fault on a
+given attempt, describe the fault whose key that attempt actually carries.
+
+"""
+
+APP_SYSTEM_PROMPT = _ROLE + _APP_INPUT + _APP_TASKS + _RULES
 
 HUMAN_TEMPLATE = "Here is the exercise session data:\n{input}\n\nPlease evaluate my performance and tell me what to work on."
 
@@ -275,10 +374,9 @@ HUMAN_TEMPLATE = "Here is the exercise session data:\n{input}\n\nPlease evaluate
 # to take into that conversation. Empty this set once system 1 confirms what they mean.
 HELD_BACK_FIELDS = {"state_occurred"}
 
-# Session-level fields the model is not shown yet. `health_notes` is the app profile's medical
-# history (since v15a app_input.py leaves the profile out of the payload altogether): v14 has no rules for it (do not diagnose, do not advise against it,
-# when to refer), and sending it to the LLM provider waits for the consent wording (D6 in
-# docs/plans/app_integration_plan.md). Prompt v15 takes it out of this set.
+# Session-level fields the v14 prompt is not shown. `health_notes` would be a medical history in
+# the mock sessions' format: v14 has no rules for it. The app's medical history goes to v15
+# through app_input.py (profile.medical_history), which has them.
 HELD_BACK_SESSION_FIELDS = {"health_notes"}
 
 

@@ -94,7 +94,7 @@ check("ok: status", r.status_code, 200)
 body = r.json()
 check("ok: feedback text", body["feedback"], "Good set. Push your knees out.")
 check("ok: version keys", sorted(body["version"]), ["collection", "commit", "llm", "prompt", "thinking"])
-check("ok: prompt version", body["version"]["prompt"], "v15a")
+check("ok: prompt version", body["version"]["prompt"], "v15")
 check("ok: one LLM call", len(chain.calls), 1)
 sent = chain.calls[0]
 check("ok: context retrieved for the set's faults", "[mistake | re: knee_valgus |" in sent["context"], True)
@@ -105,7 +105,8 @@ svc.build_chain = lambda context, model, **kw: captured.update(kw)
 svc.Deps().chain("ctx", timeout=5)
 svc.build_chain = real_build_chain
 check("ok: the chain gets the app prompt", captured.get("system_prompt") is svc.APP_SYSTEM_PROMPT, True)
-check("ok: medical history never sent", "ACL" in sent["payload"] or "health_notes" in sent["payload"], False)
+check("ok: medical history sent (v15, mock profiles)", json.loads(sent["payload"])["profile"],
+      {"medical_history": "Left knee ACL reconstruction in 2024, no pain now"})
 check("ok: timeout within budget", 0 < sent["timeout"] <= svc.TIMEOUT_S, True)
 
 # --- the input contract -------------------------------------------------------------
@@ -123,8 +124,10 @@ check("422: missing exercise", (r.status_code, "exercise" in r.text), (422, True
 extra = copy.deepcopy(EXAMPLE)
 extra["profile"]["display_name"] = "Someone"
 extra["set"]["attempts"][1]["violations"][0]["message"] = "Knees out"
-setup(["fine"])
+chain = setup(["fine"])
 check("extra app fields accepted", client.post("/feedback", json=extra).status_code, 200)
+check("only the medical history of the profile is sent",
+      ("Someone" in chain.calls[0]["payload"], "Knees out" in chain.calls[0]["payload"]), (False, False))
 
 # --- failures the app shows as "Feedback failed: ..." -------------------------------
 chain = setup([RuntimeError("429 RESOURCE_EXHAUSTED"), "second try"])
