@@ -95,7 +95,7 @@ check("ok: status", r.status_code, 200)
 body = r.json()
 check("ok: feedback text", body["feedback"], "Good set. Push your knees out.")
 check("ok: version keys", sorted(body["version"]), ["collection", "commit", "llm", "prompt", "thinking"])
-check("ok: prompt version", body["version"]["prompt"], "v15")
+check("ok: prompt version", body["version"]["prompt"], "v16")
 check("ok: one LLM call", len(chain.calls), 1)
 sent = chain.calls[0]
 check("ok: context retrieved for the set's faults", "[mistake | re: knee_valgus |" in sent["context"], True)
@@ -200,7 +200,7 @@ with tempfile.TemporaryDirectory() as tmp:
           EXAMPLE["profile"]["medical_history"])
     check("capture: payload, context, answer, version",
           (ok["payload"]["set"]["totals"]["attempts"], "[mistake | re: knee_valgus |" in ok["context"],
-           ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, "Good set. Push your knees out.", "v15", None))
+           ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, "Good set. Push your knees out.", "v16", None))
     check("capture: LLM failure keeps the context and the error",
           (llm_failed["context"] is not None, llm_failed["feedback"], llm_failed["error"]["status"]), (True, None, 502))
     check("capture: DB failure has no context", (db_failed["context"], db_failed["error"]["status"]), (None, 503))

@@ -244,7 +244,18 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 # waits with them. The other similarity fields and duration_s wait until the feedback is good
 # with these (plan A3).
 # The eval scripts keep SYSTEM_PROMPT and the mock sessions' v14 format.
-APP_PROMPT_VERSION = "v15"
+#
+# v16 (2026-11-02, the user's choice): only the layout changes. The app now shows a summary of what
+# went wrong and how to fix it above the full feedback, so the answer opens with labelled lines
+# the app parses: "Fault <rule key>: ..." and "Fix: ..." per fault, or "Keep: ..." on a clean
+# set. The key lets the app add its own count and order instead of trusting the model's count,
+# and is the one place a key may be written. v15's four summary lines minus the fault line
+# follow as a three-line overview, and the plan is headed by a "Next Session Plan:" line (v15
+# answers on Gemini wrote one unasked). The fault breakdown and every rule are v15's. Not run on a model before it shipped (the user's choice): the
+# app falls back to the whole text when the lines do not parse, and the first real sets test it.
+# Seen on Gemini with v15 and still open: "lighten the load" on a bodyweight squat (task 3's
+# setup-change list names load).
+APP_PROMPT_VERSION = "v16"
 
 _APP_INPUT = """You will receive a JSON structure containing:
 1. `set`: the set just finished - its totals, its scores, and every attempt in it with its faults.
@@ -255,7 +266,8 @@ _APP_INPUT = """You will receive a JSON structure containing:
 How to read the session data:
 - `violations[].rule` is the system's internal key for a fault (lowercase words joined by
   underscores). It identifies the fault: use it to tell which attempt has which fault. Never
-  write a key to the user - name the fault in plain words instead. When an attempt lists more
+  write a key to the user - name the fault in plain words instead - except on the summary's
+  Fault lines (task 1), where the app replaces it. When an attempt lists more
   than one violation, they are in the system's priority order: the first one is the most
   important.
 - `attempt_no` numbers every entry of the set from 1; use it when you point to one.
@@ -301,19 +313,25 @@ render markdown: no asterisks, no pound signs, no bullet symbols, no bold, no he
 the parts below with one blank line.
 
 Your tasks:
-1. Summary, the first four lines. The app's history screen shows only the first four lines of
-   your answer, so they must make sense on their own. One short sentence per line, each on its
-   own line, no blank line between them:
+1. Summary, everything before the first blank line. The app reads these lines and shows them as
+   a list of what went wrong and how to fix it, so write them exactly in this form, one per line,
+   and put nothing else before the first blank line:
+   - On a set with faults, two lines for each distinct fault in the set, most important first:
+       Fault <key>: <the fault in plain words, one short sentence>
+       Fix: <one cue for it, one short sentence>
+     <key> is that fault's `violations[].rule`, copied exactly. Do not put counts or attempt
+     numbers on these lines: the app adds its own.
+   - On a set with no faults, one line:
+       Keep: <what they did well, one short sentence>
+2. Overview, three lines, one short sentence per line, no blank line between them:
    line 1 - how the set went: correct reps against `workout.target_reps`, and the set's overall
    score when it has one;
-   line 2 - the most important fault of this set in plain words, with one cue for it (on a set
-   with no faults: what they did well);
-   line 3 - how it compares with the earlier sets of this workout (on a repair set, with the
+   line 2 - how it compares with the earlier sets of this workout (on a repair set, with the
    first try of the same set), or with their previous workout when this is the first set; if
    there is neither, say this is the first set on record;
-   line 4 - the one thing to do in the next set, or in the next workout when `set_no` is the last
+   line 3 - the one thing to do in the next set, or in the next workout when `set_no` is the last
    of `workout.target_sets`.
-2. Fault breakdown: one paragraph for each distinct fault in the set, most important first. Write
+3. Fault breakdown: one paragraph for each distinct fault in the set, most important first. Write
    each as connected sentences, not as a list, covering in this order:
    - What it is, in plain words: describe the fault the way you would point it out to someone
      mid-set.
@@ -336,12 +354,13 @@ Your tasks:
      attempts of the set, say so and tailor the advice to it (e.g. stop the set a rep earlier,
      drop the load, slow the descent). The data does not say in which part of the movement a
      fault happened, so do not claim one.
-3. Next Session Plan: 2-3 short lines numbered "1.", "2.", "3.", most important first.
-4. Tone: encouraging, direct, and specific. Keep it short: it is read on a phone between sets.
+4. Next Session Plan: a line "Next Session Plan:", then 2-3 short lines numbered "1.", "2.",
+   "3.", most important first.
+5. Tone: encouraging, direct, and specific. Keep it short: it is read on a phone between sets.
    No filler, no lecture.
 
-Sets with no faults: if no attempt in the set has a violation, write the summary and a Next
-Session Plan about holding the standard they just hit, with no fault breakdown. Do not go looking
+Sets with no faults: if no attempt in the set has a violation, write the Keep line, the overview
+and a Next Session Plan about holding the standard they just hit, with no fault breakdown. Do not go looking
 through the Context for something else to change, and do not suggest a different version of the
 exercise (a narrower grip, a different stance) as a way to have something to say. A clean set is
 the result, not a gap to fill.

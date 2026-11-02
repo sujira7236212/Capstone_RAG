@@ -44,7 +44,9 @@ check("app prompt shares v14's rules for the Context",
       APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("How to read the Context:"):],
       SYSTEM_PROMPT[SYSTEM_PROMPT.index("How to read the Context:"):])
 check("app prompt asks for plain text", "Write plain text only" in APP_SYSTEM_PROMPT, True)
-check("app prompt: summary in the first four lines", "first four lines" in APP_SYSTEM_PROMPT, True)
+# v16: the labels the app parses (MU-Capstone-Application lib/feedback-text.ts); change both together.
+for label in ("Fault <key>:", "Fix:", "Keep:", '"Next Session Plan:"'):
+    check(f"app prompt: summary label {label}", label in APP_SYSTEM_PROMPT, True)
 check("app prompt has health rules", "User health notes" in APP_SYSTEM_PROMPT, True)
 check("v14 prompt has no health rules", "User health notes" in SYSTEM_PROMPT, False)
 for key in ("violations[].rule", "attempt_no", "outcome", "totals", "mean_score", "earlier_sets", "target_reps",
