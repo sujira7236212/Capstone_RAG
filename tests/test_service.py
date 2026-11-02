@@ -83,6 +83,7 @@ def setup(script, rows=10, store=Store):
 
 
 svc.RATE_LIMIT_WAIT_S = 0
+svc.CAPTURE_PATH = None  # a FEEDBACK_CAPTURE in .env must not collect these fake requests
 client = TestClient(svc.app)
 with open(os.path.join(ROOT, "docs/plans/feedback_input_example.json"), encoding="utf-8") as f:
     EXAMPLE = json.load(f)
@@ -170,6 +171,46 @@ chain = setup(["unused"])
 r = client.post("/feedback", json=EXAMPLE)
 check("no budget left: 504 without calling the LLM", (r.status_code, len(chain.calls)), (504, 0))
 svc.TIMEOUT_S = old_timeout
+
+# --- FEEDBACK_CAPTURE -------------------------------------------------------------------
+import tempfile  # noqa: E402
+
+with tempfile.TemporaryDirectory() as tmp:
+    old_capture = svc.CAPTURE_PATH
+    svc.CAPTURE_PATH = None
+    setup(["not captured"])
+    client.post("/feedback", json=EXAMPLE)
+    check("capture off: nothing written", os.listdir(tmp), [])
+
+    svc.CAPTURE_PATH = os.path.join(tmp, "capture", "requests.jsonl")
+    setup(["Good set. Push your knees out."])
+    client.post("/feedback", json=EXAMPLE)
+    setup([ValueError("API key not valid")])
+    client.post("/feedback", json=EXAMPLE)
+    setup(["unused"], store=broken_store)
+    client.post("/feedback", json=EXAMPLE)
+    with open(svc.CAPTURE_PATH, encoding="utf-8") as f:
+        lines = [json.loads(line) for line in f]
+    check("capture: one line per request, failures included", len(lines), 3)
+    ok, llm_failed, db_failed = lines
+    check("capture: the app's input as sent", ok["input"]["set"]["totals"], EXAMPLE["set"]["totals"])
+    check("capture: rule names as a sorted JSON list",
+          (isinstance(ok["errors"], list), len(ok["errors"]) > 0, ok["errors"] == sorted(ok["errors"])), (True, True, True))
+    check("capture: medical history kept", ok["input"]["profile"]["medical_history"],
+          EXAMPLE["profile"]["medical_history"])
+    check("capture: payload, context, answer, version",
+          (ok["payload"]["set"]["totals"]["attempts"], "[mistake | re: knee_valgus |" in ok["context"],
+           ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, "Good set. Push your knees out.", "v15", None))
+    check("capture: LLM failure keeps the context and the error",
+          (llm_failed["context"] is not None, llm_failed["feedback"], llm_failed["error"]["status"]), (True, None, 502))
+    check("capture: DB failure has no context", (db_failed["context"], db_failed["error"]["status"]), (None, 503))
+
+    svc.CAPTURE_PATH = os.path.join(tmp, "not-a-dir.jsonl", "requests.jsonl")
+    open(os.path.join(tmp, "not-a-dir.jsonl"), "w").close()  # a file where the folder should be
+    setup(["still answered"])
+    r = client.post("/feedback", json=EXAMPLE)
+    check("capture write fails: request still answered", (r.status_code, r.json()["feedback"]), (200, "still answered"))
+    svc.CAPTURE_PATH = old_capture
 
 # --- health -------------------------------------------------------------------------
 setup([], rows=2197)

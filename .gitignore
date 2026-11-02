@@ -27,3 +27,8 @@ chunk_results.txt
 # --- caches ---
 # kb_rerank.py's cross-encoder scores, keyed by model + query + chunk text; rebuilt on demand.
 .cache/
+
+# --- captured app requests ---
+# service/app.py writes FEEDBACK_CAPTURE here: real users' inputs, profile and medical
+# history included (PDPA). Never commit.
+capture/

@@ -26,9 +26,14 @@ Configuration, all from the environment (the repo's .env is read too):
                          (2026-10-25); "" keeps the model's default
     FEEDBACK_TIMEOUT_S   budget for one request, default 45: the app gives up at 60
     FEEDBACK_PORT        default 8100
+    FEEDBACK_CAPTURE     a .jsonl path (relative to the repo root): each request appends one
+                         line with the app's input, the payload the LLM saw, the context, the
+                         answer or the error, and VERSION, so the eval can regenerate answers
+                         from real inputs (2026-11-02). Unset: nothing is written. The input
+                         holds the profile and the medical history; capture/ is gitignored
 
 Each request is logged with its duration, version and chunks kept per error. The profile,
-the medical history and the feedback text are never logged.
+the medical history and the feedback text are never logged; only FEEDBACK_CAPTURE keeps them.
 """
 import json
 import logging
@@ -72,6 +77,10 @@ LLM_KEY_ENV = {"gemini": "GOOGLE_API_KEY", "groq": "GROQ_API_KEY"}[LLM_PROVIDER]
 TIMEOUT_S = float(os.environ.get("FEEDBACK_TIMEOUT_S") or 45)
 RATE_LIMIT_WAIT_S = 3  # one retry after a 429, only if the budget still has room for a call
 MIN_CALL_S = 10  # an LLM call given less than this would only time out
+CAPTURE_PATH = os.environ.get("FEEDBACK_CAPTURE") or None
+if CAPTURE_PATH and not os.path.isabs(CAPTURE_PATH):
+    CAPTURE_PATH = os.path.join(ROOT, CAPTURE_PATH)
+_capture_lock = threading.Lock()
 
 
 def _commit():
@@ -244,6 +253,21 @@ def _generate(context, payload, deadline):
             raise ServiceError(502, "the language model could not write feedback this time, try again")
 
 
+def _capture(record):
+    """One line per request into FEEDBACK_CAPTURE. A failed write is logged and never fails
+    the request: the user's feedback matters more than the eval's copy of it."""
+    if not CAPTURE_PATH:
+        return
+    try:
+        line = json.dumps(record, ensure_ascii=False, default=str)
+        with _capture_lock:
+            os.makedirs(os.path.dirname(CAPTURE_PATH), exist_ok=True)
+            with open(CAPTURE_PATH, "a", encoding="utf-8") as f:
+                f.write(line + "\n")
+    except Exception as e:  # noqa: BLE001
+        log.error("capture failed: %s: %s", type(e).__name__, str(e)[:300])
+
+
 @app.post("/feedback")
 def feedback(inp: FeedbackInput):
     # A plain def: FastAPI runs it in its thread pool, so the blocking DB and HTTP calls
@@ -253,17 +277,29 @@ def feedback(inp: FeedbackInput):
     payload = payload_from_feedback_input(inp.model_dump())
     errors = rule_names(payload)
     exercise = payload["exercise"]
+    record = {"captured_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "input": inp.model_dump(mode="json"),
+              "payload": payload, "errors": sorted(errors), "context": None, "metrics": None, "feedback": None,
+              "error": None, "version": VERSION}
     try:
-        context, metrics = retrieve_kb_context(deps.vectorstore(), exercise["id"], exercise["name"],
-                                               errors, cfg=DEFAULT_CONFIG)
-    except Exception as e:  # noqa: BLE001
-        log.error("retrieval failed: %s: %s", type(e).__name__, str(e)[:300])
-        raise ServiceError(503, "the exercise knowledge base is not reachable, try again")
-    text = _generate(context, payload, deadline)
+        try:
+            context, metrics = retrieve_kb_context(deps.vectorstore(), exercise["id"], exercise["name"],
+                                                   errors, cfg=DEFAULT_CONFIG)
+        except Exception as e:  # noqa: BLE001
+            log.error("retrieval failed: %s: %s", type(e).__name__, str(e)[:300])
+            raise ServiceError(503, "the exercise knowledge base is not reachable, try again")
+        record.update(context=context, metrics=metrics)
+        text = _generate(context, payload, deadline)
+        record["feedback"] = text
+    except ServiceError as e:
+        record["error"] = {"status": e.status, "message": e.message}
+        raise
+    finally:
+        record["ms"] = round((time.monotonic() - started) * 1000)
+        _capture(record)
     kept = {}
     for m in metrics:
         kept[m["error"]] = kept.get(m["error"], 0) + m["kept"]
-    log.info(json.dumps({"ms": round((time.monotonic() - started) * 1000), "exercise": exercise["id"],
+    log.info(json.dumps({"ms": record["ms"], "exercise": exercise["id"],
                          "kind": inp.set.kind, "kept": kept, "chars": len(text), **VERSION}))
     return {"feedback": text, "version": VERSION}
 
