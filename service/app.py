@@ -79,6 +79,7 @@ LLM_KEY_ENV = {"gemini": "GOOGLE_API_KEY", "groq": "GROQ_API_KEY"}[LLM_PROVIDER]
 TIMEOUT_S = float(os.environ.get("FEEDBACK_TIMEOUT_S") or 45)
 RATE_LIMIT_WAIT_S = 3  # one retry after a 429, only if the budget still has room for a call
 MIN_CALL_S = 10  # an LLM call given less than this would only time out
+HEALTH_DB_TIMEOUT_S = 5  # with Supabase off, /health otherwise hangs for about 2 minutes (2026-11-07)
 CAPTURE_PATH = os.environ.get("FEEDBACK_CAPTURE") or None
 if CAPTURE_PATH and not os.path.isabs(CAPTURE_PATH):
     CAPTURE_PATH = os.path.join(ROOT, CAPTURE_PATH)
@@ -197,7 +198,8 @@ class Deps:
 
     def count_rows(self):
         import sqlalchemy
-        engine = sqlalchemy.create_engine(KB_DATABASE_URL or embedding_config.get_connection())
+        engine = sqlalchemy.create_engine(KB_DATABASE_URL or embedding_config.get_connection(),
+                                          connect_args={"connect_timeout": HEALTH_DB_TIMEOUT_S})
         try:
             with engine.connect() as conn:
                 return conn.execute(sqlalchemy.text(

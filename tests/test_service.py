@@ -227,5 +227,26 @@ def db_down():
 setup([], rows=db_down)
 check("health: DB down", client.get("/health").status_code, 503)
 
+# The real count_rows must give up quickly: with Supabase off, psycopg's default waits ~2 minutes.
+import sqlalchemy  # noqa: E402
+
+seen = {}
+
+
+def refuse_engine(url, **kwargs):
+    seen.update(kwargs)
+    raise ConnectionError("refused")
+
+
+real_create_engine = sqlalchemy.create_engine
+sqlalchemy.create_engine = refuse_engine
+try:
+    svc.Deps().count_rows()
+except ConnectionError:
+    pass
+finally:
+    sqlalchemy.create_engine = real_create_engine
+check("health: connection has a short timeout", seen.get("connect_args"), {"connect_timeout": svc.HEALTH_DB_TIMEOUT_S})
+
 print("all passed" if not failed else f"{failed} failure(s)")
 sys.exit(1 if failed else 0)

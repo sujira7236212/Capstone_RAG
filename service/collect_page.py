@@ -8,6 +8,8 @@ import time
 
 from eval.replay_captured import CELLS_WANTED, build_test_set, read_captures, row_numbers, sets_on_file
 
+SHEET_URL = "https://claude.ai/artifact/2TaAz6JGaKsdeE7AXgdu1L#sheet"  # who took which row, shared by everyone
+
 # Why a set does not count, and what to do about it.
 REASONS = {
     "no_similarity": ("similarity ไม่ได้ทำงาน", "เปิด similarity service แล้วกด Retry บนหน้า set นั้น"),
@@ -25,7 +27,8 @@ STYLE = """
 body { font: 15px/1.6 Tahoma, "Noto Sans Thai", sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
 h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.1rem; margin: 28px 0 8px; }
 .count { font-size: 1.15rem; font-weight: 600; } .muted { opacity: .72; font-size: .92rem; }
-.get { display: inline-block; margin-top: 8px; padding: 6px 14px; border: 1px solid currentColor; border-radius: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.get { display: inline-block; padding: 6px 14px; border: 1px solid currentColor; border-radius: 6px; }
 .warn { border-left: 4px solid var(--warn); padding: 8px 12px; background: #c7770018; }
 table { border-collapse: collapse; width: 100%; } th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-top: 1px solid var(--line); }
 th { font-size: .85rem; opacity: .72; } .ok { color: var(--ok); font-weight: 600; } .no { color: var(--warn); font-weight: 600; }
@@ -70,7 +73,8 @@ def render(capture_path):
 
     body = [f'<p class="count">เครื่องนี้เก็บแล้ว {len(test)}/{CELLS_WANTED} แถว</p>',
             '<p class="muted">นับเฉพาะ set ในเครื่องนี้ แถวที่ยังว่างอาจมีเพื่อนทำแล้ว ให้ดูในตารางบนเว็บ หน้านี้อัปเดตเองทุก 20 วินาที</p>',
-            '<a class="get" href="/capture.jsonl">ดาวน์โหลดไฟล์สำหรับส่ง</a>']
+            f'<p class="links"><a class="get" href="{SHEET_URL}" target="_blank" rel="noopener">เปิดตารางบนเว็บ</a>'
+            '<a class="get" href="/capture.jsonl">ดาวน์โหลดไฟล์สำหรับส่ง</a></p>']
     if bad:
         body.append(f'<p class="warn">มี {bad} บรรทัดในไฟล์ที่อ่านไม่ได้ แจ้ง Sujira</p>')
     body.append('<h2>set ล่าสุดเข้าแถวไหน</h2>')

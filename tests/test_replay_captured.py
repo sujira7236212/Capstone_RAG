@@ -318,6 +318,7 @@ with tempfile.TemporaryDirectory() as tmp:
     check("page: the row of a set", "แถว #10" in html_page, True)
     check("page: why a set does not count", "สัดส่วนท่าผิด" in html_page, True)
     check("page: 1 of 36", "1/36" in html_page, True)
+    check("page: links to the shared sheet", "claude.ai/artifact/" in html_page, True)
     check("page: no profile, no answer", any(s in html_page for s in ("Private text", "Secret Name", "old answer")), False)
     download = page.get("/capture.jsonl")
     check("download: the file", download.text.count("\n"), 2)
