@@ -30,7 +30,9 @@ Configuration, all from the environment (the repo's .env is read too):
                          line with the app's input, the payload the LLM saw, the context, the
                          answer or the error, and VERSION, so the eval can regenerate answers
                          from real inputs (2026-11-02). Unset: nothing is written. The input
-                         holds the profile and the medical history; capture/ is gitignored
+                         holds the profile and the medical history; capture/ is gitignored.
+                         GET /coverage shows which rows of the 36-set sheet it fills and
+                         GET /capture.jsonl downloads it
 
 Each request is logged with its duration, version and chunks kept per error. The profile,
 the medical history and the feedback text are never logged; only FEEDBACK_CAPTURE keeps them.
@@ -53,7 +55,7 @@ load_dotenv(os.path.join(ROOT, ".env"))
 
 from fastapi import FastAPI, Request  # noqa: E402
 from fastapi.exceptions import RequestValidationError  # noqa: E402
-from fastapi.responses import PlainTextResponse  # noqa: E402
+from fastapi.responses import FileResponse, HTMLResponse, PlainTextResponse  # noqa: E402
 from pydantic import BaseModel, ConfigDict  # noqa: E402
 
 import embedding_config  # noqa: E402
@@ -317,3 +319,20 @@ def health():
         if not os.environ.get(key):
             raise ServiceError(503, f"{key} is not set")
     return {"ok": True, "rows": rows, "version": VERSION}
+
+
+@app.get("/coverage", response_class=HTMLResponse)
+def coverage():
+    """The page the people collecting the eval's sets check. Imported here so the eval's code
+    cannot stop the service from starting."""
+    from service.collect_page import render
+    return render(CAPTURE_PATH)
+
+
+@app.get("/capture.jsonl")
+def capture_file():
+    """The capture file as a download, so nobody has to find it in the repo. The service listens
+    on 127.0.0.1 only."""
+    if not CAPTURE_PATH or not os.path.exists(CAPTURE_PATH):
+        raise ServiceError(404, "there is no capture file yet")
+    return FileResponse(CAPTURE_PATH, media_type="text/plain", filename="capture.jsonl")
