@@ -25,13 +25,13 @@ model and the exact texts in their shown order.
     python eval/judge_pairwise.py compare_output/ablation/g1_R0.json compare_output/ablation/g1_R4.json \\
         --names R0 R4 --out compare_output/ablation/g1_pairwise_R0_vs_R4.md
 
-Judge: default cerebras:gpt-oss-120b (needs CEREBRAS_API_KEY in .env). Check cost first with
+Judge: default groq:qwen/qwen3.8-27b (needs GROQ_API_KEY in .env). Check cost first with
 --estimate (no API call). Use a separate --out per judge so each cache file holds one judge.
 
     python eval/judge_pairwise.py compare_output/history/compare_result_per_fault_v13.json \\
         compare_output/history/compare_result_per_fault_v13.json --side-a rag --side-b no_rag \\
         --names RAG noRAG --max-samples 1 --session "Squat — Knee valgus" \\
-        --out compare_output/history/pairwise_smoke_cerebras.md
+        --out compare_output/history/pairwise_smoke_groq.md
 """
 import argparse
 import hashlib
@@ -39,6 +39,7 @@ import json
 import math
 import os
 import random
+import re
 import sys
 import time
 from collections import Counter, defaultdict
@@ -51,12 +52,13 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(ROOT, ".env"))
 
-# Judge = "<provider>:<model>". Default is a NON-Gemini family (OpenAI gpt-oss via Cerebras'
-# free tier), because the generator (test_rag_compare.LLM_MODEL = gemini-3.5-flash-lite) and the
-# curator are both Gemini: a same-family judge tends to prefer its own family's phrasing.
+# Judge = "<provider>:<model>". Default is a NON-Gemini family (Qwen 27B via Groq's free tier),
+# because the generator (test_rag_compare.LLM_MODEL = gemini-3.5-flash-lite) and the curator are
+# both Gemini: a same-family judge tends to prefer its own family's phrasing. For the same reason,
+# do not use it on answers qwen wrote (eval/generate_groq.py, the service on FEEDBACK_LLM_PROVIDER=groq).
 # A bare model name with no "provider:" prefix means Gemini (kept so older caches still match),
 # e.g. --judge gemini-3.8-flash reproduces the original G1 setup.
-JUDGE_MODEL = "cerebras:gpt-oss-120b"
+JUDGE_MODEL = "groq:qwen/qwen3.8-27b"
 
 # OpenAI-compatible chat-completions endpoints. Switching judge = switching this key, nothing
 # else. min_interval is seconds between calls (free-tier RPM); 429s are retried on top of it.
@@ -64,6 +66,7 @@ PROVIDERS = {
     "cerebras": {"base_url": "https://api.cerebras.ai/v1", "key_env": "CEREBRAS_API_KEY", "min_interval": 13},
     "groq": {"base_url": "https://api.groq.com/openai/v1", "key_env": "GROQ_API_KEY", "min_interval": 30},  # 8K TPM / ~4K per pair
     "mistral": {"base_url": "https://api.mistral.ai/v1", "key_env": "MISTRAL_API_KEY", "min_interval": 2},
+    "deepinfra": {"base_url": "https://api.deepinfra.com/v1/openai", "key_env": "DEEPINFRA_API_KEY", "min_interval": 1},  # Muse Glimmer, Mistral Small 3.2
     "ollama": {"base_url": "http://localhost:11434/v1", "key_env": None, "min_interval": 0},  # local smoke tests
 }
 # Bump when JUDGE_PROMPT changes: cached judgments from an older prompt are not reused.
@@ -270,8 +273,9 @@ class OpenAICompatClient:
 
 
 def extract_json(text):
-    """The JSON object in a reply, tolerating ```json fences or text around it."""
-    text = (text or "").strip()
+    """The JSON object in a reply, tolerating ```json fences or text around it. Qwen writes its
+    reasoning inline first, and braces in it would break the search below, so that goes first."""
+    text = re.sub(r"<think>.*?</think>", "", text or "", flags=re.S).strip()
     try:
         return json.loads(text)
     except json.JSONDecodeError:
