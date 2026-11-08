@@ -19,6 +19,7 @@ from fastapi.testclient import TestClient  # noqa: E402
 import judge_pairwise  # noqa: E402
 import replay_captured as rc  # noqa: E402
 from service import app as svc  # noqa: E402
+from tests.fake_answer import as_json  # noqa: E402
 
 svc.CAPTURE_PATH = None  # a FEEDBACK_CAPTURE in .env must not collect these fake requests
 svc.RATE_LIMIT_WAIT_S = 0
@@ -134,7 +135,7 @@ class Chain:
     def __init__(self, script):
         self.script, self.calls = list(script), []
 
-    def __call__(self, context, timeout):
+    def __call__(self, context, timeout, schema=None):
         outer = self
 
         class _C:
@@ -143,7 +144,7 @@ class Chain:
                 step = outer.script.pop(0) if outer.script else "answer"
                 if isinstance(step, Exception):
                     raise step
-                return step
+                return as_json(step, schema)
         return _C()
 
 

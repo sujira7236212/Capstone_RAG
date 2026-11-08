@@ -43,10 +43,13 @@ check("v14 prompt unchanged by the split", hashlib.sha1(SYSTEM_PROMPT.encode("ut
 check("app prompt shares v14's rules for the Context",
       APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("How to read the Context:"):],
       SYSTEM_PROMPT[SYSTEM_PROMPT.index("How to read the Context:"):])
-check("app prompt asks for plain text", "Write plain text only" in APP_SYSTEM_PROMPT, True)
-# v16: the labels the app parses (MU-Capstone-Application lib/feedback-text.ts); change both together.
-for label in ("Fault <key>:", "Fix:", "Keep:", '"Next Session Plan:"'):
-    check(f"app prompt: summary label {label}", label in APP_SYSTEM_PROMPT, True)
+check("app prompt asks for JSON", "Answer with one JSON object and nothing else" in APP_SYSTEM_PROMPT, True)
+# v17: the JSON fields rag_core/feedback_format.py reads (tests/test_feedback_format.py pins the text the
+# app parses). "Why it matters" is out of the fields; _RULES (v14's) still names it as a past section.
+for field in ("`faults`", "`rule`", "`fault`", "`fix`", "`what_it_is`", "`likely_cause`", "`setup_change`",
+              "`drill`", "`check`", "`in_this_set`", "`keep`", "`progress`", "`health`", "`next`"):
+    check(f"app prompt: field {field}", field in APP_SYSTEM_PROMPT, True)
+check("app prompt: no why_it_matters field", "why_it_matters" in APP_SYSTEM_PROMPT, False)
 check("app prompt has health rules", "User health notes" in APP_SYSTEM_PROMPT, True)
 check("v14 prompt has no health rules", "User health notes" in SYSTEM_PROMPT, False)
 for key in ("violations[].rule", "attempt_no", "outcome", "totals", "mean_score", "earlier_sets", "target_reps",

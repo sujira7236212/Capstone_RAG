@@ -257,7 +257,8 @@ def retrieve(svc, store, payload):
 
 
 def generate(svc, context, payload):
-    return svc._generate(context, payload, time.monotonic() + svc.TIMEOUT_S)
+    """As POST /feedback does: the model's JSON, then the text the app would store."""
+    return svc._render(svc._generate(context, payload, time.monotonic() + svc.TIMEOUT_S), payload)
 
 
 # --- commands that make no LLM call ----------------------------------------------------

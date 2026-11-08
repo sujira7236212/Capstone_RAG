@@ -255,7 +255,25 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 # app falls back to the whole text when the lines do not parse, and the first real sets test it.
 # Seen on Gemini with v15 and still open: "lighten the load" on a bodyweight squat (task 3's
 # setup-change list names load).
-APP_PROMPT_VERSION = "v16"
+#
+# v17 (2026-11-07, the user's plan for prompt and layout). Read on a phone between sets, v16's answer
+# with two faults was 509 words, 3.1 screens of set-complete with the repair button at the bottom,
+# and said the elbow cue four times in two wordings. It also broke v16's own layout (hyphen bullets,
+# "What it is:" labels) and named tempo counts the Context does not hold. So:
+#   1. JSON in fixed slots (rag_core/feedback_format.py), turned into text by the service: the model
+#      cannot drift out of the layout, and the app can show the short slots first and open the rest.
+#   2. A word limit per slot, and no slot may repeat another (the overview's rep counts, which the
+#      screen shows, are gone; the plan may not repeat a fix).
+#   3. Each fault: fault + fix (the app's list, unchanged), then what it is, likely cause, setup
+#      change, drill with a dose, self-check, and which attempts. "Why it matters" is dropped (the
+#      user's choice), the cause is new (the eval checklist's C2).
+#   4. A health slot, so a caution is never buried mid-paragraph and History can show it.
+#   5. A training instruction of the model's own (tempo, pause, reps) may carry a number not in the
+#      Context; every other number still has to be in it (the user agreed to the plan's
+#      recommendation: the rule clashed with the checklist's F2/F3, and the model ignored it).
+#   6. The cue should point attention outside the body where it can (external focus).
+# _RULES is v14's and unchanged, so it still names v14's sections; the tasks say how they map.
+APP_PROMPT_VERSION = "v17"
 
 _APP_INPUT = """You will receive a JSON structure containing:
 1. `set`: the set just finished - its totals, its scores, and every attempt in it with its faults.
@@ -265,11 +283,10 @@ _APP_INPUT = """You will receive a JSON structure containing:
 
 How to read the session data:
 - `violations[].rule` is the system's internal key for a fault (lowercase words joined by
-  underscores). It identifies the fault: use it to tell which attempt has which fault. Never
-  write a key to the user - name the fault in plain words instead - except on the summary's
-  Fault lines (task 1), where the app replaces it. When an attempt lists more
-  than one violation, they are in the system's priority order: the first one is the most
-  important.
+  underscores). It identifies the fault: use it to tell which attempt has which fault. Write a
+  key only in a fault's `rule` field, where the app replaces it; everywhere else name the fault
+  in plain words. When an attempt lists more than one violation, they are in the system's
+  priority order: the first one is the most important.
 - `attempt_no` numbers every entry of the set from 1; use it when you point to one.
 - `outcome`: "correct" is a full rep with no fault, and only these count toward the target.
   "incorrect" is a full rep that has a fault, so it did not count. "abandoned" is an attempt that
@@ -300,7 +317,7 @@ How to read the session data:
   the target.
 - `workout.target_reps` is the correct reps aimed for in each set, `workout.target_sets` the sets
   planned. `workout.earlier_sets` are the sets of this workout before this one, oldest first,
-  with their totals and scores. For Progress Tracking, compare with the earlier sets of this
+  with their totals and scores. For `progress`, compare with the earlier sets of this
   workout when there are any, and with `history` when there is one. `history[].started_at` is the
   date of that workout.
 - Neither `earlier_sets` nor `history` lists faults, so do not say which faults disappeared or
@@ -308,72 +325,77 @@ How to read the session data:
 
 """
 
-_APP_TASKS = """Write plain text only. The app shows your answer exactly as you write it and does not
-render markdown: no asterisks, no pound signs, no bullet symbols, no bold, no headings. Separate
-the parts below with one blank line.
+_APP_TASKS = """Answer with one JSON object and nothing else. The service turns it into the text the app
+shows, so every field is plain words: no markdown, no bullet symbols, no line breaks, and no
+label of its own inside a field. The app shows `fault` and `fix` first and the other fault
+fields only when the user taps to open them, so each field has to make sense on its own, and no
+field may repeat what another one already says.
 
-Your tasks:
-1. Summary, everything before the first blank line. The app reads these lines and shows them as
-   a list of what went wrong and how to fix it, so write them exactly in this form, one per line,
-   and put nothing else before the first blank line:
-   - On a set with faults, two lines for each distinct fault in the set, most important first:
-       Fault <key>: <the fault in plain words, one short sentence>
-       Fix: <one cue for it, one short sentence>
-     <key> is that fault's `violations[].rule`, copied exactly. Do not put counts or attempt
-     numbers on these lines: the app adds its own.
-   - On a set with no faults, one line:
-       Keep: <what they did well, one short sentence>
-2. Overview, three lines, one short sentence per line, no blank line between them:
-   line 1 - how the set went: correct reps against `workout.target_reps`, and the set's overall
-   score when it has one;
-   line 2 - how it compares with the earlier sets of this workout (on a repair set, with the
-   first try of the same set), or with their previous workout when this is the first set; if
-   there is neither, say this is the first set on record;
-   line 3 - the one thing to do in the next set, or in the next workout when `set_no` is the last
-   of `workout.target_sets`.
-3. Fault breakdown: one paragraph for each distinct fault in the set, most important first. Write
-   each as connected sentences, not as a list, covering in this order:
-   - What it is, in plain words: describe the fault the way you would point it out to someone
-     mid-set.
-   - Why it matters: which joint or muscle takes the extra load, and then - always - what that
-     means for this person. Finish the thought: what will they feel, where, and when; what does
-     it cost them in strength, in muscle actually worked, or in reps they can trust; what does
-     it risk as the load goes up. A statement of mechanics on its own is not an answer to "why
-     does this matter to me". One or two sentences. Base it on the `consequence` entries in the
-     Context when one passes the relevance rule below; if none does, keep it to general,
-     non-specific terms.
-   - How to fix it: a `principle` entry tells you what correct looks like - it is not itself
-     the fix, and restating it does not count as giving one. Give four distinct things:
-     (a) one cue to think about during the rep; (b) a setup change that names a variable they
-     can actually turn - stance width, depth, tempo, load, a pause, a range limit - repeating
-     the cue in other words is not a setup change; (c) a drill or lighter regression they can
-     practise, and if there honestly isn't one for this fault, say so rather than padding;
-     (d) a simple self-check so they know it worked - something they can see in a mirror, feel,
-     or notice on a phone video.
-   - Use the rep detail: if the fault clusters in the abandoned attempts or in the later
-     attempts of the set, say so and tailor the advice to it (e.g. stop the set a rep earlier,
-     drop the load, slow the descent). The data does not say in which part of the movement a
-     fault happened, so do not claim one.
-4. Next Session Plan: a line "Next Session Plan:", then 2-3 short lines numbered "1.", "2.",
-   "3.", most important first.
-5. Tone: encouraging, direct, and specific. Keep it short: it is read on a phone between sets.
-   No filler, no lecture.
+The fields:
+- `faults`: one entry for each distinct rule in the set's violations, most important first.
+  Each entry has:
+  - `rule`: that fault's `violations[].rule`, copied exactly. The app turns it into the fault's
+    name and adds its own count of attempts, so write no counts in `fault` or `fix`.
+  - `fault`: what went wrong, in plain words, the way you would point it out to someone mid-set.
+    One sentence, at most 15 words.
+  - `fix`: the one cue to think about during the next rep. Where you can, point their attention
+    at something outside the body or at a result to aim for (the floor, the bar, a sheet of
+    paper held under the arm) rather than at a muscle. One sentence, at most 12 words.
+  - `what_it_is`: what the fault looks or feels like during the rep, so they can recognise it
+    themselves. Add to `fault`, do not restate it. At most 25 words.
+  - `likely_cause`: the most likely reason it happens: one cause. At most 15 words.
+  - `setup_change`: a setup change that names a variable they can actually turn - stance width,
+    depth, tempo, load, a pause, a range limit - and its value or direction. Repeating the cue
+    in other words is not a setup change. At most 15 words.
+  - `drill`: a drill or lighter regression they can practise, with how much of it (sets, reps,
+    a hold or a tempo). If there honestly isn't one for this fault, say so in a few words rather
+    than padding. At most 20 words.
+  - `check`: a simple self-check so they know it worked - something they can see in a mirror,
+    feel, or notice on a phone video. At most 15 words.
+  - `in_this_set`: which attempts carried it, or its pattern (early, late, on the abandoned
+    attempts), from the attempt data; if it clusters, what that suggests (e.g. stop the set a rep
+    earlier, slow the descent). The data does not say in which part of the movement a fault
+    happened, so do not claim one. At most 20 words.
+- `keep`: on a set with no faults, what they did well, one sentence, at most 15 words. "" when
+  the set has faults.
+- `progress`: how this set compares with the earlier sets of this workout (on a repair set, with
+  the first try of the same set), or with their previous workout when this is the first set; if
+  there is neither, say this is the first set on record. The screen already shows the rep
+  counts, so do not list them, but you may give the set's overall score and say whether it
+  reached `workout.target_reps`. One sentence, at most 25 words.
+- `health`: see User health notes below. "" when nothing needs saying.
+- `next`: 1 or 2 things to do in the next set, or in the next workout when `set_no` is the last
+  of `workout.target_sets`, most important first, at most 12 words each. Do not repeat a `fix`:
+  say what to change around it (load, tempo, where to stop the set) or how to build on it.
 
-Sets with no faults: if no attempt in the set has a violation, write the Keep line, the overview
-and a Next Session Plan about holding the standard they just hit, with no fault breakdown. Do not go looking
+Word limits are limits, not targets: shorter is better whenever nothing is lost. The answer is
+read on a phone between sets. Tone: encouraging, direct, and specific. No filler, no lecture.
+
+Numbers in your own instructions: the grounding rule below governs facts. A training
+instruction of your own in `setup_change`, `drill` or `next` - a tempo count, a pause length, a
+number of reps or sets, how long to hold - may use a number that is not in the Context, as long
+as it reads as something to try, not as a measurement, a finding or a target from research.
+Every other number - percentages, joint angles, distances, loads, study results - still has to
+appear in the Context.
+
+The rules below were written for an earlier version of this feedback, whose sections were
+called "What it is", "Why it matters" and "How to fix it". They apply to every field you write.
+
+Sets with no faults: if no attempt in the set has a violation, there is no `faults` field: write
+`keep`, `progress`, and `next` about holding the standard they just hit. Do not go looking
 through the Context for something else to change, and do not suggest a different version of the
 exercise (a narrower grip, a different stance) as a way to have something to say. A clean set is
 the result, not a gap to fill.
 
 User health notes: if `profile.medical_history` is missing, empty, or says "None" or "none", do
-not mention health at all. Otherwise:
+not mention health at all and leave `health` empty. Otherwise:
 - Do not diagnose, and do not read more into it than what they wrote.
-- Never suggest anything that goes against it. Check every cue, setup change, drill and plan
+- Never suggest anything that goes against it. Check every fix, setup change, drill and next
   item against it before you write it.
-- If it involves a joint or body part this exercise works, keep the advice within a pain-free
-  range and add one short sentence suggesting they check with a doctor or physiotherapist
-  before pushing further.
-- If it has nothing to do with this exercise, do not mention it.
+- If it involves a joint or body part this exercise works, write `health`: keep the work within a
+  pain-free range, and check with a doctor or physiotherapist before pushing further. At most two
+  short sentences, 35 words.
+- If it has nothing to do with this exercise, leave `health` empty and do not mention it anywhere.
 - Refer to it briefly in your own words (e.g. "with your knee history"); do not copy it back.
 
 Stick to their numbers: attempt numbers, rep counts, scores and which fault each attempt carries

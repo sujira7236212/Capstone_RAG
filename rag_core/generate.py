@@ -41,12 +41,16 @@ class GroqError(RuntimeError):
         self.retry_after = retry_after
 
 
-def _groq_complete(prompt_value, model, temperature, timeout):
+def _groq_complete(prompt_value, model, temperature, timeout, json_mode=False):
     key = os.environ.get("GROQ_API_KEY")
     if not key:
         raise GroqError("GROQ_API_KEY is not set")
     body = {"model": model, "temperature": temperature,
             "messages": [{"role": _ROLES[m.type], "content": m.content} for m in prompt_value.to_messages()]}
+    if json_mode:
+        # Groq's JSON mode makes the output valid JSON, but does not take a schema: the prompt
+        # describes the fields, and rag_core.feedback_format checks them.
+        body["response_format"] = {"type": "json_object"}
     req = urllib.request.Request(GROQ_URL, data=json.dumps(body).encode("utf-8"), method="POST",
                                  headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}",
                                           "User-Agent": "rag-feedback-service/1.0"})
@@ -62,20 +66,25 @@ def _groq_complete(prompt_value, model, temperature, timeout):
 
 
 def build_chain(context, model, temperature=LLM_TEMPERATURE, max_retries=1, timeout=None,
-                thinking_level=None, provider="gemini", system_prompt=SYSTEM_PROMPT):
+                thinking_level=None, provider="gemini", system_prompt=SYSTEM_PROMPT, response_schema=None):
     """`max_retries` is the client's total number of attempts (1 = no retry). `thinking_level`
     ("minimal"/"low"/"medium"/"high", Gemini 3+): None keeps the model's own default, which
     is what every eval run so far used. Groq takes neither: one attempt, the model's own
-    reasoning. `system_prompt`: v14's for the eval scripts, the service passes the app's."""
+    reasoning. `system_prompt`: v14's for the eval scripts, the service passes the app's.
+    `response_schema`: a JSON schema the answer must follow (prompt v17, the service's
+    rag_core.feedback_format.answer_schema); None, the eval scripts' plain text."""
     prompt = ChatPromptTemplate.from_messages([("system", system_prompt), ("human", HUMAN_TEMPLATE)])
     inputs = {"context": lambda x: context, "input": RunnablePassthrough()}
     if provider == "groq":
-        return inputs | prompt | RunnableLambda(lambda pv: _groq_complete(pv, model, temperature, timeout))
+        return inputs | prompt | RunnableLambda(
+            lambda pv: _groq_complete(pv, model, temperature, timeout, json_mode=response_schema is not None))
     if provider != "gemini":
         raise ValueError(f"unknown LLM provider {provider!r}, want 'gemini' or 'groq'")
     from langchain_google_genai import ChatGoogleGenerativeAI
+    schema = {} if response_schema is None else {"response_mime_type": "application/json",
+                                                 "response_schema": response_schema}
     llm = ChatGoogleGenerativeAI(model=model, temperature=temperature, max_retries=max_retries,
-                                 timeout=timeout, thinking_level=thinking_level)
+                                 timeout=timeout, thinking_level=thinking_level, **schema)
     return inputs | prompt | llm | StrOutputParser()
 
 

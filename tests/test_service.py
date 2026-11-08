@@ -17,6 +17,7 @@ from fastapi.testclient import TestClient  # noqa: E402
 
 from rag_core.generate import GroqError  # noqa: E402
 from service import app as svc  # noqa: E402
+from tests.fake_answer import Raw, as_json  # noqa: E402
 
 failed = 0
 
@@ -60,16 +61,16 @@ class Chain:
     def __init__(self, script):
         self.script, self.calls = list(script), []
 
-    def __call__(self, context, timeout):
+    def __call__(self, context, timeout, schema=None):
         outer = self
 
         class _C:
             def invoke(self, payload):
-                outer.calls.append({"context": context, "payload": payload, "timeout": timeout})
+                outer.calls.append({**{"context": context, "payload": payload, "timeout": timeout}, "schema": schema})
                 step = outer.script.pop(0)
                 if isinstance(step, Exception):
                     raise step
-                return step
+                return as_json(step, schema)
         return _C()
 
 
@@ -93,11 +94,15 @@ chain = setup(["Good set. Push your knees out."])
 r = client.post("/feedback", json=EXAMPLE)
 check("ok: status", r.status_code, 200)
 body = r.json()
-check("ok: feedback text", body["feedback"], "Good set. Push your knees out.")
+check("ok: feedback text built from the JSON", body["feedback"].splitlines()[:2],
+      ["Fault knee_valgus: Good set. Push your knees out.", "Fix: Fix it."])
 check("ok: version keys", sorted(body["version"]), ["collection", "commit", "llm", "prompt", "thinking"])
-check("ok: prompt version", body["version"]["prompt"], "v16")
+check("ok: prompt version", body["version"]["prompt"], "v17")
 check("ok: one LLM call", len(chain.calls), 1)
 sent = chain.calls[0]
+check("ok: the schema allows exactly the set's rules",
+      sent["schema"]["properties"]["faults"]["items"]["properties"]["rule"]["enum"],
+      ["knee_valgus", "partial_squat", "rounded_back"])
 check("ok: context retrieved for the set's faults", "[mistake | re: knee_valgus |" in sent["context"], True)
 check("ok: payload in the app's keys", json.loads(sent["payload"])["set"]["totals"]["attempts"], 5)
 captured = {}
@@ -133,12 +138,26 @@ check("only the medical history of the profile is sent",
 # --- failures the app shows as "Feedback failed: ..." -------------------------------
 chain = setup([RuntimeError("429 RESOURCE_EXHAUSTED"), "second try"])
 r = client.post("/feedback", json=EXAMPLE)
-check("429 once: retried and answered", (r.status_code, r.json()["feedback"], len(chain.calls)), (200, "second try", 2))
+check("429 once: retried and answered", (r.status_code, "second try" in r.json()["feedback"], len(chain.calls)), (200, True, 2))
 
 setup([RuntimeError("429 RESOURCE_EXHAUSTED"), RuntimeError("429 RESOURCE_EXHAUSTED")])
 r = client.post("/feedback", json=EXAMPLE)
 check("429 twice: 503 plain text", (r.status_code, r.text),
       (503, "the language model is busy right now, try again in a minute"))
+
+# --- prompt v17: an answer outside the schema is a failed generation ------------------
+for name, raw in (("not JSON", "Plain text, the model ignored the schema."),
+                  ("JSON without faults", json.dumps({"keep": "Nice.", "progress": "", "health": "", "next": []}))):
+    setup([Raw(raw)])
+    r = client.post("/feedback", json=EXAMPLE)
+    check(f"{name}: 502 the user can retry", (r.status_code, "try again" in r.text), (502, True))
+clean = copy.deepcopy(EXAMPLE)
+for a in clean["set"]["attempts"]:
+    a["violations"] = []
+chain = setup(["Steady and controlled."])
+r = client.post("/feedback", json=clean)
+check("clean set: no faults field in the schema", "faults" in chain.calls[0]["schema"]["properties"], False)
+check("clean set: the keep line", r.json()["feedback"].splitlines()[0], "Keep: Steady and controlled.")
 
 chain = setup([GroqError("Groq HTTP 429: Rate limit reached", retry_after=0.01), "after the wait"])
 r = client.post("/feedback", json=EXAMPLE)
@@ -200,7 +219,9 @@ with tempfile.TemporaryDirectory() as tmp:
           EXAMPLE["profile"]["medical_history"])
     check("capture: payload, context, answer, version",
           (ok["payload"]["set"]["totals"]["attempts"], "[mistake | re: knee_valgus |" in ok["context"],
-           ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, "Good set. Push your knees out.", "v16", None))
+           "Good set. Push your knees out." in ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, True, "v17", None))
+    check("capture: the model's raw JSON beside the text", json.loads(ok["raw"])["faults"][0]["fault"],
+          "Good set. Push your knees out.")
     check("capture: LLM failure keeps the context and the error",
           (llm_failed["context"] is not None, llm_failed["feedback"], llm_failed["error"]["status"]), (True, None, 502))
     check("capture: DB failure has no context", (db_failed["context"], db_failed["error"]["status"]), (None, 503))
@@ -209,7 +230,7 @@ with tempfile.TemporaryDirectory() as tmp:
     open(os.path.join(tmp, "not-a-dir.jsonl"), "w").close()  # a file where the folder should be
     setup(["still answered"])
     r = client.post("/feedback", json=EXAMPLE)
-    check("capture write fails: request still answered", (r.status_code, r.json()["feedback"]), (200, "still answered"))
+    check("capture write fails: request still answered", (r.status_code, "still answered" in r.json()["feedback"]), (200, True))
     svc.CAPTURE_PATH = old_capture
 
 # --- health -------------------------------------------------------------------------

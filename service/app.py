@@ -28,7 +28,8 @@ Configuration, all from the environment (the repo's .env is read too):
     FEEDBACK_PORT        default 8100
     FEEDBACK_CAPTURE     a .jsonl path (relative to the repo root): each request appends one
                          line with the app's input, the payload the LLM saw, the context, the
-                         answer or the error, and VERSION, so the eval can regenerate answers
+                         model's raw JSON (`raw`, since prompt v17) and the text built from it,
+                         or the error, and VERSION, so the eval can regenerate answers
                          from real inputs (2026-11-02). Unset: nothing is written. The input
                          holds the profile and the medical history; capture/ is gitignored.
                          GET /coverage shows which rows of the 36-set sheet it fills and
@@ -60,6 +61,7 @@ from pydantic import BaseModel, ConfigDict  # noqa: E402
 
 import embedding_config  # noqa: E402
 from rag_core.app_input import payload_from_feedback_input, rule_names  # noqa: E402
+from rag_core.feedback_format import FormatError, answer_schema, render_feedback  # noqa: E402
 from rag_core.generate import build_chain  # noqa: E402
 from rag_core.prompt import APP_PROMPT_VERSION, APP_SYSTEM_PROMPT  # noqa: E402
 from rag_core.query_cache import CachedEmbeddings  # noqa: E402
@@ -192,9 +194,9 @@ class Deps:
                                                      embeddings=CachedEmbeddings(embedding_config.get_embeddings()))
             return self._vectorstore
 
-    def chain(self, context, timeout):
+    def chain(self, context, timeout, schema=None):
         return build_chain(context, LLM_MODEL, timeout=timeout, max_retries=1, thinking_level=LLM_THINKING,
-                           provider=LLM_PROVIDER, system_prompt=APP_SYSTEM_PROMPT)
+                           provider=LLM_PROVIDER, system_prompt=APP_SYSTEM_PROMPT, response_schema=schema)
 
     def count_rows(self):
         import sqlalchemy
@@ -235,13 +237,15 @@ def _is_timeout(e):
 
 
 def _generate(context, payload, deadline):
+    """The model's raw answer: JSON in prompt v17's schema, made for this set's faults."""
+    schema = answer_schema(rule_names(payload))
     payload = json.dumps(payload, indent=2)
     for attempt in (1, 2):
         remaining = deadline - time.monotonic()
         if remaining < MIN_CALL_S:
             raise ServiceError(504, "the language model did not answer in time, try again")
         try:
-            return deps.chain(context, timeout=remaining).invoke(payload)
+            return deps.chain(context, timeout=remaining, schema=schema).invoke(payload)
         except Exception as e:  # noqa: BLE001 - every provider error becomes one readable line
             # Groq's 429 names its wait (rag_core.generate.GroqError.retry_after); Gemini's does not.
             wait = getattr(e, "retry_after", None) or RATE_LIMIT_WAIT_S
@@ -255,6 +259,16 @@ def _generate(context, payload, deadline):
             if _is_timeout(e):
                 raise ServiceError(504, "the language model did not answer in time, try again")
             raise ServiceError(502, "the language model could not write feedback this time, try again")
+
+
+def _render(raw, payload):
+    """The model's JSON -> the text the app stores. An answer that does not fit the schema is a
+    failed generation the user can retry, never a half-built text."""
+    try:
+        return render_feedback(raw, rule_names(payload))
+    except FormatError as e:
+        log.error("the answer does not fit prompt %s's schema: %s", APP_PROMPT_VERSION, e)
+        raise ServiceError(502, "the language model could not write feedback this time, try again")
 
 
 def _capture(record):
@@ -282,7 +296,7 @@ def feedback(inp: FeedbackInput):
     errors = rule_names(payload)
     exercise = payload["exercise"]
     record = {"captured_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "input": inp.model_dump(mode="json"),
-              "payload": payload, "errors": sorted(errors), "context": None, "metrics": None, "feedback": None,
+              "payload": payload, "errors": sorted(errors), "context": None, "metrics": None, "raw": None, "feedback": None,
               "error": None, "version": VERSION}
     try:
         try:
@@ -292,7 +306,8 @@ def feedback(inp: FeedbackInput):
             log.error("retrieval failed: %s: %s", type(e).__name__, str(e)[:300])
             raise ServiceError(503, "the exercise knowledge base is not reachable, try again")
         record.update(context=context, metrics=metrics)
-        text = _generate(context, payload, deadline)
+        record["raw"] = _generate(context, payload, deadline)
+        text = _render(record["raw"], payload)
         record["feedback"] = text
     except ServiceError as e:
         record["error"] = {"status": e.status, "message": e.message}
