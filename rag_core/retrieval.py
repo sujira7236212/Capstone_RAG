@@ -144,6 +144,20 @@ QUERY_PROFILE = {
     "fix": "How to correct it, coaching cues and corrective exercises for: {q}",
 }
 
+# One more `principle` per fault, on top of MAX_PER_KIND, found by the rule's own fix_query
+# (error_taxonomy.py). Review of 2026-11-07: every query carries the fault's full definition, so
+# the principle quota goes to sentences saying what correct looks like, while the prompt asks for
+# a setup change and a drill. Those sit far down the ranking (clamshell 37th of 61 for
+# knee_valgus, goblet squat 70th of 116 for rounded_back on the "fix" template), past CANDIDATE_K.
+# Off until its 12 query vectors are in the cache: on, a missing one is a paid embedding call.
+# FIX_POOL:
+#   tagged - chunks tagged for this fault, like every other search under TAG_MODE "strict".
+#   open   - also the untagged ones. General regressions and drills are untagged, correctly: the
+#            curator tags what is about one fault ("To regress the push-up, place the hands on a
+#            bench"). Chunks tagged only for another fault stay out.
+FIX_SLOT = False
+FIX_POOL = "open"
+
 NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
 
 # The one query of a set with no fault: principles only. A constant so tools/fill_query_cache.py
@@ -171,6 +185,8 @@ class RetrievalConfig:
     rerank: bool = RERANK
     rerank_min: float = RERANK_MIN
     query_profile: dict = field(default_factory=lambda: dict(QUERY_PROFILE))
+    fix_slot: bool = FIX_SLOT
+    fix_pool: str = FIX_POOL
 
     def summary(self):
         """One line of the gate settings, for report headers."""
@@ -180,7 +196,8 @@ class RetrievalConfig:
                 + (f", TAG_BONUS={self.tag_bonus}" if self.tag_mode == "union" else "")
                 + f", KIND_POOL={self.kind_pool}, QUERIES={self.queries}, HYBRID={self.hybrid}"
                 + (f" (BM25_K={self.bm25_k}, BM25_WEIGHT={self.bm25_weight})" if self.hybrid else "")
-                + f", RERANK={self.rerank}" + (f" (min {self.rerank_min})" if self.rerank else ""))
+                + f", RERANK={self.rerank}" + (f" (min {self.rerank_min})" if self.rerank else "")
+                + (f", FIX_SLOT={self.fix_pool}" if self.fix_slot else ""))
 
 
 DEFAULT_CONFIG = RetrievalConfig()
@@ -557,6 +574,36 @@ def _search_hybrid(vectorstore, texts, vecs, exercise_id, kind, already_kept, cf
     return kept, tagged, best
 
 
+def _search_fix(vectorstore, fix_query, exercise_id, already_kept, cfg, code, trace=None):
+    """FIX_SLOT: the closest principle to the rule's fix_query that does not restate one already
+    kept. Runs after the principle quota, so it adds to it and takes nothing away. Returns
+    (doc, score) or None."""
+    pool = [{"fault_tags": {"$like": f"%|{code}|%"}}]
+    if cfg.fix_pool == "open":
+        pool.append({"fault_tags": {"$eq": ""}})
+    hits = vectorstore.similarity_search_with_score_by_vector(
+        vectorstore.embeddings.embed_query(fix_query), k=cfg.candidate_k,
+        filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, {"item_kind": {"$eq": "principle"}}, {"$or": pool}]})
+    found = None
+    for doc, score in hits:
+        text = _chunk_text(doc)
+        if found is not None:
+            reason = "quota"
+        elif score > cfg.abs_distance_cap["principle"]:
+            reason = "margin"
+        elif _is_near_duplicate(text, already_kept, cfg.near_dup_jaccard):
+            reason = "dup"
+        else:
+            reason = "kept"
+            found = (doc, score)
+            already_kept.append(text)
+        if trace is not None:
+            trace.append({"kind": "principle", "text": text, "score": score, "reason": reason,
+                          "tagged": f"|{code}|" in (doc.metadata.get("fault_tags") or ""), "code": code,
+                          "fix_slot": True})
+    return found
+
+
 def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw_query=False,
                        trace=None, cfg=DEFAULT_CONFIG):
     """Retrieve KB chunks relevant to the session's actual errors (or general principles
@@ -589,12 +636,14 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
 
     `cfg`: the gate settings, RetrievalConfig.
     """
+    if cfg.fix_slot and (cfg.kind_pool == "single" or cfg.queries != "profile"):
+        raise ValueError("FIX_SLOT is implemented for KIND_POOL 'split', QUERIES 'profile' only")
     kept_texts = []
     blocks = []
     metrics = []
     unknown_codes = []
 
-    def collect(query, kinds, label, code=None):
+    def collect(query, kinds, label, code=None, fix_query=None):
         if cfg.kind_pool == "single":
             kind_trace = [] if trace is not None else None
             kept, tagged_kinds, best_by_kind = _search_single(
@@ -635,6 +684,16 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                 })
                 for doc, score in kept:
                     blocks.append((score, doc, kind, label))
+            if cfg.fix_slot and fix_query:
+                # After the loop, so the chunks of every kind count as already kept. The metric of
+                # `principle` (the last kind) counts it, the rest of the row describes the quota.
+                kind_trace = [] if trace is not None else None
+                found = _search_fix(vectorstore, fix_query, exercise_id, kept_texts, cfg, code, trace=kind_trace)
+                if trace is not None:
+                    trace.extend({**t, "error": label} for t in kind_trace)
+                if found:
+                    blocks.append((found[1], found[0], "principle", label))
+                    metrics[-1]["kept"] += 1
             return
         for kind in kinds:
             kind_trace = [] if trace is not None else None
@@ -669,6 +728,7 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
     if error_types:
         for error_type in sorted(error_types):
             code = None
+            fix_query = None
             if raw_query:
                 query = error_type
             else:
@@ -677,6 +737,7 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                     unknown_codes.append(error_type)
                 else:
                     code = resolved["code"]
+                    fix_query = resolved.get("fix_query")
                 query = resolved["query"]
             # `principle` is searched with the same fault query, not a separate "how to
             # fix" phrasing: the KB's principle items are the curator's positive
@@ -686,7 +747,8 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
             # correct" paragraph ungrounded - identical to the no-RAG output.
             # `code` is None under raw_query (the A/B control bypasses the taxonomy
             # entirely, so there is no resolved code to tag-filter on either).
-            collect(query, ("mistake", "finding", "consequence", "principle"), error_type, code=code)
+            collect(query, ("mistake", "finding", "consequence", "principle"), error_type, code=code,
+                    fix_query=fix_query)
     else:
         collect(
             GENERAL_QUERY.format(name=exercise_name),

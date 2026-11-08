@@ -38,7 +38,7 @@ sys.path.insert(0, HERE)
 from eval_generation import shared_spans, word_tokens  # noqa: E402
 
 CARDS = os.path.join(HERE, "rule_cards.json")
-SPEC = os.path.join(ROOT, "docs", "system1", "RULES_AND_FSM_CONDENSED.md")
+SPEC = os.path.join(ROOT, "docs", "rules", "system1", "RULES_AND_FSM_CONDENSED.md")
 KB_DEFAULT = os.path.join(ROOT, "curated_data_v5")
 MIN_NGRAM = 5
 
@@ -203,8 +203,9 @@ def check_queries(spec, corpora, min_len):
     for ex, faults in ERROR_TAXONOMY.items():
         for code, entry in faults.items():
             for name, tokens in corpora:
-                for ln, words in shared_spans(word_tokens(entry["query"]), tokens, min_len):
-                    hits.append((f"{ex}/{code}", name, ln, words))
+                for field in ("query", "fix_query"):
+                    for ln, words in shared_spans(word_tokens(entry[field]), tokens, min_len):
+                        hits.append((f"{ex}/{code} {field}", name, ln, words))
     return errors, hits
 
 

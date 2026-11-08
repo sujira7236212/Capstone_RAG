@@ -1,9 +1,9 @@
 """Embed every query the feedback service can send, once, into rag_core/query_cache.py's file.
 
     python tools/fill_query_cache.py --dry-run   # list them, no call
-    python tools/fill_query_cache.py             # embed the missing ones (paid, about 40 short texts)
+    python tools/fill_query_cache.py             # embed the missing ones (paid, about 60 short texts)
 
-The queries: each rule's taxonomy query in each QUERY_PROFILE template, and GENERAL_QUERY for
+The queries: each rule's taxonomy query in each QUERY_PROFILE template, its fix_query, and GENERAL_QUERY for
 each exercise name the app sends (MU-Capstone-Application migration 20260910084100_exercises,
 `exercises.name`; the adapter falls back to the id when the name is empty). Only texts not
 already in the file are embedded, so a re-run after a taxonomy change costs only the new ones.
@@ -29,6 +29,7 @@ APP_EXERCISE_NAMES = ["Squat", "Push-up", "Lunge", "Bicep curl"]
 
 def all_queries(cfg=DEFAULT_CONFIG):
     queries = [t.format(q=entry["query"]) for _, _, entry in all_faults() for t in cfg.query_profile.values()]
+    queries += [entry["fix_query"] for _, _, entry in all_faults()]
     names = APP_EXERCISE_NAMES + list(ERROR_TAXONOMY)  # the ids, for an input without a name
     queries += [GENERAL_QUERY.format(name=n) for n in names]
     return list(dict.fromkeys(queries))
