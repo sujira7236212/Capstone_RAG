@@ -154,15 +154,14 @@ def build_test_set(records, since=DEFAULT_SINCE):
 
 def row_numbers():
     """cell -> its row on the sheet (docs/plans/data_collection_36_sets.md section 5): in each
-    exercise the persistent rows, the sporadic rows, then mixed and clean. The numbers are the
-    36-row sheet's: the medical rows (10, 17, 28, 35, gone 2026-11-11) leave gaps rather than
-    shift the rows after them, because the web sheet records who took which row by its number."""
+    exercise the persistent rows, the sporadic rows, then mixed and clean, numbered 1 to 32
+    (renumbered 2026-11-11 when the medical rows went; the web sheet uses the same numbers)."""
     cells = []
     for exercise, rules in ERROR_TAXONOMY.items():
         cells += [f"{exercise}/{rule}/persistent" for rule in rules]
         cells += [f"{exercise}/{rule}/sporadic" for rule in rules]
-        cells += [f"{exercise}/mixed", None, f"{exercise}/clean"]  # None: the medical row
-    return {cell: n for n, cell in enumerate(cells, 1) if cell}
+        cells += [f"{exercise}/mixed", f"{exercise}/clean"]
+    return {cell: n for n, cell in enumerate(cells, 1)}
 
 
 def sets_on_file(records, since=DEFAULT_SINCE):

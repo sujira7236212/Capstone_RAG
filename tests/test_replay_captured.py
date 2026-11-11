@@ -291,14 +291,13 @@ check("estimate: redraws stop at the fault sessions", rc.estimate(ONE, 8, 4000, 
 
 # --- the collectors' page: the rows on the sheet, no command line -----------------------------
 rows = rc.row_numbers()
-check("sheet: 32 rows, the 36-row sheet's numbers minus the medical rows", sorted(rows.values()),
-      [n for n in range(1, 37) if n not in (10, 17, 28, 35)])
+check("sheet: 32 rows numbered 1 to 32", sorted(rows.values()), list(range(1, 33)))
 check("sheet: rows the page numbers",
       [rows[c] for c in ("squat/partial_squat/persistent", "squat/partial_squat/sporadic", "squat/mixed",
                          "squat/clean", "push-up/hip_sag_or_pike/persistent", "push-up/hip_sag_or_pike/sporadic",
                          "lunge/shallow_lunge/persistent", "lunge/straight_back_leg/sporadic",
                          "bicep-curl/elbow_flare/persistent", "bicep-curl/clean")],
-      [1, 5, 9, 11, 12, 14, 19, 26, 30, 36])
+      [1, 5, 9, 10, 11, 13, 17, 24, 27, 32])
 
 on_file = rc.sets_on_file([record(make_input("squat", faulty("knee_valgus", 8)), at="2026-11-07T00:00:00Z"),
                            record(make_input("squat", faulty("knee_valgus", 9)), at="2026-11-07T00:01:00Z"),

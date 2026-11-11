@@ -8,7 +8,7 @@
 > **2026-11-11 · Medical history and PDPA removed (user ตัดสิน)**
 > ขอ PDPA ไม่ทัน จึงตัดการรับ medical history ออกจากระบบทุกที่ และตัดงาน PDPA ออกด้วย (D6 ยกเลิก · §6 ยกเลิก)
 > - **RAG_SYSTEM:** adapter (`rag_core/app_input.py`) ไม่ส่ง profile ให้ model เลย · prompt **ยังเป็น v18 ไม่ขึ้นเลขใหม่** แต่ลบข้อ 4 ของ input (`profile.medical_history`), ช่อง `health` และกติกา "User health notes" · schema กับข้อความที่ service ประกอบ (`rag_core/feedback_format.py`) ไม่มีช่อง `health` / บรรทัด `Health:` แล้ว · ถ้าแอปรุ่นเก่ายังส่ง `profile.medical_history` มา service รับได้แต่ไม่ใช้ และลบทิ้งก่อนเขียน capture · คำตอบใน capture ก่อนวันนี้อาจยังมีย่อหน้า `Health:`
-> - **เก็บข้อมูล eval:** ตัดกลุ่ม medical (ท่าละ 1 ช่อง) จาก 36 เหลือ **32 ช่อง** · เลขแถวคงเดิมตามตารางบนเว็บ แถว 10, 17, 28, 35 ว่างไว้ไม่ใช้ซ้ำ · set ที่เก็บก่อนวันนี้ซึ่งตั้งประวัติไว้ นับตามท่าผิดเหมือน set อื่น ([`data_collection_36_sets.md`](data_collection_36_sets.md), [`pairwise_eval_v2_plan.md`](pairwise_eval_v2_plan.md))
+> - **เก็บข้อมูล eval:** ตัดกลุ่ม medical (ท่าละ 1 ช่อง) จาก 36 เหลือ **32 ช่อง** · เลขแถวรันใหม่เป็น 1–32 ทั้งในเว็บตารางและหน้า `/coverage` · set ที่เก็บก่อนวันนี้ซึ่งตั้งประวัติไว้ นับตามท่าผิดเหมือน set อื่น ([`data_collection_36_sets.md`](data_collection_36_sets.md), [`pairwise_eval_v2_plan.md`](pairwise_eval_v2_plan.md))
 > - **แอป (MU-Capstone-Application):** migration ใหม่ drop `profiles.medical_history` · ฟอร์ม profile/Settings, contract (`FeedbackInput.profile`), stub และกล่อง Health note ไม่มีแล้ว · หน้า consent เหลือ 2 ข้อ (กล้อง, เก็บวิดีโอ) ไม่อ้าง PDPA แล้ว · `CONSENT_VERSION` = 2 · บันทึกใน `docs/DECISIONS.md` ของแอป
 > - เนื้อหาเรื่องประวัติสุขภาพด้านล่าง (§0 ข้อ 2, §6, A3 v15) เก็บไว้เป็นประวัติ ไม่ใช่สิ่งที่ระบบทำแล้ว
 

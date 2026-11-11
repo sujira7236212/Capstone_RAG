@@ -1,6 +1,6 @@
 # คู่มือเก็บข้อมูล 32 set สำหรับ eval ของ feedback
 
-> **2026-11-11: เหลือ 32 set (เดิม 36)** · ขอ PDPA ไม่ทัน ระบบจึงไม่รับ medical history แล้ว แถวกลุ่ม "มีประวัติสุขภาพ" (10, 17, 28, 35) ถูกตัด ไม่ต้องทำ · เลขแถวอื่นคงเดิมให้ตรงกับเว็บตาราง · set ที่ทำไปแล้วไม่ต้องทำใหม่ set ที่เคยตั้งประวัติไว้จะนับตามท่าผิดเหมือน set อื่น · ถ้ายังไม่ได้ pull ก็เก็บต่อได้ ให้ Medical history เป็น `None` ตามเดิม หน้า `/coverage` ในเครื่องจะยังแสดง 36 แถวและแถว medical ให้ข้ามไป ฝั่ง Sujira นับเป็น 32 ตอนรวมไฟล์ · RAG_SYSTEM ที่ pull หลังวันนี้ไม่ส่ง medical history ให้ model และไม่บันทึกลง capture แม้แอปรุ่นเก่าจะส่งมา
+> **2026-11-11: เหลือ 32 set (เดิม 36)** · ขอ PDPA ไม่ทัน ระบบจึงไม่รับ medical history แล้ว แถวกลุ่ม "มีประวัติสุขภาพ" ถูกตัด ไม่ต้องทำ · **เลขแถวรันใหม่เป็น 1–32** (ตารางข้อ 5, เว็บตาราง และหน้า `/coverage` ที่ pull หลังวันนี้ใช้เลขเดียวกัน) · set ที่ทำไปแล้วไม่ต้องทำใหม่ set ที่เคยตั้งประวัติไว้จะนับตามท่าผิดเหมือน set อื่น · ถ้ายังไม่ได้ pull ก็เก็บต่อได้ ให้ Medical history เป็น `None` ตามเดิม แต่หน้า `/coverage` ในเครื่องจะยังใช้เลขแถวเก่า 1–36 ให้ดูชื่อกฎกับแบบเป็นหลัก ฝั่ง Sujira นับเป็น 32 ตอนรวมไฟล์ · RAG_SYSTEM ที่ pull หลังวันนี้ไม่ส่ง medical history ให้ model และไม่บันทึกลง capture แม้แอปรุ่นเก่าจะส่งมา
 
 **ขอให้ช่วยอะไร:** ทำ set ตามตารางในข้อ 5 บนแอปในเครื่องของตัวเอง แล้วส่งไฟล์ที่ระบบบันทึกไว้ผ่านเว็บตาราง
 
@@ -101,7 +101,7 @@ SIMILARITY_URL=http://127.0.0.1:8765/score
 | `knee_valgus` | Push knees out | บีบเข่าเข้าด้านใน |
 | `knee_varus` | Keep knees in line | บานเข่าออก |
 | `rounded_back` | Keep back straight | โน้มลำตัวไปหน้าเกิน 45° |
-| `hip_sag_or_pike` | Body not straight | ปล่อยสะโพกตก (แถว 14 ยกก้นโด่ง) |
+| `hip_sag_or_pike` | Body not straight | ปล่อยสะโพกตก (แถว 13 ยกก้นโด่ง) |
 | `partial_pushup` | Lower Your Chest | ลงไม่สุด |
 | `shallow_lunge` | Lower your front knee | ย่อตื้น เข่าหน้างอไม่ถึง 105° |
 | `excessive_front_knee_flexion` | Raise your front knee | ย่อเข่าหน้าลึกกว่า 70° |
@@ -117,23 +117,19 @@ SIMILARITY_URL=http://127.0.0.1:8765/score
 | Squat | ผิดตลอด | 1 `partial_squat` · 2 `knee_valgus` · 3 `knee_varus` · 4 `rounded_back` |
 | Squat | ผิดบางครั้ง | 5 `partial_squat` · 6 `knee_valgus` · 7 `knee_varus` · 8 `rounded_back` |
 | Squat | ผิดหลายกฎ | 9 `partial_squat` + `rounded_back` |
-| Squat | ~~มีประวัติสุขภาพ~~ | ~~10~~ ตัดแล้ว 2026-11-11 ไม่ต้องทำ |
-| Squat | ไม่ผิดเลย | 11 |
-| Push-up | ผิดตลอด | 12 `hip_sag_or_pike` (สะโพกตก) · 13 `partial_pushup` |
-| Push-up | ผิดบางครั้ง | 14 `hip_sag_or_pike` (ก้นโด่ง) · 15 `partial_pushup` |
-| Push-up | ผิดหลายกฎ | 16 `hip_sag_or_pike` + `partial_pushup` |
-| Push-up | ~~มีประวัติสุขภาพ~~ | ~~17~~ ตัดแล้ว 2026-11-11 ไม่ต้องทำ |
-| Push-up | ไม่ผิดเลย | 18 |
-| Lunge | ผิดตลอด | 19 `shallow_lunge` · 20 `excessive_front_knee_flexion` · 21 `forward_trunk_lean` · 22 `straight_back_leg` |
-| Lunge | ผิดบางครั้ง | 23 `shallow_lunge` · 24 `excessive_front_knee_flexion` · 25 `forward_trunk_lean` · 26 `straight_back_leg` |
-| Lunge | ผิดหลายกฎ | 27 `forward_trunk_lean` + `straight_back_leg` |
-| Lunge | ~~มีประวัติสุขภาพ~~ | ~~28~~ ตัดแล้ว 2026-11-11 ไม่ต้องทำ |
-| Lunge | ไม่ผิดเลย | 29 |
-| Bicep curl | ผิดตลอดจนแอปหยุด | 30 `elbow_flare` · 31 `partial_curl` |
-| Bicep curl | ผิดบางครั้ง | 32 `elbow_flare` · 33 `partial_curl` |
-| Bicep curl | ผิดหลายกฎ | 34 `elbow_flare` + `partial_curl` |
-| Bicep curl | ~~มีประวัติสุขภาพ~~ | ~~35~~ ตัดแล้ว 2026-11-11 ไม่ต้องทำ |
-| Bicep curl | ไม่ผิดเลย | 36 |
+| Squat | ไม่ผิดเลย | 10 |
+| Push-up | ผิดตลอด | 11 `hip_sag_or_pike` (สะโพกตก) · 12 `partial_pushup` |
+| Push-up | ผิดบางครั้ง | 13 `hip_sag_or_pike` (ก้นโด่ง) · 14 `partial_pushup` |
+| Push-up | ผิดหลายกฎ | 15 `hip_sag_or_pike` + `partial_pushup` |
+| Push-up | ไม่ผิดเลย | 16 |
+| Lunge | ผิดตลอด | 17 `shallow_lunge` · 18 `excessive_front_knee_flexion` · 19 `forward_trunk_lean` · 20 `straight_back_leg` |
+| Lunge | ผิดบางครั้ง | 21 `shallow_lunge` · 22 `excessive_front_knee_flexion` · 23 `forward_trunk_lean` · 24 `straight_back_leg` |
+| Lunge | ผิดหลายกฎ | 25 `forward_trunk_lean` + `straight_back_leg` |
+| Lunge | ไม่ผิดเลย | 26 |
+| Bicep curl | ผิดตลอดจนแอปหยุด | 27 `elbow_flare` · 28 `partial_curl` |
+| Bicep curl | ผิดบางครั้ง | 29 `elbow_flare` · 30 `partial_curl` |
+| Bicep curl | ผิดหลายกฎ | 31 `elbow_flare` + `partial_curl` |
+| Bicep curl | ไม่ผิดเลย | 32 |
 
 ## 6. ตรวจว่าข้อมูลเข้าถูกแถว
 
