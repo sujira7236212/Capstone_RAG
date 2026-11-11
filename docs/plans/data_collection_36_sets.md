@@ -25,6 +25,19 @@ cd MU-Capstone-Application && git pull
 cd ../RAG_SYSTEM && git pull
 ```
 
+**ถ้า pull หลัง 2026-11-11 (ไม่มี medical history แล้ว)** ทำเพิ่ม 2 อย่าง:
+
+1. เปิด Supabase แล้วรันในโฟลเดอร์แอป:
+
+   ```bash
+   npx supabase migration up --local
+   ```
+
+   คำสั่งนี้ลบคอลัมน์ `medical_history` อย่างเดียว บัญชี ประวัติการฝึก และ KB อยู่ครบ **ห้ามใช้ `npm run db:reset` แทน** เพราะจะล้าง KB ไปด้วย
+2. เปิดแอปครั้งแรกหลัง pull จะเจอหน้า consent อีก 1 ครั้ง (version 2 เหลือ 2 ช่อง: กล้อง, เก็บวิดีโอ) ติ๊กทั้งสองช่องแล้วกด Continue
+
+รายละเอียดอยู่ในหัวข้อ "After you pull" ใน `README.md` ของแอป
+
 **1.3 ตรวจ `.env` ของ RAG_SYSTEM** ต้องมี 2 บรรทัดนี้ ถ้าไม่มีบรรทัดแรก ระบบจะไม่บันทึกอะไรเลย
 
 ```
