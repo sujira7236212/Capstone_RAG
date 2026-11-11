@@ -42,7 +42,7 @@ def fault(rule, **kw):
 
 def answer(**kw):
     out = {"faults": [fault("elbow_flare"), fault("partial_curl")], "keep": "", "progress": "Up from 82.9.",
-           "health": "", "next": ["Pause at the bottom.", "Same load."]}
+           "next": ["Pause at the bottom.", "Same load."]}
     out.update(kw)
     return json.dumps(out)
 
@@ -58,6 +58,8 @@ check("schema: every fault field required", s["properties"]["faults"]["items"]["
       ["rule", "fault", "fix", "what_it_is", "why_it_matters", "likely_cause", "setup_change", "drill", "check",
        "in_this_set"])
 check("schema: a clean set has no faults field", "faults" in answer_schema(set())["properties"], False)
+check("schema: no health slot (medical history removed 2026-11-11)",
+      ("health" in s["properties"], s["required"]), (False, ["faults", "keep", "progress", "next"]))
 
 # --- the text -----------------------------------------------------------------------------
 text = render_feedback(answer(), RULES)
@@ -75,13 +77,12 @@ check("text: one details block per fault, in order",
        "In this set: Attempts 1 and 4."])
 check("text: the plan last", paragraphs[-1].splitlines(),
       ["Next Session Plan:", "1. Pause at the bottom.", "2. Same load."])
-check("text: no health paragraph when empty", "Health:" in text, False)
-
-text = render_feedback(answer(health="With your knee history, stay pain-free."), RULES)
-check("text: health right after the summary", text.split("\n\n")[1], "Health: With your knee history, stay pain-free.")
+check("text: no health paragraph", "Health:" in text, False)
+check("text: a health field from an old answer is not shown",
+      render_feedback(answer(health="With your knee history, stay pain-free."), RULES), text)
 
 clean = render_feedback(json.dumps({"keep": "Smooth and controlled.", "progress": "First set on record.",
-                                    "health": "", "next": ["Same again."]}), set())
+                                    "next": ["Same again."]}), set())
 check("clean: keep line, progress, plan", clean,
       "Keep: Smooth and controlled.\n\nProgress: First set on record.\n\nNext Session Plan:\n1. Same again.")
 

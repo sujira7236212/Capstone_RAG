@@ -13,8 +13,6 @@ reads it; change both together, tests/test_feedback_format.py pins it):
     Fix: <fix>                     knows v16 still shows the list
     (or a single "Keep: <keep>" line on a set with no fault)
 
-    Health: <health>               only when the medical history bears on this exercise
-
     Progress: <progress>
 
     Details <rule>:                one block per fault, shown when the user opens it
@@ -46,7 +44,7 @@ DETAIL_FIELDS = (
     ("in_this_set", "In this set", 20),
 )
 FAULT_LIMITS = {"fault": 15, "fix": 12}
-TOP_LIMITS = {"keep": 15, "progress": 25, "health": 35}
+TOP_LIMITS = {"keep": 15, "progress": 25}  # "health" removed 2026-11-11 with the medical history
 NEXT_LIMIT = 12
 NEXT_MAX = 2
 
@@ -68,10 +66,9 @@ def answer_schema(rules):
     props = {
         "keep": text,
         "progress": text,
-        "health": text,
         "next": {"type": "array", "items": text, "minItems": 1, "maxItems": NEXT_MAX},
     }
-    required = ["keep", "progress", "health", "next"]
+    required = ["keep", "progress", "next"]
     if rules:
         fault = {"rule": {"type": "string", "enum": sorted(rules)}, "fault": text, "fix": text}
         fault.update({name: text for name, _, _ in DETAIL_FIELDS})
@@ -139,9 +136,6 @@ def render_feedback(raw, rules):
             raise FormatError("a set with no fault came back without its keep line")
         paragraphs.append(f"Keep: {keep}")
 
-    health = _clean(answer.get("health"), "Health")
-    if health:
-        paragraphs.append(f"Health: {health}")
     progress = _clean(answer.get("progress"), "Progress")
     if progress:
         paragraphs.append(f"Progress: {progress}")

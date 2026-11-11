@@ -7,7 +7,7 @@ RAG side goes through the same payload adapter, retrieval and service._generate(
 /feedback (tests/test_replay_captured.py holds them equal). The no-RAG side changes the context
 and nothing else.
 
-    python eval/replay_captured.py coverage        # the 36 cells so far: no database, no API
+    python eval/replay_captured.py coverage        # the 32 cells so far: no database, no API
     python eval/replay_captured.py check-context   # retrieval against the capture: database, no API
     python eval/replay_captured.py estimate        # calls and rough tokens: no database, no API
     python eval/replay_captured.py run --llm gemini:gemini-3.6-flash --max-calls 80   # PAID
@@ -16,7 +16,11 @@ One sample per side: the first answer that succeeds is the answer. A rerun fills
 missing (a failed call or a stopped run) and never rewrites an answer. `run` makes no embedding
 call: a query missing from .cache/query_vectors/ stops it (tools/fill_query_cache.py, also paid).
 
-The output goes in capture/ because the payloads hold the medical history: capture/ is gitignored.
+The output goes in capture/ because the inputs hold the user's profile: capture/ is gitignored.
+
+No medical cells since 2026-11-11 (no PDPA approval, so the app collects no medical history): the
+test set went from 36 cells to 32. A set captured earlier with a medical history set counts by its
+faults like any other.
 It has the keys eval/judge_pairwise.py reads. The redraws for the A/A check are in each session's
 `aa`, apart from `rag` and `no_rag`.
 """
@@ -50,7 +54,7 @@ AA_DEFAULT = 8
 SEED = 6613
 SLEEP_S = 15  # between calls, as the batch scripts do
 MAX_FAILURES_IN_A_ROW = 3
-CELLS_WANTED = sum(2 * len(rules) + 3 for rules in ERROR_TAXONOMY.values())
+CELLS_WANTED = sum(2 * len(rules) + 2 for rules in ERROR_TAXONOMY.values())  # 32: persistent, sporadic, mixed, clean
 
 
 # --- which cell of the test set a captured set fills -------------------------------------
@@ -63,11 +67,6 @@ def set_id(inp):
     key = [inp["exercise"]["id"], (inp.get("profile") or {}).get("display_name"), s.get("set_no"), s.get("kind"),
            s.get("ended_by"), attempts]
     return hashlib.sha1(json.dumps(key, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
-
-
-def has_medical_history(inp):
-    text = ((inp.get("profile") or {}).get("medical_history") or "").strip().rstrip(".").lower()
-    return text not in ("", "none")
 
 
 def rule_counts(set_):
@@ -97,11 +96,7 @@ def classify(inp):
     if any(rule not in rules for rule in counts):
         return None, "unknown_rule"
     if not counts:
-        if has_medical_history(inp):
-            return None, "medical_without_fault"
         return f"{exercise}/clean", None
-    if has_medical_history(inp):
-        return f"{exercise}/medical", None
     main = min(counts, key=lambda r: (-counts[r], r))
     attempts = set_["attempts"]
     others = sum(1 for a in attempts if {v["rule"] for v in a.get("violations") or []} - {main})
@@ -158,14 +153,16 @@ def build_test_set(records, since=DEFAULT_SINCE):
 
 
 def row_numbers():
-    """cell -> its row on the 36-set sheet (docs/plans/data_collection_36_sets.md section 5): in
-    each exercise the persistent rows, the sporadic rows, then mixed, medical and clean."""
+    """cell -> its row on the sheet (docs/plans/data_collection_36_sets.md section 5): in each
+    exercise the persistent rows, the sporadic rows, then mixed and clean. The numbers are the
+    36-row sheet's: the medical rows (10, 17, 28, 35, gone 2026-11-11) leave gaps rather than
+    shift the rows after them, because the web sheet records who took which row by its number."""
     cells = []
     for exercise, rules in ERROR_TAXONOMY.items():
         cells += [f"{exercise}/{rule}/persistent" for rule in rules]
         cells += [f"{exercise}/{rule}/sporadic" for rule in rules]
-        cells += [f"{exercise}/{kind}" for kind in ("mixed", "medical", "clean")]
-    return {cell: n for n, cell in enumerate(cells, 1)}
+        cells += [f"{exercise}/mixed", None, f"{exercise}/clean"]  # None: the medical row
+    return {cell: n for n, cell in enumerate(cells, 1) if cell}
 
 
 def sets_on_file(records, since=DEFAULT_SINCE):
@@ -199,10 +196,9 @@ def coverage_report(records, lines, bad, since=DEFAULT_SINCE):
         for rule in rules:
             out.append(f"{exercise + '/' + rule:<46}{box(f'{exercise}/{rule}/persistent'):<12}"
                        f"{box(f'{exercise}/{rule}/sporadic')}")
-    out += ["", f"{'exercise':<46}{'mixed':<12}{'medical':<12}clean"]
+    out += ["", f"{'exercise':<46}{'mixed':<12}clean"]
     for exercise in ERROR_TAXONOMY:
-        out.append(f"{exercise:<46}{box(f'{exercise}/mixed'):<12}{box(f'{exercise}/medical'):<12}"
-                   f"{box(f'{exercise}/clean')}")
+        out.append(f"{exercise:<46}{box(f'{exercise}/mixed'):<12}{box(f'{exercise}/clean')}")
     chosen = list(test.values())
     people = {(r["input"].get("profile") or {}).get("display_name") for r in chosen}
     repairs = [r for r in records if r["input"]["set"].get("kind") == "repair" and r["captured_at"] >= since]

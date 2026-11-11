@@ -13,7 +13,7 @@ def as_json(text, schema):
     if schema is None or not isinstance(text, str) or isinstance(text, Raw):
         return text
     props = schema["properties"]
-    answer = {"keep": "", "progress": "First set on record.", "health": "", "next": ["Same again."]}
+    answer = {"keep": "", "progress": "First set on record.", "next": ["Same again."]}
     if "faults" in props:
         rules = props["faults"]["items"]["properties"]["rule"]["enum"]
         answer["faults"] = [{"rule": r, "fault": text, "fix": "Fix it.", "what_it_is": "", "why_it_matters": "",

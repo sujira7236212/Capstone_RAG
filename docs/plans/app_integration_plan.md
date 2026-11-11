@@ -5,6 +5,13 @@
 **ที่มา:** ตรวจ `~/Documents/MU-Capstone-Application` (README, CLAUDE.md, CONTEXT.md, `docs/HANDOVER.md` §3, ADR-0007, `docs/DEPLOY.md`, `lib/analysis/`, `lib/save-and-analyse.ts`, `lib/set.ts`, migration `knowledge_base`) เทียบกับ pipeline ใน repo นี้ (`test_rag_compare.py`, `ingest.py`, `embedding_config.py`, `error_taxonomy.py`, `mock_data/build_mock_sessions.py`)
 **แทนที่:** `docs/integration_plan.md` ที่ [`future_user_health_profile.md`](future_user_health_profile.md) อ้างถึง (ไฟล์นั้นไม่มีอยู่จริง)
 
+> **2026-11-11 · Medical history and PDPA removed (user ตัดสิน)**
+> ขอ PDPA ไม่ทัน จึงตัดการรับ medical history ออกจากระบบทุกที่ และตัดงาน PDPA ออกด้วย (D6 ยกเลิก · §6 ยกเลิก)
+> - **RAG_SYSTEM:** adapter (`rag_core/app_input.py`) ไม่ส่ง profile ให้ model เลย · prompt **ยังเป็น v18 ไม่ขึ้นเลขใหม่** แต่ลบข้อ 4 ของ input (`profile.medical_history`), ช่อง `health` และกติกา "User health notes" · schema กับข้อความที่ service ประกอบ (`rag_core/feedback_format.py`) ไม่มีช่อง `health` / บรรทัด `Health:` แล้ว · ถ้าแอปรุ่นเก่ายังส่ง `profile.medical_history` มา service รับได้แต่ไม่ใช้ และลบทิ้งก่อนเขียน capture · คำตอบใน capture ก่อนวันนี้อาจยังมีย่อหน้า `Health:`
+> - **เก็บข้อมูล eval:** ตัดกลุ่ม medical (ท่าละ 1 ช่อง) จาก 36 เหลือ **32 ช่อง** · เลขแถวคงเดิมตามตารางบนเว็บ แถว 10, 17, 28, 35 ว่างไว้ไม่ใช้ซ้ำ · set ที่เก็บก่อนวันนี้ซึ่งตั้งประวัติไว้ นับตามท่าผิดเหมือน set อื่น ([`data_collection_36_sets.md`](data_collection_36_sets.md), [`pairwise_eval_v2_plan.md`](pairwise_eval_v2_plan.md))
+> - **แอป (MU-Capstone-Application):** migration ใหม่ drop `profiles.medical_history` · ฟอร์ม profile/Settings, contract (`FeedbackInput.profile`), stub และกล่อง Health note ไม่มีแล้ว · หน้า consent เหลือ 2 ข้อ (กล้อง, เก็บวิดีโอ) ไม่อ้าง PDPA แล้ว · `CONSENT_VERSION` = 2 · บันทึกใน `docs/DECISIONS.md` ของแอป
+> - เนื้อหาเรื่องประวัติสุขภาพด้านล่าง (§0 ข้อ 2, §6, A3 v15) เก็บไว้เป็นประวัติ ไม่ใช่สิ่งที่ระบบทำแล้ว
+
 ---
 
 ## 0. สรุปคำตอบ 3 ข้อ
@@ -169,9 +176,11 @@ export async function writeFeedback(input: FeedbackInput): Promise<FeedbackOutpu
 | D3 | นับ attempt | ใช้ความหมายของแอป (abandoned แยก, incorrect = ทำครบแต่ผิด) · หรือแปลงเป็นแบบ mock (abort มี error = incorrect) | **ความหมายของแอป** เพราะผู้ใช้เห็นตัวเลขจากแอปบนหน้าจอเดียวกัน ถ้า feedback นับต่างกันจะขัดกันเอง → prompt v15 |
 | D4 | ข้อมูลเทียบ session ก่อน | เพิ่ม `violation_counts` ใน `SetSummary` (contract change) · หรือเทียบแค่ตัวเลข totals/similarity ไม่บอกว่า error ไหนหายไป | เพิ่ม `violation_counts` (ข้อมูลอยู่ใน `sets.attempts` แล้ว คำนวณใน `analyseSet` ได้) |
 | D5 | LLM | รุ่น Gemini ที่ยังให้บริการ · Groq (มี `eval/generate_groq.py`) | ตัดสินจาก A3 · ต้องมี SLA/quota พอสำหรับช่วง evaluation |
-| D6 | PDPA | consent ข้อ 3 ของแอป ("storing the profile including medical history") ไม่ได้บอกว่าส่งให้ผู้ให้บริการ LLM ภายนอก | ถามทีม/อาจารย์ · ถ้าต้องแก้ข้อความ = bump `CONSENT_VERSION` ใน `lib/consent.ts` (ผู้ใช้ต้อง consent ใหม่) |
+| D6 | PDPA · **ยกเลิก 2026-11-11** (ขอ PDPA ไม่ทัน ตัด medical history และงาน PDPA ออก ดูหัวไฟล์) | consent ข้อ 3 ของแอป ("storing the profile including medical history") ไม่ได้บอกว่าส่งให้ผู้ให้บริการ LLM ภายนอก | ถามทีม/อาจารย์ · ถ้าต้องแก้ข้อความ = bump `CONSENT_VERSION` ใน `lib/consent.ts` (ผู้ใช้ต้อง consent ใหม่) |
 
 ## 6. ข้อ 2: ประวัติบาดเจ็บ / โรคประจำตัว
+
+> **ยกเลิก 2026-11-11:** ระบบไม่รับ medical history แล้ว (ดูหัวไฟล์) · ส่วนนี้เก็บไว้เป็นประวัติการออกแบบ
 
 **แก้ที่ repo นี้ได้ไหม:** ได้ · 4 จุดใน [`future_user_health_profile.md`](future_user_health_profile.md) §4 (retrieval query ต่อ condition, KB กลุ่ม contraindication/modification, prompt section, safety gate แบบ deterministic) อยู่ใน service ทั้งหมด · ส่วนที่ไม่ได้อยู่ที่นี่คือ **ข้อมูลผู้ใช้** (data model ใน §3 ของไฟล์นั้น) ซึ่งต้องอยู่ใน Postgres ของแอป ไม่ใช่ repo นี้
 
@@ -217,9 +226,9 @@ export async function writeFeedback(input: FeedbackInput): Promise<FeedbackOutpu
 
 **ที่ตัดสินแล้ว (user, 2026-10-25):** D1 = A · D3 = ความหมายของแอป · D5 = `gemini-3.6-flash` ผ่าน env ไปก่อน · similarity ใช้รูปแบบ `feedback_input_example.json` แต่ไม่แก้ type ในแอป (service รับทั้งสองแบบ) · integrate ด้วย prompt v14 ก่อน แล้วค่อยทำ v15 · D2, D4, D6 เลื่อนไปก่อน (D6 ต้องเสร็จก่อนมีผู้ใช้จริง) · ห้ามเรียก API ที่เสียเงินโดยไม่ถามก่อน
 
-- [ ] ตัดสิน D2, D4, D6
+- [ ] ตัดสิน D2, D4 · D6 ยกเลิก 2026-11-11 (ตัด medical history และ PDPA)
 - [x] A1 แยก `rag_core/` (`af3d262`) · context v6b strict lunge/push-up ตรงกับ `compare_output/strict_v6b/` ทุก byte · eval_retrieval ก่อน/หลังตรงกัน 574 บรรทัด · prompt sha1 เดิม
-- [~] A2 adapter `rag_core/app_input.py` + test (`d31f371`) · ใช้ example + fixture รูปแบบปัจจุบันของแอป · **ยังขาด fixture จาก set จริงทุกท่า** (ทำตอน Phase C) · ตั้งแต่ v15 ส่ง `profile.medical_history` (เฉพาะช่องนี้ของ profile) ให้ LLM แล้ว ระหว่างทดลองด้วย profile mock
+- [~] A2 adapter `rag_core/app_input.py` + test (`d31f371`) · ใช้ example + fixture รูปแบบปัจจุบันของแอป · **ยังขาด fixture จาก set จริงทุกท่า** (ทำตอน Phase C) · ตั้งแต่ v15 ส่ง `profile.medical_history` (เฉพาะช่องนี้ของ profile) ให้ LLM แล้ว ระหว่างทดลองด้วย profile mock · **2026-11-11 เลิกส่ง** (ไม่ส่งอะไรจาก profile เลย)
 - [~] A3 prompt v15 + judge เทียบ v14 · 2026-10-28 (user): **v15a** ส่ง payload ด้วยชื่อ key ของแอป (`exercise`, `workout`, `set.totals`, `attempts[].attempt_no` / `outcome` / `similarity.score` / `violations[].rule`, `similarity.mean_score`) แทนรูปแบบ mock ของ v14 และเพิ่ม `workout.target_reps` / `target_sets` / `earlier_sets` · `APP_SYSTEM_PROMPT` เปลี่ยนเฉพาะส่วนอธิบาย input ส่วน tasks และกฎทั้งหมดเป็นของ v14 · eval ยังใช้ `SYSTEM_PROMPT` v14 กับ mock เดิม · ยังไม่ได้ judge เทียบ v14
   - 2026-10-30 (user): **v15** · (1) plain text ไม่มี markdown · 4 บรรทัดแรกเป็นสรุป (ผลเทียบเป้า, fault หลัก + cue, เทียบ set ก่อน/ครั้งก่อน, สิ่งที่ทำ set ถัดไป) เพราะหน้า History ตัดที่ 4 บรรทัด · fault ละ 1 ย่อหน้า (เนื้อหาเท่า 5 bullet ของ v14) · แผนเป็นบรรทัด "1." "2." (2) ส่ง `profile.medical_history` + กฎ (ไม่วินิจฉัย, ไม่แนะนำสิ่งที่ขัด, ข้อต่อที่ท่านี้ใช้ = อยู่ในช่วงไม่เจ็บ + แนะนำปรึกษาแพทย์/นักกายภาพ, "None" = ไม่พูดถึง) · ทดลองด้วย profile mock ได้ แต่ D6 ต้องเสร็จก่อนมีผู้ใช้จริง (3) similarity ส่งแค่ set `mean_score` + `body_parts` และ attempt `score` + `body_parts` พร้อมคำอธิบายว่าคะแนน body part ไม่บอกทิศ และ torso ต่ำเสมอ · คะแนนของ set ก่อน/ครั้งก่อนที่ `model` หรือ `reference` ต่างจาก set นี้ ส่งเป็น null (4) ส่ง `kind`, `ended_by` · ฝั่ง rule-based ไม่เปลี่ยน: ชื่อ rule ทั้ง 12 ของแอปตรงกับ `error_taxonomy.py` · tasks ของแอปแยกเป็น `_APP_TASKS` ส่วนกฎการใช้ Context (`_RULES`) ใช้ร่วมกับ v14 ซึ่ง sha1 ไม่เปลี่ยน
   - **จงใจไม่ทำใน v15:** สิ่งที่เห็นจากคำตอบของ qwen (Groq ฟรี) รอทดสอบกับโมเดลจริงก่อน ว่าเป็นปัญหาของ prompt หรือของโมเดล: คำพูดเรื่อง bar/ลดน้ำหนัก 10%, `knee_varus` ถูกอ่านเป็นเข่าหุบ, การส่ง `violations[].message`

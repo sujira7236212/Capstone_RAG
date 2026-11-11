@@ -236,6 +236,7 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 #      (the same contents as v14's five bullets) and the plan is numbered lines.
 #   2. The medical history (profile.medical_history), with rules for it. Sent while the app is
 #      tried out with mock profiles; D6 (consent) still has to be settled before real users.
+#      Removed again on 2026-11-11 (see v18 below).
 #   3. Similarity per body part (set and attempt `body_parts`), with what such a score does not
 #      say. Plus the set's `kind` and `ended_by`, so a repair set or a set that stopped short is
 #      named instead of guessed from the counts.
@@ -268,6 +269,7 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 #      change, drill with a dose, self-check, and which attempts. "Why it matters" is dropped (the
 #      user's choice), the cause is new (the eval checklist's C2).
 #   4. A health slot, so a caution is never buried mid-paragraph and History can show it.
+#      Removed on 2026-11-11 with the medical history (see v18 below).
 #   5. A training instruction of the model's own (tempo, pause, reps) may carry a number not in the
 #      Context; every other number still has to be in it (the user agreed to the plan's
 #      recommendation: the rule clashed with the checklist's F2/F3, and the model ignored it).
@@ -289,13 +291,19 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 #      squat assumed a dumbbell. The load examples now say Bicep curl only. A new exercise has to
 #      be added to the Equipment paragraph: tests/test_app_input.py fails until it is.
 # Everything else is v17's.
+#
+# 2026-11-11, still v18 (the user's decision, no new version): the medical history is gone from the
+# whole system. PDPA approval for health data could not be had in time, so the app stopped
+# collecting it and the PDPA work was dropped. Removed from this prompt: item 4 of the input list
+# (`profile.medical_history`), the `health` field and the "User health notes" rules; the answer
+# schema and the text lost the `health` slot (rag_core/feedback_format.py). Answers captured before
+# this date may still hold a "Health:" paragraph.
 APP_PROMPT_VERSION = "v18"
 
 _APP_INPUT = """You will receive a JSON structure containing:
 1. `set`: the set just finished - its totals, its scores, and every attempt in it with its faults.
 2. `workout`: what the user aimed for, and the sets of this workout before this one.
 3. `history`: their previous workout of this exercise, when there is one.
-4. `profile.medical_history`: what the user wrote about their injuries and conditions.
 
 How to read the session data:
 - `violations[].rule` is the system's internal key for a fault (lowercase words joined by
@@ -394,7 +402,6 @@ The fields:
   there is neither, say this is the first set on record. The screen already shows the rep
   counts, so do not list them, but you may give the set's overall score and say whether it
   reached `workout.target_reps`. One sentence, at most 25 words.
-- `health`: see User health notes below. "" when nothing needs saying.
 - `next`: 1 or 2 things to do in the next set, or in the next workout when `set_no` is the last
   of `workout.target_sets`, most important first, at most 12 words each. Do not repeat a `fix`:
   say what to change around it (load on Bicep curl only, tempo, where to stop the set) or how
@@ -419,17 +426,6 @@ through the Context for something else to change, and do not suggest a different
 exercise (a narrower grip, a different stance) as a way to have something to say. A clean set is
 the result, not a gap to fill.
 
-User health notes: if `profile.medical_history` is missing, empty, or says "None" or "none", do
-not mention health at all and leave `health` empty. Otherwise:
-- Do not diagnose, and do not read more into it than what they wrote.
-- Never suggest anything that goes against it. Check every fix, setup change, drill and next
-  item against it before you write it.
-- If it involves a joint or body part this exercise works, write `health`: keep the work within a
-  pain-free range, and check with a doctor or physiotherapist before pushing further. At most two
-  short sentences, 35 words.
-- If it has nothing to do with this exercise, leave `health` empty and do not mention it anywhere.
-- Refer to it briefly in your own words (e.g. "with your knee history"); do not copy it back.
-
 Stick to their numbers: attempt numbers, rep counts, scores and which fault each attempt carries
 come from the session JSON and nothing else. They must match it exactly. If you say "the last
 three attempts", list three. Faults with similar names are still different faults (a wrist that
@@ -448,8 +444,8 @@ HUMAN_TEMPLATE = "Here is the exercise session data:\n{input}\n\nPlease evaluate
 HELD_BACK_FIELDS = {"state_occurred"}
 
 # Session-level fields the v14 prompt is not shown. `health_notes` would be a medical history in
-# the mock sessions' format: v14 has no rules for it. The app's medical history goes to v15
-# through app_input.py (profile.medical_history), which has them.
+# the mock sessions' format: v14 has no rules for it, and since 2026-11-11 the app has no medical
+# history at all (no PDPA approval), so no prompt is shown one.
 HELD_BACK_SESSION_FIELDS = {"health_notes"}
 
 

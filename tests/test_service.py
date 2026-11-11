@@ -111,8 +111,7 @@ svc.build_chain = lambda context, model, **kw: captured.update(kw)
 svc.Deps().chain("ctx", timeout=5)
 svc.build_chain = real_build_chain
 check("ok: the chain gets the app prompt", captured.get("system_prompt") is svc.APP_SYSTEM_PROMPT, True)
-check("ok: medical history sent (v15, mock profiles)", json.loads(sent["payload"])["profile"],
-      {"medical_history": "Left knee ACL reconstruction in 2024, no pain now"})
+check("ok: no profile sent (no medical history since 2026-11-11)", "profile" in json.loads(sent["payload"]), False)
 check("ok: timeout within budget", 0 < sent["timeout"] <= svc.TIMEOUT_S, True)
 
 # --- the input contract -------------------------------------------------------------
@@ -128,12 +127,12 @@ del missing["exercise"]
 r = client.post("/feedback", json=missing)
 check("422: missing exercise", (r.status_code, "exercise" in r.text), (422, True))
 extra = copy.deepcopy(EXAMPLE)
-extra["profile"]["display_name"] = "Someone"
+extra["profile"] = {"display_name": "Someone", "medical_history": "Old client: knee surgery"}
 extra["set"]["attempts"][1]["violations"][0]["message"] = "Knees out"
 chain = setup(["fine"])
 check("extra app fields accepted", client.post("/feedback", json=extra).status_code, 200)
-check("only the medical history of the profile is sent",
-      ("Someone" in chain.calls[0]["payload"], "Knees out" in chain.calls[0]["payload"]), (False, False))
+check("nothing of the profile is sent, an old client's medical history included",
+      [s in chain.calls[0]["payload"] for s in ("Someone", "Knees out", "knee surgery")], [False, False, False])
 
 # --- failures the app shows as "Feedback failed: ..." -------------------------------
 chain = setup([RuntimeError("429 RESOURCE_EXHAUSTED"), "second try"])
@@ -203,7 +202,7 @@ with tempfile.TemporaryDirectory() as tmp:
 
     svc.CAPTURE_PATH = os.path.join(tmp, "capture", "requests.jsonl")
     setup(["Good set. Push your knees out."])
-    client.post("/feedback", json=EXAMPLE)
+    client.post("/feedback", json={**EXAMPLE, "profile": {"display_name": "A", "medical_history": "Old client text"}})
     setup([ValueError("API key not valid")])
     client.post("/feedback", json=EXAMPLE)
     setup(["unused"], store=broken_store)
@@ -215,8 +214,8 @@ with tempfile.TemporaryDirectory() as tmp:
     check("capture: the app's input as sent", ok["input"]["set"]["totals"], EXAMPLE["set"]["totals"])
     check("capture: rule names as a sorted JSON list",
           (isinstance(ok["errors"], list), len(ok["errors"]) > 0, ok["errors"] == sorted(ok["errors"])), (True, True, True))
-    check("capture: medical history kept", ok["input"]["profile"]["medical_history"],
-          EXAMPLE["profile"]["medical_history"])
+    check("capture: an old client's medical history is dropped, the rest of the profile kept",
+          ok["input"]["profile"], {"display_name": "A"})
     check("capture: payload, context, answer, version",
           (ok["payload"]["set"]["totals"]["attempts"], "[mistake | re: knee_valgus |" in ok["context"],
            "Good set. Push your knees out." in ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, True, "v18", None))

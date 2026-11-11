@@ -38,10 +38,12 @@ def attempt(n, *rules):
             "similarity": {"score": 70.0}, "violations": [{"rule": r, "priority": 1} for r in rules]}
 
 
-def make_input(exercise, attempts, medical="None", name="A", ended_by="target_reached", kind="initial",
+def make_input(exercise, attempts, medical=None, name="A", ended_by="target_reached", kind="initial",
                target=(10, 1), scored=True, history=()):
-    return {"profile": {"display_name": name, "medical_history": medical, "age": 30, "gender": "x",
-                        "weight_kg": 60, "height_cm": 170},
+    profile = {"display_name": name, "age": 30, "gender": "x", "weight_kg": 60, "height_cm": 170}
+    if medical is not None:  # a set captured before 2026-11-11, when the app still sent one
+        profile["medical_history"] = medical
+    return {"profile": profile,
             "exercise": {"id": exercise, "name": exercise, "rules": []},
             "workout": {"target_reps": target[0], "target_sets": target[1], "rest_seconds": 60, "earlier_sets": []},
             "set": {"set_no": 1, "kind": kind, "ended_by": ended_by, "feedback": None,
@@ -75,7 +77,7 @@ def cell_of(inp):
 
 
 # --- which cell ----------------------------------------------------------------------------
-check("36 cells", rc.CELLS_WANTED, 36)
+check("32 cells (no medical cells since 2026-11-11)", rc.CELLS_WANTED, 32)
 check("persistent at 7 of 10", cell_of(make_input("squat", faulty("partial_squat", 7))),
       ("squat/partial_squat/persistent", None))
 check("sporadic at 2", cell_of(make_input("squat", faulty("rounded_back", 2))), ("squat/rounded_back/sporadic", None))
@@ -93,11 +95,11 @@ both = [attempt(i, "elbow_flare", "partial_curl") for i in range(1, 11)]
 check("both on every attempt is mixed", cell_of(make_input("bicep-curl", both)), ("bicep-curl/mixed", None))
 clean = [attempt(i) for i in range(1, 11)]
 check("clean", cell_of(make_input("lunge", clean)), ("lunge/clean", None))
-check("'none.' is no history", cell_of(make_input("lunge", clean, medical=" none. ")), ("lunge/clean", None))
-check("medical with a fault", cell_of(make_input("lunge", faulty("shallow_lunge", 3), medical="knee surgery")),
-      ("lunge/medical", None))
-check("medical clean is not a cell", cell_of(make_input("lunge", clean, medical="knee surgery")),
-      (None, "medical_without_fault"))
+check("an old capture's medical history counts by its faults",
+      cell_of(make_input("lunge", faulty("shallow_lunge", 3), medical="knee surgery")),
+      ("lunge/shallow_lunge/sporadic", None))
+check("an old capture's medical history on a clean set is clean",
+      cell_of(make_input("lunge", clean, medical="knee surgery")), ("lunge/clean", None))
 check("repair apart", cell_of(make_input("squat", clean, kind="repair")), (None, "repair_set"))
 check("other target", cell_of(make_input("squat", clean, target=(8, 2))), (None, "target_not_10x1"))
 check("no similarity", cell_of(make_input("squat", clean, scored=False)), (None, "no_similarity"))
@@ -124,7 +126,7 @@ check("the first in a cell is the test set", test["squat/partial_squat/persisten
 check("the next is surplus", [r["input"]["profile"]["display_name"] for r in surplus], ["B"])
 check("before the cut-off does not count", reasons["before_since"], 1)
 report = rc.coverage_report(records, 3, 0)
-check("the report counts and names no one", ("1/36 cells" in report, "1 +1" in report, "before_since: 1" in report,
+check("the report counts and names no one", ("1/32 cells" in report, "1 +1" in report, "before_since: 1" in report,
                                              "old" not in report.replace("before", "")), (True, True, True, True))
 
 
@@ -186,7 +188,8 @@ with tempfile.TemporaryDirectory() as tmp:
     check("the same text as earlier no-RAG runs", rc.NO_RAG_CONTEXT, "No external context provided.")
     check("the answer stored is not used", "old answer" in json.dumps(run), False)
     check("the name stays out of the output", "Private Name" in open(out, encoding="utf-8").read(), False)
-    check("the model's medical history is in the payload", run["sessions"][0]["payload"]["profile"], {"medical_history": "knee surgery"})
+    check("an old capture's medical history stays out of the payload and the output",
+          ("profile" in run["sessions"][0]["payload"], "knee surgery" in open(out, encoding="utf-8").read()), (False, False))
 
     # A rerun pays for nothing and rewrites nothing.
     before = open(out, encoding="utf-8").read()
@@ -288,13 +291,14 @@ check("estimate: redraws stop at the fault sessions", rc.estimate(ONE, 8, 4000, 
 
 # --- the collectors' page: the rows on the sheet, no command line -----------------------------
 rows = rc.row_numbers()
-check("sheet: 36 rows", sorted(rows.values()), list(range(1, rc.CELLS_WANTED + 1)))
+check("sheet: 32 rows, the 36-row sheet's numbers minus the medical rows", sorted(rows.values()),
+      [n for n in range(1, 37) if n not in (10, 17, 28, 35)])
 check("sheet: rows the page numbers",
-      [rows[c] for c in ("squat/partial_squat/persistent", "squat/partial_squat/sporadic", "squat/mixed", "squat/medical",
+      [rows[c] for c in ("squat/partial_squat/persistent", "squat/partial_squat/sporadic", "squat/mixed",
                          "squat/clean", "push-up/hip_sag_or_pike/persistent", "push-up/hip_sag_or_pike/sporadic",
                          "lunge/shallow_lunge/persistent", "lunge/straight_back_leg/sporadic",
                          "bicep-curl/elbow_flare/persistent", "bicep-curl/clean")],
-      [1, 5, 9, 10, 11, 12, 14, 19, 26, 30, 36])
+      [1, 5, 9, 11, 12, 14, 19, 26, 30, 36])
 
 on_file = rc.sets_on_file([record(make_input("squat", faulty("knee_valgus", 8)), at="2026-11-07T00:00:00Z"),
                            record(make_input("squat", faulty("knee_valgus", 9)), at="2026-11-07T00:01:00Z"),
@@ -316,9 +320,9 @@ with tempfile.TemporaryDirectory() as tmp:
                   record(make_input("squat", faulty("knee_varus", 5)), at="2026-11-07T00:01:00Z")):
             f.write(json.dumps(r) + "\n")
     html_page = page.get("/coverage").text
-    check("page: the row of a set", "แถว #10" in html_page, True)
+    check("page: the row of a set (an old capture with a medical history counts by its fault)", "แถว #2" in html_page, True)
     check("page: why a set does not count", "สัดส่วนท่าผิด" in html_page, True)
-    check("page: 1 of 36", "1/36" in html_page, True)
+    check("page: 1 of 32", "1/32" in html_page, True)
     check("page: links to the shared sheet", "claude.ai/artifact/" in html_page, True)
     check("page: no profile, no answer", any(s in html_page for s in ("Private text", "Secret Name", "old answer")), False)
     download = page.get("/capture.jsonl")

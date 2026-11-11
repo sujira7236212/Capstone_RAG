@@ -8,9 +8,7 @@ totals, attempt_no, outcome, violations[].rule, similarity.score / mean_score), 
 similarity service answers with, instead of the mock sessions' v14 format (summary, reps_detail,
 status, error_type). The eval scripts keep v14's format and prompt.
 
-Passed: the exercise; the medical history (v15, while the profiles are mock data: D6 in
-docs/plans/app_integration_plan.md is still open); the target per set and the earlier sets of
-this workout; the set's number, kind, how it ended, totals and scores; each attempt's number,
+Passed: the exercise; the target per set and the earlier sets of this workout; the set's number, kind, how it ended, totals and scores; each attempt's number,
 outcome, scores and fault keys in priority order; and the newest past workout's sets. Kept from
 2026-10-25 (plan D3): the app's own counts, so the feedback cannot contradict what the user sees
 on the same screen.
@@ -22,11 +20,16 @@ set's or a past workout's scores go only when they came from the same scoring mo
 reference as this set's; the app's structure says other scores do not compare, so they are sent
 as null.
 
-Not passed to the model at all: the rest of the profile (name, age, gender, weight, height), the
+Not passed to the model at all: the profile (name, age, gender, weight, height), the
 exercise's rules, rest_seconds, the feedback already written for earlier sets, the violation's
 message, state, value and threshold (the message waits for a run on the real model, plan A3),
 rep_number, rep_stats, frames and durations (duration_s waits until the feedback is good), and
 every similarity field beyond the two above.
+
+No medical history (2026-11-11, the user's decision): PDPA approval for health data could not be
+had in time, so the app no longer collects it and nothing here reads it, even when an old client
+still sends profile.medical_history. Prompt v18 lost its health rules and `health` slot the same
+day, without a new version (docs/plans/app_integration_plan.md, "Medical history and PDPA removed").
 """
 
 
@@ -102,9 +105,6 @@ def payload_from_feedback_input(inp):
     current = inp["set"]
     scored = current.get("similarity")
     payload = {"exercise": {"id": exercise["id"], "name": exercise.get("name") or exercise["id"]}}
-    medical_history = ((inp.get("profile") or {}).get("medical_history") or "").strip()
-    if medical_history:
-        payload["profile"] = {"medical_history": medical_history}
     payload["workout"] = {
         "target_reps": workout.get("target_reps"),
         "target_sets": workout.get("target_sets"),

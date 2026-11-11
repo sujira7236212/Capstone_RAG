@@ -29,6 +29,6 @@ chunk_results.txt
 .cache/
 
 # --- captured app requests ---
-# service/app.py writes FEEDBACK_CAPTURE here: real users' inputs, profile and medical
-# history included (PDPA). Never commit.
+# service/app.py writes FEEDBACK_CAPTURE here: real users' inputs, profile included (no
+# medical history since 2026-11-11, but older files may hold one). Never commit.
 capture/

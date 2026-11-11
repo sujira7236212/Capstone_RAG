@@ -31,12 +31,13 @@ Configuration, all from the environment (the repo's .env is read too):
                          model's raw JSON (`raw`, since prompt v17) and the text built from it,
                          or the error, and VERSION, so the eval can regenerate answers
                          from real inputs (2026-11-02). Unset: nothing is written. The input
-                         holds the profile and the medical history; capture/ is gitignored.
-                         GET /coverage shows which rows of the 36-set sheet it fills and
+                         holds the profile (never a medical history: dropped before writing,
+                         2026-11-11); capture/ is gitignored.
+                         GET /coverage shows which rows of the 32-set sheet it fills and
                          GET /capture.jsonl downloads it
 
-Each request is logged with its duration, version and chunks kept per error. The profile,
-the medical history and the feedback text are never logged; only FEEDBACK_CAPTURE keeps them.
+Each request is logged with its duration, version and chunks kept per error. The profile and
+the feedback text are never logged; only FEEDBACK_CAPTURE keeps them.
 """
 import json
 import logging
@@ -160,7 +161,8 @@ class PastWorkout(_Open):
 
 
 class Profile(_Open):
-    medical_history: Optional[str] = None
+    """Accepted and never sent to the model. No medical history since 2026-11-11 (no PDPA
+    approval for health data): an old app that still sends one has it dropped before capture."""
 
 
 class FeedbackInput(_Open):
@@ -295,7 +297,9 @@ def feedback(inp: FeedbackInput):
     payload = payload_from_feedback_input(inp.model_dump())
     errors = rule_names(payload)
     exercise = payload["exercise"]
-    record = {"captured_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "input": inp.model_dump(mode="json"),
+    captured_input = inp.model_dump(mode="json")
+    (captured_input.get("profile") or {}).pop("medical_history", None)
+    record = {"captured_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "input": captured_input,
               "payload": payload, "errors": sorted(errors), "context": None, "metrics": None, "raw": None, "feedback": None,
               "error": None, "version": VERSION}
     try:

@@ -2,7 +2,7 @@
 
 For each captured request that has the model's raw JSON (`raw`, prompt v17 onward) it reports:
   - words per field against the limit the prompt gives (rag_core/feedback_format.py)
-  - the words a user reads before opening anything (fault + fix lines, health, progress) and the total
+  - the words a user reads before opening anything (fault + fix lines, progress) and the total
   - faults the set carries that the answer leaves out
   - a rule key written outside its `rule` field
   - a fix repeated by the plan or by the fault's own details (shared content words)
@@ -110,7 +110,7 @@ def check(record):
             if len(fix) and len(shared) / len(fix) >= 0.5:
                 issues.append(f"{f.get('rule')}: the fix is repeated in {name} ({sorted(shared)})")
     out["first_layer_words"] = sum(words(f.get("fault")) + words(f.get("fix")) for f in faults) + \
-        words(answer.get("keep")) + words(answer.get("health")) + words(answer.get("progress"))
+        words(answer.get("keep")) + words(answer.get("progress"))
     return out
 
 

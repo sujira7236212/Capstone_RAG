@@ -1,4 +1,4 @@
-"""GET /coverage: what the people collecting the 36 sets need to see, so they run nothing by hand.
+"""GET /coverage: what the people collecting the 32 sets need to see, so they run nothing by hand.
 The counting is eval/replay_captured.py's. Only rows and reasons are shown, no profile or answer.
 """
 import calendar
@@ -16,7 +16,6 @@ REASONS = {
     "stub_similarity": ("แอปไม่เห็น SIMILARITY_URL จึงใช้คะแนนปลอม", "แก้ .env.local, restart npm run dev แล้วทำ set ใหม่"),
     "target_not_10x1": ("ไม่ได้ตั้ง 10 reps × 1 set", "ทำ set ใหม่"),
     "between_patterns": ("สัดส่วนท่าผิดอยู่นอกเกณฑ์ (ต้อง ≥ 70% หรือ 20–40%)", "ทำ set ใหม่"),
-    "medical_without_fault": ("ตั้งประวัติสุขภาพแต่ไม่มีท่าผิด", "ทำ set ใหม่"),
     "unknown_rule": ("มีกฎที่ระบบไม่รู้จัก", "แจ้ง Sujira"),
     "unknown_exercise": ("มีท่าที่ระบบไม่รู้จัก", "แจ้ง Sujira"),
     "repair_set": ("เป็น repair set", "ไม่ต้องทำอะไร เก็บไว้รายงานแยก"),
