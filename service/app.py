@@ -237,7 +237,7 @@ def _is_timeout(e):
 
 
 def _generate(context, payload, deadline):
-    """The model's raw answer: JSON in prompt v17's schema, made for this set's faults."""
+    """The model's raw answer: JSON in the app prompt's schema (v17 on), made for this set's faults."""
     schema = answer_schema(rule_names(payload))
     payload = json.dumps(payload, indent=2)
     for attempt in (1, 2):

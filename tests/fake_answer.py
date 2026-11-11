@@ -16,8 +16,9 @@ def as_json(text, schema):
     answer = {"keep": "", "progress": "First set on record.", "health": "", "next": ["Same again."]}
     if "faults" in props:
         rules = props["faults"]["items"]["properties"]["rule"]["enum"]
-        answer["faults"] = [{"rule": r, "fault": text, "fix": "Fix it.", "what_it_is": "", "likely_cause": "",
-                             "setup_change": "", "drill": "", "check": "", "in_this_set": ""} for r in rules]
+        answer["faults"] = [{"rule": r, "fault": text, "fix": "Fix it.", "what_it_is": "", "why_it_matters": "",
+                             "likely_cause": "", "setup_change": "", "drill": "", "check": "", "in_this_set": ""}
+                            for r in rules]
     else:
         answer["keep"] = text
     return json.dumps(answer)

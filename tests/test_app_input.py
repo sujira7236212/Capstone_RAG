@@ -44,12 +44,23 @@ check("app prompt shares v14's rules for the Context",
       APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("How to read the Context:"):],
       SYSTEM_PROMPT[SYSTEM_PROMPT.index("How to read the Context:"):])
 check("app prompt asks for JSON", "Answer with one JSON object and nothing else" in APP_SYSTEM_PROMPT, True)
-# v17: the JSON fields rag_core/feedback_format.py reads (tests/test_feedback_format.py pins the text the
-# app parses). "Why it matters" is out of the fields; _RULES (v14's) still names it as a past section.
-for field in ("`faults`", "`rule`", "`fault`", "`fix`", "`what_it_is`", "`likely_cause`", "`setup_change`",
-              "`drill`", "`check`", "`in_this_set`", "`keep`", "`progress`", "`health`", "`next`"):
+# v17 on: the JSON fields rag_core/feedback_format.py reads (tests/test_feedback_format.py pins the text
+# the app parses). v18 brought `why_it_matters` back and sends it to the `consequence` entries.
+for field in ("`faults`", "`rule`", "`fault`", "`fix`", "`what_it_is`", "`why_it_matters`", "`likely_cause`",
+              "`setup_change`", "`drill`", "`check`", "`in_this_set`", "`keep`", "`progress`", "`health`", "`next`"):
     check(f"app prompt: field {field}", field in APP_SYSTEM_PROMPT, True)
-check("app prompt: no why_it_matters field", "why_it_matters" in APP_SYSTEM_PROMPT, False)
+check("app prompt: why_it_matters uses consequence entries",
+      "`consequence` entry" in APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("`why_it_matters`:"):], True)
+check("app prompt: a principle is not the fix", "it is not itself the\n    fix" in APP_SYSTEM_PROMPT, True)
+# v18: the app's scope is fixed (Squat, Push-up, Lunge body weight only; Bicep curl dumbbells), so the
+# prompt says it. A new exercise in the taxonomy fails here until the Equipment paragraph names it.
+from error_taxonomy import ERROR_TAXONOMY  # noqa: E402
+_equipment = APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("Equipment:"):]
+_equipment = _equipment[:_equipment.index("\n\n")].lower().replace("-", " ").replace("\n", " ")
+for exercise_id in ERROR_TAXONOMY:
+    check(f"app prompt: Equipment names {exercise_id}", exercise_id.replace("-", " ") in _equipment, True)
+check("app prompt: load offered only on Bicep curl", "tempo, load," in APP_SYSTEM_PROMPT or "(load," in APP_SYSTEM_PROMPT,
+      False)
 check("app prompt has health rules", "User health notes" in APP_SYSTEM_PROMPT, True)
 check("v14 prompt has no health rules", "User health notes" in SYSTEM_PROMPT, False)
 for key in ("violations[].rule", "attempt_no", "outcome", "totals", "mean_score", "earlier_sets", "target_reps",

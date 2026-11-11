@@ -9,6 +9,9 @@ For each captured request that has the model's raw JSON (`raw`, prompt v17 onwar
   - numbers in neither the Context nor the set's data: allowed in setup_change, drill and next as
     the model's own instruction (the user's call, 2026-11-07), flagged anywhere else. A digit
     matches anywhere in that text, so this misses a number that happens to appear elsewhere
+  - load or equipment words in the advice of a body-weight exercise (prompt v18: Squat, Push-up and
+    Lunge use body weight only). Only fix, setup_change, drill and next are looked at, since "load"
+    on a joint is fair in what_it_is and why_it_matters
 Older records (no `raw`) get their total words only, as a baseline.
 
     python eval/check_feedback_layout.py capture/app_requests.jsonl [--last N] [--json]
@@ -25,6 +28,10 @@ from rag_core.feedback_format import (DETAIL_FIELDS, FAULT_LIMITS, NEXT_LIMIT, T
                                       FormatError, parse_answer)
 
 INSTRUCTION_FIELDS = {"setup_change", "drill", "next"}
+BODYWEIGHT = {"squat", "push-up", "lunge"}  # the app's scope (the user, 2026-11-08); Bicep curl uses dumbbells
+ADVICE_FIELDS = {"fix", "setup_change", "drill", "next"}
+EQUIPMENT = re.compile(r"\b(?:loads?|loaded|(?<!body )(?<!body-)weights?|weighted|dumbbells?|barbells?|kettlebells?|"
+                       r"plates?|bands?|machines?)\b", re.I)
 NUMBER_WORDS = {"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "twelve", "fifteen",
                 "twenty", "thirty", "forty", "fifty", "hundred"}
 STOP = set("""a an the and or but to of in on at for with your you it its is are be this that as so up
@@ -86,6 +93,10 @@ def check(record):
             issues.append(f"{where}.{name}: number(s) in neither the Context nor the set: {sorted(stray)}")
         elif stray:
             out.setdefault("own_instruction_numbers", []).append(f"{where}.{name}: {sorted(stray)}")
+        if out["exercise"] in BODYWEIGHT and name in ADVICE_FIELDS:
+            gear = sorted({m.lower() for m in EQUIPMENT.findall(text or "")})
+            if gear:
+                issues.append(f"{where}.{name}: load or equipment on a body-weight exercise: {gear}")
 
     missing = [r for r in rules if r not in {f.get("rule") for f in faults}]
     if missing:

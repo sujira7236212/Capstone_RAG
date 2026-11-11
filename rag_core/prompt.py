@@ -273,7 +273,23 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 #      recommendation: the rule clashed with the checklist's F2/F3, and the model ignored it).
 #   6. The cue should point attention outside the body where it can (external focus).
 # _RULES is v14's and unchanged, so it still names v14's sections; the tasks say how they map.
-APP_PROMPT_VERSION = "v17"
+#
+# v18 (2026-11-08, the user's choice after comparing v16 with v17): two things v16 had come back.
+#   1. `why_it_matters`, in the folded details right after `what_it_is`, with v16's wording (the
+#      joint or muscle, then what it means for this person). v16 was the only place that sent
+#      the model to the `consequence` entries, which retrieval still fetches (two per fault, from
+#      the "why" query), so v17 left them with nowhere to go; v17's trial answer pushed the load
+#      mechanics into `what_it_is` instead. It is folded, so the first screen does not grow.
+#   2. v16's "a principle is not itself the fix" (v14's lesson 3), now on `fix`.
+#   3. Equipment, in the input description: the app's scope is fixed (the user, 2026-11-08) -
+#      Squat, Push-up and Lunge with body weight only, Bicep curl with dumbbells - so the prompt
+#      states it instead of a payload field. "Reduce the load" on a body-weight squat came from the
+#      prompt's own examples (setup change, next, and v16's "as the load goes up"; the set's
+#      Context had no "load"), seen on Gemini with v15, v17 and v18's first trial; v17's goblet
+#      squat assumed a dumbbell. The load examples now say Bicep curl only. A new exercise has to
+#      be added to the Equipment paragraph: tests/test_app_input.py fails until it is.
+# Everything else is v17's.
+APP_PROMPT_VERSION = "v18"
 
 _APP_INPUT = """You will receive a JSON structure containing:
 1. `set`: the set just finished - its totals, its scores, and every attempt in it with its faults.
@@ -323,6 +339,12 @@ How to read the session data:
 - Neither `earlier_sets` nor `history` lists faults, so do not say which faults disappeared or
   newly appeared compared with them; only this set's faults are known.
 
+Equipment: Squat, Push-up and Lunge are done with body weight only, with no bar, dumbbell or
+machine. Bicep curl uses dumbbells. For a body-weight exercise, never suggest adding, reducing or
+changing a load or weight: change the range, the tempo, a pause or the stance, or use an easier
+version (a box or chair to sit to, hands on a bench) instead. Do not assume any equipment beyond
+this, apart from everyday things (a wall, a chair, a step).
+
 """
 
 _APP_TASKS = """Answer with one JSON object and nothing else. The service turns it into the text the app
@@ -340,12 +362,21 @@ The fields:
     One sentence, at most 15 words.
   - `fix`: the one cue to think about during the next rep. Where you can, point their attention
     at something outside the body or at a result to aim for (the floor, the bar, a sheet of
-    paper held under the arm) rather than at a muscle. One sentence, at most 12 words.
+    paper held under the arm) rather than at a muscle. One sentence, at most 12 words. A
+    `principle` entry in the Context tells you what correct looks like: it is not itself the
+    fix, and restating it does not count as a fix, a setup change or a drill.
   - `what_it_is`: what the fault looks or feels like during the rep, so they can recognise it
-    themselves. Add to `fault`, do not restate it. At most 25 words.
+    themselves. Add to `fault`, do not restate it, and leave what it costs them to
+    `why_it_matters`. At most 25 words.
+  - `why_it_matters`: which joint or muscle takes the extra load, and then - always - what that
+    means for this person: what they will feel, where, and when; what it costs them in
+    strength, in muscle actually worked, or in reps they can trust; what it risks as they do
+    more of it. A statement of mechanics on its own does not answer "why does this matter to me".
+    Base it on a `consequence` entry in the Context when one passes the relevance rule below;
+    if none does, keep it to general, non-specific terms. At most 25 words.
   - `likely_cause`: the most likely reason it happens: one cause. At most 15 words.
   - `setup_change`: a setup change that names a variable they can actually turn - stance width,
-    depth, tempo, load, a pause, a range limit - and its value or direction. Repeating the cue
+    depth, tempo, load (Bicep curl only), a pause, a range limit - and its value or direction. Repeating the cue
     in other words is not a setup change. At most 15 words.
   - `drill`: a drill or lighter regression they can practise, with how much of it (sets, reps,
     a hold or a tempo). If there honestly isn't one for this fault, say so in a few words rather
@@ -366,7 +397,8 @@ The fields:
 - `health`: see User health notes below. "" when nothing needs saying.
 - `next`: 1 or 2 things to do in the next set, or in the next workout when `set_no` is the last
   of `workout.target_sets`, most important first, at most 12 words each. Do not repeat a `fix`:
-  say what to change around it (load, tempo, where to stop the set) or how to build on it.
+  say what to change around it (load on Bicep curl only, tempo, where to stop the set) or how
+  to build on it.
 
 Word limits are limits, not targets: shorter is better whenever nothing is lost. The answer is
 read on a phone between sets. Tone: encouraging, direct, and specific. No filler, no lecture.

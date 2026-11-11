@@ -19,6 +19,7 @@ reads it; change both together, tests/test_feedback_format.py pins it):
 
     Details <rule>:                one block per fault, shown when the user opens it
     What it is: ...
+    Why it matters: ...            (prompt v18)
     Likely cause: ...
     Setup change: ...
     Drill: ...
@@ -37,6 +38,7 @@ import re
 # (JSON field, label in the text, word limit the prompt gives). The order is the order shown.
 DETAIL_FIELDS = (
     ("what_it_is", "What it is", 25),
+    ("why_it_matters", "Why it matters", 25),  # v18
     ("likely_cause", "Likely cause", 15),
     ("setup_change", "Setup change", 15),
     ("drill", "Drill", 20),

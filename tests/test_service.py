@@ -97,7 +97,7 @@ body = r.json()
 check("ok: feedback text built from the JSON", body["feedback"].splitlines()[:2],
       ["Fault knee_valgus: Good set. Push your knees out.", "Fix: Fix it."])
 check("ok: version keys", sorted(body["version"]), ["collection", "commit", "llm", "prompt", "thinking"])
-check("ok: prompt version", body["version"]["prompt"], "v17")
+check("ok: prompt version", body["version"]["prompt"], "v18")
 check("ok: one LLM call", len(chain.calls), 1)
 sent = chain.calls[0]
 check("ok: the schema allows exactly the set's rules",
@@ -219,7 +219,7 @@ with tempfile.TemporaryDirectory() as tmp:
           EXAMPLE["profile"]["medical_history"])
     check("capture: payload, context, answer, version",
           (ok["payload"]["set"]["totals"]["attempts"], "[mistake | re: knee_valgus |" in ok["context"],
-           "Good set. Push your knees out." in ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, True, "v17", None))
+           "Good set. Push your knees out." in ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, True, "v18", None))
     check("capture: the model's raw JSON beside the text", json.loads(ok["raw"])["faults"][0]["fault"],
           "Good set. Push your knees out.")
     check("capture: LLM failure keeps the context and the error",

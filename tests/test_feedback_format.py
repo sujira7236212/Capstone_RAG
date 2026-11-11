@@ -34,7 +34,7 @@ def raises(name, fn):
 
 def fault(rule, **kw):
     item = {"rule": rule, "fault": f"{rule} went wrong.", "fix": f"Fix {rule}.", "what_it_is": "Looks like this.",
-            "likely_cause": "Going too fast.", "setup_change": "Slow the tempo.", "drill": "Wall curls, 2 sets of 8.",
+            "why_it_matters": "Your shoulder takes it.", "likely_cause": "Going too fast.", "setup_change": "Slow the tempo.", "drill": "Wall curls, 2 sets of 8.",
             "check": "Mirror, side on.", "in_this_set": "Attempts 1 and 4."}
     item.update(kw)
     return item
@@ -55,9 +55,8 @@ check("schema: rule keys listed, sorted", s["properties"]["faults"]["items"]["pr
       ["elbow_flare", "partial_curl"])
 check("schema: at most one entry per rule", s["properties"]["faults"]["maxItems"], 2)
 check("schema: every fault field required", s["properties"]["faults"]["items"]["required"],
-      ["rule", "fault", "fix", "what_it_is", "likely_cause", "setup_change", "drill", "check", "in_this_set"])
-check("schema: no why_it_matters (the user's choice, v17)",
-      "why_it_matters" in json.dumps(s), False)
+      ["rule", "fault", "fix", "what_it_is", "why_it_matters", "likely_cause", "setup_change", "drill", "check",
+       "in_this_set"])
 check("schema: a clean set has no faults field", "faults" in answer_schema(set())["properties"], False)
 
 # --- the text -----------------------------------------------------------------------------
@@ -70,7 +69,8 @@ check("text: the v16 summary block first, unchanged",
 check("text: progress", paragraphs[1], "Progress: Up from 82.9.")
 check("text: one details block per fault, in order",
       paragraphs[2].splitlines(),
-      ["Details elbow_flare:", "What it is: Looks like this.", "Likely cause: Going too fast.",
+      ["Details elbow_flare:", "What it is: Looks like this.", "Why it matters: Your shoulder takes it.",
+       "Likely cause: Going too fast.",
        "Setup change: Slow the tempo.", "Drill: Wall curls, 2 sets of 8.", "Check: Mirror, side on.",
        "In this set: Attempts 1 and 4."])
 check("text: the plan last", paragraphs[-1].splitlines(),
