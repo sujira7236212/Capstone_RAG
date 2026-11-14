@@ -38,12 +38,16 @@ equidistant from every chunk of the exercise - with only positive content, becau
 embedding cannot read "not X" and would pull X in. What the rule excludes is the
 card's job, not the query's.
 
-`fix_query` (2026-11-07) answers a different question: what to do about the fault, for
-rag_core/retrieval.py's FIX_SLOT. It leaves the fault's description out on purpose: with the
-long `query` inside it, the "How to correct" template still lands on sentences describing
-the fault. Same rules as `query` (Q-spec, the same n-gram check), and it names what the
-lifter should achieve, from the card and general coaching knowledge, never an exercise taken
-from the KB.
+`fix_query` answers a different question: what to do about the fault, for
+rag_core/retrieval.py's FIX_SLOT. Rewritten 2026-11-14 (docs/reports/kb_fix_audit_2026-11-14.md):
+the 2026-11-07 set shared one long opening ("Practical drills, easier variations and setup
+changes that help someone ...") and ended on the correct form, so the shared words outweighed
+the rule and FIX_SLOT kept the same vague sentence for several rules. Each one now opens with
+the fixes from the rule card's `relevant_info.fixes` that are drills, setup changes or
+regressions (no load advice for the body-weight exercises), aimed at the card's `causes`, and
+ends with a few plain words naming the fault so the rules land apart. It still leaves out the
+long `query` and the correct form, which pull sentences that describe the fault or restate the
+form. Same rules as `query` (Q-spec, the same n-gram check); nothing in it is taken from the KB.
 """
 
 # Nested by exercise_id because a fault name can recur across exercises (the 2026-09-11
@@ -63,19 +67,19 @@ ERROR_TAXONOMY = {
     "squat": {
         "partial_squat": {
             "query": "Squatting too shallow: stopping the descent early in a half or quarter squat, so the thighs stay well above parallel and the knees never reach a 90-degree bend",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone reach a deeper squat with control",
+            "fix_query": "Ankle and hip mobility work, raised heels or squatting down to a box for someone who cannot get low in a squat",
             "focus_area": "hip",
             "source": "web",
         },
         "knee_valgus": {
             "query": "Knees caving in as the lifter squats: one or both knees collapsing inside the feet while lowering or rising (dynamic knee valgus, medial knee displacement)",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone hold the knees out over the feet while squatting",
+            "fix_query": "Hip abductor strengthening and a mini band looped above the knees for knees that collapse inward in a squat",
             "focus_area": "knee",
             "source": "expert",
         },
         "knee_varus": {
             "query": "Knees splaying outward during the squat: driving the knees apart until they track outside the little toes in a V shape, often with the toes turned out too much",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone stop pushing the knees too wide while squatting",
+            "fix_query": "Turning the toes out less and narrowing an overly wide stance when the knees flare out past the feet in a squat",
             "focus_area": "knee",
             "source": "web",
         },
@@ -83,7 +87,7 @@ ERROR_TAXONOMY = {
             # Ton's fault order first (rounded, then arched), then the forward lean the
             # rule actually measures. Butt wink and the lean both count (oq2, oq1).
             "query": "Losing a straight back during the squat: the upper back hunching, the lower back rounding as the pelvis tucks under at the bottom (butt wink), the lower back over-arching, or the torso tipping too far forward",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone hold a flat back and a tall chest while squatting",
+            "fix_query": "Bracing practice before each rep and upper back mobility work for a lifter whose back rounds or arches in the squat",
             "focus_area": "spine",
             "source": "expert",
         },
@@ -91,13 +95,13 @@ ERROR_TAXONOMY = {
     "push-up": {
         "hip_sag_or_pike": {
             "query": "Failing to hold a straight plank line in the push-up: the hips sagging toward the floor with the lower back arching, or the hips piking up toward the ceiling",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone hold the hips level with the shoulders and ankles through a push-up",
+            "fix_query": "Core and glute strengthening, plank practice, and knee or incline push-ups for hips that sag or pike in a push-up",
             "focus_area": "lumbar spine",
             "source": "expert",
         },
         "partial_pushup": {
             "query": "Push-ups that stop too high: lowering only partway, so the chest stays far from the floor",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone lower the chest further when push-up strength runs short",
+            "fix_query": "Incline push-ups, knee push-ups and slow negatives to build pressing strength for the lowest part of a push-up",
             "focus_area": "elbow",
             "source": "web",
         },
@@ -106,7 +110,7 @@ ERROR_TAXONOMY = {
         "shallow_lunge": {
             # Step length left out until the card's lunge oq1 is answered.
             "query": "Lunging too shallow: dipping only slightly, so the front knee stays far from a 90-degree bend and the front thigh stays well above parallel",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone sink lower into a lunge with control",
+            "fix_query": "Holding a support for balance and split squat regressions to build the leg strength needed for a deeper lunge",
             "focus_area": "knee",
             "source": "web",
         },
@@ -114,19 +118,19 @@ ERROR_TAXONOMY = {
             # A short step and the knee travelling past the toes are left out until the
             # card's oq1/oq2 for this rule are answered.
             "query": "Sinking too deep in the lunge: the hips dropping below the level of the front knee, so the front knee folds far past 90 degrees and takes extra load",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone stop the lunge at a controlled depth with the hips above the front knee",
+            "fix_query": "Lengthening a short step and slowing the descent when the hips drop below the front knee in a lunge",
             "focus_area": "knee",
             "source": "web",
         },
         "forward_trunk_lean": {
             "query": "Leaning the upper body forward during the lunge: bending at the hips so the chest drops toward the front thigh instead of the torso staying upright",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone stay tall through the torso while lunging",
+            "fix_query": "Stretching the hip flexors of the rear leg and strengthening the trunk for someone who tips forward in a lunge",
             "focus_area": "spine",
             "source": "web",
         },
         "straight_back_leg": {
             "query": "Keeping the rear leg too straight in the lunge: the back knee failing to bend and drop toward the floor at the bottom, with the body pushed forward onto the front leg",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone bend the rear knee and lower it during a lunge",
+            "fix_query": "Split squats, a pad under the rear knee as a target, and a shorter step to get the back knee bending in a lunge",
             "focus_area": "knee",
             "source": "web",
         },
@@ -134,7 +138,7 @@ ERROR_TAXONOMY = {
     "bicep-curl": {
         "elbow_flare": {
             "query": "Letting the upper arm move away from the torso while curling: the elbows swinging forward, flaring out to the sides or drifting behind the body",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone pin the upper arms beside the ribs while curling",
+            "fix_query": "A lighter dumbbell, curling while the shoulders lean on a wall, or a preacher bench for elbows that swing forward during curls",
             "focus_area": "elbow",
             "source": "web",
         },
@@ -143,7 +147,7 @@ ERROR_TAXONOMY = {
             # on v5 (leakage, docs/plans/eval_v6_plan.md section 1); this one is written from the
             # card. It still avoids the word "elbow", which pulled elbow_flare chunks.
             "query": "Curling through only part of the range: not straightening the arm at the bottom, or not bringing the weight all the way up at the top (half repetitions)",
-            "fix_query": "Practical drills, easier variations and setup changes that help someone use the whole arm range in a curl, straight at the bottom and fully up at the top",
+            "fix_query": "A lighter weight and a pause with the arm fully straight at the bottom for someone who cuts curls short",
             "focus_area": "elbow",
             "source": "web",
         },

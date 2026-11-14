@@ -125,7 +125,9 @@ DOCS = [
 
 
 def config(**kw):
-    return replace(rt.DEFAULT_CONFIG, **kw)
+    # FIX_SLOT off: these checks are about TAG_MODE, several of them on QUERIES "fault", which the
+    # slot does not serve (tests/test_fix_slot.py covers it).
+    return replace(rt.DEFAULT_CONFIG, **{"fix_slot": False, **kw})
 
 
 @contextlib.contextmanager

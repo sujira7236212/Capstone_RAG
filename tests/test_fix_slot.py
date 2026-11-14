@@ -1,5 +1,5 @@
-"""FIX_SLOT: one more principle per fault, found by the rule's fix_query. Offline, against an
-in-memory store whose distances depend on the query.
+"""FIX_SLOT: one more principle (and, by default, one more mistake) per fault, found by the
+rule's fix_query. Offline, against an in-memory store whose distances depend on the query.
 
     python tests/test_fix_slot.py
 """
@@ -19,10 +19,10 @@ FIX = "fix query for the rule"
 
 
 class Doc:
-    def __init__(self, text, kind, dist, fix_dist=0.30, tags="|back|"):
+    def __init__(self, text, kind, dist, fix_dist=0.30, tags="|back|", ex="lunge"):
         self.id = text
         self.dist, self.fix_dist = dist, fix_dist
-        self.metadata = {"text": text, "item_kind": kind, "fault_tags": tags, "exercise_id": "lunge", "source": "s.pdf"}
+        self.metadata = {"text": text, "item_kind": kind, "fault_tags": tags, "exercise_id": ex, "source": "s.pdf"}
 
 
 def matches(doc, f):
@@ -90,9 +90,12 @@ def check(name, got, want):
         print(f"FAIL  {name}: {got!r}, wanted {want!r}")
 
 
-def run(store=None, errors=("back",), trace=None, **kw):
+def run(store=None, errors=("back",), trace=None, ex="lunge", **kw):
+    # The principle slot alone unless a check asks for more: the older checks count principles
+    # and expect the other kinds untouched.
+    kw.setdefault("fix_kinds", ("principle",))
     cfg = dataclasses.replace(rt.DEFAULT_CONFIG, tag_mode="strict", **kw)
-    return rt.retrieve_kb_blocks(store or Store(DOCS), "lunge", "Lunge", set(errors), trace=trace, cfg=cfg)
+    return rt.retrieve_kb_blocks(store or Store(DOCS), ex, ex.title(), set(errors), trace=trace, cfg=cfg)
 
 
 def principles(blocks):
@@ -101,8 +104,8 @@ def principles(blocks):
 
 with taxonomy():
     store = Store(DOCS)
-    off_blocks, off_metrics = run(store)
-    check("off by default", rt.DEFAULT_CONFIG.fix_slot, False)
+    off_blocks, off_metrics = run(store, fix_slot=False)
+    check("on by default (2026-11-14)", rt.DEFAULT_CONFIG.fix_slot, True)
     check("off: two principles", len(principles(off_blocks)), 2)
     check("off: the fix query is not embedded (a paid call)", FIX in store.embedded, False)
     check("off: no chunk of the slot", "Stand beside a chair and sit toward it for depth practice."
@@ -120,7 +123,19 @@ with taxonomy():
     check("on: the principle metric counts it",
           [m["kept"] for m in on_metrics if m["kind"] == "principle"], [3])
 
-    tagged = principles(run(fix_slot=True, fix_pool="tagged")[0])
+    check("default pool: lunge open, the rest tagged",
+          [rt.DEFAULT_CONFIG.fix_pool_for(ex) for ex in ("lunge", "squat", "push-up", "bicep-curl")],
+          ["open", "tagged", "tagged", "tagged"])
+    squat = [Doc(rt._chunk_text(d), d.metadata["item_kind"], d.dist, d.fix_dist, d.metadata["fault_tags"], ex="squat")
+             for d in DOCS]
+    squat_picked = principles(run(Store(squat), ex="squat", fix_slot=True)[0])
+    check("squat by default: the tagged fix sentence, not the closer untagged one",
+          ("Hold a wall and practise the bottom position slowly." in squat_picked, any("chair" in t for t in squat_picked)),
+          (True, False))
+    check("the override can be cleared: lunge tagged too",
+          any("chair" in t for t in principles(run(fix_slot=True, fix_pool_by_exercise={})[0])), False)
+
+    tagged = principles(run(fix_slot=True, fix_pool="tagged", fix_pool_by_exercise={})[0])
     check("pool tagged: only this fault's chunks", "Hold a wall and practise the bottom position slowly." in tagged, True)
     check("pool tagged: no untagged chunk", any("chair" in t for t in tagged), False)
 
@@ -138,13 +153,40 @@ with taxonomy():
     check("trace: the slot's decisions are recorded with the error",
           [t["reason"] for t in slot][:1] + [slot[0]["error"]], ["kept", "back"])
 
+    # fix_kinds: the slot on mistake too, for the cause sentences the mistake quota loses.
+    causes = DOCS + [
+        Doc("Letting the rear knee stay straight in a lunge.", "mistake", 0.11),
+        Doc("Letting the back leg lock out at the bottom.", "mistake", 0.12),
+        Doc("An overly long stance keeps the rear knee from bending.", "mistake", 0.33, fix_dist=0.08),
+        Doc("Descending without control.", "mistake", 0.34, fix_dist=0.02, tags=""),
+    ]
+
+    def mistakes(blocks):
+        return [rt._chunk_text(b[1]) for b in blocks if b[2] == "mistake"]
+    check("fix_kinds default: principle and mistake (2026-11-14)", rt.DEFAULT_CONFIG.fix_kinds, ("principle", "mistake"))
+    base = run(Store(causes), fix_slot=True)[0]
+    both, both_metrics = run(Store(causes), fix_slot=True, fix_kinds=("principle", "mistake"))
+    check("mistake slot: the quota's mistakes stay and the cause is added",
+          set(mistakes(both)), set(mistakes(base)) | {"An overly long stance keeps the rear knee from bending."})
+    check("mistake slot: the principle slot still works", set(principles(both)), set(principles(base)))
+    check("mistake slot: an untagged mistake stays out even where the principle pool is open (lunge)",
+          "Descending without control." in mistakes(both), False)
+    check("mistake slot: the mistake metric counts it",
+          [m["kept"] for m in both_metrics if m["kind"] == "mistake"], [len(mistakes(base)) + 1])
+    check("summary names the kinds when they are not the default",
+          "on principle+mistake" in dataclasses.replace(rt.DEFAULT_CONFIG, fix_slot=True,
+                                                        fix_kinds=("principle", "mistake")).summary(), True)
+
     try:
         run(fix_slot=True, queries="fault")
         check("a config it cannot serve stops", False, True)
     except ValueError:
         pass
-    check("summary names it when on", "FIX_SLOT=open" in dataclasses.replace(rt.DEFAULT_CONFIG, fix_slot=True).summary(), True)
-    check("summary is unchanged when off", "FIX_SLOT" in rt.DEFAULT_CONFIG.summary(), False)
+    check("fix_slot_servable turns it off for QUERIES fault, keeps it for the default",
+          (rt.fix_slot_servable(dataclasses.replace(rt.DEFAULT_CONFIG, queries="fault")).fix_slot,
+           rt.fix_slot_servable(rt.DEFAULT_CONFIG).fix_slot), (False, True))
+    check("summary names it when on", "FIX_SLOT=tagged (lunge: open)" in dataclasses.replace(rt.DEFAULT_CONFIG, fix_slot=True).summary(), True)
+    check("summary is unchanged when off", "FIX_SLOT" in dataclasses.replace(rt.DEFAULT_CONFIG, fix_slot=False).summary(), False)
 
 with taxonomy(known=False):
     check("an unmapped rule has no slot", len(principles(run(fix_slot=True)[0])) <= 2, True)

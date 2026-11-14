@@ -298,7 +298,19 @@ SYSTEM_PROMPT = _ROLE + _V14_INPUT + _V14_TASKS + _RULES
 # (`profile.medical_history`), the `health` field and the "User health notes" rules; the answer
 # schema and the text lost the `health` slot (rag_core/feedback_format.py). Answers captured before
 # this date may still hold a "Health:" paragraph.
-APP_PROMPT_VERSION = "v18"
+#
+# v19 (2026-11-14, the user's choice, step 2 of the plan to let the KB count in the pairwise eval;
+# docs/reports/kb_fix_audit_2026-11-14.md). Retrieval's FIX_SLOT now adds, per fault, one
+# `mistake` found by the rule's fix_query (a cause the mistake quota used to lose to sentences
+# restating the fault) and one `principle` (an exercise or a setup change). v18 sent no field to
+# either: only `why_it_matters` named an entry kind. So, like `why_it_matters` and `consequence`:
+#   1. `likely_cause` is based on a `mistake` entry that gives a reason, when one passes the
+#      relevance rule; a mistake that only describes the fault is not a cause.
+#   2. `drill` may use a `principle` entry that names an exercise or an easier version to practise,
+#      which the `fix` line's "a principle is not itself the fix" no longer rules out; the dose is
+#      the model's own (a training number, allowed since v17).
+# Not run on a model yet. Everything else is v18's.
+APP_PROMPT_VERSION = "v19"
 
 _APP_INPUT = """You will receive a JSON structure containing:
 1. `set`: the set just finished - its totals, its scores, and every attempt in it with its faults.
@@ -382,13 +394,19 @@ The fields:
     more of it. A statement of mechanics on its own does not answer "why does this matter to me".
     Base it on a `consequence` entry in the Context when one passes the relevance rule below;
     if none does, keep it to general, non-specific terms. At most 25 words.
-  - `likely_cause`: the most likely reason it happens: one cause. At most 15 words.
+  - `likely_cause`: the most likely reason it happens: one cause. Base it on a `mistake` entry in
+    the Context that gives a reason - a weak or tight muscle, the stance, the foot angle, the
+    load, fatigue - when one passes the relevance rule below; a `mistake` entry that only
+    describes the fault is not a cause. If none does, keep it to general, non-specific terms.
+    At most 15 words.
   - `setup_change`: a setup change that names a variable they can actually turn - stance width,
     depth, tempo, load (Bicep curl only), a pause, a range limit - and its value or direction. Repeating the cue
     in other words is not a setup change. At most 15 words.
   - `drill`: a drill or lighter regression they can practise, with how much of it (sets, reps,
-    a hold or a tempo). If there honestly isn't one for this fault, say so in a few words rather
-    than padding. At most 20 words.
+    a hold or a tempo). Unlike a `principle` entry that says what correct looks like, one that
+    names an exercise or an easier version to practise (with a band, a chair, a wall) is a drill:
+    use it when it passes the relevance rule below, and give the amount yourself. If there
+    honestly isn't one for this fault, say so in a few words rather than padding. At most 20 words.
   - `check`: a simple self-check so they know it worked - something they can see in a mirror,
     feel, or notice on a phone video. At most 15 words.
   - `in_this_set`: which attempts carried it, or its pattern (early, late, on the abandoned

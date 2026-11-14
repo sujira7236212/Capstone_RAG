@@ -42,15 +42,31 @@ DOCS = [Doc("Knees collapse inward as you stand up.", "mistake", "|knee_valgus|"
         Doc("Stopping well above parallel.", "mistake", "|partial_squat|")]
 
 
+def _matches(doc, f):
+    """The filters retrieval sends: the per-kind search ({"item_kind": {"$in"}}, "fault_tags"
+    {"$like"}) and FIX_SLOT's ({"$and": [...{"$or": [...]}]} with "$eq")."""
+    for key, cond in f.items():
+        if key == "$and":
+            if not all(_matches(doc, c) for c in cond):
+                return False
+        elif key == "$or":
+            if not any(_matches(doc, c) for c in cond):
+                return False
+        else:
+            value = doc.metadata.get(key)
+            cond = cond if isinstance(cond, dict) else {"$eq": cond}
+            for op, arg in cond.items():
+                if (op == "$eq" and value != arg) or (op == "$in" and value not in arg)                         or (op == "$like" and arg.strip("%") not in value):
+                    return False
+    return True
+
+
 class Store:
     collection_name = "fake"
     embeddings = types.SimpleNamespace(embed_query=lambda q: q)
 
     def similarity_search_with_score(self, query, k, filter):
-        like = (filter.get("fault_tags") or {}).get("$like", "").strip("%")
-        hits = [d for d in DOCS if d.metadata["item_kind"] in filter["item_kind"]["$in"]
-                and like in d.metadata["fault_tags"]]
-        return [(d, 0.1) for d in hits[:k]]
+        return [(d, 0.1) for d in DOCS if _matches(d, filter)][:k]
 
     similarity_search_with_score_by_vector = similarity_search_with_score
 
@@ -97,7 +113,7 @@ body = r.json()
 check("ok: feedback text built from the JSON", body["feedback"].splitlines()[:2],
       ["Fault knee_valgus: Good set. Push your knees out.", "Fix: Fix it."])
 check("ok: version keys", sorted(body["version"]), ["collection", "commit", "llm", "prompt", "thinking"])
-check("ok: prompt version", body["version"]["prompt"], "v18")
+check("ok: prompt version", body["version"]["prompt"], "v19")
 check("ok: one LLM call", len(chain.calls), 1)
 sent = chain.calls[0]
 check("ok: the schema allows exactly the set's rules",
@@ -218,7 +234,7 @@ with tempfile.TemporaryDirectory() as tmp:
           ok["input"]["profile"], {"display_name": "A"})
     check("capture: payload, context, answer, version",
           (ok["payload"]["set"]["totals"]["attempts"], "[mistake | re: knee_valgus |" in ok["context"],
-           "Good set. Push your knees out." in ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, True, "v18", None))
+           "Good set. Push your knees out." in ok["feedback"], ok["version"]["prompt"], ok["error"]), (5, True, True, "v19", None))
     check("capture: the model's raw JSON beside the text", json.loads(ok["raw"])["faults"][0]["fault"],
           "Good set. Push your knees out.")
     check("capture: LLM failure keeps the context and the error",

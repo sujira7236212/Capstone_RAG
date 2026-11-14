@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import embedding_config
 from rag_core.generate import GENERATION_ERROR, LLM_TEMPERATURE, build_chain, render_input
 from rag_core.prompt import SYSTEM_PROMPT, model_payload
-from rag_core.retrieval import DEFAULT_CONFIG, metrics_table, open_vectorstore, retrieve_kb_context
+from rag_core.retrieval import DEFAULT_CONFIG, fix_slot_servable, metrics_table, open_vectorstore, retrieve_kb_context
 
 warnings.filterwarnings("ignore")
 
@@ -153,8 +153,8 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    cfg = replace(DEFAULT_CONFIG, tag_mode=args.tag_mode, kind_pool=args.kind_pool, queries=args.queries,
-                  hybrid=args.hybrid, rerank=args.rerank)
+    cfg = fix_slot_servable(replace(DEFAULT_CONFIG, tag_mode=args.tag_mode, kind_pool=args.kind_pool,
+                                    queries=args.queries, hybrid=args.hybrid, rerank=args.rerank))
     mocks = get_mocks(args.mock)
 
     system_prompt_text = SYSTEM_PROMPT

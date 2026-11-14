@@ -52,6 +52,13 @@ for field in ("`faults`", "`rule`", "`fault`", "`fix`", "`what_it_is`", "`why_it
 check("app prompt: why_it_matters uses consequence entries",
       "`consequence` entry" in APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("`why_it_matters`:"):], True)
 check("app prompt: a principle is not the fix", "it is not itself the\n    fix" in APP_SYSTEM_PROMPT, True)
+# v19: FIX_SLOT's extra mistake and principle each have a field that names their kind.
+check("app prompt: likely_cause uses mistake entries",
+      "`mistake` entry" in APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("`likely_cause`:"):
+                                             APP_SYSTEM_PROMPT.index("`setup_change`:")], True)
+check("app prompt: drill may use a principle that names an exercise",
+      "`principle` entry" in APP_SYSTEM_PROMPT[APP_SYSTEM_PROMPT.index("`drill`:"):APP_SYSTEM_PROMPT.index("`check`:")],
+      True)
 # v18: the app's scope is fixed (Squat, Push-up, Lunge body weight only; Bicep curl dumbbells), so the
 # prompt says it. A new exercise in the taxonomy fails here until the Equipment paragraph names it.
 from error_taxonomy import ERROR_TAXONOMY  # noqa: E402

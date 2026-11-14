@@ -6,7 +6,7 @@ is that the tunables below are DEFAULTS, collected in RetrievalConfig and passed
 module globals each caller patched.
 """
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 import embedding_config
 from error_taxonomy import resolve
@@ -149,14 +149,27 @@ QUERY_PROFILE = {
 # the principle quota goes to sentences saying what correct looks like, while the prompt asks for
 # a setup change and a drill. Those sit far down the ranking (clamshell 37th of 61 for
 # knee_valgus, goblet squat 70th of 116 for rounded_back on the "fix" template), past CANDIDATE_K.
-# Off until its 12 query vectors are in the cache: on, a missing one is a paid embedding call.
+# On since 2026-11-14 (user, after round 5 and the mistake-slot check in
+# docs/reports/kb_fix_audit_2026-11-14.md). Its 12 query vectors must be in the query cache
+# (app_setup/gemini-embedding-2.json): a missing one is a paid embedding call.
 # FIX_POOL:
 #   tagged - chunks tagged for this fault, like every other search under TAG_MODE "strict".
 #   open   - also the untagged ones. General regressions and drills are untagged, correctly: the
 #            curator tags what is about one fault ("To regress the push-up, place the hands on a
 #            bench"). Chunks tagged only for another fault stay out.
-FIX_SLOT = False
-FIX_POOL = "open"
+# FIX_POOL_BY_EXERCISE overrides FIX_POOL for one exercise. Chosen 2026-11-14, before any test
+# answer was generated (docs/reports/kb_fix_audit_2026-11-14.md): tagged for squat, push-up and
+# curl, where the fixes the KB has are tagged; open for lunge, whose fixes are almost all untagged
+# and whose tagged pool returned "the knee must not pass the toes", a fault the taxonomy leaves out.
+# FIX_SLOT_KINDS: which kinds get the extra chunk, one each. fix_query is written from the rule
+# card's fixes AND causes, so on `mistake` it finds the cause sentences that the mistake quota
+# loses to definitions ("toe-out angles or extreme stance widths" was 10th of 12 for knee_varus,
+# behind sentences restating that the knees move sideways). ("principle",) is the original slot;
+# principle + mistake brought a specific cause into 4 rules' context (2026-11-14).
+FIX_SLOT = True
+FIX_POOL = "tagged"
+FIX_POOL_BY_EXERCISE = {"lunge": "open"}
+FIX_SLOT_KINDS = ("principle", "mistake")
 
 NO_MATCH_CONTEXT = "No highly relevant knowledge-base entries were found for these specific errors."
 
@@ -187,6 +200,11 @@ class RetrievalConfig:
     query_profile: dict = field(default_factory=lambda: dict(QUERY_PROFILE))
     fix_slot: bool = FIX_SLOT
     fix_pool: str = FIX_POOL
+    fix_pool_by_exercise: dict = field(default_factory=lambda: dict(FIX_POOL_BY_EXERCISE))
+    fix_kinds: tuple = FIX_SLOT_KINDS
+
+    def fix_pool_for(self, exercise_id):
+        return self.fix_pool_by_exercise.get(exercise_id, self.fix_pool)
 
     def summary(self):
         """One line of the gate settings, for report headers."""
@@ -197,10 +215,23 @@ class RetrievalConfig:
                 + f", KIND_POOL={self.kind_pool}, QUERIES={self.queries}, HYBRID={self.hybrid}"
                 + (f" (BM25_K={self.bm25_k}, BM25_WEIGHT={self.bm25_weight})" if self.hybrid else "")
                 + f", RERANK={self.rerank}" + (f" (min {self.rerank_min})" if self.rerank else "")
-                + (f", FIX_SLOT={self.fix_pool}" if self.fix_slot else ""))
+                + (f", FIX_SLOT={self.fix_pool}"
+                   + "".join(f" ({ex}: {pool})" for ex, pool in sorted(self.fix_pool_by_exercise.items()))
+                   + (f" on {'+'.join(self.fix_kinds)}" if tuple(self.fix_kinds) != ("principle",) else "")
+                   if self.fix_slot else ""))
 
 
 DEFAULT_CONFIG = RetrievalConfig()
+
+
+def fix_slot_servable(cfg):
+    """cfg, with FIX_SLOT off when the rest of it is a setting the slot does not serve (KIND_POOL
+    "single", QUERIES "fault"). For eval scripts that override those: the default has the slot on,
+    and retrieve_kb_blocks() stops on the combination rather than silently dropping the slot."""
+    if cfg.fix_slot and (cfg.kind_pool == "single" or cfg.queries != "profile"):
+        print(f"FIX_SLOT off: not implemented for KIND_POOL {cfg.kind_pool!r}, QUERIES {cfg.queries!r}")
+        return replace(cfg, fix_slot=False)
+    return cfg
 
 
 def open_vectorstore(collection_name, connection=None, embeddings=None):
@@ -574,22 +605,25 @@ def _search_hybrid(vectorstore, texts, vecs, exercise_id, kind, already_kept, cf
     return kept, tagged, best
 
 
-def _search_fix(vectorstore, fix_query, exercise_id, already_kept, cfg, code, trace=None):
-    """FIX_SLOT: the closest principle to the rule's fix_query that does not restate one already
-    kept. Runs after the principle quota, so it adds to it and takes nothing away. Returns
+def _search_fix(vectorstore, fix_query, exercise_id, already_kept, cfg, code, trace=None, kind="principle"):
+    """FIX_SLOT: the closest chunk of `kind` to the rule's fix_query that does not restate one
+    already kept. Runs after every kind's quota, so it adds to it and takes nothing away. Returns
     (doc, score) or None."""
     pool = [{"fault_tags": {"$like": f"%|{code}|%"}}]
-    if cfg.fix_pool == "open":
+    # The open pool is for principles only: the untagged chunks it lets in are general drills and
+    # regressions. An untagged mistake is about no fault in particular, so it fails the cause test
+    # (the same "descending in an uncontrolled manner" came back for three lunge faults).
+    if kind == "principle" and cfg.fix_pool_for(exercise_id) == "open":
         pool.append({"fault_tags": {"$eq": ""}})
     hits = vectorstore.similarity_search_with_score_by_vector(
         vectorstore.embeddings.embed_query(fix_query), k=cfg.candidate_k,
-        filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, {"item_kind": {"$eq": "principle"}}, {"$or": pool}]})
+        filter={"$and": [{"exercise_id": {"$eq": exercise_id}}, {"item_kind": {"$eq": kind}}, {"$or": pool}]})
     found = None
     for doc, score in hits:
         text = _chunk_text(doc)
         if found is not None:
             reason = "quota"
-        elif score > cfg.abs_distance_cap["principle"]:
+        elif score > cfg.abs_distance_cap[kind]:
             reason = "margin"
         elif _is_near_duplicate(text, already_kept, cfg.near_dup_jaccard):
             reason = "dup"
@@ -598,7 +632,7 @@ def _search_fix(vectorstore, fix_query, exercise_id, already_kept, cfg, code, tr
             found = (doc, score)
             already_kept.append(text)
         if trace is not None:
-            trace.append({"kind": "principle", "text": text, "score": score, "reason": reason,
+            trace.append({"kind": kind, "text": text, "score": score, "reason": reason,
                           "tagged": f"|{code}|" in (doc.metadata.get("fault_tags") or ""), "code": code,
                           "fix_slot": True})
     return found
@@ -685,15 +719,19 @@ def retrieve_kb_blocks(vectorstore, exercise_id, exercise_name, error_types, raw
                 for doc, score in kept:
                     blocks.append((score, doc, kind, label))
             if cfg.fix_slot and fix_query:
-                # After the loop, so the chunks of every kind count as already kept. The metric of
-                # `principle` (the last kind) counts it, the rest of the row describes the quota.
-                kind_trace = [] if trace is not None else None
-                found = _search_fix(vectorstore, fix_query, exercise_id, kept_texts, cfg, code, trace=kind_trace)
-                if trace is not None:
-                    trace.extend({**t, "error": label} for t in kind_trace)
-                if found:
-                    blocks.append((found[1], found[0], "principle", label))
-                    metrics[-1]["kept"] += 1
+                # After the loop, so the chunks of every kind count as already kept. The metric
+                # row of that kind counts it, the rest of the row describes the quota.
+                for fix_kind in cfg.fix_kinds:
+                    kind_trace = [] if trace is not None else None
+                    found = _search_fix(vectorstore, fix_query, exercise_id, kept_texts, cfg, code,
+                                        trace=kind_trace, kind=fix_kind)
+                    if trace is not None:
+                        trace.extend({**t, "error": label} for t in kind_trace)
+                    if found:
+                        blocks.append((found[1], found[0], fix_kind, label))
+                        row = next((m for m in reversed(metrics) if m["error"] == label and m["kind"] == fix_kind), None)
+                        if row is not None:
+                            row["kept"] += 1
             return
         for kind in kinds:
             kind_trace = [] if trace is not None else None

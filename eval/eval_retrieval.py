@@ -397,7 +397,7 @@ def main():
                         ("rerank", args.rerank), ("rerank_min", args.rerank_min)):
         if value is not None:
             overrides[name] = value
-    cfg = replace(d, **overrides)
+    cfg = rt.fix_slot_servable(replace(d, **overrides))
 
     with open(args.golden, encoding="utf-8") as f:
         golden = json.load(f)["faults"]
