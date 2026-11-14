@@ -1,0 +1,139 @@
+{
+ "checklist_version": 1,
+ "source": "docs/plans/pairwise_eval_v2_plan.md section 3.4 (20 items, 4 criteria x 5), review 2026-11-12 item 4 (per-fault answers). Examples use the shoulder press, an exercise outside the system, so no answer can copy them.",
+ "notes": {
+  "evidence_when": "'yes' = the item asks whether something is there: a yes needs a quote. 'no' = the item asks whether nothing is wrong: a no needs a quote.",
+  "per_fault": "true = the item is about every fault: the judge answers each fault of the set, and the item is yes only when every fault is yes.",
+  "transfer": "true = 'would it still be true for another fault of this exercise' -> no (plan 3.2), judged with exercise_faults.",
+  "clean": "true = also asked on a set with no fault (plan 3.4: A1, A2, A3, A5, C5); clean_question replaces question there."
+ },
+ "items": [
+  {
+   "id": "A1", "criterion": "accuracy", "key": "closed", "evidence_when": "no", "per_fault": false, "transfer": false, "clean": true,
+   "question": "Every number and status the answer states about this set matches facts: attempt numbers, rep counts, scores, the direction of a comparison, and whether the target was reached. It does not call an abandoned attempt a rep, does not say every attempt was completed when facts list an abandoned attempt, and does not say the target was reached when facts.target_reached is false.",
+   "yes_example": "facts: correct_reps 7, target_reps 10, target_reached false. Answer: \"7 of your reps counted, short of the 10 you aimed for.\"",
+   "no_example": "facts: abandoned_attempts lists attempt 6. Answer: \"You completed all 10 presses.\""
+  },
+  {
+   "id": "A2", "criterion": "accuracy", "key": "closed", "evidence_when": "no", "per_fault": false, "transfer": false, "clean": true,
+   "question": "The answer invents nothing about this person's data: no number presented as their measurement that is not in facts; no pattern that contradicts how the fault's attempts are spread (facts.faults[].attempts and by_third); no claim about which part of the movement a fault happened in; no description of the movement drawn from a body-part score; no claim that a fault disappeared or newly appeared compared with an earlier set or workout (facts.fault_change_vs_before); no score for an earlier set or workout that facts mark 'not comparable'. A training instruction's number (tempo, a hold, sets, reps) is not a claim about their data.",
+   "yes_example": "Answer: \"Slow the lowering to 3 seconds.\" (a training instruction, not their data)",
+   "no_example": "facts.faults.elbow_flare.by_third: early 3, mid 0, late 0. Answer: \"Your elbows flared as you tired at the end of the set.\""
+  },
+  {
+   "id": "A3", "criterion": "accuracy", "key": "closed", "evidence_when": "no", "per_fault": true, "transfer": false, "clean": true,
+   "question": "Each fault's description matches the definition of its rule in rule_key and is not one of that rule's excludes, and the answer describes no fault that facts.faults does not list. The rule key after 'Fault' or 'Details' is a label the app replaces with the fault's name: use it to match the entry to rule_key.",
+   "clean_question": "On a set with no fault: the answer does not invent a fault to fix, does not describe the set as having a form fault, and does not suggest a different version of the exercise just to have something to say.",
+   "yes_example": "rule elbow_flare (shoulder press: the elbows drift wide of the wrists). Answer: \"Your elbows moved out wider than your hands as you pressed.\"",
+   "no_example": "rule elbow_flare. Answer under it: \"You did not lock your arms out at the top.\" (another fault)"
+  },
+  {
+   "id": "A4", "criterion": "accuracy", "key": "scope", "evidence_when": "no", "per_fault": true, "transfer": false, "clean": false,
+   "question": "The causes and consequences the answer gives do not contradict rule_key causes and consequences. A cause or consequence that rule_key does not mention is not a contradiction: rule_key is not complete. Answer no only for a direct contradiction.",
+   "yes_example": "rule_key causes: tight chest muscles. Answer: \"Weak upper-back muscles let the elbows drift.\" (not mentioned, not contradicted)",
+   "no_example": "rule_key consequences: the shoulder joint takes more strain. Answer: \"This takes strain off your shoulders.\""
+  },
+  {
+   "id": "A5", "criterion": "accuracy", "key": "scope", "evidence_when": "no", "per_fault": false, "transfer": false, "clean": true,
+   "question": "No advice in the answer is in a rule's forbidden_advice, tells them to push through pain, adds load or difficulty while the form is still wrong, or diagnoses an injury or a medical condition.",
+   "yes_example": "Answer: \"If your shoulder hurts, stop the set.\"",
+   "no_example": "Answer: \"Add 5 kg next session even though your elbows still flare.\" or \"That clicking means you have a rotator cuff tear.\""
+  },
+  {
+   "id": "C1", "criterion": "comprehensiveness", "key": "closed", "evidence_when": "yes", "per_fault": true, "transfer": false, "clean": false,
+   "question": "Every fault listed in facts.faults has its own entry in the answer.",
+   "yes_example": "facts.faults: elbow_flare, partial_press. The answer has a 'Fault elbow_flare' entry and a 'Fault partial_press' entry.",
+   "no_example": "facts.faults: elbow_flare, partial_press. The answer only covers elbow_flare."
+  },
+  {
+   "id": "C2", "criterion": "comprehensiveness", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault is given a cause that belongs to that fault: moved to another fault of this exercise (exercise_faults) it would no longer be true. A bare 'weak muscles', 'lack of control' or 'fatigue', and restating the fault itself, are no. Look anywhere in the answer, not only at 'Likely cause'.",
+   "yes_example": "Shoulder press, elbow_flare: \"Tight chest muscles pull your elbows out to the sides.\"",
+   "no_example": "Shoulder press, elbow_flare: \"Your upper arms are tired.\" (true of every shoulder-press fault)"
+  },
+  {
+   "id": "C3", "criterion": "comprehensiveness", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault is given a consequence for this person that names a body part or a situation (what they will feel, where, when, or what they lose) and belongs to that fault. Mechanics alone, or a bare 'injury risk' or 'less effective', are no.",
+   "yes_example": "Shoulder press, elbow_flare: \"The front of your shoulder takes the strain, and you may feel it there after sets.\"",
+   "no_example": "Shoulder press, elbow_flare: \"This increases your risk of injury.\""
+  },
+  {
+   "id": "C4", "criterion": "comprehensiveness", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": false, "clean": false,
+   "question": "Every fault says on which attempts it happened or what its pattern was in this set (whether the numbers are right is A1's question, not this one).",
+   "yes_example": "\"Your elbows flared on attempts 2, 5 and 9.\"",
+   "no_example": "No mention of where in the set the fault appeared."
+  },
+  {
+   "id": "C5", "criterion": "comprehensiveness", "key": "closed", "evidence_when": "yes", "per_fault": false, "transfer": false, "clean": true,
+   "question": "The answer compares this set with what facts.compare_with says there is to compare with (an earlier set of this workout, the first try of this set on a repair, a previous workout), or says this is the first set on record when facts say there is nothing to compare with.",
+   "yes_example": "facts.compare_with.earlier_sets has set 1 (score 72). Answer: \"Your score rose from 72 in set 1.\"",
+   "no_example": "facts.compare_with.history has a previous workout. The answer never compares with anything."
+  },
+  {
+   "id": "D1", "criterion": "professionalism", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault's cue (the 'Fix' line) would not work for another fault of this exercise.",
+   "yes_example": "Shoulder press, elbow_flare: \"Keep your elbows under your wrists.\"",
+   "no_example": "Shoulder press, elbow_flare: \"Focus on good form.\""
+  },
+  {
+   "id": "D2", "criterion": "professionalism", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": false, "clean": false,
+   "question": "For every fault, the setup change or the drill works on the cause the answer gave for that fault.",
+   "yes_example": "Cause: tight chest muscles. Drill: \"A doorway chest stretch, 2 x 30 seconds before pressing.\"",
+   "no_example": "Cause: tight chest muscles. Setup change: \"Use a lighter weight.\" (does nothing for the tightness)"
+  },
+  {
+   "id": "D3", "criterion": "professionalism", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault's drill trains what that fault lacks and would not suit another fault of this exercise. The same exercise done slower or lighter is no. Saying plainly that there is no drill for this fault is yes.",
+   "yes_example": "Shoulder press, elbow_flare: \"Wall slides with your forearms on the wall, 2 x 10.\"",
+   "no_example": "Shoulder press, elbow_flare: \"Do 3 x 10 slow presses with a light weight.\""
+  },
+  {
+   "id": "D4", "criterion": "professionalism", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault says what the person can see or feel themselves during a rep (which body part, doing what) that tells this fault apart from the other faults of this exercise. Restating the definition without saying how to notice it is no.",
+   "yes_example": "Shoulder press, elbow_flare: \"In the mirror your elbows point out to the sides instead of forward.\"",
+   "no_example": "Shoulder press, elbow_flare: \"Elbow flare is when the elbows are out of position.\""
+  },
+  {
+   "id": "D5", "criterion": "professionalism", "key": "scope", "evidence_when": "no", "per_fault": false, "transfer": false, "clean": false,
+   "question": "The advice suits this exercise and facts.equipment: for a body-weight exercise, no advice to add, reduce or change a load or weight, and no equipment beyond what facts.equipment allows.",
+   "yes_example": "Glute bridge, body weight only. Setup change: \"Put your feet on a step to raise them.\"",
+   "no_example": "Glute bridge, body weight only. Drill: \"Rest a dumbbell on your hips for weighted bridges.\""
+  },
+  {
+   "id": "F1", "criterion": "feasibility", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": false, "clean": false,
+   "question": "Every fault's cue is one concrete thing the person can think about during a rep (it may or may not point attention outside the body).",
+   "yes_example": "\"Push the weights straight up past your ears.\"",
+   "no_example": "\"Keep good posture, stay tight and control the weight.\" (several vague things)"
+  },
+  {
+   "id": "F2", "criterion": "feasibility", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault's setup change turns a real variable with a value or a direction, the variable has to do with this fault, and it is not the cue in other words. One that would fit every fault of this exercise (a bare 'slow down') is no.",
+   "yes_example": "Shoulder press, elbow_flare: \"Bring your grip in to just outside shoulder width.\"",
+   "no_example": "Shoulder press, elbow_flare: \"Go slower.\""
+  },
+  {
+   "id": "F3", "criterion": "feasibility", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": false, "clean": false,
+   "question": "Every fault's drill has at least one amount: sets, reps, tempo, a hold, or a distance. A fault whose answer says there is no drill is no here (D3 can still be yes).",
+   "yes_example": "\"Wall slides, 2 sets of 10.\"",
+   "no_example": "\"Practise wall slides.\" or \"There is no specific drill for this.\""
+  },
+  {
+   "id": "F4", "criterion": "feasibility", "key": "open", "evidence_when": "yes", "per_fault": true, "transfer": true, "clean": false,
+   "question": "Every fault's self-check looks at the body part where that fault happens and says what they will see or feel that means it is fixed. 'Check your form in a mirror' or 'film yourself' without saying what to look for is no.",
+   "yes_example": "Shoulder press, elbow_flare: \"Film from the front: your elbows should stay under your wrists all the way up.\"",
+   "no_example": "\"Film a set and review your form.\""
+  },
+  {
+   "id": "F5", "criterion": "feasibility", "key": "open", "evidence_when": "no", "per_fault": false, "transfer": false, "clean": false,
+   "question": "Every technical term in the answer is explained in the same sentence, so an everyday gym-goer understands it. The rule keys after 'Fault' and 'Details' are labels, not terms.",
+   "yes_example": "\"Your shoulder blades (the flat bones on your upper back) should stay down.\"",
+   "no_example": "\"Avoid scapular elevation and humeral abduction.\""
+  }
+ ],
+ "reserve": [
+  {"id": "R1", "replaces": "professionalism", "question": "No two parts of the answer contradict each other."},
+  {"id": "R2", "replaces": "feasibility", "question": "Every item of the next-session plan can be acted on straight away and does not repeat a fix."},
+  {"id": "R3", "replaces": "comprehensiveness", "question": "The next-session plan starts with the most important fault."},
+  {"id": "R4", "replaces": "accuracy", "question": "The answer cites no research, source or knowledge base."}
+ ]
+}

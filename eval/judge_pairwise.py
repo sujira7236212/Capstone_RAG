@@ -66,7 +66,7 @@ PROVIDERS = {
     "cerebras": {"base_url": "https://api.cerebras.ai/v1", "key_env": "CEREBRAS_API_KEY", "min_interval": 13},
     "groq": {"base_url": "https://api.groq.com/openai/v1", "key_env": "GROQ_API_KEY", "min_interval": 30},  # 8K TPM / ~4K per pair
     "mistral": {"base_url": "https://api.mistral.ai/v1", "key_env": "MISTRAL_API_KEY", "min_interval": 2},
-    "deepinfra": {"base_url": "https://api.deepinfra.com/v1/openai", "key_env": "DEEPINFRA_API_KEY", "min_interval": 1},  # Muse Glimmer, Mistral Small 3.2
+    "deepinfra": {"base_url": "https://api.deepinfra.com/v1/openai", "key_env": "DEEPINFRA_API_KEY", "min_interval": 1},  # DeepSeek V4.1 Flash, Nemotron 3.5 Lightning (docs/plans/judge_selection_2026-11-14.md)
     "ollama": {"base_url": "http://localhost:11434/v1", "key_env": None, "min_interval": 0},  # local smoke tests
 }
 # Bump when JUDGE_PROMPT changes: cached judgments from an older prompt are not reused.
@@ -238,6 +238,7 @@ class OpenAICompatClient:
         self.reasoning_effort = reasoning_effort if "gpt-oss" in model else None
         self.min_interval = cfg["min_interval"] if min_interval is None else min_interval
         self.json_mode = True  # dropped automatically if the endpoint rejects response_format
+        self.max_tokens = None  # eval/judge_checklist.py --max-tokens (a reasoning model's output can balloon)
         self._last = 0.0
 
     def complete(self, prompt):
@@ -252,6 +253,8 @@ class OpenAICompatClient:
             body["response_format"] = {"type": "json_object"}
         if self.reasoning_effort:
             body["reasoning_effort"] = self.reasoning_effort
+        if self.max_tokens:
+            body["max_tokens"] = self.max_tokens
         req = urllib.request.Request(self.url, data=json.dumps(body).encode("utf-8"), method="POST",
                                      headers={"Content-Type": "application/json",
                                               "Authorization": f"Bearer {self.key}",
