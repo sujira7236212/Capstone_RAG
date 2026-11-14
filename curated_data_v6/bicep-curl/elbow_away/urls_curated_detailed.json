@@ -1,0 +1,307 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Proper biceps curl form requires a stable torso, keeping the ribs down, elbows near the sides, and wrists in a neutral position throughout the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "The weight should be curled by flexing the elbow while keeping the upper arm mostly stationary.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Lower the weight under control until the elbow approaches near-full extension.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Train through the longest painless range of motion to load the biceps in stretched positions.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Select a load that allows 8 to 15 clean repetitions without relying on hip drive or momentum.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Drifting or shooting the elbows forward while lifting the weight.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Cutting repetitions short by failing to lower the weight to near-full elbow extension.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Leaning back or driving with the hips to move the load.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Allowing the shoulders to roll forward or take over the movement near the top of the repetition.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Folding the wrists backward during the movement.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Research on resistance training range of motion suggests that meaningful tension at long muscle lengths is beneficial for hypertrophy.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Reducing the load by 10 to 20 percent is recommended to correct hip snap and torso movement during curls.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the elbow to shoot forward shifts tension away from the biceps flexors onto the front deltoid.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Using hip drive or body swing turns the movement into a lower-back exercise instead of an arm exercise.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "c:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\urls.txt (https://fitnessvolt.com/biceps-curl-mechanics/) [part 1/2]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Perform full range of motion repetitions rather than avoiding the bottom range of the movement.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Keep the upper arm quiet and maintain a fixed elbow position throughout the rep without torso swing.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Pause briefly when the elbow is fully flexed, keep the wrist neutral, and lower the weight with control.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Progress curls using double progression by keeping the load constant until every set reaches the top of the rep range with identical form, elbow position, and lowering tempo.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "When addressing arm strength imbalances, start sets with the weaker arm, match reps with the stronger arm using unilateral dumbbells or cables, and avoid extra work on the stronger side.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Avoiding the bottom range of motion and cutting repetitions into half reps.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Swinging the torso, hips, traps, or lower back to move the weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Turning the contraction at the top of the curl into a shoulder roll.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Using excessive training volume, fixed-grip bars, excessive wrist extension, or fast lowering tempos.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Swinging the body or using momentum reduces biceps stimulation by transferring force to the hips, traps, or lower back.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Excessive volume, fixed-grip bars, excessive wrist extension, or fast lowering speeds can trigger elbow pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Rolling the shoulders forward at the top of the curl shifts muscular effort from the biceps onto the front deltoids.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "c:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\urls.txt (https://fitnessvolt.com/biceps-curl-mechanics/) [part 2/2]",
+    "applies_to_fault": [
+      "elbow_flare",
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Common Mistakes",
+    "core_principles": [
+      {
+        "text": "Lighten the weight and minimize body swing to ensure the muscle tension remains on the biceps.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Stand with your back against a wall during a test set to determine if you are relying on momentum to swing the weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Avoid cutting the range of motion short at the bottom position of the bicep curl.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Flex your triceps at the bottom position of the bicep curl to ensure your arms are fully extended before starting the next rep.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Initiating each repetition with a slight torso swing to cheat through the bottom half of the movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Cutting the range of motion short at the bottom of the curl rather than fully extending the arm.",
+        "applies_to_fault": [
+          "partial_curl"
+        ]
+      },
+      {
+        "text": "Flexing the wrist while curling, which excessively involves the forearms.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "In a 5-week study on the preacher curl, subjects performing only the bottom half of the movement experienced roughly 2.6 times more biceps growth across measurement sites than those performing only the top half.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "In a 12-week study on leg extensions, performing reps only in the bottom half resulted in significantly greater distal muscle growth than performing a full range of motion.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Using a torso swing to help lift heavy weights shifts the additional workload away from the biceps and onto the lower back.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorporating body momentum into bicep curls increases the risk of lower back strain and pain.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Flexing the wrist during curls causes premature forearm fatigue, forcing sets to end before reaching biceps failure.",
+        "applies_to_fault": []
+      }
+    ],
+    "source": "c:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\urls.txt (https://builtwithscience.com/fitness-tips/fix-bicep-curls-mistakes/) [part 1/2]",
+    "applies_to_fault": [
+      "partial_curl"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Bicep Curl",
+    "focus_area": "Biceps",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Align your wrist with your forearm and maintain that neutral position throughout the entire bicep curl movement.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Keep your elbows locked in place during bicep curls to ensure the biceps perform their primary function of flexing the elbow.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Actively focus on squeezing and feeling the biceps work during every repetition of the bicep curl.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Focus on pulling the weight in toward your body rather than simply lifting it upward.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Drive your pinkies toward the ceiling as you curl to emphasize supination and achieve a stronger biceps contraction.",
+        "applies_to_fault": []
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Subconsciously flexing the wrists during bicep curls when trying to lift the weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Swaying the elbows forward during a bicep curl when using a weight that is too heavy for the biceps.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      },
+      {
+        "text": "Neglecting the mind-muscle connection by lifting the weight without actively focusing on the contraction of the biceps.",
+        "applies_to_fault": []
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "A 2018 study found that participants who focused on feeling their biceps work during bicep curls achieved almost double the bicep gains over 8 weeks compared to participants instructed to simply lift the weight.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Testing by biomechanics expert Coach Kassem showed that allowing the elbows to excessively sway forward during bicep curls resulted in decreased biceps activation and increased front deltoid activation.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Flexing the wrists during bicep curls forces the inside forearm muscles to overwork, causing premature forearm fatigue and cramping before the biceps fail.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Swaying the elbows forward during a bicep curl shifts the workload away from the biceps and causes the front deltoids to take over the movement.",
+        "applies_to_fault": [
+          "elbow_flare"
+        ]
+      }
+    ],
+    "source": "c:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\bicep-curl\\elbow_away\\urls.txt (https://builtwithscience.com/fitness-tips/fix-bicep-curls-mistakes/) [part 2/2]",
+    "applies_to_fault": [
+      "elbow_flare"
+    ]
+  }
+]

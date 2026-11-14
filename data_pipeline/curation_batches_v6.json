@@ -75,6 +75,13 @@
     "data/push-up/Cathe_PushUpMistakes.txt",
     "data/lunge/EliteFTS_EasyLungeRegression.txt"
    ]
+  },
+  "round5": {
+   "note": "2026-11-14 (user approved): sources for the empty fix slots of docs/reports/kb_fix_audit_2026-11-14.md, prefiltered in docs/kb/prefilter_v6_review.md 12 - Fitness Volt + Built With Science (elbow_flare drill/self-check, partial_curl self-check) and Catalyst Athletics (knee_varus cause). The URL lists sit in rule folders because the exercise-level urls.txt of squat and bicep-curl already have curated output. Sato 2021 and Pedrosa 2023 (already in the KB through a review) and Squat University left out. After curating: untag items backing incline curls or deliberate half reps; items telling lifters to push the knees out to stop caving must not carry knee_varus.",
+   "files": [
+    "data/bicep-curl/elbow_away/urls.txt",
+    "data/squat/knee_varus/urls.txt"
+   ]
   }
  }
 }

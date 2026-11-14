@@ -310,3 +310,41 @@ user เพิ่ม 8 URL ต่อท้าย `picked/lunge/urls.txt` (4) แ
 - `partial_pushup`: **น่าจะปิด gap ได้** · Attika, ATHLEAN-X, Cathe มีทั้ง mistake และ consequence ทั้ง 3 แหล่ง (+ Fitness and Power ถ้าใส่) → mistake น่าจะเกิน 5 · consequence ~4–5
 - `shallow_lunge`: consequence ได้เพิ่มครั้งแรก (BOXROX) · mistake เพิ่มจาก BOXROX + round4 (Gao 2022, Riemann) → mistake ~5–6 · consequence ~2 ยังไม่ถึง 5
 - `straight_back_leg`: จาก 0 → mistake ~1–2 · consequence ~1–2 (Experience Life, ClassPass) · ยังไม่ถึง 5 แต่ไม่เป็นศูนย์แล้ว
+
+## 12. เอกสารเติมช่อง drill รอบ 2026-11-14 (ให้ user ตรวจ)
+
+user หามาตาม `docs/reports/kb_gap_sources_2026-11-14.md` §4 · PDF 3 ไฟล์ (`bicep-curl/` 2, `squat/` 1) + URL 4 ตัว (`bicep-curl/urls.txt` 2, `squat/urls.txt` 2) · เทียบ md5 กับทุก PDF ใน `data/` → **ซ้ำแบบไบต์เหมือนกัน 1 ไฟล์** · อ่าน PDF ทั้งฉบับ (ตัดรายการอ้างอิง) · ดึง URL ด้วย trafilatura พารามิเตอร์เดียวกับ curator ได้ครบทั้ง 4 ตัว อ่านทั้งบทความ · ค้น KB v6 ว่ามีเนื้อหาของแต่ละแหล่งอยู่แล้วหรือยัง · เพิ่ม 6 entry ใน `prefilter_v6.json` (รวม 145) · keep ทั้ง 6 · ไม่ได้เรียก API ที่เสียเงิน · ยังไม่ได้ย้ายหรือลบไฟล์
+
+**ไฟล์ซ้ำ (ไม่ใส่ entry):**
+
+| ไฟล์ใหม่ | ซ้ำกับ | สถานะของต้นฉบับ |
+|---|---|---|
+| `squat/94600-a-biomechanical-review-of-the-squat-exercise-implications-for-clinical-practice.pdf` (Straub & Powers 2024) | `picked/squat/Straub2024_SquatBiomechanicsClinicalReview_IJSPT.pdf` | **curate แล้ว** · ประโยค "หันปลายเท้าออก 30° → varus moment +80%" อยู่ใน KB แล้ว ติด tag `knee_varus` (`specific_findings`) · `kb_gap_sources` §1 ข้อ 2 ที่บอกว่าเป็นของใหม่จึงผิด |
+
+**ไฟล์ใหม่จริง:**
+
+| ไฟล์ | ผล | ควร curate? | เหตุผลสั้น ๆ |
+|---|---|---|---|
+| `bicep-curl/Elbow Joint Angles … Trained and Non-trained Arms.pdf` (Sato 2021) | keep | **ไม่แนะนำ** | ผลหลัก (ช่วงเหยียด 0–50° หนาขึ้น 8.9% vs 3.4%) **มีใน KB แล้ว** พร้อมตัวเลข ผ่าน review "The interplay between muscle length…" · ไม่มี drill/self-check · เทียบครึ่งท่ากับครึ่งท่า ไม่มีกลุ่มเต็มช่วง · ครึ่งหลังเป็นเรื่อง cross-education · บทนำอ้าง Goto 2019 (ครึ่งท่าดีกว่าเต็มช่วงใน triceps) ซึ่งอาจกลายเป็น item สนับสนุนครึ่งท่า |
+| `bicep-curl/Training in the Initial Range of Motion … Arm Curl.pdf` (Pedrosa 2023) | keep | **ไม่แนะนำ** | ผล CSA ส่วนปลาย **มีใน KB แล้ว** (24.0%) · ของใหม่มีแค่ 1RM +42.8% vs +19.0% · ไม่มี drill · ไม่มีกลุ่มเต็มช่วง · ข้อสรุปของผู้เขียนคือ "ฝึกช่วงต้น" ถ้าได้ item แบบนั้นติด `partial_curl` RAG จะแนะนำครึ่งล่าง ซึ่ง rule ยิง (ไม่ถึงงอสุด 55°) |
+| Fitness Volt "biceps curl mechanics" | keep | **แนะนำ** | **`elbow_flare` drill + self-check:** wall curl, ลดน้ำหนัก 10–20%, "ดัมเบลขยับ ต้นแขนไม่ขยับ", ศอกพุ่งไปหน้าทุกครั้ง = ไหล่หน้าช่วย · `partial_curl`: ลงจนศอกเกือบตรง, "เลิกตัดครึ่งทุกครั้ง" · **ระวัง:** แนะนำ incline curl (ต้นแขนอยู่หลังลำตัว card นับว่าผิด + ไม่ใช่ของในบ้าน), "ครึ่งท่ามีที่ใช้ถ้าตั้งใจ", ลงช้า 2 วินาที (tempo อย่างเดียว card ไม่นับ) |
+| Built With Science "5 bicep curl mistakes" | keep | **แนะนำ** | **`partial_curl`:** ไม่เหยียดสุดข้างล่าง + วิธีแก้ "เกร็งหลังแขนจนแขนตรงก่อนเริ่มครั้งต่อไป" (self-check F4) + ผล (ช่วงยืดทำให้โต โดยเฉพาะส่วนปลาย, ~2.6 เท่า) · **`elbow_flare`:** ศอกแกว่งไปหน้าเมื่อหนักเกิน → ไหล่หน้าทำแทน ไบเซ็ปทำงานน้อยลง · วิธีแก้: ล็อกศอก · **ระวัง:** ผนังในข้อ 1 เป็นเรื่องเหวี่ยงลำตัว (card ไม่นับ) |
+| Catalyst Athletics "Knee Valgus in the Squat" (Everett) | keep | **แนะนำ** | **`knee_varus` สาเหตุ (C2) แหล่งแรกที่ตรง card:** ทำตาม cue "knees out" ผิด ดันเข่าออกทั้งที่แนวเข่าดีอยู่แล้ว → เข่าออกนอกเท้า · "เข่าอยู่ด้านนอก ≠ ดันเข่าออก" · ปลายเท้าเปิด 5–10° ถึง 20–30° ตามสรีระ ต้นขาแนวเดียวกับเท้า · ยืนกว้างเกินทำให้เข่าบิด · ที่เหลือเป็น `knee_valgus` · **ระวัง:** ความเห็นที่ขัดแหล่งอื่น (ไม่ห่วงเรื่องบาดเจ็บ, เสริมสะโพกด้านนอกแทบไม่ช่วย, เลิกใช้ mini-band) · รายการท่าแก้เป็นวิดีโอ ไม่มีในข้อความ |
+| Squat University "Don't Forget the Foot" (Horschig) | keep | ไม่จำเป็น (ถูก ~1 window) | tripod foot + ทดสอบเท้าเปล่า · เกือบทั้งหมดเป็น `knee_valgus` (อุ้งเท้ายุบ) ซึ่งมี item อยู่แล้ว ~190 ชิ้น · `knee_varus` ได้แค่วลีเดียว "ดันเข่าออกโดยนิ้วโป้งยังแตะพื้น" และบทความมองว่าเข่าบานออกเป็นทิศที่ดี · drill tripod squat ใน `kb_gap_sources` §2 เป็นการตีความของ Claude ไม่ใช่สิ่งที่บทความเขียน |
+
+**ติดเรื่องการ curate:**
+1. curator **จะข้าม `data/bicep-curl/urls.txt` และ `data/squat/urls.txt` ทั้งไฟล์** เพราะ `curated_data_v6/<ท่า>/urls_curated_detailed.json` มีอยู่แล้ว (URL ชุดเก่าที่ย้ายไป `picked/`) · แก้แบบเดียวกับ §11: บันทึกเนื้อหาเป็น `.txt` (บรรทัดแรก `Source URL: …`) ใน `checked/<ท่า>/` แล้วใส่ batch · หรือย้าย `urls.txt` ไปโฟลเดอร์กฎ (เช่น `data/squat/knee_varus/urls.txt`) ซึ่งยังไม่มีผล curate
+2. ไฟล์ Straub ที่ซ้ำ ถ้าปล่อยไว้ curator จะ curate ซ้ำทันทีเพราะชื่อไฟล์ต่างกัน (id ต่าง) → ควรลบ
+
+**ข้อควรระวังหลัง curate:**
+- Fitness Volt: item incline curl / "ครึ่งท่ามีที่ใช้" ต้องไม่ติด `elbow_flare` / `partial_curl` แบบสนับสนุน
+- Catalyst: item "push knees out" เพื่อแก้เข่าบิดเข้า ต้องไม่ติด `knee_varus` · item "ไม่ห่วงเรื่องบาดเจ็บ" / "mini-band ไม่ได้ผล" ให้ดูว่าขัดกับ consequence ของ `knee_valgus` ที่มีหรือไม่
+- elbow_flare: ข้อความ wall curl ใหม่อาจซ้ำ n-gram กับ `fix_query` ของ elbow_flare (เคยซ้ำ "with the back against a wall" กับ KB v5) → รัน `eval/check_rule_cards.py --queries` ก่อน embed `fix_query`
+
+**ผลต่อช่อง ✗ ใน `kb_fix_audit_2026-11-14.md`** (ประมาณ ต้องดูหลัง curate):
+- drill ของ `elbow_flare`: **น่าจะปิดได้** (wall curl จาก Fitness Volt + self-check)
+- สาเหตุเฉพาะของ `knee_varus`: **น่าจะปิดได้** (Catalyst)
+- drill ของ `knee_varus`: **ยังไม่ปิด** · ไม่มีแหล่งไหนให้ drill ที่ผ่าน D3
+- drill ของ `partial_curl`: **ยังไม่ปิด** · ได้แค่ cue/self-check (เกร็งหลังแขน) · 1½-rep curl อยู่ใน thebarbell.com ซึ่งยังไม่ได้เพิ่ม
+
+**user สั่ง 2026-11-14 — ทำแล้ว:** ลบไฟล์ Straub ที่ซ้ำ (ตรวจ md5 ก่อนลบ) · URL ย้ายไป `data/bicep-curl/elbow_away/urls.txt` (Fitness Volt, Built With Science) และ `data/squat/knee_varus/urls.txt` (Catalyst) · Squat University อยู่ใน `checked/squat/urls.txt` · Sato/Pedrosa ย้ายไป `checked/bicep-curl/` · แก้ `list` ของ 4 URL ใน `prefilter_v6.json` · curate batch `round5` แล้ว ผลอยู่ใน `docs/reports/kb_fix_audit_2026-11-14.md` §เติม KB รอบ 5 · หลัง curate ยังไม่ได้ย้าย 2 `urls.txt` ไป `picked/` (ย้ายได้เมื่อ commit)

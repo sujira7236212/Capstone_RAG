@@ -1,0 +1,122 @@
+[
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correct Form",
+    "core_principles": [
+      {
+        "text": "Maintain the thigh and foot in line with each other during the squat, keeping the knee approximately aligned with the second toe.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Turn the feet out appropriately based on individual anatomy to open the hips and allow squatting to full depth with an upright posture.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Use the cue 'knees out' combined immediately with 'hips in' when knees cave inward to move the hips forward and restore upright trunk posture.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Actively pushing the knees out beyond the feet when the thighs are already properly aligned with the toes.",
+        "applies_to_fault": [
+          "knee_varus"
+        ]
+      },
+      {
+        "text": "Allowing the knees to cave inward as the lifter reaches the sticking point of the squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [
+      {
+        "text": "Foot turn-out angle required to open the hips and maintain alignment ranges from 5 to 10 degrees for some lifters up to 20 to 30 degrees for others depending on body structure.",
+        "applies_to_fault": []
+      }
+    ],
+    "consequences": [
+      {
+        "text": "Allowing the knees to move inward causes the hips to shift backward, increasing forward trunk lean and placing greater moment loads on the hip and spinal joints.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      },
+      {
+        "text": "Increased forward trunk inclination resulting from valgus knee collapse raises the likelihood of the torso collapsing forward and failing the lift.",
+        "applies_to_fault": [
+          "knee_valgus",
+          "rounded_back"
+        ]
+      }
+    ],
+    "source": "c:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\urls.txt (https://www.catalystathletics.com/article/2270/Knee-Valgus-in-the-Squat) [part 1/2]",
+    "applies_to_fault": [
+      "knee_valgus",
+      "knee_varus",
+      "rounded_back"
+    ]
+  },
+  {
+    "is_relevant": true,
+    "exercise_type": "Squat",
+    "focus_area": "Knee",
+    "content_type": "Correction Strategy",
+    "core_principles": [
+      {
+        "text": "Unilateral squat and hinge variations, such as single-leg RDLs, split squats, and lunges, help build global hip stability and control.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Incorporating slow eccentric and pause squats helps lifters develop improved movement control.",
+        "applies_to_fault": []
+      },
+      {
+        "text": "Prep or corrective work for knee valgus should focus on the adductors and internal rotators.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Ensure the lifter's stance is proper and that global movement mechanics like posture and bracing are sound when managing knee valgus in a squat.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      },
+      {
+        "text": "Corrective work should be implemented to attenuate knee valgus if the inward knee collapse is severe.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "common_mistakes": [
+      {
+        "text": "Squatting with a mini-band around the knees is often ineffective for correcting knee valgus.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "specific_findings": [],
+    "consequences": [
+      {
+        "text": "Knee valgus negatively affects the technical execution and performance of dynamic lifts.",
+        "applies_to_fault": [
+          "knee_valgus"
+        ]
+      }
+    ],
+    "source": "c:\\Users\\HP\\Documents\\RAG_SYSTEM\\data\\squat\\knee_varus\\urls.txt (https://www.catalystathletics.com/article/2270/Knee-Valgus-in-the-Squat) [part 2/2]",
+    "applies_to_fault": [
+      "knee_valgus"
+    ]
+  }
+]

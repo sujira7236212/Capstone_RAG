@@ -21,6 +21,13 @@
    "curated": "curated_data_v6",
    "date": "2026-10-24",
    "documents_added": 13
+  },
+  {
+   "name": "v6c",
+   "seed": 20261003,
+   "curated": "curated_data_v6",
+   "date": "2026-11-14",
+   "documents_added": 3
   }
  ],
  "documents": {
@@ -55,6 +62,14 @@
   "general/basics_of_strength_and_conditioning_manual.pdf": {
    "split": "test",
    "assigned_in": "v6"
+  },
+  "https://builtwithscience.com/fitness-tips/fix-bicep-curls-mistakes/": {
+   "split": "dev",
+   "assigned_in": "v6c"
+  },
+  "https://fitnessvolt.com/biceps-curl-mechanics/": {
+   "split": "dev",
+   "assigned_in": "v6c"
   },
   "https://themerisoiutechnique.com/2015/12/25/lunges-common-mistakes-and-correct-technique/": {
    "split": "dev",
@@ -95,6 +110,10 @@
   "https://www.acefitness.org/resources/pros/expert-articles/9033/building-better-biceps-evidence-based-exercises-for-strength-and-function/": {
    "split": "dev",
    "assigned_in": "v6"
+  },
+  "https://www.catalystathletics.com/article/2270/Knee-Valgus-in-the-Squat": {
+   "split": "test",
+   "assigned_in": "v6c"
   },
   "https://www.healthline.com/health/fitness/deep-squat": {
    "split": "test",

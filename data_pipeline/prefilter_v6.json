@@ -1139,6 +1139,58 @@
    "read": "full article",
    "reviewer": "claude",
    "date": "2026-10-24"
+  },
+  {
+   "path": "data/bicep-curl/Elbow Joint Angles in Elbow Flexor Unilateral Resistance Exercise Training Determine Its Effects on Muscle Strength and Thickness of Trained and Non-trained Arms.pdf",
+   "decision": "keep",
+   "reason": "Sato et al. 2021 (Front Physiol 12:734509): preacher-style unilateral curl trained in 0-50 deg (extended) vs 80-130 deg (flexed) of elbow flexion, 5 weeks; muscle thickness +8.9% vs +3.4%, strength rose only in the extended group; most of the text is about the cross-education effect. In scope (the partial_range card counts research on elbow-flexor ROM), so not dropped. Not recommended to curate: the main finding is already in KB v6 with numbers through the review 'The interplay between muscle length, range of motion, and exercise selection', there is no drill or self-check, both arms are partial ranges (no full-ROM group), and the introduction cites Goto 2019 (partial ROM beat full ROM for the triceps), which could be curated as support for half repetitions and fire partial_curl.",
+   "read": "full text (references excluded)",
+   "reviewer": "claude",
+   "date": "2026-11-14"
+  },
+  {
+   "path": "data/bicep-curl/Training in the Initial Range of Motion Promotes Greater Muscle Adaptations Than at Final in the Arm Curl.pdf",
+   "decision": "keep",
+   "reason": "Pedrosa et al. 2023 (Sports 11:39): 19 untrained women, seated dumbbell preacher curl, one arm 0-68 deg vs the other 68-135 deg, 8 weeks; distal biceps CSA greater for the initial range, 1RM +42.8% vs +19.0%. In scope, so not dropped. Not recommended to curate: the CSA finding is already in KB v6 (24.0% distal, via the same review), there is no drill or self-check, there is no full-ROM group, and the paper's own conclusion is 'train in the initial range' - an item worded that way and tagged partial_curl would recommend bottom-half repetitions, which the partial_curl rule flags.",
+   "read": "full text (references excluded)",
+   "reviewer": "claude",
+   "date": "2026-11-14"
+  },
+  {
+   "url": "https://fitnessvolt.com/biceps-curl-mechanics/",
+   "list": "data/bicep-curl/elbow_away/urls.txt",
+   "decision": "keep",
+   "reason": "Fitness Volt curl guide (fetched with the curator's trafilatura settings, 11,198 chars). Usable: elbow_flare - elbows drift and the elbow 'shoots forward every rep' when the front delt helps (mistake/consequence), cue 'the dumbbell moves, but the upper arm does not' (self-check), fixes: wall curl, preacher curl, reduce load 10-20 percent; partial_curl - lower until the elbow is close to straight, 'stop cutting every rep in half' (mistake/fix), the lower half loads the biceps at a long length (consequence). Caution: it also recommends incline curls (upper arm behind the torso - the elbow_drift card counts elbows moving behind the body, and an incline bench is not home equipment) and says half reps 'can have a place when programmed deliberately'; neither should be tagged as support. A 2-second eccentric is tempo on its own (excluded by the card).",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-11-14"
+  },
+  {
+   "url": "https://builtwithscience.com/fitness-tips/fix-bicep-curls-mistakes/",
+   "list": "data/bicep-curl/elbow_away/urls.txt",
+   "decision": "keep",
+   "reason": "Built With Science, 5 bicep curl mistakes (Jeremy Ethier; 11,045 chars). Usable: partial_curl - mistake #2 cutting the range at the bottom, fix 'extend your arm fully by flexing your triceps at that bottom position before the next rep' (fix/self-check), consequence: the stretched bottom position drives growth, mostly in the distal biceps (cites Sato 2021: about 2.6 times more growth); elbow_flare - mistake #4 elbows swaying forward when the weight is too heavy, the front delts take over and biceps activation drops (consequence, from an informal coach test), fix: keep the elbow locked. Caution: the wall in mistake #1 is about torso swing, which the elbow_drift card excludes; mistakes #3 (wrist) and #5 (mind-muscle) are not rules; program-quiz promo lines are noise.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-11-14"
+  },
+  {
+   "url": "https://www.catalystathletics.com/article/2270/Knee-Valgus-in-the-Squat",
+   "list": "data/squat/knee_varus/urls.txt",
+   "decision": "keep",
+   "reason": "Catalyst Athletics, 'Knee Valgus in the Squat' (Greg Everett, updated; 7,581 chars). Usable for knee_varus (cause/correct form): the 'knees out' cue is misunderstood and some coaches tell lifters to push the knees out regardless of position; for a lifter whose thighs already line up with the feet, pushing the knees out 'would bring the knees outside the feet, which we don't want'; knees being out vs being pushed out are different; toe-out of 5-10 to 20-30 degrees depending on build, thigh in line with the foot (knee near the second toe); excessive stance width twists the knees. Mostly knee_valgus: knees cave -> hips shift back -> trunk leans forward; 'knees out' + 'hips in' cues; adductor/internal-rotator weakness; pause squats. Caution: opinion that conflicts with other KB sources - no concern about injury risk, strengthening the lateral hip 'virtually never corrects the problem', mini-band squats abandoned as ineffective; advice to push the knees out to stop caving must not be tagged knee_varus (card excludes it). The corrective-exercise list is embedded video and is missing from the text.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-11-14"
+  },
+  {
+   "url": "https://squatuniversity.com/2015/10/29/the-squat-fix-dont-forget-the-foot/",
+   "list": "data/squat/urls.txt",
+   "decision": "keep",
+   "reason": "Squat University, 'The Squat Fix: Don't Forget the Foot' (Aaron Horschig; 4,538 chars with the curator's settings, reader comments excluded). Tripod foot (heel, base of the big toe, base of the little toe), barefoot awareness test, keep the arch from collapsing - mostly knee_valgus (arch collapse with the knee moving in, which the card includes). For knee_varus only one clause: drive the knees out 'while keeping your big toe in contact with the ground'; the article itself presents knees bowing outward as the good direction, so it gives no knee_varus mistake or consequence. Short, about one window.",
+   "read": "full article",
+   "reviewer": "claude",
+   "date": "2026-11-14"
   }
  ]
 }
